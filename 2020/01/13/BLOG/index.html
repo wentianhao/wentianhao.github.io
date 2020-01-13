@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>gem5的安装与使用 | wenhaohao</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="gem5的安装与使用 1. 安装各类库文件（ubuntu）
+12sudo apt-get install mercurial scons swig gcc m4 python python-dev libgoogle-perftools-dev g++ libprotobuf-dev
+由于ubuntu缺省情况下，并没有提供C/C++的编译环境，单独安装gcc以及g++比较麻烦，ubuntu提供一个">
+<meta property="og:type" content="article">
+<meta property="og:title" content="gem5的安装与使用">
+<meta property="og:url" content="wentianhao.github.io/2020/01/13/BLOG/index.html">
+<meta property="og:site_name" content="wenhaohao">
+<meta property="og:description" content="gem5的安装与使用 1. 安装各类库文件（ubuntu）
+12sudo apt-get install mercurial scons swig gcc m4 python python-dev libgoogle-perftools-dev g++ libprotobuf-dev
+由于ubuntu缺省情况下，并没有提供C/C++的编译环境，单独安装gcc以及g++比较麻烦，ubuntu提供一个">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20190420183524941.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3d3d19pbmRvd3M=,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20190420183640443.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20190420184756987.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3d3d19pbmRvd3M=,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20190420190508767.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3d3d19pbmRvd3M=,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20190420190758359.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20190420194540619.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3d3d19pbmRvd3M=,size_16,color_FFFFFF,t_70">
+<meta property="og:updated_time" content="2020-01-13T02:45:42.983Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="gem5的安装与使用">
+<meta name="twitter:description" content="gem5的安装与使用 1. 安装各类库文件（ubuntu）
+12sudo apt-get install mercurial scons swig gcc m4 python python-dev libgoogle-perftools-dev g++ libprotobuf-dev
+由于ubuntu缺省情况下，并没有提供C/C++的编译环境，单独安装gcc以及g++比较麻烦，ubuntu提供一个">
+<meta name="twitter:image" content="https://img-blog.csdnimg.cn/20190420183524941.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3d3d19pbmRvd3M=,size_16,color_FFFFFF,t_70">
+  
+    <link rel="alternate" href="/atom.xml" title="wenhaohao" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <!--<link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">-->
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">wenhaohao</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">wentianhao</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="Flux RSS"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Rechercher"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="wentianhao.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-BLOG" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/01/13/BLOG/" class="article-date">
+  <time datetime="2020-01-13T02:41:13.000Z" itemprop="datePublished">2020-01-13</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      gem5的安装与使用
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="gem5的安装与使用"><a href="#gem5的安装与使用" class="headerlink" title="gem5的安装与使用"></a>gem5的安装与使用</h2><p> <strong>1. 安装各类库文件（ubuntu）</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">sudo apt-get install mercurial scons swig gcc m4 python python-dev </div><div class="line">libgoogle-perftools-dev g++ libprotobuf-dev</div></pre></td></tr></table></figure>
+<p>由于ubuntu缺省情况下，并没有提供C/C++的编译环境，单独安装gcc以及g++比较麻烦，ubuntu提供一个build-essential软件包。安装这个软件包，编译C/C++需要的软件包都会被安装<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo apt-get install build-essential</div></pre></td></tr></table></figure></p>
+<p> <strong>2.下载gem5源码</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hg clone http://repo.gem5.org/gem5</div></pre></td></tr></table></figure></p>
+<p><img src="https://img-blog.csdnimg.cn/20190420183524941.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3d3d19pbmRvd3M=,size_16,color_FFFFFF,t_70" alt="下载gem5"><br><img src="https://img-blog.csdnimg.cn/20190420183640443.png" alt="在这里插入图片描述"></p>
+<ul>
+<li>配置hgrc<br>打开hgrc文件：<code>vim gem5/.hg/hgrc</code>,将以下文件内容拷贝到里面，修改username,style等信息，style是你gem5文件里的style.其实我觉得<code>[email]</code>中的内容其实作用不大，但是看了好多其他的都差不多是这样我自己就只修改了style和username。<br>信息的修改只是一种标识，不影响编译和使用，最重要的是<code>[extensions] hgext.mq =</code>   扩充hg命令.</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line">[ui]</div><div class="line"># Set the username you will commit code with</div><div class="line">username=Your Name &lt;your@email.address&gt;</div><div class="line">ssh = ssh -C</div><div class="line"># Always use git diffs since they contain permission changes and rename info</div><div class="line">[defaults]</div><div class="line">qrefresh = --git</div><div class="line">email = --git</div><div class="line">diff = --git</div><div class="line">[extensions]</div><div class="line"># These are various extensions we find useful</div><div class="line"># Mercurial Queues -- allows managing of changes as a series of patches</div><div class="line">hgext.mq =</div><div class="line"># PatchBomb -- send a series of changesets as e-mailed patches</div><div class="line">hgext.patchbomb =</div><div class="line"># External Diff tool (e.g. kdiff3, meld, vimdiff, etc)</div><div class="line">hgext.extdiff =</div><div class="line"># Fetch allows for a pull/update operation to be done with one command and automatically commits a merge changeset</div><div class="line">hgext.fetch =</div><div class="line"># Path to the style file for the M5 repository</div><div class="line"># This file enforces our coding style requirements</div><div class="line">style = /path/to/your/gem5/util/style.py</div><div class="line">[email]</div><div class="line">method = smtp</div><div class="line">from = Your Name &lt;your@email.address&gt;</div><div class="line">[smtp]</div><div class="line">host = your.smtp.server.here</div></pre></td></tr></table></figure>
+<p><strong>3.获取NVMain</strong></p>
+<ul>
+<li>注册bitbucket帐号<br><a href="https://bitbucket.org/account/signup/" target="_blank" rel="external">https://bitbucket.org/account/signup/</a></li>
+<li><p>获取NVMain使用权<br>打开<a href="https://bitbucket.org/mrp5060/nvmain/并登陆bitbucket账号，登陆后重新打开前面这个网站获取下载命令" target="_blank" rel="external">https://bitbucket.org/mrp5060/nvmain/并登陆bitbucket账号，登陆后重新打开前面这个网站获取下载命令</a> </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git clone https://your account@bitbucket.org/xxx</div></pre></td></tr></table></figure>
+</li>
+<li><p><a href="https://bitbucket.org/mrp5060/nvmain/downloads/" target="_blank" rel="external">或者点击下载nvmain（无需注册）</a></p>
+</li>
+<li><p>nvmain文件位置随意，我放在了gem5根目录下，如果放的位置不同，后面编译时注意相对位置</p>
+<p>4.<strong>安装NVMain补丁</strong></p>
+</li>
+<li>进入gem5根目录</li>
+<li><p>初始化补丁目录</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">hg init</div><div class="line">hg qinit</div></pre></td></tr></table></figure>
+</li>
+<li><p>输入补丁 (注意nvmain文件位置，以及补丁的版本号)</p>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hg qimport -f ./nvmain/patches/gem5/nvmain2-gem5-11688+</div></pre></td></tr></table></figure>
+<ol>
+<li><p>安装补丁</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hg qpush</div></pre></td></tr></table></figure>
+</li>
+<li><p>如果打补丁出错,检查gem5的版本，检查nvmain中补丁的版本</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">//版本不对，更新gem5</div><div class="line">hg update 11688</div><div class="line">//检查补丁是否打上</div><div class="line">hg qapplied</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>5.<strong>联合编译gem5和nvmain</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">scons EXTRAS=nvmain ./build/X86/gem5.opt</div></pre></td></tr></table></figure></p>
+<p><img src="https://img-blog.csdnimg.cn/20190420184756987.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3d3d19pbmRvd3M=,size_16,color_FFFFFF,t_70" alt="scons done"><br><strong>在这一步中容易出现各种错误</strong></p>
+<p> <strong>1. ImportError: No module named gem5_scons:</strong><br> <img src="https://img-blog.csdnimg.cn/20190420190508767.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3d3d19pbmRvd3M=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>查看gem5目录中是否存在gem5_scons文件夹，如果没有则在site_scons中将gem5_scons移到gem5根目录下<br><img src="https://img-blog.csdnimg.cn/20190420190758359.png" alt="在这里插入图片描述"><br> <strong>2. [-Werror=implicit-fallthrough=]</strong><br> 这个问题困扰了我好久，百度了好久终于发现问题<br> 如果gcc版本号为7，那么源代码的switch-case块中如果忘了加上break，有可能会报错Implicit fallthrough error。<br> <strong>解决办法：编译时忽略Implicit fallthrough error这个错误</strong><br><strong>修改 gem5中的SConstruct</strong><br>在<strong>CCFLAGS</strong>中添加 <strong>-Wno-implicit-fallthrough</strong> 即可忽略该错误<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">main.Append(CCFLAGS=[&apos;-Wall&apos;, &apos;-Wundef&apos;, &apos;-Wextra&apos;,</div><div class="line">                       &apos;-Wno-sign-compare&apos;, &apos;-Wno-unused-parameter&apos;,&apos;-Wno-implicit-fallthrough&apos;])</div></pre></td></tr></table></figure></p>
+<p> <strong>3. [-Werror]相关类似错误</strong><br> 均可按照上面的方法，忽略gcc-7版本的问题导致的错误</p>
+<p>6.<strong>测试</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">./build/X86/gem5.opt ./configs/example/se.py -c ./tests/test-progs/hello/bin/x86/linux/hello</div></pre></td></tr></table></figure>
+<p><img src="https://img-blog.csdnimg.cn/20190420194540619.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3d3d19pbmRvd3M=,size_16,color_FFFFFF,t_70" alt="hello world"><br>如果遇到和我一样的错误的，希望对你有帮助，么么哒</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="wentianhao.github.io/2020/01/13/BLOG/" data-id="ck5bv7wlm0000fc5h76s0trnn" class="article-share-link">Partager</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/gem5/">gem5</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2020/01/13/Benchmark/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Récent</strong>
+      <div class="article-nav-title">
+        
+          Ｂenchmark
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2020/01/04/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Ancien</strong>
+      <div class="article-nav-title">Hello World</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Mot-clés</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/gem5/">gem5</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/gem5、nvmain/">gem5、nvmain</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Nuage de mot-clés</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/gem5/" style="font-size: 10px;">gem5</a> <a href="/tags/gem5、nvmain/" style="font-size: 10px;">gem5、nvmain</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/01/">January 2020</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Articles récents</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2020/01/13/Benchmark/">Ｂenchmark</a>
+          </li>
+        
+          <li>
+            <a href="/2020/01/13/BLOG/">gem5的安装与使用</a>
+          </li>
+        
+          <li>
+            <a href="/2020/01/04/hello-world/">Hello World</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2020 wentianhao<br>
+      Propulsé by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="/js/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>

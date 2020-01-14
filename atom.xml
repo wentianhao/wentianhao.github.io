@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="wentianhao.github.io/"/>
-  <updated>2020-01-14T06:05:10.463Z</updated>
+  <updated>2020-01-14T06:34:36.330Z</updated>
   <id>wentianhao.github.io/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="wentianhao.github.io/2020/01/14/springcloud2/"/>
     <id>wentianhao.github.io/2020/01/14/springcloud2/</id>
     <published>2020-01-14T05:51:02.154Z</published>
-    <updated>2020-01-14T06:05:10.463Z</updated>
+    <updated>2020-01-14T06:34:36.330Z</updated>
     
     <summary type="html">
     
@@ -32,6 +32,8 @@
     
     </summary>
     
+    
+      <category term="spring cloud" scheme="wentianhao.github.io/categories/spring-cloud/"/>
     
     
       <category term="spring cloud" scheme="wentianhao.github.io/tags/spring-cloud/"/>
@@ -45,7 +47,7 @@
     <link href="wentianhao.github.io/2020/01/14/springcloud1/"/>
     <id>wentianhao.github.io/2020/01/14/springcloud1/</id>
     <published>2020-01-14T05:50:09.119Z</published>
-    <updated>2020-01-14T05:54:21.512Z</updated>
+    <updated>2020-01-14T06:35:02.828Z</updated>
     
     <summary type="html">
     
@@ -56,6 +58,8 @@
     
     </summary>
     
+    
+      <category term="spring cloud" scheme="wentianhao.github.io/categories/spring-cloud/"/>
     
     
       <category term="spring cloud" scheme="wentianhao.github.io/tags/spring-cloud/"/>
@@ -69,7 +73,7 @@
     <link href="wentianhao.github.io/2020/01/13/Benchmark/"/>
     <id>wentianhao.github.io/2020/01/13/Benchmark/</id>
     <published>2020-01-13T02:47:24.000Z</published>
-    <updated>2020-01-14T02:50:16.092Z</updated>
+    <updated>2020-01-14T06:35:21.609Z</updated>
     
     <summary type="html">
     
@@ -80,6 +84,8 @@
     
     </summary>
     
+    
+      <category term="gem5" scheme="wentianhao.github.io/categories/gem5/"/>
     
     
       <category term="gem5" scheme="wentianhao.github.io/tags/gem5/"/>
@@ -95,17 +101,19 @@
     <link href="wentianhao.github.io/2020/01/13/gem5/"/>
     <id>wentianhao.github.io/2020/01/13/gem5/</id>
     <published>2020-01-13T02:41:13.000Z</published>
-    <updated>2020-01-13T03:08:07.854Z</updated>
+    <updated>2020-01-14T06:35:15.663Z</updated>
     
     <summary type="html">
     
       
       
-        &lt;h2 id=&quot;gem5的安装与使用&quot;&gt;&lt;a href=&quot;#gem5的安装与使用&quot; class=&quot;headerlink&quot; title=&quot;gem5的安装与使用&quot;&gt;&lt;/a&gt;gem5的安装与使用&lt;/h2&gt;&lt;p&gt; &lt;strong&gt;1. 安装各类库文件（ubuntu）&lt;/strong&gt;&lt;/
+        &lt;html&gt;&lt;head&gt;&lt;/head&gt;&lt;body&gt;&lt;h2 id=&quot;gem5的安装与使用&quot;&gt;gem5的安装与使用&lt;a class=&quot;post-anchor&quot; href=&quot;#gem5的安装与使用&quot;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt; &lt;strong&gt;1. 安装各类库文件（ubuntu）&lt;/st
       
     
     </summary>
     
+    
+      <category term="gem5" scheme="wentianhao.github.io/categories/gem5/"/>
     
     
       <category term="gem5" scheme="wentianhao.github.io/tags/gem5/"/>

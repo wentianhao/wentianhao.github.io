@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>wenhaohao</title>
+  <icon>wentianhao.github.io/icon.png</icon>
+  <subtitle>wentianhao</subtitle>
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="wentianhao.github.io/"/>
+  <updated>2020-01-14T02:21:49.741Z</updated>
+  <id>wentianhao.github.io/</id>
+  
+  <author>
+    <name>wentianhao</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Ｂenchmark</title>
+    <link href="wentianhao.github.io/2020/01/13/Benchmark/"/>
+    <id>wentianhao.github.io/2020/01/13/Benchmark/</id>
+    <published>2020-01-13T02:47:24.000Z</published>
+    <updated>2020-01-14T02:21:49.741Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;参考资料：&quot;&gt;&lt;a href=&quot;#参考资料：&quot; class=&quot;headerlink&quot; title=&quot;参考资料：&quot;&gt;&lt;/a&gt;&lt;strong&gt;参考资料：&lt;/strong&gt;&lt;/h2&gt;&lt;p&gt;&lt;a href=&quot;http://www.gem5.org/PARSEC_bench
+      
+    
+    </summary>
+    
+    
+    
+      <category term="gem5" scheme="wentianhao.github.io/tags/gem5/"/>
+    
+      <category term="nvmain" scheme="wentianhao.github.io/tags/nvmain/"/>
+    
+      <category term="parsec-2.1" scheme="wentianhao.github.io/tags/parsec-2-1/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>gem5的安装与使用</title>
+    <link href="wentianhao.github.io/2020/01/13/gem5/"/>
+    <id>wentianhao.github.io/2020/01/13/gem5/</id>
+    <published>2020-01-13T02:41:13.000Z</published>
+    <updated>2020-01-13T03:08:07.854Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;gem5的安装与使用&quot;&gt;&lt;a href=&quot;#gem5的安装与使用&quot; class=&quot;headerlink&quot; title=&quot;gem5的安装与使用&quot;&gt;&lt;/a&gt;gem5的安装与使用&lt;/h2&gt;&lt;p&gt; &lt;strong&gt;1. 安装各类库文件（ubuntu）&lt;/strong&gt;&lt;/
+      
+    
+    </summary>
+    
+    
+    
+      <category term="gem5" scheme="wentianhao.github.io/tags/gem5/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Hello World</title>
+    <link href="wentianhao.github.io/2020/01/04/hello-world/"/>
+    <id>wentianhao.github.io/2020/01/04/hello-world/</id>
+    <published>2020-01-04T15:14:50.826Z</published>
+    <updated>2017-03-22T12:08:02.137Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;&lt;img src=&quot;https://portablehexo.bitmoe.cn/hexopp/hexop.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;本版本仅适用于Win环境&lt;/strong&gt;&lt;br&gt;本文关键字： &lt;strong&gt;He
+      
+    
+    </summary>
+    
+    
+    
+  </entry>
+  
+</feed>

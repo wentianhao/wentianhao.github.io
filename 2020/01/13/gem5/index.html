@@ -1,275 +1,354 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <meta charset="utf-8">
-  
-  <title>gem5的安装与使用 | wenhaohao</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="gem5的安装与使用 1. 安装各类库文件（ubuntu）
-12sudo apt-get install mercurial scons swig gcc m4 python python-dev libgoogle-perftools-dev g++ libprotobuf-dev
-由于ubuntu缺省情况下，并没有提供C/C++的编译环境，单独安装gcc以及g++比较麻烦，ubuntu提供一个">
-<meta property="og:type" content="article">
-<meta property="og:title" content="gem5的安装与使用">
-<meta property="og:url" content="wentianhao.github.io/2020/01/13/gem5/index.html">
-<meta property="og:site_name" content="wenhaohao">
-<meta property="og:description" content="gem5的安装与使用 1. 安装各类库文件（ubuntu）
-12sudo apt-get install mercurial scons swig gcc m4 python python-dev libgoogle-perftools-dev g++ libprotobuf-dev
-由于ubuntu缺省情况下，并没有提供C/C++的编译环境，单独安装gcc以及g++比较麻烦，ubuntu提供一个">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/20190420183524941.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3d3d19pbmRvd3M=,size_16,color_FFFFFF,t_70">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/20190420183640443.png">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/20190420184756987.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3d3d19pbmRvd3M=,size_16,color_FFFFFF,t_70">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/20190420190508767.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3d3d19pbmRvd3M=,size_16,color_FFFFFF,t_70">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/20190420190758359.png">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/20190420194540619.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3d3d19pbmRvd3M=,size_16,color_FFFFFF,t_70">
-<meta property="og:updated_time" content="2020-01-13T03:08:07.854Z">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="gem5的安装与使用">
-<meta name="twitter:description" content="gem5的安装与使用 1. 安装各类库文件（ubuntu）
-12sudo apt-get install mercurial scons swig gcc m4 python python-dev libgoogle-perftools-dev g++ libprotobuf-dev
-由于ubuntu缺省情况下，并没有提供C/C++的编译环境，单独安装gcc以及g++比较麻烦，ubuntu提供一个">
-<meta name="twitter:image" content="https://img-blog.csdnimg.cn/20190420183524941.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3d3d19pbmRvd3M=,size_16,color_FFFFFF,t_70">
-  
-    <link rel="alternate" href="/atom.xml" title="wenhaohao" type="application/atom+xml">
-  
-  
-    <link rel="icon" href="/favicon.png">
-  
-  
-    <!--<link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">-->
-  
-  <link rel="stylesheet" href="/css/style.css">
-  
+  <head>
+      <script>
+  var _hmt = _hmt || []
+  ;(function() {
+    var hm = document.createElement('script')
+    hm.src = 'https://hm.baidu.com/hm.js?5a0acc897fd96474a2c8f4deac84611a'
+    var s = document.getElementsByTagName('script')[0]
+    s.parentNode.insertBefore(hm, s)
+  })()
+</script> 
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="keywords" content="undefined" />
+    <meta name="description" content="hahahahahahahahha" />
+    
+    <title>
+      gem5的安装与使用 - wenhaohao
+    </title>
+    <link rel="manifest" href="/manifest.json" />
+    <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon" />
+    
+<link rel="stylesheet" href="/style/style.css">
 
+  <meta name="generator" content="Hexo 4.2.0"><link rel="alternate" href="/atom.xml" title="wenhaohao" type="application/atom+xml">
 </head>
-
-<body>
-  <div id="container">
-    <div id="wrap">
-      <header id="header">
-  <div id="banner"></div>
-  <div id="header-outer" class="outer">
-    <div id="header-title" class="inner">
-      <h1 id="logo-wrap">
-        <a href="/" id="logo">wenhaohao</a>
-      </h1>
-      
-        <h2 id="subtitle-wrap">
-          <a href="/" id="subtitle">wentianhao</a>
-        </h2>
-      
+  <body>
+    <canvas id='pagemap'></canvas>
+    
+    <div id="post-toc" class="animated hiddenToc hide">
+      <span class="title">Toc</span>
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#gem5的安装与使用"><span class="toc-text">gem5的安装与使用</span></a></li></ol>
     </div>
-    <div id="header-inner" class="inner">
-      <nav id="main-nav">
-        <a id="main-nav-toggle" class="nav-icon"></a>
-        
-          <a class="main-nav-link" href="/">Home</a>
-        
-          <a class="main-nav-link" href="/archives">Archives</a>
-        
-      </nav>
-      <nav id="sub-nav">
-        
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
-        
-        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
-      </nav>
-      <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="wentianhao.github.io"></form>
+    
+    <div id="fixed-menu-wrap">
+      <span class="iconfont icon-sousuo search-box menu-reset"></span>
+      <span class="icon-toc menu-reset">Toc</span>
+      <span class="iconfont icon-arrowup menu-reset"></span>
+    </div>
+    <div id="fixed-menu">
+      <span class="iconfont icon-menu-"></span>
+    </div>
+    <div id="progress">
+      <div class="line"></div>
+    </div>
+    <div id="search-shade" class="animated hiddenSearch hide">
+      <div class="input-wrap">
+        <span class="iconfont icon-sousuo search-box"></span>
+        <input type="text" placeholder="Search" />
+        <span class="iconfont icon-close"></span>
+      </div>
+      <div class="search-result">
+        <div class="meta">
+          <span><b id="result-count">0</b> results found</span>
+          <img src="/images/logo.jpeg" />
+        </div>
+        <ul id="result-box"></ul>
       </div>
     </div>
-  </div>
-</header>
-      <div class="outer">
-        <section id="main"><article id="post-gem5" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2020/01/13/gem5/" class="article-date">
-  <time datetime="2020-01-13T02:41:13.000Z" itemprop="datePublished">2020-01-13</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
+    <div id="menu-mask" class="animated hideMenuMask hide">
+      <span class="iconfont icon-close"></span>
+      <div class="nav">
         
-  
-    <h1 class="article-title" itemprop="name">
-      gem5的安装与使用
-    </h1>
-  
+        <a href="/" class="">
+          Home
+        </a>
+        
+        <a href="/archives" class="">
+          Archives
+        </a>
+        
+        <a href="/categories" class="">
+          Categories
+        </a>
+        
+        <a href="/tags" class="">
+          Tags
+        </a>
+        
+        <a href="/friends" class="">
+          Friends
+        </a>
+        
+        <a href="/about" class="">
+          About
+        </a>
+        
+      </div>
+    </div>
+    <div id="header">
+      <div class="intro">
+        <a href="/" class="logo" style="background-image: url('/images/logo.jpeg')"></a>
+        <div class="author">wentianhao</div>
+      </div>
+      <div class="nav">
+        <span class="iconfont icon-menu menu-icon"></span>
+        <a href="#" class="search-box">
+          <span class="iconfont icon-sousuo"></span>
+        </a>
+      </div>
+    </div>
+    <div id="side" class="animated bounceInLeft">
+      <div class="shrink">
+        <a href="/" class="logo" style="background-image: url('/images/logo.jpeg')"></a>
+        <span class="iconfont icon-menu toggle-icon"></span>
+        <a href="#" class="search-box">
+          <span class="iconfont icon-sousuo"></span>
+        </a>
+      </div>
+      <div class="magnify">
+        <div class="about">
+          <div class="author">wentianhao</div>
+          <a href="/" class="logo" style="background-image: url('/images/logo.jpeg')"></a>
+        </div>
 
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
+        <div class="nav">
+          
+          <a href="/" class="">
+            Home
+          </a>
+          
+          <a href="/archives" class="">
+            Archives
+          </a>
+          
+          <a href="/categories" class="">
+            Categories
+          </a>
+          
+          <a href="/tags" class="">
+            Tags
+          </a>
+          
+          <a href="/friends" class="">
+            Friends
+          </a>
+          
+          <a href="/about" class="">
+            About
+          </a>
+          
+          <a href="#" class="search-box">
+            <span class="iconfont icon-sousuo"></span>
+          </a>
+        </div>
+        <div class="bottom">
+          <div class="follow">
+            
+            <a href="https://github.com/shixiaohu2206" target="_block">
+              <span class="iconfont icon-github"></span>
+            </a>
+            
+            <a href="https://www.facebook.com/shi.xiaohu.5" target="_block">
+              <span class="iconfont icon-facebook"></span>
+            </a>
+            
+            <a href="https://www.instagram.com/shi_xiaohu/" target="_block">
+              <span class="iconfont icon-instagram"></span>
+            </a>
+             
+            <a href="/atom.xml" target="_block">
+              <span class="iconfont icon-rss"></span>
+            </a>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="container">
+      <div class="main animated bounceInRight delay-0.7s">
+        <article class="post-entry">
+    <div class="header">
       
-        <h2 id="gem5的安装与使用"><a href="#gem5的安装与使用" class="headerlink" title="gem5的安装与使用"></a>gem5的安装与使用</h2><p> <strong>1. 安装各类库文件（ubuntu）</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">sudo apt-get install mercurial scons swig gcc m4 python python-dev </div><div class="line">libgoogle-perftools-dev g++ libprotobuf-dev</div></pre></td></tr></table></figure>
-<p>由于ubuntu缺省情况下，并没有提供C/C++的编译环境，单独安装gcc以及g++比较麻烦，ubuntu提供一个build-essential软件包。安装这个软件包，编译C/C++需要的软件包都会被安装<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo apt-get install build-essential</div></pre></td></tr></table></figure></p>
-<p> <strong>2.下载gem5源码</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hg clone http://repo.gem5.org/gem5</div></pre></td></tr></table></figure></p>
+      <div class="title">gem5的安装与使用</div>
+      <div class="meta">
+        <span class="item">
+          <span class="iconfont icon-time-circle"></span>
+          <span>2020/01/13</span>
+        </span>
+
+        
+
+        
+        
+         
+          <span class="item">
+            <span class="iconfont icon-tag1"></span>
+            <span>
+                
+                  
+                    <a href="/tags/gem5">gem5</a>
+                  
+                
+            </span>
+          </span>
+         
+      </div>
+      <div>
+      </div>
+    </div>
+    <h2 id="gem5的安装与使用"><a href="#gem5的安装与使用" class="headerlink" title="gem5的安装与使用"></a>gem5的安装与使用</h2><p> <strong>1. 安装各类库文件（ubuntu）</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install mercurial scons swig gcc m4 python python-dev </span><br><span class="line">libgoogle-perftools-dev g++ libprotobuf-dev</span><br></pre></td></tr></table></figure>
+<p>由于ubuntu缺省情况下，并没有提供C/C++的编译环境，单独安装gcc以及g++比较麻烦，ubuntu提供一个build-essential软件包。安装这个软件包，编译C/C++需要的软件包都会被安装</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install build-essential</span><br></pre></td></tr></table></figure>
+<p> <strong>2.下载gem5源码</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hg clone http:&#x2F;&#x2F;repo.gem5.org&#x2F;gem5</span><br></pre></td></tr></table></figure>
 <p><img src="https://img-blog.csdnimg.cn/20190420183524941.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3d3d19pbmRvd3M=,size_16,color_FFFFFF,t_70" alt="下载gem5"><br><img src="https://img-blog.csdnimg.cn/20190420183640443.png" alt="在这里插入图片描述"></p>
 <ul>
 <li>配置hgrc<br>打开hgrc文件：<code>vim gem5/.hg/hgrc</code>,将以下文件内容拷贝到里面，修改username,style等信息，style是你gem5文件里的style.其实我觉得<code>[email]</code>中的内容其实作用不大，但是看了好多其他的都差不多是这样我自己就只修改了style和username。<br>信息的修改只是一种标识，不影响编译和使用，最重要的是<code>[extensions] hgext.mq =</code>   扩充hg命令.</li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line">[ui]</div><div class="line"># Set the username you will commit code with</div><div class="line">username=Your Name &lt;your@email.address&gt;</div><div class="line">ssh = ssh -C</div><div class="line"># Always use git diffs since they contain permission changes and rename info</div><div class="line">[defaults]</div><div class="line">qrefresh = --git</div><div class="line">email = --git</div><div class="line">diff = --git</div><div class="line">[extensions]</div><div class="line"># These are various extensions we find useful</div><div class="line"># Mercurial Queues -- allows managing of changes as a series of patches</div><div class="line">hgext.mq =</div><div class="line"># PatchBomb -- send a series of changesets as e-mailed patches</div><div class="line">hgext.patchbomb =</div><div class="line"># External Diff tool (e.g. kdiff3, meld, vimdiff, etc)</div><div class="line">hgext.extdiff =</div><div class="line"># Fetch allows for a pull/update operation to be done with one command and automatically commits a merge changeset</div><div class="line">hgext.fetch =</div><div class="line"># Path to the style file for the M5 repository</div><div class="line"># This file enforces our coding style requirements</div><div class="line">style = /path/to/your/gem5/util/style.py</div><div class="line">[email]</div><div class="line">method = smtp</div><div class="line">from = Your Name &lt;your@email.address&gt;</div><div class="line">[smtp]</div><div class="line">host = your.smtp.server.here</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">[ui]</span><br><span class="line"># Set the username you will commit code with</span><br><span class="line">username&#x3D;Your Name &lt;your@email.address&gt;</span><br><span class="line">ssh &#x3D; ssh -C</span><br><span class="line"># Always use git diffs since they contain permission changes and rename info</span><br><span class="line">[defaults]</span><br><span class="line">qrefresh &#x3D; --git</span><br><span class="line">email &#x3D; --git</span><br><span class="line">diff &#x3D; --git</span><br><span class="line">[extensions]</span><br><span class="line"># These are various extensions we find useful</span><br><span class="line"># Mercurial Queues -- allows managing of changes as a series of patches</span><br><span class="line">hgext.mq &#x3D;</span><br><span class="line"># PatchBomb -- send a series of changesets as e-mailed patches</span><br><span class="line">hgext.patchbomb &#x3D;</span><br><span class="line"># External Diff tool (e.g. kdiff3, meld, vimdiff, etc)</span><br><span class="line">hgext.extdiff &#x3D;</span><br><span class="line"># Fetch allows for a pull&#x2F;update operation to be done with one command and automatically commits a merge changeset</span><br><span class="line">hgext.fetch &#x3D;</span><br><span class="line"># Path to the style file for the M5 repository</span><br><span class="line"># This file enforces our coding style requirements</span><br><span class="line">style &#x3D; &#x2F;path&#x2F;to&#x2F;your&#x2F;gem5&#x2F;util&#x2F;style.py</span><br><span class="line">[email]</span><br><span class="line">method &#x3D; smtp</span><br><span class="line">from &#x3D; Your Name &lt;your@email.address&gt;</span><br><span class="line">[smtp]</span><br><span class="line">host &#x3D; your.smtp.server.here</span><br></pre></td></tr></table></figure>
+
 <p><strong>3.获取NVMain</strong></p>
 <ul>
-<li>注册bitbucket帐号<br><a href="https://bitbucket.org/account/signup/" target="_blank" rel="external">https://bitbucket.org/account/signup/</a></li>
-<li><p>获取NVMain使用权<br>打开<a href="https://bitbucket.org/mrp5060/nvmain/并登陆bitbucket账号，登陆后重新打开前面这个网站获取下载命令" target="_blank" rel="external">https://bitbucket.org/mrp5060/nvmain/并登陆bitbucket账号，登陆后重新打开前面这个网站获取下载命令</a> </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git clone https://your account@bitbucket.org/xxx</div></pre></td></tr></table></figure>
+<li><p>注册bitbucket帐号<br><a href="https://bitbucket.org/account/signup/" target="_blank" rel="noopener">https://bitbucket.org/account/signup/</a></p>
 </li>
-<li><p><a href="https://bitbucket.org/mrp5060/nvmain/downloads/" target="_blank" rel="external">或者点击下载nvmain（无需注册）</a></p>
+<li><p>获取NVMain使用权<br>打开<a href="https://bitbucket.org/mrp5060/nvmain/并登陆bitbucket账号，登陆后重新打开前面这个网站获取下载命令" target="_blank" rel="noopener">https://bitbucket.org/mrp5060/nvmain/并登陆bitbucket账号，登陆后重新打开前面这个网站获取下载命令</a> </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone https:&#x2F;&#x2F;your account@bitbucket.org&#x2F;xxx</span><br></pre></td></tr></table></figure></li>
+<li><p><a href="https://bitbucket.org/mrp5060/nvmain/downloads/" target="_blank" rel="noopener">或者点击下载nvmain（无需注册）</a></p>
 </li>
 <li><p>nvmain文件位置随意，我放在了gem5根目录下，如果放的位置不同，后面编译时注意相对位置</p>
 <p>4.<strong>安装NVMain补丁</strong></p>
 </li>
-<li>进入gem5根目录</li>
-<li><p>初始化补丁目录</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">hg init</div><div class="line">hg qinit</div></pre></td></tr></table></figure>
+<li><p>进入gem5根目录</p>
 </li>
+<li><p>初始化补丁目录</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hg init</span><br><span class="line">hg qinit</span><br></pre></td></tr></table></figure></li>
 <li><p>输入补丁 (注意nvmain文件位置，以及补丁的版本号)</p>
 </li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hg qimport -f ./nvmain/patches/gem5/nvmain2-gem5-11688+</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hg qimport -f .&#x2F;nvmain&#x2F;patches&#x2F;gem5&#x2F;nvmain2-gem5-11688+</span><br></pre></td></tr></table></figure>
 <ol>
-<li><p>安装补丁</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hg qpush</div></pre></td></tr></table></figure>
-</li>
-<li><p>如果打补丁出错,检查gem5的版本，检查nvmain中补丁的版本</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">//版本不对，更新gem5</div><div class="line">hg update 11688</div><div class="line">//检查补丁是否打上</div><div class="line">hg qapplied</div></pre></td></tr></table></figure>
-</li>
+<li>安装补丁<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hg qpush</span><br></pre></td></tr></table></figure></li>
+<li>如果打补丁出错,检查gem5的版本，检查nvmain中补丁的版本<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F;版本不对，更新gem5</span><br><span class="line">hg update 11688</span><br><span class="line">&#x2F;&#x2F;检查补丁是否打上</span><br><span class="line">hg qapplied</span><br></pre></td></tr></table></figure>
+5.<strong>联合编译gem5和nvmain</strong><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">scons EXTRAS&#x3D;nvmain .&#x2F;build&#x2F;X86&#x2F;gem5.opt</span><br></pre></td></tr></table></figure>
+<img src="https://img-blog.csdnimg.cn/20190420184756987.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3d3d19pbmRvd3M=,size_16,color_FFFFFF,t_70" alt="scons done"><br><strong>在这一步中容易出现各种错误</strong></li>
 </ol>
-<p>5.<strong>联合编译gem5和nvmain</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">scons EXTRAS=nvmain ./build/X86/gem5.opt</div></pre></td></tr></table></figure></p>
-<p><img src="https://img-blog.csdnimg.cn/20190420184756987.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3d3d19pbmRvd3M=,size_16,color_FFFFFF,t_70" alt="scons done"><br><strong>在这一步中容易出现各种错误</strong></p>
-<p> <strong>1. ImportError: No module named gem5_scons:</strong><br> <img src="https://img-blog.csdnimg.cn/20190420190508767.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3d3d19pbmRvd3M=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>查看gem5目录中是否存在gem5_scons文件夹，如果没有则在site_scons中将gem5_scons移到gem5根目录下<br><img src="https://img-blog.csdnimg.cn/20190420190758359.png" alt="在这里插入图片描述"><br> <strong>2. [-Werror=implicit-fallthrough=]</strong><br> 这个问题困扰了我好久，百度了好久终于发现问题<br> 如果gcc版本号为7，那么源代码的switch-case块中如果忘了加上break，有可能会报错Implicit fallthrough error。<br> <strong>解决办法：编译时忽略Implicit fallthrough error这个错误</strong><br><strong>修改 gem5中的SConstruct</strong><br>在<strong>CCFLAGS</strong>中添加 <strong>-Wno-implicit-fallthrough</strong> 即可忽略该错误<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">main.Append(CCFLAGS=[&apos;-Wall&apos;, &apos;-Wundef&apos;, &apos;-Wextra&apos;,</div><div class="line">                       &apos;-Wno-sign-compare&apos;, &apos;-Wno-unused-parameter&apos;,&apos;-Wno-implicit-fallthrough&apos;])</div></pre></td></tr></table></figure></p>
+<p> <strong>1. ImportError: No module named gem5_scons:</strong><br> <img src="https://img-blog.csdnimg.cn/20190420190508767.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3d3d19pbmRvd3M=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>查看gem5目录中是否存在gem5_scons文件夹，如果没有则在site_scons中将gem5_scons移到gem5根目录下<br><img src="https://img-blog.csdnimg.cn/20190420190758359.png" alt="在这里插入图片描述"><br> <strong>2. [-Werror=implicit-fallthrough=]</strong><br> 这个问题困扰了我好久，百度了好久终于发现问题<br> 如果gcc版本号为7，那么源代码的switch-case块中如果忘了加上break，有可能会报错Implicit fallthrough error。<br> <strong>解决办法：编译时忽略Implicit fallthrough error这个错误</strong><br><strong>修改 gem5中的SConstruct</strong><br>在<strong>CCFLAGS</strong>中添加 <strong>-Wno-implicit-fallthrough</strong> 即可忽略该错误</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">main.Append(CCFLAGS&#x3D;[&#39;-Wall&#39;, &#39;-Wundef&#39;, &#39;-Wextra&#39;,</span><br><span class="line">                       &#39;-Wno-sign-compare&#39;, &#39;-Wno-unused-parameter&#39;,&#39;-Wno-implicit-fallthrough&#39;])</span><br></pre></td></tr></table></figure>
 <p> <strong>3. [-Werror]相关类似错误</strong><br> 均可按照上面的方法，忽略gcc-7版本的问题导致的错误</p>
 <p>6.<strong>测试</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">./build/X86/gem5.opt ./configs/example/se.py -c ./tests/test-progs/hello/bin/x86/linux/hello</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">.&#x2F;build&#x2F;X86&#x2F;gem5.opt .&#x2F;configs&#x2F;example&#x2F;se.py -c .&#x2F;tests&#x2F;test-progs&#x2F;hello&#x2F;bin&#x2F;x86&#x2F;linux&#x2F;hello</span><br></pre></td></tr></table></figure>
 <p><img src="https://img-blog.csdnimg.cn/20190420194540619.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3d3d19pbmRvd3M=,size_16,color_FFFFFF,t_70" alt="hello world"><br>如果遇到和我一样的错误的，希望对你有帮助，么么哒</p>
 
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="wentianhao.github.io/2020/01/13/gem5/" data-id="ck5ca2wmn0003bc5hoxgntnnq" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/gem5/">gem5</a></li></ul>
 
-    </footer>
-  </div>
   
-    
-<nav id="article-nav">
-  
-    <a href="/2020/01/13/Benchmark/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          Ｂenchmark
-        
+    <div class="post-reward">
+    <div id="reward-button">打赏</div>
+      <div id="qr">
+        <div class="wrap">
+            
+            <div class="bg-wrap">
+              <a href="/images/zhifubao.png" target="_block" class="bg" style="background-image:url('/images/zhifubao.png')"></a>
+              支付宝
+            </div>
+            
+            
+            <div class="bg-wrap">
+                <a href="/images/weixin.png" target="_block" class="bg" style="background-image:url('/images/weixin.png')"></a>
+              微信
+            </div>
+            
+        </div>
       </div>
-    </a>
+    </div>
   
-  
-    <a href="/2020/01/04/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">Hello World</div>
-    </a>
-  
-</nav>
+  <div class="post-guide">
+    <div class="item left">
+        
+          <a href="/2020/01/13/Benchmark/">Ｂenchmark</a>
+        
+    </div>
+    <div class="item right">
+        
+          <a href="/2020/01/04/hello-world/">Hello World</a>
+        
+    </div>
+  </div>
 
+  
+
+  <div class="post-copyright">
+    <div class="auth">
+      本文作者：<a href="/wentianhao.github.io">wentianhao</a>
+    </div>
+    <div class="link">
+      永久链接：<a href="/wentianhao.github.io/2020/01/13/gem5/">/wentianhao.github.io/2020/01/13/gem5/</a>
+    </div>
+    <div class="declare">
+      版权声明：本文首发于<a href="/wentianhao.github.io">wentianhao</a>的博客，转载请注明出处！
+    </div>
+  </div>
+
+  <div id="comment"></div>
+
+  
   
 </article>
-
-</section>
-        
-          <aside id="sidebar">
-  
-    
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Tags</h3>
-    <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/gem5/">gem5</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/nvmain/">nvmain</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/parsec-2-1/">parsec-2.1</a></li></ul>
-    </div>
-  </div>
-
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Tag Cloud</h3>
-    <div class="widget tagcloud">
-      <a href="/tags/gem5/" style="font-size: 20px;">gem5</a> <a href="/tags/nvmain/" style="font-size: 10px;">nvmain</a> <a href="/tags/parsec-2-1/" style="font-size: 10px;">parsec-2.1</a>
-    </div>
-  </div>
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Archives</h3>
-    <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/01/">January 2020</a></li></ul>
-    </div>
-  </div>
-
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Recent Posts</h3>
-    <div class="widget">
-      <ul>
-        
-          <li>
-            <a href="/2020/01/13/Benchmark/">Ｂenchmark</a>
-          </li>
-        
-          <li>
-            <a href="/2020/01/13/gem5/">gem5的安装与使用</a>
-          </li>
-        
-          <li>
-            <a href="/2020/01/04/hello-world/">Hello World</a>
-          </li>
-        
-      </ul>
-    </div>
-  </div>
-
-  
-</aside>
-        
+        <footer>
+          <div class="copyright">
+            ©2020
+            <a href="wentianhao.github.io">wentianhao</a> Powered by <a href="https://hexo.io" target="_blank" rel="noopener">Hexo</a> |
+            <a href="https://github.com/shixiaohu2206/hexo-theme-huhu" target="_blank" rel="noopener">hexo-theme-huhu</a>
+          </div>
+          
+        </footer>
       </div>
-      <footer id="footer">
-  
-  <div class="outer">
-    <div id="footer-info" class="inner">
-      &copy; 2020 wentianhao<br>
-      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
     </div>
-  </div>
-</footer>
-    </div>
-    <nav id="mobile-nav">
+  </body>
   
-    <a href="/" class="mobile-nav-link">Home</a>
-  
-    <a href="/archives" class="mobile-nav-link">Archives</a>
-  
-</nav>
-    
-
-<script src="/js/jquery.min.js"></script>
-
-
-  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
-  <script src="/fancybox/jquery.fancybox.pack.js"></script>
-
-
-<script src="/js/script.js"></script>
-
-  </div>
-</body>
 </html>
+<script type="text/javascript">
+                  window.HUHU_CONFIG = JSON.parse("{\"share\":[\"weibo\",\"weixin\",\"qqkongjian\",\"QQ\",\"douban\",\"facebook\",\"twitter\",\"google\"],\"service_worker\":{\"open\":false},\"baidu_tongji\":{\"site_from\":\"2020/1/14\",\"site_id\":\"\",\"access_token\":\"\"}}")
+                </script> <script type="text/javascript">window.addEventListener('load', function() {
+    
+    window.loadJs = function(d, m, a) {
+      var c = document.getElementsByTagName('head')[0] || document.head || document.documentElement
+      var b = document.createElement('script')
+      b.defer = true
+      b.setAttribute('type', 'text/javascript')
+      b.setAttribute('charset', 'UTF-8')
+      b.setAttribute('async', 'true')
+      b.setAttribute('src', d)
+      m && b.setAttribute('data-main', '/scripts/app-built')
+      if (typeof a === 'function') {
+        if (window.attachEvent) {
+          b.onreadystatechange = function() {
+            var e = b.readyState
+            if (e === 'loaded' || e === 'complete') {
+              b.onreadystatechange = null
+              a()
+            }
+          }
+        } else {
+          b.onload = a
+        }
+      }
+      c.appendChild(b)
+    }
+    window.loadJs && window.loadJs('https://cdn.bootcss.com/require.js/2.3.6/require.min.js', true, function() {require.config({"paths":{"util":"util","share":"share","search":"search","pagemap":"pagemap.min","registerSW":"registerSW","valine":"cdn/Valine.min","av":["https://cdn.jsdelivr.net/npm/leancloud-storage/dist/av-min"],"pjax":["https://cdn.bootcss.com/jquery.pjax/2.0.1/jquery.pjax.min"],"jquery":["https://cdn.bootcss.com/jquery/3.4.1/jquery.min"],"confirm":["https://cdn.bootcss.com/jquery-confirm/3.3.4/jquery-confirm.min"],"fancybox":["https://cdn.bootcss.com/fancybox/3.5.7/jquery.fancybox.min"],"chart":["https://cdn.bootcss.com/Chart.js/2.8.0-rc.1/Chart.bundle.min"]},"map":{"*":{"css":"https://cdn.bootcss.com/require-css/0.1.10/css.min.js"}},"shim":{"fancybox":{"deps":["css!https://cdn.bootcss.com/fancybox/3.5.7/jquery.fancybox.min.css"]},"confirm":{"deps":["css!https://cdn.bootcss.com/jquery-confirm/3.3.4/jquery-confirm.min.css"]},"chart":{"deps":["css!https://cdn.bootcss.com/Chart.js/2.8.0-rc.1/Chart.min.css"]}},"waitSeconds":3})})
+  })</script> <script type="text/javascript">
+                  ;(function() {
+                    var bp = document.createElement('script')
+                    var curProtocol = window.location.protocol.split(':')[0]
+                    if (curProtocol === 'https') {
+                      bp.src = 'https://zz.bdstatic.com/linksubmit/push.js'
+                    } else {
+                      bp.src = 'http://push.zhanzhang.baidu.com/push.js'
+                    }
+                    var s = document.getElementsByTagName('script')[0]
+                    s.parentNode.insertBefore(bp, s)
+                  })()
+                </script> 

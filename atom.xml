@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="wentianhao.github.io/"/>
-  <updated>2020-01-14T02:21:49.741Z</updated>
+  <updated>2020-01-14T02:50:16.092Z</updated>
   <id>wentianhao.github.io/</id>
   
   <author>
@@ -17,17 +17,17 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>Ｂenchmark</title>
+    <title>gem5与nvmain混合编译（二）———配置和运行ｐａｒｓｅｃ-2.1</title>
     <link href="wentianhao.github.io/2020/01/13/Benchmark/"/>
     <id>wentianhao.github.io/2020/01/13/Benchmark/</id>
     <published>2020-01-13T02:47:24.000Z</published>
-    <updated>2020-01-14T02:21:49.741Z</updated>
+    <updated>2020-01-14T02:50:16.092Z</updated>
     
     <summary type="html">
     
       
       
-        &lt;h2 id=&quot;参考资料：&quot;&gt;&lt;a href=&quot;#参考资料：&quot; class=&quot;headerlink&quot; title=&quot;参考资料：&quot;&gt;&lt;/a&gt;&lt;strong&gt;参考资料：&lt;/strong&gt;&lt;/h2&gt;&lt;p&gt;&lt;a href=&quot;http://www.gem5.org/PARSEC_bench
+        &lt;html&gt;&lt;head&gt;&lt;/head&gt;&lt;body&gt;&lt;h2 id=&quot;参考资料：&quot;&gt;&lt;strong&gt;参考资料：&lt;/strong&gt;&lt;a class=&quot;post-anchor&quot; href=&quot;#参考资料：&quot;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;&lt;a href=&quot;http://www.gem5.org/
       
     
     </summary>

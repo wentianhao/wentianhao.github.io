@@ -16,7 +16,7 @@
     <meta name="description" content="hahahahahahahahha" />
     
     <title>
-      Ｂenchmark - wenhaohao
+      gem5与nvmain混合编译（二）———配置和运行ｐａｒｓｅｃ-2.1 - wenhaohao
     </title>
     <link rel="manifest" href="/manifest.json" />
     <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon" />
@@ -172,7 +172,7 @@
         <article class="post-entry">
     <div class="header">
       
-      <div class="title">Ｂenchmark</div>
+      <div class="title">gem5与nvmain混合编译（二）———配置和运行ｐａｒｓｅｃ-2.1</div>
       <div class="meta">
         <span class="item">
           <span class="iconfont icon-time-circle"></span>
@@ -207,66 +207,66 @@
       <div>
       </div>
     </div>
-    <h2 id="参考资料："><a href="#参考资料：" class="headerlink" title="参考资料："></a><strong>参考资料：</strong></h2><p><a href="http://www.gem5.org/PARSEC_benchmarks" target="_blank" rel="noopener"><strong>官方资料</strong></a>：<a href="http://www.gem5.org/PARSEC_benchmarks" target="_blank" rel="noopener">http://www.gem5.org/PARSEC_benchmarks</a><br><a href="http://pfzuo.github.io/2016/06/06/Configure-and-run-parsec-2.1-benchmark-in-GEM5/" target="_blank" rel="noopener">http://pfzuo.github.io/2016/06/06/Configure-and-run-parsec-2.1-benchmark-in-GEM5/</a></p>
+    <html><head></head><body><h2 id="参考资料："><strong>参考资料：</strong><a class="post-anchor" href="#参考资料："></a></h2><p><a href="http://www.gem5.org/PARSEC_benchmarks" target="_blank" rel="noopener"><strong>官方资料</strong></a>：<a href="http://www.gem5.org/PARSEC_benchmarks" target="_blank" rel="noopener">http://www.gem5.org/PARSEC_benchmarks</a><br><a href="http://pfzuo.github.io/2016/06/06/Configure-and-run-parsec-2.1-benchmark-in-GEM5/" target="_blank" rel="noopener">http://pfzuo.github.io/2016/06/06/Configure-and-run-parsec-2.1-benchmark-in-GEM5/</a></p>
 <p>配置ＰＡＲＳＥＣ Ｂenchmark (以ＡＲＰＨＡ架构为例)</p>
 <ol>
-<li>在gem5目录下新建一个文件夹用来存储ＰＡＲＳＥＣ Ｂenchmark 的disk image<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mdkir fs_images</span><br><span class="line">cd fs_images</span><br></pre></td></tr></table></figure></li>
+<li>在gem5目录下新建一个文件夹用来存储ＰＡＲＳＥＣ Ｂenchmark 的disk image<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mdkir fs_images</span><br><span class="line">cd fs_images</span><br></pre></td></tr></tbody></table></figure></li>
 <li>下载初始的系统文件</li>
 </ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">wget http:&#x2F;&#x2F;www.m5sim.org&#x2F;dist&#x2F;current&#x2F;m5_system_2.0b3.tar.bz2</span><br><span class="line">tar jxvf m5_system_2.0b3.tar.bz2</span><br><span class="line">mv m5_system_2.0b3 system</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">wget http://www.m5sim.org/dist/current/m5_system_2.0b3.tar.bz2</span><br><span class="line">tar jxvf m5_system_2.0b3.tar.bz2</span><br><span class="line">mv m5_system_2.0b3 system</span><br></pre></td></tr></tbody></table></figure>
 <p>解压后，文件目录结构：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">system&#x2F;</span><br><span class="line">    binaries&#x2F;</span><br><span class="line">          console</span><br><span class="line">          ts_osfpal</span><br><span class="line">          vmlinux</span><br><span class="line">    disks&#x2F;</span><br><span class="line">          linux-bigswap2.img</span><br><span class="line">          linux-latest.img</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">system/</span><br><span class="line">    binaries/</span><br><span class="line">          console</span><br><span class="line">          ts_osfpal</span><br><span class="line">          vmlinux</span><br><span class="line">    disks/</span><br><span class="line">          linux-bigswap2.img</span><br><span class="line">          linux-latest.img</span><br></pre></td></tr></tbody></table></figure>
 <ol start="3">
 <li>下载ＰＡＲＳＥＣ Benchmark相关文件，并替换掉system 文件夹中的对应文件</li>
 </ol>
 <ul>
 <li><p>下载ＰＡＲＥＳＣ对应的linux kernel文件，替换 <code>system/binaries/vmlinux</code></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">cd .&#x2F;system&#x2F;binaries&#x2F;</span><br><span class="line">wget http:&#x2F;&#x2F;www.cs.utexas.edu&#x2F;~parsec_m5&#x2F;vmlinux_2.6.27-gcc_4.3.4</span><br><span class="line">rm vmlinux</span><br><span class="line">mv vmlinux_2.6.27-gcc_4.3.4 vmlinux</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">cd ./system/binaries/</span><br><span class="line">wget http://www.cs.utexas.edu/~parsec_m5/vmlinux_2.6.27-gcc_4.3.4</span><br><span class="line">rm vmlinux</span><br><span class="line">mv vmlinux_2.6.27-gcc_4.3.4 vmlinux</span><br></pre></td></tr></tbody></table></figure>
 </li>
 <li><p>下载对应的ＰＡＬ code文件，替换<code>system/binaries/ts_osfpal</code></p>
 </li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">wget http:&#x2F;&#x2F;www.cs.utexas.edu&#x2F;~parsec_m5&#x2F;tsb_osfpal</span><br><span class="line">rm ts_osfpal</span><br><span class="line">mv tsb_osfpal ts_osfpal</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">wget http://www.cs.utexas.edu/~parsec_m5/tsb_osfpal</span><br><span class="line">rm ts_osfpal</span><br><span class="line">mv tsb_osfpal ts_osfpal</span><br></pre></td></tr></tbody></table></figure>
 <ul>
 <li>下载ＰＡＲＳＥＣ-2.1 Ｄisk Image 并解压</li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">cd ..&#x2F;disks&#x2F;</span><br><span class="line">wget http:&#x2F;&#x2F;www.cs.utexas.edu&#x2F;~parsec_m5&#x2F;linux-parsec-2-1-m5-with-test-inputs.img.bz2</span><br><span class="line">bzip2 -b linux-parsec-2-1-m5-with-test-inputs.img.bz2</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">cd ../disks/</span><br><span class="line">wget http://www.cs.utexas.edu/~parsec_m5/linux-parsec-2-1-m5-with-test-inputs.img.bz2</span><br><span class="line">bzip2 -b linux-parsec-2-1-m5-with-test-inputs.img.bz2</span><br></pre></td></tr></tbody></table></figure>
 
 <ol start="4">
 <li>进入gem5文件夹，修改两个文件（SysPaths.py 和 Benckmarks.py）配置parsec的路径和文件名</li>
 </ol>
 <p>打开SysPaths.py配置parsec disk image的完整路径：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim .&#x2F;configs&#x2F;common&#x2F;SysPaths.py</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim ./configs/common/SysPaths.py</span><br></pre></td></tr></tbody></table></figure>
 <p>修改前：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">path &#x3D; [ ’&#x2F;dist&#x2F;m5&#x2F;system’, ’&#x2F;n&#x2F;poolfs&#x2F;z&#x2F;dist&#x2F;m5&#x2F;system’ ]</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">path = [ ’/dist/m5/system’, ’/n/poolfs/z/dist/m5/system’ ]</span><br></pre></td></tr></tbody></table></figure>
 <p>修改后：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">path &#x3D; [ ’&#x2F;dist&#x2F;m5&#x2F;system’, ’&#x2F;path&#x2F;to&#x2F;gem5&#x2F;fs_images&#x2F;system’ ]</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">path = [ ’/dist/m5/system’, ’/path/to/gem5/fs_images/system’ ]</span><br></pre></td></tr></tbody></table></figure>
 <p>打开Benchmarks.py，修改image文件名：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim .&#x2F;configs&#x2F;common&#x2F;Benchmarks.py</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim ./configs/common/Benchmarks.py</span><br></pre></td></tr></tbody></table></figure>
 <p>修改前：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">elif buildEnv[&#39;TARGET_ISA&#39;] &#x3D;&#x3D; &#39;alpha&#39;:</span><br><span class="line">    return env.get(&#39;LINUX_IMAGE&#39;, disk(&#39;linux-latest.img&#39;))</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">elif buildEnv['TARGET_ISA'] == 'alpha':</span><br><span class="line">    return env.get('LINUX_IMAGE', disk('linux-latest.img'))</span><br></pre></td></tr></tbody></table></figure>
 <p>修改后：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">elif buildEnv[&#39;TARGET_ISA&#39;] &#x3D;&#x3D; &#39;alpha&#39;:</span><br><span class="line">     return env.get(&#39;LINUX_IMAGE&#39;, disk(&#39;linux-parsec-2-1-m5-with-test-inputs.img&#39;))</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">elif buildEnv['TARGET_ISA'] == 'alpha':</span><br><span class="line">     return env.get('LINUX_IMAGE', disk('linux-parsec-2-1-m5-with-test-inputs.img'))</span><br></pre></td></tr></tbody></table></figure>
 
 <ol start="5">
-<li>生成benchmark的script文件，用于运行benchmark<br>下载PARSEC script生成包，并解压到gem5目录下即可：<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">wget http:&#x2F;&#x2F;www.cs.utexas.edu&#x2F;~parsec_m5&#x2F;TR-09-32-parsec-2.1-alpha-files.tar.gz</span><br><span class="line">tar zxvf TR-09-32-parsec-2.1-alpha-files.tar.gz</span><br></pre></td></tr></table></figure>
+<li>生成benchmark的script文件，用于运行benchmark<br>下载PARSEC script生成包，并解压到gem5目录下即可：<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">wget http://www.cs.utexas.edu/~parsec_m5/TR-09-32-parsec-2.1-alpha-files.tar.gz</span><br><span class="line">tar zxvf TR-09-32-parsec-2.1-alpha-files.tar.gz</span><br></pre></td></tr></tbody></table></figure>
 生成script命令：</li>
 </ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">.&#x2F;writescripts.pl &lt;benchmark&gt; &lt;nthreads&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./writescripts.pl <benchmark> <nthreads></span><br></pre></td></tr></tbody></table></figure>
 <p>ＰＡＲＳＥＣ 有13 种Ｂenchmark:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">blackscholes</span><br><span class="line">bodytrack</span><br><span class="line">canneal</span><br><span class="line">dedup</span><br><span class="line">facesim</span><br><span class="line">ferret</span><br><span class="line">fluidanimate</span><br><span class="line">freqmine</span><br><span class="line">streamcluster</span><br><span class="line">swaptions</span><br><span class="line">vips</span><br><span class="line">x264</span><br><span class="line">rtview</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">blackscholes</span><br><span class="line">bodytrack</span><br><span class="line">canneal</span><br><span class="line">dedup</span><br><span class="line">facesim</span><br><span class="line">ferret</span><br><span class="line">fluidanimate</span><br><span class="line">freqmine</span><br><span class="line">streamcluster</span><br><span class="line">swaptions</span><br><span class="line">vips</span><br><span class="line">x264</span><br><span class="line">rtview</span><br></pre></td></tr></tbody></table></figure>
 <p>例如生成x264 script命令</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd TR-09-32-parsec-2.1-alpha-files&#x2F;</span><br><span class="line">.&#x2F;writescripts.pl x264 1</span><br></pre></td></tr></table></figure>
-<p><img src="https://img-blog.csdnimg.cn/20190519103138529.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3d3d19pbmRvd3M=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br> 6. 根据生成的script文件运行gem5 </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">.&#x2F;build&#x2F;ALPHA&#x2F;gem5.opt .&#x2F;configs&#x2F;example&#x2F;fs.py -n &lt;number&gt; --script&#x3D;.&#x2F;path&#x2F;to&#x2F;runScript.rcS --caches --l2cache</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd TR-09-32-parsec-2.1-alpha-files/</span><br><span class="line">./writescripts.pl x264 1</span><br></pre></td></tr></tbody></table></figure>
+<p><a href="https://img-blog.csdnimg.cn/20190519103138529.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3d3d19pbmRvd3M=,size_16,color_FFFFFF,t_70" target="_blank" rel="noopener" data-caption="在这里插入图片描述" data-fancybox="images"><img src="https://img-blog.csdnimg.cn/20190519103138529.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3d3d19pbmRvd3M=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></a><br> 6. 根据生成的script文件运行gem5 </p>
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./build/ALPHA/gem5.opt ./configs/example/fs.py -n <number> --script=./path/to/runScript.rcS --caches --l2cache</span><br></pre></td></tr></tbody></table></figure>
 <ol start="7">
 <li>新开一个终端，使用telnet 与gem5模拟系统进行交互</li>
 </ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">telnet localhost 3456</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">telnet localhost 3456</span><br></pre></td></tr></tbody></table></figure>
 <p>如果使用这种方式连接发生意外中断，推荐使用以下交互方式<br> 使用m5term</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">cd gem5&#x2F;util&#x2F;term&#x2F;</span><br><span class="line">make</span><br><span class="line">sudo make install</span><br><span class="line">sudo .&#x2F;m5term 127.0.0.1 3456</span><br></pre></td></tr></table></figure>
-<p><img src="https://img-blog.csdnimg.cn/20190519104051256.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3d3d19pbmRvd3M=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
-
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">cd gem5/util/term/</span><br><span class="line">make</span><br><span class="line">sudo make install</span><br><span class="line">sudo ./m5term 127.0.0.1 3456</span><br></pre></td></tr></tbody></table></figure>
+<p><a href="https://img-blog.csdnimg.cn/20190519104051256.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3d3d19pbmRvd3M=,size_16,color_FFFFFF,t_70" target="_blank" rel="noopener" data-caption="在这里插入图片描述" data-fancybox="images"><img src="https://img-blog.csdnimg.cn/20190519104051256.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3d3d19pbmRvd3M=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></a></p>
+</body></html>
 
   
     <div class="post-reward">

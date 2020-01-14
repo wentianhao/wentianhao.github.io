@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="wentianhao.github.io/"/>
-  <updated>2020-01-14T05:51:23.051Z</updated>
+  <updated>2020-01-14T06:05:10.463Z</updated>
   <id>wentianhao.github.io/</id>
   
   <author>
@@ -17,11 +17,11 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>springcloud2</title>
+    <title>spring cloud mybaits 微服务增删改查(二)</title>
     <link href="wentianhao.github.io/2020/01/14/springcloud2/"/>
     <id>wentianhao.github.io/2020/01/14/springcloud2/</id>
     <published>2020-01-14T05:51:02.154Z</published>
-    <updated>2020-01-14T05:51:23.051Z</updated>
+    <updated>2020-01-14T06:05:10.463Z</updated>
     
     <summary type="html">
     
@@ -34,14 +34,18 @@
     
     
     
+      <category term="spring cloud" scheme="wentianhao.github.io/tags/spring-cloud/"/>
+    
+      <category term="mybatis" scheme="wentianhao.github.io/tags/mybatis/"/>
+    
   </entry>
   
   <entry>
-    <title>springcloud1</title>
+    <title>spring cloud mybaits 微服务增删改查(一)</title>
     <link href="wentianhao.github.io/2020/01/14/springcloud1/"/>
     <id>wentianhao.github.io/2020/01/14/springcloud1/</id>
     <published>2020-01-14T05:50:09.119Z</published>
-    <updated>2020-01-14T05:50:49.046Z</updated>
+    <updated>2020-01-14T05:54:21.512Z</updated>
     
     <summary type="html">
     
@@ -53,6 +57,10 @@
     </summary>
     
     
+    
+      <category term="spring cloud" scheme="wentianhao.github.io/tags/spring-cloud/"/>
+    
+      <category term="mybatis" scheme="wentianhao.github.io/tags/mybatis/"/>
     
   </entry>
   

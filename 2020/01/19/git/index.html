@@ -16,7 +16,7 @@
     <meta name="description" content="欢迎" />
     
     <title>
-      Archives - wentianhao
+      git学习过程 - wentianhao
     </title>
     <link rel="manifest" href="/manifest.json" />
     <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon" />
@@ -61,7 +61,7 @@
           Home
         </a>
         
-        <a href="/archives" class="current">
+        <a href="/archives" class="">
           Archives
         </a>
         
@@ -115,7 +115,7 @@
             Home
           </a>
           
-          <a href="/archives" class="current">
+          <a href="/archives" class="">
             Archives
           </a>
           
@@ -160,88 +160,102 @@
     </div>
     <div id="container">
       <div class="main animated bounceInRight delay-0.7s">
-        <div id="archives">
-    
-        <div class="title">
-            Archives 
-            
-        </div>
-    
-
-
-
-
-    
-    
-    <section class="wrap">
-        <div class="meta">
-            <a href="/archives/2020" >
-                2020
-            </a>
-        </div>
-        <div class="year">
-            
-            <article class="item">
-            <a href="/2020/01/19/git/" title="git学习过程">
-                <span>2020/01/19</span>
-                <span>git学习过程</span>
-            </a>
-            </article>
-            
-
-
-            <article class="item">
-            <a href="/2020/01/14/springcloud2/" title="spring cloud mybaits 微服务增删改查(二)">
-                <span>2020/01/14</span>
-                <span>spring cloud mybaits 微服务增删改查(二)</span>
-            </a>
-            </article>
-            
-
-
-            <article class="item">
-            <a href="/2020/01/14/springcloud1/" title="spring cloud mybaits 微服务增删改查(一)">
-                <span>2020/01/14</span>
-                <span>spring cloud mybaits 微服务增删改查(一)</span>
-            </a>
-            </article>
-            
-
-
-            <article class="item">
-            <a href="/2020/01/13/Benchmark/" title="gem5与nvmain混合编译（二）———配置和运行ｐａｒｓｅｃ-2.1">
-                <span>2020/01/13</span>
-                <span>gem5与nvmain混合编译（二）———配置和运行ｐａｒｓｅｃ-2.1</span>
-            </a>
-            </article>
-            
-
-
-            <article class="item">
-            <a href="/2020/01/13/gem5/" title="gem5的安装与使用">
-                <span>2020/01/13</span>
-                <span>gem5的安装与使用</span>
-            </a>
-            </article>
-            
-
-
-            <article class="item">
-            <a href="/2020/01/12/hello-world/" title="Hexo搭建个人博客">
-                <span>2020/01/12</span>
-                <span>Hexo搭建个人博客</span>
-            </a>
-            </article>
-            
-    
-        </div>
-    </section>
+        <article class="post-entry">
+    <div class="header">
       
-<div class="paginator">
-    <span class="page-number current">1</span>
-</div>
-</div>
+      <div class="title">git学习过程</div>
+      <div class="meta">
+        <span class="item">
+          <span class="iconfont icon-time-circle"></span>
+          <span>2020/01/19</span>
+        </span>
 
+        
+
+         
+        <span class="item">
+          <span class="iconfont icon-folder"></span>
+          <span>
+              
+                
+                  <a href="/categories/git">git</a>
+                
+              
+          </span>
+        </span>
+        
+        
+         
+          <span class="item">
+            <span class="iconfont icon-tag1"></span>
+            <span>
+                
+                  
+                    <a href="/tags/git">git</a>
+                  
+                
+            </span>
+          </span>
+         
+      </div>
+      <div>
+      </div>
+    </div>
+    <html><head></head><body><figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">合并到master分支</span><br><span class="line"></span><br><span class="line">m commits behind master , n commits ahead </span><br><span class="line">m | n</span><br><span class="line"></span><br><span class="line">#### 先变成 m | 1</span><br><span class="line">1.git pull</span><br><span class="line">2.git reset --soft HEAD~n</span><br><span class="line">3.git status</span><br><span class="line">4.git commit -m ""</span><br><span class="line"></span><br><span class="line">git push -f</span><br><span class="line"></span><br><span class="line">#####再将m | 1 变为 0 | 1</span><br><span class="line">5.git checkout master</span><br><span class="line">6.git pull origin master</span><br><span class="line">7.git checkout wh</span><br><span class="line">8.git rebase master</span><br><span class="line">9.git push -f</span><br></pre></td></tr></tbody></table></figure>
+
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">git 回退打破上一次分支合并的merge</span><br><span class="line"></span><br><span class="line">1.找到上一次提交到master分支的版本号</span><br><span class="line">git log --pretty=oneline</span><br><span class="line"></span><br><span class="line">2.回退到指定版本</span><br><span class="line">git reset --hard [merge前的版本号]</span><br></pre></td></tr></tbody></table></figure></body></html>
+
+  
+    <div class="post-reward">
+    <div id="reward-button">打赏</div>
+      <div id="qr">
+        <div class="wrap">
+            
+            <div class="bg-wrap">
+              <a href="/images/zhifubao.png" target="_block" class="bg" style="background-image:url('/images/zhifubao.png')"></a>
+              支付宝
+            </div>
+            
+            
+            <div class="bg-wrap">
+                <a href="/images/weixin.png" target="_block" class="bg" style="background-image:url('/images/weixin.png')"></a>
+              微信
+            </div>
+            
+        </div>
+      </div>
+    </div>
+  
+  <div class="post-guide">
+    <div class="item left">
+        
+    </div>
+    <div class="item right">
+        
+          <a href="/2020/01/14/springcloud2/">spring cloud mybaits 微服务增删改查(二)</a>
+        
+    </div>
+  </div>
+
+  
+
+  <div class="post-copyright">
+    <div class="auth">
+      本文作者：<a href="/wentianhao.github.io">whh</a>
+    </div>
+    <div class="link">
+      永久链接：<a href="/wentianhao.github.io/2020/01/19/git/">/wentianhao.github.io/2020/01/19/git/</a>
+    </div>
+    <div class="declare">
+      版权声明：本文首发于<a href="/wentianhao.github.io">whh</a>的博客，转载请注明出处！
+    </div>
+  </div>
+
+  <div id="comment"></div>
+
+  
+  
+</article>
         <footer>
           <div class="copyright">
             ©2020

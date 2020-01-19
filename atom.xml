@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="wentianhao.github.io/"/>
-  <updated>2020-01-19T03:17:42.687Z</updated>
+  <updated>2020-01-19T07:51:02.420Z</updated>
   <id>wentianhao.github.io/</id>
   
   <author>
@@ -15,6 +15,25 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Notebook</title>
+    <link href="wentianhao.github.io/2020/01/19/Notebook/"/>
+    <id>wentianhao.github.io/2020/01/19/Notebook/</id>
+    <published>2020-01-19T07:46:26.000Z</published>
+    <updated>2020-01-19T07:51:02.420Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+    
+      <category term="云服务器" scheme="wentianhao.github.io/categories/%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8/"/>
+    
+    
+      <category term="jupyter notebook" scheme="wentianhao.github.io/tags/jupyter-notebook/"/>
+    
+  </entry>
   
   <entry>
     <title>git学习过程</title>

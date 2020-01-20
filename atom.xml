@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="wentianhao.github.io/"/>
-  <updated>2020-01-19T07:51:02.420Z</updated>
+  <updated>2020-01-20T04:48:03.077Z</updated>
   <id>wentianhao.github.io/</id>
   
   <author>
@@ -17,13 +17,20 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>Notebook</title>
+    <title>jupyter Notebook</title>
     <link href="wentianhao.github.io/2020/01/19/Notebook/"/>
     <id>wentianhao.github.io/2020/01/19/Notebook/</id>
     <published>2020-01-19T07:46:26.000Z</published>
-    <updated>2020-01-19T07:51:02.420Z</updated>
+    <updated>2020-01-20T04:48:03.077Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="什么是Jupyter-Notebook"><a href="#什么是Jupyter-Notebook" class="headerlink" title="什么是Jupyter Notebook?"></a>什么是Jupyter Notebook?</h1><p>Jupyter Notebook是一款开放源代码的web应用程序，可以让我们创建并共享代码和文档。</p><p>它提供了一个环境，你可以在其中记录代码，运行代码，查看结果，可视化数据并在查看输出结果。这些特性使其成为一款执行端到端数据科学工作流程的便捷工具 ，可以用于数据清理，统计建模，构建和训练机器学习模型，可视化数据以及许多其他用途。</p><h2 id="ubuntu安装Jupyter-Notebook"><a href="#ubuntu安装Jupyter-Notebook" class="headerlink" title="ubuntu安装Jupyter Notebook"></a>ubuntu安装Jupyter Notebook</h2><ul><li><p>安装Anaconda</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">mkdir anaconda #创建文件夹</span><br><span class="line"></span><br><span class="line">cd anaconda #进入文件夹</span><br><span class="line"></span><br><span class="line">wget https:&#x2F;&#x2F;repo.continuum.io&#x2F;archive&#x2F;Anaconda3-4.4.0-Linux-x86_64.sh #从指定地址下载文件</span><br><span class="line"></span><br><span class="line">bash Anaconda3-4.4.0-Linux-x86_64.sh #安装文件</span><br></pre></td></tr></table></figure><p>如果anaconda版本不够，可手动更新升级 (具体可百度)</p></li><li><p>通过anaconda安装jupyter及各种包</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">conda install jupyter</span><br><span class="line">conda update --all #升级所有包</span><br></pre></td></tr></table></figure></li><li><p>配置远程访问登录密码<br>1、在终端输入</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost]:~#ipython</span><br><span class="line">In [1]: from notebook.auth import passwd </span><br><span class="line">In [2]: passwd</span><br><span class="line">Enter password:</span><br><span class="line">Verify password:</span><br><span class="line">Out[2]: &#39;sha1:xxxxx&#39;</span><br><span class="line">In [3]: exit</span><br></pre></td></tr></table></figure><p>解释：这是在python中调用passwd()方法，输入密码输出hashcode编码</p></li></ul><p>2、保存刚刚的hashcode</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">jupyter notebook --generate-config --allow-root #生成配置文件</span><br><span class="line">vim ~&#x2F;.jupyter&#x2F;jupyter_notebook_config.py #打开配置文件</span><br></pre></td></tr></table></figure><p>如果没使用过vim的，可以学一下。</p><p>在配置文件中,加入:</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">c.NotebookApp.ip&#x3D;&#39;*&#39;</span><br><span class="line">c.NotebookApp.password &#x3D; u&#39;sha1:xxxxx&#39;</span><br><span class="line">c.NotebookApp.open_browser &#x3D; False</span><br><span class="line">c.NotebookApp.port &#x3D;8888</span><br></pre></td></tr></table></figure><p>:wq保存</p><p>【注意】：到目前为止jupyter就已经在服务器中安装配置好了，但是8888端口默认是关闭的，如果是阿里云服务器，需要在阿里云控制台开放8888端口</p><ul><li><p>最后输入 </p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ufw disable</span><br></pre></td></tr></table></figure><p>关闭防火墙</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">jupyter notebook --ip&#x3D;0.0.0.0 --allow-root #在服务器运行jupyter notebook</span><br></pre></td></tr></table></figure></li><li><p>浏览器输入<a href="http://xxx:8888" target="_blank" rel="noopener">http://xxx:8888</a> 即可登录</p></li><li><p>后台运行</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nohup jupyter notebook --ip&#x3D;0.0.0.0 --allow-root &gt; jupyter.log 2&gt;&amp;1 &amp;</span><br></pre></td></tr></table></figure><p>&amp;让命令后台运行，并输出到log中<br>nohup 表示 no hang up ，不挂起</p></li><li><p>终止进程</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ps -aux | grep jupyter #查看运行的jupyter进程</span><br><span class="line">kill -9 pid</span><br></pre></td></tr></table></figure></li></ul>]]></content>
     
     <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;什么是Jupyter-Notebook&quot;&gt;&lt;a href=&quot;#什么是Jupyter-Notebook&quot; class=&quot;headerlink&quot; title=&quot;什么是Jupyter Notebook?&quot;&gt;&lt;/a&gt;什么是Jupyter Notebook?&lt;/h1&gt;&lt;p&gt;
+      
     
     </summary>
     
@@ -40,17 +47,16 @@
     <link href="wentianhao.github.io/2020/01/19/git/"/>
     <id>wentianhao.github.io/2020/01/19/git/</id>
     <published>2020-01-19T03:04:42.000Z</published>
-    <updated>2020-01-19T03:17:42.687Z</updated>
+    <updated>2020-01-20T04:50:35.735Z</updated>
     
-    <content type="html"><![CDATA[<html><head></head><body><p>合并到master分支</p><p>m commits behind master , n commits ahead<br>m | n</p><h4 id="先变成-m-1">先变成 m | 1<a class="post-anchor" href="#先变成-m-1"></a></h4><p>1.git pull<br>2.git reset –soft HEAD~n<br>3.git status<br>4.git commit -m “”</p><p>git push -f</p><p>#####再将m | 1 变为 0 | 1<br>5.git checkout master<br>6.git pull origin master<br>7.git checkout wh<br>8.git rebase master<br>9.git push -f</p><p>git 回退打破上一次分支合并的merge</p><p>1.找到上一次提交到master分支的版本号<br>git log –pretty=oneline</p><p>2.回退到指定版本<br>git reset –hard [merge前的版本号]</p></body></html>]]></content>
+    <content type="html"><![CDATA[<html><head></head><body><p>合并到master分支</p><figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">m commits behind master , n commits ahead </span><br><span class="line">m | n</span><br></pre></td></tr></tbody></table></figure><h4 id="先变成-m-1">先变成 m | 1<a class="post-anchor" href="#先变成-m-1"></a></h4><figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">1.git pull</span><br><span class="line">2.git reset --soft HEAD~n</span><br><span class="line">3.git status</span><br><span class="line">4.git commit -m ""</span><br><span class="line"></span><br><span class="line">git push -f</span><br></pre></td></tr></tbody></table></figure><p>#####再将m | 1 变为 0 | 1</p><figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">5.git checkout master</span><br><span class="line">6.git pull origin master</span><br><span class="line">7.git checkout wh</span><br><span class="line">8.git rebase master</span><br><span class="line">9.git push -f</span><br></pre></td></tr></tbody></table></figure><p>git 回退打破上一次分支合并的merge</p><p>1.找到上一次提交到master分支的版本号</p><figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git log --pretty=oneline</span><br></pre></td></tr></tbody></table></figure><p>2.回退到指定版本</p><figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git reset --hard [merge前的版本号]</span><br></pre></td></tr></tbody></table></figure></body></html>]]></content>
     
     <summary type="html">
     
       
       
         &lt;html&gt;&lt;head&gt;&lt;/head&gt;&lt;body&gt;&lt;p&gt;合并到master分支&lt;/p&gt;
-&lt;p&gt;m commits behind master , n commits ahead&lt;br&gt;m | n&lt;/p&gt;
-&lt;h4 id=&quot;先变成-m-1&quot;&gt;先变成 m | 1&lt;a class=&quot;po
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/
       
     
     </summary>

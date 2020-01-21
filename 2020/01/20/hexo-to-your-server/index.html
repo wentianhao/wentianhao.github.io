@@ -222,10 +222,11 @@
 <figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git --version //查看是否安装</span><br></pre></td></tr></tbody></table></figure>
 <ul>
 <li>创建用户并配置仓库<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">useradd git //创建用户</span><br><span class="line">passwd git //设置密码</span><br><span class="line">mkdir /home/git //创建git文件夹</span><br><span class="line">chown -R git:git /home/git</span><br><span class="line">su git //授权</span><br><span class="line">cd /home/git/</span><br><span class="line">mkdir -p projects/blog //项目存在的真实目录</span><br><span class="line">mkdir repos && cd repos</span><br><span class="line">git init --bare blog.git //创建一个裸露的仓库</span><br><span class="line">cd blog.git/hooks</span><br><span class="line">vim post-receive //创建hook钩子函数,输入</span><br></pre></td></tr></tbody></table></figure>
-<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">#!/bin/sh</span><br><span class="line">git --work-tree=/home/git/projects/blog --git-dir=/home/git/repos/blog.git checkout -f</span><br></pre></td></tr></tbody></table></figure>
 
 </li>
 </ul>
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">#!/bin/sh</span><br><span class="line">git --work-tree=/home/git/projects/blog --git-dir=/home/git/repos/blog.git checkout -f</span><br></pre></td></tr></tbody></table></figure>
+
 <p>添加完成后修改权限</p>
 <figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">chmod +x post-receive</span><br><span class="line">exit //退出到root登录</span><br><span class="line">chown -R git:git /home/git/repos/blog.git //添加权限</span><br></pre></td></tr></tbody></table></figure>
 <ul>

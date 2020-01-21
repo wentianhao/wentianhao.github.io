@@ -222,7 +222,7 @@
 </ol>
 <figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">wget http://www.m5sim.org/dist/current/m5_system_2.0b3.tar.bz2</span><br><span class="line">tar jxvf m5_system_2.0b3.tar.bz2</span><br><span class="line">mv m5_system_2.0b3 system</span><br></pre></td></tr></tbody></table></figure>
 <p>解压后，文件目录结构：</p>
-<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">system/</span><br><span class="line">    binaries/</span><br><span class="line">          console</span><br><span class="line">          ts_osfpal</span><br><span class="line">          vmlinux</span><br><span class="line">    disks/</span><br><span class="line">          linux-bigswap2.img</span><br><span class="line">          linux-latest.img</span><br></pre></td></tr></tbody></table></figure>
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">system/</span><br><span class="line">binaries/</span><br><span class="line">      console</span><br><span class="line">      ts_osfpal</span><br><span class="line">      vmlinux</span><br><span class="line">disks/</span><br><span class="line">      linux-bigswap2.img</span><br><span class="line">      linux-latest.img</span><br></pre></td></tr></tbody></table></figure>
 <ol start="3">
 <li>下载ＰＡＲＳＥＣ Benchmark相关文件，并替换掉system 文件夹中的对应文件</li>
 </ol>
@@ -234,6 +234,7 @@
 </li>
 </ul>
 <figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">wget http://www.cs.utexas.edu/~parsec_m5/tsb_osfpal</span><br><span class="line">rm ts_osfpal</span><br><span class="line">mv tsb_osfpal ts_osfpal</span><br></pre></td></tr></tbody></table></figure>
+
 <ul>
 <li>下载ＰＡＲＳＥＣ-2.1 Ｄisk Image 并解压</li>
 </ul>
@@ -251,9 +252,9 @@
 <p>打开Benchmarks.py，修改image文件名：</p>
 <figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim ./configs/common/Benchmarks.py</span><br></pre></td></tr></tbody></table></figure>
 <p>修改前：</p>
-<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">elif buildEnv['TARGET_ISA'] == 'alpha':</span><br><span class="line">    return env.get('LINUX_IMAGE', disk('linux-latest.img'))</span><br></pre></td></tr></tbody></table></figure>
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">elif buildEnv['TARGET_ISA'] == 'alpha':</span><br><span class="line">return env.get('LINUX_IMAGE', disk('linux-latest.img'))</span><br></pre></td></tr></tbody></table></figure>
 <p>修改后：</p>
-<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">elif buildEnv['TARGET_ISA'] == 'alpha':</span><br><span class="line">     return env.get('LINUX_IMAGE', disk('linux-parsec-2-1-m5-with-test-inputs.img'))</span><br></pre></td></tr></tbody></table></figure>
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">elif buildEnv['TARGET_ISA'] == 'alpha':</span><br><span class="line">return env.get('LINUX_IMAGE', disk('linux-parsec-2-1-m5-with-test-inputs.img'))</span><br></pre></td></tr></tbody></table></figure>
 
 <ol start="5">
 <li>生成benchmark的script文件，用于运行benchmark<br>下载PARSEC script生成包，并解压到gem5目录下即可：<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">wget http://www.cs.utexas.edu/~parsec_m5/TR-09-32-parsec-2.1-alpha-files.tar.gz</span><br><span class="line">tar zxvf TR-09-32-parsec-2.1-alpha-files.tar.gz</span><br></pre></td></tr></tbody></table></figure>

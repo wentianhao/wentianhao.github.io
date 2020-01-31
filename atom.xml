@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="wentianhao.github.io/"/>
-  <updated>2020-01-31T13:04:26.766Z</updated>
+  <updated>2020-01-31T15:55:33.399Z</updated>
   <id>wentianhao.github.io/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>自然语言处理发展及应用综述</title>
+    <link href="wentianhao.github.io/2020/01/31/%E8%87%AA%E7%84%B6%E8%AF%AD%E8%A8%80%E5%A4%84%E7%90%86%E5%8F%91%E5%B1%95%E5%8F%8A%E5%BA%94%E7%94%A8%E7%BB%BC%E8%BF%B0/"/>
+    <id>wentianhao.github.io/2020/01/31/%E8%87%AA%E7%84%B6%E8%AF%AD%E8%A8%80%E5%A4%84%E7%90%86%E5%8F%91%E5%B1%95%E5%8F%8A%E5%BA%94%E7%94%A8%E7%BB%BC%E8%BF%B0/</id>
+    <published>2020-01-31T13:28:30.000Z</published>
+    <updated>2020-01-31T15:55:33.399Z</updated>
+    
+    <content type="html"><![CDATA[<html><head></head><body><pre><code>摘要：自然语言处理旨在设计算法使计算机像人一样理解和处理自然语言，是互联网和大数据时代的必然。自然语言处理涉及许多领域，包括词汇、句法、语义和语用分析，文本分类、情感分析、自动摘要、机器翻译和社会计算等。</code></pre><ul><li>自然语言处理 (NLP：Natural Language Processings) 是讲人类交流沟通所用的语言经过处理转化为机器所能理解的机器语言，是一种研究语言能力的模型和算法框架，是语言学和计算机科学的交叉学科。</li></ul><p>-自然语言处理主要分两个流程：自然语言理解（NLU）和自然语言生成（NLG）</p><p>NLU：理解文本的含义，具体到每个单词和结构都需要被理解</p><p>NLG:与理解相反，分三个阶段：确定目标、通过评估情况和可用的交际资源来计划如何实现目标，并将计划形成为文本。</p></body></html>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;html&gt;&lt;head&gt;&lt;/head&gt;&lt;body&gt;&lt;pre&gt;&lt;code&gt;摘要：自然语言处理旨在设计算法使计算机像人一样理解和处理自然语言，是互联网和大数据时代的必然。自然语言处理涉及许多领域，包括词汇、句法、语义和语用分析，文本分类、情感分析、自动摘要、机器翻译和社会计算等。&lt;/
+      
+    
+    </summary>
+    
+    
+      <category term="读书笔记" scheme="wentianhao.github.io/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"/>
+    
+    
+      <category term="NPL" scheme="wentianhao.github.io/tags/NPL/"/>
+    
+  </entry>
   
   <entry>
     <title>diary9</title>

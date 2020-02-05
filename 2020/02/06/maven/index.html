@@ -16,7 +16,7 @@
     <meta name="description" content="欢迎" />
     
     <title>
-      Archives - wentianhao
+      maven - wentianhao
     </title>
     <link rel="manifest" href="/manifest.json" />
     <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon" />
@@ -61,7 +61,7 @@
           Home
         </a>
         
-        <a href="/archives" class="current">
+        <a href="/archives" class="">
           Archives
         </a>
         
@@ -115,7 +115,7 @@
             Home
           </a>
           
-          <a href="/archives" class="current">
+          <a href="/archives" class="">
             Archives
           </a>
           
@@ -160,124 +160,113 @@
     </div>
     <div id="container">
       <div class="main animated bounceInRight delay-0.7s">
-        <div id="archives">
-    
-        <div class="title">
-            Archives 
-            
-        </div>
-    
-
-
-
-
-    
-    
-    <section class="wrap">
-        <div class="meta">
-            <a href="/archives/2020" >
-                2020
-            </a>
-        </div>
-        <div class="year">
-            
-            <article class="item">
-            <a href="/2020/01/28/diary6/" title="diary6">
-                <span>2020/01/28</span>
-                <span>diary6</span>
-            </a>
-            </article>
-            
-
-
-            <article class="item">
-            <a href="/2020/01/27/diary5/" title="diary5">
-                <span>2020/01/27</span>
-                <span>diary5</span>
-            </a>
-            </article>
-            
-
-
-            <article class="item">
-            <a href="/2020/01/26/diary4/" title="diary4">
-                <span>2020/01/26</span>
-                <span>diary4</span>
-            </a>
-            </article>
-            
-
-
-            <article class="item">
-            <a href="/2020/01/25/diary3/" title="diary3">
-                <span>2020/01/25</span>
-                <span>diary3</span>
-            </a>
-            </article>
-            
-
-
-            <article class="item">
-            <a href="/2020/01/24/diary2/" title="diary2">
-                <span>2020/01/24</span>
-                <span>diary2</span>
-            </a>
-            </article>
-            
-
-
-            <article class="item">
-            <a href="/2020/01/23/diary1/" title="diary1">
-                <span>2020/01/23</span>
-                <span>diary1</span>
-            </a>
-            </article>
-            
-
-
-            <article class="item">
-            <a href="/2020/01/20/hexo-to-your-server/" title="hexo-to-your-server">
-                <span>2020/01/20</span>
-                <span>hexo-to-your-server</span>
-            </a>
-            </article>
-            
-
-
-            <article class="item">
-            <a href="/2020/01/19/Notebook/" title="jupyter Notebook">
-                <span>2020/01/19</span>
-                <span>jupyter Notebook</span>
-            </a>
-            </article>
-            
-
-
-            <article class="item">
-            <a href="/2020/01/19/git/" title="git学习过程">
-                <span>2020/01/19</span>
-                <span>git学习过程</span>
-            </a>
-            </article>
-            
-
-
-            <article class="item">
-            <a href="/2020/01/14/springcloud2/" title="spring cloud mybaits 微服务增删改查(二)">
-                <span>2020/01/14</span>
-                <span>spring cloud mybaits 微服务增删改查(二)</span>
-            </a>
-            </article>
-            
-    
-        </div>
-    </section>
+        <article class="post-entry">
+    <div class="header">
       
-<div class="paginator">
-    <a class="page-number" href="/archives/">1</a><span class="page-number current">2</span><a class="page-number" href="/archives/page/3/">3</a>
-</div>
-</div>
+      <div class="title">maven</div>
+      <div class="meta">
+        <span class="item">
+          <span class="iconfont icon-time-circle"></span>
+          <span>2020/02/06</span>
+        </span>
 
+        
+
+         
+        <span class="item">
+          <span class="iconfont icon-folder"></span>
+          <span>
+              
+                
+                  <a href="/categories/spring boot">spring boot</a>
+                
+              
+          </span>
+        </span>
+        
+        
+         
+          <span class="item">
+            <span class="iconfont icon-tag1"></span>
+            <span>
+                
+                  
+                    <a href="/tags/maven">maven</a>
+                  
+                
+                  
+                    <a href="/tags/spring boot">spring boot</a>
+                  
+                
+            </span>
+          </span>
+         
+      </div>
+      <div>
+      </div>
+    </div>
+    <html><head></head><body><ol>
+<li><p>在C:\Users\WHH.m2下新建 settings.xml</p>
+</li>
+<li><p>将以下内容加入</p>
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><?xml version="1.0" encoding="UTF-8"?></span><br><span class="line"><settings xmlns="http://maven.apache.org/SETTINGS/1.0.0"</span><br><span class="line">      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"</span><br><span class="line">      xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0</span><br><span class="line">                          https://maven.apache.org/xsd/settings-1.0.0.xsd"></span><br><span class="line"> </span><br><span class="line">      <mirrors></span><br><span class="line">        <mirror> </span><br><span class="line">            <id>alimaven</id> </span><br><span class="line">            <name>aliyun maven</name> </span><br><span class="line">            <url>http://maven.aliyun.com/nexus/content/groups/public/</url> </span><br><span class="line">            <mirrorOf>central</mirrorOf>         </span><br><span class="line">        </mirror> </span><br><span class="line">      </mirrors></span><br><span class="line"></settings></span><br></pre></td></tr></tbody></table></figure>
+</li>
+<li><p>重启IDEA</p>
+</li>
+</ol>
+</body></html>
+
+  
+    <div class="post-reward">
+    <div id="reward-button">打赏</div>
+      <div id="qr">
+        <div class="wrap">
+            
+            <div class="bg-wrap">
+              <a href="/images/zhifubao.png" target="_block" class="bg" style="background-image:url('/images/zhifubao.png')"></a>
+              支付宝
+            </div>
+            
+            
+            <div class="bg-wrap">
+                <a href="/images/weixin.png" target="_block" class="bg" style="background-image:url('/images/weixin.png')"></a>
+              微信
+            </div>
+            
+        </div>
+      </div>
+    </div>
+  
+  <div class="post-guide">
+    <div class="item left">
+        
+    </div>
+    <div class="item right">
+        
+          <a href="/2020/02/05/diary14/">diary14</a>
+        
+    </div>
+  </div>
+
+  
+
+  <div class="post-copyright">
+    <div class="auth">
+      本文作者：<a href="/wentianhao.github.io">whh</a>
+    </div>
+    <div class="link">
+      永久链接：<a href="/wentianhao.github.io/2020/02/06/maven/">/wentianhao.github.io/2020/02/06/maven/</a>
+    </div>
+    <div class="declare">
+      版权声明：本文首发于<a href="/wentianhao.github.io">whh</a>的博客，转载请注明出处！
+    </div>
+  </div>
+
+  <div id="comment"></div>
+
+  
+  
+</article>
         <footer>
           <div class="copyright">
             ©2020

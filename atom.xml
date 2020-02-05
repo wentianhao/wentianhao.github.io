@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="wentianhao.github.io/"/>
-  <updated>2020-02-05T16:23:59.468Z</updated>
+  <updated>2020-02-05T16:26:24.686Z</updated>
   <id>wentianhao.github.io/</id>
   
   <author>
@@ -21,9 +21,9 @@
     <link href="wentianhao.github.io/2020/02/06/maven/"/>
     <id>wentianhao.github.io/2020/02/06/maven/</id>
     <published>2020-02-05T16:10:35.000Z</published>
-    <updated>2020-02-05T16:23:59.468Z</updated>
+    <updated>2020-02-05T16:26:24.686Z</updated>
     
-    <content type="html"><![CDATA[<html><head></head><body><ol><li><p>在C:\Users\WHH.m2下新建 settings.xml</p></li><li><p>将以下内容加入</p></li></ol><!--?xml version="1.0" encoding="UTF-8"?--><pre><code><settings xmlns="http://maven.apache.org/SETTINGS/1.0.0"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0                      https://maven.apache.org/xsd/settings-1.0.0.xsd">  <mirrors>    <mirror>         <id>alimaven</id>         <name>aliyun maven</name>         <url>http://maven.aliyun.com/nexus/content/groups/public/</url>         <mirrorOf>central</mirrorOf>             </mirror>   </mirrors></settings></code></pre><ol start="3"><li>重启IDEA</li></ol></body></html>]]></content>
+    <content type="html"><![CDATA[<html><head></head><body><ol><li><p>在C:\Users\WHH.m2下新建 settings.xml</p></li><li><p>将以下内容加入</p></li></ol><!--?xml version="1.0" encoding="UTF-8"?--><pre><code><settings xmlns="http://maven.apache.org/SETTINGS/1.0.0"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0https://maven.apache.org/xsd/settings-1.0.0.xsd">    <mirrors>        <mirror>             <id>alimaven</id>             <name>aliyun maven</name>             <url>http://maven.aliyun.com/nexus/content/groups/public/</url>             <mirrorOf>central</mirrorOf>                 </mirror>     </mirrors></settings></code></pre><ol start="3"><li>重启IDEA</li></ol></body></html>]]></content>
     
     <summary type="html">
     
@@ -55,9 +55,9 @@
     <link href="wentianhao.github.io/2020/02/05/diary14/"/>
     <id>wentianhao.github.io/2020/02/05/diary14/</id>
     <published>2020-02-05T15:50:03.000Z</published>
-    <updated>2020-02-05T16:21:45.525Z</updated>
+    <updated>2020-02-05T16:25:24.723Z</updated>
     
-    <content type="html"><![CDATA[<html><head></head><body><pre><code>今天是2020年2月5号，星期三，农历正月十二</code></pre><ul><li><p>今天上午本来好好的教她后端，结果不知道是那边的网不好，还是什么问题，依赖下载总是报错，阿里镜像一开始配置文件也有问题，然后她就不想搞了，要卸了IDEA，无语，气死我了。后来说是卸了重装，还是气，IDEA一点问题没有，只是maven下载本来就慢，不管开不开VPN。虽然最后没有卸，配置阿里镜像才弄好的。</p></li><li><p><a href="http://whh.plus/2020/02/06/maven/" target="_blank" rel="noopener">IDEA maven 下载慢解决办法</a></p></li></ul></body></html>]]></content>
+    <content type="html"><![CDATA[<html><head></head><body><pre><code>今天是2020年2月5号，星期三，农历正月十二</code></pre><ul><li><p>今天上午本来好好的教她后端，结果不知道是那边的网不好，还是什么问题，依赖下载总是报错，阿里镜像一开始配置文件也有问题，然后她就不想搞了，要卸了IDEA，无语，气死我了。后来说是卸了重装，还是气，IDEA一点问题没有，只是maven下载本来就慢，不管开不开VPN。虽然最后没有卸，配置阿里镜像才弄好的。</p></li><li><p><a href="http://whh.plus/2020/02/06/maven/" target="_blank" rel="noopener">IDEA maven 下载慢解决办法</a></p></li><li><p>估计还得在家一个月，疫情比想象的还要严重，这段时间一定要好好把握！祈福武汉！ </p></li></ul></body></html>]]></content>
     
     <summary type="html">
     

@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="wentianhao.github.io/"/>
-  <updated>2020-02-06T16:51:23.500Z</updated>
+  <updated>2020-02-07T16:46:32.820Z</updated>
   <id>wentianhao.github.io/</id>
   
   <author>
@@ -15,6 +15,36 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>diary16</title>
+    <link href="wentianhao.github.io/2020/02/07/diary16/"/>
+    <id>wentianhao.github.io/2020/02/07/diary16/</id>
+    <published>2020-02-07T15:42:51.000Z</published>
+    <updated>2020-02-07T16:46:32.820Z</updated>
+    
+    <content type="html"><![CDATA[<html><head></head><body><pre><code>今天是2020年2月7号，星期五，农历正月十四</code></pre><ul><li><p>李文亮医生终究还是走了 :candle: :candle: :candle:</p><p>   <a href="https://mp.weixin.qq.com/s/I1J3wCbfbMP7AecP1_Ie2A" target="_blank" rel="noopener">普通人李文亮</a></p><pre><code>一个健康的社会不该只有一种声音。               ————李文亮 2.1于治疗期间接受《财新》专访</code></pre></li><li><p>今天开始，武汉全民体温监测。 体温36.5℃。</p><p>希望避免交叉感染的可能</p></li><li><p><a href="https://pan.baidu.com/s/1wr26HlAdT9a6o0gEeclTqA" target="_blank" rel="noopener">Natural Language Processing with PyTorch - 2019</a></p></li></ul></body></html>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;html&gt;&lt;head&gt;&lt;/head&gt;&lt;body&gt;&lt;pre&gt;&lt;code&gt;今天是2020年2月7号，星期五，农历正月十四&lt;/code&gt;&lt;/pre&gt;&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;李文亮医生终究还是走了 :candle: :candle: :candle:&lt;/p&gt;
+&lt;p&gt;   &lt;a href
+      
+    
+    </summary>
+    
+    
+      <category term="日记" scheme="wentianhao.github.io/categories/%E6%97%A5%E8%AE%B0/"/>
+    
+    
+      <category term="日记" scheme="wentianhao.github.io/tags/%E6%97%A5%E8%AE%B0/"/>
+    
+      <category term="封城日记" scheme="wentianhao.github.io/tags/%E5%B0%81%E5%9F%8E%E6%97%A5%E8%AE%B0/"/>
+    
+  </entry>
   
   <entry>
     <title>diary15</title>
@@ -579,33 +609,6 @@
     
     
       <category term="jupyter notebook" scheme="wentianhao.github.io/tags/jupyter-notebook/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>git学习过程</title>
-    <link href="wentianhao.github.io/2020/01/19/git/"/>
-    <id>wentianhao.github.io/2020/01/19/git/</id>
-    <published>2020-01-19T03:04:42.000Z</published>
-    <updated>2020-02-05T16:42:14.567Z</updated>
-    
-    <content type="html"><![CDATA[<html><head></head><body><p>合并到master分支</p><figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">m commits behind master , n commits ahead </span><br><span class="line">m | n</span><br></pre></td></tr></tbody></table></figure><h4 id="先变成-m-1">先变成 m | 1<a class="post-anchor" href="#先变成-m-1"></a></h4><figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">git pull</span><br><span class="line">git reset --soft HEAD~n</span><br><span class="line">git status</span><br><span class="line">git commit -m <span class="string">""</span></span><br><span class="line"></span><br><span class="line">git push -f</span><br></pre></td></tr></tbody></table></figure><p>#####再将m | 1 变为 0 | 1</p><figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">git checkout master</span><br><span class="line">git pull origin master</span><br><span class="line">git checkout wh</span><br><span class="line">git rebase master</span><br><span class="line">git push -f</span><br></pre></td></tr></tbody></table></figure><p>git 回退打破上一次分支合并的merge</p><p>1.找到上一次提交到master分支的版本号</p><figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">log</span> --pretty=oneline</span><br></pre></td></tr></tbody></table></figure><p>2.回退到指定版本</p><figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git reset --hard [merge前的版本号]</span><br></pre></td></tr></tbody></table></figure></body></html>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;html&gt;&lt;head&gt;&lt;/head&gt;&lt;body&gt;&lt;p&gt;合并到master分支&lt;/p&gt;
-&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/s
-      
-    
-    </summary>
-    
-    
-      <category term="git" scheme="wentianhao.github.io/categories/git/"/>
-    
-    
-      <category term="git" scheme="wentianhao.github.io/tags/git/"/>
     
   </entry>
   

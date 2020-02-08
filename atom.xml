@@ -113,7 +113,7 @@
     <link href="wentianhao.github.io/2020/02/06/maven/"/>
     <id>wentianhao.github.io/2020/02/06/maven/</id>
     <published>2020-02-05T16:10:35.000Z</published>
-    <updated>2020-02-08T14:12:03.445Z</updated>
+    <updated>2020-02-08T14:32:26.310Z</updated>
     
     <content type="html"><![CDATA[<html><head></head><body><ol><li><p>在C:\Users\WHH.m2下新建 settings.xml</p></li><li><p>将以下内容加入</p><figure class="highlight xml"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta"><?xml version="1.0" encoding="UTF-8"?></span></span><br><span class="line">    <span class="tag"><<span class="name">settings</span> <span class="attr">xmlns</span>=<span class="string">"http://maven.apache.org/SETTINGS/1.0.0"</span></span></span><br><span class="line"><span class="tag">        <span class="attr">xmlns:xsi</span>=<span class="string">"http://www.w3.org/2001/XMLSchema-instance"</span></span></span><br><span class="line"><span class="tag">        <span class="attr">xsi:schemaLocation</span>=<span class="string">"http://maven.apache.org/SETTINGS/1.0.0</span></span></span><br><span class="line"><span class="tag"><span class="string">        https://maven.apache.org/xsd/settings-1.0.0.xsd"</span>></span></span><br><span class="line">        <span class="tag"><<span class="name">mirrors</span>></span></span><br><span class="line">            <span class="tag"><<span class="name">mirror</span>></span> </span><br><span class="line">                <span class="tag"><<span class="name">id</span>></span>alimaven<span class="tag"></<span class="name">id</span>></span> </span><br><span class="line">                <span class="tag"><<span class="name">name</span>></span>aliyun maven<span class="tag"></<span class="name">name</span>></span>                     <span class="tag"><<span class="name">url</span>></span>http://maven.aliyun.com/nexus/content/groups/public/<span class="tag"></<span class="name">url</span>></span>                     <span class="tag"><<span class="name">mirrorOf</span>></span>central<span class="tag"></<span class="name">mirrorOf</span>></span>         </span><br><span class="line">            <span class="tag"></<span class="name">mirror</span>></span> </span><br><span class="line">        <span class="tag"></<span class="name">mirrors</span>></span></span><br><span class="line">    <span class="tag"></<span class="name">settings</span>></span></span><br></pre></td></tr></tbody></table></figure></li><li><p>重启IDEA</p></li></ol></body></html>]]></content>
     
@@ -131,7 +131,7 @@
     </summary>
     
     
-      <category term="(spring boot)" scheme="wentianhao.github.io/categories/spring-boot/"/>
+      <category term="spring boot" scheme="wentianhao.github.io/categories/spring-boot/"/>
     
     
       <category term="maven" scheme="wentianhao.github.io/tags/maven/"/>

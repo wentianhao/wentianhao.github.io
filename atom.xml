@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="wentianhao.github.io/"/>
-  <updated>2020-02-08T13:13:01.432Z</updated>
+  <updated>2020-02-09T15:29:52.232Z</updated>
   <id>wentianhao.github.io/</id>
   
   <author>
@@ -15,6 +15,37 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>diary18</title>
+    <link href="wentianhao.github.io/2020/02/09/diary18/"/>
+    <id>wentianhao.github.io/2020/02/09/diary18/</id>
+    <published>2020-02-09T15:25:56.000Z</published>
+    <updated>2020-02-09T15:29:52.232Z</updated>
+    
+    <content type="html"><![CDATA[<html><head></head><body><pre><code>今天是2020年2月9号，星期天，农历正月十六</code></pre><ul><li><p>开始学习啊，今天是烦躁的一天，网速太慢了哎</p></li><li><p>下了吃鸡，玩了一下午吃鸡，心疼流量</p></li><li><p>赶紧好起来吧，老家一点信号没有，一点零食没有，太难熬了，快受不住了 </p></li></ul></body></html>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;html&gt;&lt;head&gt;&lt;/head&gt;&lt;body&gt;&lt;pre&gt;&lt;code&gt;今天是2020年2月9号，星期天，农历正月十六&lt;/code&gt;&lt;/pre&gt;&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;开始学习啊，今天是烦躁的一天，网速太慢了哎&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;下了吃鸡，玩了一下午吃鸡，心疼流量
+      
+    
+    </summary>
+    
+    
+      <category term="日记" scheme="wentianhao.github.io/categories/%E6%97%A5%E8%AE%B0/"/>
+    
+    
+      <category term="日记" scheme="wentianhao.github.io/tags/%E6%97%A5%E8%AE%B0/"/>
+    
+      <category term="封城日记" scheme="wentianhao.github.io/tags/%E5%B0%81%E5%9F%8E%E6%97%A5%E8%AE%B0/"/>
+    
+  </entry>
   
   <entry>
     <title>diary17</title>
@@ -581,39 +612,6 @@
       <category term="日记" scheme="wentianhao.github.io/tags/%E6%97%A5%E8%AE%B0/"/>
     
       <category term="封城日记" scheme="wentianhao.github.io/tags/%E5%B0%81%E5%9F%8E%E6%97%A5%E8%AE%B0/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>hexo-to-your-server</title>
-    <link href="wentianhao.github.io/2020/01/20/hexo-to-your-server/"/>
-    <id>wentianhao.github.io/2020/01/20/hexo-to-your-server/</id>
-    <published>2020-01-20T07:20:32.000Z</published>
-    <updated>2020-02-05T16:41:47.380Z</updated>
-    
-    <content type="html"><![CDATA[<html><head></head><body><h2 id="服务器配置">服务器配置<a class="post-anchor" href="#服务器配置"></a></h2><hr><p><strong>搭建远程git私库</strong></p><ul><li>登录远程服务器，安装git</li></ul><figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git --version <span class="comment">#查看是否安装</span></span><br></pre></td></tr></tbody></table></figure><ul><li>创建用户并配置仓库<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">useradd git <span class="comment">#创建用户</span></span><br><span class="line">passwd git /<span class="comment">#设置密码</span></span><br><span class="line">mkdir /home/git <span class="comment">#创建git文件夹</span></span><br><span class="line">chown -R git:git /home/git</span><br><span class="line">su git <span class="comment">#授权</span></span><br><span class="line"><span class="built_in">cd</span> /home/git/</span><br><span class="line">mkdir -p projects/blog <span class="comment">#项目存在的真实目录</span></span><br><span class="line">mkdir repos && <span class="built_in">cd</span> repos</span><br><span class="line">git init --bare blog.git <span class="comment">#创建一个裸露的仓库</span></span><br><span class="line"><span class="built_in">cd</span> blog.git/hooks</span><br><span class="line">vim post-receive <span class="comment">#创建hook钩子函数,输入</span></span><br></pre></td></tr></tbody></table></figure></li></ul><figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/bin/sh</span></span><br><span class="line">git --work-tree=/home/git/projects/blog --git-dir=/home/git/repos/blog.git checkout -f</span><br></pre></td></tr></tbody></table></figure><p>添加完成后修改权限</p><figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">chmod +x post-receive</span><br><span class="line"><span class="built_in">exit</span> //退出到root登录</span><br><span class="line">chown -R git:git /home/git/repos/blog.git <span class="comment">#添加权限</span></span><br></pre></td></tr></tbody></table></figure><ul><li>测试git仓库是否可用</li></ul><p>在本地电脑的git中输入</p><figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> git@server_ip:/home/git/repos/blog.git</span><br></pre></td></tr></tbody></table></figure><p>如果能把空仓库拉下来，则说明git仓库搭建成功<br><a href="https://imgconvert.csdnimg.cn/aHR0cHM6Ly91c2VyLWdvbGQtY2RuLnhpdHUuaW8vMjAxOS85LzE0LzE2ZDJiNmVhNGRmNTQxNzg?x-oss-process=image/format,png" data-caption="pic" data-fancybox="images"><img src="https://imgconvert.csdnimg.cn/aHR0cHM6Ly91c2VyLWdvbGQtY2RuLnhpdHUuaW8vMjAxOS85LzE0LzE2ZDJiNmVhNGRmNTQxNzg?x-oss-process=image/format,png" alt="pic"></a></p><ul><li>建立ssh信任关系，在本地电脑<br>如果没有rsa密钥则生成<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.name <span class="string">"yourname"</span></span><br><span class="line">git config --global user.email youremail@example.com</span><br><span class="line">ssh-keygen -t rsa -C <span class="string">"youremail@example.com"</span></span><br><span class="line">git config --global core.autocrlf <span class="literal">false</span>  <span class="comment"># 禁用自动转换，这个不设置后面上传时会出现警告，如下</span></span><br></pre></td></tr></tbody></table></figure><a href="https://imgconvert.csdnimg.cn/aHR0cHM6Ly91c2VyLWdvbGQtY2RuLnhpdHUuaW8vMjAxOS85LzE0LzE2ZDJiNmU1MWU4MGFjMTU?x-oss-process=image/format,png" data-caption="pic" data-fancybox="images"><img src="https://imgconvert.csdnimg.cn/aHR0cHM6Ly91c2VyLWdvbGQtY2RuLnhpdHUuaW8vMjAxOS85LzE0LzE2ZDJiNmU1MWU4MGFjMTU?x-oss-process=image/format,png" alt="pic"></a></li></ul><p>建立ssh信任关系</p><figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ssh-copy-id -i C:/Users/yourname/.ssh/id_rsa.pub git@server_ip</span><br><span class="line">ssh git@server_ip <span class="comment">#测试能否登录</span></span><br></pre></td></tr></tbody></table></figure><p>注意：此时ssh登录git用户不需要密码!如果需要则没配置好</p><ul><li><p>禁用git 用户的shell登录权限，从而只能用git clone,git push等功能</p><figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">cat /etc/shells <span class="comment">#查看git-shell 是否在登录方式里</span></span><br><span class="line"><span class="built_in">which</span> git-shell <span class="comment">#查看是否安装</span></span><br><span class="line">vi /etc/shells</span><br></pre></td></tr></tbody></table></figure><p>添加第二步显示的路径，通常为 /usr/bin/git-shell</p></li><li><p>修改/etc/passwd中的权限</p><figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#将原来的 </span></span><br><span class="line">git:x:1000:1000::/home/git:/bin/bash</span><br><span class="line"> </span><br><span class="line"><span class="comment">#修改为</span></span><br><span class="line">git:x:100:1000:,,,:/home/git:/usr/bin/git-shell</span><br></pre></td></tr></tbody></table></figure></li></ul></body></html>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;html&gt;&lt;head&gt;&lt;/head&gt;&lt;body&gt;&lt;h2 id=&quot;服务器配置&quot;&gt;服务器配置&lt;a class=&quot;post-anchor&quot; href=&quot;#服务器配置&quot;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;hr&gt;
-&lt;p&gt;&lt;strong&gt;搭建远程git私库&lt;/strong&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;登
-      
-    
-    </summary>
-    
-    
-      <category term="个人博客" scheme="wentianhao.github.io/categories/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/"/>
-    
-    
-      <category term="hexo" scheme="wentianhao.github.io/tags/hexo/"/>
-    
-      <category term="server" scheme="wentianhao.github.io/tags/server/"/>
-    
-      <category term="nginx" scheme="wentianhao.github.io/tags/nginx/"/>
     
   </entry>
   

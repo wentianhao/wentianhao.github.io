@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="wentianhao.github.io/"/>
-  <updated>2020-02-12T15:31:57.442Z</updated>
+  <updated>2020-02-12T16:04:50.876Z</updated>
   <id>wentianhao.github.io/</id>
   
   <author>
@@ -15,6 +15,34 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>hexo-Spawn-failed-fatal</title>
+    <link href="wentianhao.github.io/2020/02/13/hexo-Spawn-failed-fatal/"/>
+    <id>wentianhao.github.io/2020/02/13/hexo-Spawn-failed-fatal/</id>
+    <published>2020-02-12T16:00:31.000Z</published>
+    <updated>2020-02-12T16:04:50.876Z</updated>
+    
+    <content type="html"><![CDATA[<html><head></head><body><p>今天偶尔发现博客部署到阿里云上没有成功</p><p>错误代码：</p><figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">fatal: LF would be replaced by CRLF <span class="keyword">in</span> 2019/06/21/hello-world/index.html</span><br><span class="line">FATAL Something<span class="string">'s wrong. Maybe you can find the solution here: https://hexo.io/docs/troubleshooting.html</span></span><br><span class="line"><span class="string">Error: Spawn failed</span></span><br><span class="line"><span class="string">at ChildProcess.<anonymous> (D:\\Hexo\node_modules\hexo-util\lib\spawn.js:52:19)</span></span><br><span class="line"><span class="string">at emitTwo (events.js:106:13)</span></span><br><span class="line"><span class="string">at ChildProcess.emit (events.js:191:7)</span></span><br><span class="line"><span class="string">at ChildProcess.cp.emit (D:\blog\Hexo\node_modules\cross-spawn\lib\enoent.js:40:29)</span></span><br><span class="line"><span class="string">at Process.ChildProcess._handle.onexit (internal/child_process.js:215:12)</span></span><br></pre></td></tr></tbody></table></figure><p>解决办法：<br>在.git的配置文件里添加</p><figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">autocrlf = <span class="literal">false</span></span><br><span class="line">safecrlf = <span class="literal">false</span></span><br></pre></td></tr></tbody></table></figure></body></html>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;html&gt;&lt;head&gt;&lt;/head&gt;&lt;body&gt;&lt;p&gt;今天偶尔发现博客部署到阿里云上没有成功&lt;/p&gt;
+&lt;p&gt;错误代码：&lt;/p&gt;
+&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;s
+      
+    
+    </summary>
+    
+    
+      <category term="blog" scheme="wentianhao.github.io/categories/blog/"/>
+    
+    
+      <category term="hexo" scheme="wentianhao.github.io/tags/hexo/"/>
+    
+  </entry>
   
   <entry>
     <title>diary21</title>
@@ -575,35 +603,6 @@
 &lt;li&gt;&lt;p&gt;R.I.P Mamba&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;&lt;p&gt;今天开始学炒菜，一时心血来潮，既然闲着也是闲着不如学
-      
-    
-    </summary>
-    
-    
-      <category term="日记" scheme="wentianhao.github.io/categories/%E6%97%A5%E8%AE%B0/"/>
-    
-    
-      <category term="封城日记" scheme="wentianhao.github.io/tags/%E5%B0%81%E5%9F%8E%E6%97%A5%E8%AE%B0/"/>
-    
-      <category term="日记" scheme="wentianhao.github.io/tags/%E6%97%A5%E8%AE%B0/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>diary4</title>
-    <link href="wentianhao.github.io/2020/01/26/diary4/"/>
-    <id>wentianhao.github.io/2020/01/26/diary4/</id>
-    <published>2020-01-26T11:39:38.000Z</published>
-    <updated>2020-01-28T17:01:35.445Z</updated>
-    
-    <content type="html"><![CDATA[<html><head></head><body><pre><code>今天是2020年1月26号，星期天，农历元月初二</code></pre><ul><li><p>今天也是在床上躺着的一天。前几天在网上冲浪的时候看见很多荒谬的新闻，如今这个时候还有人造谣，真的是太可怕了，陶勇医生也终于从ICU中醒过来，医生之于病人，明明是恩人，可有些病人家属竟然如此对待恩人，丧心病狂，毫无人性。袭击医生这种事情真的是道德的沦丧，可最近就发生了很多起。</p></li><li><p>湖北新型肺炎疫情防控工作发布会，全场省长一人没带口罩，市长口罩带反了，主持人鼻子露出来了，更为魔幻的，口罩的数量，省长开始说108亿，然后一人递条子，省长纠正18亿，后来又纠正108万…太无语了</p></li><li><p>新型冠状病毒传播力比SARS更强，但是致死率更低！</p></li></ul><p>晚安武汉！</p></body></html>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;html&gt;&lt;head&gt;&lt;/head&gt;&lt;body&gt;&lt;pre&gt;&lt;code&gt;今天是2020年1月26号，星期天，农历元月初二&lt;/code&gt;&lt;/pre&gt;&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;今天也是在床上躺着的一天。前几天在网上冲浪的时候看见很多荒谬的新闻，如今这个时候还有人造谣，真的是太可怕了，陶
       
     
     </summary>

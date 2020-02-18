@@ -249,8 +249,14 @@
 <p>添加第二步显示的路径，通常为 /usr/bin/git-shell</p>
 </li>
 <li><p>修改/etc/passwd中的权限</p>
-<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#将原来的 </span></span><br><span class="line">git:x:1000:1000::/home/git:/bin/bash</span><br><span class="line"> </span><br><span class="line"><span class="comment">#修改为</span></span><br><span class="line">git:x:100:1000:,,,:/home/git:/usr/bin/git-shell</span><br></pre></td></tr></tbody></table></figure></li>
+<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#将原来的 </span></span><br><span class="line">git:x:1000:1000::/home/git:/bin/bash</span><br><span class="line"> </span><br><span class="line"><span class="comment">#修改为</span></span><br><span class="line">git:x:100:1000:,,,:/home/git:/usr/bin/git-shell</span><br></pre></td></tr></tbody></table></figure>
+
+</li>
 </ul>
+<hr>
+<p><strong>nginx安装</strong></p>
+<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">apt-get install nginx</span><br></pre></td></tr></tbody></table></figure>
+
 </body></html>
 
   

@@ -28,6 +28,11 @@
   <body>
     <canvas id='pagemap'></canvas>
     
+    <div id="post-toc" class="animated hiddenToc hide">
+      <span class="title">Toc</span>
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#基础"><span class="toc-text">基础</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#实例"><span class="toc-text">实例</span></a></li></ol>
+    </div>
+    
     <div id="fixed-menu-wrap">
       <span class="iconfont icon-sousuo search-box menu-reset"></span>
       <span class="icon-toc menu-reset">Toc</span>
@@ -205,13 +210,44 @@
       <div>
       </div>
     </div>
-    <html><head></head><body><p>除了正则表达式之外，还有一些非常好用的信息筛选工具，比如XPath表达式、BeautifulSoup等</p>
+    <html><head></head><body><h2 id="基础">基础<a class="post-anchor" href="#基础"></a></h2><p>除了正则表达式之外，还有一些非常好用的信息筛选工具，比如XPath表达式、BeautifulSoup等</p>
 <ul>
 <li>/ 逐层提取</li>
 <li>text()提取标签下面的文本</li>
+<li>//标签名**</li>
 <li>//标签名[@属性=’属性值’]提取属性为XX的标签</li>
 <li>@属性名 代表取某个属性值</li>
 </ul>
+<hr>
+<h2 id="实例">实例<a class="post-anchor" href="#实例"></a></h2><figure class="highlight html"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag"><<span class="name">html</span>></span></span><br><span class="line">    <span class="tag"><<span class="name">head</span>></span></span><br><span class="line">        <span class="tag"><<span class="name">title</span>></span>主页<span class="tag"></<span class="name">title</span>></span></span><br><span class="line">    <span class="tag"></<span class="name">head</span>></span></span><br><span class="line">    <span class="tag"><<span class="name">body</span>></span></span><br><span class="line">        <span class="tag"><<span class="name">p</span>></span>abc<span class="tag"></<span class="name">p</span>></span></span><br><span class="line">        <span class="tag"><<span class="name">p</span>></span>bbbvb<span class="tag"></<span class="name">p</span>></span></span><br><span class="line">        <span class="tag"><<span class="name">a</span> <span class="attr">href</span>=<span class="string">"//qd.alibaba.com/go/pcdetail"</span> <span class="attr">target</span>=<span class="string">"_top"</span>></span>安全推荐<span class="tag"></<span class="name">a</span>></span></span><br><span class="line">         <span class="tag"><<span class="name">a</span> <span class="attr">href</span>=<span class="string">"//qd.alibaba.com/go/pcdetail"</span> <span class="attr">target</span>=<span class="string">"_top"</span>></span>安全推荐2<span class="tag"></<span class="name">a</span>></span></span><br><span class="line">         <span class="tag"><<span class="name">div</span> <span class="attr">class</span>=<span class="string">"J AsyncDC"</span> <span class="attr">data-type</span>=<span class="string">"dr"</span>></span></span><br><span class="line">            <span class="tag"><<span class="name">div</span> <span class="attr">id</span>=<span class="string">"official-remind"</span>></span></span><br><span class="line">                明月几时有</span><br><span class="line">            <span class="tag"></<span class="name">div</span>></span> </span><br><span class="line">         <span class="tag"></<span class="name">div</span>></span></span><br><span class="line">    <span class="tag"></<span class="name">body</span>></span></span><br></pre></td></tr></tbody></table></figure>
+<table>
+<thead>
+<tr>
+<th align="center">XPath表达式</th>
+<th align="center">提取内容</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">/html/head/title/text()</td>
+<td align="center">主页</td>
+</tr>
+<tr>
+<td align="center">//p/text()</td>
+<td align="center">[‘abc’,’bbbvb’]</td>
+</tr>
+<tr>
+<td align="center">//a</td>
+<td align="center">提取所有的a标签</td>
+</tr>
+<tr>
+<td align="center">//div[@id=’official-remind’]/text()</td>
+<td align="center">明月几时有</td>
+</tr>
+<tr>
+<td align="center">//a/@href</td>
+<td align="center">//qd.alibaba.com/go/pcdetail</td>
+</tr>
+</tbody></table>
 </body></html>
 
   

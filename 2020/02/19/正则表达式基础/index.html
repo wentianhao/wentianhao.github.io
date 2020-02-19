@@ -277,6 +277,35 @@
 <p>源字符串:”aliyu89787nedu”</p>
 <p>正则表达式:”\w\d[nedu]\w”</p>
 <p>匹配: 87ne</p>
+<table>
+<thead>
+<tr>
+<th align="center">源字符串</th>
+<th align="center">正则表达式</th>
+<th align="center">匹配结果</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">“aliyunedu”</td>
+<td align="center">“yu”</td>
+<td align="center">yu</td>
+</tr>
+<tr>
+<td align="center">“‘aliyun\nedu’”</td>
+<td align="center">“yun\n”</td>
+<td align="center">yun\n</td>
+</tr>
+<tr>
+<td align="center">“aliyu89787nedu”</td>
+<td align="center">“\w\d\w\d\d\w”</td>
+<td align="center">u89787</td>
+</tr>
+<tr>
+<td align="center">“aliyu89787nedu”</td>
+<td align="center">“\w\d[nedu]\w”</td>
+<td align="center">87ne</td>
+</tr>
+</tbody></table>
 <hr>
 <h2 id="基础2">基础2<a class="post-anchor" href="#基础2"></a></h2><table>
 <thead>

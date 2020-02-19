@@ -402,7 +402,48 @@
 <h2 id="基础4">基础4<a class="post-anchor" href="#基础4"></a></h2><p>模式修正符：在不改变正则表达式的情况下通过模式修正符使匹配结果发生更改</p>
 <p>re.S 让.也可以匹配多行</p>
 <p>re.I 让匹配时忽略大小写</p>
-<h2 id="实例4">实例4<a class="post-anchor" href="#实例4"></a></h2><p>string = “””我是阿里云大学\n欢迎来学习\nPython网络爬虫课程”””<br>pat=”阿里.*?Python”<br>| 源字符串 | 正则表达式 | 匹配方式 | 匹配结果 |<br>| :—-: | :——: | :—–: | :——-: |<br>“Python” | “pyt” | re.compile(“pyt”).findal(“Python”) | []<br>“Python” | “pyt” | re.compile(“pyt”,re.I).findall(“Python”) | Pyt<br>“Python” |”pyt” | re.compile(“pyt”.re.I).findall(“Python”) | Pyt<br>string | pat | re.compile(pat).findall(string) | []<br>string | pat | re.compile(pat,re.S).findall(string) | [‘阿里云大学\n欢迎来学习\nPython’] </p>
+<h2 id="实例4">实例4<a class="post-anchor" href="#实例4"></a></h2><p>string = “””我是阿里云大学\n欢迎来学习\nPython网络爬虫课程”””</p>
+<p>pat=”阿里.*?Python”</p>
+<table>
+<thead>
+<tr>
+<th align="center">源字符串</th>
+<th align="center">正则表达式</th>
+<th align="center">匹配方式</th>
+<th align="center">匹配结果</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">“Python”</td>
+<td align="center">“pyt”</td>
+<td align="center">re.compile(“pyt”).findal(“Python”)</td>
+<td align="center">[]</td>
+</tr>
+<tr>
+<td align="center">“Python”</td>
+<td align="center">“pyt”</td>
+<td align="center">re.compile(“pyt”,re.I).findall(“Python”)</td>
+<td align="center">Pyt</td>
+</tr>
+<tr>
+<td align="center">“Python”</td>
+<td align="center">“pyt”</td>
+<td align="center">re.compile(“pyt”.re.I).findall(“Python”)</td>
+<td align="center">Pyt</td>
+</tr>
+<tr>
+<td align="center">string</td>
+<td align="center">pat</td>
+<td align="center">re.compile(pat).findall(string)</td>
+<td align="center">[]</td>
+</tr>
+<tr>
+<td align="center">string</td>
+<td align="center">pat</td>
+<td align="center">re.compile(pat,re.S).findall(string)</td>
+<td align="center">[‘阿里云大学\n欢迎来学习\nPython’]</td>
+</tr>
+</tbody></table>
 </body></html>
 
   

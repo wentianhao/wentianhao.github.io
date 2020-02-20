@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="wentianhao.github.io/"/>
-  <updated>2020-02-19T17:16:09.056Z</updated>
+  <updated>2020-02-20T16:36:11.430Z</updated>
   <id>wentianhao.github.io/</id>
   
   <author>
@@ -15,6 +15,37 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>diary29</title>
+    <link href="wentianhao.github.io/2020/02/20/diary29/"/>
+    <id>wentianhao.github.io/2020/02/20/diary29/</id>
+    <published>2020-02-20T15:52:27.000Z</published>
+    <updated>2020-02-20T16:36:11.430Z</updated>
+    
+    <content type="html"><![CDATA[<html><head></head><body><pre><code>今天是2020年2月20，星期四，农历正月廿七</code></pre><ul><li><p>已完成云信源码的学习，看起来挺简单的一个小应用</p></li><li><p>课时2 Urllib爬虫项目编写实战</p></li><li><p>国家林草局辟谣牛蛙列入禁食名录！</p></li><li><p>29天了，被关29天了太难了，下图我的心情</p><p>  <a href="https://github.com/wentianhao/wentianhao.github.io/blob/master/images/220.jpg?raw=true" data-caption="pic" data-fancybox="images"><img src="https://github.com/wentianhao/wentianhao.github.io/blob/master/images/220.jpg?raw=true" alt="pic"></a></p></li><li><p>今天也是值得纪念的日子</p><p><a href="https://github.com/wentianhao/wentianhao.github.io/blob/master/images/0220ss.jpg?raw=true" data-caption="pic" data-fancybox="images"><img src="https://github.com/wentianhao/wentianhao.github.io/blob/master/images/0220ss.jpg?raw=true" alt="pic"></a></p></li></ul></body></html>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;html&gt;&lt;head&gt;&lt;/head&gt;&lt;body&gt;&lt;pre&gt;&lt;code&gt;今天是2020年2月20，星期四，农历正月廿七&lt;/code&gt;&lt;/pre&gt;&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;已完成云信源码的学习，看起来挺简单的一个小应用&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;课时2 Urllib爬虫项目编
+      
+    
+    </summary>
+    
+    
+      <category term="日记" scheme="wentianhao.github.io/categories/%E6%97%A5%E8%AE%B0/"/>
+    
+    
+      <category term="封城日记" scheme="wentianhao.github.io/tags/%E5%B0%81%E5%9F%8E%E6%97%A5%E8%AE%B0/"/>
+    
+      <category term="日记" scheme="wentianhao.github.io/tags/%E6%97%A5%E8%AE%B0/"/>
+    
+  </entry>
   
   <entry>
     <title>XPath表达式基础</title>
@@ -72,6 +103,35 @@
       <category term="python" scheme="wentianhao.github.io/tags/python/"/>
     
       <category term="python爬虫" scheme="wentianhao.github.io/tags/python%E7%88%AC%E8%99%AB/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>diary28</title>
+    <link href="wentianhao.github.io/2020/02/19/diary28/"/>
+    <id>wentianhao.github.io/2020/02/19/diary28/</id>
+    <published>2020-02-19T04:22:21.000Z</published>
+    <updated>2020-02-20T15:57:08.170Z</updated>
+    
+    <content type="html"><![CDATA[<html><head></head><body><pre><code>今天是2020年2月19号，星期三，农历正月廿六，二十四节气之雨水</code></pre><ul><li><p>今天发现阿里云大学《抗击疫情，阿里云大学精品课程在线免费学》的活动，把里面所有的课都加购了</p><p>( 仿佛学到了很多知识.jpg</p></li><li><p>学习python网络爬虫第一课，学习<a href="https://whh.plus/2020/02/19/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E5%9F%BA%E7%A1%80/" target="_blank" rel="noopener">正则表达式基础</a>和<a href="https://whh.plus/2020/02/19/XPath%E8%A1%A8%E8%BE%BE%E5%BC%8F%E5%9F%BA%E7%A1%80/" target="_blank" rel="noopener">XPath表达式基础</a></p></li><li><p>欣欣准备投华为面试，是时候让她接受社会的毒打了，调整自己心态，好好准备论文和找工作！</p></li><li><p>听说牛蛙被例如野味了？中国野生动物保护协会：#撤销蛙类养殖专业委员会# 好像又听说牛蛙不算野生动物。</p></li><li><p>2.19学习计划</p><ul><li>看云信的源码</li><li>课时2 Urllib爬虫项目编写实战</li></ul></li></ul></body></html>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;html&gt;&lt;head&gt;&lt;/head&gt;&lt;body&gt;&lt;pre&gt;&lt;code&gt;今天是2020年2月19号，星期三，农历正月廿六，二十四节气之雨水&lt;/code&gt;&lt;/pre&gt;&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;今天发现阿里云大学《抗击疫情，阿里云大学精品课程在线免费学》的活动，把里面所有的课都加购了&lt;
+      
+    
+    </summary>
+    
+    
+      <category term="日记" scheme="wentianhao.github.io/categories/%E6%97%A5%E8%AE%B0/"/>
+    
+    
+      <category term="封城日记" scheme="wentianhao.github.io/tags/%E5%B0%81%E5%9F%8E%E6%97%A5%E8%AE%B0/"/>
+    
+      <category term="日记" scheme="wentianhao.github.io/tags/%E6%97%A5%E8%AE%B0/"/>
     
   </entry>
   
@@ -551,65 +611,6 @@
       
         &lt;html&gt;&lt;head&gt;&lt;/head&gt;&lt;body&gt;&lt;pre&gt;&lt;code&gt;今天是2020年2月5号，星期三，农历正月十二&lt;/code&gt;&lt;/pre&gt;&lt;ul&gt;
 &lt;li&gt;&lt;p&gt;今天上午本来好好的教她后端，结果不知道是那边的网不好，还是什么问题，依赖下载总是报错，阿里镜像一开始配置文件也有
-      
-    
-    </summary>
-    
-    
-      <category term="日记" scheme="wentianhao.github.io/categories/%E6%97%A5%E8%AE%B0/"/>
-    
-    
-      <category term="封城日记" scheme="wentianhao.github.io/tags/%E5%B0%81%E5%9F%8E%E6%97%A5%E8%AE%B0/"/>
-    
-      <category term="日记" scheme="wentianhao.github.io/tags/%E6%97%A5%E8%AE%B0/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>diary13</title>
-    <link href="wentianhao.github.io/2020/02/04/diary13/"/>
-    <id>wentianhao.github.io/2020/02/04/diary13/</id>
-    <published>2020-02-04T15:29:04.000Z</published>
-    <updated>2020-02-05T16:01:39.477Z</updated>
-    
-    <content type="html"><![CDATA[<html><head></head><body><pre><code>今天是2020年2月4号，星期二，农历正月十一。</code></pre><ul><li>放假前的需求今天终于发生产了</li><li>最近一直看见一些新闻很感动，拾荒老人捐款，看哭我，真的很感动，达则兼济天下，穷则独善其身。可是他们自身条件也很差，却愿意在国难是贡献自己的所有，唉，反观红十字会贪污滥竽充数消极怠工，捐款明细都不透明，真是太令人失望且难受了。希望好人一生平安，长命百岁</li><li>今天仍然没有学习，指导女朋友学习后端了，入后端坑，慢慢教咯。办法总比困难多，加油！</li></ul></body></html>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;html&gt;&lt;head&gt;&lt;/head&gt;&lt;body&gt;&lt;pre&gt;&lt;code&gt;今天是2020年2月4号，星期二，农历正月十一。&lt;/code&gt;&lt;/pre&gt;&lt;ul&gt;
-&lt;li&gt;放假前的需求今天终于发生产了&lt;/li&gt;
-&lt;li&gt;最近一直看见一些新闻很感动，拾荒老人捐款，看哭我，真的很感动，达则兼
-      
-    
-    </summary>
-    
-    
-      <category term="日记" scheme="wentianhao.github.io/categories/%E6%97%A5%E8%AE%B0/"/>
-    
-    
-      <category term="封城日记" scheme="wentianhao.github.io/tags/%E5%B0%81%E5%9F%8E%E6%97%A5%E8%AE%B0/"/>
-    
-      <category term="日记" scheme="wentianhao.github.io/tags/%E6%97%A5%E8%AE%B0/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>diary12</title>
-    <link href="wentianhao.github.io/2020/02/03/diary12/"/>
-    <id>wentianhao.github.io/2020/02/03/diary12/</id>
-    <published>2020-02-03T15:15:50.000Z</published>
-    <updated>2020-02-03T15:33:28.389Z</updated>
-    
-    <content type="html"><![CDATA[<html><head></head><body><pre><code>今天是2020年2月3日，星期一，农历正月初十</code></pre><p>人类的赞歌就是勇气的赞歌</p><p><a href="https://www.bilibili.com/video/av86216616" target="_blank" rel="noopener">关于新冠肺炎的一切</a></p><ul><li>凌晨成都5.2级地震，莆田大火，魔幻2020</li><li>实习请假了，在家还是无法工作无法学习</li><li>明天开始准备学习了，不能拖了，虽然开学估计还得延迟1个月，也要开始自己的学习了。学习是自己的事，在家学习需要自制力！</li><li>最近微博上的几个视频太好哭了：<a href="https://www.bilibili.com/video/av86265194" target="_blank" rel="noopener">我们最好的时光，就是现在</a>；<a href="https://www.bilibili.com/video/av86570214" target="_blank" rel="noopener">武汉最新城市宣传片</a>… </li><li>武汉今天开始招募青年志愿者，和爸妈说想去结果不同意，女朋友也不同意，作为一名党员，我还是挺想去贡献自己的一份力量，现在偏远农村无能为力，要是在学校我就偷偷的报了，唉</li></ul><p>武汉加油，中国加油，早日康复</p></body></html>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;html&gt;&lt;head&gt;&lt;/head&gt;&lt;body&gt;&lt;pre&gt;&lt;code&gt;今天是2020年2月3日，星期一，农历正月初十&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;人类的赞歌就是勇气的赞歌&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;https://www.bilibili.com/video/av862
       
     
     </summary>

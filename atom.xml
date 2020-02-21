@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="wentianhao.github.io/"/>
-  <updated>2020-02-20T16:39:52.377Z</updated>
+  <updated>2020-02-21T15:44:59.510Z</updated>
   <id>wentianhao.github.io/</id>
   
   <author>
@@ -15,6 +15,37 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>diary30</title>
+    <link href="wentianhao.github.io/2020/02/21/diary30/"/>
+    <id>wentianhao.github.io/2020/02/21/diary30/</id>
+    <published>2020-02-21T15:37:18.000Z</published>
+    <updated>2020-02-21T15:44:59.510Z</updated>
+    
+    <content type="html"><![CDATA[<html><head></head><body><pre><code>今天是2020年2月31号，星期五，农历正月廿八</code></pre><ul><li>今天帮同学处理excel数据，顺便熟悉一下python关于读取和写入excel的相关方法</li></ul><ul><li>今天没有看视频也没有看论文，过俩天就要开始上网课了，哎，没有网的日子真难熬</li></ul><ul><li>今天出考研成绩了，遥想去年，这个时候我的心情慌死了，一年这么快就过去了，我认识的几个学弟都考的还不错 :thumbsup::thumbsup::thumbsup:</li></ul><ul><li>我村里出现了两个确诊的，连路都给封了:sob::sob::sob:</li></ul></body></html>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;html&gt;&lt;head&gt;&lt;/head&gt;&lt;body&gt;&lt;pre&gt;&lt;code&gt;今天是2020年2月31号，星期五，农历正月廿八&lt;/code&gt;&lt;/pre&gt;&lt;ul&gt;
+&lt;li&gt;今天帮同学处理excel数据，顺便熟悉一下python关于读取和写入excel的相关方法&lt;/li&gt;
+&lt;/ul&gt;
+&lt;u
+      
+    
+    </summary>
+    
+    
+      <category term="日记" scheme="wentianhao.github.io/categories/%E6%97%A5%E8%AE%B0/"/>
+    
+    
+      <category term="封城日记" scheme="wentianhao.github.io/tags/%E5%B0%81%E5%9F%8E%E6%97%A5%E8%AE%B0/"/>
+    
+      <category term="日记" scheme="wentianhao.github.io/tags/%E6%97%A5%E8%AE%B0/"/>
+    
+  </entry>
   
   <entry>
     <title>diary29</title>
@@ -593,35 +624,6 @@
       <category term="maven" scheme="wentianhao.github.io/tags/maven/"/>
     
       <category term="spring boot" scheme="wentianhao.github.io/tags/spring-boot/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>diary14</title>
-    <link href="wentianhao.github.io/2020/02/05/diary14/"/>
-    <id>wentianhao.github.io/2020/02/05/diary14/</id>
-    <published>2020-02-05T15:50:03.000Z</published>
-    <updated>2020-02-05T16:25:24.723Z</updated>
-    
-    <content type="html"><![CDATA[<html><head></head><body><pre><code>今天是2020年2月5号，星期三，农历正月十二</code></pre><ul><li><p>今天上午本来好好的教她后端，结果不知道是那边的网不好，还是什么问题，依赖下载总是报错，阿里镜像一开始配置文件也有问题，然后她就不想搞了，要卸了IDEA，无语，气死我了。后来说是卸了重装，还是气，IDEA一点问题没有，只是maven下载本来就慢，不管开不开VPN。虽然最后没有卸，配置阿里镜像才弄好的。</p></li><li><p><a href="http://whh.plus/2020/02/06/maven/" target="_blank" rel="noopener">IDEA maven 下载慢解决办法</a></p></li><li><p>估计还得在家一个月，疫情比想象的还要严重，这段时间一定要好好把握！祈福武汉！ </p></li></ul></body></html>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;html&gt;&lt;head&gt;&lt;/head&gt;&lt;body&gt;&lt;pre&gt;&lt;code&gt;今天是2020年2月5号，星期三，农历正月十二&lt;/code&gt;&lt;/pre&gt;&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;今天上午本来好好的教她后端，结果不知道是那边的网不好，还是什么问题，依赖下载总是报错，阿里镜像一开始配置文件也有
-      
-    
-    </summary>
-    
-    
-      <category term="日记" scheme="wentianhao.github.io/categories/%E6%97%A5%E8%AE%B0/"/>
-    
-    
-      <category term="封城日记" scheme="wentianhao.github.io/tags/%E5%B0%81%E5%9F%8E%E6%97%A5%E8%AE%B0/"/>
-    
-      <category term="日记" scheme="wentianhao.github.io/tags/%E6%97%A5%E8%AE%B0/"/>
     
   </entry>
   

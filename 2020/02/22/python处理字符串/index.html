@@ -16,7 +16,7 @@
     <meta name="description" content="欢迎" />
     
     <title>
-      python处理excel数据 - wentianhao
+      python处理字符串 - wentianhao
     </title>
     <link rel="manifest" href="/manifest.json" />
     <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon" />
@@ -163,7 +163,7 @@
         <article class="post-entry">
     <div class="header">
       
-      <div class="title">python处理excel数据</div>
+      <div class="title">python处理字符串</div>
       <div class="meta">
         <span class="item">
           <span class="iconfont icon-time-circle"></span>
@@ -202,10 +202,46 @@
       </div>
     </div>
     <html><head></head><body><ol>
-<li>安装xlrd 和xlwt 库(python3)<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install xlrd,xlwt</span><br></pre></td></tr></tbody></table></figure></li>
-<li>使用方法</li>
+<li>使用正则表达式来获取字符串中需要的字符</li>
 </ol>
-<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> xlrd,xlwt</span><br><span class="line"><span class="keyword">from</span> xlutils.copy <span class="keyword">import</span> copy</span><br><span class="line"></span><br><span class="line"><span class="comment"># 打开需要操作的excel表</span></span><br><span class="line">excel1 = xlrd.open_workbook(path)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 获取excel的sheet表</span></span><br><span class="line">sheet1 = excel1.sheet_by_name(sheet_name)</span><br><span class="line"></span><br><span class="line"><span class="comment"># rows & cols</span></span><br><span class="line"></span><br><span class="line">rows = sheet1.nrows</span><br><span class="line">cols = sheet1.ncols</span><br><span class="line"></span><br><span class="line"><span class="comment"># 第i行、列的数据</span></span><br><span class="line">row_i = sheet1.row_values(i)</span><br><span class="line">col_i = sheet1.col_values(i)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看所有的sheet表</span></span><br><span class="line">sheet_names = excel1.sheet_names()</span><br><span class="line"></span><br><span class="line"><span class="comment"># copy excel1 </span></span><br><span class="line">excel2 = copy(excel1)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 新建表</span></span><br><span class="line">excel3 = xlwt.Workbook(encoding = <span class="string">'utf-8'</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 创建sheet</span></span><br><span class="line">sheet_name = excel2.add_sheet(name)</span><br><span class="line"></span><br><span class="line"><span class="comment">#获取该sheet的最后一行</span></span><br><span class="line">n = len(sheet_name.rows)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 写入excel ,row col value</span></span><br><span class="line">sheet_name.write(row,col,value)</span><br><span class="line"></span><br><span class="line"><span class="comment">#在原有sheet后新增数据</span></span><br><span class="line">sheet_name.write(n,col,value)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 保存 生成excel表</span></span><br><span class="line">excel2.save(path)</span><br></pre></td></tr></tbody></table></figure>
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">re.compile(正则表达式).findall(源字符串)</span><br></pre></td></tr></tbody></table></figure>
+<p><a href="https://whh.plus/2020/02/19/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E5%9F%BA%E7%A1%80/" target="_blank" rel="noopener">正则表达式基础</a></p>
+<ol start="2">
+<li>strip(),rstrip(),lstrip()</li>
+</ol>
+<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">str = <span class="string">'  ---abc123+++  '</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 删除两边空字符</span></span><br><span class="line">print(str.strip())</span><br><span class="line"></span><br><span class="line"><span class="comment"># 删除左边空字符</span></span><br><span class="line">print(str.lstrip())</span><br><span class="line"></span><br><span class="line"><span class="comment"># 删除右边空字符</span></span><br><span class="line">print(str.rstrip())</span><br><span class="line"></span><br><span class="line"><span class="comment"># 删除两边的 - + 和空字符</span></span><br><span class="line">print(str.strip().strip(<span class="string">'-+'</span>))</span><br></pre></td></tr></tbody></table></figure>
+
+<ol start="3">
+<li>删除单个固定位置字符 : 切片 + 拼接</li>
+</ol>
+<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">s = <span class="string">'abc:123'</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#字符串拼接方式去掉冒号</span></span><br><span class="line">s1 = s[:<span class="number">3</span>]+s[<span class="number">4</span>:]</span><br><span class="line">print(s1)</span><br></pre></td></tr></tbody></table></figure>
+
+<ol start="4">
+<li>删除任意位置字符同时删除多种不同字符：replace(),re.sub()</li>
+</ol>
+<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 去掉字符串中相同的字符</span></span><br><span class="line">s = <span class="string">'af123adsa'</span></span><br><span class="line">print(s.repace(<span class="string">'a'</span>,<span class="string">''</span>))</span><br></pre></td></tr></tbody></table></figure>
+
+<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> re</span><br><span class="line">s = <span class="string">'\r\nabc\t123\nxyz'</span></span><br><span class="line"><span class="comment"># 去除\r \n \t 字符</span></span><br><span class="line">print(re.sub(<span class="string">'[\r\n\t]'</span>,<span class="string">''</span>,s))</span><br></pre></td></tr></tbody></table></figure>
+
+<ol start="5">
+<li><p>同时删除多种不同字符 translate() str.maketrans()做映射</p>
+<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">s=<span class="string">'abc123xyz'</span></span><br><span class="line"><span class="comment"># a _> x,b_>y,c_>z，字符映射加密</span></span><br><span class="line">print(str.maketrans(<span class="string">'abcxyz'</span>,<span class="string">'xyzabc'</span>))</span><br><span class="line"><span class="comment"># translate把其转换成字符串</span></span><br><span class="line">print(s.translate(str.maketrans(<span class="string">'abcxyz'</span>,<span class="string">'xyzabc'</span>)))</span><br></pre></td></tr></tbody></table></figure>
+</li>
+<li><p>分割字符串</p>
+</li>
+</ol>
+<ul>
+<li><p>str.split()<br>利用字符串函数split分割，分割后返回的是分割部分的字符列表，每次只能处理一个分隔符</p>
+<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">str=<span class="string">'abc,123 efg,567'</span></span><br><span class="line">str.split()</span><br><span class="line"><span class="comment"># print : ['abc,123','efg,567']</span></span><br><span class="line">str.split(<span class="string">','</span>)</span><br><span class="line"><span class="comment"># print : ['abc','123 efg','567']</span></span><br></pre></td></tr></tbody></table></figure>
+</li>
+<li><p>re.split()<br>利用re模块的split函数对字符串进行分割，分割后返回的是分割部分的字符列表，可以实现一次性分割多种分隔符</p>
+<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> re</span><br><span class="line">str=<span class="string">'abc,123 efg,567'</span></span><br><span class="line">re.split(<span class="string">'[, ]'</span>,str)</span><br><span class="line"><span class="comment"># print : ['abc','123','efg','567']</span></span><br></pre></td></tr></tbody></table></figure>
+</li>
+<li><p>str.partition()<br>利用字符串函数partition或者rpartition实现字符串分割</p>
+</li>
+</ul>
+<p>这俩函数都只接收一个分割字符串作为参数,将目标字符串分割为两个部分，返回一个三元元组(head,sep,tail),包含分割符。细微区别在于前者从目标字符串的末尾也就是右边开始搜索分割符</p>
+<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">str = <span class="string">"abc,123 efg,567"</span></span><br><span class="line">str.partition(<span class="string">','</span>)</span><br><span class="line"><span class="comment"># print:('abc',',','123 efg,567')</span></span><br><span class="line">str.rpartition(<span class="string">','</span>)</span><br><span class="line"><span class="comment">#print: ('abc,123 efg',',','567')</span></span><br></pre></td></tr></tbody></table></figure>
 </body></html>
 
   
@@ -232,12 +268,10 @@
   <div class="post-guide">
     <div class="item left">
         
-          <a href="/2020/02/22/python%E5%A4%84%E7%90%86%E5%AD%97%E7%AC%A6%E4%B8%B2/">python处理字符串</a>
-        
     </div>
     <div class="item right">
         
-          <a href="/2020/02/21/diary30/">diary30</a>
+          <a href="/2020/02/22/python%E5%A4%84%E7%90%86excel%E6%95%B0%E6%8D%AE/">python处理excel数据</a>
         
     </div>
   </div>
@@ -249,7 +283,7 @@
       本文作者：<a href="/wentianhao.github.io">whh</a>
     </div>
     <div class="link">
-      永久链接：<a href="/wentianhao.github.io/2020/02/22/python%E5%A4%84%E7%90%86excel%E6%95%B0%E6%8D%AE/">/wentianhao.github.io/2020/02/22/python%E5%A4%84%E7%90%86excel%E6%95%B0%E6%8D%AE/</a>
+      永久链接：<a href="/wentianhao.github.io/2020/02/22/python%E5%A4%84%E7%90%86%E5%AD%97%E7%AC%A6%E4%B8%B2/">/wentianhao.github.io/2020/02/22/python%E5%A4%84%E7%90%86%E5%AD%97%E7%AC%A6%E4%B8%B2/</a>
     </div>
     <div class="declare">
       版权声明：本文首发于<a href="/wentianhao.github.io">whh</a>的博客，转载请注明出处！

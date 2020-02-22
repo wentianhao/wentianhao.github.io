@@ -16,7 +16,7 @@
     <meta name="description" content="欢迎" />
     
     <title>
-      python处理字符串 - wentianhao
+      Let&#39;s Encrypt 申请免费的Https证书 - wentianhao
     </title>
     <link rel="manifest" href="/manifest.json" />
     <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon" />
@@ -163,7 +163,7 @@
         <article class="post-entry">
     <div class="header">
       
-      <div class="title">python处理字符串</div>
+      <div class="title">Let's Encrypt 申请免费的Https证书</div>
       <div class="meta">
         <span class="item">
           <span class="iconfont icon-time-circle"></span>
@@ -178,7 +178,7 @@
           <span>
               
                 
-                  <a href="/categories/python">python</a>
+                  <a href="/categories/server">server</a>
                 
               
           </span>
@@ -191,7 +191,7 @@
             <span>
                 
                   
-                    <a href="/tags/python">python</a>
+                    <a href="/tags/https">https</a>
                   
                 
             </span>
@@ -201,47 +201,34 @@
       <div>
       </div>
     </div>
-    <html><head></head><body><ol>
-<li>使用正则表达式来获取字符串中需要的字符</li>
-</ol>
-<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">re.compile(正则表达式).findall(源字符串)</span><br></pre></td></tr></tbody></table></figure>
-<p><a href="https://whh.plus/2020/02/19/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E5%9F%BA%E7%A1%80/" target="_blank" rel="noopener">正则表达式基础</a></p>
-<ol start="2">
-<li>strip(),rstrip(),lstrip()</li>
-</ol>
-<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">str = <span class="string">'  ---abc123+++  '</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 删除两边空字符</span></span><br><span class="line">print(str.strip())</span><br><span class="line"></span><br><span class="line"><span class="comment"># 删除左边空字符</span></span><br><span class="line">print(str.lstrip())</span><br><span class="line"></span><br><span class="line"><span class="comment"># 删除右边空字符</span></span><br><span class="line">print(str.rstrip())</span><br><span class="line"></span><br><span class="line"><span class="comment"># 删除两边的 - + 和空字符</span></span><br><span class="line">print(str.strip().strip(<span class="string">'-+'</span>))</span><br></pre></td></tr></tbody></table></figure>
+    <html><head></head><body><p>Let’s Encrypt证书不仅<br>cerbot可以通过简单的命令来生成证书是免费的，而且还支持通配符证书，通配符证书指的是一个可以被多个子域名使用的公钥证书，多个子域名使用起来十分方便。申请和配置的流程简单，有效期90天，可以通过脚本更新证书。 </p>
+<hr>
+<p><strong>Cerbot</strong><br>cerbot可以通过简单的命令来生成证书</p>
+<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://github.com/certbot/certbot</span><br></pre></td></tr></tbody></table></figure>
 
-<ol start="3">
-<li>删除单个固定位置字符 : 切片 + 拼接</li>
-</ol>
-<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">s = <span class="string">'abc:123'</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#字符串拼接方式去掉冒号</span></span><br><span class="line">s1 = s[:<span class="number">3</span>]+s[<span class="number">4</span>:]</span><br><span class="line">print(s1)</span><br></pre></td></tr></tbody></table></figure>
-
-<ol start="4">
-<li>删除任意位置字符同时删除多种不同字符：replace(),re.sub()</li>
-</ol>
-<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 去掉字符串中相同的字符</span></span><br><span class="line">s = <span class="string">'af123adsa'</span></span><br><span class="line">print(s.repace(<span class="string">'a'</span>,<span class="string">''</span>))</span><br></pre></td></tr></tbody></table></figure>
-
-<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> re</span><br><span class="line">s = <span class="string">'\r\nabc\t123\nxyz'</span></span><br><span class="line"><span class="comment"># 去除\r \n \t 字符</span></span><br><span class="line">print(re.sub(<span class="string">'[\r\n\t]'</span>,<span class="string">''</span>,s))</span><br></pre></td></tr></tbody></table></figure>
-
-<ol start="5">
-<li><p>同时删除多种不同字符 translate() str.maketrans()做映射</p>
-<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">s=<span class="string">'abc123xyz'</span></span><br><span class="line"><span class="comment"># a _> x,b_>y,c_>z，字符映射加密</span></span><br><span class="line">print(str.maketrans(<span class="string">'abcxyz'</span>,<span class="string">'xyzabc'</span>))</span><br><span class="line"><span class="comment"># translate把其转换成字符串</span></span><br><span class="line">print(s.translate(str.maketrans(<span class="string">'abcxyz'</span>,<span class="string">'xyzabc'</span>)))</span><br></pre></td></tr></tbody></table></figure>
-</li>
-<li><p>分割字符串</p>
-</li>
-</ol>
+<hr>
+<p><strong>申请证书</strong><br>在申请Let’s Encrypt证书的时候，需要校验域名的所有权，证明操作者有权利为该域名申请证书，目前支持三种验证方式：</p>
 <ul>
-<li><p>str.split()<br>利用字符串函数split分割，分割后返回的是分割部分的字符列表，每次只能处理一个分隔符</p>
-<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">str=<span class="string">'abc,123 efg,567'</span></span><br><span class="line">str.split()</span><br><span class="line"><span class="comment"># print : ['abc,123','efg,567']</span></span><br><span class="line">str.split(<span class="string">','</span>)</span><br><span class="line"><span class="comment"># print : ['abc','123 efg','567']</span></span><br></pre></td></tr></tbody></table></figure>
-</li>
-<li><p>re.split()<br>利用re模块的split函数对字符串进行分割，分割后返回的是分割部分的字符列表，可以实现一次性分割多种分隔符</p>
-<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> re</span><br><span class="line">str=<span class="string">'abc,123 efg,567'</span></span><br><span class="line">re.split(<span class="string">'[, ]'</span>,str)</span><br><span class="line"><span class="comment"># print : ['abc','123','efg','567']</span></span><br></pre></td></tr></tbody></table></figure>
-</li>
-<li><p>str.partition()<br>利用字符串函数partition或者rpartition实现字符串分割</p>
-</li>
+<li>dns-01:给域名添加一个DNS TXT 记录</li>
+<li>http-01:在域名对应的web服务器下放置一个HTTP well-known URL资源文件</li>
+<li>tls-sni-01:在域名对应的web服务器下放置一个HTTPS well-known URL资源文件</li>
 </ul>
-<p>这俩函数都只接收一个分割字符串作为参数,将目标字符串分割为两个部分，返回一个三元元组(head,sep,tail),包含分割符。细微区别在于前者从目标字符串的末尾也就是右边开始搜索分割符</p>
-<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">str = <span class="string">"abc,123 efg,567"</span></span><br><span class="line">str.partition(<span class="string">','</span>)</span><br><span class="line"><span class="comment"># print:('abc',',','123 efg,567')</span></span><br><span class="line">str.rpartition(<span class="string">','</span>)</span><br><span class="line"><span class="comment">#print: ('abc,123 efg',',','567')</span></span><br></pre></td></tr></tbody></table></figure>
+<p>对于通配符域名只能通过dns-01的方式申请，在阿里购买的域名需要在阿里云的解析设置中添加解析记录。使用下面的命令生成证书，注意将*.example.com 和 example.com替换成自己的域名</p>
+<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> cerbot</span><br><span class="line">./cerbot-auto certonly --manual \ </span><br><span class="line">-d *.example.com \ </span><br><span class="line">-d example.com --agree-tos \ </span><br><span class="line">--manual-public-ip-logging-ok --preferred-challenges \ </span><br><span class="line">dns-01 --server https://acme-v02.api.letsencrypt.org/directory</span><br></pre></td></tr></tbody></table></figure>
+
+<p>输入完上面命令之后，需要下载一堆依赖库，然后输入邮箱：</p>
+<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Saving debug <span class="built_in">log</span> to /var/<span class="built_in">log</span>/letsencrypt/letsencrypt.log</span><br><span class="line">Plugins selected: Authenticator manual, Installer None</span><br><span class="line">Enter email address (used <span class="keyword">for</span> urgent renewal and security notices) (Enter <span class="string">'c'</span> to</span><br><span class="line">cancel): xxxxxxx@email.com</span><br></pre></td></tr></tbody></table></figure>
+
+<p>验证域名所有权：</p>
+<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">Please deploy a DNS TXT record under the name</span><br><span class="line">_acme-challenge.example.com with the following value:</span><br><span class="line"></span><br><span class="line">mhumL1xJOHPIZtFTEm4rotjJnR9TdkBVPuCS9YHvNjs</span><br><span class="line"></span><br><span class="line">Before continuing, verify the record is deployed.</span><br><span class="line">- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -</span><br><span class="line">Press Enter to Continue</span><br></pre></td></tr></tbody></table></figure>
+<p>打开域名添加解析记录，记录类型选择TXT，主机记录输入_acme-challenge.example.com,记录值输入随机生成的字符串mhumL1xJOHPIZtFTEm4rotjJnR9TdkBVPuCS9YHvNjs。</p>
+<hr>
+<p><strong>配置Https访问</strong><br>nginx.conf</p>
+<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment"># 设置 http 自动跳转到 https</span></span><br><span class="line">server {</span><br><span class="line">    listen 80;</span><br><span class="line">    server_name example.com;</span><br><span class="line">    <span class="built_in">return</span> 301 https://<span class="variable">$server_name</span><span class="variable">$request_uri</span>;                                      </span><br><span class="line">}</span><br><span class="line"></span><br><span class="line"><span class="comment"># 监听 443 端口，转发请求到 3000 端口</span></span><br><span class="line">server {</span><br><span class="line">    listen 443;</span><br><span class="line">    server_name example.com;</span><br><span class="line">    location / {</span><br><span class="line">        <span class="comment">#选择的服务端口</span></span><br><span class="line">        <span class="comment">#proxy_pass http://127.0.0.1:3000;</span></span><br><span class="line">        <span class="comment"># blog地址，参照部署那篇文章</span></span><br><span class="line"></span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 开启 ssl 并指定证书文件和秘钥的位置</span></span><br><span class="line">    ssl on;</span><br><span class="line">    ssl_certificate     /etc/letsencrypt/live/example.com/fullchain.pem;        </span><br><span class="line">    ssl_certificate_key /etc/letsencrypt/live/example.com/privkey.pem;          </span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+
+<hr>
+<p>nginx配置: <a href="https://whh.plus/2020/01/20/hexo-to-your-server/" target="_blank" rel="noopener">https://whh.plus/2020/01/20/hexo-to-your-server/</a></p>
+<p>参考以及感谢: <a href="https://juejin.im/post/5c2aefb3f265da6157059430" target="_blank" rel="noopener">https://juejin.im/post/5c2aefb3f265da6157059430</a></p>
 </body></html>
 
   
@@ -268,12 +255,10 @@
   <div class="post-guide">
     <div class="item left">
         
-          <a href="/2020/02/22/Encrypt/">Let's Encrypt 申请免费的Https证书</a>
-        
     </div>
     <div class="item right">
         
-          <a href="/2020/02/22/python%E5%A4%84%E7%90%86excel%E6%95%B0%E6%8D%AE/">python处理excel数据</a>
+          <a href="/2020/02/22/python%E5%A4%84%E7%90%86%E5%AD%97%E7%AC%A6%E4%B8%B2/">python处理字符串</a>
         
     </div>
   </div>
@@ -285,7 +270,7 @@
       本文作者：<a href="/wentianhao.github.io">whh</a>
     </div>
     <div class="link">
-      永久链接：<a href="/wentianhao.github.io/2020/02/22/python%E5%A4%84%E7%90%86%E5%AD%97%E7%AC%A6%E4%B8%B2/">/wentianhao.github.io/2020/02/22/python%E5%A4%84%E7%90%86%E5%AD%97%E7%AC%A6%E4%B8%B2/</a>
+      永久链接：<a href="/wentianhao.github.io/2020/02/22/Encrypt/">/wentianhao.github.io/2020/02/22/Encrypt/</a>
     </div>
     <div class="declare">
       版权声明：本文首发于<a href="/wentianhao.github.io">whh</a>的博客，转载请注明出处！

@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="wentianhao.github.io/"/>
-  <updated>2020-02-24T16:38:18.789Z</updated>
+  <updated>2020-02-27T11:36:16.572Z</updated>
   <id>wentianhao.github.io/</id>
   
   <author>
@@ -15,6 +15,124 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>diary35</title>
+    <link href="wentianhao.github.io/2020/02/26/diary35/"/>
+    <id>wentianhao.github.io/2020/02/26/diary35/</id>
+    <published>2020-02-26T14:20:57.000Z</published>
+    <updated>2020-02-27T11:36:16.572Z</updated>
+    
+    <content type="html"><![CDATA[<html><head></head><body><pre><code>今天是2020年2月26号，星期三，农历二月初四</code></pre><ul><li>今天上午的web大规模数据分析课我以为是9.55上课，错过了今天的签到，难受</li><li>今天网太卡了，爬虫第二课都没能看完。</li><li></li></ul></body></html>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;html&gt;&lt;head&gt;&lt;/head&gt;&lt;body&gt;&lt;pre&gt;&lt;code&gt;今天是2020年2月26号，星期三，农历二月初四&lt;/code&gt;&lt;/pre&gt;&lt;ul&gt;
+&lt;li&gt;今天上午的web大规模数据分析课我以为是9.55上课，错过了今天的签到，难受&lt;/li&gt;
+&lt;li&gt;今天网太卡了，爬虫第
+      
+    
+    </summary>
+    
+    
+      <category term="日记" scheme="wentianhao.github.io/categories/%E6%97%A5%E8%AE%B0/"/>
+    
+    
+      <category term="封城日记" scheme="wentianhao.github.io/tags/%E5%B0%81%E5%9F%8E%E6%97%A5%E8%AE%B0/"/>
+    
+      <category term="日记" scheme="wentianhao.github.io/tags/%E6%97%A5%E8%AE%B0/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>diary34</title>
+    <link href="wentianhao.github.io/2020/02/25/diary34/"/>
+    <id>wentianhao.github.io/2020/02/25/diary34/</id>
+    <published>2020-02-25T15:44:20.000Z</published>
+    <updated>2020-02-26T14:22:36.971Z</updated>
+    
+    <content type="html"><![CDATA[<html><head></head><body><pre><code>今天是2020年2月25号，星期二，农历二月初三</code></pre><ul><li>停了一下午的电</li><li>本来打算通过qq号获取一个qq的手机号，结果停电了，意兴阑珊了</li><li>晚安</li></ul></body></html>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;html&gt;&lt;head&gt;&lt;/head&gt;&lt;body&gt;&lt;pre&gt;&lt;code&gt;今天是2020年2月25号，星期二，农历二月初三&lt;/code&gt;&lt;/pre&gt;&lt;ul&gt;
+&lt;li&gt;停了一下午的电&lt;/li&gt;
+&lt;li&gt;本来打算通过qq号获取一个qq的手机号，结果停电了，意兴阑珊了&lt;/li&gt;
+&lt;li&gt;
+      
+    
+    </summary>
+    
+    
+      <category term="日记" scheme="wentianhao.github.io/categories/%E6%97%A5%E8%AE%B0/"/>
+    
+    
+      <category term="封城日记" scheme="wentianhao.github.io/tags/%E5%B0%81%E5%9F%8E%E6%97%A5%E8%AE%B0/"/>
+    
+      <category term="日记" scheme="wentianhao.github.io/tags/%E6%97%A5%E8%AE%B0/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>ModuleNotFoundError</title>
+    <link href="wentianhao.github.io/2020/02/25/ModuleNotFoundError/"/>
+    <id>wentianhao.github.io/2020/02/25/ModuleNotFoundError/</id>
+    <published>2020-02-25T06:02:30.000Z</published>
+    <updated>2020-02-25T06:07:51.444Z</updated>
+    
+    <content type="html"><![CDATA[<html><head></head><body><p>-关于ModuleNotFoundError: No module named ‘urllib.request’; ‘urllib’ is not a package的问题</p><ul><li><p>重名导致urllib包无效化</p><p>(1) 正在使用import urllib的文件命名就是urllib.py文件 </p><p>(2) 正在使用的文件的文件夹目录下有一个urllib.py的文件，导致import urllib 实际上导入的是当前目录的urllib.py文件而不是urllib库文件</p></li><li><p>解决方法：</p><p>  修改文件名</p></li></ul></body></html>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;html&gt;&lt;head&gt;&lt;/head&gt;&lt;body&gt;&lt;p&gt;-关于ModuleNotFoundError: No module named ‘urllib.request’; ‘urllib’ is not a package的问题&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;重名导致urlli
+      
+    
+    </summary>
+    
+    
+      <category term="python" scheme="wentianhao.github.io/categories/python/"/>
+    
+    
+      <category term="python" scheme="wentianhao.github.io/tags/python/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>urllib</title>
+    <link href="wentianhao.github.io/2020/02/25/urllib/"/>
+    <id>wentianhao.github.io/2020/02/25/urllib/</id>
+    <published>2020-02-25T04:51:36.000Z</published>
+    <updated>2020-02-27T09:06:29.339Z</updated>
+    
+    <content type="html"><![CDATA[<html><head></head><body><p>Urllib模块是一个可以用于编写爬虫的非常常用的模块</p><figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> urllib</span><br><span class="line"><span class="keyword">import</span> urllib.request</span><br><span class="line"><span class="keyword">import</span> re</span><br><span class="line"><span class="keyword">import</span> random</span><br><span class="line"></span><br><span class="line">url = <span class="string">"http://www.jd.com"</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 爬到内存中</span></span><br><span class="line">jd = urllib.request.urlopen(url).read().decode(<span class="string">"utf-8"</span>,<span class="string">"ignore"</span>)</span><br><span class="line">print(len(jd))</span><br><span class="line">pat = <span class="string">"<title>(.*?)</title>"</span></span><br><span class="line">title = re.compile(pat,re.S).findall(jd)</span><br><span class="line">print(title)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 爬到硬盘文件中</span></span><br><span class="line">urllib.request.urlretrieve(url,filename=<span class="string">"./jd.html"</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 浏览器伪装</span></span><br><span class="line">url2 = <span class="string">"https://www.qiushibaike.com/"</span></span><br><span class="line">opener = urllib.request.build_opener()</span><br><span class="line">UA = (<span class="string">"User-Agent"</span>,<span class="string">"Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36"</span>)</span><br><span class="line">opener.addheaders=[UA]</span><br><span class="line">urllib.request.install_opener(opener)</span><br><span class="line">data = urllib.request.urlopen(url2).read().decode(<span class="string">"utf-8"</span>,<span class="string">"ignore"</span>)</span><br><span class="line">print(len(data))</span><br><span class="line"></span><br><span class="line"><span class="comment"># 用户代理池，希望对象服务器更难识别爬虫</span></span><br><span class="line"><span class="comment"># 使用多个浏览器标识</span></span><br><span class="line">uapools=[</span><br><span class="line">    <span class="string">"Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36"</span>,</span><br><span class="line">    <span class="string">"Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:72.0) Gecko/20100101 Firefox/72.0"</span>,</span><br><span class="line">    <span class="string">"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.102 Safari/537.36 Edge/18.18363"</span></span><br><span class="line">]</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">UA</span><span class="params">()</span>:</span></span><br><span class="line">    opener=urllib.request.build_opener()</span><br><span class="line">    thisua = random.choice(uapools)</span><br><span class="line">    ua = (<span class="string">"User-Agent"</span>,thisua)</span><br><span class="line">    opener.addheaders=[ua]</span><br><span class="line">    urllib.request.install_opener(opener)</span><br><span class="line">    print(<span class="string">"当前UA ："</span>+str(thisua))</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">0</span>,<span class="number">10</span>):</span><br><span class="line">    UA()</span><br><span class="line">    data = urllib.request.urlopen(url2).read().decode(<span class="string">"utf-8"</span>,<span class="string">"ignore"</span>)</span><br><span class="line">    print(len(data))</span><br></pre></td></tr></tbody></table></figure><p>简单实战：爬取糗事百科热门并翻页</p></body></html>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;html&gt;&lt;head&gt;&lt;/head&gt;&lt;body&gt;&lt;p&gt;Urllib模块是一个可以用于编写爬虫的非常常用的模块&lt;/p&gt;
+&lt;figure class=&quot;highlight python&quot;&gt;&lt;table&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span
+      
+    
+    </summary>
+    
+    
+      <category term="python" scheme="wentianhao.github.io/categories/python/"/>
+    
+    
+      <category term="python" scheme="wentianhao.github.io/tags/python/"/>
+    
+      <category term="python爬虫" scheme="wentianhao.github.io/tags/python%E7%88%AC%E8%99%AB/"/>
+    
+  </entry>
   
   <entry>
     <title>diary33</title>
@@ -484,124 +602,6 @@
         &lt;html&gt;&lt;head&gt;&lt;/head&gt;&lt;body&gt;&lt;pre&gt;&lt;code&gt;今天是2020年2月14日，星期五，农历正月廿一&lt;/code&gt;&lt;/pre&gt;&lt;ul&gt;
 &lt;li&gt;&lt;p&gt;今天是情人节，情人节快乐 :rose::rose::rose:&lt;/p&gt;
 &lt;p&gt;无法陪在你身边，要照顾好自己哦！
-      
-    
-    </summary>
-    
-    
-      <category term="日记" scheme="wentianhao.github.io/categories/%E6%97%A5%E8%AE%B0/"/>
-    
-    
-      <category term="封城日记" scheme="wentianhao.github.io/tags/%E5%B0%81%E5%9F%8E%E6%97%A5%E8%AE%B0/"/>
-    
-      <category term="日记" scheme="wentianhao.github.io/tags/%E6%97%A5%E8%AE%B0/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>diary22</title>
-    <link href="wentianhao.github.io/2020/02/13/diary22/"/>
-    <id>wentianhao.github.io/2020/02/13/diary22/</id>
-    <published>2020-02-13T12:22:05.000Z</published>
-    <updated>2020-02-13T16:35:10.597Z</updated>
-    
-    <content type="html"><![CDATA[<html><head></head><body><pre><code>今天是2020年2月13日，星期四，农历正月二十</code></pre><ul><li><p>好消息：湖北省委武汉市委主要负责同志职务调整</p><p>应勇同志任湖北省委委员、常委、书记，蒋超良同志不再担任湖北省委书记、常委、委员职务</p><p>王忠林同志任湖北省委委员、常委和武汉市委书记，马国强同志不再担任湖北省委副书记、常委、委员和武汉市委书记职务。</p><p>湖北省十三届人大常委会第十四次会议以网络视频会议形式召开，会议决定任命王贺胜同志为省卫生健康委员会主任，决定免去刘英姿同志的省卫生健康委员会主任。</p><p>应勇救疫（应勇），焕然一新（陈一新），预贺胜利（王贺胜）</p></li><li><p>今天湖北新增14840例，大吃一惊，原来是湖北将临床诊断病例数纳入确诊病例数了。</p></li></ul></body></html>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;html&gt;&lt;head&gt;&lt;/head&gt;&lt;body&gt;&lt;pre&gt;&lt;code&gt;今天是2020年2月13日，星期四，农历正月二十&lt;/code&gt;&lt;/pre&gt;&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;好消息：湖北省委武汉市委主要负责同志职务调整&lt;/p&gt;
-&lt;p&gt;应勇同志任湖北省委委员、常委、书记，蒋超良同志不再
-      
-    
-    </summary>
-    
-    
-      <category term="日记" scheme="wentianhao.github.io/categories/%E6%97%A5%E8%AE%B0/"/>
-    
-    
-      <category term="封城日记" scheme="wentianhao.github.io/tags/%E5%B0%81%E5%9F%8E%E6%97%A5%E8%AE%B0/"/>
-    
-      <category term="日记" scheme="wentianhao.github.io/tags/%E6%97%A5%E8%AE%B0/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>hexo-Spawn-failed-fatal</title>
-    <link href="wentianhao.github.io/2020/02/13/hexo-Spawn-failed-fatal/"/>
-    <id>wentianhao.github.io/2020/02/13/hexo-Spawn-failed-fatal/</id>
-    <published>2020-02-12T16:00:31.000Z</published>
-    <updated>2020-02-22T09:28:39.307Z</updated>
-    
-    <content type="html"><![CDATA[<html><head></head><body><p>今天偶尔发现博客部署到阿里云上没有成功</p><p>错误代码：</p><figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">fatal: LF would be replaced by CRLF <span class="keyword">in</span> </span><br><span class="line">2019/06/21/hello-world/index.html</span><br><span class="line">FATAL Something<span class="string">'s wrong. Maybe you can find the solution here: </span></span><br><span class="line"><span class="string">https://hexo.io/docs/troubleshooting.html</span></span><br><span class="line"><span class="string">Error: Spawn failed</span></span><br><span class="line"><span class="string">at ChildProcess.<anonymous> </span></span><br><span class="line"><span class="string">(D:\\Hexo\node_modules\hexo-util\lib\spawn.js:52:19)</span></span><br><span class="line"><span class="string">at emitTwo (events.js:106:13)</span></span><br><span class="line"><span class="string">at ChildProcess.emit (events.js:191:7)</span></span><br><span class="line"><span class="string">at ChildProcess.cp.emit </span></span><br><span class="line"><span class="string">(D:\blog\Hexo\node_modules\cross-spawn\lib\enoent.js:40:29)</span></span><br><span class="line"><span class="string">at Process.ChildProcess._handle.onexit </span></span><br><span class="line"><span class="string">(internal/child_process.js:215:12)</span></span><br></pre></td></tr></tbody></table></figure><p>解决办法：<br>在.git的配置文件里添加</p><figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">autocrlf = <span class="literal">false</span></span><br><span class="line">safecrlf = <span class="literal">false</span></span><br></pre></td></tr></tbody></table></figure></body></html>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;html&gt;&lt;head&gt;&lt;/head&gt;&lt;body&gt;&lt;p&gt;今天偶尔发现博客部署到阿里云上没有成功&lt;/p&gt;
-&lt;p&gt;错误代码：&lt;/p&gt;
-&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;s
-      
-    
-    </summary>
-    
-    
-      <category term="server" scheme="wentianhao.github.io/categories/server/"/>
-    
-    
-      <category term="hexo" scheme="wentianhao.github.io/tags/hexo/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>diary21</title>
-    <link href="wentianhao.github.io/2020/02/12/diary21/"/>
-    <id>wentianhao.github.io/2020/02/12/diary21/</id>
-    <published>2020-02-12T15:21:04.000Z</published>
-    <updated>2020-02-12T15:31:57.442Z</updated>
-    
-    <content type="html"><![CDATA[<html><head></head><body><pre><code>今天是2020年2月12号，星期三，农历正月十九</code></pre><ul><li><p>WHO宣布了新冠病毒的官方命名为SARS-COV-2,其导致的疾病为COVID-19。其中“Co”：冠状病毒，“Vi”:病毒，D：“疾病”。之前，有6个多外号：武汉肺炎、新型冠状病毒、2019-nCov、SARI、中国肺炎、NCP。病毒称谓不可明显带有地域歧视。</p></li><li><p>头晕，早点休息</p></li></ul></body></html>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;html&gt;&lt;head&gt;&lt;/head&gt;&lt;body&gt;&lt;pre&gt;&lt;code&gt;今天是2020年2月12号，星期三，农历正月十九&lt;/code&gt;&lt;/pre&gt;&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;WHO宣布了新冠病毒的官方命名为SARS-COV-2,其导致的疾病为COVID-19。其中“Co”：冠状病毒，
-      
-    
-    </summary>
-    
-    
-      <category term="日记" scheme="wentianhao.github.io/categories/%E6%97%A5%E8%AE%B0/"/>
-    
-    
-      <category term="封城日记" scheme="wentianhao.github.io/tags/%E5%B0%81%E5%9F%8E%E6%97%A5%E8%AE%B0/"/>
-    
-      <category term="日记" scheme="wentianhao.github.io/tags/%E6%97%A5%E8%AE%B0/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>diary21</title>
-    <link href="wentianhao.github.io/2020/02/11/diary20/"/>
-    <id>wentianhao.github.io/2020/02/11/diary20/</id>
-    <published>2020-02-11T15:59:10.000Z</published>
-    <updated>2020-02-11T16:03:14.840Z</updated>
-    
-    <content type="html"><![CDATA[<html><head></head><body><pre><code>今天是2020年2月11日，星期二，农历正月十八</code></pre><ul><li><p>今天吃了一天的鸡，网速还是太慢了，玩游戏都难受</p></li><li><p>听说学校要开始直播上课了，我这没网可咋整啊？愁</p></li><li><p>人民的名义还挺好看的</p></li></ul></body></html>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;html&gt;&lt;head&gt;&lt;/head&gt;&lt;body&gt;&lt;pre&gt;&lt;code&gt;今天是2020年2月11日，星期二，农历正月十八&lt;/code&gt;&lt;/pre&gt;&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;今天吃了一天的鸡，网速还是太慢了，玩游戏都难受&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;听说学校要开始直播上课了，我
       
     
     </summary>

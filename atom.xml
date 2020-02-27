@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="wentianhao.github.io/"/>
-  <updated>2020-02-27T11:36:16.572Z</updated>
+  <updated>2020-02-27T15:03:17.725Z</updated>
   <id>wentianhao.github.io/</id>
   
   <author>
@@ -17,21 +17,87 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>专业英语</title>
+    <link href="wentianhao.github.io/2020/02/27/%E4%B8%93%E4%B8%9A%E8%8B%B1%E8%AF%AD/"/>
+    <id>wentianhao.github.io/2020/02/27/%E4%B8%93%E4%B8%9A%E8%8B%B1%E8%AF%AD/</id>
+    <published>2020-02-27T14:44:38.000Z</published>
+    <updated>2020-02-27T15:03:17.725Z</updated>
+    
+    <content type="html"><![CDATA[<html><head></head><body><ul><li><p>世界著名的三大科技文献检索系统</p><ul><li>SCI 科学引文索引</li><li>EI 工程索引</li><li>ISTP 科技会议录索引</li></ul></li><li><p>高质量文章标准 High-quality paper criteria</p><ul><li>SCI影响因子</li><li>推荐 & 口碑 （CCF推荐期刊，北大核心）（nature 、cell 、Springer 、Elsciver ）</li><li>引用量 （google引用、SCI引用）</li></ul></li></ul><p>小结：<br><a href="https://github.com/wentianhao/wentianhao.github.io/blob/master/images/IR.png?raw=true" data-caption="IR" data-fancybox="images"><img src="https://github.com/wentianhao/wentianhao.github.io/blob/master/images/IR.png?raw=true" alt="IR"></a></p></body></html>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;html&gt;&lt;head&gt;&lt;/head&gt;&lt;body&gt;&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;世界著名的三大科技文献检索系统&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;SCI 科学引文索引&lt;/li&gt;
+&lt;li&gt;EI 工程索引&lt;/li&gt;
+&lt;li&gt;ISTP 科技会议录索引&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;
+      
+    
+    </summary>
+    
+    
+      <category term="学习笔记" scheme="wentianhao.github.io/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+    
+      <category term="学习笔记" scheme="wentianhao.github.io/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>diary36</title>
+    <link href="wentianhao.github.io/2020/02/27/diary36/"/>
+    <id>wentianhao.github.io/2020/02/27/diary36/</id>
+    <published>2020-02-27T14:28:24.000Z</published>
+    <updated>2020-02-27T14:43:53.414Z</updated>
+    
+    <content type="html"><![CDATA[<html><head></head><body><pre><code>今天是2020年2月27号，星期四，农历二月初五</code></pre><ul><li><p>今天将python爬虫第二节视频看完了！</p></li><li><p>晚上给xx准备生日礼物，做了个网页，然后做了个视频，希望xx能够喜欢！</p></li><li><p>xx明天生日！今晚12点给她看看，开不开心</p></li></ul></body></html>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;html&gt;&lt;head&gt;&lt;/head&gt;&lt;body&gt;&lt;pre&gt;&lt;code&gt;今天是2020年2月27号，星期四，农历二月初五&lt;/code&gt;&lt;/pre&gt;&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;今天将python爬虫第二节视频看完了！&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;晚上给xx准备生日礼物，做了个网页
+      
+    
+    </summary>
+    
+    
+      <category term="日记" scheme="wentianhao.github.io/categories/%E6%97%A5%E8%AE%B0/"/>
+    
+    
+      <category term="封城日记" scheme="wentianhao.github.io/tags/%E5%B0%81%E5%9F%8E%E6%97%A5%E8%AE%B0/"/>
+    
+      <category term="日记" scheme="wentianhao.github.io/tags/%E6%97%A5%E8%AE%B0/"/>
+    
+  </entry>
+  
+  <entry>
     <title>diary35</title>
     <link href="wentianhao.github.io/2020/02/26/diary35/"/>
     <id>wentianhao.github.io/2020/02/26/diary35/</id>
     <published>2020-02-26T14:20:57.000Z</published>
-    <updated>2020-02-27T11:36:16.572Z</updated>
+    <updated>2020-02-27T14:28:04.717Z</updated>
     
-    <content type="html"><![CDATA[<html><head></head><body><pre><code>今天是2020年2月26号，星期三，农历二月初四</code></pre><ul><li>今天上午的web大规模数据分析课我以为是9.55上课，错过了今天的签到，难受</li><li>今天网太卡了，爬虫第二课都没能看完。</li><li></li></ul></body></html>]]></content>
+    <content type="html"><![CDATA[<html><head></head><body><pre><code>今天是2020年2月26号，星期三，农历二月初四</code></pre><ul><li><p>今天上午的web大规模数据分析课我以为是9.55上课，错过了今天的签到，难受</p></li><li><p>今天网太卡了，爬虫第二课都没能看完。</p></li><li><p>给xx准备生日礼物</p></li></ul></body></html>]]></content>
     
     <summary type="html">
     
       
       
         &lt;html&gt;&lt;head&gt;&lt;/head&gt;&lt;body&gt;&lt;pre&gt;&lt;code&gt;今天是2020年2月26号，星期三，农历二月初四&lt;/code&gt;&lt;/pre&gt;&lt;ul&gt;
-&lt;li&gt;今天上午的web大规模数据分析课我以为是9.55上课，错过了今天的签到，难受&lt;/li&gt;
-&lt;li&gt;今天网太卡了，爬虫第
+&lt;li&gt;&lt;p&gt;今天上午的web大规模数据分析课我以为是9.55上课，错过了今天的签到，难受&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p
       
     
     </summary>
@@ -541,67 +607,6 @@
 &lt;li&gt;&lt;p&gt;今天又停电了，真是太难熬了哇，我整个人都要疯掉了&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;&lt;p&gt;恒大75折卖房，许家印签发
-      
-    
-    </summary>
-    
-    
-      <category term="日记" scheme="wentianhao.github.io/categories/%E6%97%A5%E8%AE%B0/"/>
-    
-    
-      <category term="封城日记" scheme="wentianhao.github.io/tags/%E5%B0%81%E5%9F%8E%E6%97%A5%E8%AE%B0/"/>
-    
-      <category term="日记" scheme="wentianhao.github.io/tags/%E6%97%A5%E8%AE%B0/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>diary24</title>
-    <link href="wentianhao.github.io/2020/02/15/diary24/"/>
-    <id>wentianhao.github.io/2020/02/15/diary24/</id>
-    <published>2020-02-15T14:22:05.000Z</published>
-    <updated>2020-02-15T16:43:28.732Z</updated>
-    
-    <content type="html"><![CDATA[<html><head></head><body><pre><code>今天是2020年2月15日，星期六，农历正月廿二</code></pre><ul><li><p>今天武汉下雪了！还有好大的冰雹，听说还有蝗虫，魔幻2020，太可怕了</p></li><li><p>“最初，没有人在意这场灾难”</p><p>“这不过是一场山火，一次旱灾，一个物种的灭绝，一座城市的消失。”</p><p>“直到这场灾难和每个人息息相关”</p><p>  ————《流浪地球》</p></li><li><p>2020 ,澳洲山火，非洲蝗虫，中国疫情、地震、火山爆发等等</p></li></ul></body></html>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;html&gt;&lt;head&gt;&lt;/head&gt;&lt;body&gt;&lt;pre&gt;&lt;code&gt;今天是2020年2月15日，星期六，农历正月廿二&lt;/code&gt;&lt;/pre&gt;&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;今天武汉下雪了！还有好大的冰雹，听说还有蝗虫，魔幻2020，太可怕了&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;“最初
-      
-    
-    </summary>
-    
-    
-      <category term="日记" scheme="wentianhao.github.io/categories/%E6%97%A5%E8%AE%B0/"/>
-    
-    
-      <category term="封城日记" scheme="wentianhao.github.io/tags/%E5%B0%81%E5%9F%8E%E6%97%A5%E8%AE%B0/"/>
-    
-      <category term="日记" scheme="wentianhao.github.io/tags/%E6%97%A5%E8%AE%B0/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>diary23</title>
-    <link href="wentianhao.github.io/2020/02/14/diary23/"/>
-    <id>wentianhao.github.io/2020/02/14/diary23/</id>
-    <published>2020-02-14T05:14:00.000Z</published>
-    <updated>2020-02-15T16:49:15.892Z</updated>
-    
-    <content type="html"><![CDATA[<html><head></head><body><pre><code>今天是2020年2月14日，星期五，农历正月廿一</code></pre><ul><li><p>今天是情人节，情人节快乐 :rose::rose::rose:</p><p>无法陪在你身边，要照顾好自己哦！</p></li><li><p>停电了，北风那个吹，卧了个槽，电脑没电，平板没电，手机没电，艰难的度过了18个小时。</p></li><li><p>共克时艰！</p></li></ul></body></html>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;html&gt;&lt;head&gt;&lt;/head&gt;&lt;body&gt;&lt;pre&gt;&lt;code&gt;今天是2020年2月14日，星期五，农历正月廿一&lt;/code&gt;&lt;/pre&gt;&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;今天是情人节，情人节快乐 :rose::rose::rose:&lt;/p&gt;
-&lt;p&gt;无法陪在你身边，要照顾好自己哦！
       
     
     </summary>

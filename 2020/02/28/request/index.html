@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html>
+  <head>
+      <script>
+  var _hmt = _hmt || [];
+  (function() {
+    var hm = document.createElement('script');
+    hm.src = 'https://hm.baidu.com/hm.js?5c794146f145476b20f71d4cb38e8881';
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(hm, s);
+  })();
+</script> 
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="keywords" content="undefined" />
+    <meta name="description" content="欢迎" />
+    
+    <title>
+      Request模块爬虫 - wentianhao
+    </title>
+    <link rel="manifest" href="/manifest.json" />
+    <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon" />
+    
+<link rel="stylesheet" href="/style/style.css">
+
+  <meta name="generator" content="Hexo 4.2.0"><link rel="alternate" href="/atom.xml" title="wentianhao" type="application/atom+xml">
+</head>
+  <body>
+    <canvas id='pagemap'></canvas>
+    
+    <div id="fixed-menu-wrap">
+      <span class="iconfont icon-sousuo search-box menu-reset"></span>
+      <span class="icon-toc menu-reset">Toc</span>
+      <span class="iconfont icon-arrowup menu-reset"></span>
+    </div>
+    <div id="fixed-menu">
+      <span class="iconfont icon-menu-"></span>
+    </div>
+    <div id="progress">
+      <div class="line"></div>
+    </div>
+    <div id="search-shade" class="animated hiddenSearch hide">
+      <div class="input-wrap">
+        <span class="iconfont icon-sousuo search-box"></span>
+        <input type="text" placeholder="Search" />
+        <span class="iconfont icon-close"></span>
+      </div>
+      <div class="search-result">
+        <div class="meta">
+          <span><b id="result-count">0</b> results found</span>
+          <img src="/images/logo.jpeg" />
+        </div>
+        <ul id="result-box"></ul>
+      </div>
+    </div>
+    <div id="menu-mask" class="animated hideMenuMask hide">
+      <span class="iconfont icon-close"></span>
+      <div class="nav">
+        
+        <a href="/" class="">
+          Home
+        </a>
+        
+        <a href="/archives" class="">
+          Archives
+        </a>
+        
+        <a href="/categories" class="">
+          Categories
+        </a>
+        
+        <a href="/tags" class="">
+          Tags
+        </a>
+        
+        <a href="/friends" class="">
+          Friends
+        </a>
+        
+        <a href="/about" class="">
+          About
+        </a>
+        
+      </div>
+    </div>
+    <div id="header">
+      <div class="intro">
+        <a href="/" class="logo" style="background-image: url('/images/logo.jpeg')"></a>
+        <div class="author">whh</div>
+      </div>
+      <div class="nav">
+        <span class="iconfont icon-menu menu-icon"></span>
+        <a href="#" class="search-box">
+          <span class="iconfont icon-sousuo"></span>
+        </a>
+      </div>
+    </div>
+    <div id="side" class="animated bounceInLeft">
+      <div class="shrink">
+        <a href="/" class="logo" style="background-image: url('/images/logo.jpeg')"></a>
+        <span class="iconfont icon-menu toggle-icon"></span>
+        <a href="#" class="search-box">
+          <span class="iconfont icon-sousuo"></span>
+        </a>
+      </div>
+      <div class="magnify">
+        <div class="about">
+          <div class="author">whh</div>
+          <a href="/" class="logo" style="background-image: url('/images/logo.jpeg')"></a>
+        </div>
+
+        <div class="nav">
+          
+          <a href="/" class="">
+            Home
+          </a>
+          
+          <a href="/archives" class="">
+            Archives
+          </a>
+          
+          <a href="/categories" class="">
+            Categories
+          </a>
+          
+          <a href="/tags" class="">
+            Tags
+          </a>
+          
+          <a href="/friends" class="">
+            Friends
+          </a>
+          
+          <a href="/about" class="">
+            About
+          </a>
+          
+          <a href="#" class="search-box">
+            <span class="iconfont icon-sousuo"></span>
+          </a>
+        </div>
+        <div class="bottom">
+          <div class="follow">
+            
+            <a href="https://github.com/wentianhao" target="_block">
+              <span class="iconfont icon-github"></span>
+            </a>
+            
+            <a href="1024008684" target="_block">
+              <span class="iconfont icon-QQ"></span>
+            </a>
+             
+            <a href="/atom.xml" target="_block">
+              <span class="iconfont icon-rss"></span>
+            </a>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="container">
+      <div class="main animated bounceInRight delay-0.7s">
+        <article class="post-entry">
+    <div class="header">
+      
+      <div class="title">Request模块爬虫</div>
+      <div class="meta">
+        <span class="item">
+          <span class="iconfont icon-time-circle"></span>
+          <span>2020/02/28</span>
+        </span>
+
+        
+
+         
+        <span class="item">
+          <span class="iconfont icon-folder"></span>
+          <span>
+              
+                
+                  <a href="/categories/python">python</a>
+                
+              
+          </span>
+        </span>
+        
+        
+         
+          <span class="item">
+            <span class="iconfont icon-tag1"></span>
+            <span>
+                
+                  
+                    <a href="/tags/python">python</a>
+                  
+                
+                  
+                    <a href="/tags/python爬虫">python爬虫</a>
+                  
+                
+            </span>
+          </span>
+         
+      </div>
+      <div>
+      </div>
+    </div>
+    <html><head></head><body><p><strong>Request模块的基础使用</strong></p>
+<ul>
+<li><p>安装request</p>
+<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install requests</span><br></pre></td></tr></tbody></table></figure>
+</li>
+<li><p>使用方法</p>
+<ul>
+<li><p>请求方式： get、post、put…</p>
+</li>
+<li><p>参数：</p>
+<table>
+<thead>
+<tr>
+<th align="center">参数</th>
+<th align="center">含义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">params</td>
+<td align="center">get请求的参数</td>
+</tr>
+<tr>
+<td align="center">headers</td>
+<td align="center">伪装浏览器添加头信息</td>
+</tr>
+<tr>
+<td align="center">proxies</td>
+<td align="center">添加代理</td>
+</tr>
+<tr>
+<td align="center">cookies</td>
+<td align="center">添加cookie</td>
+</tr>
+<tr>
+<td align="center">data</td>
+<td align="center">post请求</td>
+</tr>
+</tbody></table>
+</li>
+<li><p>属性：</p>
+<table>
+<thead>
+<tr>
+<th align="center">属性</th>
+<th align="center">含义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">text</td>
+<td align="center">对应请求响应数据</td>
+</tr>
+<tr>
+<td align="center">content</td>
+<td align="center">二进制类型的相应数据</td>
+</tr>
+<tr>
+<td align="center">encoding</td>
+<td align="center">网页编码</td>
+</tr>
+<tr>
+<td align="center">cookies</td>
+<td align="center">相应cookie</td>
+</tr>
+<tr>
+<td align="center">url</td>
+<td align="center">当前请求的url</td>
+</tr>
+<tr>
+<td align="center">status</td>
+<td align="center">状态码</td>
+</tr>
+</tbody></table>
+</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"><span class="keyword">import</span> re</span><br><span class="line"></span><br><span class="line"><span class="comment"># 伪装浏览器</span></span><br><span class="line">hd = {<span class="string">"user-agent"</span>:<span class="string">"Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36"</span>}</span><br><span class="line"></span><br><span class="line"><span class="comment"># 添加代理</span></span><br><span class="line">px = {<span class="string">"http"</span>:<span class="string">"http://127.0.0.1:8888"</span>}</span><br><span class="line"></span><br><span class="line"><span class="comment"># 添加cookies</span></span><br><span class="line">cookies= {<span class="string">""</span>:<span class="string">""</span>}</span><br><span class="line"></span><br><span class="line"><span class="comment"># get请求</span></span><br><span class="line">rst = requests.get(<span class="string">"https://www.aliwx.com.cn/"</span>,headers=hd,proxies=px)</span><br><span class="line">print(rst)</span><br><span class="line">title = re.compile(<span class="string">"<title>(.*?)</title>"</span>,re.S).findall(rst.text)</span><br><span class="line">print(title)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># www.baidu.com/s?wd="阿里文学"</span></span><br><span class="line">pr = {<span class="string">"wd"</span>:<span class="string">"阿里文学"</span>}</span><br><span class="line">rst2 = requests.get(<span class="string">"http://www.baidu.com/s"</span>,params=pr)</span><br><span class="line">print(rst2)</span><br><span class="line"></span><br><span class="line"><span class="comment"># text 、 content、 encoding、url、status_code</span></span><br><span class="line">print(rst2.text)</span><br><span class="line">print(rst2.content)</span><br><span class="line">print(rst2.encoding)</span><br><span class="line">print(rst2.url)</span><br><span class="line">print(rst2.status_code)</span><br><span class="line"></span><br><span class="line"><span class="comment"># cookie 转化为字典</span></span><br><span class="line">cookie  = requests.utils.dict_from_cookiejar(rst2.cookies)</span><br><span class="line">print(cookie)</span><br><span class="line"></span><br><span class="line"><span class="comment"># post请求</span></span><br><span class="line">postdata = {<span class="string">"name"</span>:<span class="string">"www"</span>,<span class="string">"pass"</span>:<span class="string">"123"</span>}</span><br><span class="line">rst3 = requests.post(<span class="string">"https://www.iqianyue.com/mypost/"</span>,data=postdata)</span><br><span class="line">print(rst3.text)</span><br></pre></td></tr></tbody></table></figure>
+
+<hr>
+<p><strong>使用requests模块实现云栖社区博文爬虫实战</strong></p>
+<p>目标站点：<a href="https://yq.aliyun.com/" target="_blank" rel="noopener">云栖社区</a></p>
+<p>需求数据：指定关键词的博文数据</p>
+<p>要求：自动翻页并下载到本地</p>
+<p>分析：</p>
+<p>第二页url：<a href="https://yq.aliyun.com/search/articles/?spm=a2c4e.11163080.searchblog.155.44fb2ec1RCP5cT&q=python&idx=default&days=&p=2" target="_blank" rel="noopener">https://yq.aliyun.com/search/articles/?spm=a2c4e.11163080.searchblog.155.44fb2ec1RCP5cT&q=python&idx=default&days=&p=2</a></p>
+<p>第三页url：<a href="https://yq.aliyun.com/search/articles/?spm=a2c4e.11163080.searchblog.165.4a4f2ec1GkHbdt&q=python&idx=default&days=&p=3" target="_blank" rel="noopener">https://yq.aliyun.com/search/articles/?spm=a2c4e.11163080.searchblog.165.4a4f2ec1GkHbdt&q=python&idx=default&days=&p=3</a></p>
+<p>spm、idx、days测试去掉有无影响 (无影响)</p>
+<p>第二页有效url：<a href="https://yq.aliyun.com/search/articles/?q=python&p=2" target="_blank" rel="noopener">https://yq.aliyun.com/search/articles/?q=python&p=2</a></p>
+<p>第三页有效url: <a href="https://yq.aliyun.com/search/articles/?q=python&p=3" target="_blank" rel="noopener">https://yq.aliyun.com/search/articles/?q=python&p=3</a></p>
+<p>源码：</p>
+<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 目标站点：[云栖社区](https://yq.aliyun.com/)</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># 需求数据：指定关键词的博文数据</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># 要求：自动翻页并下载到本地</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"><span class="keyword">import</span> re</span><br><span class="line"><span class="keyword">import</span> time</span><br><span class="line"></span><br><span class="line">key = <span class="string">"python"</span></span><br><span class="line">url = <span class="string">"https://yq.aliyun.com/search/articles/"</span></span><br><span class="line">data = requests.get(url,params={<span class="string">"q"</span>:key}).text</span><br><span class="line">pat1 = <span class="string">'<div class="_search-info">找到(.*?)条关于'</span></span><br><span class="line">allline=re.compile(pat1,re.S).findall(data)[<span class="number">0</span>]</span><br><span class="line">allpage=int(allline)//<span class="number">15</span>+<span class="number">1</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">0</span>,<span class="number">1</span>):</span><br><span class="line">    print(<span class="string">"-------正在爬第"</span>+str(i+<span class="number">1</span>)+<span class="string">"页-------------"</span>)</span><br><span class="line">    index=str(i+<span class="number">1</span>)</span><br><span class="line">    getdata={<span class="string">"q"</span>:key,</span><br><span class="line">            <span class="string">"p"</span>:index,</span><br><span class="line">            }</span><br><span class="line">    data=requests.get(url,params=getdata).text</span><br><span class="line">    pat_url= <span class="string">'<div class="media-body text-overflow">.*?<a href="(.*?)">'</span></span><br><span class="line">    articles=re.compile(pat_url,re.S).findall(data)</span><br><span class="line">    <span class="keyword">for</span> j <span class="keyword">in</span> articles:</span><br><span class="line">        thisurl=<span class="string">"https://yq.aliyun.com"</span>+j</span><br><span class="line">        thisdata=requests.get(thisurl).text</span><br><span class="line">        pat_title=<span class="string">'<p class="hiddenTitle">(.*?)</p>'</span></span><br><span class="line">        title=re.compile(pat_title,re.S).findall(thisdata)[<span class="number">0</span>]</span><br><span class="line">        pat_content=<span class="string">'<div class="content-detail unsafe markdown-body">(.*?) <div class="copyright-outer-line">'</span></span><br><span class="line">        content=re.compile(pat_content,re.S).findall(thisdata)[<span class="number">0</span>]</span><br><span class="line">        fh=open(<span class="string">"./blog/"</span>+str(title)+str(i)+<span class="string">"_"</span>+str(time.time())+<span class="string">".html"</span>,<span class="string">"w"</span>,encoding=<span class="string">"utf-8"</span>)</span><br><span class="line">        fh.write(title+<span class="string">"<br /><br />"</span>+content)</span><br><span class="line">        fh.close()</span><br></pre></td></tr></tbody></table></figure></body></html>
+
+  
+    <div class="post-reward">
+    <div id="reward-button">打赏</div>
+      <div id="qr">
+        <div class="wrap">
+            
+            <div class="bg-wrap">
+              <a href="/images/zhifubao.png" target="_block" class="bg" style="background-image:url('/images/zhifubao.png')"></a>
+              支付宝
+            </div>
+            
+            
+            <div class="bg-wrap">
+                <a href="/images/weixin.png" target="_block" class="bg" style="background-image:url('/images/weixin.png')"></a>
+              微信
+            </div>
+            
+        </div>
+      </div>
+    </div>
+  
+  <div class="post-guide">
+    <div class="item left">
+        
+    </div>
+    <div class="item right">
+        
+          <a href="/2020/02/27/%E6%8A%93%E5%8C%85%E5%88%86%E6%9E%90%E6%8A%80%E6%9C%AF%E7%B2%BE%E8%AE%B2/">抓包分析技术精讲</a>
+        
+    </div>
+  </div>
+
+  
+
+  <div class="post-copyright">
+    <div class="auth">
+      本文作者：<a href="/wentianhao.github.io">whh</a>
+    </div>
+    <div class="link">
+      永久链接：<a href="/wentianhao.github.io/2020/02/28/request/">/wentianhao.github.io/2020/02/28/request/</a>
+    </div>
+    <div class="declare">
+      版权声明：本文首发于<a href="/wentianhao.github.io">whh</a>的博客，转载请注明出处！
+    </div>
+  </div>
+
+  <div id="comment"></div>
+
+  
+  
+</article>
+        <footer>
+          <div class="copyright">
+            ©2020
+            <a href="wentianhao.github.io">whh</a> Powered by <a href="https://hexo.io" target="_blank" rel="noopener">Hexo</a> |
+            <a href="https://github.com/shixiaohu2206/hexo-theme-huhu" target="_blank" rel="noopener">hexo-theme-huhu</a>
+          </div>
+
+
+          
+        </footer>
+        <footer>
+          <div class="copyright">
+            <p>
+              本站于 <code class="site_from"></code> 接入百度站点，建站已 <code class="site_date"></code> 天
+              截止到目前，整站访问次数 <code class="site_pv"></code>、访问人数 <code class="site_uv"></code>
+            </p>
+            <br>
+            <p>
+              <!-- <canvas id="doughnut-chart" width="100" height="45"></canvas> -->
+            </p>
+          </div>
+            <!-- <canvas id="line-chart" width="100" height="45"></canvas> -->
+        </footer>
+
+      </div>
+    </div>
+  </body>
+  
+</html>
+<script type="text/javascript">
+                  window.HUHU_CONFIG = JSON.parse("{\"share\":[\"weibo\",\"weixin\",\"qqkongjian\",\"QQ\",\"douban\",\"facebook\",\"twitter\",\"google\"],\"service_worker\":{\"open\":false},\"baidu_tongji\":{\"site_from\":\"2020/1/14\",\"site_id\":\"14335783\",\"access_token\":\"21.7d25877494f1595fa2b83d9f7dc942d2.2592000.1581586013.4285722262-18272784\"}}")
+                </script> <script type="text/javascript">window.addEventListener('load', function() {
+    
+    window.loadJs = function(d, m, a) {
+      var c = document.getElementsByTagName('head')[0] || document.head || document.documentElement
+      var b = document.createElement('script')
+      b.defer = true
+      b.setAttribute('type', 'text/javascript')
+      b.setAttribute('charset', 'UTF-8')
+      b.setAttribute('async', 'true')
+      b.setAttribute('src', d)
+      m && b.setAttribute('data-main', '/scripts/app-built')
+      if (typeof a === 'function') {
+        if (window.attachEvent) {
+          b.onreadystatechange = function() {
+            var e = b.readyState
+            if (e === 'loaded' || e === 'complete') {
+              b.onreadystatechange = null
+              a()
+            }
+          }
+        } else {
+          b.onload = a
+        }
+      }
+      c.appendChild(b)
+    }
+    window.loadJs && window.loadJs('https://cdn.bootcss.com/require.js/2.3.6/require.min.js', true, function() {require.config({"paths":{"util":"util","share":"share","search":"search","pagemap":"pagemap.min","registerSW":"registerSW","valine":"cdn/Valine.min","av":["https://cdn.jsdelivr.net/npm/leancloud-storage/dist/av-min"],"pjax":["https://cdn.bootcss.com/jquery.pjax/2.0.1/jquery.pjax.min"],"jquery":["https://cdn.bootcss.com/jquery/3.4.1/jquery.min"],"confirm":["https://cdn.bootcss.com/jquery-confirm/3.3.4/jquery-confirm.min"],"fancybox":["https://cdn.bootcss.com/fancybox/3.5.7/jquery.fancybox.min"],"chart":["https://cdn.bootcss.com/Chart.js/2.8.0-rc.1/Chart.bundle.min"]},"map":{"*":{"css":"https://cdn.bootcss.com/require-css/0.1.10/css.min.js"}},"shim":{"fancybox":{"deps":["css!https://cdn.bootcss.com/fancybox/3.5.7/jquery.fancybox.min.css"]},"confirm":{"deps":["css!https://cdn.bootcss.com/jquery-confirm/3.3.4/jquery-confirm.min.css"]},"chart":{"deps":["css!https://cdn.bootcss.com/Chart.js/2.8.0-rc.1/Chart.min.css"]}},"waitSeconds":3})})
+  })</script> <script type="text/javascript">
+                  ;(function() {
+                    var bp = document.createElement('script')
+                    var curProtocol = window.location.protocol.split(':')[0]
+                    if (curProtocol === 'https') {
+                      bp.src = 'https://zz.bdstatic.com/linksubmit/push.js'
+                    } else {
+                      bp.src = 'http://push.zhanzhang.baidu.com/push.js'
+                    }
+                    var s = document.getElementsByTagName('script')[0]
+                    s.parentNode.insertBefore(bp, s)
+                  })()
+                </script> 

@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="wentianhao.github.io/"/>
-  <updated>2020-02-28T15:52:27.878Z</updated>
+  <updated>2020-02-29T10:20:09.479Z</updated>
   <id>wentianhao.github.io/</id>
   
   <author>
@@ -15,6 +15,38 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>scrapy</title>
+    <link href="wentianhao.github.io/2020/02/29/scrapy/"/>
+    <id>wentianhao.github.io/2020/02/29/scrapy/</id>
+    <published>2020-02-29T05:25:55.000Z</published>
+    <updated>2020-02-29T10:20:09.479Z</updated>
+    
+    <content type="html"><![CDATA[<html><head></head><body><p>Scrapy模块是一个非常常用的爬虫框架模块，使用Scrapy可以快速创建爬虫项目。</p><p><strong>Scrapy模块的安装</strong></p><p>建议安装顺序</p><ul><li><p>升级pip: python -m pip install –upgrade pip </p></li><li><p>安装wheel pip install wheel</p></li><li><p>安装lxml (<a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#wordcloud)选择对应的python版本以及win32" target="_blank" rel="noopener">https://www.lfd.uci.edu/~gohlke/pythonlibs/#wordcloud)选择对应的python版本以及win32</a> or 64</p></li><li><p>安装Twisted (<a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#wordcloud)选择对应的python版本以及win32" target="_blank" rel="noopener">https://www.lfd.uci.edu/~gohlke/pythonlibs/#wordcloud)选择对应的python版本以及win32</a> or 64</p></li></ul><ul><li>如果使用pycharm可以在Setting -> Project -> Project Interpreter 点击 + 添加最新的库</li></ul><ul><li><p>pip install scrapy 或 pip install scrapy==1.1.0rc3</p></li><li><p>下载安装pywin32并配置 </p><p>  <a href="https://github.com/wentianhao/wentianhao.github.io/blob/master/images/pythoncom38.png?raw=true" data-caption="pywin32" data-fancybox="images"><img src="https://github.com/wentianhao/wentianhao.github.io/blob/master/images/pythoncom38.png?raw=true" alt="pywin32"></a></p><p>  将这俩dll复制到system32(由于权限问题需手动确认一遍)</p></li></ul><hr><p><strong>Scrapy常用指令实战</strong></p><table><thead><tr><th align="center">指令</th><th align="center">意义</th></tr></thead><tbody><tr><td align="center">startproject</td><td align="center">创建爬虫项目</td></tr><tr><td align="center">genspider -l</td><td align="center">查看爬虫模板</td></tr><tr><td align="center">genspider -t</td><td align="center">模板 爬虫文件名 域名 创建爬虫</td></tr><tr><td align="center">crawl</td><td align="center">运行爬虫</td></tr><tr><td align="center">list</td><td align="center">查看有哪些爬虫</td></tr></tbody></table><ul><li><p>创建爬虫项目</p><p>  <a href="https://github.com/wentianhao/wentianhao.github.io/blob/master/images/startproject.png?raw=true" data-caption="startproject" data-fancybox="images"><img src="https://github.com/wentianhao/wentianhao.github.io/blob/master/images/startproject.png?raw=true" alt="startproject"></a></p><p>  创建完成之后的项目目录:</p><p>  <a href="https://github.com/wentianhao/wentianhao.github.io/blob/master/images/scrapy.png?raw=true" data-caption="startproject" data-fancybox="images"><img src="https://github.com/wentianhao/wentianhao.github.io/blob/master/images/scrapy.png?raw=true" alt="startproject"></a></p></li></ul><p><strong>Scrapy爬虫项目编写基础</strong></p><p><strong>使用Scrapy编写当当网商品数据爬虫实战</strong></p></body></html>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;html&gt;&lt;head&gt;&lt;/head&gt;&lt;body&gt;&lt;p&gt;Scrapy模块是一个非常常用的爬虫框架模块，使用Scrapy可以快速创建爬虫项目。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Scrapy模块的安装&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;建议安装顺序&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;升级p
+      
+    
+    </summary>
+    
+    
+      <category term="python" scheme="wentianhao.github.io/categories/python/"/>
+    
+    
+      <category term="python" scheme="wentianhao.github.io/tags/python/"/>
+    
+      <category term="python爬虫" scheme="wentianhao.github.io/tags/python%E7%88%AC%E8%99%AB/"/>
+    
+  </entry>
   
   <entry>
     <title>diary37</title>
@@ -585,35 +617,6 @@
       <category term="python" scheme="wentianhao.github.io/tags/python/"/>
     
       <category term="python爬虫" scheme="wentianhao.github.io/tags/python%E7%88%AC%E8%99%AB/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>diary28</title>
-    <link href="wentianhao.github.io/2020/02/19/diary28/"/>
-    <id>wentianhao.github.io/2020/02/19/diary28/</id>
-    <published>2020-02-19T04:22:21.000Z</published>
-    <updated>2020-02-20T15:57:08.170Z</updated>
-    
-    <content type="html"><![CDATA[<html><head></head><body><pre><code>今天是2020年2月19号，星期三，农历正月廿六，二十四节气之雨水</code></pre><ul><li><p>今天发现阿里云大学《抗击疫情，阿里云大学精品课程在线免费学》的活动，把里面所有的课都加购了</p><p>( 仿佛学到了很多知识.jpg</p></li><li><p>学习python网络爬虫第一课，学习<a href="https://whh.plus/2020/02/19/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E5%9F%BA%E7%A1%80/" target="_blank" rel="noopener">正则表达式基础</a>和<a href="https://whh.plus/2020/02/19/XPath%E8%A1%A8%E8%BE%BE%E5%BC%8F%E5%9F%BA%E7%A1%80/" target="_blank" rel="noopener">XPath表达式基础</a></p></li><li><p>欣欣准备投华为面试，是时候让她接受社会的毒打了，调整自己心态，好好准备论文和找工作！</p></li><li><p>听说牛蛙被例如野味了？中国野生动物保护协会：#撤销蛙类养殖专业委员会# 好像又听说牛蛙不算野生动物。</p></li><li><p>2.19学习计划</p><ul><li>看云信的源码</li><li>课时2 Urllib爬虫项目编写实战</li></ul></li></ul></body></html>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;html&gt;&lt;head&gt;&lt;/head&gt;&lt;body&gt;&lt;pre&gt;&lt;code&gt;今天是2020年2月19号，星期三，农历正月廿六，二十四节气之雨水&lt;/code&gt;&lt;/pre&gt;&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;今天发现阿里云大学《抗击疫情，阿里云大学精品课程在线免费学》的活动，把里面所有的课都加购了&lt;
-      
-    
-    </summary>
-    
-    
-      <category term="日记" scheme="wentianhao.github.io/categories/%E6%97%A5%E8%AE%B0/"/>
-    
-    
-      <category term="封城日记" scheme="wentianhao.github.io/tags/%E5%B0%81%E5%9F%8E%E6%97%A5%E8%AE%B0/"/>
-    
-      <category term="日记" scheme="wentianhao.github.io/tags/%E6%97%A5%E8%AE%B0/"/>
     
   </entry>
   

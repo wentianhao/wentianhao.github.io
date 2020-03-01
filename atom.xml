@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="wentianhao.github.io/"/>
-  <updated>2020-03-01T07:35:44.372Z</updated>
+  <updated>2020-03-01T08:03:42.677Z</updated>
   <id>wentianhao.github.io/</id>
   
   <author>
@@ -21,9 +21,9 @@
     <link href="wentianhao.github.io/2020/03/01/%E6%8B%9B%E8%81%98%E4%BF%A1%E6%81%AF%E7%88%AC%E8%99%AB%E9%A1%B9%E7%9B%AE/"/>
     <id>wentianhao.github.io/2020/03/01/%E6%8B%9B%E8%81%98%E4%BF%A1%E6%81%AF%E7%88%AC%E8%99%AB%E9%A1%B9%E7%9B%AE/</id>
     <published>2020-03-01T07:34:07.000Z</published>
-    <updated>2020-03-01T07:35:44.372Z</updated>
+    <updated>2020-03-01T08:03:42.677Z</updated>
     
-    <content type="html"><![CDATA[<html><head></head><body><ul><li><p>目标站点: <a href="http://www.51job.com" target="_blank" rel="noopener">前程无忧</a></p></li><li><p>需求数据：指定关键词的所有职位数据</p></li><li><p>要求：自动翻页并输出</p></li></ul><p>选择模块: requests</p></body></html>]]></content>
+    <content type="html"><![CDATA[<html><head></head><body><ul><li><p>目标站点: <a href="http://www.51job.com" target="_blank" rel="noopener">前程无忧</a></p></li><li><p>需求数据：指定关键词的所有职位数据</p></li><li><p>要求：自动翻页并输出</p></li><li><p>选择模块: requests</p></li><li><p>分析：<br>  关键词：python</p><p>  第一页: <a href="https://search.51job.com/list/180000,000000,0000,00,9,99,python,2,1.html?lang=c&stype=&postchannel=0000&workyear=99&cotype=99&degreefrom=99&jobterm=99&companysize=99&providesalary=99&lonlat=0%2C0&radius=-1&ord_field=0&confirmdate=9&fromType=&dibiaoid=0&address=&line=&specialarea=00&from=&welfare=" target="_blank" rel="noopener">https://search.51job.com/list/180000,000000,0000,00,9,99,python,2,1.html?lang=c&stype=&postchannel=0000&workyear=99&cotype=99&degreefrom=99&jobterm=99&companysize=99&providesalary=99&lonlat=0%2C0&radius=-1&ord_field=0&confirmdate=9&fromType=&dibiaoid=0&address=&line=&specialarea=00&from=&welfare=</a></p><p>  第二页: <a href="https://search.51job.com/list/180000,000000,0000,00,9,99,python,2,2.html?lang=c&postchannel=0000&workyear=99&cotype=99&degreefrom=99&jobterm=99&companysize=99&ord_field=0&dibiaoid=0&line=&welfare=" target="_blank" rel="noopener">https://search.51job.com/list/180000,000000,0000,00,9,99,python,2,2.html?lang=c&postchannel=0000&workyear=99&cotype=99&degreefrom=99&jobterm=99&companysize=99&ord_field=0&dibiaoid=0&line=&welfare=</a></p><p>  url：<a href="https://search.51job.com/list/180000,000000,0000,00,9,99,python,2,1.html" target="_blank" rel="noopener">https://search.51job.com/list/180000,000000,0000,00,9,99,python,2,1.html</a> </p></li></ul></body></html>]]></content>
     
     <summary type="html">
     

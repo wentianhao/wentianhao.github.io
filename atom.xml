@@ -79,17 +79,28 @@
   </entry>
   
   <entry>
-    <title>syncthing</title>
+    <title>数据同步神器</title>
     <link href="wentianhao.github.io/2020/03/02/syncthing/"/>
     <id>wentianhao.github.io/2020/03/02/syncthing/</id>
     <published>2020-03-02T08:58:59.000Z</published>
-    <updated>2020-03-02T08:58:59.789Z</updated>
+    <updated>2020-03-03T16:23:24.982Z</updated>
+    
+    <content type="html"><![CDATA[<html><head></head><body><p><a href="https://www.moewah.com/usr/uploads/2019/03/3082024495.jpg" data-caption="syncthing" data-fancybox="images"><img src="https://www.moewah.com/usr/uploads/2019/03/3082024495.jpg" alt="syncthing"></a></p><p>最近打算同步一下数据，发现了一个口碑还不错的数据同步工具——Syncthing,是一款开源免费的数据同步工具，支持Android、Linux、Windows、Mac OS等系统，可以在任意2台设备之间，实现实时同步。通信使用TLS进行保护，所使用的加密包括完美的前向保密，很适合搭建私有同步网盘</p><h2 id="安装"><strong>安装</strong><a class="post-anchor" href="#安装"></a></h2><p>本文只做Linux服务器和Windows电脑之间的同步安装以及演示操作。</p><h3 id="1、linux安装Syncthing"><strong>1、linux安装Syncthing</strong><a class="post-anchor" href="#1、linux安装Syncthing"></a></h3><p>安装Syncthing:</p><figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#目前最新版v1.2.0，日后自行修改版本号</span></span><br><span class="line">wget https://github.com/syncthing/syncthing/releases/download/v1.3.4/syncthing-linux-amd64-v1.3.4.tar.gz</span><br><span class="line">tar xzvf syncthing-linux-amd64-v1.3.4.tar.gz</span><br><span class="line">cp syncthing-linux-amd64-v1.3.4/syncthing /usr/<span class="built_in">local</span>/bin</span><br></pre></td></tr></tbody></table></figure><h4 id="开放端口"><strong>开放端口</strong><a class="post-anchor" href="#开放端口"></a></h4><p>Syncthing 默认监听以下几个端口</p><figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">22000(TCP)</span><br><span class="line">8384(TCP)</span><br><span class="line">21027(UDP)</span><br><span class="line">44647(UDP)</span><br><span class="line">37269(UDP)</span><br></pre></td></tr></tbody></table></figure><p>个人使用，仅开放22000(TCP)和8384(TCP)</p><p>8384:web访问控制端口<br>22000：节点访问端口</p><p>开启Syncthing</p><figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">syncthing</span><br></pre></td></tr></tbody></table></figure><p>第一次启动会生成配置，内网地址是进不去的，需修改成外网地址。</p><p>修改配置</p><figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">vim /root/.config/syncthing/config.xml</span><br><span class="line"><span class="comment"># 将127.0.0.1:8384改为</span></span><br><span class="line"><span class="comment"># 0.0.0.0:8384</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#再次启动Syncthing</span></span><br><span class="line">syncthing</span><br></pre></td></tr></tbody></table></figure><p>浏览器访问:<br><a href="http://server_ip:8384" target="_blank" rel="noopener">http://server_ip:8384</a></p><p>需自行开放8384端口哦</p><p>设置账号密码，其他参数暂时无需更改，重启<br><a href="https://github.com/wentianhao/wentianhao.github.io/blob/master/images/HU.png?raw=true" data-caption="syncthing" data-fancybox="images"><img src="https://github.com/wentianhao/wentianhao.github.io/blob/master/images/HU.png?raw=true" alt="syncthing"></a></p><p>linux ：后台运行Syncthing</p><figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nohup synchthing &> /dev/null &</span><br></pre></td></tr></tbody></table></figure><h3 id="2、Windows安装Syncthing"><strong>2、Windows安装Syncthing</strong><a class="post-anchor" href="#2、Windows安装Syncthing"></a></h3><p><a href="https://syncthing.net/downloads/" target="_blank" rel="noopener">官网下载</a>对应版本的Syncthing,运行syncthing.exe</p><p><a href="https://github.com/wentianhao/wentianhao.github.io/blob/master/images/syncmd.png?raw=true" data-caption="cmd" data-fancybox="images"><img src="https://github.com/wentianhao/wentianhao.github.io/blob/master/images/syncmd.png?raw=true" alt="cmd"></a></p><p><a href="https://github.com/wentianhao/wentianhao.github.io/blob/master/images/syncsetting.png?raw=true" data-caption="setting" data-fancybox="images"><img src="https://github.com/wentianhao/wentianhao.github.io/blob/master/images/syncsetting.png?raw=true" alt="setting"></a></p><h3 id="3、使用"><strong>3、使用</strong><a class="post-anchor" href="#3、使用"></a></h3><p>在linux的页面上添加Windows的远程设备ID，自行选择指定文件夹。可在添加设备->高级->地址列表，将dynamic 填写为 tcp://server_ip:22000</p><p>设备添加完成，即可同步文件夹。</p></body></html>]]></content>
     
     <summary type="html">
+    
+      
+      
+        &lt;html&gt;&lt;head&gt;&lt;/head&gt;&lt;body&gt;&lt;p&gt;&lt;a href=&quot;https://www.moewah.com/usr/uploads/2019/03/3082024495.jpg&quot; data-caption=&quot;syncthing&quot; data-fancybox=&quot;imag
+      
     
     </summary>
     
     
+      <category term="server" scheme="wentianhao.github.io/categories/server/"/>
+    
+    
+      <category term="sync" scheme="wentianhao.github.io/tags/sync/"/>
     
   </entry>
   

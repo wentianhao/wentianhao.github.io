@@ -440,7 +440,7 @@ require([
       visitor: true,
       recordIP: true,
       avatar: 'mp',
-      placeholder: '骑士很煎蛋、骑士很孜然'
+      placeholder: '这个人很懒，他/她什么都没有评论'
     })
   }
 

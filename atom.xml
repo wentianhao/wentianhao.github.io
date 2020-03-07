@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="wentianhao.github.io/"/>
-  <updated>2020-03-06T14:45:21.107Z</updated>
+  <updated>2020-03-07T15:37:59.069Z</updated>
   <id>wentianhao.github.io/</id>
   
   <author>
@@ -15,6 +15,37 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>diary45</title>
+    <link href="wentianhao.github.io/2020/03/07/diary45/"/>
+    <id>wentianhao.github.io/2020/03/07/diary45/</id>
+    <published>2020-03-07T15:23:24.000Z</published>
+    <updated>2020-03-07T15:37:59.069Z</updated>
+    
+    <content type="html"><![CDATA[<html><head></head><body><pre><code>今天是2020年3月7号，星期六，农历二月十四</code></pre><ul><li><p>今天爬淘宝发现可真难，淘宝的反爬做的相当不错了，有时间一定把这块给啃下来！</p></li><li><p>今天没有看论文，昨天一口气看的论文有点多，头晕死</p></li><li><p>明天看看论文，学学下一章。</p></li></ul></body></html>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;html&gt;&lt;head&gt;&lt;/head&gt;&lt;body&gt;&lt;pre&gt;&lt;code&gt;今天是2020年3月7号，星期六，农历二月十四&lt;/code&gt;&lt;/pre&gt;&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;今天爬淘宝发现可真难，淘宝的反爬做的相当不错了，有时间一定把这块给啃下来！&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;今
+      
+    
+    </summary>
+    
+    
+      <category term="日记" scheme="wentianhao.github.io/categories/%E6%97%A5%E8%AE%B0/"/>
+    
+    
+      <category term="封城日记" scheme="wentianhao.github.io/tags/%E5%B0%81%E5%9F%8E%E6%97%A5%E8%AE%B0/"/>
+    
+      <category term="日记" scheme="wentianhao.github.io/tags/%E6%97%A5%E8%AE%B0/"/>
+    
+  </entry>
   
   <entry>
     <title>diary44</title>
@@ -114,9 +145,9 @@
     <link href="wentianhao.github.io/2020/03/04/%E7%94%B5%E5%95%86%E4%BF%A1%E6%81%AF%E7%88%AC%E8%99%AB%E9%A1%B9%E7%9B%AE/"/>
     <id>wentianhao.github.io/2020/03/04/%E7%94%B5%E5%95%86%E4%BF%A1%E6%81%AF%E7%88%AC%E8%99%AB%E9%A1%B9%E7%9B%AE/</id>
     <published>2020-03-04T05:20:32.000Z</published>
-    <updated>2020-03-04T15:47:51.011Z</updated>
+    <updated>2020-03-07T14:37:56.816Z</updated>
     
-    <content type="html"><![CDATA[<html><head></head><body><ul><li><p>目标站点: <a href="https://www.taobao.com/" target="_blank" rel="noopener">淘宝</a></p></li><li><p>需求数据：指定关键词的商品数据(包括商品名、商品价格、评论数等)</p></li><li><p>要求：自动翻页并输出</p></li><li><p>选择模块: urllib</p></li><li><p>分析:<br>  关键词:女装</p><p>  第一页: <a href="https://s.taobao.com/search?q=%E5%A5%B3%E8%A3%85&imgfile=&commend=all&ssid=s5-e&search_type=item&sourceId=tb.index&spm=a21bo.2017.201856-taobao-item.2&ie=utf8&initiative_id=tbindexz_20170306" target="_blank" rel="noopener">https://s.taobao.com/search?q=%E5%A5%B3%E8%A3%85&imgfile=&commend=all&ssid=s5-e&search_type=item&sourceId=tb.index&spm=a21bo.2017.201856-taobao-item.2&ie=utf8&initiative_id=tbindexz_20170306</a></p><p>  第二页: <a href="https://s.taobao.com/search?q=%E5%A5%B3%E8%A3%85&imgfile=&commend=all&ssid=s5-e&search_type=item&sourceId=tb.index&spm=a21bo.2017.201856-taobao-item.2&ie=utf8&initiative_id=tbindexz_20170306&bcoffset=3&ntoffset=3&p4ppushleft=1%2C48&s=44" target="_blank" rel="noopener">https://s.taobao.com/search?q=%E5%A5%B3%E8%A3%85&imgfile=&commend=all&ssid=s5-e&search_type=item&sourceId=tb.index&spm=a21bo.2017.201856-taobao-item.2&ie=utf8&initiative_id=tbindexz_20170306&bcoffset=3&ntoffset=3&p4ppushleft=1%2C48&s=44</a></p><p>  第三页: <a href="https://s.taobao.com/search?q=%E5%A5%B3%E8%A3%85&imgfile=&commend=all&ssid=s5-e&search_type=item&sourceId=tb.index&spm=a21bo.2017.201856-taobao-item.2&ie=utf8&initiative_id=tbindexz_20170306&bcoffset=0&ntoffset=6&p4ppushleft=1%2C48&s=88" target="_blank" rel="noopener">https://s.taobao.com/search?q=%E5%A5%B3%E8%A3%85&imgfile=&commend=all&ssid=s5-e&search_type=item&sourceId=tb.index&spm=a21bo.2017.201856-taobao-item.2&ie=utf8&initiative_id=tbindexz_20170306&bcoffset=0&ntoffset=6&p4ppushleft=1%2C48&s=88</a></p></li></ul><pre><code>url:   https://s.taobao.com/search?q=%E5%A5%B3%E8%A3%85&imgfile=&commend=all&ssid=s5-e&search_type=item&sourceId=tb.index&spm=a21bo.2017.201856-taobao-item.2&ie=utf8&initiative_id=tbindexz_20170306&s=(page-1)*44</code></pre></body></html>]]></content>
+    <content type="html"><![CDATA[<html><head></head><body><ul><li><p>目标站点: <a href="https://www.taobao.com/" target="_blank" rel="noopener">淘宝</a></p></li><li><p>需求数据：指定关键词的商品数据(包括商品名、商品价格、评论数等)</p></li><li><p>要求：自动翻页并输出</p></li><li><p>选择模块: urllib</p></li><li><p>分析:<br>  关键词:女装</p><p>  第一页: <a href="https://s.taobao.com/search?q=女装&imgfile=&commend=all&ssid=s5-e&search_type=item&sourceId=tb.index&spm=a21bo.2017.201856-taobao-item.2&ie=utf8&initiative_id=tbindexz_20170306" target="_blank" rel="noopener">https://s.taobao.com/search?q=女装&imgfile=&commend=all&ssid=s5-e&search_type=item&sourceId=tb.index&spm=a21bo.2017.201856-taobao-item.2&ie=utf8&initiative_id=tbindexz_20170306</a></p><p>  第二页: <a href="https://s.taobao.com/search?q=女装&imgfile=&commend=all&ssid=s5-e&search_type=item&sourceId=tb.index&spm=a21bo.2017.201856-taobao-item.2&ie=utf8&initiative_id=tbindexz_20170306&bcoffset=3&ntoffset=3&p4ppushleft=1%2C48&s=44" target="_blank" rel="noopener">https://s.taobao.com/search?q=女装&imgfile=&commend=all&ssid=s5-e&search_type=item&sourceId=tb.index&spm=a21bo.2017.201856-taobao-item.2&ie=utf8&initiative_id=tbindexz_20170306&bcoffset=3&ntoffset=3&p4ppushleft=1%2C48&s=44</a></p><p>  第三页: <a href="https://s.taobao.com/search?q=女装&imgfile=&commend=all&ssid=s5-e&search_type=item&sourceId=tb.index&spm=a21bo.2017.201856-taobao-item.2&ie=utf8&initiative_id=tbindexz_20170306&bcoffset=0&ntoffset=6&p4ppushleft=1%2C48&s=88" target="_blank" rel="noopener">https://s.taobao.com/search?q=女装&imgfile=&commend=all&ssid=s5-e&search_type=item&sourceId=tb.index&spm=a21bo.2017.201856-taobao-item.2&ie=utf8&initiative_id=tbindexz_20170306&bcoffset=0&ntoffset=6&p4ppushleft=1%2C48&s=88</a></p></li></ul><pre><code>url:   https://s.taobao.com/search?q=女装&imgfile=&commend=all&ssid=s5-e&search_type=item&sourceId=tb.index&spm=a21bo.2017.201856-taobao-item.2&ie=utf8&initiative_id=tbindexz_20170306&s=(page-1)*44https://s.taobao.com/search?q=女装&s=(page-1)*44商品名： "raw_title":"无印良品 MUJI 女式 减轻颈部刺痛感 罗纹 高领毛衣"商品价格:  "view_price":"124.00"评论数: 产品链接：https://detail.tmall.com/item.htm?id=604628031536"detail_url":"//detail.tmall.com/item.htm?id\u003d604628031536\u0026ad_id\u003d\u0026am_id\u003d\u0026cm_id\u003d140105335569ed55e27b\u0026pm_id\u003d\u0026abbucket\u003d14"评论数： https://dsr-rate.tmall.com/list_dsr_info.htm?itemId=604628031536&spuId=1372321809&sellerId=2038648986&groupId&_ksTS=1583569497006_221&callback=jsonp222"rateTotal":1023"nid":"604628031536"淘宝太难爬了，爬的时候需要验证登录，验证登录需要获取st!暂时先搁浅了吧</code></pre></body></html>]]></content>
     
     <summary type="html">
     
@@ -593,35 +624,6 @@
     
     
       <category term="python" scheme="wentianhao.github.io/tags/python/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Urllib爬虫项目</title>
-    <link href="wentianhao.github.io/2020/02/25/urllib/"/>
-    <id>wentianhao.github.io/2020/02/25/urllib/</id>
-    <published>2020-02-25T04:51:36.000Z</published>
-    <updated>2020-02-28T10:57:43.976Z</updated>
-    
-    <content type="html"><![CDATA[<html><head></head><body><p>Urllib模块是一个可以用于编写爬虫的非常常用的模块</p><figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> urllib</span><br><span class="line"><span class="keyword">import</span> urllib.request</span><br><span class="line"><span class="keyword">import</span> re</span><br><span class="line"><span class="keyword">import</span> random</span><br><span class="line"></span><br><span class="line">url = <span class="string">"http://www.jd.com"</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 爬到内存中</span></span><br><span class="line">jd = urllib.request.urlopen(url).read().decode(<span class="string">"utf-8"</span>,<span class="string">"ignore"</span>)</span><br><span class="line">print(len(jd))</span><br><span class="line">pat = <span class="string">"<title>(.*?)</title>"</span></span><br><span class="line">title = re.compile(pat,re.S).findall(jd)</span><br><span class="line">print(title)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 爬到硬盘文件中</span></span><br><span class="line">urllib.request.urlretrieve(url,filename=<span class="string">"./jd.html"</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 浏览器伪装</span></span><br><span class="line">url2 = <span class="string">"https://www.qiushibaike.com/"</span></span><br><span class="line">opener = urllib.request.build_opener()</span><br><span class="line">UA = (<span class="string">"User-Agent"</span>,</span><br><span class="line"><span class="string">"Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36"</span>)</span><br><span class="line">opener.addheaders=[UA]</span><br><span class="line">urllib.request.install_opener(opener)</span><br><span class="line">data = urllib.request.urlopen(url2).read().decode(<span class="string">"utf-8"</span>,<span class="string">"ignore"</span>)</span><br><span class="line">print(len(data))</span><br><span class="line"></span><br><span class="line"><span class="comment"># 用户代理池，希望对象服务器更难识别爬虫</span></span><br><span class="line"><span class="comment"># 使用多个浏览器标识</span></span><br><span class="line">uapools=[</span><br><span class="line">    <span class="string">"Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36"</span>,</span><br><span class="line">    <span class="string">"Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:72.0) Gecko/20100101 Firefox/72.0"</span>,</span><br><span class="line">    <span class="string">"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.102 Safari/537.36 Edge/18.18363"</span></span><br><span class="line">]</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">UA</span><span class="params">()</span>:</span></span><br><span class="line">    opener=urllib.request.build_opener()</span><br><span class="line">    thisua = random.choice(uapools)</span><br><span class="line">    ua = (<span class="string">"User-Agent"</span>,thisua)</span><br><span class="line">    opener.addheaders=[ua]</span><br><span class="line">    urllib.request.install_opener(opener)</span><br><span class="line">    print(<span class="string">"当前UA ："</span>+str(thisua))</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">0</span>,<span class="number">10</span>):</span><br><span class="line">    UA()</span><br><span class="line">    data = urllib.request.urlopen(url2).read().decode(<span class="string">"utf-8"</span>,<span class="string">"ignore"</span>)</span><br><span class="line">    print(len(data))</span><br></pre></td></tr></tbody></table></figure><p>简单实战：爬取糗事百科热门并翻页</p></body></html>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;html&gt;&lt;head&gt;&lt;/head&gt;&lt;body&gt;&lt;p&gt;Urllib模块是一个可以用于编写爬虫的非常常用的模块&lt;/p&gt;
-&lt;figure class=&quot;highlight python&quot;&gt;&lt;table&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span
-      
-    
-    </summary>
-    
-    
-      <category term="python" scheme="wentianhao.github.io/categories/python/"/>
-    
-    
-      <category term="python" scheme="wentianhao.github.io/tags/python/"/>
-    
-      <category term="python爬虫" scheme="wentianhao.github.io/tags/python%E7%88%AC%E8%99%AB/"/>
     
   </entry>
   

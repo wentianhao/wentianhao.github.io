@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="wentianhao.github.io/"/>
-  <updated>2020-03-07T15:37:59.069Z</updated>
+  <updated>2020-03-08T15:47:48.322Z</updated>
   <id>wentianhao.github.io/</id>
   
   <author>
@@ -15,6 +15,66 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>diary46</title>
+    <link href="wentianhao.github.io/2020/03/08/diary46/"/>
+    <id>wentianhao.github.io/2020/03/08/diary46/</id>
+    <published>2020-03-08T15:46:23.000Z</published>
+    <updated>2020-03-08T15:47:48.322Z</updated>
+    
+    <content type="html"><![CDATA[<html><head></head><body><pre><code>今天是2020年3月8号，星期天，农历二月十五</code></pre><ul><li><p>明天又要开始新一轮的上课了，英语课真的不喜欢上啊，第三周又新开一门英语课我佛了</p></li><li><p>论文论文一定要静下心来看论文！</p></li></ul></body></html>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;html&gt;&lt;head&gt;&lt;/head&gt;&lt;body&gt;&lt;pre&gt;&lt;code&gt;今天是2020年3月8号，星期天，农历二月十五&lt;/code&gt;&lt;/pre&gt;&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;明天又要开始新一轮的上课了，英语课真的不喜欢上啊，第三周又新开一门英语课我佛了&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p
+      
+    
+    </summary>
+    
+    
+      <category term="日记" scheme="wentianhao.github.io/categories/%E6%97%A5%E8%AE%B0/"/>
+    
+    
+      <category term="封城日记" scheme="wentianhao.github.io/tags/%E5%B0%81%E5%9F%8E%E6%97%A5%E8%AE%B0/"/>
+    
+      <category term="日记" scheme="wentianhao.github.io/tags/%E6%97%A5%E8%AE%B0/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Boosting Entity Linking Performance by Leveraging Unlabeled Documents</title>
+    <link href="wentianhao.github.io/2020/03/08/entity1/"/>
+    <id>wentianhao.github.io/2020/03/08/entity1/</id>
+    <published>2020-03-08T07:09:56.000Z</published>
+    <updated>2020-03-08T07:27:39.092Z</updated>
+    
+    <content type="html"><![CDATA[<html><head></head><body><p>论文: Boosting Entity Linking Performance by Leveraging Unlabeled Documents</p><p>作者：    Phong Le, Ivan Titov</p><p>发表：</p></body></html>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;html&gt;&lt;head&gt;&lt;/head&gt;&lt;body&gt;&lt;p&gt;论文: Boosting Entity Linking Performance by Leveraging Unlabeled Documents&lt;/p&gt;
+&lt;p&gt;作者：    Phong Le, Ivan Titov&lt;/p&gt;
+      
+    
+    </summary>
+    
+    
+      <category term="Entity" scheme="wentianhao.github.io/categories/Entity/"/>
+    
+    
+      <category term="Entity" scheme="wentianhao.github.io/tags/Entity/"/>
+    
+      <category term="Entity Linking" scheme="wentianhao.github.io/tags/Entity-Linking/"/>
+    
+  </entry>
   
   <entry>
     <title>diary45</title>
@@ -565,65 +625,6 @@
       <category term="封城日记" scheme="wentianhao.github.io/tags/%E5%B0%81%E5%9F%8E%E6%97%A5%E8%AE%B0/"/>
     
       <category term="日记" scheme="wentianhao.github.io/tags/%E6%97%A5%E8%AE%B0/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>diary34</title>
-    <link href="wentianhao.github.io/2020/02/25/diary34/"/>
-    <id>wentianhao.github.io/2020/02/25/diary34/</id>
-    <published>2020-02-25T15:44:20.000Z</published>
-    <updated>2020-02-26T14:22:36.971Z</updated>
-    
-    <content type="html"><![CDATA[<html><head></head><body><pre><code>今天是2020年2月25号，星期二，农历二月初三</code></pre><ul><li>停了一下午的电</li><li>本来打算通过qq号获取一个qq的手机号，结果停电了，意兴阑珊了</li><li>晚安</li></ul></body></html>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;html&gt;&lt;head&gt;&lt;/head&gt;&lt;body&gt;&lt;pre&gt;&lt;code&gt;今天是2020年2月25号，星期二，农历二月初三&lt;/code&gt;&lt;/pre&gt;&lt;ul&gt;
-&lt;li&gt;停了一下午的电&lt;/li&gt;
-&lt;li&gt;本来打算通过qq号获取一个qq的手机号，结果停电了，意兴阑珊了&lt;/li&gt;
-&lt;li&gt;
-      
-    
-    </summary>
-    
-    
-      <category term="日记" scheme="wentianhao.github.io/categories/%E6%97%A5%E8%AE%B0/"/>
-    
-    
-      <category term="封城日记" scheme="wentianhao.github.io/tags/%E5%B0%81%E5%9F%8E%E6%97%A5%E8%AE%B0/"/>
-    
-      <category term="日记" scheme="wentianhao.github.io/tags/%E6%97%A5%E8%AE%B0/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>ModuleNotFoundError</title>
-    <link href="wentianhao.github.io/2020/02/25/ModuleNotFoundError/"/>
-    <id>wentianhao.github.io/2020/02/25/ModuleNotFoundError/</id>
-    <published>2020-02-25T06:02:30.000Z</published>
-    <updated>2020-02-25T06:07:51.444Z</updated>
-    
-    <content type="html"><![CDATA[<html><head></head><body><p>-关于ModuleNotFoundError: No module named ‘urllib.request’; ‘urllib’ is not a package的问题</p><ul><li><p>重名导致urllib包无效化</p><p>(1) 正在使用import urllib的文件命名就是urllib.py文件 </p><p>(2) 正在使用的文件的文件夹目录下有一个urllib.py的文件，导致import urllib 实际上导入的是当前目录的urllib.py文件而不是urllib库文件</p></li><li><p>解决方法：</p><p>  修改文件名</p></li></ul></body></html>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;html&gt;&lt;head&gt;&lt;/head&gt;&lt;body&gt;&lt;p&gt;-关于ModuleNotFoundError: No module named ‘urllib.request’; ‘urllib’ is not a package的问题&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;重名导致urlli
-      
-    
-    </summary>
-    
-    
-      <category term="python" scheme="wentianhao.github.io/categories/python/"/>
-    
-    
-      <category term="python" scheme="wentianhao.github.io/tags/python/"/>
     
   </entry>
   

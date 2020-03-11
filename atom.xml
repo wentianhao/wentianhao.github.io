@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="wentianhao.github.io/"/>
-  <updated>2020-03-10T14:57:01.214Z</updated>
+  <updated>2020-03-11T15:54:34.532Z</updated>
   <id>wentianhao.github.io/</id>
   
   <author>
@@ -15,6 +15,37 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>diary49</title>
+    <link href="wentianhao.github.io/2020/03/11/diary49/"/>
+    <id>wentianhao.github.io/2020/03/11/diary49/</id>
+    <published>2020-03-11T15:53:16.000Z</published>
+    <updated>2020-03-11T15:54:34.532Z</updated>
+    
+    <content type="html"><![CDATA[<html><head></head><body><pre><code>今天是2020年3月11号，星期三，农历二月十八</code></pre><ul><li><p>今天有点浑浑噩噩的，一整天，果然早起傻一天</p></li><li><p>明天早上又有英语课，我的天呐，今天的英语作业45分，tcl</p></li></ul></body></html>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;html&gt;&lt;head&gt;&lt;/head&gt;&lt;body&gt;&lt;pre&gt;&lt;code&gt;今天是2020年3月11号，星期三，农历二月十八&lt;/code&gt;&lt;/pre&gt;&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;今天有点浑浑噩噩的，一整天，果然早起傻一天&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;明天早上又有英语课，我的天呐，今
+      
+    
+    </summary>
+    
+    
+      <category term="日记" scheme="wentianhao.github.io/categories/%E6%97%A5%E8%AE%B0/"/>
+    
+    
+      <category term="封城日记" scheme="wentianhao.github.io/tags/%E5%B0%81%E5%9F%8E%E6%97%A5%E8%AE%B0/"/>
+    
+      <category term="日记" scheme="wentianhao.github.io/tags/%E6%97%A5%E8%AE%B0/"/>
+    
+  </entry>
   
   <entry>
     <title>diary48</title>
@@ -591,40 +622,6 @@
     
     
       <category term="python爬虫" scheme="wentianhao.github.io/tags/python%E7%88%AC%E8%99%AB/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>专业英语</title>
-    <link href="wentianhao.github.io/2020/02/27/%E4%B8%93%E4%B8%9A%E8%8B%B1%E8%AF%AD/"/>
-    <id>wentianhao.github.io/2020/02/27/%E4%B8%93%E4%B8%9A%E8%8B%B1%E8%AF%AD/</id>
-    <published>2020-02-27T14:44:38.000Z</published>
-    <updated>2020-03-09T04:22:36.895Z</updated>
-    
-    <content type="html"><![CDATA[<html><head></head><body><ul><li><p>世界著名的三大科技文献检索系统</p><ul><li>SCI 科学引文索引</li><li>EI 工程索引</li><li>ISTP 科技会议录索引</li></ul></li><li><p>高质量文章标准 High-quality paper criteria</p><ul><li>SCI影响因子</li><li>推荐 & 口碑 （CCF推荐期刊，北大核心）（nature 、cell 、Springer 、Elsciver ）</li><li>引用量 （google引用、SCI引用）</li></ul></li></ul><p>小结：<br><a href="https://github.com/wentianhao/wentianhao.github.io/blob/master/images/IR.png?raw=true" data-caption="IR" data-fancybox="images"><img src="https://github.com/wentianhao/wentianhao.github.io/blob/master/images/IR.png?raw=true" alt="IR"></a></p><hr><p>three-pass reading method：</p><ul><li><p>First pass: Read the title,abstract,introduction,and subsection headings and conclusion. Take note!Ignore the math!</p></li><li><p>Second pass: Read all the text,understand the math,run the associated code to repeat the experiment,other articles/summary/comments related to the paper.Take note!</p></li><li><p>Third pass: all about math. Break down the equation</p></li></ul><p>seven tips for a stand-out presentation</p><ol><li>know your audience</li><li>use structure to build on ideas</li><li>use visuals (pictures,figures…)</li><li>Repetition is your friend</li><li>have a story to tell</li><li>be relatable,be authentic,and be enthusiasm</li><li>build your confidence with practice</li></ol></body></html>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;html&gt;&lt;head&gt;&lt;/head&gt;&lt;body&gt;&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;世界著名的三大科技文献检索系统&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;SCI 科学引文索引&lt;/li&gt;
-&lt;li&gt;EI 工程索引&lt;/li&gt;
-&lt;li&gt;ISTP 科技会议录索引&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;
-      
-    
-    </summary>
-    
-    
-      <category term="学习笔记" scheme="wentianhao.github.io/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
-    
-    
-      <category term="学习笔记" scheme="wentianhao.github.io/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
     
   </entry>
   

@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="wentianhao.github.io/"/>
-  <updated>2020-03-11T15:54:34.532Z</updated>
+  <updated>2020-03-13T09:24:16.032Z</updated>
   <id>wentianhao.github.io/</id>
   
   <author>
@@ -15,6 +15,94 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>分布式爬虫编写</title>
+    <link href="wentianhao.github.io/2020/03/13/%E5%88%86%E5%B8%83%E5%BC%8F%E7%88%AC%E8%99%AB%E7%BC%96%E5%86%99/"/>
+    <id>wentianhao.github.io/2020/03/13/%E5%88%86%E5%B8%83%E5%BC%8F%E7%88%AC%E8%99%AB%E7%BC%96%E5%86%99/</id>
+    <published>2020-03-13T09:23:39.000Z</published>
+    <updated>2020-03-13T09:24:16.032Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+    
+      <category term="python" scheme="wentianhao.github.io/categories/python/"/>
+    
+    
+      <category term="python" scheme="wentianhao.github.io/tags/python/"/>
+    
+      <category term="python爬虫" scheme="wentianhao.github.io/tags/python%E7%88%AC%E8%99%AB/"/>
+    
+      <category term="docker" scheme="wentianhao.github.io/tags/docker/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>爬虫常见的反爬策略与反爬攻克手段</title>
+    <link href="wentianhao.github.io/2020/03/13/%E7%88%AC%E8%99%AB%E5%B8%B8%E8%A7%81%E7%9A%84%E5%8F%8D%E7%88%AC%E7%AD%96%E7%95%A5%E4%B8%8E%E5%8F%8D%E7%88%AC%E6%94%BB%E5%85%8B%E6%89%8B%E6%AE%B5/"/>
+    <id>wentianhao.github.io/2020/03/13/%E7%88%AC%E8%99%AB%E5%B8%B8%E8%A7%81%E7%9A%84%E5%8F%8D%E7%88%AC%E7%AD%96%E7%95%A5%E4%B8%8E%E5%8F%8D%E7%88%AC%E6%94%BB%E5%85%8B%E6%89%8B%E6%AE%B5/</id>
+    <published>2020-03-13T06:59:50.000Z</published>
+    <updated>2020-03-13T07:08:46.958Z</updated>
+    
+    <content type="html"><![CDATA[<html><head></head><body><ul><li><p>反爬策略1：通过UA限制或者其他头信息限制</p><p>  解决方案：构建用户代理池</p></li><li><p>反爬策略2：通过访问者IP限制</p><p>  解决方案：构建IP代理池</p></li><li><p>反爬策略3：通过验证码限制</p><p>  解决方案:手工打码、验证码接口自动识别或者通过机器学习自动识别</p></li><li><p>反爬策略4：通过数据的异步加载限制</p><p>  解决方案：抓包分析或者使用PhantomJS</p></li><li><p>反爬策略5：通过Cookie限制</p><p>  解决方案：进行Cookie处理</p></li><li><p>反爬策略6： 通过JS限制(如请求的数据通过JS随机生成)</p><p>  解决方案：分析JS解密或者使用PhantomJS</p></li></ul></body></html>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;html&gt;&lt;head&gt;&lt;/head&gt;&lt;body&gt;&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;反爬策略1：通过UA限制或者其他头信息限制&lt;/p&gt;
+&lt;p&gt;  解决方案：构建用户代理池&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;反爬策略2：通过访问者IP限制&lt;/p&gt;
+&lt;p&gt;  解决方案：构建IP代理池&lt;/p&gt;
+
+      
+    
+    </summary>
+    
+    
+      <category term="python" scheme="wentianhao.github.io/categories/python/"/>
+    
+    
+      <category term="python" scheme="wentianhao.github.io/tags/python/"/>
+    
+      <category term="python爬虫" scheme="wentianhao.github.io/tags/python%E7%88%AC%E8%99%AB/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>diary50</title>
+    <link href="wentianhao.github.io/2020/03/12/diary50/"/>
+    <id>wentianhao.github.io/2020/03/12/diary50/</id>
+    <published>2020-03-12T06:59:17.000Z</published>
+    <updated>2020-03-13T07:02:13.954Z</updated>
+    
+    <content type="html"><![CDATA[<html><head></head><body><pre><code>今天是2020年3月12号，星期四，农历二月十九</code></pre><ul><li><p>今天又上了英语课，难顶的英语课，也让我萌发了学好口语和听力的想法，得找个方法坚持一下</p></li><li><p>在家学习静心太难了， 玩游戏的日子过的太快了</p></li><li><p>疫情新增人数越来越少了，封锁的江城也要慢慢复苏了！</p></li></ul></body></html>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;html&gt;&lt;head&gt;&lt;/head&gt;&lt;body&gt;&lt;pre&gt;&lt;code&gt;今天是2020年3月12号，星期四，农历二月十九&lt;/code&gt;&lt;/pre&gt;&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;今天又上了英语课，难顶的英语课，也让我萌发了学好口语和听力的想法，得找个方法坚持一下&lt;/p&gt;
+&lt;/li&gt;
+&lt;l
+      
+    
+    </summary>
+    
+    
+      <category term="日记" scheme="wentianhao.github.io/categories/%E6%97%A5%E8%AE%B0/"/>
+    
+    
+      <category term="封城日记" scheme="wentianhao.github.io/tags/%E5%B0%81%E5%9F%8E%E6%97%A5%E8%AE%B0/"/>
+    
+      <category term="日记" scheme="wentianhao.github.io/tags/%E6%97%A5%E8%AE%B0/"/>
+    
+  </entry>
   
   <entry>
     <title>diary49</title>
@@ -137,35 +225,6 @@
       <category term="封城日记" scheme="wentianhao.github.io/tags/%E5%B0%81%E5%9F%8E%E6%97%A5%E8%AE%B0/"/>
     
       <category term="日记" scheme="wentianhao.github.io/tags/%E6%97%A5%E8%AE%B0/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Boosting Entity Linking Performance by Leveraging Unlabeled Documents</title>
-    <link href="wentianhao.github.io/2020/03/08/entity1/"/>
-    <id>wentianhao.github.io/2020/03/08/entity1/</id>
-    <published>2020-03-08T07:09:56.000Z</published>
-    <updated>2020-03-08T07:27:39.092Z</updated>
-    
-    <content type="html"><![CDATA[<html><head></head><body><p>论文: Boosting Entity Linking Performance by Leveraging Unlabeled Documents</p><p>作者：    Phong Le, Ivan Titov</p><p>发表：</p></body></html>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;html&gt;&lt;head&gt;&lt;/head&gt;&lt;body&gt;&lt;p&gt;论文: Boosting Entity Linking Performance by Leveraging Unlabeled Documents&lt;/p&gt;
-&lt;p&gt;作者：    Phong Le, Ivan Titov&lt;/p&gt;
-      
-    
-    </summary>
-    
-    
-      <category term="Entity" scheme="wentianhao.github.io/categories/Entity/"/>
-    
-    
-      <category term="Entity" scheme="wentianhao.github.io/tags/Entity/"/>
-    
-      <category term="Entity Linking" scheme="wentianhao.github.io/tags/Entity-Linking/"/>
     
   </entry>
   
@@ -561,67 +620,6 @@
       <category term="封城日记" scheme="wentianhao.github.io/tags/%E5%B0%81%E5%9F%8E%E6%97%A5%E8%AE%B0/"/>
     
       <category term="日记" scheme="wentianhao.github.io/tags/%E6%97%A5%E8%AE%B0/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Request模块爬虫</title>
-    <link href="wentianhao.github.io/2020/02/28/request/"/>
-    <id>wentianhao.github.io/2020/02/28/request/</id>
-    <published>2020-02-28T10:57:05.000Z</published>
-    <updated>2020-02-28T17:40:46.111Z</updated>
-    
-    <content type="html"><![CDATA[<html><head></head><body><p><strong>Request模块的基础使用</strong></p><ul><li><p>安装request</p><figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install requests</span><br></pre></td></tr></tbody></table></figure></li><li><p>使用方法</p><ul><li><p>请求方式： get、post、put…</p></li><li><p>参数：</p><table><thead><tr><th align="center">参数</th><th align="center">含义</th></tr></thead><tbody><tr><td align="center">params</td><td align="center">get请求的参数</td></tr><tr><td align="center">headers</td><td align="center">伪装浏览器添加头信息</td></tr><tr><td align="center">proxies</td><td align="center">添加代理</td></tr><tr><td align="center">cookies</td><td align="center">添加cookie</td></tr><tr><td align="center">data</td><td align="center">post请求</td></tr></tbody></table></li><li><p>属性：</p><table><thead><tr><th align="center">属性</th><th align="center">含义</th></tr></thead><tbody><tr><td align="center">text</td><td align="center">对应请求响应数据</td></tr><tr><td align="center">content</td><td align="center">二进制类型的相应数据</td></tr><tr><td align="center">encoding</td><td align="center">网页编码</td></tr><tr><td align="center">cookies</td><td align="center">相应cookie</td></tr><tr><td align="center">url</td><td align="center">当前请求的url</td></tr><tr><td align="center">status</td><td align="center">状态码</td></tr></tbody></table></li></ul></li></ul><figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"><span class="keyword">import</span> re</span><br><span class="line"></span><br><span class="line"><span class="comment"># 伪装浏览器</span></span><br><span class="line">hd = {<span class="string">"user-agent"</span>:<span class="string">"Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36"</span>}</span><br><span class="line"></span><br><span class="line"><span class="comment"># 添加代理</span></span><br><span class="line">px = {<span class="string">"http"</span>:<span class="string">"http://127.0.0.1:8888"</span>}</span><br><span class="line"></span><br><span class="line"><span class="comment"># 添加cookies</span></span><br><span class="line">cookies= {<span class="string">""</span>:<span class="string">""</span>}</span><br><span class="line"></span><br><span class="line"><span class="comment"># get请求</span></span><br><span class="line">rst = requests.get(<span class="string">"https://www.aliwx.com.cn/"</span>,headers=hd,proxies=px)</span><br><span class="line">print(rst)</span><br><span class="line">title = re.compile(<span class="string">"<title>(.*?)</title>"</span>,re.S).findall(rst.text)</span><br><span class="line">print(title)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># www.baidu.com/s?wd="阿里文学"</span></span><br><span class="line">pr = {<span class="string">"wd"</span>:<span class="string">"阿里文学"</span>}</span><br><span class="line">rst2 = requests.get(<span class="string">"http://www.baidu.com/s"</span>,params=pr)</span><br><span class="line">print(rst2)</span><br><span class="line"></span><br><span class="line"><span class="comment"># text 、 content、 encoding、url、status_code</span></span><br><span class="line">print(rst2.text)</span><br><span class="line">print(rst2.content)</span><br><span class="line">print(rst2.encoding)</span><br><span class="line">print(rst2.url)</span><br><span class="line">print(rst2.status_code)</span><br><span class="line"></span><br><span class="line"><span class="comment"># cookie 转化为字典</span></span><br><span class="line">cookie  = requests.utils.dict_from_cookiejar(rst2.cookies)</span><br><span class="line">print(cookie)</span><br><span class="line"></span><br><span class="line"><span class="comment"># post请求</span></span><br><span class="line">postdata = {<span class="string">"name"</span>:<span class="string">"www"</span>,<span class="string">"pass"</span>:<span class="string">"123"</span>}</span><br><span class="line">rst3 = requests.post(<span class="string">"https://www.iqianyue.com/mypost/"</span>,data=postdata)</span><br><span class="line">print(rst3.text)</span><br></pre></td></tr></tbody></table></figure><hr><p><strong>使用requests模块实现云栖社区博文爬虫实战</strong></p><p>目标站点：<a href="https://yq.aliyun.com/" target="_blank" rel="noopener">云栖社区</a></p><p>需求数据：指定关键词的博文数据</p><p>要求：自动翻页并下载到本地</p><p>分析：</p><p>第二页url：<a href="https://yq.aliyun.com/search/articles/?spm=a2c4e.11163080.searchblog.155.44fb2ec1RCP5cT&q=python&idx=default&days=&p=2" target="_blank" rel="noopener">https://yq.aliyun.com/search/articles/?spm=a2c4e.11163080.searchblog.155.44fb2ec1RCP5cT&q=python&idx=default&days=&p=2</a></p><p>第三页url：<a href="https://yq.aliyun.com/search/articles/?spm=a2c4e.11163080.searchblog.165.4a4f2ec1GkHbdt&q=python&idx=default&days=&p=3" target="_blank" rel="noopener">https://yq.aliyun.com/search/articles/?spm=a2c4e.11163080.searchblog.165.4a4f2ec1GkHbdt&q=python&idx=default&days=&p=3</a></p><p>spm、idx、days测试去掉有无影响 (无影响)</p><p>第二页有效url：<a href="https://yq.aliyun.com/search/articles/?q=python&p=2" target="_blank" rel="noopener">https://yq.aliyun.com/search/articles/?q=python&p=2</a></p><p>第三页有效url: <a href="https://yq.aliyun.com/search/articles/?q=python&p=3" target="_blank" rel="noopener">https://yq.aliyun.com/search/articles/?q=python&p=3</a></p><p>源码：</p><figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 目标站点：[云栖社区](https://yq.aliyun.com/)</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># 需求数据：指定关键词的博文数据</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># 要求：自动翻页并下载到本地</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"><span class="keyword">import</span> re</span><br><span class="line"><span class="keyword">import</span> time</span><br><span class="line"></span><br><span class="line">key = <span class="string">"python"</span></span><br><span class="line">url = <span class="string">"https://yq.aliyun.com/search/articles/"</span></span><br><span class="line">data = requests.get(url,params={<span class="string">"q"</span>:key}).text</span><br><span class="line">pat1 = <span class="string">'< div class="_search-info">找到(.*?)条关于'</span></span><br><span class="line">allline=re.compile(pat1,re.S).findall(data)[<span class="number">0</span>]</span><br><span class="line">allpage=int(allline)//<span class="number">15</span>+<span class="number">1</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">0</span>,<span class="number">1</span>):</span><br><span class="line">    print(<span class="string">"-------正在爬第"</span>+str(i+<span class="number">1</span>)+<span class="string">"页-------------"</span>)</span><br><span class="line">    index=str(i+<span class="number">1</span>)</span><br><span class="line">    getdata={<span class="string">"q"</span>:key,</span><br><span class="line">            <span class="string">"p"</span>:index,</span><br><span class="line">            }</span><br><span class="line">    data=requests.get(url,params=getdata).text</span><br><span class="line">    pat_url= <span class="string">'<div class="media-body text-overflow">.*?<a href="(.*?)">'</span></span><br><span class="line">    articles=re.compile(pat_url,re.S).findall(data)</span><br><span class="line">    <span class="keyword">for</span> j <span class="keyword">in</span> articles:</span><br><span class="line">        thisurl=<span class="string">"https://yq.aliyun.com"</span>+j</span><br><span class="line">        thisdata=requests.get(thisurl).text</span><br><span class="line">        pat_title=<span class="string">'<p class="hiddenTitle">(.*?)</p>'</span></span><br><span class="line">        title=re.compile(pat_title,re.S).findall(thisdata)[<span class="number">0</span>]</span><br><span class="line">        pat_content=<span class="string">'<div class="content-detail unsafe markdown-body">(.*?) <div class="copyright-outer-line">'</span></span><br><span class="line">        content=re.compile(pat_content,re.S).findall(thisdata)[<span class="number">0</span>]</span><br><span class="line">        fh=open(<span class="string">"./blog/"</span>+str(title)+str(i)+<span class="string">"_"</span>+str(time.time())+<span class="string">".html"</span>,<span class="string">"w"</span>,encoding=<span class="string">"utf-8"</span>)</span><br><span class="line">        fh.write(title+<span class="string">"<br /><br />"</span>+content)</span><br><span class="line">        fh.close()</span><br></pre></td></tr></tbody></table></figure></body></html>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;html&gt;&lt;head&gt;&lt;/head&gt;&lt;body&gt;&lt;p&gt;&lt;strong&gt;Request模块的基础使用&lt;/strong&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;安装request&lt;/p&gt;
-&lt;figure class=&quot;highlight python&quot;&gt;&lt;table&gt;&lt;tbody&gt;&lt;tr
-      
-    
-    </summary>
-    
-    
-      <category term="python" scheme="wentianhao.github.io/categories/python/"/>
-    
-    
-      <category term="python" scheme="wentianhao.github.io/tags/python/"/>
-    
-      <category term="python爬虫" scheme="wentianhao.github.io/tags/python%E7%88%AC%E8%99%AB/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>抓包分析技术精讲</title>
-    <link href="wentianhao.github.io/2020/02/27/%E6%8A%93%E5%8C%85%E5%88%86%E6%9E%90%E6%8A%80%E6%9C%AF%E7%B2%BE%E8%AE%B2/"/>
-    <id>wentianhao.github.io/2020/02/27/%E6%8A%93%E5%8C%85%E5%88%86%E6%9E%90%E6%8A%80%E6%9C%AF%E7%B2%BE%E8%AE%B2/</id>
-    <published>2020-02-27T15:24:18.000Z</published>
-    <updated>2020-02-28T10:34:52.804Z</updated>
-    
-    <content type="html"><![CDATA[<html><head></head><body><ul><li>Fiddler是一款使用起来非常方便的抓包工具，安装起来很方便。</li></ul><p>实战：抓取腾讯视频下的评论</p><figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> urllib.request</span><br><span class="line"><span class="keyword">import</span> re</span><br><span class="line"></span><br><span class="line">cid = <span class="string">"0"</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">0</span>,<span class="number">100</span>):</span><br><span class="line">    print(<span class="string">"第"</span>+str(i+<span class="number">1</span>)+<span class="string">"页的评论数据"</span>)</span><br><span class="line">    url = <span class="string">"https://video.coral.qq.com/varticle/4831064204/comment/v2?callback=_varticle4831064204commentv2&orinum=10&oriorder=o&pageflag=1&cursor="</span> + str(</span><br><span class="line">        cid) + <span class="string">"&scorecursor=0&orirepnum=2&reporder=o&reppageflag=1&source=132&_=1582873152540"</span></span><br><span class="line">    data = urllib.request.urlopen(url).read().decode(<span class="string">"utf-8"</span>,<span class="string">"ignore"</span>)</span><br><span class="line">    pat = <span class="string">'"content":"(.*?)"'</span></span><br><span class="line">    comments = re.compile(pat,re.S).findall(data)</span><br><span class="line">    <span class="keyword">for</span> item <span class="keyword">in</span> comments:</span><br><span class="line">        print(str(item))</span><br><span class="line">        print(<span class="string">"------------------"</span>)</span><br><span class="line">    pat2 = <span class="string">'"last":"(.*?)"'</span></span><br><span class="line">    cid = re.compile(pat2,re.S).findall(data)[<span class="number">0</span>]</span><br></pre></td></tr></tbody></table></figure></body></html>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;html&gt;&lt;head&gt;&lt;/head&gt;&lt;body&gt;&lt;ul&gt;
-&lt;li&gt;Fiddler是一款使用起来非常方便的抓包工具，安装起来很方便。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;实战：抓取腾讯视频下的评论&lt;/p&gt;
-&lt;figure class=&quot;highlight python&quot;&gt;&lt;table&gt;&lt;
-      
-    
-    </summary>
-    
-    
-      <category term="python" scheme="wentianhao.github.io/categories/python/"/>
-    
-    
-      <category term="python爬虫" scheme="wentianhao.github.io/tags/python%E7%88%AC%E8%99%AB/"/>
     
   </entry>
   

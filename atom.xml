@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="wentianhao.github.io/"/>
-  <updated>2020-03-13T09:24:16.032Z</updated>
+  <updated>2020-03-13T16:15:24.723Z</updated>
   <id>wentianhao.github.io/</id>
   
   <author>
@@ -17,13 +17,53 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>分布式爬虫编写</title>
+    <title>diary51</title>
+    <link href="wentianhao.github.io/2020/03/13/diary51/"/>
+    <id>wentianhao.github.io/2020/03/13/diary51/</id>
+    <published>2020-03-13T15:43:19.000Z</published>
+    <updated>2020-03-13T16:15:24.723Z</updated>
+    
+    <content type="html"><![CDATA[<html><head></head><body><pre><code>今天是2020年3月13号，星期五，农历二月廿十</code></pre><ul><li><p>武汉的情况真的越来越好了，估计要不了多久就可以出门了，国外的情况好像越来越严峻了，怕不是要掩耳到零</p></li><li><p>累了</p></li></ul></body></html>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;html&gt;&lt;head&gt;&lt;/head&gt;&lt;body&gt;&lt;pre&gt;&lt;code&gt;今天是2020年3月13号，星期五，农历二月廿十&lt;/code&gt;&lt;/pre&gt;&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;武汉的情况真的越来越好了，估计要不了多久就可以出门了，国外的情况好像越来越严峻了，怕不是要掩耳到零&lt;/p&gt;
+&lt;
+      
+    
+    </summary>
+    
+    
+      <category term="日记" scheme="wentianhao.github.io/categories/%E6%97%A5%E8%AE%B0/"/>
+    
+    
+      <category term="封城日记" scheme="wentianhao.github.io/tags/%E5%B0%81%E5%9F%8E%E6%97%A5%E8%AE%B0/"/>
+    
+      <category term="日记" scheme="wentianhao.github.io/tags/%E6%97%A5%E8%AE%B0/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>分布式爬虫</title>
     <link href="wentianhao.github.io/2020/03/13/%E5%88%86%E5%B8%83%E5%BC%8F%E7%88%AC%E8%99%AB%E7%BC%96%E5%86%99/"/>
     <id>wentianhao.github.io/2020/03/13/%E5%88%86%E5%B8%83%E5%BC%8F%E7%88%AC%E8%99%AB%E7%BC%96%E5%86%99/</id>
     <published>2020-03-13T09:23:39.000Z</published>
-    <updated>2020-03-13T09:24:16.032Z</updated>
+    <updated>2020-03-13T15:45:05.696Z</updated>
+    
+    <content type="html"><![CDATA[<html><head></head><body><p>分布式爬虫的难点不在于爬虫技术本身，而在于各服务器网络之间的通信</p><p>分布式爬虫的两种技术方案：</p><p>1、自己实现分布式爬虫(Docker+Urllib+mysql+redis)</p><p>2、基于Scrapy-redis实现分布式爬虫</p></body></html>]]></content>
     
     <summary type="html">
+    
+      
+      
+        &lt;html&gt;&lt;head&gt;&lt;/head&gt;&lt;body&gt;&lt;p&gt;分布式爬虫的难点不在于爬虫技术本身，而在于各服务器网络之间的通信&lt;/p&gt;
+&lt;p&gt;分布式爬虫的两种技术方案：&lt;/p&gt;
+&lt;p&gt;1、自己实现分布式爬虫(Docker+Urllib+mysql+redis)&lt;/p&gt;
+&lt;p&gt;2、基于S
+      
     
     </summary>
     
@@ -591,35 +631,6 @@
       <category term="python" scheme="wentianhao.github.io/tags/python/"/>
     
       <category term="python爬虫" scheme="wentianhao.github.io/tags/python%E7%88%AC%E8%99%AB/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>diary37</title>
-    <link href="wentianhao.github.io/2020/02/28/diary37/"/>
-    <id>wentianhao.github.io/2020/02/28/diary37/</id>
-    <published>2020-02-28T15:19:44.000Z</published>
-    <updated>2020-02-29T15:56:42.839Z</updated>
-    
-    <content type="html"><![CDATA[<html><head></head><body><pre><code>今天是2020年2月28号，星期五，农历二月初六，xx生日</code></pre><ul><li><p><a href="https://whh.plus/love/love.html" target="_blank" rel="noopener">xx生日快乐！！!开开心心每一天 </a></p></li><li><p>今天把python抓包分析和request模块都学完了</p></li><li><p>今天没吃晚饭因为和我妈一点小矛盾，我好饿啊</p></li><li><p>2.29学习计划</p><ul><li>Scrapy爬虫项目编写实战</li><li>论文读书笔记</li></ul></li></ul></body></html>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;html&gt;&lt;head&gt;&lt;/head&gt;&lt;body&gt;&lt;pre&gt;&lt;code&gt;今天是2020年2月28号，星期五，农历二月初六，xx生日&lt;/code&gt;&lt;/pre&gt;&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;&lt;a href=&quot;https://whh.plus/love/love.html&quot; target=&quot;
-      
-    
-    </summary>
-    
-    
-      <category term="日记" scheme="wentianhao.github.io/categories/%E6%97%A5%E8%AE%B0/"/>
-    
-    
-      <category term="封城日记" scheme="wentianhao.github.io/tags/%E5%B0%81%E5%9F%8E%E6%97%A5%E8%AE%B0/"/>
-    
-      <category term="日记" scheme="wentianhao.github.io/tags/%E6%97%A5%E8%AE%B0/"/>
     
   </entry>
   

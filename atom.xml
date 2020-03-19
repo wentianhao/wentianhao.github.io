@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="wentianhao.github.io/"/>
-  <updated>2020-03-17T15:03:11.795Z</updated>
+  <updated>2020-03-19T15:50:09.604Z</updated>
   <id>wentianhao.github.io/</id>
   
   <author>
@@ -15,6 +15,103 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>关联规则</title>
+    <link href="wentianhao.github.io/2020/03/18/%E5%85%B3%E8%81%94%E8%A7%84%E5%88%99/"/>
+    <id>wentianhao.github.io/2020/03/18/%E5%85%B3%E8%81%94%E8%A7%84%E5%88%99/</id>
+    <published>2020-03-18T00:32:56.000Z</published>
+    <updated>2020-03-19T15:50:09.604Z</updated>
+    
+    <content type="html"><![CDATA[<html><head></head><body><table><thead><tr><th align="center">Tid</th><th align="center">Items bought</th></tr></thead><tbody><tr><td align="center">1</td><td align="center">Beer,Nuts,Diaper</td></tr><tr><td align="center">2</td><td align="center">Beer,Coffee,Diaper</td></tr><tr><td align="center">3</td><td align="center">Beer，Diaper,Eggs</td></tr><tr><td align="center">4</td><td align="center">Nuts,Eggs,Milk</td></tr><tr><td align="center">5</td><td align="center">Nuts,Coffee,Diaper,Eggs,Milk</td></tr></tbody></table><p>Let minsup = 50%  最小支持度</p><p>5 * 50%  = 2.5 -> 3</p><p>出现次数大于等于3的这些项集就是频繁项集</p><p>Beer:3 Nuts:3 Diaper:4 Eggs: 3 </p><p>关联规则是形如X->Y的蕴含式</p><p>支持度是X 和 Y 同时出现的概率</p><p>可信度 是 X发生的条件下Y发生的概率</p><p>minconf = 50%  最小可信度是50%</p><p>输入：数据库D，minsup,minconf<br>输出：频繁项集 </p><p>通过扫描D得到1-频繁项集L1;<br>for (k=2;Lk-1!=Ф;k++)<br>{      Ck=由Lk-1通过连接运算产生的候选k-项集;<br>        for (事务数据库D中的事务t)<br>        {    求Ck中包含在t中的所有候选k-项集的计数;<br>    Lk={c | c∈Ck and c.sup_count≥min_sup};<br>        //求Ck中满足min_sup的候选k-项集<br>        }<br>}<br>return L=∪kLk;</p></body></html>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;html&gt;&lt;head&gt;&lt;/head&gt;&lt;body&gt;&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th align=&quot;center&quot;&gt;Tid&lt;/th&gt;
+&lt;th align=&quot;center&quot;&gt;Items bought&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;&lt;tr&gt;
+&lt;t
+      
+    
+    </summary>
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>diary55</title>
+    <link href="wentianhao.github.io/2020/03/17/diary55/"/>
+    <id>wentianhao.github.io/2020/03/17/diary55/</id>
+    <published>2020-03-17T14:47:15.000Z</published>
+    <updated>2020-03-19T15:56:53.754Z</updated>
+    
+    <content type="html"><![CDATA[<html><head></head><body><pre><code>今天是2020年3月17号，星期二，农历二月廿四</code></pre><ul><li><p>英语课难顶，太难了，我要学好英语</p></li><li><p>静心</p></li></ul></body></html>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;html&gt;&lt;head&gt;&lt;/head&gt;&lt;body&gt;&lt;pre&gt;&lt;code&gt;今天是2020年3月17号，星期二，农历二月廿四&lt;/code&gt;&lt;/pre&gt;&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;英语课难顶，太难了，我要学好英语&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;静心&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/
+      
+    
+    </summary>
+    
+    
+      <category term="日记" scheme="wentianhao.github.io/categories/%E6%97%A5%E8%AE%B0/"/>
+    
+    
+      <category term="封城日记" scheme="wentianhao.github.io/tags/%E5%B0%81%E5%9F%8E%E6%97%A5%E8%AE%B0/"/>
+    
+      <category term="日记" scheme="wentianhao.github.io/tags/%E6%97%A5%E8%AE%B0/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>diary54</title>
+    <link href="wentianhao.github.io/2020/03/16/diary54/"/>
+    <id>wentianhao.github.io/2020/03/16/diary54/</id>
+    <published>2020-03-16T14:47:15.000Z</published>
+    <updated>2020-03-19T15:52:09.491Z</updated>
+    
+    <content type="html"><![CDATA[<html><head></head><body><pre><code>今天是2020年3月16号，星期一，农历二月廿三</code></pre><ul><li><p>一天的课程，已无力写日记了惹</p></li><li><p>怎么才能静下心来呢</p></li></ul></body></html>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;html&gt;&lt;head&gt;&lt;/head&gt;&lt;body&gt;&lt;pre&gt;&lt;code&gt;今天是2020年3月16号，星期一，农历二月廿三&lt;/code&gt;&lt;/pre&gt;&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;一天的课程，已无力写日记了惹&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;怎么才能静下心来呢&lt;/p&gt;
+&lt;/li&gt;
+&lt;/u
+      
+    
+    </summary>
+    
+    
+      <category term="日记" scheme="wentianhao.github.io/categories/%E6%97%A5%E8%AE%B0/"/>
+    
+    
+      <category term="封城日记" scheme="wentianhao.github.io/tags/%E5%B0%81%E5%9F%8E%E6%97%A5%E8%AE%B0/"/>
+    
+      <category term="日记" scheme="wentianhao.github.io/tags/%E6%97%A5%E8%AE%B0/"/>
+    
+  </entry>
   
   <entry>
     <title>diary53</title>
@@ -544,94 +641,6 @@
       <category term="封城日记" scheme="wentianhao.github.io/tags/%E5%B0%81%E5%9F%8E%E6%97%A5%E8%AE%B0/"/>
     
       <category term="日记" scheme="wentianhao.github.io/tags/%E6%97%A5%E8%AE%B0/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>数据同步神器</title>
-    <link href="wentianhao.github.io/2020/03/02/syncthing/"/>
-    <id>wentianhao.github.io/2020/03/02/syncthing/</id>
-    <published>2020-03-02T08:58:59.000Z</published>
-    <updated>2020-03-03T16:23:24.982Z</updated>
-    
-    <content type="html"><![CDATA[<html><head></head><body><p><a href="https://www.moewah.com/usr/uploads/2019/03/3082024495.jpg" data-caption="syncthing" data-fancybox="images"><img src="https://www.moewah.com/usr/uploads/2019/03/3082024495.jpg" alt="syncthing"></a></p><p>最近打算同步一下数据，发现了一个口碑还不错的数据同步工具——Syncthing,是一款开源免费的数据同步工具，支持Android、Linux、Windows、Mac OS等系统，可以在任意2台设备之间，实现实时同步。通信使用TLS进行保护，所使用的加密包括完美的前向保密，很适合搭建私有同步网盘</p><h2 id="安装"><strong>安装</strong><a class="post-anchor" href="#安装"></a></h2><p>本文只做Linux服务器和Windows电脑之间的同步安装以及演示操作。</p><h3 id="1、linux安装Syncthing"><strong>1、linux安装Syncthing</strong><a class="post-anchor" href="#1、linux安装Syncthing"></a></h3><p>安装Syncthing:</p><figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#目前最新版v1.2.0，日后自行修改版本号</span></span><br><span class="line">wget https://github.com/syncthing/syncthing/releases/download/v1.3.4/syncthing-linux-amd64-v1.3.4.tar.gz</span><br><span class="line">tar xzvf syncthing-linux-amd64-v1.3.4.tar.gz</span><br><span class="line">cp syncthing-linux-amd64-v1.3.4/syncthing /usr/<span class="built_in">local</span>/bin</span><br></pre></td></tr></tbody></table></figure><h4 id="开放端口"><strong>开放端口</strong><a class="post-anchor" href="#开放端口"></a></h4><p>Syncthing 默认监听以下几个端口</p><figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">22000(TCP)</span><br><span class="line">8384(TCP)</span><br><span class="line">21027(UDP)</span><br><span class="line">44647(UDP)</span><br><span class="line">37269(UDP)</span><br></pre></td></tr></tbody></table></figure><p>个人使用，仅开放22000(TCP)和8384(TCP)</p><p>8384:web访问控制端口<br>22000：节点访问端口</p><p>开启Syncthing</p><figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">syncthing</span><br></pre></td></tr></tbody></table></figure><p>第一次启动会生成配置，内网地址是进不去的，需修改成外网地址。</p><p>修改配置</p><figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">vim /root/.config/syncthing/config.xml</span><br><span class="line"><span class="comment"># 将127.0.0.1:8384改为</span></span><br><span class="line"><span class="comment"># 0.0.0.0:8384</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#再次启动Syncthing</span></span><br><span class="line">syncthing</span><br></pre></td></tr></tbody></table></figure><p>浏览器访问:<br><a href="http://server_ip:8384" target="_blank" rel="noopener">http://server_ip:8384</a></p><p>需自行开放8384端口哦</p><p>设置账号密码，其他参数暂时无需更改，重启<br><a href="https://github.com/wentianhao/wentianhao.github.io/blob/master/images/HU.png?raw=true" data-caption="syncthing" data-fancybox="images"><img src="https://github.com/wentianhao/wentianhao.github.io/blob/master/images/HU.png?raw=true" alt="syncthing"></a></p><p>linux ：后台运行Syncthing</p><figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nohup synchthing &> /dev/null &</span><br></pre></td></tr></tbody></table></figure><h3 id="2、Windows安装Syncthing"><strong>2、Windows安装Syncthing</strong><a class="post-anchor" href="#2、Windows安装Syncthing"></a></h3><p><a href="https://syncthing.net/downloads/" target="_blank" rel="noopener">官网下载</a>对应版本的Syncthing,运行syncthing.exe</p><p><a href="https://github.com/wentianhao/wentianhao.github.io/blob/master/images/syncmd.png?raw=true" data-caption="cmd" data-fancybox="images"><img src="https://github.com/wentianhao/wentianhao.github.io/blob/master/images/syncmd.png?raw=true" alt="cmd"></a></p><p><a href="https://github.com/wentianhao/wentianhao.github.io/blob/master/images/syncsetting.png?raw=true" data-caption="setting" data-fancybox="images"><img src="https://github.com/wentianhao/wentianhao.github.io/blob/master/images/syncsetting.png?raw=true" alt="setting"></a></p><h3 id="3、使用"><strong>3、使用</strong><a class="post-anchor" href="#3、使用"></a></h3><p>在linux的页面上添加Windows的远程设备ID，自行选择指定文件夹。可在添加设备->高级->地址列表，将dynamic 填写为 tcp://server_ip:22000</p><p>设备添加完成，即可同步文件夹。</p></body></html>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;html&gt;&lt;head&gt;&lt;/head&gt;&lt;body&gt;&lt;p&gt;&lt;a href=&quot;https://www.moewah.com/usr/uploads/2019/03/3082024495.jpg&quot; data-caption=&quot;syncthing&quot; data-fancybox=&quot;imag
-      
-    
-    </summary>
-    
-    
-      <category term="server" scheme="wentianhao.github.io/categories/server/"/>
-    
-    
-      <category term="sync" scheme="wentianhao.github.io/tags/sync/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>diary39</title>
-    <link href="wentianhao.github.io/2020/03/01/diary39/"/>
-    <id>wentianhao.github.io/2020/03/01/diary39/</id>
-    <published>2020-03-01T14:14:02.000Z</published>
-    <updated>2020-03-01T15:10:03.263Z</updated>
-    
-    <content type="html"><![CDATA[<html><head></head><body><pre><code>今天是2020年3月1号，星期天，农历二月初八</code></pre><ul><li><p>完成python爬取前程无忧网站的爬取</p></li><li><p>正在看Boosting Entity Linking Performance by Leveraging<br>Unlabeled Documents论文</p></li></ul></body></html>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;html&gt;&lt;head&gt;&lt;/head&gt;&lt;body&gt;&lt;pre&gt;&lt;code&gt;今天是2020年3月1号，星期天，农历二月初八&lt;/code&gt;&lt;/pre&gt;&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;完成python爬取前程无忧网站的爬取&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;正在看Boosting Entity 
-      
-    
-    </summary>
-    
-    
-      <category term="日记" scheme="wentianhao.github.io/categories/%E6%97%A5%E8%AE%B0/"/>
-    
-    
-      <category term="封城日记" scheme="wentianhao.github.io/tags/%E5%B0%81%E5%9F%8E%E6%97%A5%E8%AE%B0/"/>
-    
-      <category term="日记" scheme="wentianhao.github.io/tags/%E6%97%A5%E8%AE%B0/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>招聘信息爬虫项目</title>
-    <link href="wentianhao.github.io/2020/03/01/%E6%8B%9B%E8%81%98%E4%BF%A1%E6%81%AF%E7%88%AC%E8%99%AB%E9%A1%B9%E7%9B%AE/"/>
-    <id>wentianhao.github.io/2020/03/01/%E6%8B%9B%E8%81%98%E4%BF%A1%E6%81%AF%E7%88%AC%E8%99%AB%E9%A1%B9%E7%9B%AE/</id>
-    <published>2020-03-01T07:34:07.000Z</published>
-    <updated>2020-03-01T10:27:06.394Z</updated>
-    
-    <content type="html"><![CDATA[<html><head></head><body><ul><li><p>目标站点: <a href="http://www.51job.com" target="_blank" rel="noopener">前程无忧</a></p></li><li><p>需求数据：指定关键词的所有职位数据</p></li><li><p>要求：自动翻页并输出</p></li><li><p>选择模块: requests</p></li><li><p>分析：<br>  关键词：python</p><p>  第一页: <a href="https://search.51job.com/list/180000,000000,0000,00,9,99,python,2,1.html?lang=c&stype=&postchannel=0000&workyear=99&cotype=99&degreefrom=99&jobterm=99&companysize=99&providesalary=99&lonlat=0%2C0&radius=-1&ord_field=0&confirmdate=9&fromType=&dibiaoid=0&address=&line=&specialarea=00&from=&welfare=" target="_blank" rel="noopener">https://search.51job.com/list/180000,000000,0000,00,9,99,python,2,1.html?lang=c&stype=&postchannel=0000&workyear=99&cotype=99&degreefrom=99&jobterm=99&companysize=99&providesalary=99&lonlat=0%2C0&radius=-1&ord_field=0&confirmdate=9&fromType=&dibiaoid=0&address=&line=&specialarea=00&from=&welfare=</a></p><p>  第二页: <a href="https://search.51job.com/list/180000,000000,0000,00,9,99,python,2,2.html?lang=c&postchannel=0000&workyear=99&cotype=99&degreefrom=99&jobterm=99&companysize=99&ord_field=0&dibiaoid=0&line=&welfare=" target="_blank" rel="noopener">https://search.51job.com/list/180000,000000,0000,00,9,99,python,2,2.html?lang=c&postchannel=0000&workyear=99&cotype=99&degreefrom=99&jobterm=99&companysize=99&ord_field=0&dibiaoid=0&line=&welfare=</a></p><p>  url：<a href="https://search.51job.com/list/180000,000000,0000,00,9,99,python,2,1.html" target="_blank" rel="noopener">https://search.51job.com/list/180000,000000,0000,00,9,99,python,2,1.html</a> </p><p>  代码:</p>  <figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> re</span><br><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"></span><br><span class="line">url = <span class="string">"https://search.51job.com/list/180000,000000,0000,00,9,99,python,2,1.html"</span></span><br><span class="line"></span><br><span class="line">hd={<span class="string">"User-Agent"</span>:<span class="string">"Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36"</span>}</span><br><span class="line"></span><br><span class="line">response = requests.get(url,headers=hd)</span><br><span class="line"><span class="comment"># 如果网页出现乱码，通传编码方式</span></span><br><span class="line">data = bytes(response.text,response.encoding).decode(<span class="string">"gbk"</span>,<span class="string">"ignore"</span>)</span><br><span class="line"><span class="comment"># print(len(data))</span></span><br><span class="line">pat_pag = <span class="string">"共(.*?)条职位"</span></span><br><span class="line">allline = re.compile(pat_pag,re.S).findall(data)[<span class="number">0</span>]</span><br><span class="line"><span class="comment"># print(allline)</span></span><br><span class="line">allpage = int(allline)//<span class="number">50</span> + <span class="number">1</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">0</span>,<span class="number">2</span>):</span><br><span class="line">    print(<span class="string">"------------正在爬"</span>+str(i+<span class="number">1</span>)+<span class="string">"页---------"</span>)</span><br><span class="line">    url = <span class="string">"https://search.51job.com/list/180000,000000,0000,00,9,99,python,2,"</span>+str(i+<span class="number">1</span>)+<span class="string">".html"</span></span><br><span class="line">    <span class="comment"># print(url)</span></span><br><span class="line">    response = requests.get(url, headers=hd)</span><br><span class="line">    <span class="comment"># 如果网页出现乱码，通传编码方式</span></span><br><span class="line">    thisdata = bytes(response.text, response.encoding).decode(<span class="string">"gbk"</span>, <span class="string">"ignore"</span>)</span><br><span class="line">    <span class="comment"># print(thisdata)</span></span><br><span class="line">    job_url_pat=<span class="string">'<em class="check" name="delivery_em" onclick="checkboxClick.this."></em>.*?href="(.*?).html'</span></span><br><span class="line">    job_url_all = re.compile(job_url_pat,re.S).findall(thisdata)</span><br><span class="line">    <span class="comment"># print(len(job_url_all))</span></span><br><span class="line">    <span class="keyword">for</span> job_url <span class="keyword">in</span> job_url_all:</span><br><span class="line">        <span class="comment"># print(job_url)</span></span><br><span class="line">        thisurl=job_url+<span class="string">".html"</span></span><br><span class="line">        response=requests.get(thisurl)</span><br><span class="line">        thisdata=bytes(response.text,response.encoding).decode(<span class="string">"gbk"</span>,<span class="string">"ignore"</span>)</span><br><span class="line">        pat_title=<span class="string">'<h1 title="(.*?)"'</span></span><br><span class="line">        pat_company=<span class="string">'<p class="cname">.*?title="(.*?)"'</span></span><br><span class="line">        pat_money=<span class="string">'</h1><strong>(.*?)</strong>'</span></span><br><span class="line">        pat_addr=<span class="string">'上班地址：</span>(.*?)</p>'</span></span><br><span class="line">        title = re.compile(pat_title,re.S).findall(thisdata)[<span class="number">0</span>]</span><br><span class="line">        company = re.compile(pat_company,re.S).findall(thisdata)[<span class="number">0</span>]</span><br><span class="line">        money = re.compile(pat_money,re.S).findall(thisdata)[<span class="number">0</span>]</span><br><span class="line">        <span class="keyword">try</span>:</span><br><span class="line">            addr = re.compile(pat_addr,re.S).findall(thisdata)[<span class="number">0</span>]</span><br><span class="line">        <span class="keyword">except</span> IndexError:</span><br><span class="line">            addr = <span class="string">"空"</span></span><br><span class="line"></span><br><span class="line">        print(<span class="string">"-------------------"</span>)</span><br><span class="line">        print(title)</span><br><span class="line">        print(company)</span><br><span class="line">        print(money)</span><br><span class="line">        print(addr)</span><br></pre></td></tr></tbody></table></figure></li></ul></body></html>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;html&gt;&lt;head&gt;&lt;/head&gt;&lt;body&gt;&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;目标站点: &lt;a href=&quot;http://www.51job.com&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;前程无忧&lt;/a&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;需求数据：指定关键
-      
-    
-    </summary>
-    
-    
-      <category term="python" scheme="wentianhao.github.io/categories/python/"/>
-    
-    
-      <category term="python" scheme="wentianhao.github.io/tags/python/"/>
-    
-      <category term="python爬虫" scheme="wentianhao.github.io/tags/python%E7%88%AC%E8%99%AB/"/>
     
   </entry>
   

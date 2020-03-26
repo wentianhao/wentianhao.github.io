@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="wentianhao.github.io/"/>
-  <updated>2020-03-24T12:34:59.116Z</updated>
+  <updated>2020-03-26T16:36:11.072Z</updated>
   <id>wentianhao.github.io/</id>
   
   <author>
@@ -15,6 +15,117 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>实体链接研究综述</title>
+    <link href="wentianhao.github.io/2020/03/26/%E5%AE%9E%E4%BD%93%E9%93%BE%E6%8E%A5%E7%A0%94%E7%A9%B6%E7%BB%BC%E8%BF%B0/"/>
+    <id>wentianhao.github.io/2020/03/26/%E5%AE%9E%E4%BD%93%E9%93%BE%E6%8E%A5%E7%A0%94%E7%A9%B6%E7%BB%BC%E8%BF%B0/</id>
+    <published>2020-03-26T14:43:16.000Z</published>
+    <updated>2020-03-26T16:36:11.072Z</updated>
+    
+    <content type="html"><![CDATA[<html><head></head><body><p>实体链接是指将文本中的实体指称链向知识库实体的过程，它能够丰富文本语义信息，在自然语言处理、信息检索等领域有着广泛的应用前景。</p></body></html>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;html&gt;&lt;head&gt;&lt;/head&gt;&lt;body&gt;&lt;p&gt;实体链接是指将文本中的实体指称链向知识库实体的过程，它能够丰富文本语义信息，在自然语言处理、信息检索等领域有着广泛的应用前景。&lt;/p&gt;
+&lt;/body&gt;&lt;/html&gt;
+      
+    
+    </summary>
+    
+    
+      <category term="读书笔记" scheme="wentianhao.github.io/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"/>
+    
+    
+      <category term="NPL" scheme="wentianhao.github.io/tags/NPL/"/>
+    
+      <category term="实体链接" scheme="wentianhao.github.io/tags/%E5%AE%9E%E4%BD%93%E9%93%BE%E6%8E%A5/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>diary64</title>
+    <link href="wentianhao.github.io/2020/03/26/diary64/"/>
+    <id>wentianhao.github.io/2020/03/26/diary64/</id>
+    <published>2020-03-26T12:30:24.000Z</published>
+    <updated>2020-03-26T14:52:30.508Z</updated>
+    
+    <content type="html"><![CDATA[<html><head></head><body><pre><code>今天是2020年3月26号，星期四，农历三月初三</code></pre><ul><li><p>三月三，吃鸡蛋！</p></li><li><p>今天英语课上的差点吐了，难受的那种</p></li><li><p>看实体链接综述</p></li><li><p>文本相似度环境配好了</p></li></ul></body></html>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;html&gt;&lt;head&gt;&lt;/head&gt;&lt;body&gt;&lt;pre&gt;&lt;code&gt;今天是2020年3月26号，星期四，农历三月初三&lt;/code&gt;&lt;/pre&gt;&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;三月三，吃鸡蛋！&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;今天英语课上的差点吐了，难受的那种&lt;/p&gt;
+&lt;/li&gt;
+&lt;
+      
+    
+    </summary>
+    
+    
+      <category term="日记" scheme="wentianhao.github.io/categories/%E6%97%A5%E8%AE%B0/"/>
+    
+    
+      <category term="封城日记" scheme="wentianhao.github.io/tags/%E5%B0%81%E5%9F%8E%E6%97%A5%E8%AE%B0/"/>
+    
+      <category term="日记" scheme="wentianhao.github.io/tags/%E6%97%A5%E8%AE%B0/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Anaconda</title>
+    <link href="wentianhao.github.io/2020/03/26/Anaconda/"/>
+    <id>wentianhao.github.io/2020/03/26/Anaconda/</id>
+    <published>2020-03-26T07:51:19.000Z</published>
+    <updated>2020-03-26T07:51:19.172Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>diary63</title>
+    <link href="wentianhao.github.io/2020/03/25/diary63/"/>
+    <id>wentianhao.github.io/2020/03/25/diary63/</id>
+    <published>2020-03-25T12:30:24.000Z</published>
+    <updated>2020-03-26T14:50:39.788Z</updated>
+    
+    <content type="html"><![CDATA[<html><head></head><body><pre><code>今天是2020年3月25号，星期三，农历三月初二</code></pre><ul><li><p>继续修改ppt</p></li><li><p>学习文本相似度分析</p></li></ul></body></html>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;html&gt;&lt;head&gt;&lt;/head&gt;&lt;body&gt;&lt;pre&gt;&lt;code&gt;今天是2020年3月25号，星期三，农历三月初二&lt;/code&gt;&lt;/pre&gt;&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;继续修改ppt&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;学习文本相似度分析&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/bo
+      
+    
+    </summary>
+    
+    
+      <category term="日记" scheme="wentianhao.github.io/categories/%E6%97%A5%E8%AE%B0/"/>
+    
+    
+      <category term="封城日记" scheme="wentianhao.github.io/tags/%E5%B0%81%E5%9F%8E%E6%97%A5%E8%AE%B0/"/>
+    
+      <category term="日记" scheme="wentianhao.github.io/tags/%E6%97%A5%E8%AE%B0/"/>
+    
+  </entry>
   
   <entry>
     <title>diary62</title>
@@ -509,130 +620,6 @@
 &lt;li&gt;&lt;p&gt;今天又上了英语课，难顶的英语课，也让我萌发了学好口语和听力的想法，得找个方法坚持一下&lt;/p&gt;
 &lt;/li&gt;
 &lt;l
-      
-    
-    </summary>
-    
-    
-      <category term="日记" scheme="wentianhao.github.io/categories/%E6%97%A5%E8%AE%B0/"/>
-    
-    
-      <category term="封城日记" scheme="wentianhao.github.io/tags/%E5%B0%81%E5%9F%8E%E6%97%A5%E8%AE%B0/"/>
-    
-      <category term="日记" scheme="wentianhao.github.io/tags/%E6%97%A5%E8%AE%B0/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>diary49</title>
-    <link href="wentianhao.github.io/2020/03/11/diary49/"/>
-    <id>wentianhao.github.io/2020/03/11/diary49/</id>
-    <published>2020-03-11T15:53:16.000Z</published>
-    <updated>2020-03-11T15:54:34.532Z</updated>
-    
-    <content type="html"><![CDATA[<html><head></head><body><pre><code>今天是2020年3月11号，星期三，农历二月十八</code></pre><ul><li><p>今天有点浑浑噩噩的，一整天，果然早起傻一天</p></li><li><p>明天早上又有英语课，我的天呐，今天的英语作业45分，tcl</p></li></ul></body></html>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;html&gt;&lt;head&gt;&lt;/head&gt;&lt;body&gt;&lt;pre&gt;&lt;code&gt;今天是2020年3月11号，星期三，农历二月十八&lt;/code&gt;&lt;/pre&gt;&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;今天有点浑浑噩噩的，一整天，果然早起傻一天&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;明天早上又有英语课，我的天呐，今
-      
-    
-    </summary>
-    
-    
-      <category term="日记" scheme="wentianhao.github.io/categories/%E6%97%A5%E8%AE%B0/"/>
-    
-    
-      <category term="封城日记" scheme="wentianhao.github.io/tags/%E5%B0%81%E5%9F%8E%E6%97%A5%E8%AE%B0/"/>
-    
-      <category term="日记" scheme="wentianhao.github.io/tags/%E6%97%A5%E8%AE%B0/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>diary48</title>
-    <link href="wentianhao.github.io/2020/03/10/diary48/"/>
-    <id>wentianhao.github.io/2020/03/10/diary48/</id>
-    <published>2020-03-10T14:55:10.000Z</published>
-    <updated>2020-03-10T14:57:01.214Z</updated>
-    
-    <content type="html"><![CDATA[<html><head></head><body><pre><code>今天是2020年3月10号，星期二，农历二月十七</code></pre><ul><li><p>今天上了英语课，简直太煎熬了，英语作业别忘了</p></li><li><p>学习看论文不能忘记，在家还是难以静心学习</p></li></ul></body></html>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;html&gt;&lt;head&gt;&lt;/head&gt;&lt;body&gt;&lt;pre&gt;&lt;code&gt;今天是2020年3月10号，星期二，农历二月十七&lt;/code&gt;&lt;/pre&gt;&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;今天上了英语课，简直太煎熬了，英语作业别忘了&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;学习看论文不能忘记，在家还是难
-      
-    
-    </summary>
-    
-    
-      <category term="日记" scheme="wentianhao.github.io/categories/%E6%97%A5%E8%AE%B0/"/>
-    
-    
-      <category term="封城日记" scheme="wentianhao.github.io/tags/%E5%B0%81%E5%9F%8E%E6%97%A5%E8%AE%B0/"/>
-    
-      <category term="日记" scheme="wentianhao.github.io/tags/%E6%97%A5%E8%AE%B0/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>diary47</title>
-    <link href="wentianhao.github.io/2020/03/09/diary47/"/>
-    <id>wentianhao.github.io/2020/03/09/diary47/</id>
-    <published>2020-03-09T15:41:35.000Z</published>
-    <updated>2020-03-09T15:49:48.377Z</updated>
-    
-    <content type="html"><![CDATA[<html><head></head><body><pre><code>今天是2020年3月9号，星期一，农历二月十六</code></pre><ul><li><p>今天上了一天的课，我的网速还是不足以这么高强度的上课，很多没跟上</p></li><li><p>明天要上英语课了，我最最最最讨厌的英语课，哇</p></li></ul></body></html>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;html&gt;&lt;head&gt;&lt;/head&gt;&lt;body&gt;&lt;pre&gt;&lt;code&gt;今天是2020年3月9号，星期一，农历二月十六&lt;/code&gt;&lt;/pre&gt;&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;今天上了一天的课，我的网速还是不足以这么高强度的上课，很多没跟上&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;明天要上英语
-      
-    
-    </summary>
-    
-    
-      <category term="日记" scheme="wentianhao.github.io/categories/%E6%97%A5%E8%AE%B0/"/>
-    
-    
-      <category term="封城日记" scheme="wentianhao.github.io/tags/%E5%B0%81%E5%9F%8E%E6%97%A5%E8%AE%B0/"/>
-    
-      <category term="日记" scheme="wentianhao.github.io/tags/%E6%97%A5%E8%AE%B0/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>diary46</title>
-    <link href="wentianhao.github.io/2020/03/08/diary46/"/>
-    <id>wentianhao.github.io/2020/03/08/diary46/</id>
-    <published>2020-03-08T15:46:23.000Z</published>
-    <updated>2020-03-08T15:47:48.322Z</updated>
-    
-    <content type="html"><![CDATA[<html><head></head><body><pre><code>今天是2020年3月8号，星期天，农历二月十五</code></pre><ul><li><p>明天又要开始新一轮的上课了，英语课真的不喜欢上啊，第三周又新开一门英语课我佛了</p></li><li><p>论文论文一定要静下心来看论文！</p></li></ul></body></html>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;html&gt;&lt;head&gt;&lt;/head&gt;&lt;body&gt;&lt;pre&gt;&lt;code&gt;今天是2020年3月8号，星期天，农历二月十五&lt;/code&gt;&lt;/pre&gt;&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;明天又要开始新一轮的上课了，英语课真的不喜欢上啊，第三周又新开一门英语课我佛了&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p
       
     
     </summary>

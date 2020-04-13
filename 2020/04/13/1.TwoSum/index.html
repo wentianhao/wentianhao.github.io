@@ -16,7 +16,7 @@
     <meta name="description" content="欢迎" />
     
     <title>
-      git提交每次都要输入用户名和密码 - wentianhao
+      1.Two Sum - wentianhao
     </title>
     <link rel="manifest" href="/manifest.json" />
     <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon" />
@@ -159,15 +159,15 @@
         <article class="post-entry">
     <div class="header">
       
-      <div class="title">git提交每次都要输入用户名和密码</div>
+      <div class="title">1.Two Sum</div>
       <div class="meta">
         <span class="item">
           <span class="iconfont icon-time-circle"></span>
-          <span>2020/04/11</span>
+          <span>2020/04/13</span>
         </span>
 
         
-          <span class="item leancloud-visitors" id="/2020/04/11/git%E6%8F%90%E4%BA%A4%E6%AF%8F%E6%AC%A1%E9%83%BD%E8%A6%81%E8%BE%93%E5%85%A5%E7%94%A8%E6%88%B7%E5%90%8D%E5%92%8C%E5%AF%86%E7%A0%81/" data-flag-title="git提交每次都要输入用户名和密码">
+          <span class="item leancloud-visitors" id="/2020/04/13/1.TwoSum/" data-flag-title="1.Two Sum">
             <span class="iconfont icon-eye1"></span>
             <span class="leancloud-visitors-count"></span>
           </span>
@@ -179,7 +179,7 @@
           <span>
               
                 
-                  <a href="/categories/git">git</a>
+                  <a href="/categories/leetcode">leetcode</a>
                 
               
           </span>
@@ -192,7 +192,7 @@
             <span>
                 
                   
-                    <a href="/tags/git">git</a>
+                    <a href="/tags/leetcode">leetcode</a>
                   
                 
             </span>
@@ -202,25 +202,27 @@
       <div>
       </div>
     </div>
-    <html><head></head><body><p>问题:使用git提交到github,每次都要输入用户名和密码，操作起来很麻烦。</p>
-<p>原因:在clone项目或上传项目的时候，使用的是https方式，而不是ssh方式，切换一下即可。</p>
-<p><a href="https://github.com/wentianhao/wentianhao.github.io/blob/master/images/git.png?raw=true" target="_blank" rel="noopener" data-caption="git" data-fancybox="images"><img src="https://github.com/wentianhao/wentianhao.github.io/blob/master/images/git.png?raw=true" alt="git"></a></p>
-<p>选择ssh方式，复制url</p>
-<p>解决办法：</p>
-<p>1.查看是https方式还是ssh方式</p>
-<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git remote -v</span><br></pre></td></tr></tbody></table></figure>
+    <html><head></head><body><p><strong>Description:</strong></p>
+<p>Given an array of integers, return indices of the two numbers such that they add up to a specific target.</p>
+<p>You may assume that each input would have exactly one solution, and you may not use the same element twice.</p>
+<p><strong>Example:</strong></p>
+<p>Given nums = [2, 7, 11, 15], target = 9,</p>
+<p>Because nums[0] + nums[1] = 2 + 7 = 9,</p>
+<p>return [0, 1].</p>
+<p><strong>Discuss:</strong></p>
+<p>1.暴力法:</p>
+<p>时间复杂度: O(n^2)</p>
+<p>空间复杂度: O(1)</p>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>{</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">int</span>[] twoSum(<span class="keyword">int</span>[] nums, <span class="keyword">int</span> target) {</span><br><span class="line">           <span class="keyword">int</span> res[] = {<span class="number">0</span>,<span class="number">0</span>};</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>;i<nums.length;++i){</span><br><span class="line">                <span class="keyword">for</span> (<span class="keyword">int</span> j = i+<span class="number">1</span>;j<nums.length;++j){</span><br><span class="line">                    <span class="keyword">if</span> (target == (nums[i] + nums[j])){</span><br><span class="line">                        res[<span class="number">0</span>] = i;</span><br><span class="line">                        res[<span class="number">1</span>] = j;</span><br><span class="line">                    }</span><br><span class="line">                }</span><br><span class="line">            }</span><br><span class="line">            <span class="keyword">return</span> res;</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
 
-<p>2.移除https的方式，换成ssh方式</p>
-<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git remote rm origin</span><br></pre></td></tr></tbody></table></figure>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>{</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">int</span>[] twoSum(<span class="keyword">int</span>[] nums, <span class="keyword">int</span> target) {</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>;i<nums.length;++i){</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> j = i+<span class="number">1</span>;j<nums.length;++j){</span><br><span class="line">                <span class="keyword">if</span> (target == (nums[i] + nums[j]))</span><br><span class="line">                    <span class="keyword">return</span> <span class="keyword">new</span> <span class="keyword">int</span>[]{i,j};</span><br><span class="line">            }</span><br><span class="line">        }</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
 
-<p>3.添加新的git方式：ssh方式</p>
-<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git remote add origin git@github.com:xxxxxx.git</span><br></pre></td></tr></tbody></table></figure>
-
-<p>4.查看push方式是否修改成功</p>
-<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git remote -v</span><br></pre></td></tr></tbody></table></figure>
-
-<p>5.push测试是否需要用户名和密码</p>
-<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git push origin master</span><br></pre></td></tr></tbody></table></figure></body></html>
+<p>2.Hash表</p>
+<p>时间复杂度: O(n)</p>
+<p>空间复杂度: O(n)</p>
+<p>思路:利用哈希表将数组中的值依次存入，并且在数组遍历过程中找到另一个值</p>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>{</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">int</span>[] twoSum(<span class="keyword">int</span>[] nums, <span class="keyword">int</span> target) {</span><br><span class="line">        Map<Integer, Integer> map = <span class="keyword">new</span> HashMap<>();</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i < nums.length; i++){</span><br><span class="line">            <span class="keyword">if</span>(map.containsKey(target - nums[i])){</span><br><span class="line">                <span class="keyword">int</span>[] r = <span class="keyword">new</span> <span class="keyword">int</span>[]{map.get(target - nums[i]), i} ;</span><br><span class="line">                <span class="keyword">return</span> r;</span><br><span class="line">            }<span class="keyword">else</span>{</span><br><span class="line">                map.put(nums[i], i);    </span><br><span class="line">            }</span><br><span class="line">        }</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">null</span>;        </span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+</body></html>
 
   
     <div class="post-reward">
@@ -246,12 +248,10 @@
   <div class="post-guide">
     <div class="item left">
         
-          <a href="/2020/04/13/1.TwoSum/">1.Two Sum</a>
-        
     </div>
     <div class="item right">
         
-          <a href="/2020/04/02/%E6%96%87%E6%9C%AC%E7%9B%B8%E4%BC%BC%E5%BA%A6%E5%88%86%E6%9E%90/">文本相似度分析</a>
+          <a href="/2020/04/11/git%E6%8F%90%E4%BA%A4%E6%AF%8F%E6%AC%A1%E9%83%BD%E8%A6%81%E8%BE%93%E5%85%A5%E7%94%A8%E6%88%B7%E5%90%8D%E5%92%8C%E5%AF%86%E7%A0%81/">git提交每次都要输入用户名和密码</a>
         
     </div>
   </div>
@@ -263,7 +263,7 @@
       本文作者：<a href="/wentianhao.github.io">whh</a>
     </div>
     <div class="link">
-      永久链接：<a href="/wentianhao.github.io/2020/04/11/git%E6%8F%90%E4%BA%A4%E6%AF%8F%E6%AC%A1%E9%83%BD%E8%A6%81%E8%BE%93%E5%85%A5%E7%94%A8%E6%88%B7%E5%90%8D%E5%92%8C%E5%AF%86%E7%A0%81/">/wentianhao.github.io/2020/04/11/git%E6%8F%90%E4%BA%A4%E6%AF%8F%E6%AC%A1%E9%83%BD%E8%A6%81%E8%BE%93%E5%85%A5%E7%94%A8%E6%88%B7%E5%90%8D%E5%92%8C%E5%AF%86%E7%A0%81/</a>
+      永久链接：<a href="/wentianhao.github.io/2020/04/13/1.TwoSum/">/wentianhao.github.io/2020/04/13/1.TwoSum/</a>
     </div>
     <div class="declare">
       版权声明：本文首发于<a href="/wentianhao.github.io">whh</a>的博客，转载请注明出处！

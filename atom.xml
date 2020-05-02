@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="wentianhao.github.io/"/>
-  <updated>2020-04-13T04:30:01.987Z</updated>
+  <updated>2020-04-30T09:06:57.303Z</updated>
   <id>wentianhao.github.io/</id>
   
   <author>
@@ -15,6 +15,21 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>反向传播</title>
+    <link href="wentianhao.github.io/2020/04/30/%E5%8F%8D%E5%90%91%E4%BC%A0%E6%92%AD/"/>
+    <id>wentianhao.github.io/2020/04/30/%E5%8F%8D%E5%90%91%E4%BC%A0%E6%92%AD/</id>
+    <published>2020-04-30T09:06:57.000Z</published>
+    <updated>2020-04-30T09:06:57.303Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+    
+    
+  </entry>
   
   <entry>
     <title>1.Two Sum</title>
@@ -568,33 +583,6 @@
 &lt;li&gt;使用正则表达式来获取字符串中需要的字符&lt;/li&gt;
 &lt;/ol&gt;
 &lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;
-      
-    
-    </summary>
-    
-    
-      <category term="python" scheme="wentianhao.github.io/categories/python/"/>
-    
-    
-      <category term="python" scheme="wentianhao.github.io/tags/python/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>python处理excel数据</title>
-    <link href="wentianhao.github.io/2020/02/22/python%E5%A4%84%E7%90%86excel%E6%95%B0%E6%8D%AE/"/>
-    <id>wentianhao.github.io/2020/02/22/python%E5%A4%84%E7%90%86excel%E6%95%B0%E6%8D%AE/</id>
-    <published>2020-02-22T05:17:07.000Z</published>
-    <updated>2020-02-22T06:30:28.691Z</updated>
-    
-    <content type="html"><![CDATA[<html><head></head><body><ol><li>安装xlrd 和xlwt 库(python3)<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install xlrd,xlwt</span><br></pre></td></tr></tbody></table></figure></li><li>使用方法</li></ol><figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> xlrd,xlwt</span><br><span class="line"><span class="keyword">from</span> xlutils.copy <span class="keyword">import</span> copy</span><br><span class="line"></span><br><span class="line"><span class="comment"># 打开需要操作的excel表</span></span><br><span class="line">excel1 = xlrd.open_workbook(path)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 获取excel的sheet表</span></span><br><span class="line">sheet1 = excel1.sheet_by_name(sheet_name)</span><br><span class="line"></span><br><span class="line"><span class="comment"># rows & cols</span></span><br><span class="line"></span><br><span class="line">rows = sheet1.nrows</span><br><span class="line">cols = sheet1.ncols</span><br><span class="line"></span><br><span class="line"><span class="comment"># 第i行、列的数据</span></span><br><span class="line">row_i = sheet1.row_values(i)</span><br><span class="line">col_i = sheet1.col_values(i)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看所有的sheet表</span></span><br><span class="line">sheet_names = excel1.sheet_names()</span><br><span class="line"></span><br><span class="line"><span class="comment"># copy excel1 </span></span><br><span class="line">excel2 = copy(excel1)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 新建表</span></span><br><span class="line">excel3 = xlwt.Workbook(encoding = <span class="string">'utf-8'</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 创建sheet</span></span><br><span class="line">sheet_name = excel2.add_sheet(name)</span><br><span class="line"></span><br><span class="line"><span class="comment">#获取该sheet的最后一行</span></span><br><span class="line">n = len(sheet_name.rows)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 写入excel ,row col value</span></span><br><span class="line">sheet_name.write(row,col,value)</span><br><span class="line"></span><br><span class="line"><span class="comment">#在原有sheet后新增数据</span></span><br><span class="line">sheet_name.write(n,col,value)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 保存 生成excel表</span></span><br><span class="line">excel2.save(path)</span><br></pre></td></tr></tbody></table></figure></body></html>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;html&gt;&lt;head&gt;&lt;/head&gt;&lt;body&gt;&lt;ol&gt;
-&lt;li&gt;安装xlrd 和xlwt 库(python3)&lt;figure class=&quot;highlight python&quot;&gt;&lt;table&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span cl
       
     
     </summary>

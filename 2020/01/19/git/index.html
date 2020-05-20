@@ -221,7 +221,22 @@
 <figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">log</span> --pretty=oneline</span><br></pre></td></tr></tbody></table></figure>
 
 <p>2.回退到指定版本</p>
-<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git reset --hard [merge前的版本号]</span><br></pre></td></tr></tbody></table></figure></body></html>
+<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git reset --hard [merge前的版本号]</span><br></pre></td></tr></tbody></table></figure>
+
+<p>merge过程</p>
+<p>当git pull时出现冲突问题时，如下：</p>
+<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">warning: Cannot merge binary files: regionminute10_15.xlsx (HEAD vs. 03930ecfcd8a9c20eebe2d7dcd62e830455f1642)</span><br><span class="line">warning: Cannot merge binary files: data3.xlsx (HEAD vs. 03930ecfcd8a9c20eebe2d7dcd62e830455f1642)</span><br><span class="line">Auto-merging users3_15.py</span><br><span class="line">Auto-merging regionminute10_15.xlsx</span><br><span class="line">CONFLICT (content): Merge conflict <span class="keyword">in</span> regionminute10_15.xlsx</span><br><span class="line">Auto-merging data3.xlsx</span><br><span class="line">CONFLICT (content): Merge conflict <span class="keyword">in</span> data3.xlsx</span><br><span class="line">Automatic merge failed; fix conflicts and <span class="keyword">then</span> commit the result.</span><br></pre></td></tr></tbody></table></figure>
+
+<p>右下角则会出现 merging 状态，此时pull push等都不能用，只能见解决冲突或者取消merge</p>
+<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git merge --abort <span class="comment">#取消merge</span></span><br></pre></td></tr></tbody></table></figure>
+
+<p>解决冲突过程</p>
+<p><a href="https://github.com/wentianhao/wentianhao.github.io/blob/master/images/merge.png?raw=true" target="_blank" rel="noopener" data-caption="merge" data-fancybox="images"><img src="https://github.com/wentianhao/wentianhao.github.io/blob/master/images/merge.png?raw=true" alt="merge"></a></p>
+<p>选择Resolve Conflicts</p>
+<p><a href="https://github.com/wentianhao/wentianhao.github.io/blob/master/images/resolve.png?raw=true" target="_blank" rel="noopener" data-caption="resolve" data-fancybox="images"><img src="https://github.com/wentianhao/wentianhao.github.io/blob/master/images/resolve.png?raw=true" alt="resolve"></a></p>
+<p>如图可以发现冲突的文件，如果你的版本低于服务器的版本直接Accept Theirs,如果你的是最新的版本直接accept yours，如果不确定的话点击merge，逐行代码进行更新替换。</p>
+<p>最后结束merge</p>
+<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git merge --<span class="built_in">continue</span></span><br></pre></td></tr></tbody></table></figure></body></html>
 
   
     <div class="post-reward">

@@ -219,7 +219,7 @@
       </div>
     </div>
     <html><head></head><body><h1 id="word2vec中文词向量训练">word2vec中文词向量训练<br><a class="post-anchor" href="#word2vec中文词向量训练"></a></h1><h2 id="1、genism库">1、genism库<br><a class="post-anchor" href="#1、genism库"></a></h2><p>gensim库中提供了word2vec的cbow模型和skipgram模型的实现，可直接调用</p>
-<p><a href="https://github.com/zlsdu/Word-Embedding/blob/master/phone/word2vec1.png" target="_blank" rel="noopener" data-caption="image" data-fancybox="images"><img src="https://github.com/zlsdu/Word-Embedding/blob/master/phone/word2vec1.png" alt="image"></a></p>
+<p><a href="https://github.com/zlsdu/Word-Embedding/blob/master/phone/word2vec1.png?raw=true" target="_blank" rel="noopener" data-caption="image" data-fancybox="images"><img src="https://github.com/zlsdu/Word-Embedding/blob/master/phone/word2vec1.png?raw=true" alt="image"></a></p>
 <p>完整版参考代码<br><br><br></p>
 <h2 id="2、tensorflow实现skipgram模型">2、tensorflow实现skipgram模型<br><a class="post-anchor" href="#2、tensorflow实现skipgram模型"></a></h2><p>skipgram模型使用中心词预测上下文，网上介绍很多了也可直接去看论文<br>本模型实验采用的数据时wiki百科中文数据，有原版和分词后版本，数据量大下载请移步<br>实现详细直接看代码，代码中关键处都有注释，这里提一下word2vec中常用的nce loss损失函数，nce loss函数个参数定义如下</p>
 <p><a href="https://github.com/zlsdu/Word-Embedding/blob/master/phone/word2vec2.png" target="_blank" rel="noopener" data-caption="image" data-fancybox="images"><img src="https://github.com/zlsdu/Word-Embedding/blob/master/phone/word2vec2.png" alt="image"></a></p>

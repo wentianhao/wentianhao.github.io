@@ -16,7 +16,7 @@
     <meta name="description" content="欢迎" />
     
     <title>
-      word2vec中文词向量训练 - wentianhao
+      基于上下文词向量和主题模型的实体消歧方法 - wentianhao
     </title>
     <link rel="manifest" href="/manifest.json" />
     <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon" />
@@ -27,14 +27,6 @@
 </head>
   <body>
     <canvas id='pagemap'></canvas>
-    
-    <div id="post-toc" class="animated hiddenToc hide">
-      <span class="title">Toc</span>
-      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#word2vec中文词向量训练"><span class="toc-text">word2vec中文词向量训练
-</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1、genism库"><span class="toc-text">1、genism库
-</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2、tensorflow实现skipgram模型"><span class="toc-text">2、tensorflow实现skipgram模型
-</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#word2vec细节简介"><span class="toc-text">word2vec细节简介</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1、word2vec种语言模型"><span class="toc-text">1、word2vec种语言模型</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2、word2vec中Tricks"><span class="toc-text">2、word2vec中Tricks:</span></a></li></ol></li></ol>
-    </div>
     
     <div id="fixed-menu-wrap">
       <span class="iconfont icon-sousuo search-box menu-reset"></span>
@@ -167,15 +159,15 @@
         <article class="post-entry">
     <div class="header">
       
-      <div class="title">word2vec中文词向量训练</div>
+      <div class="title">基于上下文词向量和主题模型的实体消歧方法</div>
       <div class="meta">
         <span class="item">
           <span class="iconfont icon-time-circle"></span>
-          <span>2020/05/28</span>
+          <span>2020/06/11</span>
         </span>
 
         
-          <span class="item leancloud-visitors" id="/2020/05/28/word2vec_report/" data-flag-title="word2vec中文词向量训练">
+          <span class="item leancloud-visitors" id="/2020/06/11/%E5%9F%BA%E4%BA%8E%E4%B8%8A%E4%B8%8B%E6%96%87%E8%AF%8D%E5%90%91%E9%87%8F%E5%92%8C%E4%B8%BB%E9%A2%98%E6%A8%A1%E5%9E%8B%E7%9A%84%E5%AE%9E%E4%BD%93%E6%B6%88%E6%AD%A7%E6%96%B9%E6%B3%95/" data-flag-title="基于上下文词向量和主题模型的实体消歧方法">
             <span class="iconfont icon-eye1"></span>
             <span class="leancloud-visitors-count"></span>
           </span>
@@ -187,7 +179,7 @@
           <span>
               
                 
-                  <a href="/categories/word2vec">word2vec</a>
+                  <a href="/categories/读书笔记">读书笔记</a>
                 
               
           </span>
@@ -200,15 +192,11 @@
             <span>
                 
                   
-                    <a href="/tags/python">python</a>
+                    <a href="/tags/NPL">NPL</a>
                   
                 
                   
-                    <a href="/tags/NLP">NLP</a>
-                  
-                
-                  
-                    <a href="/tags/word2vec">word2vec</a>
+                    <a href="/tags/实体链接">实体链接</a>
                   
                 
             </span>
@@ -218,34 +206,39 @@
       <div>
       </div>
     </div>
-    <html><head></head><body><h1 id="word2vec中文词向量训练">word2vec中文词向量训练<br><a class="post-anchor" href="#word2vec中文词向量训练"></a></h1><h2 id="1、genism库">1、genism库<br><a class="post-anchor" href="#1、genism库"></a></h2><p>gensim库中提供了word2vec的cbow模型和skipgram模型的实现，可直接调用</p>
-<p><a href="https://github.com/wentianhao/wentianhao.github.io/blob/master/images/word2vec1.png?raw=true" target="_blank" rel="noopener" data-caption="image" data-fancybox="images"><img src="https://github.com/wentianhao/wentianhao.github.io/blob/master/images/word2vec1.png?raw=true" alt="image"></a></p>
-<p>完整版参考代码<br><br><br></p>
-<h2 id="2、tensorflow实现skipgram模型">2、tensorflow实现skipgram模型<br><a class="post-anchor" href="#2、tensorflow实现skipgram模型"></a></h2><p>skipgram模型使用中心词预测上下文，网上介绍很多了也可直接去看论文<br>本模型实验采用的数据时wiki百科中文数据，有原版和分词后版本，数据量大下载请移步<br>实现详细直接看代码，代码中关键处都有注释，这里提一下word2vec中常用的nce loss损失函数，nce loss函数个参数定义如下</p>
-<p><a href="https://github.com/wentianhao/wentianhao.github.io/blob/master/images/word2vec2.png?raw=true" target="_blank" rel="noopener" data-caption="image" data-fancybox="images"><img src="https://github.com/wentianhao/wentianhao.github.io/blob/master/images/word2vec2.png?raw=true" alt="image"></a></p>
-<p>解释一下参数sampled_values，从tensorflow的nce_loss源代码中可以看到当sampled_ values=None时采样方式，word2vec中负采样过程其实就是优选采样词频高的词作负样本</p>
-<p><a href="https://github.com/wentianhao/wentianhao.github.io/blob/master/images/word2vec3.png?raw=true" target="_blank" rel="noopener" data-caption="image" data-fancybox="images"><img src="https://github.com/wentianhao/wentianhao.github.io/blob/master/images/word2vec3.png?raw=true" alt="image"></a></p>
-<p>在上图中展现了nce_loss在实际使用过程中参数列表以及各个参数的含义，下面我们看一下tensorflow源码中对于nce_loss函数的实现逻辑：</p>
-<p><a href="https://github.com/wentianhao/wentianhao.github.io/blob/master/images/word2vec4.png?raw=true" target="_blank" rel="noopener" data-caption="image" data-fancybox="images"><img src="https://github.com/wentianhao/wentianhao.github.io/blob/master/images/word2vec4.png?raw=true" alt="image"></a></p>
-<p>Tensorflow实现skipgram模型完整细节参考代码，训练测试效果可参见下图：</p>
-<p><a href="https://github.com/wentianhao/wentianhao.github.io/blob/master/images/word2vec5.png?raw=true" target="_blank" rel="noopener" data-caption="image" data-fancybox="images"><img src="https://github.com/wentianhao/wentianhao.github.io/blob/master/images/word2vec5.png?raw=true" alt="image"></a></p>
-<p><a href="https://github.com/wentianhao/wentianhao.github.io/blob/master/images/word2vec6.png?raw=true" target="_blank" rel="noopener" data-caption="image" data-fancybox="images"><img src="https://github.com/wentianhao/wentianhao.github.io/blob/master/images/word2vec6.png?raw=true" alt="image"></a></p>
-<h1 id="word2vec细节简介">word2vec细节简介<a class="post-anchor" href="#word2vec细节简介"></a></h1><h2 id="1、word2vec种语言模型">1、word2vec种语言模型<a class="post-anchor" href="#1、word2vec种语言模型"></a></h2><p>word2vec属于预测式词向量模型，两种Skipgram和CBOW<br></p>
-<p>(1) skipgram通过中间词预测周围词构建网络模型<br></p>
-<p><a href="https://github.com/wentianhao/wentianhao.github.io/blob/master/images/word2vec7.png?raw=true" target="_blank" rel="noopener" data-caption="image" data-fancybox="images"><img src="https://github.com/wentianhao/wentianhao.github.io/blob/master/images/word2vec7.png?raw=true" alt="image"></a></p>
-<p>(2) cbow通过周围词预测中间词构建网络模型<br></p>
-<p><a href="https://github.com/wentianhao/wentianhao.github.io/blob/master/images/word2vec8.png?raw=true" target="_blank" rel="noopener" data-caption="image" data-fancybox="images"><img src="https://github.com/wentianhao/wentianhao.github.io/blob/master/images/word2vec8.png?raw=true" alt="image"></a></p>
-<h2 id="2、word2vec中Tricks">2、word2vec中Tricks:<a class="post-anchor" href="#2、word2vec中Tricks"></a></h2><p>(1) Hierarchical softmax<br></p>
-<p>分层softmax最主要的改进既是：不需要对网络W个单词的输出计算概率分布，只需要评估个节点即可<br></p>
-<p>(2) Negative sampling<br></p>
-<p>详细介绍一下负采样，word2vec中训练技巧：负采样<br><br>通过模型的一次训练来解释负采样的过程，以skip_gram模型训练为例进行讲解<br></p>
-<p>训练样本输入词是：love，输出词是me，如果词典中有10000个词，设定训练出的词向量大小为300，则开始love和me都是通过one-hot编码的，在输出位置上me对应的是1，其他位置都是0，我们认为这些0位置对应的词即是负样本，1位置对应的是正样本，在不采用负采样情况下隐层到输出层的参数为300<em>10000，负采样的意思即是我们只在9999个负样本中选择很少一部分对应的参数进行更新（包括正样本的也更新），其他没有挑中的负样本参数保持不变，例如我们选择5个negative words进行参数更新，加上一个正样本总共是6个，因此参数是300</em>6，大大提高每次训练的计算效率，论文中指出对于小规模数据集我们选择5-20个negative words较好，在数据集情况下选择2-5个负样本较好<br></p>
-<p>(3) Subsampling of Frequent words<br></p>
-<p>频繁词的二次采样，根据论文描述在大的语料库中，频繁词如容易出现很多次的the\in\a提供的信息量远没有罕见词提供的信息量多，因此在后续的训练中频繁词无法提供更多的信息甚至会将网络带偏，因此提出了频繁词二次采样方式：即在每次训练时按照如下公式对训练集的单词wi进行丢弃：<br></p>
-<p><a href="https://github.com/wentianhao/wentianhao.github.io/blob/master/images/word2vec9.png?raw=true" target="_blank" rel="noopener" data-caption="image" data-fancybox="images"><img src="https://github.com/wentianhao/wentianhao.github.io/blob/master/images/word2vec9.png?raw=true" alt="image"></a></p>
-<p>CBOW模型的优化函数(skipgram模型类似)：<br></p>
-<p><a href="https://github.com/wentianhao/wentianhao.github.io/blob/master/images/word2vec10.png?raw=true" target="_blank" rel="noopener" data-caption="image" data-fancybox="images"><img src="https://github.com/wentianhao/wentianhao.github.io/blob/master/images/word2vec10.png?raw=true" alt="image"></a></p>
-<p>(4) word2vec是静态词向量预训练模型，词向量是固定的，不能解决多义词问题，无法考虑预料全局信息<br></p>
+    <html><head></head><body><p><strong>基于上下文词向量和主题模型的实体消歧方法</strong></p>
+<p><strong>摘要</strong></p>
+<p>传统词向量训练模型仅考虑词共现而未考虑词序，语义表达能力弱。此外，现有实体消歧方法没有考虑实体的局部特征。综合实体的全局特征和局部特征，该文提出一种基于上下文词向量和主题模型的实体消歧方法。首先在传统词向量模型上增加上下文方向向量，用于表征语序，并利用该模型与主题模型训练主题词向量；其次，分别计算实体上下文相似度、基于实体上下文主题的类别主题相似度以及基于主题词向量的实体主题相似度；最后，融合三种相似度，选择相似度最高的实体作为最终消歧实体。</p>
+<p><strong>关键词</strong>：上下文词向量；实体消歧；知识库；主题词向量；主题模型</p>
+<p><strong>相关工作</strong></p>
+<p>基于机器学习的方法</p>
+<p>核心：计算实体之间的相似度，在此基础上选择特定实体提及的目标实体</p>
+<p>1.利用实体统计信息、名字统计信息进行目标实体消歧</p>
+<p>2.利用百科数据作为背景知识，通过百科知识辅助消歧</p>
+<p>3.考虑倒一段文本中实体之间的相互关联，提出全局推理算法寻找全局最优决策</p>
+<p>4.对实体流行语义关联度等特征进行特征组合，利用最大间隔算法计算各个特征的权重，进而通度、过排序算法完成对实体的消岐</p>
+<p>5.半监督算法、远距离监督算法、基于海量数据冗余性的自学习方法可以从一定程度上解决语料标注问题</p>
+<p>基于深度学习的方法</p>
+<p>核心：构建多类型、多模态上下文及知识的统一表示，并对多源信息、多源文本之间的联系进行建模。</p>
+<p>1.在原有的神经网络语言模型的基础上，加入卷积神经网络模型，较大程度上改进了实体消歧的效果</p>
+<p>2.提出多源异构证据的向量表示学习方法，对不同来源知识库中的知识进行统一空间的表示，进而完成实体消歧。</p>
+<p>3.提出对证据信息进行向量表示，基于表示向量学习不同证据之间的相似度，继而进行相似度融合，最终完成实体消歧</p>
+<p>4.利用Skip-Gram模型进行词向量训练，并利用词向量进行相似度计算，实现实体链接与消歧</p>
+<p>5.提出将待消歧实体和待消歧实体上下文语境映射到同一个空间，基于概率空间模型，根据实体的空间向量进行消歧</p>
+<p>6.利用Skip-Gram模型进行词向量训练，并基于微博的短文本特征提出语义分类的方法，完成实体消歧</p>
+<p>基于机器学习的方法需要借助丰富的标注语料完成实体消歧，基于深度学习的方法需要借助性能良好的消歧模型完成实体消歧</p>
+<p>目前实体消歧存在两个问题：</p>
+<p>1.由于传统的有监督机器学习算法需要大量的标注语料，而现有的标注语料难以满足实体消歧的需求。</p>
+<p>词向量训练模型使用无标注的文本作为输入数据，将词组表征成低维的向量表示，可以有效解决缺少标注语料的问题。然而，传统词向量模型由于缺少对上下文语序等必要因素的考虑，导致词向量的语义表征能力不强，需要进一步改进。</p>
+<p>2.在实体消歧的过程中，目前主流方法选用上下文语义特征、实体流行度特征、实体关联度特征等进行命名实体消歧。上述特征均是从实体背景文档的全局特征出发，计算待消歧实体和候选实体之间的相似度，没有考虑实体的局部特征。</p>
+<p>潜在狄利 克雷分布（ｌａｔｅｎｔ ｄｉｒｉｃｈｌｅｔ ａｌｌｏｃａｔｉｏｎ，ＬＤＡ）主题模 型可以获取实体背景文档的主题信息，将其结合词 向量技术生成主题词向量，可以对背景文档的局部 主题特征进行表征，较好地解决传统模型仅考虑实 体全局特征的缺陷。</p>
+<p>三部分：上下文词向量模型训练、候选实体生成、实体消歧</p>
+<p>1.为解决传统词向量模型仅考虑词共现特征导致的语义表达能力不强的问题，在原有的Skip-Gram模型的基础上增加表征上下文语序的方向向量，利用无标注语料训练词向量模型，将每个词表示为n维的向量；</p>
+<p>2.获得实体指称项的背景文档，获得候选实体在知识库中存储的背景知识，并使用上述词向量模型，将二者均表征为向量形式，针对实体的全局特征，分别计算上下文相似度和类别主题相似度</p>
+<p>3.基于词向量模型以及LDA主题模型，结合文档的主题特征，训练主题词向量，针对实体的局部特征，进行实体主题相似度计算</p>
+<p>4.按照一定比例融合三种相似度特征，得到待消歧实体与候选实体的最终相似度，选取相似度最高的候选实体作为待消歧的最终实体</p>
+<p><a href>!实体消歧</a></p>
+<p>针对实体的全局特征，本文采用实体上下文相似度和实体主题类别相似度描述；针对实体的局部特征，本文采用基于主题词向量的主题相似度描述</p>
 </body></html>
 
   
@@ -272,12 +265,12 @@
   <div class="post-guide">
     <div class="item left">
         
-          <a href="/2020/06/04/%E5%9F%BA%E4%BA%8E%E5%9F%8E%E5%B8%82%E5%9C%B0%E5%90%8D%E5%AE%9E%E4%BD%93%E5%8F%8C%E5%90%91%E9%93%BE%E6%8E%A5%E5%88%86%E6%9E%90%E7%9A%84%E8%B7%AF%E7%BA%BF%E6%8E%A8%E8%8D%90%E7%A0%94%E7%A9%B6/">基于城市地名实体双向链接分析的路线推荐研究</a>
+          <a href="/2020/06/11/bert/">Q learning</a>
         
     </div>
     <div class="item right">
         
-          <a href="/2020/04/30/%E5%8F%8D%E5%90%91%E4%BC%A0%E6%92%AD/">反向传播</a>
+          <a href="/2020/06/11/%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0/">强化学习</a>
         
     </div>
   </div>
@@ -289,7 +282,7 @@
       本文作者：<a href="/wentianhao.github.io">whh</a>
     </div>
     <div class="link">
-      永久链接：<a href="/wentianhao.github.io/2020/05/28/word2vec_report/">/wentianhao.github.io/2020/05/28/word2vec_report/</a>
+      永久链接：<a href="/wentianhao.github.io/2020/06/11/%E5%9F%BA%E4%BA%8E%E4%B8%8A%E4%B8%8B%E6%96%87%E8%AF%8D%E5%90%91%E9%87%8F%E5%92%8C%E4%B8%BB%E9%A2%98%E6%A8%A1%E5%9E%8B%E7%9A%84%E5%AE%9E%E4%BD%93%E6%B6%88%E6%AD%A7%E6%96%B9%E6%B3%95/">/wentianhao.github.io/2020/06/11/%E5%9F%BA%E4%BA%8E%E4%B8%8A%E4%B8%8B%E6%96%87%E8%AF%8D%E5%90%91%E9%87%8F%E5%92%8C%E4%B8%BB%E9%A2%98%E6%A8%A1%E5%9E%8B%E7%9A%84%E5%AE%9E%E4%BD%93%E6%B6%88%E6%AD%A7%E6%96%B9%E6%B3%95/</a>
     </div>
     <div class="declare">
       版权声明：本文首发于<a href="/wentianhao.github.io">whh</a>的博客，转载请注明出处！

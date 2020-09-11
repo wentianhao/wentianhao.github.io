@@ -43,96 +43,6 @@
   </entry>
   
   <entry>
-    <title>基于随机游走的实体链接方法</title>
-    <link href="wentianhao.github.io/2020/06/25/%E5%9F%BA%E4%BA%8E%E9%9A%8F%E6%9C%BA%E6%B8%B8%E8%B5%B0%E7%9A%84%E5%AE%9E%E4%BD%93%E9%93%BE%E6%8E%A5%E6%96%B9%E6%B3%95/"/>
-    <id>wentianhao.github.io/2020/06/25/%E5%9F%BA%E4%BA%8E%E9%9A%8F%E6%9C%BA%E6%B8%B8%E8%B5%B0%E7%9A%84%E5%AE%9E%E4%BD%93%E9%93%BE%E6%8E%A5%E6%96%B9%E6%B3%95/</id>
-    <published>2020-06-25T08:17:51.000Z</published>
-    <updated>2020-06-25T14:17:43.749Z</updated>
-    
-    <content type="html"><![CDATA[<html><head></head><body><p><strong>摘要</strong></p><p>实体链接是实现军事情报语义理解的关键技术，有助于机器从实体维度自动建立信息之间的关联，为指挥员提供更高效精准的信息服务，提出了一种基于随机游走的实体链接方法。首先，利用实体的描述信息计算得到实体间相似度；然后，基于各实体间的语义关联，生成待链接实体间的关联图，将实体链接问题建模成关联图上的随机游走过程；最后，通过试验表明，该方法与单纯使用相似度函数计算方法相比能有效提升链接效果，修复实体相似度计算的误差，生成更正确的实体链接</p><p><strong>关键词</strong></p><p>实体链接； 随机游走；语义关联；相似度计算</p></body></html>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;html&gt;&lt;head&gt;&lt;/head&gt;&lt;body&gt;&lt;p&gt;&lt;strong&gt;摘要&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;实体链接是实现军事情报语义理解的关键技术，有助于机器从实体维度自动建立信息之间的关联，为指挥员提供更高效精准的信息服务，提出了一种基于随机游走的实体链接方法。首先，利用实
-      
-    
-    </summary>
-    
-    
-      <category term="读书笔记" scheme="wentianhao.github.io/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"/>
-    
-    
-      <category term="NPL" scheme="wentianhao.github.io/tags/NPL/"/>
-    
-      <category term="实体链接" scheme="wentianhao.github.io/tags/%E5%AE%9E%E4%BD%93%E9%93%BE%E6%8E%A5/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>基于领域图谱的实体链接技术研究</title>
-    <link href="wentianhao.github.io/2020/06/18/%E5%9F%BA%E4%BA%8E%E9%A2%86%E5%9F%9F%E5%9B%BE%E8%B0%B1%E7%9A%84%E5%AE%9E%E4%BD%93%E9%93%BE%E6%8E%A5%E6%8A%80%E6%9C%AF%E7%A0%94%E7%A9%B6/"/>
-    <id>wentianhao.github.io/2020/06/18/%E5%9F%BA%E4%BA%8E%E9%A2%86%E5%9F%9F%E5%9B%BE%E8%B0%B1%E7%9A%84%E5%AE%9E%E4%BD%93%E9%93%BE%E6%8E%A5%E6%8A%80%E6%9C%AF%E7%A0%94%E7%A9%B6/</id>
-    <published>2020-06-18T12:17:51.000Z</published>
-    <updated>2020-06-19T01:38:05.403Z</updated>
-    
-    <content type="html"><![CDATA[<html><head></head><body><p><strong>基于领域图谱的实体链接技术研究</strong></p><p>2019</p><p><strong>摘要</strong></p><p>将文本中识别出来的实体链接到具体的实体信息上，从而实现从字符串到信息的跳转，对许多应用来说至关重要。使用机器学习或深度学习实现链接需要大量的领域数据语料以及标注数据，对于敏感领域比较难实现。文章提出基于领域图谱的实体链接技术，首先融合了字面相似度、文本相似度、同义词集、字符包含等多方面相似性度量特征，其次将文本中的上下文实体在图谱中的关联性纳入链接的候选特征，实现领域实体的高效链接，并有效的解决了特殊领域训练语料难的问题。</p><p><strong>关键词</strong></p><p>实体链接；领域图谱；上下文实体；高效链接</p><p>当前的实体链接模型往往只考虑到部分字符上的相似度特征，对于文本中上下文语义信息并没有进行充分考虑</p><p>知识库就是领域图谱，候选实体将通过计算从图谱的实例集合中匹配ｔｏｐ Ｎ个实体作为候选实体集。</p></body></html>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;html&gt;&lt;head&gt;&lt;/head&gt;&lt;body&gt;&lt;p&gt;&lt;strong&gt;基于领域图谱的实体链接技术研究&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;2019&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;摘要&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;将文本中识别出来的实体链接到具体的实体信息上，从而实现从字符串到信
-      
-    
-    </summary>
-    
-    
-      <category term="读书笔记" scheme="wentianhao.github.io/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"/>
-    
-    
-      <category term="NPL" scheme="wentianhao.github.io/tags/NPL/"/>
-    
-      <category term="实体链接" scheme="wentianhao.github.io/tags/%E5%AE%9E%E4%BD%93%E9%93%BE%E6%8E%A5/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>基于上下文信息和排序学习的实体链接方法</title>
-    <link href="wentianhao.github.io/2020/06/18/%E5%9F%BA%E4%BA%8E%E4%B8%8A%E4%B8%8B%E6%96%87%E4%BF%A1%E6%81%AF%E5%92%8C%E6%8E%92%E5%BA%8F%E5%AD%A6%E4%B9%A0%E7%9A%84%E5%AE%9E%E4%BD%93%E9%93%BE%E6%8E%A5%E6%96%B9%E6%B3%95/"/>
-    <id>wentianhao.github.io/2020/06/18/%E5%9F%BA%E4%BA%8E%E4%B8%8A%E4%B8%8B%E6%96%87%E4%BF%A1%E6%81%AF%E5%92%8C%E6%8E%92%E5%BA%8F%E5%AD%A6%E4%B9%A0%E7%9A%84%E5%AE%9E%E4%BD%93%E9%93%BE%E6%8E%A5%E6%96%B9%E6%B3%95/</id>
-    <published>2020-06-18T08:17:51.000Z</published>
-    <updated>2020-06-18T15:30:14.954Z</updated>
-    
-    <content type="html"><![CDATA[<html><head></head><body><p><strong>基于上下文信息和排序学习的实体链接方法</strong></p><p><strong>摘要</strong></p><p>为解决英语命名实体链接问题，提出一种基于上下文信息和排序学习的实体链接方法。首先使用上下文信息对实体指称进行扩充，并在维基百科中检索候选实体列表，然后通过抽取实体指称与候选实体之间的各类特征，利用ListNet排序算法对候选实体列表进行排序，选出Top1的候选实体作为链接结果，最后对未找到候选的实体指称即NIL实体，通过实体聚类算法进行关联链接。</p><p><strong>关键词</strong></p><p>英语实体链接；上下文信息；排序学习；ListNet排序算法；实体聚类</p><p>目前较为普遍的实体链接方法是，首先形成候选实体列表，然后对该列表进行排序，最后再进行链接。</p><p>基于上下文信息和排序学习的实体链接方法。</p><p>优点：</p><p>1.采用合理的策略生成候选实体列表</p><p>2.对候选实体列表进行高精度的排序</p><p>3.NIL实体聚类中，将规则与传统的聚类算法相结合</p><p><strong>相关工作</strong></p><p>实体链接从最初的基于规则的方法，到基于统计的方法，如今，基于多方法融合的框架成为普遍被研究者接受的系统框架。该框架首先为实体指称生成候选实体列表，再对候选实体列表进行排序。</p></body></html>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;html&gt;&lt;head&gt;&lt;/head&gt;&lt;body&gt;&lt;p&gt;&lt;strong&gt;基于上下文信息和排序学习的实体链接方法&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;摘要&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;为解决英语命名实体链接问题，提出一种基于上下文信息和排序学习的实体链接方法。首先使
-      
-    
-    </summary>
-    
-    
-      <category term="读书笔记" scheme="wentianhao.github.io/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"/>
-    
-    
-      <category term="NPL" scheme="wentianhao.github.io/tags/NPL/"/>
-    
-      <category term="实体链接" scheme="wentianhao.github.io/tags/%E5%AE%9E%E4%BD%93%E9%93%BE%E6%8E%A5/"/>
-    
-  </entry>
-  
-  <entry>
     <title>Q learning</title>
     <link href="wentianhao.github.io/2020/06/11/Q-learning/"/>
     <id>wentianhao.github.io/2020/06/11/Q-learning/</id>
@@ -160,71 +70,13 @@
   </entry>
   
   <entry>
-    <title>基于上下文词向量和主题模型的实体消歧方法</title>
-    <link href="wentianhao.github.io/2020/06/11/%E5%9F%BA%E4%BA%8E%E4%B8%8A%E4%B8%8B%E6%96%87%E8%AF%8D%E5%90%91%E9%87%8F%E5%92%8C%E4%B8%BB%E9%A2%98%E6%A8%A1%E5%9E%8B%E7%9A%84%E5%AE%9E%E4%BD%93%E6%B6%88%E6%AD%A7%E6%96%B9%E6%B3%95/"/>
-    <id>wentianhao.github.io/2020/06/11/%E5%9F%BA%E4%BA%8E%E4%B8%8A%E4%B8%8B%E6%96%87%E8%AF%8D%E5%90%91%E9%87%8F%E5%92%8C%E4%B8%BB%E9%A2%98%E6%A8%A1%E5%9E%8B%E7%9A%84%E5%AE%9E%E4%BD%93%E6%B6%88%E6%AD%A7%E6%96%B9%E6%B3%95/</id>
-    <published>2020-06-11T08:17:51.000Z</published>
-    <updated>2020-06-11T17:36:01.645Z</updated>
-    
-    <content type="html"><![CDATA[<html><head></head><body><p><strong>基于上下文词向量和主题模型的实体消歧方法</strong></p><p><strong>摘要</strong></p><p>传统词向量训练模型仅考虑词共现而未考虑词序，语义表达能力弱。此外，现有实体消歧方法没有考虑实体的局部特征。综合实体的全局特征和局部特征，该文提出一种基于上下文词向量和主题模型的实体消歧方法。首先在传统词向量模型上增加上下文方向向量，用于表征语序，并利用该模型与主题模型训练主题词向量；其次，分别计算实体上下文相似度、基于实体上下文主题的类别主题相似度以及基于主题词向量的实体主题相似度；最后，融合三种相似度，选择相似度最高的实体作为最终消歧实体。</p><p><strong>关键词</strong>：上下文词向量；实体消歧；知识库；主题词向量；主题模型</p><p><strong>相关工作</strong></p><p>基于机器学习的方法</p><p>核心：计算实体之间的相似度，在此基础上选择特定实体提及的目标实体</p><p>1.利用实体统计信息、名字统计信息进行目标实体消歧</p><p>2.利用百科数据作为背景知识，通过百科知识辅助消歧</p><p>3.考虑倒一段文本中实体之间的相互关联，提出全局推理算法寻找全局最优决策</p><p>4.对实体流行语义关联度等特征进行特征组合，利用最大间隔算法计算各个特征的权重，进而通度、过排序算法完成对实体的消岐</p><p>5.半监督算法、远距离监督算法、基于海量数据冗余性的自学习方法可以从一定程度上解决语料标注问题</p><p>基于深度学习的方法</p><p>核心：构建多类型、多模态上下文及知识的统一表示，并对多源信息、多源文本之间的联系进行建模。</p><p>1.在原有的神经网络语言模型的基础上，加入卷积神经网络模型，较大程度上改进了实体消歧的效果</p><p>2.提出多源异构证据的向量表示学习方法，对不同来源知识库中的知识进行统一空间的表示，进而完成实体消歧。</p><p>3.提出对证据信息进行向量表示，基于表示向量学习不同证据之间的相似度，继而进行相似度融合，最终完成实体消歧</p><p>4.利用Skip-Gram模型进行词向量训练，并利用词向量进行相似度计算，实现实体链接与消歧</p><p>5.提出将待消歧实体和待消歧实体上下文语境映射到同一个空间，基于概率空间模型，根据实体的空间向量进行消歧</p><p>6.利用Skip-Gram模型进行词向量训练，并基于微博的短文本特征提出语义分类的方法，完成实体消歧</p><p>基于机器学习的方法需要借助丰富的标注语料完成实体消歧，基于深度学习的方法需要借助性能良好的消歧模型完成实体消歧</p><p>目前实体消歧存在两个问题：</p><p>1.由于传统的有监督机器学习算法需要大量的标注语料，而现有的标注语料难以满足实体消歧的需求。</p><p>词向量训练模型使用无标注的文本作为输入数据，将词组表征成低维的向量表示，可以有效解决缺少标注语料的问题。然而，传统词向量模型由于缺少对上下文语序等必要因素的考虑，导致词向量的语义表征能力不强，需要进一步改进。</p><p>2.在实体消歧的过程中，目前主流方法选用上下文语义特征、实体流行度特征、实体关联度特征等进行命名实体消歧。上述特征均是从实体背景文档的全局特征出发，计算待消歧实体和候选实体之间的相似度，没有考虑实体的局部特征。</p><p>潜在狄利 克雷分布（ｌａｔｅｎｔ ｄｉｒｉｃｈｌｅｔ ａｌｌｏｃａｔｉｏｎ，ＬＤＡ）主题模 型可以获取实体背景文档的主题信息，将其结合词 向量技术生成主题词向量，可以对背景文档的局部 主题特征进行表征，较好地解决传统模型仅考虑实 体全局特征的缺陷。</p><p>三部分：上下文词向量模型训练、候选实体生成、实体消歧</p><p>1.为解决传统词向量模型仅考虑词共现特征导致的语义表达能力不强的问题，在原有的Skip-Gram模型的基础上增加表征上下文语序的方向向量，利用无标注语料训练词向量模型，将每个词表示为n维的向量；</p><p>2.获得实体指称项的背景文档，获得候选实体在知识库中存储的背景知识，并使用上述词向量模型，将二者均表征为向量形式，针对实体的全局特征，分别计算上下文相似度和类别主题相似度</p><p>3.基于词向量模型以及LDA主题模型，结合文档的主题特征，训练主题词向量，针对实体的局部特征，进行实体主题相似度计算</p><p>4.按照一定比例融合三种相似度特征，得到待消歧实体与候选实体的最终相似度，选取相似度最高的候选实体作为待消歧的最终实体</p><p><a href>!实体消歧</a></p><p>针对实体的全局特征，本文采用实体上下文相似度和实体主题类别相似度描述；针对实体的局部特征，本文采用基于主题词向量的主题相似度描述</p></body></html>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;html&gt;&lt;head&gt;&lt;/head&gt;&lt;body&gt;&lt;p&gt;&lt;strong&gt;基于上下文词向量和主题模型的实体消歧方法&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;摘要&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;传统词向量训练模型仅考虑词共现而未考虑词序，语义表达能力弱。此外，现有实体消歧方
-      
-    
-    </summary>
-    
-    
-      <category term="读书笔记" scheme="wentianhao.github.io/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"/>
-    
-    
-      <category term="NPL" scheme="wentianhao.github.io/tags/NPL/"/>
-    
-      <category term="实体链接" scheme="wentianhao.github.io/tags/%E5%AE%9E%E4%BD%93%E9%93%BE%E6%8E%A5/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>强化学习</title>
-    <link href="wentianhao.github.io/2020/06/11/%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0/"/>
-    <id>wentianhao.github.io/2020/06/11/%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0/</id>
-    <published>2020-06-11T08:17:51.000Z</published>
-    <updated>2020-06-16T07:37:11.701Z</updated>
-    
-    <content type="html"><![CDATA[<html><head></head><body><p><strong>强化学习</strong></p><p>强化学习是机器学习的一大类，使用强化学习能够让机器学着如何在环境中拿到高分，表现出优秀的成绩，这些成绩的背后是不断的试错，不断的尝试，积累经验，学习经验。</p><p>强化学习是一类算法, 是让计算机实现从一开始什么都不懂, 脑袋里没有一点想法, 通过不断地尝试, 从错误中学习, 最后找到规律, 学会了达到目的的方法. 这就是一个完整的强化学习过程. </p><p><strong>对比监督学习</strong></p><p>监督学习, 是已经有了数据和数据对应的正确标签，监督学习就能学习出那些行为对应哪种标签。</p><p>强化学习还要更进一步, 一开始它并没有数据和标签.他要通过一次次在环境中的尝试, 获取这些数据和标签, 然后再学习通过哪些数据能够对应哪些标签, 通过学习到的这些规律, 竟可能地选择带来高分的行为</p><p><strong>RL(Reinforcement Learning)强化学习算法</strong></p><table><thead><tr><th align="center">通过价值选行为</th><th align="center">直接选行为</th><th align="center">想象环境并从中学习</th></tr></thead><tbody><tr><td align="center">Q learning</td><td align="center">Policy Gradients</td><td align="center">Model based RL</td></tr><tr><td align="center">Sarsa</td><td align="center"></td><td align="center"></td></tr><tr><td align="center">Deep Q Network</td><td align="center"></td><td align="center"></td></tr></tbody></table><p>通过行为的价值来选取特定行为的方法, 包括使用表格学习的 q learning, sarsa, 使用神经网络学习的 deep q network, 还有直接输出行为的 policy gradients, 又或者了解所处的环境, 想象出一个虚拟的环境并从虚拟的环境中学习的model-based RL</p><p><strong>Model-free 和 Model-based</strong></p><p>不尝试去理解环境, 环境给了什么就是什么.这种方法叫做 model-free</p><p>model 就是用模型来表示环境, 那理解了环境也就是学会了用一个模型来代表环境, 这种就是 model-based 方法</p><p>Model-free 的方法有很多, 像 Q learning, Sarsa, Policy Gradients 都是从环境中得到反馈然后从中学习</p><p>model-based RL 只是多了一道程序, 为真实世界建模, 也可以说他们都是 model-free 的强化学习, 只是 model-based 多出了一个虚拟环境, 不仅可以像 model-free 那样在现实中玩耍,还能在游戏中玩耍, 而玩耍的方式也都是 model-free 中那些玩耍方式, 最终 model-based 还有一个杀手锏是 model-free 超级羡慕的. 那就是想象力.</p><p><strong>基于概率 和 基于价值</strong></p><p>基于概率是强化学习中最直接的一种, 通过感官分析所处的环境, 直接输出下一步要采取的各种动作的概率, 然后根据概率采取行动, 所以每种动作都有可能被选中, 只是可能性不同.  Policy Gradients</p><p>基于价值的方法输出则是所有动作的价值, 根据最高价值来选着动作, 相比基于概率的方法. Q learning,Sarsa</p><p>基于价值的决策部分更为铁定, 毫不留情, 就选价值最高的, 而基于概率的, 即使某个动作的概率最高, 但是还是不一定会选到他.</p><p>Actor-Critic, actor 会基于概率做出动作, 而 critic 会对做出的动作给出动作的价值, 这样就在原有的 policy gradients 上加速了学习过程.</p><p><strong>回合更新 和 单步更新</strong></p><p>想象强化学习就是在玩游戏, 游戏回合有开始和结束. 回合更新指的是游戏开始后, 我们要等待游戏结束, 然后再总结这一回合中的所有转折点, 再更新我们的行为准则. </p><p>单步更新则是在游戏进行中每一步都在更新, 不用等待游戏的结束, 这样我们就能边玩边学习了.</p><p>Monte-carlo learning 和基础版的 policy gradients 等 都是回合更新制, Qlearning, Sarsa, 升级版的 policy gradients 等都是单步更新制. 因为单步更新更有效率, 所以现在大多方法都是基于单步更新. 比如有的强化学习问题并不属于回合问题.</p><p><strong>在线学习 和 离线学习</strong></p><p>在线学习, 就是指我必须本人在场, 并且一定是本人边玩边学习, 而离线学习是你可以选择自己玩, 也可以选择看着别人玩, 通过看别人玩来学习别人的行为准则,</p><p>离线学习 同样是从过往的经验中学习, 但是这些过往的经历没必要是自己的经历, 任何人的经历都能被学习. 或者我也不必要边玩边学习, 我可以白天先存储下来玩耍时的记忆, 然后晚上通过离线学习来学习白天的记忆.</p><p>最典型的在线学习就是 Sarsa 了, 还有一种优化 Sarsa 的算法, 叫做 Sarsa lambda, 最典型的离线学习就是 Q learning, 后来人也根据离线学习的属性, 开发了更强大的算法, 比如让计算机学会玩电动的 Deep-Q-Network.</p></body></html>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;html&gt;&lt;head&gt;&lt;/head&gt;&lt;body&gt;&lt;p&gt;&lt;strong&gt;强化学习&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;强化学习是机器学习的一大类，使用强化学习能够让机器学着如何在环境中拿到高分，表现出优秀的成绩，这些成绩的背后是不断的试错，不断的尝试，积累经验，学习经验。&lt;/p&gt;
-&lt;
-      
-    
-    </summary>
-    
-    
-      <category term="强化学习" scheme="wentianhao.github.io/categories/%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0/"/>
-    
-    
-      <category term="强化学习" scheme="wentianhao.github.io/tags/%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0/"/>
-    
-  </entry>
-  
-  <entry>
     <title>基于词向量的实体链接方法</title>
     <link href="wentianhao.github.io/2020/06/05/%E5%9F%BA%E4%BA%8E%E8%AF%8D%E5%90%91%E9%87%8F%E7%9A%84%E5%AE%9E%E4%BD%93%E9%93%BE%E6%8E%A5%E6%96%B9%E6%B3%95/"/>
     <id>wentianhao.github.io/2020/06/05/%E5%9F%BA%E4%BA%8E%E8%AF%8D%E5%90%91%E9%87%8F%E7%9A%84%E5%AE%9E%E4%BD%93%E9%93%BE%E6%8E%A5%E6%96%B9%E6%B3%95/</id>
     <published>2020-06-05T08:17:51.000Z</published>
-    <updated>2020-06-05T02:09:15.045Z</updated>
+    <updated>2020-09-11T08:21:09.356Z</updated>
     
-    <content type="html"><![CDATA[<html><head></head><body><p>基于词向量的实体链接方法 </p><p>Ｊｏｕｒｎａｌ　ｏｆ　Ｄａｔａ　Ａｃｑｕｉｓｉｔｉｏｎ　ａｎｄ　Ｐｒｏｃｅｓｓｉｎｇ　 Ｖｏｌ．３２ ， Ｎｏ．３ ，Ｍａｙ ２０１７ ， ｐｐ．６０４－６１１</p><p>针对查询词的扩展，提出一种基于词向量的扩展方法，利用连续词袋(CBOW)模型训练语料中词语的词向量，然后将距离查询词近的词作为扩展词。词向量从语料中挖掘出词与词之间的语义相关性是对基于规则的查询扩展方法的补充，以此来召回更多的相关候选实体。在特征抽取时，把文档之间的潜在狄利克雷分布(LDA)的主题相似性作为特征之一。在计算文档相似性时，不再以高频词作为向量的维度，而是以基于词向量的相关词作为向量维度，由此得到文档的语义相似特征。最后利用基于单文档方法的排序学习模型把查询词链接到相应的候选实体。</p></body></html>]]></content>
+    <content type="html"><![CDATA[<html><head></head><body><p>基于词向量的实体链接方法 </p><p>Ｊｏｕｒｎａｌ　ｏｆ　Ｄａｔａ　Ａｃｑｕｉｓｉｔｉｏｎ　ａｎｄ　Ｐｒｏｃｅｓｓｉｎｇ　 Ｖｏｌ．３２ ， Ｎｏ．３ ，Ｍａｙ ２０１７ ， ｐｐ．６０４－６１１</p><p><strong>【摘要】</strong>：实体链接任务主要包括命名实体识别、查询扩展、候选实体选择、特征抽取和排序，本文针对查询词的扩展，提出一种基于词向量的扩展方法，利用连续词袋(CBOW)模型训练语料中词语的词向量，然后将距离查询词近的词作为扩展词。词向量从语料中挖掘出词与词之间的语义相关性是对基于规则的查询扩展方法的补充，以此来召回候选实体。在特征抽取时，把文档之间的潜在狄利克雷分布(LDA)的主题相似性作为特征之一。在计算文档相似性时，不再以高频词作为向量的维度，而是以基于词向量的相关词作为向量维度，由此得到文档的语义相似特征。最后利用基于单文档方法的排序学习模型把查询词链接到相应的候选实体。实验结果$F1$值达到0.71</p><p>实体链接的方法主要有分类法、概率主题方法、Graph方法和排序法</p><p>分类法：把每个候选实体看作一个类别，每个查询词就是一个待分类项，抽取特征后根据SVM进行分类，此方法是哈尔滨工业大学在2012年TAC的实体链接任务中采用的方法。该方法没有考虑文档中的语义信息，只是根据词的共现来进行分类，并且训练数据少，噪声大。</p><p>概率主题方法：挖掘隐藏在文本之间的主题关系，来衡量文本之间的相似性。此方法只是单纯根据上下语义来进行实体链接，没有充分利用维基百科的结构化信息，准确率不是很高。</p><p>Graph方法：基于文本中实体和维基百科的特点，构造语义网络，通过网络中节点的距离、出度和入度等作为特征来涉及相似度衡量指标，从而实现语义消歧。虽然这种方法有较好的链接效果，然而也存在一些问题，当数据规模比较大时，网络图的存储、训练和计算就会比较繁琐。</p><p>传统的排序法：向量空间模型 VSM 抽取实体的上下文作为词袋，然后根据词频-逆向文档频（TF-IDF）中向量空间把上、下文表示成文本向量，计算余弦相似性。</p><p><strong>【基于条件随机场命名实体识别】</strong></p><p>方法：CRF</p><p>训练数据：评测任务给定的训练集，利用Standford CoreNLP NER得到数据的句法树。</p></body></html>]]></content>
     
     <summary type="html">
     
@@ -232,7 +84,7 @@
       
         &lt;html&gt;&lt;head&gt;&lt;/head&gt;&lt;body&gt;&lt;p&gt;基于词向量的实体链接方法 &lt;/p&gt;
 &lt;p&gt;Ｊｏｕｒｎａｌ　ｏｆ　Ｄａｔａ　Ａｃｑｕｉｓｉｔｉｏｎ　ａｎｄ　Ｐｒｏｃｅｓｓｉｎｇ　 Ｖｏｌ．３２ ， Ｎｏ．３ ，Ｍａｙ ２０１７ ， ｐｐ．６０４－６１１&lt;/p&gt;
-&lt;p&gt;针对查
+&lt;p&gt;&lt;st
       
     
     </summary>
@@ -252,16 +104,16 @@
     <link href="wentianhao.github.io/2020/06/04/%E5%9F%BA%E4%BA%8E%E5%9F%8E%E5%B8%82%E5%9C%B0%E5%90%8D%E5%AE%9E%E4%BD%93%E5%8F%8C%E5%90%91%E9%93%BE%E6%8E%A5%E5%88%86%E6%9E%90%E7%9A%84%E8%B7%AF%E7%BA%BF%E6%8E%A8%E8%8D%90%E7%A0%94%E7%A9%B6/"/>
     <id>wentianhao.github.io/2020/06/04/%E5%9F%BA%E4%BA%8E%E5%9F%8E%E5%B8%82%E5%9C%B0%E5%90%8D%E5%AE%9E%E4%BD%93%E5%8F%8C%E5%90%91%E9%93%BE%E6%8E%A5%E5%88%86%E6%9E%90%E7%9A%84%E8%B7%AF%E7%BA%BF%E6%8E%A8%E8%8D%90%E7%A0%94%E7%A9%B6/</id>
     <published>2020-06-04T08:17:51.000Z</published>
-    <updated>2020-09-10T08:48:32.613Z</updated>
+    <updated>2020-09-11T08:18:47.165Z</updated>
     
-    <content type="html"><![CDATA[<html><head></head><body><p>【目的】：已有线路推荐研究较少考虑地名实体之间的次序，为此设计了基于城市地名实体双向链接分析的路线推荐方法</p><p>【方法】：以特定场景下不同地名实体形成的有向加权网络为基础数据源，循环计算不同轨迹链隶属于各个地名实体对应理想集的链入和链出值，进而在通过布尔逻辑和位置限定运算符表达用户查询需求的基础之上，融合模糊检索算法，实现用户查询与轨迹链的精准匹配。</p><p>【结果】：这篇提出的算法推荐准确率为0.75，高于TF-IDF推荐算法和不考虑地名实体次序的推荐算法，但召回率无优势，随着加权网络规模的增大，推荐准确率与召回率呈现明显的反向关系。</p><p>【局限】：未考虑对象属性数据对推荐结果的影响。</p><p>【结论】：本文方法融合了基于统计分析与语义分析的推荐算法，可快速生成备选路线及推荐指数。</p><p>【研究现状及思路】：目前国内路线推荐研究主要集中于计算机科学领域和信息资源管理领域，计算机领域侧重对推荐模型、推荐算法、推荐方法在特定场景(尤其是移动场景)下的应用效果等内容进行细化研究，而信息资源管理领域则多从地理信息分析、旅游信息资源规划、推荐系统原型设计等角度进行解析。</p><p>【基于城市地名实体双向链接分析的路线推荐过程】：轨迹链构建、地名实体链入和链出集合计算、基于链接分析结果的推荐策略研究</p><p>【轨迹链构建】：借鉴了事件链建模思想，从文本中提取地名实体及其出现位置，序贯相连就形成了轨迹链。轨迹链的最小组成单位为由相邻地名实体构建的有向三元组$(\mathtt{V}_m,\mathtt{V}_n,E)$。$\mathtt{V}_m$ 表示前链，$\mathtt{V}_n$表示后链。$E$取值0或1，0表示前后链之间存在连接关系，反之不存在连接关系。</p><p>【地名实体链入和链出集合计算】：计算模式参考模糊集合计算逻辑，模糊集合计算区别于简单的二值判定，认为每个轨迹链可隶属于一个及以上地名实体对应的理想集，也就是说每条轨迹链可与任意地名实体存在关联关系，只是关联程度存在一定差异，这种处理策略更符合用户进行路径选择时的心理认知，默认初始状态下地名实体之间形成完全连通图，随着历史轨迹链集合的不断丰富，完全连通图中的某些路径由于不断被选择而得到强化，有些路径则始终处于初始状态或缓慢强化的状态。</p><p>【基于链接分析结果的推荐策略研究】：基于链入和链出集合计算结果, 结合用户需求，可有效实现路线的推荐, 目前在推荐领域应用较多的方法包括: 协同过滤、基于内容的推荐、基于知识的推荐、混合推荐等, 其中协同过滤是应用最为广泛的推荐算法, 但本文采用的推荐算法是融合模糊集合计算的改进协同过滤算法。</p></body></html>]]></content>
+    <content type="html"><![CDATA[<html><head></head><body><p><strong>【目的】</strong>：已有线路推荐研究较少考虑地名实体之间的次序，为此设计了基于城市地名实体双向链接分析的路线推荐方法</p><p><strong>【方法】</strong>：以特定场景下不同地名实体形成的有向加权网络为基础数据源，循环计算不同轨迹链隶属于各个地名实体对应理想集的链入和链出值，进而在通过布尔逻辑和位置限定运算符表达用户查询需求的基础之上，融合模糊检索算法，实现用户查询与轨迹链的精准匹配。</p><p><strong>【结果】</strong>：这篇提出的算法推荐准确率为0.75，高于TF-IDF推荐算法和不考虑地名实体次序的推荐算法，但召回率无优势，随着加权网络规模的增大，推荐准确率与召回率呈现明显的反向关系。</p><p><strong>【局限】</strong>：未考虑对象属性数据对推荐结果的影响。</p><p><strong>【结论】</strong>：本文方法融合了基于统计分析与语义分析的推荐算法，可快速生成备选路线及推荐指数。</p><p><strong>【研究现状及思路】</strong>：目前国内路线推荐研究主要集中于计算机科学领域和信息资源管理领域，计算机领域侧重对推荐模型、推荐算法、推荐方法在特定场景(尤其是移动场景)下的应用效果等内容进行细化研究，而信息资源管理领域则多从地理信息分析、旅游信息资源规划、推荐系统原型设计等角度进行解析。</p><p><strong>【基于城市地名实体双向链接分析的路线推荐过程】</strong>：轨迹链构建、地名实体链入和链出集合计算、基于链接分析结果的推荐策略研究</p><p><strong>【轨迹链构建】</strong>：借鉴了事件链建模思想，从文本中提取地名实体及其出现位置，序贯相连就形成了轨迹链。轨迹链的最小组成单位为由相邻地名实体构建的有向三元组$(\mathtt{V}_m,\mathtt{V}_n,E)$。$\mathtt{V}_m$ 表示前链，$\mathtt{V}_n$表示后链。$E$取值0或1，0表示前后链之间存在连接关系，反之不存在连接关系。</p><p><strong>【地名实体链入和链出集合计算】</strong>：计算模式参考模糊集合计算逻辑，模糊集合计算区别于简单的二值判定，认为每个轨迹链可隶属于一个及以上地名实体对应的理想集，也就是说每条轨迹链可与任意地名实体存在关联关系，只是关联程度存在一定差异，这种处理策略更符合用户进行路径选择时的心理认知，默认初始状态下地名实体之间形成完全连通图，随着历史轨迹链集合的不断丰富，完全连通图中的某些路径由于不断被选择而得到强化，有些路径则始终处于初始状态或缓慢强化的状态。</p><p><strong>【基于链接分析结果的推荐策略研究】</strong>：基于链入和链出集合计算结果, 结合用户需求，可有效实现路线的推荐, 目前在推荐领域应用较多的方法包括: 协同过滤、基于内容的推荐、基于知识的推荐、混合推荐等, 其中协同过滤是应用最为广泛的推荐算法, 但本文采用的推荐算法是融合模糊集合计算的改进协同过滤算法。</p></body></html>]]></content>
     
     <summary type="html">
     
       
       
-        &lt;html&gt;&lt;head&gt;&lt;/head&gt;&lt;body&gt;&lt;p&gt;【目的】：已有线路推荐研究较少考虑地名实体之间的次序，为此设计了基于城市地名实体双向链接分析的路线推荐方法&lt;/p&gt;
-&lt;p&gt;【方法】：以特定场景下不同地名实体形成的有向加权网络为基础数据源，循环计算不同轨迹链隶属于各个地名实体
+        &lt;html&gt;&lt;head&gt;&lt;/head&gt;&lt;body&gt;&lt;p&gt;&lt;strong&gt;【目的】&lt;/strong&gt;：已有线路推荐研究较少考虑地名实体之间的次序，为此设计了基于城市地名实体双向链接分析的路线推荐方法&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;【方法】&lt;/strong&gt;：以特定场景下不同地名实体
       
     
     </summary>
@@ -303,21 +155,6 @@
       <category term="NLP" scheme="wentianhao.github.io/tags/NLP/"/>
     
       <category term="word2vec" scheme="wentianhao.github.io/tags/word2vec/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>反向传播</title>
-    <link href="wentianhao.github.io/2020/04/30/%E5%8F%8D%E5%90%91%E4%BC%A0%E6%92%AD/"/>
-    <id>wentianhao.github.io/2020/04/30/%E5%8F%8D%E5%90%91%E4%BC%A0%E6%92%AD/</id>
-    <published>2020-04-30T09:06:57.000Z</published>
-    <updated>2020-04-30T09:06:57.303Z</updated>
-    
-    <summary type="html">
-    
-    </summary>
-    
-    
     
   </entry>
   
@@ -586,6 +423,190 @@
       <category term="python" scheme="wentianhao.github.io/tags/python/"/>
     
       <category term="python爬虫" scheme="wentianhao.github.io/tags/python%E7%88%AC%E8%99%AB/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>数据同步神器</title>
+    <link href="wentianhao.github.io/2020/03/02/syncthing/"/>
+    <id>wentianhao.github.io/2020/03/02/syncthing/</id>
+    <published>2020-03-02T08:58:59.000Z</published>
+    <updated>2020-03-03T16:23:24.982Z</updated>
+    
+    <content type="html"><![CDATA[<html><head></head><body><p><a href="https://www.moewah.com/usr/uploads/2019/03/3082024495.jpg" data-caption="syncthing" data-fancybox="images"><img src="https://www.moewah.com/usr/uploads/2019/03/3082024495.jpg" alt="syncthing"></a></p><p>最近打算同步一下数据，发现了一个口碑还不错的数据同步工具——Syncthing,是一款开源免费的数据同步工具，支持Android、Linux、Windows、Mac OS等系统，可以在任意2台设备之间，实现实时同步。通信使用TLS进行保护，所使用的加密包括完美的前向保密，很适合搭建私有同步网盘</p><h2 id="安装"><strong>安装</strong><a class="post-anchor" href="#安装"></a></h2><p>本文只做Linux服务器和Windows电脑之间的同步安装以及演示操作。</p><h3 id="1、linux安装Syncthing"><strong>1、linux安装Syncthing</strong><a class="post-anchor" href="#1、linux安装Syncthing"></a></h3><p>安装Syncthing:</p><figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#目前最新版v1.2.0，日后自行修改版本号</span></span><br><span class="line">wget https://github.com/syncthing/syncthing/releases/download/v1.3.4/syncthing-linux-amd64-v1.3.4.tar.gz</span><br><span class="line">tar xzvf syncthing-linux-amd64-v1.3.4.tar.gz</span><br><span class="line">cp syncthing-linux-amd64-v1.3.4/syncthing /usr/<span class="built_in">local</span>/bin</span><br></pre></td></tr></tbody></table></figure><h4 id="开放端口"><strong>开放端口</strong><a class="post-anchor" href="#开放端口"></a></h4><p>Syncthing 默认监听以下几个端口</p><figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">22000(TCP)</span><br><span class="line">8384(TCP)</span><br><span class="line">21027(UDP)</span><br><span class="line">44647(UDP)</span><br><span class="line">37269(UDP)</span><br></pre></td></tr></tbody></table></figure><p>个人使用，仅开放22000(TCP)和8384(TCP)</p><p>8384:web访问控制端口<br>22000：节点访问端口</p><p>开启Syncthing</p><figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">syncthing</span><br></pre></td></tr></tbody></table></figure><p>第一次启动会生成配置，内网地址是进不去的，需修改成外网地址。</p><p>修改配置</p><figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">vim /root/.config/syncthing/config.xml</span><br><span class="line"><span class="comment"># 将127.0.0.1:8384改为</span></span><br><span class="line"><span class="comment"># 0.0.0.0:8384</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#再次启动Syncthing</span></span><br><span class="line">syncthing</span><br></pre></td></tr></tbody></table></figure><p>浏览器访问:<br><a href="http://server_ip:8384" target="_blank" rel="noopener">http://server_ip:8384</a></p><p>需自行开放8384端口哦</p><p>设置账号密码，其他参数暂时无需更改，重启<br><a href="https://github.com/wentianhao/wentianhao.github.io/blob/master/images/HU.png?raw=true" data-caption="syncthing" data-fancybox="images"><img src="https://github.com/wentianhao/wentianhao.github.io/blob/master/images/HU.png?raw=true" alt="syncthing"></a></p><p>linux ：后台运行Syncthing</p><figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nohup synchthing &> /dev/null &</span><br></pre></td></tr></tbody></table></figure><h3 id="2、Windows安装Syncthing"><strong>2、Windows安装Syncthing</strong><a class="post-anchor" href="#2、Windows安装Syncthing"></a></h3><p><a href="https://syncthing.net/downloads/" target="_blank" rel="noopener">官网下载</a>对应版本的Syncthing,运行syncthing.exe</p><p><a href="https://github.com/wentianhao/wentianhao.github.io/blob/master/images/syncmd.png?raw=true" data-caption="cmd" data-fancybox="images"><img src="https://github.com/wentianhao/wentianhao.github.io/blob/master/images/syncmd.png?raw=true" alt="cmd"></a></p><p><a href="https://github.com/wentianhao/wentianhao.github.io/blob/master/images/syncsetting.png?raw=true" data-caption="setting" data-fancybox="images"><img src="https://github.com/wentianhao/wentianhao.github.io/blob/master/images/syncsetting.png?raw=true" alt="setting"></a></p><h3 id="3、使用"><strong>3、使用</strong><a class="post-anchor" href="#3、使用"></a></h3><p>在linux的页面上添加Windows的远程设备ID，自行选择指定文件夹。可在添加设备->高级->地址列表，将dynamic 填写为 tcp://server_ip:22000</p><p>设备添加完成，即可同步文件夹。</p></body></html>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;html&gt;&lt;head&gt;&lt;/head&gt;&lt;body&gt;&lt;p&gt;&lt;a href=&quot;https://www.moewah.com/usr/uploads/2019/03/3082024495.jpg&quot; data-caption=&quot;syncthing&quot; data-fancybox=&quot;imag
+      
+    
+    </summary>
+    
+    
+      <category term="server" scheme="wentianhao.github.io/categories/server/"/>
+    
+    
+      <category term="sync" scheme="wentianhao.github.io/tags/sync/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>招聘信息爬虫项目</title>
+    <link href="wentianhao.github.io/2020/03/01/%E6%8B%9B%E8%81%98%E4%BF%A1%E6%81%AF%E7%88%AC%E8%99%AB%E9%A1%B9%E7%9B%AE/"/>
+    <id>wentianhao.github.io/2020/03/01/%E6%8B%9B%E8%81%98%E4%BF%A1%E6%81%AF%E7%88%AC%E8%99%AB%E9%A1%B9%E7%9B%AE/</id>
+    <published>2020-03-01T07:34:07.000Z</published>
+    <updated>2020-03-01T10:27:06.394Z</updated>
+    
+    <content type="html"><![CDATA[<html><head></head><body><ul><li><p>目标站点: <a href="http://www.51job.com" target="_blank" rel="noopener">前程无忧</a></p></li><li><p>需求数据：指定关键词的所有职位数据</p></li><li><p>要求：自动翻页并输出</p></li><li><p>选择模块: requests</p></li><li><p>分析：<br>  关键词：python</p><p>  第一页: <a href="https://search.51job.com/list/180000,000000,0000,00,9,99,python,2,1.html?lang=c&stype=&postchannel=0000&workyear=99&cotype=99&degreefrom=99&jobterm=99&companysize=99&providesalary=99&lonlat=0%2C0&radius=-1&ord_field=0&confirmdate=9&fromType=&dibiaoid=0&address=&line=&specialarea=00&from=&welfare=" target="_blank" rel="noopener">https://search.51job.com/list/180000,000000,0000,00,9,99,python,2,1.html?lang=c&stype=&postchannel=0000&workyear=99&cotype=99&degreefrom=99&jobterm=99&companysize=99&providesalary=99&lonlat=0%2C0&radius=-1&ord_field=0&confirmdate=9&fromType=&dibiaoid=0&address=&line=&specialarea=00&from=&welfare=</a></p><p>  第二页: <a href="https://search.51job.com/list/180000,000000,0000,00,9,99,python,2,2.html?lang=c&postchannel=0000&workyear=99&cotype=99&degreefrom=99&jobterm=99&companysize=99&ord_field=0&dibiaoid=0&line=&welfare=" target="_blank" rel="noopener">https://search.51job.com/list/180000,000000,0000,00,9,99,python,2,2.html?lang=c&postchannel=0000&workyear=99&cotype=99&degreefrom=99&jobterm=99&companysize=99&ord_field=0&dibiaoid=0&line=&welfare=</a></p><p>  url：<a href="https://search.51job.com/list/180000,000000,0000,00,9,99,python,2,1.html" target="_blank" rel="noopener">https://search.51job.com/list/180000,000000,0000,00,9,99,python,2,1.html</a> </p><p>  代码:</p>  <figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> re</span><br><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"></span><br><span class="line">url = <span class="string">"https://search.51job.com/list/180000,000000,0000,00,9,99,python,2,1.html"</span></span><br><span class="line"></span><br><span class="line">hd={<span class="string">"User-Agent"</span>:<span class="string">"Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36"</span>}</span><br><span class="line"></span><br><span class="line">response = requests.get(url,headers=hd)</span><br><span class="line"><span class="comment"># 如果网页出现乱码，通传编码方式</span></span><br><span class="line">data = bytes(response.text,response.encoding).decode(<span class="string">"gbk"</span>,<span class="string">"ignore"</span>)</span><br><span class="line"><span class="comment"># print(len(data))</span></span><br><span class="line">pat_pag = <span class="string">"共(.*?)条职位"</span></span><br><span class="line">allline = re.compile(pat_pag,re.S).findall(data)[<span class="number">0</span>]</span><br><span class="line"><span class="comment"># print(allline)</span></span><br><span class="line">allpage = int(allline)//<span class="number">50</span> + <span class="number">1</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">0</span>,<span class="number">2</span>):</span><br><span class="line">    print(<span class="string">"------------正在爬"</span>+str(i+<span class="number">1</span>)+<span class="string">"页---------"</span>)</span><br><span class="line">    url = <span class="string">"https://search.51job.com/list/180000,000000,0000,00,9,99,python,2,"</span>+str(i+<span class="number">1</span>)+<span class="string">".html"</span></span><br><span class="line">    <span class="comment"># print(url)</span></span><br><span class="line">    response = requests.get(url, headers=hd)</span><br><span class="line">    <span class="comment"># 如果网页出现乱码，通传编码方式</span></span><br><span class="line">    thisdata = bytes(response.text, response.encoding).decode(<span class="string">"gbk"</span>, <span class="string">"ignore"</span>)</span><br><span class="line">    <span class="comment"># print(thisdata)</span></span><br><span class="line">    job_url_pat=<span class="string">'<em class="check" name="delivery_em" onclick="checkboxClick.this."></em>.*?href="(.*?).html'</span></span><br><span class="line">    job_url_all = re.compile(job_url_pat,re.S).findall(thisdata)</span><br><span class="line">    <span class="comment"># print(len(job_url_all))</span></span><br><span class="line">    <span class="keyword">for</span> job_url <span class="keyword">in</span> job_url_all:</span><br><span class="line">        <span class="comment"># print(job_url)</span></span><br><span class="line">        thisurl=job_url+<span class="string">".html"</span></span><br><span class="line">        response=requests.get(thisurl)</span><br><span class="line">        thisdata=bytes(response.text,response.encoding).decode(<span class="string">"gbk"</span>,<span class="string">"ignore"</span>)</span><br><span class="line">        pat_title=<span class="string">'<h1 title="(.*?)"'</span></span><br><span class="line">        pat_company=<span class="string">'<p class="cname">.*?title="(.*?)"'</span></span><br><span class="line">        pat_money=<span class="string">'</h1><strong>(.*?)</strong>'</span></span><br><span class="line">        pat_addr=<span class="string">'上班地址：</span>(.*?)</p>'</span></span><br><span class="line">        title = re.compile(pat_title,re.S).findall(thisdata)[<span class="number">0</span>]</span><br><span class="line">        company = re.compile(pat_company,re.S).findall(thisdata)[<span class="number">0</span>]</span><br><span class="line">        money = re.compile(pat_money,re.S).findall(thisdata)[<span class="number">0</span>]</span><br><span class="line">        <span class="keyword">try</span>:</span><br><span class="line">            addr = re.compile(pat_addr,re.S).findall(thisdata)[<span class="number">0</span>]</span><br><span class="line">        <span class="keyword">except</span> IndexError:</span><br><span class="line">            addr = <span class="string">"空"</span></span><br><span class="line"></span><br><span class="line">        print(<span class="string">"-------------------"</span>)</span><br><span class="line">        print(title)</span><br><span class="line">        print(company)</span><br><span class="line">        print(money)</span><br><span class="line">        print(addr)</span><br></pre></td></tr></tbody></table></figure></li></ul></body></html>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;html&gt;&lt;head&gt;&lt;/head&gt;&lt;body&gt;&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;目标站点: &lt;a href=&quot;http://www.51job.com&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;前程无忧&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;需求数据：指定关键
+      
+    
+    </summary>
+    
+    
+      <category term="python" scheme="wentianhao.github.io/categories/python/"/>
+    
+    
+      <category term="python" scheme="wentianhao.github.io/tags/python/"/>
+    
+      <category term="python爬虫" scheme="wentianhao.github.io/tags/python%E7%88%AC%E8%99%AB/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>scrapy爬虫项目</title>
+    <link href="wentianhao.github.io/2020/02/29/scrapy/"/>
+    <id>wentianhao.github.io/2020/02/29/scrapy/</id>
+    <published>2020-02-29T05:25:55.000Z</published>
+    <updated>2020-02-29T18:24:45.170Z</updated>
+    
+    <content type="html"><![CDATA[<html><head></head><body><p>Scrapy模块是一个非常常用的爬虫框架模块，使用Scrapy可以快速创建爬虫项目。</p><p><strong>Scrapy模块的安装</strong></p><p>建议安装顺序</p><ul><li><p>升级pip: python -m pip install –upgrade pip </p></li><li><p>安装wheel pip install wheel</p></li><li><p>安装lxml (<a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#wordcloud)选择对应的python版本以及win32" target="_blank" rel="noopener">https://www.lfd.uci.edu/~gohlke/pythonlibs/#wordcloud)选择对应的python版本以及win32</a> or 64</p></li><li><p>安装Twisted (<a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#wordcloud)选择对应的python版本以及win32" target="_blank" rel="noopener">https://www.lfd.uci.edu/~gohlke/pythonlibs/#wordcloud)选择对应的python版本以及win32</a> or 64</p></li></ul><ul><li>如果使用pycharm可以在Setting -> Project -> Project Interpreter 点击 + 添加最新的库</li></ul><ul><li><p>pip install scrapy 或 pip install scrapy==1.1.0rc3</p></li><li><p>下载安装pywin32并配置 </p><p>  <a href="https://github.com/wentianhao/wentianhao.github.io/blob/master/images/pythoncom38.png?raw=true" data-caption="pywin32" data-fancybox="images"><img src="https://github.com/wentianhao/wentianhao.github.io/blob/master/images/pythoncom38.png?raw=true" alt="pywin32"></a></p><p>  将这俩dll复制到system32(由于权限问题需手动确认一遍)</p></li></ul><hr><p><strong>Scrapy常用指令实战</strong></p><table><thead><tr><th align="center">指令</th><th align="center">意义</th></tr></thead><tbody><tr><td align="center">startproject</td><td align="center">创建爬虫项目</td></tr><tr><td align="center">genspider -l</td><td align="center">查看爬虫模板</td></tr><tr><td align="center">genspider -t</td><td align="center">模板 爬虫文件名 域名 创建爬虫</td></tr><tr><td align="center">crawl</td><td align="center">运行爬虫</td></tr><tr><td align="center">list</td><td align="center">查看有哪些爬虫</td></tr></tbody></table><ul><li><p>创建爬虫项目</p><p>  <a href="https://github.com/wentianhao/wentianhao.github.io/blob/master/images/startproject.png?raw=true" data-caption="startproject" data-fancybox="images"><img src="https://github.com/wentianhao/wentianhao.github.io/blob/master/images/startproject.png?raw=true" alt="startproject"></a></p><p>  创建完成之后的项目目录:</p><p>  <a href="https://github.com/wentianhao/wentianhao.github.io/blob/master/images/scrapy.png?raw=true" data-caption="startproject" data-fancybox="images"><img src="https://github.com/wentianhao/wentianhao.github.io/blob/master/images/scrapy.png?raw=true" alt="startproject"></a></p><p>  scrapy.cfg: 项目配置文件</p><p>  <em>init</em>.py ： 初始化文件</p><p>  items.py : 定义目标信息</p><p>  spiders ：存放多个爬虫文件</p><p>  middlewares.py : 中间件</p><p>  pipelines.py : 爬后处理(例如写入数据库…)</p><p>  settings.py : 总体设置信息</p></li><li><p>指令测试</p><p><a href="https://github.com/wentianhao/wentianhao.github.io/blob/master/images/scrapy_g.png?raw=true" data-caption="指令测试" data-fancybox="images"><img src="https://github.com/wentianhao/wentianhao.github.io/blob/master/images/scrapy_g.png?raw=true" alt="指令测试"></a></p></li></ul><hr><p><strong>Scrapy爬虫项目编写基础</strong></p><ul><li><p>创建爬虫项目</p></li><li><p>编写items</p></li></ul><figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">title = scrapy.Field()</span><br></pre></td></tr></tbody></table></figure><ul><li><p>创建爬虫文件</p></li><li><p>编写爬虫文件</p>  <figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># -*- coding: utf-8 -*-</span></span><br><span class="line"><span class="keyword">import</span> scrapy</span><br><span class="line"><span class="keyword">from</span> wh_first.items <span class="keyword">import</span> WhFirstItem</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">FstSpider</span><span class="params">(scrapy.Spider)</span>:</span></span><br><span class="line">    name = <span class="string">'fst'</span></span><br><span class="line">    allowed_domains = [<span class="string">'aliwx.com.cn'</span>]</span><br><span class="line">    start_urls = [<span class="string">'http://www.aliwx.com.cn/'</span>]</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">parse</span><span class="params">(self, response)</span>:</span></span><br><span class="line">        item=WhFirstItem()</span><br><span class="line">        item[<span class="string">"title"</span>] = response.xpath(<span class="string">"//p[@class='title']/text()"</span>).extract()</span><br><span class="line">        <span class="comment"># print(item["title"])</span></span><br><span class="line">        <span class="keyword">yield</span> item</span><br></pre></td></tr></tbody></table></figure></li><li><p>编写pipelines</p></li></ul><figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">process_item</span><span class="params">(self, item, spider)</span>:</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">0</span>,len(item[<span class="string">"title"</span>])):</span><br><span class="line">        print(<span class="string">"------------"</span>)</span><br><span class="line">        print(item[<span class="string">"title"</span>][i])</span><br></pre></td></tr></tbody></table></figure><ul><li>配置settings<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ITEM_PIPELINES = {</span><br><span class="line"><span class="string">'wh_first.pipelines.WhFirstPipeline'</span>: <span class="number">300</span>,</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure></li></ul><p><strong>使用Scrapy编写当当网商品数据爬虫实战</strong></p><ul><li><p>目标站点：<a href="http://category.dangdang.com/cp01.03.41.00.00.00.html" target="_blank" rel="noopener">当当</a></p></li><li><p>需求数据：商品标题、链接、评论数等数据</p></li><li><p>要求：自动翻页并自动写入数据库</p><p>  <a href="https://github.com/wentianhao/pyhton" target="_blank" rel="noopener">源码</a></p></li></ul></body></html>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;html&gt;&lt;head&gt;&lt;/head&gt;&lt;body&gt;&lt;p&gt;Scrapy模块是一个非常常用的爬虫框架模块，使用Scrapy可以快速创建爬虫项目。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Scrapy模块的安装&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;建议安装顺序&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;升级p
+      
+    
+    </summary>
+    
+    
+      <category term="python" scheme="wentianhao.github.io/categories/python/"/>
+    
+    
+      <category term="python" scheme="wentianhao.github.io/tags/python/"/>
+    
+      <category term="python爬虫" scheme="wentianhao.github.io/tags/python%E7%88%AC%E8%99%AB/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Request模块爬虫</title>
+    <link href="wentianhao.github.io/2020/02/28/request/"/>
+    <id>wentianhao.github.io/2020/02/28/request/</id>
+    <published>2020-02-28T10:57:05.000Z</published>
+    <updated>2020-02-28T17:40:46.111Z</updated>
+    
+    <content type="html"><![CDATA[<html><head></head><body><p><strong>Request模块的基础使用</strong></p><ul><li><p>安装request</p><figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install requests</span><br></pre></td></tr></tbody></table></figure></li><li><p>使用方法</p><ul><li><p>请求方式： get、post、put…</p></li><li><p>参数：</p><table><thead><tr><th align="center">参数</th><th align="center">含义</th></tr></thead><tbody><tr><td align="center">params</td><td align="center">get请求的参数</td></tr><tr><td align="center">headers</td><td align="center">伪装浏览器添加头信息</td></tr><tr><td align="center">proxies</td><td align="center">添加代理</td></tr><tr><td align="center">cookies</td><td align="center">添加cookie</td></tr><tr><td align="center">data</td><td align="center">post请求</td></tr></tbody></table></li><li><p>属性：</p><table><thead><tr><th align="center">属性</th><th align="center">含义</th></tr></thead><tbody><tr><td align="center">text</td><td align="center">对应请求响应数据</td></tr><tr><td align="center">content</td><td align="center">二进制类型的相应数据</td></tr><tr><td align="center">encoding</td><td align="center">网页编码</td></tr><tr><td align="center">cookies</td><td align="center">相应cookie</td></tr><tr><td align="center">url</td><td align="center">当前请求的url</td></tr><tr><td align="center">status</td><td align="center">状态码</td></tr></tbody></table></li></ul></li></ul><figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"><span class="keyword">import</span> re</span><br><span class="line"></span><br><span class="line"><span class="comment"># 伪装浏览器</span></span><br><span class="line">hd = {<span class="string">"user-agent"</span>:<span class="string">"Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36"</span>}</span><br><span class="line"></span><br><span class="line"><span class="comment"># 添加代理</span></span><br><span class="line">px = {<span class="string">"http"</span>:<span class="string">"http://127.0.0.1:8888"</span>}</span><br><span class="line"></span><br><span class="line"><span class="comment"># 添加cookies</span></span><br><span class="line">cookies= {<span class="string">""</span>:<span class="string">""</span>}</span><br><span class="line"></span><br><span class="line"><span class="comment"># get请求</span></span><br><span class="line">rst = requests.get(<span class="string">"https://www.aliwx.com.cn/"</span>,headers=hd,proxies=px)</span><br><span class="line">print(rst)</span><br><span class="line">title = re.compile(<span class="string">"<title>(.*?)</title>"</span>,re.S).findall(rst.text)</span><br><span class="line">print(title)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># www.baidu.com/s?wd="阿里文学"</span></span><br><span class="line">pr = {<span class="string">"wd"</span>:<span class="string">"阿里文学"</span>}</span><br><span class="line">rst2 = requests.get(<span class="string">"http://www.baidu.com/s"</span>,params=pr)</span><br><span class="line">print(rst2)</span><br><span class="line"></span><br><span class="line"><span class="comment"># text 、 content、 encoding、url、status_code</span></span><br><span class="line">print(rst2.text)</span><br><span class="line">print(rst2.content)</span><br><span class="line">print(rst2.encoding)</span><br><span class="line">print(rst2.url)</span><br><span class="line">print(rst2.status_code)</span><br><span class="line"></span><br><span class="line"><span class="comment"># cookie 转化为字典</span></span><br><span class="line">cookie  = requests.utils.dict_from_cookiejar(rst2.cookies)</span><br><span class="line">print(cookie)</span><br><span class="line"></span><br><span class="line"><span class="comment"># post请求</span></span><br><span class="line">postdata = {<span class="string">"name"</span>:<span class="string">"www"</span>,<span class="string">"pass"</span>:<span class="string">"123"</span>}</span><br><span class="line">rst3 = requests.post(<span class="string">"https://www.iqianyue.com/mypost/"</span>,data=postdata)</span><br><span class="line">print(rst3.text)</span><br></pre></td></tr></tbody></table></figure><hr><p><strong>使用requests模块实现云栖社区博文爬虫实战</strong></p><p>目标站点：<a href="https://yq.aliyun.com/" target="_blank" rel="noopener">云栖社区</a></p><p>需求数据：指定关键词的博文数据</p><p>要求：自动翻页并下载到本地</p><p>分析：</p><p>第二页url：<a href="https://yq.aliyun.com/search/articles/?spm=a2c4e.11163080.searchblog.155.44fb2ec1RCP5cT&q=python&idx=default&days=&p=2" target="_blank" rel="noopener">https://yq.aliyun.com/search/articles/?spm=a2c4e.11163080.searchblog.155.44fb2ec1RCP5cT&q=python&idx=default&days=&p=2</a></p><p>第三页url：<a href="https://yq.aliyun.com/search/articles/?spm=a2c4e.11163080.searchblog.165.4a4f2ec1GkHbdt&q=python&idx=default&days=&p=3" target="_blank" rel="noopener">https://yq.aliyun.com/search/articles/?spm=a2c4e.11163080.searchblog.165.4a4f2ec1GkHbdt&q=python&idx=default&days=&p=3</a></p><p>spm、idx、days测试去掉有无影响 (无影响)</p><p>第二页有效url：<a href="https://yq.aliyun.com/search/articles/?q=python&p=2" target="_blank" rel="noopener">https://yq.aliyun.com/search/articles/?q=python&p=2</a></p><p>第三页有效url: <a href="https://yq.aliyun.com/search/articles/?q=python&p=3" target="_blank" rel="noopener">https://yq.aliyun.com/search/articles/?q=python&p=3</a></p><p>源码：</p><figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 目标站点：[云栖社区](https://yq.aliyun.com/)</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># 需求数据：指定关键词的博文数据</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># 要求：自动翻页并下载到本地</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"><span class="keyword">import</span> re</span><br><span class="line"><span class="keyword">import</span> time</span><br><span class="line"></span><br><span class="line">key = <span class="string">"python"</span></span><br><span class="line">url = <span class="string">"https://yq.aliyun.com/search/articles/"</span></span><br><span class="line">data = requests.get(url,params={<span class="string">"q"</span>:key}).text</span><br><span class="line">pat1 = <span class="string">'< div class="_search-info">找到(.*?)条关于'</span></span><br><span class="line">allline=re.compile(pat1,re.S).findall(data)[<span class="number">0</span>]</span><br><span class="line">allpage=int(allline)//<span class="number">15</span>+<span class="number">1</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">0</span>,<span class="number">1</span>):</span><br><span class="line">    print(<span class="string">"-------正在爬第"</span>+str(i+<span class="number">1</span>)+<span class="string">"页-------------"</span>)</span><br><span class="line">    index=str(i+<span class="number">1</span>)</span><br><span class="line">    getdata={<span class="string">"q"</span>:key,</span><br><span class="line">            <span class="string">"p"</span>:index,</span><br><span class="line">            }</span><br><span class="line">    data=requests.get(url,params=getdata).text</span><br><span class="line">    pat_url= <span class="string">'<div class="media-body text-overflow">.*?<a href="(.*?)">'</span></span><br><span class="line">    articles=re.compile(pat_url,re.S).findall(data)</span><br><span class="line">    <span class="keyword">for</span> j <span class="keyword">in</span> articles:</span><br><span class="line">        thisurl=<span class="string">"https://yq.aliyun.com"</span>+j</span><br><span class="line">        thisdata=requests.get(thisurl).text</span><br><span class="line">        pat_title=<span class="string">'<p class="hiddenTitle">(.*?)</p>'</span></span><br><span class="line">        title=re.compile(pat_title,re.S).findall(thisdata)[<span class="number">0</span>]</span><br><span class="line">        pat_content=<span class="string">'<div class="content-detail unsafe markdown-body">(.*?) <div class="copyright-outer-line">'</span></span><br><span class="line">        content=re.compile(pat_content,re.S).findall(thisdata)[<span class="number">0</span>]</span><br><span class="line">        fh=open(<span class="string">"./blog/"</span>+str(title)+str(i)+<span class="string">"_"</span>+str(time.time())+<span class="string">".html"</span>,<span class="string">"w"</span>,encoding=<span class="string">"utf-8"</span>)</span><br><span class="line">        fh.write(title+<span class="string">"<br /><br />"</span>+content)</span><br><span class="line">        fh.close()</span><br></pre></td></tr></tbody></table></figure></body></html>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;html&gt;&lt;head&gt;&lt;/head&gt;&lt;body&gt;&lt;p&gt;&lt;strong&gt;Request模块的基础使用&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;安装request&lt;/p&gt;
+&lt;figure class=&quot;highlight python&quot;&gt;&lt;table&gt;&lt;tbody&gt;&lt;tr
+      
+    
+    </summary>
+    
+    
+      <category term="python" scheme="wentianhao.github.io/categories/python/"/>
+    
+    
+      <category term="python" scheme="wentianhao.github.io/tags/python/"/>
+    
+      <category term="python爬虫" scheme="wentianhao.github.io/tags/python%E7%88%AC%E8%99%AB/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>抓包分析技术精讲</title>
+    <link href="wentianhao.github.io/2020/02/27/%E6%8A%93%E5%8C%85%E5%88%86%E6%9E%90%E6%8A%80%E6%9C%AF%E7%B2%BE%E8%AE%B2/"/>
+    <id>wentianhao.github.io/2020/02/27/%E6%8A%93%E5%8C%85%E5%88%86%E6%9E%90%E6%8A%80%E6%9C%AF%E7%B2%BE%E8%AE%B2/</id>
+    <published>2020-02-27T15:24:18.000Z</published>
+    <updated>2020-02-28T10:34:52.804Z</updated>
+    
+    <content type="html"><![CDATA[<html><head></head><body><ul><li>Fiddler是一款使用起来非常方便的抓包工具，安装起来很方便。</li></ul><p>实战：抓取腾讯视频下的评论</p><figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> urllib.request</span><br><span class="line"><span class="keyword">import</span> re</span><br><span class="line"></span><br><span class="line">cid = <span class="string">"0"</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">0</span>,<span class="number">100</span>):</span><br><span class="line">    print(<span class="string">"第"</span>+str(i+<span class="number">1</span>)+<span class="string">"页的评论数据"</span>)</span><br><span class="line">    url = <span class="string">"https://video.coral.qq.com/varticle/4831064204/comment/v2?callback=_varticle4831064204commentv2&orinum=10&oriorder=o&pageflag=1&cursor="</span> + str(</span><br><span class="line">        cid) + <span class="string">"&scorecursor=0&orirepnum=2&reporder=o&reppageflag=1&source=132&_=1582873152540"</span></span><br><span class="line">    data = urllib.request.urlopen(url).read().decode(<span class="string">"utf-8"</span>,<span class="string">"ignore"</span>)</span><br><span class="line">    pat = <span class="string">'"content":"(.*?)"'</span></span><br><span class="line">    comments = re.compile(pat,re.S).findall(data)</span><br><span class="line">    <span class="keyword">for</span> item <span class="keyword">in</span> comments:</span><br><span class="line">        print(str(item))</span><br><span class="line">        print(<span class="string">"------------------"</span>)</span><br><span class="line">    pat2 = <span class="string">'"last":"(.*?)"'</span></span><br><span class="line">    cid = re.compile(pat2,re.S).findall(data)[<span class="number">0</span>]</span><br></pre></td></tr></tbody></table></figure></body></html>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;html&gt;&lt;head&gt;&lt;/head&gt;&lt;body&gt;&lt;ul&gt;
+&lt;li&gt;Fiddler是一款使用起来非常方便的抓包工具，安装起来很方便。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;实战：抓取腾讯视频下的评论&lt;/p&gt;
+&lt;figure class=&quot;highlight python&quot;&gt;&lt;table&gt;&lt;
+      
+    
+    </summary>
+    
+    
+      <category term="python" scheme="wentianhao.github.io/categories/python/"/>
+    
+    
+      <category term="python爬虫" scheme="wentianhao.github.io/tags/python%E7%88%AC%E8%99%AB/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>专业英语</title>
+    <link href="wentianhao.github.io/2020/02/27/%E4%B8%93%E4%B8%9A%E8%8B%B1%E8%AF%AD/"/>
+    <id>wentianhao.github.io/2020/02/27/%E4%B8%93%E4%B8%9A%E8%8B%B1%E8%AF%AD/</id>
+    <published>2020-02-27T14:44:38.000Z</published>
+    <updated>2020-03-09T04:22:36.895Z</updated>
+    
+    <content type="html"><![CDATA[<html><head></head><body><ul><li><p>世界著名的三大科技文献检索系统</p><ul><li>SCI 科学引文索引</li><li>EI 工程索引</li><li>ISTP 科技会议录索引</li></ul></li><li><p>高质量文章标准 High-quality paper criteria</p><ul><li>SCI影响因子</li><li>推荐 & 口碑 （CCF推荐期刊，北大核心）（nature 、cell 、Springer 、Elsciver ）</li><li>引用量 （google引用、SCI引用）</li></ul></li></ul><p>小结：<br><a href="https://github.com/wentianhao/wentianhao.github.io/blob/master/images/IR.png?raw=true" data-caption="IR" data-fancybox="images"><img src="https://github.com/wentianhao/wentianhao.github.io/blob/master/images/IR.png?raw=true" alt="IR"></a></p><hr><p>three-pass reading method：</p><ul><li><p>First pass: Read the title,abstract,introduction,and subsection headings and conclusion. Take note!Ignore the math!</p></li><li><p>Second pass: Read all the text,understand the math,run the associated code to repeat the experiment,other articles/summary/comments related to the paper.Take note!</p></li><li><p>Third pass: all about math. Break down the equation</p></li></ul><p>seven tips for a stand-out presentation</p><ol><li>know your audience</li><li>use structure to build on ideas</li><li>use visuals (pictures,figures…)</li><li>Repetition is your friend</li><li>have a story to tell</li><li>be relatable,be authentic,and be enthusiasm</li><li>build your confidence with practice</li></ol></body></html>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;html&gt;&lt;head&gt;&lt;/head&gt;&lt;body&gt;&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;世界著名的三大科技文献检索系统&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;SCI 科学引文索引&lt;/li&gt;
+&lt;li&gt;EI 工程索引&lt;/li&gt;
+&lt;li&gt;ISTP 科技会议录索引&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;
+      
+    
+    </summary>
+    
+    
+      <category term="学习笔记" scheme="wentianhao.github.io/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+    
+      <category term="学习笔记" scheme="wentianhao.github.io/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
     
   </entry>
   

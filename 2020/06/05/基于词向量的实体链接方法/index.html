@@ -258,6 +258,39 @@
 <p>(5)基于主题模型的文档相似度</p>
 <p>LDA模型是一种对文档集建模的概率主题模型。传统判断两个文档相似性的方法是通过统计两篇文档共同出现的单词，基于TF-IDF的相似性计算方法，这种方法没有考虑到文档的语义相关性，而LDA恰好能表示两篇文档的主题相似性。LDA模型认为一篇文章都是以一定概率选择了某个主题，并从这个主题中以一定概率选择某个词语，这样一个过程得到一篇文档。LAD的原理可以表示为：</p>
 <p><a href="https://whh.plus/images/P.png" target="_blank" rel="noopener" data-caption="P" data-fancybox="images"><img src="https://whh.plus/images/P.png" alt="P"></a></p>
+<p>给定一系列文档，计算各个文档中每个单词的词频就可以得到“文档-词语”矩阵。主题模型就是通过这个“文档-词语”矩阵进行训练，学习出“词-主题”矩阵和“主题-文档”矩阵。</p>
+<p>LDA的工作原理可以表示为 LDA模型认为文档的主题分布和主题的词分布属于LDA分布，文档以多项分布的概率选择一个主题，主题以多项分布的概率选择一个词。然后用主题和词的联合分布来近似估计主题的后验分布，最后训练文档的主题分布,用KL散度来计算文档之间的主题相似性。</p>
+<p>KL距离也即相对熵，表示两个概率分布的距离。相似度度量标准KL距离为</p>
+<p><a href="https://whh.plus/images/KL.png" target="_blank" rel="noopener" data-caption="KL" data-fancybox="images"><img src="https://whh.plus/images/KL.png" alt="KL"></a></p>
+<p>(6)基于词向量的文本相似性</p>
+<p>词向量进行查询扩展时，对文档的词利用CBOW模型进行词向量训练，然后根据余弦距离得到一个词的近义词或者相关词。传统度量文档之间相似性是基于高频词，但支撑文档只是查询词出现的语料，不能真正的解释查询词的含义，高频词也不能很好的表达查询词的语义信息。</p>
+<p>为了能用其他语义共现词来表示查询词的上、下文，本文使用基于词向量的近义词作为查询词的文本向量。</p>
+<p><strong>基于单文档排序的LTR模型</strong></p>
+<p>抽取的特征能否提高实体链接的准确率是排序学习(Learning to rank,LTR)模型要解决的核心问题。</p>
+<p>单文档方法处理对象单一文档，将文档转化为特征向量后，主要将排序问题转化为机器学习中常规的分类或回归问题。查询词与候选实体的排序函数为：</p>
+<p><a href="https://whh.plus/images/score.png" target="_blank" rel="noopener" data-caption="score" data-fancybox="images"><img src="https://whh.plus/images/score.png" alt="score"></a></p>
+<p>Si ： 查询词与实体的编辑相似性</p>
+<p>Ei : 实体页面内实体在查询词的支撑文档中出现的次数</p>
+<p>Ci : 实体内页面类别在查询词的支撑实体的类别中出现的次数</p>
+<p>simi : 支撑文档与候选实体文档的相似性</p>
+<p>t : 类型信息，取值0/1</p>
+<p>Dkl : 文档之间主题相似度</p>
+<p>若Score小于0.6，则设定空实体。再对空的实体进行聚类，使用杰卡德相似系数(JSC)进行度量，即根据各个空实体支撑文档中共现的词个数进行聚类，大于某一阈值，就聚为一类。</p>
+<p>杰卡德系数：</p>
+<p><a href="https://whh.plus/images/jkd.png" target="_blank" rel="noopener" data-caption="jkd" data-fancybox="images"><img src="https://whh.plus/images/jkd.png" alt="jkd"></a></p>
+<p><strong>实验设计与结果</strong></p>
+<p>测试数据：2014年TAC测评中实体链接任务提供的138篇文档，共抽取了5234个命名实体。</p>
+<p>评价标准： B’+F1</p>
+<p><a href="https://whh.plus/images/er1.png" target="_blank" rel="noopener" data-caption="er1" data-fancybox="images"><img src="https://whh.plus/images/er1.png" alt="er1"></a></p>
+<p>实验1 ： 基于SVM的分类模型，使用实体的上、下文信息作为特征，每一个候选实体为一类，然后使用RBF进行分类</p>
+<p>实验1结果分析 ：只是简单地使用上、下文信息进行SVM分类，效果不如其他方法</p>
+<p>实验2 ：使用首选实体的标题以及KB的别名信息来进行实体链接的向量空间模型</p>
+<p>实验2结果分析 ： 结果虽然不是很理想，但从实验中可以看出，KB节点的标题信息和别名信息对实体链接有着重要作用</p>
+<p>实验3 ：抽取了半结构化的知识库Wikipedia进行解析，抽取其中的类别、别名、类型和文档之间的LDA主题相似性进行实验</p>
+<p>实验3结果分析 ：与实验2对比显示加入外部数据库特征以及主题相似性特征的实验在PER、GPE类型的实体方面效果好于实验2</p>
+<p>实验4 ：本文的LTR模型，最主要的不同在于除了充分利用标题、类别、别名、上下文和LDA等，加入基于词向量的文本相似性特征</p>
+<p>实验4结果 ：在GPE,ORG类型的实体方法有着显著的提高，并对All-Query的链接也比其他方法好</p>
+<p><a href data-caption="论文链接" data-fancybox="images"><img src alt="论文链接"></a></p>
 </body></html>
 
   

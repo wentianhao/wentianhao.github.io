@@ -215,7 +215,9 @@
 <p>1、自己实现分布式爬虫(Docker+Urllib+mysql+redis)</p>
 <pre><code>部署Docker,镜像 mysql 、redis</code></pre><p>2、基于Scrapy-redis实现分布式爬虫</p>
 <p>settings.py 添加</p>
-<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">DUPEFILTER_CLASS = <span class="string">"scrapy_redis.dupefilter.RFPDupeFilter"</span></span><br><span class="line">SCHEDULER = <span class="string">"scrapy_redis.scheduler.Scheduler"</span></span><br><span class="line">SCHEDULER_PERSIST = <span class="literal">True</span></span><br><span class="line"><span class="comment"># REDIS_URL = "redis://user:passwd@IP:port"</span></span><br><span class="line"><span class="comment"># REDIS_URL = "redis://@IP:port"</span></span><br><span class="line">REDIS_URL = <span class="string">"redis://127.0.0.1:6379"</span></span><br></pre></td></tr></tbody></table></figure></body></html>
+<blockquote>
+<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">   DUPEFILTER_CLASS = <span class="string">"scrapy_redis.dupefilter.RFPDupeFilter"</span></span><br><span class="line">   SCHEDULER = <span class="string">"scrapy_redis.scheduler.Scheduler"</span></span><br><span class="line">   SCHEDULER_PERSIST = <span class="literal">True</span></span><br><span class="line">><span class="comment"># REDIS_URL = "redis://user:passwd@IP:port"</span></span><br><span class="line">><span class="comment"># REDIS_URL = "redis://@IP:port"</span></span><br><span class="line">   REDIS_URL = <span class="string">"redis://127.0.0.1:6379"</span> </span><br></pre></td></tr></tbody></table></figure></blockquote>
+</body></html>
 
   
     <div class="post-reward">

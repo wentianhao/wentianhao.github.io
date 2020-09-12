@@ -220,6 +220,7 @@
 <p>6.环境重命名</p>
 <p>通过克隆旧环境，再删除旧环境得到</p>
 <figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 进入旧环境</span></span><br><span class="line">activate old</span><br><span class="line"><span class="comment"># 克隆</span></span><br><span class="line">conda create -n new --<span class="built_in">clone</span> old</span><br><span class="line"><span class="comment"># 退出旧环境</span></span><br><span class="line">conda deactivate</span><br><span class="line"><span class="comment">#删除旧环境</span></span><br><span class="line">conda remove -n old --all</span><br></pre></td></tr></tbody></table></figure>
+
 </body></html>
 
   

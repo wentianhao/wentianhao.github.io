@@ -203,24 +203,29 @@
       </div>
     </div>
     <html><head></head><body><p>1.查看创建好的环境：</p>
+<blockquote>
 <figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">conda info --envs</span><br></pre></td></tr></tbody></table></figure>
-
+</blockquote>
 <p>2.激活/进入环境</p>
+<blockquote>
 <figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">activate env_name</span><br></pre></td></tr></tbody></table></figure>
-
+</blockquote>
 <p>3.退出当前环境到base</p>
+<blockquote>
 <figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">conda deactivate</span><br></pre></td></tr></tbody></table></figure>
-
+</blockquote>
 <p>4.新建一个环境</p>
+<blockquote>
 <figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">conda create --n name python=3.6</span><br></pre></td></tr></tbody></table></figure>
-
+</blockquote>
 <p>5.删除一个环境</p>
+<blockquote>
 <figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">conda remove -n name --all</span><br></pre></td></tr></tbody></table></figure>
-
+</blockquote>
 <p>6.环境重命名</p>
 <p>通过克隆旧环境，再删除旧环境得到</p>
-<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 进入旧环境</span></span><br><span class="line">activate old</span><br><span class="line"><span class="comment"># 克隆</span></span><br><span class="line">conda create -n new --<span class="built_in">clone</span> old</span><br><span class="line"><span class="comment"># 退出旧环境</span></span><br><span class="line">conda deactivate</span><br><span class="line"><span class="comment">#删除旧环境</span></span><br><span class="line">conda remove -n old --all</span><br></pre></td></tr></tbody></table></figure>
-
+<blockquote>
+<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 进入旧环境</span></span><br><span class="line">   activate old</span><br><span class="line">   <span class="comment"># 克隆</span></span><br><span class="line">   conda create -n new --<span class="built_in">clone</span> old</span><br><span class="line">   <span class="comment"># 退出旧环境</span></span><br><span class="line">   conda deactivate</span><br><span class="line">   <span class="comment">#删除旧环境</span></span><br><span class="line">   conda remove -n old --all</span><br></pre></td></tr></tbody></table></figure></blockquote>
 </body></html>
 
   

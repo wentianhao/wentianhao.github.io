@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://wentianhao.github.io/"/>
-  <updated>2020-09-12T10:34:34.688Z</updated>
+  <updated>2020-09-13T03:12:16.671Z</updated>
   <id>https://wentianhao.github.io/</id>
   
   <author>
@@ -15,6 +15,34 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Ubuntu18.04中Python2.7与Python3.6环境切换</title>
+    <link href="https://wentianhao.github.io/2020/09/13/python3/"/>
+    <id>https://wentianhao.github.io/2020/09/13/python3/</id>
+    <published>2020-09-13T03:05:15.000Z</published>
+    <updated>2020-09-13T03:12:16.671Z</updated>
+    
+    <content type="html"><![CDATA[<html><head></head><body><p>1.查看python版本</p><blockquote><figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">  python -V</span><br><span class="line"># 安装python3.6</span><br><span class="line">  apt-get install python3.6</span><br></pre></td></tr></tbody></table></figure></blockquote><p>2.查看系统python的可用环境列表</p><blockquote><figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">update-alternatives --list python</span><br></pre></td></tr></tbody></table></figure></blockquote><p>若显示 update-alternatives: error: no alternatives for python,则：</p><blockquote><figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"># 版本号根据自己安装的设定</span><br><span class="line">  update-alternatives --install /usr/bin/python python /usr/bin/python2.7 1</span><br><span class="line">  update-alternatives --install /usr/bin/python python /usr/bin/python3.6 2</span><br></pre></td></tr></tbody></table></figure></blockquote><p>3.配置python环境</p><blockquote><figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">update-alternatives --config python</span><br></pre></td></tr></tbody></table></figure></blockquote><p>选择你想默认的版本的编号即可。</p><p><a href="https://www.jb51.net/article/163117.htm" target="_blank" rel="noopener">参考文章</a></p></body></html>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;html&gt;&lt;head&gt;&lt;/head&gt;&lt;body&gt;&lt;p&gt;1.查看python版本&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span cl
+      
+    
+    </summary>
+    
+    
+      <category term="python" scheme="https://wentianhao.github.io/categories/python/"/>
+    
+    
+      <category term="python" scheme="https://wentianhao.github.io/tags/python/"/>
+    
+  </entry>
   
   <entry>
     <title>bert</title>
@@ -249,16 +277,17 @@
     <link href="https://wentianhao.github.io/2020/03/31/Anaconda/"/>
     <id>https://wentianhao.github.io/2020/03/31/Anaconda/</id>
     <published>2020-03-31T07:51:19.000Z</published>
-    <updated>2020-09-12T14:09:50.562Z</updated>
+    <updated>2020-09-13T02:45:05.001Z</updated>
     
-    <content type="html"><![CDATA[<html><head></head><body><p>1.查看创建好的环境：</p><figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">conda info --envs</span><br></pre></td></tr></tbody></table></figure><p>2.激活/进入环境</p><figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">activate env_name</span><br></pre></td></tr></tbody></table></figure><p>3.退出当前环境到base</p><figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">conda deactivate</span><br></pre></td></tr></tbody></table></figure><p>4.新建一个环境</p><figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">conda create --n name python=3.6</span><br></pre></td></tr></tbody></table></figure><p>5.删除一个环境</p><figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">conda remove -n name --all</span><br></pre></td></tr></tbody></table></figure><p>6.环境重命名</p><p>通过克隆旧环境，再删除旧环境得到</p><figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 进入旧环境</span></span><br><span class="line">activate old</span><br><span class="line"><span class="comment"># 克隆</span></span><br><span class="line">conda create -n new --<span class="built_in">clone</span> old</span><br><span class="line"><span class="comment"># 退出旧环境</span></span><br><span class="line">conda deactivate</span><br><span class="line"><span class="comment">#删除旧环境</span></span><br><span class="line">conda remove -n old --all</span><br></pre></td></tr></tbody></table></figure></body></html>]]></content>
+    <content type="html"><![CDATA[<html><head></head><body><p>1.查看创建好的环境：</p><blockquote><figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">conda info --envs</span><br></pre></td></tr></tbody></table></figure></blockquote><p>2.激活/进入环境</p><blockquote><figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">activate env_name</span><br></pre></td></tr></tbody></table></figure></blockquote><p>3.退出当前环境到base</p><blockquote><figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">conda deactivate</span><br></pre></td></tr></tbody></table></figure></blockquote><p>4.新建一个环境</p><blockquote><figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">conda create --n name python=3.6</span><br></pre></td></tr></tbody></table></figure></blockquote><p>5.删除一个环境</p><blockquote><figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">conda remove -n name --all</span><br></pre></td></tr></tbody></table></figure></blockquote><p>6.环境重命名</p><p>通过克隆旧环境，再删除旧环境得到</p><blockquote><figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 进入旧环境</span></span><br><span class="line">   activate old</span><br><span class="line">   <span class="comment"># 克隆</span></span><br><span class="line">   conda create -n new --<span class="built_in">clone</span> old</span><br><span class="line">   <span class="comment"># 退出旧环境</span></span><br><span class="line">   conda deactivate</span><br><span class="line">   <span class="comment">#删除旧环境</span></span><br><span class="line">   conda remove -n old --all</span><br></pre></td></tr></tbody></table></figure></blockquote></body></html>]]></content>
     
     <summary type="html">
     
       
       
         &lt;html&gt;&lt;head&gt;&lt;/head&gt;&lt;body&gt;&lt;p&gt;1.查看创建好的环境：&lt;/p&gt;
-&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/s
+&lt;blockquote&gt;
+&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span clas
       
     
     </summary>
@@ -552,9 +581,9 @@
     <link href="https://wentianhao.github.io/2020/02/27/%E4%B8%93%E4%B8%9A%E8%8B%B1%E8%AF%AD/"/>
     <id>https://wentianhao.github.io/2020/02/27/%E4%B8%93%E4%B8%9A%E8%8B%B1%E8%AF%AD/</id>
     <published>2020-02-27T14:44:38.000Z</published>
-    <updated>2020-03-09T04:22:36.895Z</updated>
+    <updated>2020-09-13T02:39:33.807Z</updated>
     
-    <content type="html"><![CDATA[<html><head></head><body><ul><li><p>世界著名的三大科技文献检索系统</p><ul><li>SCI 科学引文索引</li><li>EI 工程索引</li><li>ISTP 科技会议录索引</li></ul></li><li><p>高质量文章标准 High-quality paper criteria</p><ul><li>SCI影响因子</li><li>推荐 & 口碑 （CCF推荐期刊，北大核心）（nature 、cell 、Springer 、Elsciver ）</li><li>引用量 （google引用、SCI引用）</li></ul></li></ul><p>小结：<br><a href="https://github.com/wentianhao/wentianhao.github.io/blob/master/images/IR.png?raw=true" data-caption="IR" data-fancybox="images"><img src="https://github.com/wentianhao/wentianhao.github.io/blob/master/images/IR.png?raw=true" alt="IR"></a></p><hr><p>three-pass reading method：</p><ul><li><p>First pass: Read the title,abstract,introduction,and subsection headings and conclusion. Take note!Ignore the math!</p></li><li><p>Second pass: Read all the text,understand the math,run the associated code to repeat the experiment,other articles/summary/comments related to the paper.Take note!</p></li><li><p>Third pass: all about math. Break down the equation</p></li></ul><p>seven tips for a stand-out presentation</p><ol><li>know your audience</li><li>use structure to build on ideas</li><li>use visuals (pictures,figures…)</li><li>Repetition is your friend</li><li>have a story to tell</li><li>be relatable,be authentic,and be enthusiasm</li><li>build your confidence with practice</li></ol></body></html>]]></content>
+    <content type="html"><![CDATA[<html><head></head><body><ul><li><p>世界著名的三大科技文献检索系统</p><ul><li>SCI 科学引文索引</li><li>EI 工程索引</li><li>ISTP 科技会议录索引</li></ul></li><li><p>高质量文章标准 High-quality paper criteria</p><ul><li>SCI影响因子</li><li>推荐 & 口碑 （CCF推荐期刊，北大核心）（nature 、cell 、Springer 、Elsciver ）</li><li>引用量 （google引用、SCI引用）</li></ul></li></ul><p>小结：<br><a href="https://whh.plus/images/IR.png" data-caption="IR" data-fancybox="images"><img src="https://whh.plus/images/IR.png" alt="IR"></a></p><hr><p>three-pass reading method：</p><ul><li><p>First pass: Read the title,abstract,introduction,and subsection headings and conclusion. Take note!Ignore the math!</p></li><li><p>Second pass: Read all the text,understand the math,run the associated code to repeat the experiment,other articles/summary/comments related to the paper.Take note!</p></li><li><p>Third pass: all about math. Break down the equation</p></li></ul><p>seven tips for a stand-out presentation</p><ol><li>know your audience</li><li>use structure to build on ideas</li><li>use visuals (pictures,figures…)</li><li>Repetition is your friend</li><li>have a story to tell</li><li>be relatable,be authentic,and be enthusiasm</li><li>build your confidence with practice</li></ol></body></html>]]></content>
     
     <summary type="html">
     
@@ -578,34 +607,6 @@
     
     
       <category term="学习笔记" scheme="https://wentianhao.github.io/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>ModuleNotFoundError</title>
-    <link href="https://wentianhao.github.io/2020/02/25/ModuleNotFoundError/"/>
-    <id>https://wentianhao.github.io/2020/02/25/ModuleNotFoundError/</id>
-    <published>2020-02-25T06:02:30.000Z</published>
-    <updated>2020-02-25T06:07:51.444Z</updated>
-    
-    <content type="html"><![CDATA[<html><head></head><body><p>-关于ModuleNotFoundError: No module named ‘urllib.request’; ‘urllib’ is not a package的问题</p><ul><li><p>重名导致urllib包无效化</p><p>(1) 正在使用import urllib的文件命名就是urllib.py文件 </p><p>(2) 正在使用的文件的文件夹目录下有一个urllib.py的文件，导致import urllib 实际上导入的是当前目录的urllib.py文件而不是urllib库文件</p></li><li><p>解决方法：</p><p>  修改文件名</p></li></ul></body></html>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;html&gt;&lt;head&gt;&lt;/head&gt;&lt;body&gt;&lt;p&gt;-关于ModuleNotFoundError: No module named ‘urllib.request’; ‘urllib’ is not a package的问题&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;重名导致urlli
-      
-    
-    </summary>
-    
-    
-      <category term="python" scheme="https://wentianhao.github.io/categories/python/"/>
-    
-    
-      <category term="python" scheme="https://wentianhao.github.io/tags/python/"/>
     
   </entry>
   

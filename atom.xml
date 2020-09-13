@@ -333,9 +333,9 @@
     <link href="wentianhao.github.io/2020/03/13/%E5%88%86%E5%B8%83%E5%BC%8F%E7%88%AC%E8%99%AB%E7%BC%96%E5%86%99/"/>
     <id>wentianhao.github.io/2020/03/13/%E5%88%86%E5%B8%83%E5%BC%8F%E7%88%AC%E8%99%AB%E7%BC%96%E5%86%99/</id>
     <published>2020-03-13T09:23:39.000Z</published>
-    <updated>2020-09-13T01:59:10.866Z</updated>
+    <updated>2020-09-13T02:03:58.917Z</updated>
     
-    <content type="html"><![CDATA[<html><head></head><body><p>分布式爬虫的难点不在于爬虫技术本身，而在于各服务器网络之间的通信</p><p>分布式爬虫的两种技术方案：</p><p>1、自己实现分布式爬虫(Docker+Urllib+mysql+redis)</p><pre><code>部署Docker,镜像 mysql 、redis</code></pre><p>2、基于Scrapy-redis实现分布式爬虫</p><p>settings.py 添加</p><blockquote><figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">   DUPEFILTER_CLASS = <span class="string">"scrapy_redis.dupefilter.RFPDupeFilter"</span></span><br><span class="line">   SCHEDULER = <span class="string">"scrapy_redis.scheduler.Scheduler"</span></span><br><span class="line">   SCHEDULER_PERSIST = <span class="literal">True</span></span><br><span class="line">><span class="comment"># REDIS_URL = "redis://user:passwd@IP:port"</span></span><br><span class="line">><span class="comment"># REDIS_URL = "redis://@IP:port"</span></span><br><span class="line">   REDIS_URL = <span class="string">"redis://127.0.0.1:6379"</span></span><br></pre></td></tr></tbody></table></figure></blockquote></body></html>]]></content>
+    <content type="html"><![CDATA[<html><head></head><body><p>分布式爬虫的难点不在于爬虫技术本身，而在于各服务器网络之间的通信</p><p>分布式爬虫的两种技术方案：</p><p>1、自己实现分布式爬虫(Docker+Urllib+mysql+redis)</p><p>部署Docker,镜像 mysql 、redis</p><p>2、基于Scrapy-redis实现分布式爬虫</p><p>settings.py 添加</p><blockquote><figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">   DUPEFILTER_CLASS = <span class="string">"scrapy_redis.dupefilter.RFPDupeFilter"</span></span><br><span class="line">   SCHEDULER = <span class="string">"scrapy_redis.scheduler.Scheduler"</span></span><br><span class="line">   SCHEDULER_PERSIST = <span class="literal">True</span></span><br><span class="line"><span class="comment"># REDIS_URL = "redis://user:passwd@IP:port"</span></span><br><span class="line"><span class="comment"># REDIS_URL = "redis://@IP:port"</span></span><br><span class="line">   REDIS_URL = <span class="string">"redis://127.0.0.1:6379"</span></span><br></pre></td></tr></tbody></table></figure></blockquote></body></html>]]></content>
     
     <summary type="html">
     
@@ -344,7 +344,7 @@
         &lt;html&gt;&lt;head&gt;&lt;/head&gt;&lt;body&gt;&lt;p&gt;分布式爬虫的难点不在于爬虫技术本身，而在于各服务器网络之间的通信&lt;/p&gt;
 &lt;p&gt;分布式爬虫的两种技术方案：&lt;/p&gt;
 &lt;p&gt;1、自己实现分布式爬虫(Docker+Urllib+mysql+redis)&lt;/p&gt;
-&lt;pre&gt;&lt;co
+&lt;p&gt;部署Doc
       
     
     </summary>

@@ -211,7 +211,7 @@
       </div>
     </div>
     <html><head></head><body><p>Siamese Network 是一种神经网络的框架，而不是具体的某种网络,Siamese Network用于评估两个输入样本的相似度。网络的框架如下图所示</p>
-<p><a href="https://github.com/wentianhao/wentianhao.github.io/blob/master/images/Siamese.png?raw=true" target="_blank" rel="noopener" data-caption="siamese" data-fancybox="images"><img src="https://github.com/wentianhao/wentianhao.github.io/blob/master/images/Siamese.png?raw=true" alt="siamese"></a></p>
+<p><a href="https://whh.plus/images//Siamese1.png" target="_blank" rel="noopener" data-caption="siamese" data-fancybox="images"><img src="https://whh.plus/images//Siamese1.png" alt="siamese"></a></p>
 <p>Siamese Network有两个结构相同，且共享权值的子网络。分别接收两个输入X1与X2，将其转换为向量Gw(X1)与Gw(X2)，再通过某种距离度量的方式计算两个输出向量的距离Ew。</p>
 <p>训练Siamese Network采用的训练样本是一个tuple (X1,X2,y)，标签y=0表示X1与X2属于不同类型(不相似、不重复、根据应用场景而定)。y=1则表示X1与X2属于相同类型(相似)。</p>
 <p>LOSS函数的设计应该是 </p>
@@ -230,8 +230,8 @@
 </ol>
 <p>这个设计上还是有一些可以改进的，比如在BILSTM输出后，加一个attention，而不是直接average每个时刻的输出，这样可以更好的表征输入的文本。</p>
 <p><a href>BiLSTM介绍</a></p>
-<p><a href="https://raw.githubusercontent.com/wentianhao/pyhton/master/%E6%96%87%E6%9C%AC%E7%9B%B8%E4%BC%BC%E5%BA%A6%E5%88%86%E6%9E%90/SampleCode/2.png" target="_blank" rel="noopener" data-caption="BiLSTM" data-fancybox="images"><img src="https://raw.githubusercontent.com/wentianhao/pyhton/master/%E6%96%87%E6%9C%AC%E7%9B%B8%E4%BC%BC%E5%BA%A6%E5%88%86%E6%9E%90/SampleCode/2.png" alt="BiLSTM"></a></p>
-<p>损失函数：<br><a href="https://github.com/wentianhao/pyhton/blob/master/%E6%96%87%E6%9C%AC%E7%9B%B8%E4%BC%BC%E5%BA%A6%E5%88%86%E6%9E%90/SampleCode/3.png?raw=true" target="_blank" rel="noopener" data-caption="loss" data-fancybox="images"><img src="https://github.com/wentianhao/pyhton/blob/master/%E6%96%87%E6%9C%AC%E7%9B%B8%E4%BC%BC%E5%BA%A6%E5%88%86%E6%9E%90/SampleCode/3.png?raw=true" alt="loss"></a></p>
+<p><a href="https://whh.plus/images//Siamese2.png" target="_blank" rel="noopener" data-caption="BiLSTM" data-fancybox="images"><img src="https://whh.plus/images//Siamese2.png" alt="BiLSTM"></a></p>
+<p>损失函数：<br><a href="https://whh.plus/images//Siamese3.png" target="_blank" rel="noopener" data-caption="loss" data-fancybox="images"><img src="https://whh.plus/images//Siamese3.png" alt="loss"></a></p>
 </body></html>
 
   

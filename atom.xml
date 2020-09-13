@@ -218,16 +218,16 @@
     <link href="wentianhao.github.io/2020/04/02/%E6%96%87%E6%9C%AC%E7%9B%B8%E4%BC%BC%E5%BA%A6%E5%88%86%E6%9E%90/"/>
     <id>wentianhao.github.io/2020/04/02/%E6%96%87%E6%9C%AC%E7%9B%B8%E4%BC%BC%E5%BA%A6%E5%88%86%E6%9E%90/</id>
     <published>2020-04-02T11:20:48.000Z</published>
-    <updated>2020-04-11T13:44:49.256Z</updated>
+    <updated>2020-09-13T02:13:10.375Z</updated>
     
-    <content type="html"><![CDATA[<html><head></head><body><p>Siamese Network 是一种神经网络的框架，而不是具体的某种网络,Siamese Network用于评估两个输入样本的相似度。网络的框架如下图所示</p><p><a href="https://github.com/wentianhao/wentianhao.github.io/blob/master/images/Siamese.png?raw=true" data-caption="siamese" data-fancybox="images"><img src="https://github.com/wentianhao/wentianhao.github.io/blob/master/images/Siamese.png?raw=true" alt="siamese"></a></p><p>Siamese Network有两个结构相同，且共享权值的子网络。分别接收两个输入X1与X2，将其转换为向量Gw(X1)与Gw(X2)，再通过某种距离度量的方式计算两个输出向量的距离Ew。</p><p>训练Siamese Network采用的训练样本是一个tuple (X1,X2,y)，标签y=0表示X1与X2属于不同类型(不相似、不重复、根据应用场景而定)。y=1则表示X1与X2属于相同类型(相似)。</p><p>LOSS函数的设计应该是 </p><ol><li>当两个输入样本不相似(y=0)时，距离Ew越大，损失越小，即关于Ew的单调递减函数。 </li><li>当两个输入样本相似(y=1)时，距离Ew越大，损失越大，即关于Ew的单调递增函数。</li></ol><p>用L+(X1,X2)表示y=1时的LOSS， L−(X1,X2)表示y=0时的LOSS，则LOSS函数可以写成如下形式</p><p>Lw(X1,X2)=(1−y)L−(X1,X2)+yL+(X1,X2)</p><p>Siamese Network的基本架构、输入、输出以及LOSS函数的设计原则如上文.</p><p>LSTM Siamese Network总结起来就是 </p><ol><li>将Siamese Network中的Encoder换成BILSTM </li><li>将距离的计算改成余弦距离 </li><li>修改相应的LOSS函数</li></ol><p>这个设计上还是有一些可以改进的，比如在BILSTM输出后，加一个attention，而不是直接average每个时刻的输出，这样可以更好的表征输入的文本。</p><p><a href>BiLSTM介绍</a></p><p><a href="https://raw.githubusercontent.com/wentianhao/pyhton/master/%E6%96%87%E6%9C%AC%E7%9B%B8%E4%BC%BC%E5%BA%A6%E5%88%86%E6%9E%90/SampleCode/2.png" data-caption="BiLSTM" data-fancybox="images"><img src="https://raw.githubusercontent.com/wentianhao/pyhton/master/%E6%96%87%E6%9C%AC%E7%9B%B8%E4%BC%BC%E5%BA%A6%E5%88%86%E6%9E%90/SampleCode/2.png" alt="BiLSTM"></a></p><p>损失函数：<br><a href="https://github.com/wentianhao/pyhton/blob/master/%E6%96%87%E6%9C%AC%E7%9B%B8%E4%BC%BC%E5%BA%A6%E5%88%86%E6%9E%90/SampleCode/3.png?raw=true" data-caption="loss" data-fancybox="images"><img src="https://github.com/wentianhao/pyhton/blob/master/%E6%96%87%E6%9C%AC%E7%9B%B8%E4%BC%BC%E5%BA%A6%E5%88%86%E6%9E%90/SampleCode/3.png?raw=true" alt="loss"></a></p></body></html>]]></content>
+    <content type="html"><![CDATA[<html><head></head><body><p>Siamese Network 是一种神经网络的框架，而不是具体的某种网络,Siamese Network用于评估两个输入样本的相似度。网络的框架如下图所示</p><p><a href="https://whh.plus/images//Siamese1.png" data-caption="siamese" data-fancybox="images"><img src="https://whh.plus/images//Siamese1.png" alt="siamese"></a></p><p>Siamese Network有两个结构相同，且共享权值的子网络。分别接收两个输入X1与X2，将其转换为向量Gw(X1)与Gw(X2)，再通过某种距离度量的方式计算两个输出向量的距离Ew。</p><p>训练Siamese Network采用的训练样本是一个tuple (X1,X2,y)，标签y=0表示X1与X2属于不同类型(不相似、不重复、根据应用场景而定)。y=1则表示X1与X2属于相同类型(相似)。</p><p>LOSS函数的设计应该是 </p><ol><li>当两个输入样本不相似(y=0)时，距离Ew越大，损失越小，即关于Ew的单调递减函数。 </li><li>当两个输入样本相似(y=1)时，距离Ew越大，损失越大，即关于Ew的单调递增函数。</li></ol><p>用L+(X1,X2)表示y=1时的LOSS， L−(X1,X2)表示y=0时的LOSS，则LOSS函数可以写成如下形式</p><p>Lw(X1,X2)=(1−y)L−(X1,X2)+yL+(X1,X2)</p><p>Siamese Network的基本架构、输入、输出以及LOSS函数的设计原则如上文.</p><p>LSTM Siamese Network总结起来就是 </p><ol><li>将Siamese Network中的Encoder换成BILSTM </li><li>将距离的计算改成余弦距离 </li><li>修改相应的LOSS函数</li></ol><p>这个设计上还是有一些可以改进的，比如在BILSTM输出后，加一个attention，而不是直接average每个时刻的输出，这样可以更好的表征输入的文本。</p><p><a href>BiLSTM介绍</a></p><p><a href="https://whh.plus/images//Siamese2.png" data-caption="BiLSTM" data-fancybox="images"><img src="https://whh.plus/images//Siamese2.png" alt="BiLSTM"></a></p><p>损失函数：<br><a href="https://whh.plus/images//Siamese3.png" data-caption="loss" data-fancybox="images"><img src="https://whh.plus/images//Siamese3.png" alt="loss"></a></p></body></html>]]></content>
     
     <summary type="html">
     
       
       
         &lt;html&gt;&lt;head&gt;&lt;/head&gt;&lt;body&gt;&lt;p&gt;Siamese Network 是一种神经网络的框架，而不是具体的某种网络,Siamese Network用于评估两个输入样本的相似度。网络的框架如下图所示&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;https://github.co
+&lt;p&gt;&lt;a href=&quot;https://whh.plus/
       
     
     </summary>
@@ -295,36 +295,6 @@
     
     
       <category term="python" scheme="wentianhao.github.io/tags/python/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>关联规则</title>
-    <link href="wentianhao.github.io/2020/03/18/%E5%85%B3%E8%81%94%E8%A7%84%E5%88%99/"/>
-    <id>wentianhao.github.io/2020/03/18/%E5%85%B3%E8%81%94%E8%A7%84%E5%88%99/</id>
-    <published>2020-03-18T00:32:56.000Z</published>
-    <updated>2020-03-19T15:50:09.604Z</updated>
-    
-    <content type="html"><![CDATA[<html><head></head><body><table><thead><tr><th align="center">Tid</th><th align="center">Items bought</th></tr></thead><tbody><tr><td align="center">1</td><td align="center">Beer,Nuts,Diaper</td></tr><tr><td align="center">2</td><td align="center">Beer,Coffee,Diaper</td></tr><tr><td align="center">3</td><td align="center">Beer，Diaper,Eggs</td></tr><tr><td align="center">4</td><td align="center">Nuts,Eggs,Milk</td></tr><tr><td align="center">5</td><td align="center">Nuts,Coffee,Diaper,Eggs,Milk</td></tr></tbody></table><p>Let minsup = 50%  最小支持度</p><p>5 * 50%  = 2.5 -> 3</p><p>出现次数大于等于3的这些项集就是频繁项集</p><p>Beer:3 Nuts:3 Diaper:4 Eggs: 3 </p><p>关联规则是形如X->Y的蕴含式</p><p>支持度是X 和 Y 同时出现的概率</p><p>可信度 是 X发生的条件下Y发生的概率</p><p>minconf = 50%  最小可信度是50%</p><p>输入：数据库D，minsup,minconf<br>输出：频繁项集 </p><p>通过扫描D得到1-频繁项集L1;<br>for (k=2;Lk-1!=Ф;k++)<br>{      Ck=由Lk-1通过连接运算产生的候选k-项集;<br>        for (事务数据库D中的事务t)<br>        {    求Ck中包含在t中的所有候选k-项集的计数;<br>    Lk={c | c∈Ck and c.sup_count≥min_sup};<br>        //求Ck中满足min_sup的候选k-项集<br>        }<br>}<br>return L=∪kLk;</p></body></html>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;html&gt;&lt;head&gt;&lt;/head&gt;&lt;body&gt;&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th align=&quot;center&quot;&gt;Tid&lt;/th&gt;
-&lt;th align=&quot;center&quot;&gt;Items bought&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;&lt;tr&gt;
-&lt;t
-      
-    
-    </summary>
-    
-    
     
   </entry>
   
@@ -607,6 +577,34 @@
     
     
       <category term="学习笔记" scheme="wentianhao.github.io/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>ModuleNotFoundError</title>
+    <link href="wentianhao.github.io/2020/02/25/ModuleNotFoundError/"/>
+    <id>wentianhao.github.io/2020/02/25/ModuleNotFoundError/</id>
+    <published>2020-02-25T06:02:30.000Z</published>
+    <updated>2020-02-25T06:07:51.444Z</updated>
+    
+    <content type="html"><![CDATA[<html><head></head><body><p>-关于ModuleNotFoundError: No module named ‘urllib.request’; ‘urllib’ is not a package的问题</p><ul><li><p>重名导致urllib包无效化</p><p>(1) 正在使用import urllib的文件命名就是urllib.py文件 </p><p>(2) 正在使用的文件的文件夹目录下有一个urllib.py的文件，导致import urllib 实际上导入的是当前目录的urllib.py文件而不是urllib库文件</p></li><li><p>解决方法：</p><p>  修改文件名</p></li></ul></body></html>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;html&gt;&lt;head&gt;&lt;/head&gt;&lt;body&gt;&lt;p&gt;-关于ModuleNotFoundError: No module named ‘urllib.request’; ‘urllib’ is not a package的问题&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;重名导致urlli
+      
+    
+    </summary>
+    
+    
+      <category term="python" scheme="wentianhao.github.io/categories/python/"/>
+    
+    
+      <category term="python" scheme="wentianhao.github.io/tags/python/"/>
     
   </entry>
   

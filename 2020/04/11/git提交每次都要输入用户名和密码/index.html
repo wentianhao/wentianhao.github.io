@@ -208,19 +208,25 @@
 <p>选择ssh方式，复制url</p>
 <p>解决办法：</p>
 <p>1.查看是https方式还是ssh方式</p>
+<blockquote>
 <figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git remote -v</span><br></pre></td></tr></tbody></table></figure>
-
+</blockquote>
 <p>2.移除https的方式，换成ssh方式</p>
+<blockquote>
 <figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git remote rm origin</span><br></pre></td></tr></tbody></table></figure>
-
+</blockquote>
 <p>3.添加新的git方式：ssh方式</p>
+<blockquote>
 <figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git remote add origin git@github.com:xxxxxx.git</span><br></pre></td></tr></tbody></table></figure>
-
+</blockquote>
 <p>4.查看push方式是否修改成功</p>
+<blockquote>
 <figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git remote -v</span><br></pre></td></tr></tbody></table></figure>
-
+</blockquote>
 <p>5.push测试是否需要用户名和密码</p>
-<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git push origin master</span><br></pre></td></tr></tbody></table></figure></body></html>
+<blockquote>
+<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git push origin master</span><br></pre></td></tr></tbody></table></figure></blockquote>
+</body></html>
 
   
     <div class="post-reward">

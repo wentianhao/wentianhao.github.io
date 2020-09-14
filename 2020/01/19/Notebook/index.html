@@ -210,61 +210,89 @@
     <h1 id="什么是Jupyter-Notebook"><a href="#什么是Jupyter-Notebook" class="headerlink" title="什么是Jupyter Notebook?"></a>什么是Jupyter Notebook?</h1><p>Jupyter Notebook是一款开放源代码的web应用程序，可以让我们创建并共享代码和文档。</p>
 <p>它提供了一个环境，你可以在其中记录代码，运行代码，查看结果，可视化数据并在查看输出结果。这些特性使其成为一款执行端到端数据科学工作流程的便捷工具 ，可以用于数据清理，统计建模，构建和训练机器学习模型，可视化数据以及许多其他用途。</p>
 <h2 id="ubuntu安装Jupyter-Notebook"><a href="#ubuntu安装Jupyter-Notebook" class="headerlink" title="ubuntu安装Jupyter Notebook"></a>ubuntu安装Jupyter Notebook</h2><ul>
-<li>安装Anaconda<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">mkdir anaconda <span class="comment">#创建文件夹</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">cd</span> anaconda <span class="comment">#进入文件夹</span></span><br><span class="line"></span><br><span class="line">wget https://repo.continuum.io/archive/Anaconda3-4.4.0-Linux-x86_64.sh <span class="comment">#从指定地址下载文件</span></span><br><span class="line"></span><br><span class="line">bash Anaconda3-4.4.0-Linux-x86_64.sh <span class="comment">#安装文件</span></span><br></pre></td></tr></table></figure>
-
-</li>
+<li>安装Anaconda</li>
 </ul>
+<blockquote>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">  mkdir anaconda </span><br><span class="line"><span class="comment">#创建文件夹</span></span><br><span class="line">  <span class="built_in">cd</span> anaconda <span class="comment">#进入文件夹</span></span><br><span class="line">  wget https://repo.continuum.io/archive/Anaconda3-4.4.0-Linux-x86_64.sh <span class="comment">#从指定地址下载文件</span></span><br><span class="line"> bash Anaconda3-4.4.0-Linux-x86_64.sh <span class="comment">#安装文件</span></span><br></pre></td></tr></table></figure>
+</blockquote>
 <p>检查是否安装成功</p>
+<blockquote>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">conda --version</span><br></pre></td></tr></table></figure>
-
-<p>如果出现conda: command not found<br>添加环境变量：</p>
+</blockquote>
+<p>如果出现conda: command not found</p>
+<p>添加环境变量：</p>
+<blockquote>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim ~/.bashrc</span><br></pre></td></tr></table></figure>
-
+</blockquote>
 <p>在最后加上：anaconda3的路径</p>
+<blockquote>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">export</span> PATH=<span class="variable">$PATH</span>:/your/path/to/anaconda3/bin</span><br></pre></td></tr></table></figure>
-
+</blockquote>
 <p>保存更改，运行</p>
+<blockquote>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">source</span> ~/.bashrc</span><br></pre></td></tr></table></figure>
-
+</blockquote>
 <p>检查是否安装成功</p>
+<blockquote>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">conda --version</span><br></pre></td></tr></table></figure>
-
+</blockquote>
 <p>conda创建python虚拟环境</p>
+<blockquote>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">conda create -n your_env_name</span><br><span class="line"><span class="built_in">source</span> activate your_env_name <span class="comment">#进入虚拟环境</span></span><br><span class="line">python --version <span class="comment">#更换到python3</span></span><br><span class="line"><span class="built_in">echo</span> <span class="built_in">alias</span> python=python3 &gt;&gt; ~/.bashrc</span><br><span class="line"><span class="built_in">source</span> ~/.bashrc</span><br><span class="line">python --version</span><br></pre></td></tr></table></figure>
-
-
-<p>  如果anaconda版本不够，可手动更新升级 (具体可百度)</p>
+</blockquote>
+<p>如果anaconda版本不够，可手动更新升级 (具体可百度)</p>
 <ul>
-<li><p>通过anaconda安装jupyter及各种包</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">conda install jupyter</span><br><span class="line">conda update --all <span class="comment">#升级所有包</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>配置远程访问登录密码<br>1、在终端输入</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost]:~<span class="comment">#ipython</span></span><br><span class="line">In [1]: from notebook.auth import passwd </span><br><span class="line">In [2]: passwd()</span><br><span class="line">Enter password:</span><br><span class="line">Verify password:</span><br><span class="line">Out[2]: <span class="string">'sha1:xxxxx'</span></span><br><span class="line">In [3]: <span class="built_in">exit</span></span><br></pre></td></tr></table></figure>
-<p>解释：这是在python中调用passwd()方法，输入密码输出hashcode编码</p>
-</li>
+<li>通过anaconda安装jupyter及各种包</li>
 </ul>
+<blockquote>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">conda install jupyter</span><br><span class="line">conda update --all <span class="comment">#升级所有包</span></span><br></pre></td></tr></table></figure>
+</blockquote>
+<ul>
+<li>配置远程访问登录密码</li>
+</ul>
+<p>1、在终端输入</p>
+<blockquote>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost]:~<span class="comment">#ipython</span></span><br><span class="line">In [1]: from notebook.auth import passwd </span><br><span class="line">In [2]: passwd()</span><br><span class="line">Enter password:</span><br><span class="line">Verify password:</span><br><span class="line">Out[2]: <span class="string">'sha1:xxxxx'</span></span><br><span class="line">In [3]: <span class="built_in">exit</span></span><br></pre></td></tr></table></figure>
+</blockquote>
+<p>解释：这是在python中调用passwd()方法，输入密码输出hashcode编码</p>
 <p>2、保存刚刚的hashcode</p>
+<blockquote>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">jupyter notebook --generate-config --allow-root <span class="comment">#生成配置文件</span></span><br><span class="line">vim ~/.jupyter/jupyter_notebook_config.py <span class="comment">#打开配置文件</span></span><br></pre></td></tr></table></figure>
-
+</blockquote>
 <p>如果没使用过vim的，可以学一下。</p>
 <p>在配置文件中,加入:</p>
+<blockquote>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">c.NotebookApp.ip=<span class="string">'*'</span></span><br><span class="line">c.NotebookApp.password = u<span class="string">'sha1:xxxxx'</span></span><br><span class="line">c.NotebookApp.open_browser = False</span><br><span class="line">c.NotebookApp.port =8888</span><br></pre></td></tr></table></figure>
+</blockquote>
 <p>:wq保存</p>
-<p>【注意】：到目前为止jupyter就已经在服务器中安装配置好了，但是8888端口默认是关闭的，如果是阿里云服务器，需要在阿里云控制台开放8888端口</p>
+<p>【注意】：到目前为止jupyter就已经在服务器中安装配置好了，但是8888端口默认是关闭的，如果是阿里云服务器，需要在阿里云控制台开放</p>
+<p>8888端口</p>
 <ul>
-<li><p>最后输入 </p>
+<li>最后输入 </li>
+</ul>
+<blockquote>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ufw <span class="built_in">disable</span></span><br></pre></td></tr></table></figure>
+</blockquote>
 <p>关闭防火墙</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">jupyter notebook --ip=0.0.0.0 --allow-root <span class="comment">#在服务器运行jupyter notebook</span></span><br></pre></td></tr></table></figure></li>
+<blockquote>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">jupyter notebook --ip=0.0.0.0 --allow-root <span class="comment">#在服务器运行jupyter notebook</span></span><br></pre></td></tr></table></figure>
+</blockquote>
+<ul>
 <li><p>浏览器输入<a href="http://xxx:8888" target="_blank" rel="noopener">http://xxx:8888</a> 即可登录</p>
 </li>
 <li><p>后台运行</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nohup jupyter notebook --ip=0.0.0.0 --allow-root &gt; jupyter.log 2&gt;&amp;1 &amp;</span><br></pre></td></tr></table></figure>
-<p>&amp;让命令后台运行，并输出到log中<br>nohup 表示 no hang up ，不挂起</p>
 </li>
-<li><p>终止进程</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ps -aux | grep jupyter <span class="comment">#查看运行的jupyter进程</span></span><br><span class="line"><span class="built_in">kill</span> -9 pid</span><br></pre></td></tr></table></figure></li>
 </ul>
+<blockquote>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nohup jupyter notebook --ip=0.0.0.0 --allow-root &gt; jupyter.log 2&gt;&amp;1 &amp;</span><br></pre></td></tr></table></figure>
+</blockquote>
+<p>&amp;让命令后台运行，并输出到log中</p>
+<p>nohup 表示 no hang up ，不挂起</p>
+<ul>
+<li>终止进程</li>
+</ul>
+<blockquote>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ps -aux | grep jupyter <span class="comment">#查看运行的jupyter进程</span></span><br><span class="line"><span class="built_in">kill</span> -9 pid</span><br></pre></td></tr></table></figure></blockquote>
 
 
   

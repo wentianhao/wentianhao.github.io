@@ -23,8 +23,7 @@
     
 <link rel="stylesheet" href="/style/style.css">
 
-  <meta name="generator" content="Hexo 4.2.0"><link rel="alternate" href="/atom.xml" title="blog" type="application/atom+xml">
-</head>
+  </head>
   <body>
     <canvas id='pagemap'></canvas>
     
@@ -206,7 +205,10 @@
       <div>
       </div>
     </div>
-    <html><head></head><body><p>基于词向量的实体链接方法 </p>
+    <html><head><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=default"></script> 
+
+<meta name="generator" content="Hexo 4.2.0"><link rel="alternate" href="/atom.xml" title="blog" type="application/atom+xml">
+</head><body><p>基于词向量的实体链接方法 </p>
 <p>Ｊｏｕｒｎａｌ　ｏｆ　Ｄａｔａ　Ａｃｑｕｉｓｉｔｉｏｎ　ａｎｄ　Ｐｒｏｃｅｓｓｉｎｇ　 Ｖｏｌ．３２ ， Ｎｏ．３ ，Ｍａｙ ２０１７ ， ｐｐ．６０４－６１１</p>
 <p><strong>【摘要】</strong>：实体链接任务主要包括命名实体识别、查询扩展、候选实体选择、特征抽取和排序，本文针对查询词的扩展，提出一种基于词向量的扩展方法，利用连续词袋(CBOW)模型训练语料中词语的词向量，然后将距离查询词近的词作为扩展词。词向量从语料中挖掘出词与词之间的语义相关性是对基于规则的查询扩展方法的补充，以此来召回候选实体。在特征抽取时，把文档之间的潜在狄利克雷分布(LDA)的主题相似性作为特征之一。在计算文档相似性时，不再以高频词作为向量的维度，而是以基于词向量的相关词作为向量维度，由此得到文档的语义相似特征。最后利用基于单文档方法的排序学习模型把查询词链接到相应的候选实体。实验结果 $F1$ 值达到0.71</p>
 <p>实体链接的方法主要有分类法、概率主题方法、Graph方法和排序法</p>
@@ -317,7 +319,7 @@
   <div class="post-guide">
     <div class="item left">
         
-          <a href="/2020/06/11/Q-learning/">Q learning</a>
+          <a href="/2020/06/11/%E5%9F%BA%E4%BA%8E%E4%B8%8A%E4%B8%8B%E6%96%87%E8%AF%8D%E5%90%91%E9%87%8F%E5%92%8C%E4%B8%BB%E9%A2%98%E6%A8%A1%E5%9E%8B%E7%9A%84%E5%AE%9E%E4%BD%93%E6%B6%88%E6%AD%A7%E6%96%B9%E6%B3%95/">基于上下文词向量和主题模型的实体消歧方法</a>
         
     </div>
     <div class="item right">

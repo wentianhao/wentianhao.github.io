@@ -71,6 +71,36 @@
   </entry>
   
   <entry>
+    <title>基于上下文信息和排序学习的实体链接方法</title>
+    <link href="https://wentianhao.github.io/2020/06/18/%E5%9F%BA%E4%BA%8E%E4%B8%8A%E4%B8%8B%E6%96%87%E4%BF%A1%E6%81%AF%E5%92%8C%E6%8E%92%E5%BA%8F%E5%AD%A6%E4%B9%A0%E7%9A%84%E5%AE%9E%E4%BD%93%E9%93%BE%E6%8E%A5%E6%96%B9%E6%B3%95/"/>
+    <id>https://wentianhao.github.io/2020/06/18/%E5%9F%BA%E4%BA%8E%E4%B8%8A%E4%B8%8B%E6%96%87%E4%BF%A1%E6%81%AF%E5%92%8C%E6%8E%92%E5%BA%8F%E5%AD%A6%E4%B9%A0%E7%9A%84%E5%AE%9E%E4%BD%93%E9%93%BE%E6%8E%A5%E6%96%B9%E6%B3%95/</id>
+    <published>2020-06-18T08:17:51.000Z</published>
+    <updated>2020-09-16T09:01:40.360Z</updated>
+    
+    <content type="html"><![CDATA[<html><head></head><body><p><strong>基于上下文信息和排序学习的实体链接方法</strong></p><p><strong>摘要</strong></p><p>为解决英语命名实体链接问题，提出一种基于上下文信息和排序学习的实体链接方法。首先使用上下文信息对实体指称进行扩充，并在维基百科中检索候选实体列表，然后通过抽取实体指称与候选实体之间的各类特征，利用ListNet排序算法对候选实体列表进行排序，选出Top1的候选实体作为链接结果，最后对未找到候选的实体指称即NIL实体，通过实体聚类算法进行关联链接。</p><p><strong>关键词</strong> : 英语实体链接；上下文信息；排序学习；ListNet排序算法；实体聚类</p><p>目前较为普遍的实体链接方法是，首先形成候选实体列表，然后对该列表进行排序，最后再进行链接。</p><p>基于上下文信息和排序学习的实体链接方法。</p><p>优点：</p><p>1.采用合理的策略生成候选实体列表</p><p>2.对候选实体列表进行高精度的排序</p><p>3.NIL实体聚类中，将规则与传统的聚类算法相结合</p><p><strong>相关工作</strong></p><p>实体链接从最初的基于规则的方法，到基于统计的方法，如今，基于多方法融合的框架成为普遍被研究者接受的系统框架。该框架首先为实体指称生成候选实体列表，再对候选实体列表进行排序。</p><p><strong>基于上下文信息和排序学习的实体链接方法</strong></p><p><a href="https://whh.plus/images/lct3.png" data-caption="基于上下文信息和排序学习的实体链接方法" data-fancybox="images"><img src="https://whh.plus/images/lct3.png" alt="基于上下文信息和排序学习的实体链接方法"></a></p><p>预处理 ：主要从TAC KBP官方发布的源数据集中提取实体指称信息和实体指称的上下文</p><p>实体指称扩充 ：利用指称上下文中的同指关系以及从Wikipedia中抽取的词表和从爬虫获取的网络知识对实体指称进行扩充</p><p>候选实体检索 ： 对每个实体指称，从Wikipedia知识库中检索出对应的候选实体列表</p><p>候选排序 ：特征抽取和排序学习算法</p><p>这篇论文实现方法以及过程都较为普通，论文就不放上来了</p></body></html>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;html&gt;&lt;head&gt;&lt;/head&gt;&lt;body&gt;&lt;p&gt;&lt;strong&gt;基于上下文信息和排序学习的实体链接方法&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;摘要&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;为解决英语命名实体链接问题，提出一种基于上下文信息和排序学习的实体链接方法。首先使
+      
+    
+    </summary>
+    
+    
+      <category term="读书笔记" scheme="https://wentianhao.github.io/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"/>
+    
+    
+      <category term="NPL" scheme="https://wentianhao.github.io/tags/NPL/"/>
+    
+      <category term="实体链接" scheme="https://wentianhao.github.io/tags/%E5%AE%9E%E4%BD%93%E9%93%BE%E6%8E%A5/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Q learning</title>
     <link href="https://wentianhao.github.io/2020/06/11/Q-learning/"/>
     <id>https://wentianhao.github.io/2020/06/11/Q-learning/</id>
@@ -572,37 +602,6 @@
     
     
       <category term="python" scheme="https://wentianhao.github.io/tags/python/"/>
-    
-      <category term="python爬虫" scheme="https://wentianhao.github.io/tags/python%E7%88%AC%E8%99%AB/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>抓包分析技术精讲</title>
-    <link href="https://wentianhao.github.io/2020/02/27/%E6%8A%93%E5%8C%85%E5%88%86%E6%9E%90%E6%8A%80%E6%9C%AF%E7%B2%BE%E8%AE%B2/"/>
-    <id>https://wentianhao.github.io/2020/02/27/%E6%8A%93%E5%8C%85%E5%88%86%E6%9E%90%E6%8A%80%E6%9C%AF%E7%B2%BE%E8%AE%B2/</id>
-    <published>2020-02-27T15:24:18.000Z</published>
-    <updated>2020-09-13T02:37:32.638Z</updated>
-    
-    <content type="html"><![CDATA[<html><head></head><body><ul><li>Fiddler是一款使用起来非常方便的抓包工具，安装起来很方便。</li></ul><p>实战：抓取腾讯视频下的评论</p><blockquote><figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">   <span class="keyword">import</span> urllib.request</span><br><span class="line">   <span class="keyword">import</span> re</span><br><span class="line"><span class="comment"># 抓取腾讯视频下的评论</span></span><br><span class="line">   cid = <span class="string">"0"</span></span><br><span class="line">   <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">0</span>,<span class="number">100</span>):</span><br><span class="line">       print(<span class="string">"第"</span>+str(i+<span class="number">1</span>)+<span class="string">"页的评论数据"</span>)</span><br><span class="line">       url = <span class="string">"https://video.coral.qq.com/varticle/4831064204/comment/v2?callback=_varticle4831064204commentv2&orinum=10&oriorder=o&pageflag=1&cursor="</span> + str(</span><br><span class="line">           cid) + <span class="string">"&scorecursor=0&orirepnum=2&reporder=o&reppageflag=1&source=132&_=1582873152540"</span></span><br><span class="line">       data = urllib.request.urlopen(url).read().decode(<span class="string">"utf-8"</span>,<span class="string">"ignore"</span>)</span><br><span class="line">       pat = <span class="string">'"content":"(.*?)"'</span></span><br><span class="line">       comments = re.compile(pat,re.S).findall(data)</span><br><span class="line">       <span class="keyword">for</span> item <span class="keyword">in</span> comments:</span><br><span class="line">           print(str(item))</span><br><span class="line">           print(<span class="string">"------------------"</span>)</span><br><span class="line">       pat2 = <span class="string">'"last":"(.*?)"'</span></span><br><span class="line">       cid = re.compile(pat2,re.S).findall(data)[<span class="number">0</span>]</span><br></pre></td></tr></tbody></table></figure></blockquote></body></html>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;html&gt;&lt;head&gt;&lt;/head&gt;&lt;body&gt;&lt;ul&gt;
-&lt;li&gt;Fiddler是一款使用起来非常方便的抓包工具，安装起来很方便。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;实战：抓取腾讯视频下的评论&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;figure class=&quot;highlight pyt
-      
-    
-    </summary>
-    
-    
-      <category term="python" scheme="https://wentianhao.github.io/categories/python/"/>
-    
     
       <category term="python爬虫" scheme="https://wentianhao.github.io/tags/python%E7%88%AC%E8%99%AB/"/>
     

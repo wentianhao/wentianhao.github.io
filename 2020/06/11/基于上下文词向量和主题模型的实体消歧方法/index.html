@@ -256,6 +256,21 @@
 <p>针对实体的全局特征，本文采用实体上下文相似度和实体主题类别相似度描述；针对实体的局部特征，本文采用基于主题词向量的主题相似度描述</p>
 <p><strong>基于上下文的词向量模型训练</strong></p>
 <p>在Skip-Gram模型的基础上加入方向向量来表达语序，上下文词向量模型携带更多的语义信息。</p>
+<ul>
+<li>定义预测上下文词的概率函数，用于计算当前输入词$t$与上下文词$t+i$之间的共现概率，其定义如下：<br><a href="https://whh.plus/images/pt.png" target="_blank" rel="noopener" data-caption="定义" data-fancybox="images"><img src="https://whh.plus/images/pt.png" alt="定义"></a></li>
+</ul>
+<p>$V$ : 语料中词语的个数</p>
+<p>$w_t$ : 词语$t$的词嵌入</p>
+<p>$w’_t$ : 表示词语$t+i$的词嵌入</p>
+<p>$w,w’$ : 分别表示输入词嵌入与输出词嵌入</p>
+<ul>
+<li>定义softmax函数$g(t+i,t)$度量上下文词$t+i$与输入单词$t$之间的词序关联，softmax函数$g(t+i,t)$的定义如下：<br><a href="https://whh.plus/images/gt.png" target="_blank" rel="noopener" data-caption="softmax定义" data-fancybox="images"><img src="https://whh.plus/images/gt.png" alt="softmax定义"></a></li>
+</ul>
+<p>$\delta$ : 表示任意上下文词$t+i$相对于$t$的方向向量</p>
+<p>借助负采样的原理，每次让一个训练样本仅更新一部分权重，所以函数$g(t+i,t)$的更新如下：<br><a href="https://whh.plus/images/w.png" target="_blank" rel="noopener" data-caption="更新方程" data-fancybox="images"><img src="https://whh.plus/images/w.png" alt="更新方程"></a></p>
+<p>$\sigma$ : 表示sigmoid函数</p>
+<p>$\mu$ : 表示学习率</p>
+<p>$H$ : 表示当前词与上下文词的方向标签 $H=\left{\begin{aligned}-1  , i<0 \0 , i>0 \ \end{aligned} \right.$</p>
 </body></html>
 
   

@@ -298,7 +298,36 @@
 <p>$w(word’_j)=\{w_1,w_2,…,w_n\}$ : 训练好的词向量模型将文本进行词向量表示</p>
 <p>余弦相似度计算候选实体与指称项的上下文相似度，余弦值越大，相似度越高，公式如下：</p>
 <p><a href="https://whh.plus/images/sim.png" target="_blank" rel="noopener" data-caption="相似度计算" data-fancybox="images"><img src="https://whh.plus/images/sim.png" alt="相似度计算"></a></p>
-<p><strong>基于实体上下文主题的类别主题似度</strong></p>
+<p><strong>基于实体上下文主题的类别主题相似度</strong></p>
+<p>实体主题 ：表示实体语义的相关性，主题就是词语的条件概率分布</p>
+<p>主题和类别在一定程度上所包含的语义信息是相似的，将实体主题信息与实体对应的类别信息进行语义相似度计算，类别主题的相似度就是计算通过主题模型获取的上下文主题以及知识库中实体对应类别之间的相似度。</p>
+<p><a href="https://whh.plus/images/lct2.png" target="_blank" rel="noopener" data-caption="类别主题相似度流程图" data-fancybox="images"><img src="https://whh.plus/images/lct2.png" alt="类别主题相似度流程图"></a></p>
+<p>基于实体上下文主题的类别主题相似度计算步骤：</p>
+<p>1.对待消歧实体的背景文档进行预处理。预处理后，获取所有预处理的名词类词语，使用LDA主题模型获取待消歧实体上下文的主题，通过实验选取适当的主题个数作为待消歧实体的主题特征</p>
+<p>2.每个实体在知识库中都有对应的类别信息，获取知识库中候选实体的类别信息</p>
+<p>3.使用余弦相似度计算公式计算每个主题词与类别词之间的距离，计算$x$个待消歧实体主题与候选实体$y$个类别的相似度$sim’_y(x)$,选取相似度最大的项作为基于实体上下文主题的类别主题相似度</p>
+<p><a href="https://whh.plus/images/e1.png" target="_blank" rel="noopener" data-caption="苹果例子" data-fancybox="images"><img src="https://whh.plus/images/e1.png" alt="苹果例子"></a></p>
+<p><strong>基于主题词向量的实体主题相似度</strong></p>
+<p>在实体消歧过程中，由于实体的名称可能存在一词多义的情况，所以实体的含义不能仅通过整个文档的主题来表达。针对此问题，本文融合词义信息及主题信息，提出在同一个语义向量空间中，使用嵌入表示的方法学习主题表示的主题词向量</p>
+<p>主题词向量模型：主题词是指以特定主题为背景的词，基本思想是允许每个词在不同的主题下有不同的嵌入向量</p>
+<p>主题词向量采用“主题-词”序列的训练方式，将主题和词共同表示为低维的向量，每个词语携带的主题信息更能表达该词语的语境。</p>
+<p>基于主题词向量的相似度计算：主题词向量训练以及相似度计算</p>
+<p>(1)对待消歧实体和候选实体的背景文档进行数据预处理，包括中文分词和去停用词</p>
+<p>(2)使用LDA主题模型对文档的上下文语境进行主题建模，获取每个词语对应的主题词</p>
+<p>(3)基于训练的词向量模型，将主题融入基于上下文词向量模型中。然后基于上下文主题词向量，通过给定当前词$t$和当前词的主题$z_t$,预测上下文主题词</p>
+<p>(4)主题词向量模型的训练，通过设置投影矩阵,将主题和词语嵌入同一个语义空间，并定义目标函数$L(D)$<br><a href="https://whh.plus/images/LD.png" target="_blank" rel="noopener" data-caption="目标函数" data-fancybox="images"><img src="https://whh.plus/images/LD.png" alt="目标函数"></a></p>
+<p>(5)使用余弦相似度计算基于主题词向量的主题相似度。</p>
+<p>$tw=\{tw_1,…,tw_k\}$ : 实体指称项的背景文档对应的主题词向量</p>
+<p>$tw’=\{tw’_1,…,tw’_m\}$ : 实体候选项的背景文档对应的主题词向量</p>
+<p><a href="https://whh.plus/images/sim1.png" target="_blank" rel="noopener" data-caption="相似度公式" data-fancybox="images"><img src="https://whh.plus/images/sim1.png" alt="相似度公式"></a></p>
+<p>三种相似度特征之间的比较</p>
+<p><a href="https://whh.plus/images/tzbj.png" target="_blank" rel="noopener" data-caption="相似度公式" data-fancybox="images"><img src="https://whh.plus/images/tzbj.png" alt="相似度公式"></a></p>
+<p><strong>相似度融合</strong></p>
+<p>$$sim(entity,entity’)=\alpha sim_1(entity,entity’)+\beta sim_2(entity,entity’)+\gamma sim_3(entity,entity’)$$</p>
+<p>$sim_1(entity,entity’)$ : 实体上下文相似度</p>
+<p>$sim_2(entity,entity’)$ : 类别主题相似度</p>
+<p>$sim_3(entity,entity’)$ : 实体主题相似度</p>
+<p>$\alpha+\beta+\gamma=1$</p>
 </body></html>
 
   

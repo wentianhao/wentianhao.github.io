@@ -1,0 +1,150 @@
+<!DOCTYPE html><html><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="theme-color" content="#0078E7"><meta name="author" content="wenhao"><meta name="copyright" content="wenhao"><meta name="generator" content="Hexo 5.2.0"><meta name="theme" content="hexo-theme-yun"><title>基于上下文词向量和主题模型的实体消歧方法 | blog</title><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@900&amp;display=swap" media="none" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/star-markdown-css@0.1.19/dist/yun/yun-markdown.min.css"><script src="//at.alicdn.com/t/font_1140697_stqaphw3j4.js" async></script><script src="https://cdn.jsdelivr.net/npm/scrollreveal/dist/scrollreveal.min.js" defer></script><script>document.addEventListener("DOMContentLoaded", () => {
+  [".post-card",".post-content img"].forEach((target)=> {
+    ScrollReveal().reveal(target);
+  })
+});
+</script><link rel="shortcut icon" type="image/svg+xml" href="/yun.svg"><link rel="mask-icon" href="/yun.svg" color="#0078E7"><link rel="alternate icon" href="/yun.ico"><link rel="preload" href="/css/hexo-theme-yun.css" as="style"><link rel="preload" href="/js/utils.js" as="script"><link rel="preload" href="/js/hexo-theme-yun.js" as="script"><link rel="prefetch" href="/js/sidebar.js" as="script"><link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin><link rel="stylesheet" href="/css/hexo-theme-yun.css"><link rel="alternate" href="/atom.xml" title="blog" type="application/atom+xml"><script id="yun-config">
+    const Yun = window.Yun || {};
+    window.CONFIG = {"root":"/","title":"问天好","version":"1.0.0","anonymous_image":"https://cdn.jsdelivr.net/gh/YunYouJun/cdn/img/avatar/none.jpg","say":{"api":"https://v1.hitokoto.cn","hitokoto":true},"fireworks":{"colors":["102, 167, 221","62, 131, 225","33, 78, 194"]}};
+  </script><meta name="description" content="基于上下文词向量和主题模型的实体消歧方法 摘要 传统词向量训练模型仅考虑词共现而未考虑词序，语义表达能力弱。此外，现有实体消歧方法没有考虑实体的局部特征。综合实体的全局特征和局部特征，该文提出一种基于上下文词向量和主题模型的实体消歧方法。首先在传统词向量模型上增加上下文方向向量，用于表征语序，并利用该模型与主题模型训练主题词向量；其次，分别计算实体上下文相似度、基于实体上下文主题的类别主题相似度以">
+<meta property="og:type" content="article">
+<meta property="og:title" content="基于上下文词向量和主题模型的实体消歧方法">
+<meta property="og:url" content="https://wentianhao.github.io/2020/06/11/%E5%9F%BA%E4%BA%8E%E4%B8%8A%E4%B8%8B%E6%96%87%E8%AF%8D%E5%90%91%E9%87%8F%E5%92%8C%E4%B8%BB%E9%A2%98%E6%A8%A1%E5%9E%8B%E7%9A%84%E5%AE%9E%E4%BD%93%E6%B6%88%E6%AD%A7%E6%96%B9%E6%B3%95/index.html">
+<meta property="og:site_name" content="blog">
+<meta property="og:description" content="基于上下文词向量和主题模型的实体消歧方法 摘要 传统词向量训练模型仅考虑词共现而未考虑词序，语义表达能力弱。此外，现有实体消歧方法没有考虑实体的局部特征。综合实体的全局特征和局部特征，该文提出一种基于上下文词向量和主题模型的实体消歧方法。首先在传统词向量模型上增加上下文方向向量，用于表征语序，并利用该模型与主题模型训练主题词向量；其次，分别计算实体上下文相似度、基于实体上下文主题的类别主题相似度以">
+<meta property="og:locale">
+<meta property="og:image" content="https://whh.plus/images/lct1.png">
+<meta property="og:image" content="https://whh.plus/images/pt.png">
+<meta property="og:image" content="https://whh.plus/images/gt.jpg">
+<meta property="og:image" content="https://whh.plus/images/w.png">
+<meta property="og:image" content="https://whh.plus/images/L.jpg">
+<meta property="og:image" content="https://whh.plus/images/sim.png">
+<meta property="og:image" content="https://whh.plus/images/lct2.png">
+<meta property="og:image" content="https://whh.plus/images/e1.png">
+<meta property="og:image" content="https://whh.plus/images/LD.png">
+<meta property="og:image" content="https://whh.plus/images/sim1.png">
+<meta property="og:image" content="https://whh.plus/images/tzbj.png">
+<meta property="article:published_time" content="2020-06-11T08:17:51.000Z">
+<meta property="article:modified_time" content="2020-09-18T09:31:24.242Z">
+<meta property="article:author" content="wenhao">
+<meta property="article:tag" content="实体链接">
+<meta property="article:tag" content="NLP">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://whh.plus/images/lct1.png"><script src="/js/ui/mode.js"></script></head><body><script defer src="https://cdn.jsdelivr.net/npm/animejs@latest/anime.min.js"></script><script defer src="/js/ui/fireworks.js"></script><canvas class="fireworks"></canvas><div class="container"><a class="sidebar-toggle hty-icon-button" id="menu-btn"><div class="hamburger hamburger--spin" type="button"><span class="hamburger-box"><span class="hamburger-inner"></span></span></div></a><div class="sidebar-toggle sidebar-overlay"></div><aside class="sidebar"><script src="/js/sidebar.js"></script><ul class="sidebar-nav"><li class="sidebar-nav-item sidebar-nav-toc hty-icon-button" data-target="post-toc-wrap" title="Table of Contents"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-list-ordered"></use></svg></li><li class="sidebar-nav-item sidebar-nav-overview hty-icon-button sidebar-nav-active" data-target="site-overview-wrap" title="Overview"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-passport-line"></use></svg></li></ul><div class="sidebar-panel sidebar-panel-active" id="site-overview-wrap"><div class="site-info fix-top"><a class="site-author-avatar" href="/about/" title="wenhao"><img width="96" loading="lazy" src="/images/avatar.jpg" alt="wenhao"></a><div class="site-author-name"><a href="/about/">wenhao</a></div><a class="site-name" href="/about/site.html">blog</a><sub class="site-subtitle">wenhao</sub><div class="site-desciption">wenhao'blog</div></div><nav class="site-state"><a class="site-state-item hty-icon-button icon-home" href="/" title="Home"><span class="site-state-item-icon"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-home-4-line"></use></svg></span></a><div class="site-state-item"><a href="/archives/" title="Archives"><span class="site-state-item-icon"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-archive-line"></use></svg></span><span class="site-state-item-count">41</span></a></div><div class="site-state-item"><a href="/categories/" title="Categories"><span class="site-state-item-icon"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-folder-2-line"></use></svg></span><span class="site-state-item-count">13</span></a></div><div class="site-state-item"><a href="/tags/" title="Tags"><span class="site-state-item-icon"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-price-tag-3-line"></use></svg></span><span class="site-state-item-count">27</span></a></div><a class="site-state-item hty-icon-button" href="/about/#comment" title="留言板"><span class="site-state-item-icon"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-clipboard-line"></use></svg></span></a></nav><hr style="margin-bottom:0.5rem"><div class="links-of-author"><a class="links-of-author-item hty-icon-button" rel="noopener" href="/atom.xml" title="RSS" target="_blank" style="color:orange"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-rss-line"></use></svg></a><a class="links-of-author-item hty-icon-button" rel="noopener" href="https://github.com/wentianhao" title="GitHub" target="_blank" style="color:#6e5494"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-github-line"></use></svg></a></div><hr style="margin:0.5rem 1rem"><div class="links"><a class="links-item hty-icon-button" href="/links/" title="我的小伙伴们" style="color:dodgerblue"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-genderless-line"></use></svg></a><a class="links-item hty-icon-button" href="/girls/" title="喜欢的女孩子" style="color:hotpink"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-women-line"></use></svg></a></div><br><a class="links-item hty-icon-button" id="toggle-mode-btn" href="javascript:;" title="Mode" style="color: #f1cb64"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-contrast-2-line"></use></svg></a></div><div class="sidebar-panel" id="post-toc-wrap"><div class="post-toc"><div class="post-toc-content">This post does not have a Table of Contents</div></div></div></aside><main class="sidebar-translate" id="content"><div id="post"><article class="post-block" itemscope itemtype="https://schema.org/Article"><link itemprop="mainEntityOfPage" href="https://wentianhao.github.io/2020/06/11/%E5%9F%BA%E4%BA%8E%E4%B8%8A%E4%B8%8B%E6%96%87%E8%AF%8D%E5%90%91%E9%87%8F%E5%92%8C%E4%B8%BB%E9%A2%98%E6%A8%A1%E5%9E%8B%E7%9A%84%E5%AE%9E%E4%BD%93%E6%B6%88%E6%AD%A7%E6%96%B9%E6%B3%95/"><span hidden itemprop="author" itemscope itemtype="https://schema.org/Person"><meta itemprop="name" content="wenhao"><meta itemprop="description"></span><span hidden itemprop="publisher" itemscope itemtype="https://schema.org/Organization"><meta itemprop="name" content="blog"></span><header class="post-header"><h1 class="post-title" itemprop="name headline">基于上下文词向量和主题模型的实体消歧方法</h1><div class="post-meta"><div class="post-time" style="display:inline-block"><span class="post-meta-item-icon"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-calendar-line"></use></svg></span> <time title="Created: 2020-06-11 16:17:51" itemprop="dateCreated datePublished" datetime="2020-06-11T16:17:51+08:00">2020-06-11</time><span class="post-meta-divider">-</span><span class="post-meta-item-icon"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-calendar-2-line"></use></svg></span> <time title="Modified: 2020-09-18 17:31:24" itemprop="dateModified" datetime="2020-09-18T17:31:24+08:00">2020-09-18</time></div><span class="leancloud_visitors" id="/2020/06/11/%E5%9F%BA%E4%BA%8E%E4%B8%8A%E4%B8%8B%E6%96%87%E8%AF%8D%E5%90%91%E9%87%8F%E5%92%8C%E4%B8%BB%E9%A2%98%E6%A8%A1%E5%9E%8B%E7%9A%84%E5%AE%9E%E4%BD%93%E6%B6%88%E6%AD%A7%E6%96%B9%E6%B3%95/" data-flag-title="基于上下文词向量和主题模型的实体消歧方法"><span class="post-meta-divider">-</span><span class="post-meta-item-icon" title="Views"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-eye-line"></use></svg> <span class="leancloud-visitors-count"></span></span></span><div class="post-classify"><span class="post-category"><span class="post-meta-item-icon"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-folder-line"></use></svg></span> <span itemprop="about" itemscope itemtype="https://schema.org/Thing"><a class="category" href="/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/" style="--text-color:var(--hty-text-color)" itemprop="url" rel="index"><span itemprop="text">读书笔记</span></a></span></span><span class="post-tag"><span class="post-meta-divider">-</span><a class="tag" href="/tags/%E5%AE%9E%E4%BD%93%E9%93%BE%E6%8E%A5/" style="--text-color:orange"><span class="post-meta-item-icon"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-price-tag-3-line"></use></svg></span><span class="tag-name">实体链接</span></a><a class="tag" href="/tags/NLP/" style="--text-color:#21374b"><span class="post-meta-item-icon"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-price-tag-3-line"></use></svg></span><span class="tag-name">NLP</span></a></span></div></div></header><section class="post-body" itemprop="articleBody"><div class="post-content markdown-body" style="--smc-primary:#0078E7;"><p><strong>基于上下文词向量和主题模型的实体消歧方法</strong></p>
+<p><strong>摘要</strong></p>
+<p>传统词向量训练模型仅考虑词共现而未考虑词序，语义表达能力弱。此外，现有实体消歧方法没有考虑实体的局部特征。综合实体的全局特征和局部特征，该文提出一种基于上下文词向量和主题模型的实体消歧方法。首先在传统词向量模型上增加上下文方向向量，用于表征语序，并利用该模型与主题模型训练主题词向量；其次，分别计算实体上下文相似度、基于实体上下文主题的类别主题相似度以及基于主题词向量的实体主题相似度；最后，融合三种相似度，选择相似度最高的实体作为最终消歧实体。</p>
+<p><strong>关键词</strong>：上下文词向量；实体消歧；知识库；主题词向量；主题模型</p>
+<p><strong>相关工作</strong></p>
+<ul>
+<li>基于机器学习的方法</li>
+</ul>
+<p>核心：计算实体之间的相似度，在此基础上选择特定实体提及的目标实体</p>
+<p>1.利用实体统计信息、名字统计信息进行目标实体消歧</p>
+<p>2.利用百科数据作为背景知识，通过百科知识辅助消歧</p>
+<p>3.考虑到一段文本中实体之间的相互关联，提出全局推理算法寻找全局最优决策</p>
+<p>4.对实体流行语义关联度等特征进行特征组合，利用最大间隔算法计算各个特征的权重，进而通度、过排序算法完成对实体的消岐</p>
+<p>5.半监督算法、远距离监督算法、基于海量数据冗余性的自学习方法可以从一定程度上解决语料标注问题</p>
+<ul>
+<li>基于深度学习的方法</li>
+</ul>
+<p>核心：构建多类型、多模态上下文及知识的统一表示，并对多源信息、多源文本之间的联系进行建模。</p>
+<p>1.在原有的神经网络语言模型的基础上，加入卷积神经网络模型，较大程度上改进了实体消歧的效果</p>
+<p>2.提出多源异构证据的向量表示学习方法，对不同来源知识库中的知识进行统一空间的表示，进而完成实体消歧。</p>
+<p>3.提出对证据信息进行向量表示，基于表示向量学习不同证据之间的相似度，继而进行相似度融合，最终完成实体消歧</p>
+<p>4.利用Skip-Gram模型进行词向量训练，并利用词向量进行相似度计算，实现实体链接与消歧</p>
+<p>5.提出将待消歧实体和待消歧实体上下文语境映射到同一个空间，基于概率空间模型，根据实体的空间向量进行消歧</p>
+<p>6.利用Skip-Gram模型进行词向量训练，并基于微博的短文本特征提出语义分类的方法，完成实体消歧</p>
+<p>基于机器学习的方法需要借助丰富的标注语料完成实体消歧，基于深度学习的方法需要借助性能良好的消歧模型完成实体消歧</p>
+<p>目前实体消歧存在两个问题：</p>
+<p>1.由于传统的有监督机器学习算法需要大量的标注语料，而现有的标注语料难以满足实体消歧的需求。</p>
+<p>词向量训练模型使用无标注的文本作为输入数据，将词组表征成低维的向量表示，可以有效解决缺少标注语料的问题。然而，传统词向量模型由于缺少对上下文语序等必要因素的考虑，导致词向量的语义表征能力不强，需要进一步改进。</p>
+<p>2.在实体消歧的过程中，目前主流方法选用上下文语义特征、实体流行度特征、实体关联度特征等进行命名实体消歧。上述特征均是从实体背景文档的全局特征出发，计算待消歧实体和候选实体之间的相似度，没有考虑实体的局部特征。</p>
+<p>潜在狄利 克雷分布（ｌａｔｅｎｔ ｄｉｒｉｃｈｌｅｔ ａｌｌｏｃａｔｉｏｎ，ＬＤＡ）主题模 型可以获取实体背景文档的主题信息，将其结合词 向量技术生成主题词向量，可以对背景文档的局部 主题特征进行表征，较好地解决传统模型仅考虑实 体全局特征的缺陷。</p>
+<p>三部分：上下文词向量模型训练、候选实体生成、实体消歧</p>
+<p>1.为解决传统词向量模型仅考虑词共现特征导致的语义表达能力不强的问题，在原有的Skip-Gram模型的基础上增加表征上下文语序的方向向量，利用无标注语料训练词向量模型，将每个词表示为n维的向量；</p>
+<p>2.获得实体指称项的背景文档，获得候选实体在知识库中存储的背景知识，并使用上述词向量模型，将二者均表征为向量形式，针对实体的全局特征，分别计算上下文相似度和类别主题相似度</p>
+<p>3.基于词向量模型以及LDA主题模型，结合文档的主题特征，训练主题词向量，针对实体的局部特征，进行实体主题相似度计算</p>
+<p>4.按照一定比例融合三种相似度特征，得到待消歧实体与候选实体的最终相似度，选取相似度最高的候选实体作为待消歧的最终实体</p>
+<p><img src="https://whh.plus/images/lct1.png" alt="实体消歧流程图" loading="lazy"></p>
+<p>针对实体的全局特征，本文采用实体上下文相似度和实体主题类别相似度描述；针对实体的局部特征，本文采用基于主题词向量的主题相似度描述</p>
+<p><strong>基于上下文的词向量模型训练</strong></p>
+<p>在Skip-Gram模型的基础上加入方向向量来表达语序，上下文词向量模型携带更多的语义信息。</p>
+<ul>
+<li>定义预测上下文词的概率函数，用于计算当前输入词$t$与上下文词$t+i$之间的共现概率，其定义如下：<br><img src="https://whh.plus/images/pt.png" alt="定义" loading="lazy"></li>
+</ul>
+<p>$V$ : 语料中词语的个数</p>
+<p>$w_t$ : 词语$t$的词嵌入</p>
+<p>$w’_t$ : 表示词语$t+i$的词嵌入</p>
+<p>$w,w’$ : 分别表示输入词嵌入与输出词嵌入</p>
+<ul>
+<li>定义softmax函数$g(t+i,t)$度量上下文词$t+i$与输入单词$t$之间的词序关联，softmax函数$g(t+i,t)$的定义如下：<br><img src="https://whh.plus/images/gt.jpg" alt="softmax定义" loading="lazy"></li>
+</ul>
+<p>$\delta$ : 表示任意上下文词$t+i$相对于$t$的方向向量</p>
+<p>借助负采样的原理，每次让一个训练样本仅更新一部分权重，所以函数$g(t+i,t)$的更新如下：<br><img src="https://whh.plus/images/w.png" alt="更新方程" loading="lazy"></p>
+<p>$\sigma$ : 表示sigmoid函数</p>
+<p>$\mu$ : 表示学习率</p>
+<p>$H$ : 表示当前词与上下文词的方向标签 </p>
+<ul>
+<li>定义基于上下文词向量模型的目标函数$L_{DSG}$<br><img src="https://whh.plus/images/L.jpg" alt="目标函数" loading="lazy"></li>
+</ul>
+<p>$c$ : 表示词向量的窗口大小$f(w_{t+i},w_t) = p(w_{t+i}|w_t)+g(w_{t+i},w_t)$</p>
+<ul>
+<li>根据目标函数，使用费随机梯度下降和反向传播算法来优化模型。</li>
+</ul>
+<p><strong>候选实体生成</strong></p>
+<p>候选实体借助 <a target="_blank" rel="noopener" href="http://openkg.cn/dataset/zhishi-me">zhishi.me</a>百科数据获取。</p>
+<p>维基百科可以提供构建候选实体有用的特征信息，但是维基百科中部分中文实体存在更新不及时的问题。<a target="_blank" rel="noopener" href="http://openkg.cn/dataset/zhishi-me">zhishi.me</a>综合了维基百科、百度百科以及互动百科。</p>
+<p>候选实体生成步骤：</p>
+<ol>
+<li><p>获取待消歧实体的背景文本，分词、去停用词后</p>
+</li>
+<li><p>根据训练的词向量模型，将处理的结果进行词向量表征，得到待消歧实体的上下文语境。</p>
+</li>
+</ol>
+<p>3.根据<a target="_blank" rel="noopener" href="http://openkg.cn/dataset/zhishi-me">zhishi.me</a>的离线数据，获得候选实体在知识库存储的摘要及全文信息，进行数据预处理，并使用上下文语境</p>
+<p>4.通过对处理好的向量进行余弦相似度计算，确定实体指称项和候选实体的实体上下文相似度</p>
+<p>$E(entity)=\{word_1,word_2,…,word_k\}$ ：实体指称项上下文表示</p>
+<p>$w(word_i)=\{w_1,w_2,…,w_n\}$ : 训练好的词向量模型将文本进行词向量表示</p>
+<p>$n$ : 表示词向量的维度</p>
+<p>$word_i$ ：表示第$i$个上下文词语</p>
+<p>$E(entity’)=\{word’_1,word’_2,…,word’_m\}$ : 通过在知识库中获得实体的摘要和全文信息，同样使用词向量训练模型进行向量化操作的向量表示</p>
+<p>$w(word’_j)=\{w_1,w_2,…,w_n\}$ : 训练好的词向量模型将文本进行词向量表示</p>
+<p>余弦相似度计算候选实体与指称项的上下文相似度，余弦值越大，相似度越高，公式如下：</p>
+<p><img src="https://whh.plus/images/sim.png" alt="相似度计算" loading="lazy"></p>
+<p><strong>基于实体上下文主题的类别主题相似度</strong></p>
+<p>实体主题 ：表示实体语义的相关性，主题就是词语的条件概率分布</p>
+<p>主题和类别在一定程度上所包含的语义信息是相似的，将实体主题信息与实体对应的类别信息进行语义相似度计算，类别主题的相似度就是计算通过主题模型获取的上下文主题以及知识库中实体对应类别之间的相似度。</p>
+<p><img src="https://whh.plus/images/lct2.png" alt="类别主题相似度流程图" loading="lazy"></p>
+<p>基于实体上下文主题的类别主题相似度计算步骤：</p>
+<p>1.对待消歧实体的背景文档进行预处理。预处理后，获取所有预处理的名词类词语，使用LDA主题模型获取待消歧实体上下文的主题，通过实验选取适当的主题个数作为待消歧实体的主题特征</p>
+<p>2.每个实体在知识库中都有对应的类别信息，获取知识库中候选实体的类别信息</p>
+<p>3.使用余弦相似度计算公式计算每个主题词与类别词之间的距离，计算$x$个待消歧实体主题与候选实体$y$个类别的相似度$sim’_y(x)$,选取相似度最大的项作为基于实体上下文主题的类别主题相似度</p>
+<p><img src="https://whh.plus/images/e1.png" alt="苹果例子" loading="lazy"></p>
+<p><strong>基于主题词向量的实体主题相似度</strong></p>
+<p>在实体消歧过程中，由于实体的名称可能存在一词多义的情况，所以实体的含义不能仅通过整个文档的主题来表达。针对此问题，本文融合词义信息及主题信息，提出在同一个语义向量空间中，使用嵌入表示的方法学习主题表示的主题词向量</p>
+<p>主题词向量模型：主题词是指以特定主题为背景的词，基本思想是允许每个词在不同的主题下有不同的嵌入向量</p>
+<p>主题词向量采用“主题-词”序列的训练方式，将主题和词共同表示为低维的向量，每个词语携带的主题信息更能表达该词语的语境。</p>
+<p>基于主题词向量的相似度计算：主题词向量训练以及相似度计算</p>
+<p>(1)对待消歧实体和候选实体的背景文档进行数据预处理，包括中文分词和去停用词</p>
+<p>(2)使用LDA主题模型对文档的上下文语境进行主题建模，获取每个词语对应的主题词</p>
+<p>(3)基于训练的词向量模型，将主题融入基于上下文词向量模型中。然后基于上下文主题词向量，通过给定当前词$t$和当前词的主题$z_t$,预测上下文主题词</p>
+<p>(4)主题词向量模型的训练，通过设置投影矩阵,将主题和词语嵌入同一个语义空间，并定义目标函数$L(D)$<br><img src="https://whh.plus/images/LD.png" alt="目标函数" loading="lazy"></p>
+<p>(5)使用余弦相似度计算基于主题词向量的主题相似度。</p>
+<p>$tw=\{tw_1,…,tw_k\}$ : 实体指称项的背景文档对应的主题词向量</p>
+<p>$tw’=\{tw’_1,…,tw’_m\}$ : 实体候选项的背景文档对应的主题词向量</p>
+<p><img src="https://whh.plus/images/sim1.png" alt="相似度公式" loading="lazy"></p>
+<p>三种相似度特征之间的比较</p>
+<p><img src="https://whh.plus/images/tzbj.png" alt="相似度公式" loading="lazy"></p>
+<p><strong>相似度融合</strong></p>
+<p>$$sim(entity,entity’)=\alpha sim_1(entity,entity’)+\beta sim_2(entity,entity’)+\gamma sim_3(entity,entity’)$$</p>
+<p>$sim_1(entity,entity’)$ : 实体上下文相似度</p>
+<p>$sim_2(entity,entity’)$ : 类别主题相似度</p>
+<p>$sim_3(entity,entity’)$ : 实体主题相似度</p>
+<p>$\alpha+\beta+\gamma=1$</p>
+<p><a target="_blank" rel="noopener" href="https://whh.plus/paper/%E5%9F%BA%E4%BA%8E%E4%B8%8A%E4%B8%8B%E6%96%87%E8%AF%8D%E5%90%91%E9%87%8F%E5%92%8C%E4%B8%BB%E9%A2%98%E6%A8%A1%E5%9E%8B%E7%9A%84%E5%AE%9E%E4%BD%93%E6%B6%88%E6%AD%A7%E6%96%B9%E6%B3%95.pdf">基于上下文词向量和主题模型的实体消歧方法</a></p>
+</div><div id="reward-container"><span class="hty-icon-button button-glow" id="reward-button" title="Donate" onclick="var qr = document.getElementById(&quot;qr&quot;); qr.style.display = (qr.style.display === &quot;none&quot;) ? &quot;block&quot; : &quot;none&quot;;"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-hand-coin-line"></use></svg></span><div id="reward-comment">我很可爱，请给我钱</div><div id="qr" style="display:none;"><div style="display:inline-block"></div><div style="display:inline-block"></div><div style="display:inline-block"></div></div></div><ul class="post-copyright"><li class="post-copyright-author"><strong>Post author: </strong>wenhao</li><li class="post-copyright-link"><strong>Post link: </strong><a href="https://wentianhao.github.io/2020/06/11/%E5%9F%BA%E4%BA%8E%E4%B8%8A%E4%B8%8B%E6%96%87%E8%AF%8D%E5%90%91%E9%87%8F%E5%92%8C%E4%B8%BB%E9%A2%98%E6%A8%A1%E5%9E%8B%E7%9A%84%E5%AE%9E%E4%BD%93%E6%B6%88%E6%AD%A7%E6%96%B9%E6%B3%95/" title="基于上下文词向量和主题模型的实体消歧方法">https://wentianhao.github.io/2020/06/11/%E5%9F%BA%E4%BA%8E%E4%B8%8A%E4%B8%8B%E6%96%87%E8%AF%8D%E5%90%91%E9%87%8F%E5%92%8C%E4%B8%BB%E9%A2%98%E6%A8%A1%E5%9E%8B%E7%9A%84%E5%AE%9E%E4%BD%93%E6%B6%88%E6%AD%A7%E6%96%B9%E6%B3%95/</a></li><li class="post-copyright-license"><strong>Copyright Notice: </strong>All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="noopener" title="CC BY-NC-SA 4.0 "><svg class="icon"><use xlink:href="#icon-creative-commons-line"></use></svg><svg class="icon"><use xlink:href="#icon-creative-commons-by-line"></use></svg><svg class="icon"><use xlink:href="#icon-creative-commons-nc-line"></use></svg><svg class="icon"><use xlink:href="#icon-creative-commons-sa-line"></use></svg></a> unless stating additionally.</li></ul></section></article><div class="post-nav"><div class="post-nav-item"><a class="post-nav-prev" href="/2020/06/11/Q-learning/" rel="prev" title="Q learning"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-arrow-left-s-line"></use></svg><span class="post-nav-text">Q learning</span></a></div><div class="post-nav-item"><a class="post-nav-next" href="/2020/06/05/%E5%9F%BA%E4%BA%8E%E8%AF%8D%E5%90%91%E9%87%8F%E7%9A%84%E5%AE%9E%E4%BD%93%E9%93%BE%E6%8E%A5%E6%96%B9%E6%B3%95/" rel="next" title="基于词向量的实体链接方法"><span class="post-nav-text">基于词向量的实体链接方法</span><svg class="icon" aria-hidden="true"><use xlink:href="#icon-arrow-right-s-line"></use></svg></a></div></div></div><div id="comment"><div class="comment-tooltip text-center"><span>尝试使用 utterances （基于 GitHub Issues）评论系统。</span><br><span>您可以点击下方按钮切换对应评论系统，</span><br><span><script>function showUtterances(){ document.querySelector(".utterances").style.display='block'; document.querySelector('#valine-container').style.display='none'; }function showValine(){ document.querySelector('#valine-container').style.display='block'; document.querySelector(".utterances").style.display='none'; }</script></span><br><span><a class="hty-button hty-button--raised" onclick="showValine()">Valine</a><a class="hty-button hty-button--raised" onclick="showUtterances()">utterances</a></span><br><span><style>.utterances{display:none;}</style></span><br></div><div id="valine-container"></div><script src="https://cdn.jsdelivr.net/npm/valine@latest/dist/Valine.min.js"></script><script>function initValine() {
+  const valineConfig = {"enable":true,"appId":"4x0IwQ1sy95mOGQDTO8MYCeA-gzGzoHsz","appKey":"9loqwF3UDklPDHaP9IN2uwN8","placeholder":"大佬求指教&nbsp_(:з」∠)_ （填写邮箱可以收到回复通知～）","avatar":null,"pageSize":10,"visitor":true,"highlight":true,"recordIP":true,"enableQQ":true,"requiredFields":["nick","mail"],"emojiCDN":"//i0.hdslb.com/bfs/emote/","emojiMaps":{"tv_doge":"6ea59c827c414b4a2955fe79e0f6fd3dcd515e24.png","tv_亲亲":"a8111ad55953ef5e3be3327ef94eb4a39d535d06.png","tv_偷笑":"bb690d4107620f1c15cff29509db529a73aee261.png","tv_再见":"180129b8ea851044ce71caf55cc8ce44bd4a4fc8.png","tv_冷漠":"b9cbc755c2b3ee43be07ca13de84e5b699a3f101.png","tv_发怒":"34ba3cd204d5b05fec70ce08fa9fa0dd612409ff.png","tv_发财":"34db290afd2963723c6eb3c4560667db7253a21a.png","tv_可爱":"9e55fd9b500ac4b96613539f1ce2f9499e314ed9.png","tv_吐血":"09dd16a7aa59b77baa1155d47484409624470c77.png","tv_呆":"fe1179ebaa191569b0d31cecafe7a2cd1c951c9d.png","tv_呕吐":"9f996894a39e282ccf5e66856af49483f81870f3.png","tv_困":"241ee304e44c0af029adceb294399391e4737ef2.png","tv_坏笑":"1f0b87f731a671079842116e0991c91c2c88645a.png","tv_大佬":"093c1e2c490161aca397afc45573c877cdead616.png","tv_大哭":"23269aeb35f99daee28dda129676f6e9ea87934f.png","tv_委屈":"d04dba7b5465779e9755d2ab6f0a897b9b33bb77.png","tv_害羞":"a37683fb5642fa3ddfc7f4e5525fd13e42a2bdb1.png","tv_尴尬":"7cfa62dafc59798a3d3fb262d421eeeff166cfa4.png","tv_微笑":"70dc5c7b56f93eb61bddba11e28fb1d18fddcd4c.png","tv_思考":"90cf159733e558137ed20aa04d09964436f618a1.png","tv_惊吓":"0d15c7e2ee58e935adc6a7193ee042388adc22af.png","tv_打脸":"56ab10b624063e966bfcb76ea5dc4794d87dfd47.png","tv_抓狂":"fe31c08edad661d63762b04e17b8d5ae3c71a757.png","tv_抠鼻":"c666f55e88d471e51bbd9fab9bb308110824a6eb.png","tv_斜眼笑":"911f987aa8bc1bee12d52aafe62bc41ef4474e6c.png","tv_无奈":"ea8ed89ee9878f2fece2dda0ea8a5dbfe21b5751.png","tv_晕":"5443c22b4d07fb1907ccc610c8e6db254f2461b7.png","tv_流汗":"cead1c351ab8d79e9f369605beb90148db0fbed3.png","tv_流泪":"7e71cde7858f0cd50d74b0264aa26db612a8a167.png","tv_流鼻血":"c32d39db2737f89b904ca32700d140a9241b0767.png","tv_点赞":"f85c354995bd99e28fc76c869bfe42ba6438eff4.png","tv_生气":"26702dcafdab5e8225b43ffd23c94ac1ff932654.png","tv_生病":"8b0ec90e6b86771092a498c54f09fc94621c1900.png","tv_疑问":"0793d949b18d7be716078349c202c15ff166f314.png","tv_白眼":"c1d59f439e379ee50eef488bcb5e5378e5044ea4.png","tv_皱眉":"72ccad6679fea0d14cce648b4d818e09b8ffea2d.png","tv_目瞪口呆":"0b8cb81a68de5d5365212c99375e7ace3e7891b7.png","tv_睡着":"8b196675b53af58264f383c50ad0945048290b33.png","tv_笑哭":"1abc628f6d4f4caf9d0e7800878f4697abbc8273.png","tv_腼腆":"89712c0d4af73e67f89e35cbc518420380a7f6f4.png","tv_色":"61822c7e9aae5da76475e7892534545336b23a6f.png","tv_调侃":"4bc022533ef31544ca0d72c12c808cf4a1cce3e3.png","tv_调皮":"b9c41de8e82dd7a8515ae5e3cb63e898bf245186.png","tv_鄙视":"6e72339f346a692a495b123174b49e4e8e781303.png","tv_闭嘴":"c9e990da7f6e93975e25fd8b70e2e290aa4086ef.png","tv_难过":"87f46748d3f142ebc6586ff58860d0e2fc8263ba.png","tv_馋":"fc7e829b845c43c623c8b490ee3602b7f0e76a31.png","tv_鬼脸":"0ffbbddf8a94d124ca2f54b360bbc04feb6bbfea.png","tv_黑人问号":"45821a01f51bc867da9edbaa2e070410819a95b2.png","tv_鼓掌":"1d21793f96ef4e6f48b23e53e3b9e42da833a0f6.png"},"el":"#valine-container","lang":"zh-cn"}
+  valineConfig.path = window.location.pathname
+  new Valine(valineConfig)
+}
+setTimeout(initValine, 1000)</script></div></main><footer class="sidebar-translate" id="footer"><div class="beian"><a rel="noopener" href="https://beian.miit.gov.cn/" target="_blank">苏ICP备17038157号</a></div><div class="copyright"><span>&copy; 2016 – 2020 </span><span class="with-love" id="animate"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-cloud-line"></use></svg></span><span class="author"> wenhao</span></div><div class="powered"><span>Powered by <a href="https://hexo.io" target="_blank" rel="noopener">Hexo</a> v5.2.0</span><span class="footer-separator">|</span><span>Theme - <a rel="noopener" href="https://github.com/YunYouJun/hexo-theme-yun" target="_blank"><span>Yun</span></a> v1.0.0</span></div><div class="footer-custom-text"><a style="display:inline-block" href="https://www.upyun.com/?utm_source=lianmeng&utm_medium=referral" target="blank" title="又拍云"><img height="30" src="https://cdn.jsdelivr.net/gh/YunYouJun/cdn/img/logo/upyun-logo.png" alt="upyun"/></a></div></footer><a class="hty-icon-button" id="goUp" aria-label="back-to-top" href="#"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-arrow-up-s-line"></use></svg><svg class="progress-circle-container" viewBox="0 0 100 100"><circle class="progress-circle" id="progressCircle" cx="50" cy="50" r="48" fill="none" stroke="#0078E7" stroke-width="2" stroke-linecap="round"></circle></svg></a><a class="popup-trigger hty-icon-button icon-search" id="search" target="_blank" rel="noopener" href="https://www.google.com/search?q=site:yunyoujun.cn" title="Search"><span class="site-state-item-icon"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-search-line"></use></svg></span></a></div><script defer src="/js/utils.js"></script><script defer src="/js/hexo-theme-yun.js"></script></body></html>

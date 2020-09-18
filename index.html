@@ -1,1124 +1,808 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <meta charset="utf-8">
-  
-  <title>blog</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="wenhao&#39;blog">
-<meta property="og:type" content="website">
-<meta property="og:title" content="blog">
-<meta property="og:url" content="https://wentianhao.github.io/index.html">
-<meta property="og:site_name" content="blog">
-<meta property="og:description" content="wenhao&#39;blog">
-<meta property="og:locale">
-<meta property="article:author" content="wenhao">
-<meta name="twitter:card" content="summary">
-  
-    <link rel="alternate" href="/atom.xml" title="blog" type="application/atom+xml">
-  
-  
-    <link rel="icon" href="/favicon.png">
-  
-  
-    <!--<link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">-->
-  
-  
-<link rel="stylesheet" href="/css/style.css">
+  <head>
+      <script>
+  var _hmt = _hmt || []
+  ;(function() {
+    var hm = document.createElement('script')
+    hm.src = 'https://hm.baidu.com/hm.js?5a0acc897fd96474a2c8f4deac84611a'
+    var s = document.getElementsByTagName('script')[0]
+    s.parentNode.insertBefore(hm, s)
+  })()
+</script> 
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="keywords" content="undefined" />
+    <meta name="description" content="wenhao&#39;blog" />
+    
+    <title>
+       wenhao  - blog
+    </title>
+    <link rel="manifest" href="/manifest.json" />
+    <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon" />
+    
+<link rel="stylesheet" href="/style/style.css">
 
-  
-
+  <link rel="alternate" href="/atom.xml" title="blog" type="application/atom+xml">
 </head>
-
-<body>
-  <div id="container">
-    <div id="wrap">
-      <header id="header">
-  <div id="banner"></div>
-  <div id="header-outer" class="outer">
-    <div id="header-title" class="inner">
-      <h1 id="logo-wrap">
-        <a href="/" id="logo">blog</a>
-      </h1>
-      
+  <body>
+    <canvas id='pagemap'></canvas>
+    
+    <div id="fixed-menu-wrap">
+      <span class="iconfont icon-sousuo search-box menu-reset"></span>
+      <span class="icon-toc menu-reset">Toc</span>
+      <span class="iconfont icon-arrowup menu-reset"></span>
     </div>
-    <div id="header-inner" class="inner">
-      <nav id="main-nav">
-        <a id="main-nav-toggle" class="nav-icon"></a>
-        
-          <a class="main-nav-link" href="/">Home</a>
-        
-          <a class="main-nav-link" href="/archives">Archives</a>
-        
-      </nav>
-      <nav id="sub-nav">
-        
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
-        
-        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
-      </nav>
-      <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://wentianhao.github.io"></form>
+    <div id="fixed-menu">
+      <span class="iconfont icon-menu-"></span>
+    </div>
+    <div id="progress">
+      <div class="line"></div>
+    </div>
+    <div id="search-shade" class="animated hiddenSearch hide">
+      <div class="input-wrap">
+        <span class="iconfont icon-sousuo search-box"></span>
+        <input type="text" placeholder="Search" />
+        <span class="iconfont icon-close"></span>
+      </div>
+      <div class="search-result">
+        <div class="meta">
+          <span><b id="result-count">0</b> results found</span>
+          <img src="/images/logo.jpeg" />
+        </div>
+        <ul id="result-box"></ul>
       </div>
     </div>
-  </div>
-</header>
-      <div class="outer">
-        <section id="main">
-  
-    <article id="post-python3" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2020/09/13/python3/" class="article-date">
-  <time datetime="2020-09-13T03:05:15.000Z" itemprop="datePublished">2020-09-13</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/python/">python</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
+    <div id="menu-mask" class="animated hideMenuMask hide">
+      <span class="iconfont icon-close"></span>
+      <div class="nav">
         
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/09/13/python3/">Ubuntu18.04中Python2.7与Python3.6环境切换</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <html><head></head><body><p>1.查看python版本</p>
-<blockquote>
-<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">  python -V</span><br><span class="line"># 安装python3.6</span><br><span class="line">  apt-get install python3.6</span><br></pre></td></tr></tbody></table></figure>
-</blockquote>
-<p>2.查看系统python的可用环境列表</p>
-<blockquote>
-<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">update-alternatives --list python</span><br></pre></td></tr></tbody></table></figure>
-</blockquote>
-<p>若显示 update-alternatives: error: no alternatives for python,则：</p>
-<blockquote>
-<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"># 版本号根据自己安装的设定</span><br><span class="line">  update-alternatives --install /usr/bin/python python /usr/bin/python2.7 1</span><br><span class="line">  update-alternatives --install /usr/bin/python python /usr/bin/python3.6 2</span><br></pre></td></tr></tbody></table></figure>
-</blockquote>
-<p>3.配置python环境</p>
-<blockquote>
-<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">update-alternatives --config python</span><br></pre></td></tr></tbody></table></figure>
-</blockquote>
-<p>选择你想默认的版本的编号即可。</p>
-<p><a href="https://www.jb51.net/article/163117.htm" target="_blank" rel="noopener">参考文章</a></p>
-</body></html>
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://wentianhao.github.io/2020/09/13/python3/" data-id="ckf0iw18700018s5h64kzcz26" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/python/" rel="tag">python</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-bert" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2020/08/25/bert/" class="article-date">
-  <time datetime="2020-08-25T08:17:51.000Z" itemprop="datePublished">2020-08-25</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/bert/">bert</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
+        <a href="/" class="current">
+          Home
+        </a>
         
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/08/25/bert/">bert</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <html><head></head><body><h3 id="CCKS-amp-百度-2019中文短文本的实体链指-第一名解决方案"><center><strong>CCKS&百度 2019中文短文本的实体链指 第一名解决方案</strong></center><a class="post-anchor" href="#CCKS-amp-百度-2019中文短文本的实体链指-第一名解决方案"></a></h3><p>code 文件夹下为项目文件<br> 比赛网址： <a href="https://biendata.com/competition/ccks_2019_el/" target="_blank" rel="noopener">https://biendata.com/competition/ccks_2019_el/</a><br> 数据集：<a href="https://pan.baidu.com/s/1SShtugdAMVf0fdaBowtMiA" target="_blank" rel="noopener">https://pan.baidu.com/s/1SShtugdAMVf0fdaBowtMiA</a> 提取码:8r80<br> 这是提交的时候代码，自己测试是请先划分出验证集，上述所有代码都是交叉验证有多个模型，很费时间，自己跑的时候跑一折就行</p>
-<p><strong>摘要</strong></p>
-<p>　　传统的实体链接任务主要是针对长文档。长文档拥有充分的上下文 信息，能够辅助实体的识别与消歧。相比之下，中文短文本的实体链接存 在很大的挑战。实体链接整个过程包括实体识别和实体消歧两个子任务。 针对实体识别子任务，我们创新性地利用了知识库描述文本的信息来增强 实体识别的性能，提出了 BERT-EntityNameEmbedding（BERT-ENE） 模型。具体地说，首先通过挖掘知识库中实体的描述文本得到实体名字的 向量嵌入，然后通过名称字典匹配技术，得到得到短文本中的候选实体，最 后利用 BERT-ENE 模型对结果进行筛选，完成实体识别的任务。此外，本 文进一步提出了一种将 BERT-ENE 模型与 BERT-CRF 模型相融合的新 方法，相比传统方法识别效果有了显著提升。针对实体消歧子任务，将其 视为二分类问题，通过基于 BERT 的二分类模型对候选实体进行预测，然 后对预测的概率进行排序，进而完成消歧任务。基于本文提出的方法，我们在 CCKS2019 面向中文短文本的实体链指任务中，取得了第一名的成绩。</p>
-<p><strong>关键词</strong></p>
-<p>　　实体链接，实体识别，实体消歧，BERT</p>
-<p><strong>1</strong> <strong>数据分析与处理</strong></p>
-<p>　　训练数据包含 text 字段和 mention_data 字段，mention_data 里面包 含连接的 mention 以及 kb_id。知识库包含 subject_id，subject，alias，data 等字段，data 中包含多个 predicate、object。</p>
-<p><strong>1.1 引入新的别名</strong></p>
-<p>　　经过对数据集统计分析，训练集中有 2.592% 的实体名在实 体库中无法匹配，部分错误样例如下所示： </p>
-<ol>
-<li>安妮 ‘海瑟薇：文本中间有特殊符</li>
-<li>新浪微薄：输入文本中实体名错误</li>
-<li>国家质检总局: 别名不在知识库中</li>
-</ol>
-<p>　　为了解决这个问题通过为知识库中的对应实体引入新的别名来改善这 一问题，具体步骤如下</p>
-<ol>
-<li><p>对于错误１，对特殊符号进行归一化处理，并将处理后的名字，加入到对应实体的别名中。如所有中文标点符号全部准换成英文标点符号。</p>
-</li>
-<li><p>对于错误３，我们实体识别的模型能够解决这一问题</p>
-</li>
-<li><p>针对错误2与错误3，统计知识库中实体（$E$）无法匹配总次数（$E_{num}$）,训练集中实体E 无法匹配的所有字符串（$M_1,M_2,M_3…M_i$）以及该字符串对应的出现次数（$M_{inum}$）。我们设定，如果$E_{num}$ 大于4，并且$M_{inum}$ 大于3，则将字符串M加入到实体E的别名中。如，针对知识库中实体 bilibili 统计信息如下：</p>
-</li>
-</ol>
-<blockquote>
-<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">'bilibili'</span>:{<span class="string">'E_num'</span>: <span class="number">108</span>, <span class="string">'哔哩哔哩'</span>: <span class="number">94</span>, <span class="string">'哔哩哔哩弹幕视频网'</span>: <span class="number">5</span>, <span class="string">'异地恋'</span>: <span class="number">1</span>, <span class="string">'b站'</span>: <span class="number">8</span>}</span><br></pre></td></tr></tbody></table></figure>
-</blockquote>
-<p>   根据以上统计将 ‘哔哩哔哩’ ，’哔哩哔哩弹幕视频网’，’b站’ 加入到实体 bilibili 的别名中。</p>
-<p><strong>1.2  实体描述文本的构建</strong></p>
-<p>　　知识库中每个实体都有‘data’ 字段，‘data’ 字段包含多个predicate项和object项，数据格式如下：</p>
-<blockquote>
-<figure class="highlight"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">"subject_id": "10001"</span><br><span class="line">"subject": "胜利",</span><br><span class="line">"data": [</span><br><span class="line">    {<span class="attr">"predicate"</span>: <span class="string">"摘要"</span>, <span class="attr">"object"</span>: <span class="string">"英雄联盟胜利系列皮肤是拳头公司制作的具有纪念意义限定系列皮肤之一。</span></span><br><span class="line">    拳头公司制作的具有纪念意义限定系列皮肤还包括英雄联盟冠军系列皮肤。..."}, </span><br><span class="line">    {"predicate": "制作方", "object": "Riot Games"}, </span><br><span class="line">    {"predicate": "外文名", "object": "Victorious"},</span><br><span class="line">    {"predicate": "义项描述", "object": "游戏《英雄联盟》胜利系列限定皮肤"}]</span><br></pre></td></tr></tbody></table></figure>
-</blockquote>
-<p>　　将所有的 predicate和object 相连得到实体描述文本。</p>
-<blockquote>
-<figure class="highlight json"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">{<span class="attr">"10001"</span>: <span class="string">"摘要：英雄联盟胜利系列皮肤是拳头公司制作的具有纪念意义限定系列皮肤之一。...,</span></span><br><span class="line"><span class="string"> 制作方:Riot Games,外文名:Victorious,来源:英雄联盟,中文名:胜利"</span> }</span><br></pre></td></tr></tbody></table></figure>
-</blockquote>
-<p>　　连接后的描述文本长度分布如下：</p>
-<blockquote>
-<figure class="highlight html"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag"><<span class="name">center</span>></span></span><br><span class="line">   <span class="tag"><<span class="name">img</span> <span class="attr">src</span>=<span class="string">"picture/Number_of_Text_Length.png"</span> <span class="attr">width</span>=<span class="string">"66%"</span> <span class="attr">height</span>=<span class="string">"66%"</span> /></span></span><br><span class="line"><span class="tag"></<span class="name">center</span>></span></span><br></pre></td></tr></tbody></table></figure>
-<p>　　通过分析可以发现文本会存在过长的情况，为了方便以后处理需要多过长的文本进行截断，截断规则如下：</p>
-</blockquote>
-<ol>
-<li>predicate项+object项 的长度小于30 不截断</li>
-<li>predicate项+object项 的长度大于30按比例截断</li>
-</ol>
-<p><strong>1.3 其他处理</strong></p>
-<p>为了方便后续模型的使用我们需要根据知识库数据，构建一些字典。有以下几个字典：</p>
-<ol>
-<li>entity_id 字典   key：实体名字 value：kb_id 列表</li>
-</ol>
-<blockquote>
-<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">{<span class="string">'胜利'</span>: [<span class="string">'10001'</span>, <span class="string">'19044'</span>, <span class="string">'37234'</span>, <span class="string">'38870'</span>, <span class="string">'40008'</span>, <span class="string">'85426'</span>, <span class="string">'86532'</span>, <span class="string">'140750'</span>]}</span><br></pre></td></tr></tbody></table></figure>
-</blockquote>
-<p>   其中 胜利 为实体名字，列表里面为名字为 胜利 的所有实体的id。</p>
-<ol start="2">
-<li>id_entity字典  key: kb_id  value: subject字段(实体名字)</li>
-</ol>
-<blockquote>
-<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">{<span class="string">'10001'</span>: <span class="string">'胜利'</span>}</span><br></pre></td></tr></tbody></table></figure>
-</blockquote>
-<ol start="3">
-<li>id_text字典 key：kb_id   value: 实体描述文本</li>
-</ol>
-<blockquote>
-<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">{<span class="string">'10001'</span>: <span class="string">'摘要:英雄联盟胜利系列皮肤是拳头公司制作的具有纪念意义限定系列皮肤之一。'</span>}</span><br></pre></td></tr></tbody></table></figure>
-</blockquote>
-<ol start="4">
-<li>id_type字典  key：kb_id    value: entity type</li>
-</ol>
-<blockquote>
-<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">{<span class="string">'10001'</span>: [<span class="string">'Thing'</span>]}</span><br></pre></td></tr></tbody></table></figure>
-</blockquote>
-<ol start="5">
-<li>type_index字典 key：type name value：index</li>
-</ol>
-<blockquote>
-<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">{</span><br><span class="line">    ‘NAN’: <span class="number">0</span></span><br><span class="line">    <span class="string">'Thing'</span>:<span class="number">1</span></span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
-</blockquote>
-<p><strong>2 实体识别</strong></p>
-<p> 　　但是使用 BERT-CRF模型只利用到了短文本信息，并没有利用知识库的信息。仍然会遇到实体边界识别错误，句子中实体识别不全等问题。为了解决上述不足，并且能够完全利用知识库的信息，提出了 BERT-ENE 模型。</p>
-<p>针对实体识别任务，首先采用现在效果较好的 BERT-CRF 命名实体识别模型。针对基于实体库实体链接（尤其是短文本）仅仅采用BERT+CRF进行实体识别有两点不足：</p>
-<ol>
-<li>BERT+CRF仍然会造成实体边界错误</li>
-<li>BERT+CRF模型识别实体不全</li>
-<li>没有利用到知识库的信息</li>
-</ol>
-<p>为了解决上述两个不足，并且能够完全利用知识库里面的实体信息，构建了BERT-EntityNameEmbedding模型，与BERT-CRF融合，解决上述问题。</p>
-<p><strong>2.1 BERT+CRF</strong></p>
-<p> 　　图 1 为 BERT-CRF 模型，采用 BIO 标记，其中 BERT 的[CLS],[SEP] 位置用标签 TAG 表示。模型主要包含输入层、 BERT 层和 CRF层。：</p>
-<blockquote>
-<figure class="highlight html"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag"><<span class="name">center</span>></span></span><br><span class="line">    <span class="tag"><<span class="name">img</span> <span class="attr">src</span>=<span class="string">"picture/bert _CRF.jpg"</span> <span class="attr">width</span>=<span class="string">"66%"</span> <span class="attr">height</span>=<span class="string">"66%"</span> /></span></span><br><span class="line"><span class="tag"></<span class="name">center</span>></span></span><br></pre></td></tr></tbody></table></figure>
-<p>涉及到的一些参数:</p>
-</blockquote>
-<p>– max_len 52</p>
-<p>–batch_size 64</p>
-<p>–dropout 0.2 （bert 输出后接的dropout）</p>
-<p>–num_epochs 7</p>
-<p>一些训练细节：</p>
-<ol>
-<li>将训练集分为9份，采用9折交叉验证，分别按照loss和f1保存模型，共18个模型</li>
-<li>因为BERT具有一定的随机性，在训练的过程中针对每个模型会多训练几次选择较好的一个（从第一轮结束验证后就能判断，不用全部跑完）</li>
-<li>前3轮学习率为1e-5，后面会调整为1e-6</li>
-<li>最大epoch为7，训练过程会根据loss提前停止</li>
-</ol>
-<p><strong>2.2 BERT-EntityNameEmbedding（BERT-ENE）模型</strong></p>
-<p>　　BERT-ENE 模型如图 2 所示，其具体思路为： 1. 利用知识库的实体名称和实体的别名信息构建实体名称字典。 2. 通过知识库的实体描述文本，利用 BERT 预训练模型，选取模型 CLS 位置的向量输出作为实体名称的<br>向量嵌入。 3. 通过字典匹配方式，得到短文本中候选实体。 4. 通过构建的BERT-ENE 模型对匹配的结果进行筛选。</p>
-<p><strong>2.2.1 字典树+实体正向最大匹配</strong></p>
-<p>　　为了加快速度采用字典树这一结构，同时采用正向最大匹配实体的思路，去匹配文本中实体。首先需要的数据为1.3中的 entity_id 字典，将里面的key 也就是实体名字插入到字典树中，实体库中存在很多单字实体，这类实体匹配会造成太多匹配结果，对于单字实体不在插入。</p>
-<p>全部匹配例：</p>
-<blockquote>
-<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">text：《大话英雄·联盟》-原创-高清视频</span><br><span class="line">result： [(<span class="string">'大话英雄·联盟'</span>, <span class="number">1</span>), (<span class="string">'联盟'</span>, <span class="number">6</span>), (<span class="string">'原创'</span>, <span class="number">10</span>), (<span class="string">'高清视频'</span>, <span class="number">13</span>), (<span class="string">'视频'</span>, <span class="number">15</span>)]</span><br></pre></td></tr></tbody></table></figure>
-</blockquote>
-<p>最大匹配例：</p>
-<blockquote>
-<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">text：《大话英雄·联盟》-原创-高清视频</span><br><span class="line">result： [(<span class="string">'大话英雄·联盟'</span>, <span class="number">1</span>), (<span class="string">'原创'</span>, <span class="number">10</span>), (<span class="string">'高清视频'</span>, <span class="number">13</span>)]</span><br></pre></td></tr></tbody></table></figure>
-</blockquote>
-<p>正确结果：</p>
-<blockquote>
-<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">text：《大话英雄·联盟》-原创-高清视频</span><br><span class="line">result： [(<span class="string">'大话英雄·联盟'</span>, <span class="number">1</span>), (<span class="string">'视频'</span>, <span class="number">15</span>)]</span><br></pre></td></tr></tbody></table></figure>
-</blockquote>
-<p>通过经过统计发现，采用最大匹配对整体数据效果较好，但是在实验过程中发现，最大匹配时会出现一些实体重复，如 迅雷、下载 和 迅雷下载三个实体，还有 视频 和 高清视频两个个实体，如果不处理最大匹配时将会漏掉 迅雷、下载 两个实体，仅仅会匹配 迅雷下载 这一个实体。为处理这种情况，统计他们出现的次数并根据出现次数来决定这类实体该怎么处理。处理分一下三种情况：</p>
-<blockquote>
-<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">1. 仅保留最大的实体，如迅雷下载开，</span><br><span class="line">2. 保留小的实体，具体保留那个看统计数据 如  迅雷、下载 仅仅保留‘迅雷’</span><br><span class="line">3. 都保留 如 迅雷 下载 迅雷下载</span><br></pre></td></tr></tbody></table></figure>
-</blockquote>
-<p>代码实现依然按照最大匹配去实现，只是针对要分开的实体，在匹配结束后再分开。</p>
-<p><strong>2.2.2 实体名字嵌入</strong></p>
-<p>　　为了能够对匹配到的实体进行二分类，需要将实体名字用一个向量表示，当然实体名字嵌入向量可以随机生成最后通过训练也能不断拟合，但是一个好的初始化向量对结果影响很大，也因为后续模型用到了BERT，这里使用BERT来得到实体名字的嵌入。具体思路和过程如下：</p>
-<ol>
-<li><p>将每个实体文本描述输入到BERT模型，则 [CLS] 位置的输出向量可以这个实体的意思。于是我们能够得到每个实体对应的向量，代码中我们用一个字典表示 id_embedding key：subject_id， value：CLS 输出向量</p>
-</li>
-<li><p>对于实体名字只对应一个实体的情况，则直接用实体对应向量当做这个实体名字的嵌入。如</p>
-</li>
-</ol>
-<blockquote>
-<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">{<span class="string">'无尽武道'</span>: [<span class="string">'10007'</span>]}</span><br></pre></td></tr></tbody></table></figure>
-</blockquote>
-<ol start="3">
-<li>对于实体名字只对应多个实体的情况，求平均，如</li>
-</ol>
-<blockquote>
-<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">{<span class="string">'胜利'</span>: [<span class="string">'10001'</span>, <span class="string">'19044'</span>, <span class="string">'37234'</span>, <span class="string">'38870'</span>, <span class="string">'40008'</span>, <span class="string">'85426'</span>, <span class="string">'86532'</span>, <span class="string">'140750'</span>]}</span><br></pre></td></tr></tbody></table></figure>
-</blockquote>
-<p>通过这种方式能够为每个实体名字得到一个768维的向量嵌入，模型图如下：</p>
-<blockquote>
-<figure class="highlight html"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag"><<span class="name">center</span>></span></span><br><span class="line">   <span class="tag"><<span class="name">img</span> <span class="attr">src</span>=<span class="string">"picture/Entity_embedding.jpg"</span> <span class="attr">width</span>=<span class="string">"66%"</span> <span class="attr">height</span>=<span class="string">"66%"</span> /></span></span><br><span class="line"><span class="tag"></<span class="name">center</span>></span></span><br></pre></td></tr></tbody></table></figure>
-</blockquote>
-<p><strong>2.2.3 训练数据构建</strong></p>
-<p>通过上述匹配方式，匹配结果：（高清视频 属于上述第三种情况，最后模型会判断取那个好）</p>
-<blockquote>
-<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">text：《大话英雄·联盟》-原创-高清视频</span><br><span class="line">result： [(<span class="string">'大话英雄·联盟'</span>, <span class="number">1</span>), (<span class="string">'原创'</span>, <span class="number">10</span>), (<span class="string">'高清视频'</span>, <span class="number">13</span>), (<span class="string">'视频'</span>, <span class="number">15</span>)]</span><br></pre></td></tr></tbody></table></figure>
-</blockquote>
-<p>根据正确结果得到 label 为：</p>
-<blockquote>
-<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">label = [<span class="number">1</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">1</span>]</span><br></pre></td></tr></tbody></table></figure>
-</blockquote>
-<p><strong>2.2.4 模型</strong></p>
-<p>BERT-ENE 模型如图 2 所示，其基本思路为：</p>
-<ol>
-<li>利用知识库的实体名称和实体的别名信息构建实体名称字典。</li>
-<li>通过知识库的实体描述文本，利用 BERT 预训练模型，选取模型 CLS 位置的向量输出作为实体名称的<br>向量嵌入。 </li>
-<li>通过字典匹配方式，得到短文本中候选实体。 </li>
-<li>通过构建的BERT-ENE 模型对匹配的结果进行筛选。</li>
-</ol>
-<blockquote>
-<figure class="highlight html"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag"><<span class="name">center</span>></span></span><br><span class="line">   <span class="tag"><<span class="name">img</span> <span class="attr">src</span>=<span class="string">"picture/bert _entity_embedding.png"</span> <span class="attr">width</span>=<span class="string">"90%"</span> <span class="attr">height</span>=<span class="string">"90%"</span> /></span></span><br><span class="line"><span class="tag"></<span class="name">center</span>></span></span><br></pre></td></tr></tbody></table></figure>
-</blockquote>
-<p>模型具体过程为：</p>
-<ol>
-<li>短文本经过 BERT层 ，得到BERT的输出</li>
-<li>将BERT的输出输入到正向GRU网络和反向GRU网络中。然后抽取匹配到的实体名称对应在正向GRU的结束位置的向量$V_{end}$以及对应在反向GRU的开始位置的向量$V_{begin}$，将这两个向量连在一起得到$V_{con}$，则可以代表这个实体名称在文本语义表示。  </li>
-<li>为了学到整个文本的信息，分别对正向GRU 和反向GRU的输出，做最大池化操作，得到向量$V_{max}$，$V_{max}$可以表示整个文本的语义。 </li>
-<li>最后将$V_{max}$与$V_{con}$以及对应的实体名称嵌入连在一起经过卷积层、全连接层，$sigmoid$激活最后得到预测概率。 </li>
-</ol>
-<p><strong>2.3 实体识别结果融合</strong></p>
-<p>如上所述，实体识别分为两个模型，一个 BERT-CRF 模型，一个 BERTENE。 BERT-CRF 模型识别的实体会因为边界错误导致不能够匹配得到候选实体。而 BERT-ENE 模型是通过词典匹配方式实现，所以 BERT-ENE的结果都能够在知识库找到候选实体，不会出现边界错误。 BERT-ENE 模型在词典匹配时，去掉了单字实体，而 BERT-CRF 模型可以预测单字实体。所以将两种方案融合，能够取得最好的效果。融合规则为：如果两个结果在位置存在重复，则选取 BERT-ENE 的结果，单字实体选取 BERT-CRF 模型的结果。</p>
-<p>具体为：BERT+CRF共18个模型，对预测结果进行投票，分别去BERT+CRF模型投票大于8的作为BERT-CRF 模型的结果。选取BERT-ENE模型概率大于0.45作为结果，合在一起即可。</p>
-<p><strong>３实体消歧</strong></p>
-<p>　　实体消歧是基于二分类的思想实现，训练时选取连接到的实体作为正例，在候选实体里选取两个负例。将短文本以及待消歧实体的描述文本连在一起，输入到BERT模型，取CLS 位置向量输出，以及候选实体对应开始和结束位置对应的特征向量，三个向量连接，经过全连接层，最后sigmoid激活得到候选实体的概率得分。对所有候选实体的概率得分进行排序，选择概率最高的为正确实体。模型图如下：</p>
-<blockquote>
-<figure class="highlight html"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag"><<span class="name">center</span>></span></span><br><span class="line">   <span class="tag"><<span class="name">img</span> <span class="attr">src</span>=<span class="string">"picture/bert_binary.jpg"</span> <span class="attr">width</span>=<span class="string">"75%"</span> <span class="attr">height</span>=<span class="string">"75%"</span> /></span></span><br><span class="line"><span class="tag"></<span class="name">center</span>></span></span><br></pre></td></tr></tbody></table></figure>
-</blockquote>
-<p>其他细节：</p>
-<ol>
-<li>两个句子长度最大选取为256，负样本选取了3个，并且选取了一些通过上述匹配方式得到的一些负样本</li>
-<li>训练集分为5份，5折交叉验证，并对测试集结果求平均</li>
-<li>后来发现时间充足又训练了，长度384，负样本选取了2个,7折交叉验证的模型，并与上面的求平均</li>
-</ol>
-</body></html>
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://wentianhao.github.io/2020/08/25/bert/" data-id="cke9bjl1h0001y45h94ff389s" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/bert/" rel="tag">bert</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-基于随机游走的实体链接方法" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2020/06/25/%E5%9F%BA%E4%BA%8E%E9%9A%8F%E6%9C%BA%E6%B8%B8%E8%B5%B0%E7%9A%84%E5%AE%9E%E4%BD%93%E9%93%BE%E6%8E%A5%E6%96%B9%E6%B3%95/" class="article-date">
-  <time datetime="2020-06-25T08:17:51.000Z" itemprop="datePublished">2020-06-25</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/">读书笔记</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
+        <a href="/archives" class="">
+          Archives
+        </a>
         
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/06/25/%E5%9F%BA%E4%BA%8E%E9%9A%8F%E6%9C%BA%E6%B8%B8%E8%B5%B0%E7%9A%84%E5%AE%9E%E4%BD%93%E9%93%BE%E6%8E%A5%E6%96%B9%E6%B3%95/">基于随机游走的实体链接方法</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <html><head></head><body><p><strong>摘要</strong></p>
-<p>实体链接是实现军事情报语义理解的关键技术，有助于机器从实体维度自动建立信息之间的关联，为指挥员提供更高效精准的信息服务，提出了一种基于随机游走的实体链接方法。首先，利用实体的描述信息计算得到实体间相似度；然后，基于各实体间的语义关联，生成待链接实体间的关联图，将实体链接问题建模成关联图上的随机游走过程；最后，通过试验表明，该方法与单纯使用相似度函数计算方法相比能有效提升链接效果，修复实体相似度计算的误差，生成更正确的实体链接</p>
-<p><strong>关键词</strong> ：实体链接； 随机游走；语义关联；相似度计算</p>
-<p><strong>随机游走模型</strong></p>
-<p>随机游走 ：给定一个图，游走者从某个顶点或一系列顶点开始遍历该图，在任意一个顶点，游走者对于下一步行动有2种选择：以概率1-c随机选择一条关联到当前顶点的边以游走到某个邻居顶点，或以c的概率随机跳转到图中任意一个顶点</p>
-<p>整个游走过程可使用下式描述：$r=(1-c)Mr+cq$</p>
-<p>$c$ : 游走者在沿边移动和随机跳转之间选择后者的概率</p>
-<p>$r$ : 游走后每个顶点被访问到的概率分布向量</p>
-<p>$M$ : 图的邻接矩阵归一化后的转移概率矩阵</p>
-<p>$q$ : 游走过程中随机跳转到图中各个顶点的概率分布向量</p>
-<p><strong>基于随机游走的实体链接模型</strong></p>
-<p><a target="_blank" rel="noopener" href="https://whh.plus/images/model1.png" data-caption="基于随机游走的实体链接模型" data-fancybox="images"><img src="https://whh.plus/images/model1.png" alt="基于随机游走的实体链接模型"></a></p>
-<ul>
-<li>数据预处理 ：利用实体抽取和图像目标识别等多种实体信息抽取技术从多源异构数据中抽取得到的实体信息，可能存在格式上不一致或包含了噪声数据，需在预处理阶段对数据进行归一化</li>
-<li>实体相似度计算 ：根据实体属性值的数据类型使用不同相似度计算方法来度量它们之间的相似性，再使用聚合函数初始化实体间的相似度矩阵</li>
-<li>图模型构建 ：根据实体类型，基于相似度确定候选链接单元，将所有候选单元作为关联图中的顶点，再基于各实体间的语义关系，确定候选链接单元</li>
-</ul>
-</body></html>
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://wentianhao.github.io/2020/06/25/%E5%9F%BA%E4%BA%8E%E9%9A%8F%E6%9C%BA%E6%B8%B8%E8%B5%B0%E7%9A%84%E5%AE%9E%E4%BD%93%E9%93%BE%E6%8E%A5%E6%96%B9%E6%B3%95/" data-id="ckf6k00e40000vc5hb4ovafyf" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/NPL/" rel="tag">NPL</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%AE%9E%E4%BD%93%E9%93%BE%E6%8E%A5/" rel="tag">实体链接</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-基于领域图谱的实体链接技术研究" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2020/06/18/%E5%9F%BA%E4%BA%8E%E9%A2%86%E5%9F%9F%E5%9B%BE%E8%B0%B1%E7%9A%84%E5%AE%9E%E4%BD%93%E9%93%BE%E6%8E%A5%E6%8A%80%E6%9C%AF%E7%A0%94%E7%A9%B6/" class="article-date">
-  <time datetime="2020-06-18T12:17:51.000Z" itemprop="datePublished">2020-06-18</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/">读书笔记</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
+        <a href="/categories" class="">
+          Categories
+        </a>
         
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/06/18/%E5%9F%BA%E4%BA%8E%E9%A2%86%E5%9F%9F%E5%9B%BE%E8%B0%B1%E7%9A%84%E5%AE%9E%E4%BD%93%E9%93%BE%E6%8E%A5%E6%8A%80%E6%9C%AF%E7%A0%94%E7%A9%B6/">基于领域图谱的实体链接技术研究</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <html><head></head><body><p><strong>基于领域图谱的实体链接技术研究</strong></p>
-<p><strong>摘要</strong></p>
-<p>将文本中识别出来的实体链接到具体的实体信息上，从而实现从字符串到信息的跳转，对许多应用来说至关重要。使用机器学习或深度学习实现链接需要大量的领域数据语料以及标注数据，对于敏感领域比较难实现。文章提出基于领域图谱的实体链接技术，首先融合了字面相似度、文本相似度、同义词集、字符包含等多方面相似性度量特征，其次将文本中的上下文实体在图谱中的关联性纳入链接的候选特征，实现领域实体的高效链接，并有效的解决了特殊领域训练语料难的问题。</p>
-<p><strong>关键词</strong> : 实体链接；领域图谱；上下文实体；高效链接</p>
-<p>当前的实体链接模型往往只考虑到部分字符上的相似度特征，对于文本中上下文语义信息并没有进行充分考虑</p>
-<p>主要贡献：</p>
-<p>(1)文章融合了同义词集、字符相似性、包含相似性三方面的相似性度量标准</p>
-<p>(2)文章将文本中上下文实体在图谱中的关联性纳入链接的候选特征，充分利用图谱中的实体关联度，能够更精确的实现实体到知识库的链接</p>
-<p>(3)文章通过领域图谱中大量的领域实体作为数据来源，充分验证了该方法在领域内的高效性</p>
-<p><strong>候选实体集生成</strong></p>
-<p>候选实体将通过计算从图谱的实例集合中匹配top N个实体作为候选实体集</p>
-<p><strong>实体相似度计算</strong></p>
-<ul>
-<li>字面相似度计算 ：字面相似度就是指字符串之间的相似程度，主要体现在两个字符串字符之间的最长公共子序列，字符串的相似度计算如下：<br>$$S_{lcs}(e_a,e_b)=\cfrac {|LCS(e_a,e_b)|} {|e_a|+|e_b|-|LCS(e_a,e_b)|}$$</li>
-</ul>
-<p>$|LCS(e_a,e_b)|$ : 表示实体$e_a$和$e_b$之间的最长公共子序列的长度</p>
-<ul>
-<li>文本相似度计算 ： 文本相似度通常采用余弦相似度、KL散度、概率模型相似度等，本文采用余弦相似度计算文本相似度，计算如下：<br>$$S_{cos}=\cfrac{e_a \bullet e_b}{||e_a| \times |e_b||}$$</li>
-</ul>
-<p>$e_a \bullet e_b$ : 表示两个实体在空间中的向量乘积</p>
-<ul>
-<li><p>同义词处理 ： 对表征同一个实体的方法进行处理。本文采用配置知识图谱的同义词词典来完成实验，其主要方法包括从外网获取和手动添加</p>
-</li>
-<li><p>包含字符处理 ：包含关系指两个实体的字符之间存在包含与被包含的关系，由于包含关系是一串连续的字符相似，某个实体的字符串是另一个实体的子集</p>
-</li>
-</ul>
-<p><strong>上下文实体分析</strong></p>
-<p>传统的文本上下文信息通常只考虑到文本的语义相似度信息，没有结合知识图谱的关联关系去考虑上下文实体在图谱中的关联路径对待链接候选实体的影响</p>
-<p>(1)选取待链接实体的上下文实体集，在图谱中链接得到实体集合为：<br>$$ge=\{ge_1,ge_2,…,ge_i\}$$</p>
-<p>(2)通过相似度计算候选实体集合，其在图谱中的链接实体集为：<br>$$he=\{he_1,he_2,…,he_j\}$$</p>
-<p>(3)遍历上下文实体集中的所有实体，计算其到所有候选实体的最短路径的加权值：<br>$$S_{shortest}(ge,he_j)=\lambda\sum_{i=1}^{j=1}Shortestpath(ge_i,he_j)$$</p>
-<p>实验数据集 ：领域图谱数据 和实体链接的预标注数据</p>
-<p>图谱数据 ：主要是用于进行候选实体链接以及计算上下文实体和链接候选实体最短加权路径</p>
-<p>预标注数据 ：主要用于测试集验证链接效果</p>
-<p>实验使用的领域语料：主要来源于环球网、凤凰新闻网、新浪新闻</p>
-</body></html>
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://wentianhao.github.io/2020/06/18/%E5%9F%BA%E4%BA%8E%E9%A2%86%E5%9F%9F%E5%9B%BE%E8%B0%B1%E7%9A%84%E5%AE%9E%E4%BD%93%E9%93%BE%E6%8E%A5%E6%8A%80%E6%9C%AF%E7%A0%94%E7%A9%B6/" data-id="ckf5d3qkq0000905hgkxxd5li" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/NPL/" rel="tag">NPL</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%AE%9E%E4%BD%93%E9%93%BE%E6%8E%A5/" rel="tag">实体链接</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-基于上下文信息和排序学习的实体链接方法" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2020/06/18/%E5%9F%BA%E4%BA%8E%E4%B8%8A%E4%B8%8B%E6%96%87%E4%BF%A1%E6%81%AF%E5%92%8C%E6%8E%92%E5%BA%8F%E5%AD%A6%E4%B9%A0%E7%9A%84%E5%AE%9E%E4%BD%93%E9%93%BE%E6%8E%A5%E6%96%B9%E6%B3%95/" class="article-date">
-  <time datetime="2020-06-18T08:17:51.000Z" itemprop="datePublished">2020-06-18</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/">读书笔记</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
+        <a href="/tags" class="">
+          Tags
+        </a>
         
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/06/18/%E5%9F%BA%E4%BA%8E%E4%B8%8A%E4%B8%8B%E6%96%87%E4%BF%A1%E6%81%AF%E5%92%8C%E6%8E%92%E5%BA%8F%E5%AD%A6%E4%B9%A0%E7%9A%84%E5%AE%9E%E4%BD%93%E9%93%BE%E6%8E%A5%E6%96%B9%E6%B3%95/">基于上下文信息和排序学习的实体链接方法</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <html><head></head><body><p><strong>基于上下文信息和排序学习的实体链接方法</strong></p>
-<p><strong>摘要</strong></p>
-<p>为解决英语命名实体链接问题，提出一种基于上下文信息和排序学习的实体链接方法。首先使用上下文信息对实体指称进行扩充，并在维基百科中检索候选实体列表，然后通过抽取实体指称与候选实体之间的各类特征，利用ListNet排序算法对候选实体列表进行排序，选出Top1的候选实体作为链接结果，最后对未找到候选的实体指称即NIL实体，通过实体聚类算法进行关联链接。</p>
-<p><strong>关键词</strong> : 英语实体链接；上下文信息；排序学习；ListNet排序算法；实体聚类</p>
-<p>目前较为普遍的实体链接方法是，首先形成候选实体列表，然后对该列表进行排序，最后再进行链接。</p>
-<p>基于上下文信息和排序学习的实体链接方法。</p>
-<p>优点：</p>
-<p>1.采用合理的策略生成候选实体列表</p>
-<p>2.对候选实体列表进行高精度的排序</p>
-<p>3.NIL实体聚类中，将规则与传统的聚类算法相结合</p>
-<p><strong>相关工作</strong></p>
-<p>实体链接从最初的基于规则的方法，到基于统计的方法，如今，基于多方法融合的框架成为普遍被研究者接受的系统框架。该框架首先为实体指称生成候选实体列表，再对候选实体列表进行排序。</p>
-<p><strong>基于上下文信息和排序学习的实体链接方法</strong></p>
-<p><a target="_blank" rel="noopener" href="https://whh.plus/images/lct3.png" data-caption="基于上下文信息和排序学习的实体链接方法" data-fancybox="images"><img src="https://whh.plus/images/lct3.png" alt="基于上下文信息和排序学习的实体链接方法"></a></p>
-<p>预处理 ：主要从TAC KBP官方发布的源数据集中提取实体指称信息和实体指称的上下文</p>
-<p>实体指称扩充 ：利用指称上下文中的同指关系以及从Wikipedia中抽取的词表和从爬虫获取的网络知识对实体指称进行扩充</p>
-<p>候选实体检索 ： 对每个实体指称，从Wikipedia知识库中检索出对应的候选实体列表</p>
-<p>候选排序 ：特征抽取和排序学习算法</p>
-<p>这篇论文实现方法以及过程都较为普通，论文就不放上来了</p>
-</body></html>
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://wentianhao.github.io/2020/06/18/%E5%9F%BA%E4%BA%8E%E4%B8%8A%E4%B8%8B%E6%96%87%E4%BF%A1%E6%81%AF%E5%92%8C%E6%8E%92%E5%BA%8F%E5%AD%A6%E4%B9%A0%E7%9A%84%E5%AE%9E%E4%BD%93%E9%93%BE%E6%8E%A5%E6%96%B9%E6%B3%95/" data-id="ckf55owvt0000h45h9y8peepi" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/NPL/" rel="tag">NPL</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%AE%9E%E4%BD%93%E9%93%BE%E6%8E%A5/" rel="tag">实体链接</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-Q-learning" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2020/06/11/Q-learning/" class="article-date">
-  <time datetime="2020-06-11T08:17:51.000Z" itemprop="datePublished">2020-06-11</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0/">强化学习</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
+        <a href="/friends" class="">
+          Friends
+        </a>
         
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/06/11/Q-learning/">Q learning</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <html><head></head><body><p><strong>行为准则</strong></p>
-<p>假设现在我们处于写作业的状态而且我们以前并没有尝试过写作业时看电视, 所以现在我们有两种选择 , 1, 继续写作业, 2, 跑去看电视. 因为以前没有被罚过, 所以我选看电视, 然后现在的状态变成了看电视, 我又选了 继续看电视, 接着我还是看电视, 最后爸妈回家, 发现我没写完作业就去看电视了, 狠狠地惩罚了我一次, 我也深刻地记下了这一次经历, 并在我的脑海中将 “没写完作业就看电视” 这种行为更改为负面行为, Q learning 根据很多这样的经历是如何来决策的吧.</p>
-<p><strong>Q-Learning 决策</strong></p>
-<p>假设我们的行为准则已经学习好了，现在处于状态s1,我在写作业，有两个行为a1,a2,分别是看电视和写作业，根据经验，在这种s1状态下，a2写作业带来的潜在奖励要比a1看电视高，这里的潜在奖励我们可以用一个有关于s和a的Q表格代替，在我的记忆Q表格中，Q(s1,a1)=-2要小于Q(s1,a2)=1,所以我们判断要选择a2作为下一个行为。现在我们的状态更新成s2,我们还是有两个同样的选择，重复上面的过程，在行为准则Q表中寻找Q(s2,a1) Q(s2,a2)的值，并比较他们的大小，选取较大的一个.接着根据a2我们到达s3并重复上面的决策过程.Q learning 的方法就是这样决策的</p>
-<p><strong>Q-Learning 更新</strong></p>
-<p>回到之前的流程，根据Q表的估计，因为在s1中，a2的值比较大，通过之前的决策方法</p>
-</body></html>
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://wentianhao.github.io/2020/06/11/Q-learning/" data-id="cke9bjl1b0000y45h0fdy0y6s" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0/" rel="tag">强化学习</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-基于上下文词向量和主题模型的实体消歧方法" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2020/06/11/%E5%9F%BA%E4%BA%8E%E4%B8%8A%E4%B8%8B%E6%96%87%E8%AF%8D%E5%90%91%E9%87%8F%E5%92%8C%E4%B8%BB%E9%A2%98%E6%A8%A1%E5%9E%8B%E7%9A%84%E5%AE%9E%E4%BD%93%E6%B6%88%E6%AD%A7%E6%96%B9%E6%B3%95/" class="article-date">
-  <time datetime="2020-06-11T08:17:51.000Z" itemprop="datePublished">2020-06-11</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/">读书笔记</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/06/11/%E5%9F%BA%E4%BA%8E%E4%B8%8A%E4%B8%8B%E6%96%87%E8%AF%8D%E5%90%91%E9%87%8F%E5%92%8C%E4%B8%BB%E9%A2%98%E6%A8%A1%E5%9E%8B%E7%9A%84%E5%AE%9E%E4%BD%93%E6%B6%88%E6%AD%A7%E6%96%B9%E6%B3%95/">基于上下文词向量和主题模型的实体消歧方法</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <html><head></head><body><p><strong>基于上下文词向量和主题模型的实体消歧方法</strong></p>
-<p><strong>摘要</strong></p>
-<p>传统词向量训练模型仅考虑词共现而未考虑词序，语义表达能力弱。此外，现有实体消歧方法没有考虑实体的局部特征。综合实体的全局特征和局部特征，该文提出一种基于上下文词向量和主题模型的实体消歧方法。首先在传统词向量模型上增加上下文方向向量，用于表征语序，并利用该模型与主题模型训练主题词向量；其次，分别计算实体上下文相似度、基于实体上下文主题的类别主题相似度以及基于主题词向量的实体主题相似度；最后，融合三种相似度，选择相似度最高的实体作为最终消歧实体。</p>
-<p><strong>关键词</strong>：上下文词向量；实体消歧；知识库；主题词向量；主题模型</p>
-<p><strong>相关工作</strong></p>
-<ul>
-<li>基于机器学习的方法</li>
-</ul>
-<p>核心：计算实体之间的相似度，在此基础上选择特定实体提及的目标实体</p>
-<p>1.利用实体统计信息、名字统计信息进行目标实体消歧</p>
-<p>2.利用百科数据作为背景知识，通过百科知识辅助消歧</p>
-<p>3.考虑到一段文本中实体之间的相互关联，提出全局推理算法寻找全局最优决策</p>
-<p>4.对实体流行语义关联度等特征进行特征组合，利用最大间隔算法计算各个特征的权重，进而通度、过排序算法完成对实体的消岐</p>
-<p>5.半监督算法、远距离监督算法、基于海量数据冗余性的自学习方法可以从一定程度上解决语料标注问题</p>
-<ul>
-<li>基于深度学习的方法</li>
-</ul>
-<p>核心：构建多类型、多模态上下文及知识的统一表示，并对多源信息、多源文本之间的联系进行建模。</p>
-<p>1.在原有的神经网络语言模型的基础上，加入卷积神经网络模型，较大程度上改进了实体消歧的效果</p>
-<p>2.提出多源异构证据的向量表示学习方法，对不同来源知识库中的知识进行统一空间的表示，进而完成实体消歧。</p>
-<p>3.提出对证据信息进行向量表示，基于表示向量学习不同证据之间的相似度，继而进行相似度融合，最终完成实体消歧</p>
-<p>4.利用Skip-Gram模型进行词向量训练，并利用词向量进行相似度计算，实现实体链接与消歧</p>
-<p>5.提出将待消歧实体和待消歧实体上下文语境映射到同一个空间，基于概率空间模型，根据实体的空间向量进行消歧</p>
-<p>6.利用Skip-Gram模型进行词向量训练，并基于微博的短文本特征提出语义分类的方法，完成实体消歧</p>
-<p>基于机器学习的方法需要借助丰富的标注语料完成实体消歧，基于深度学习的方法需要借助性能良好的消歧模型完成实体消歧</p>
-<p>目前实体消歧存在两个问题：</p>
-<p>1.由于传统的有监督机器学习算法需要大量的标注语料，而现有的标注语料难以满足实体消歧的需求。</p>
-<p>词向量训练模型使用无标注的文本作为输入数据，将词组表征成低维的向量表示，可以有效解决缺少标注语料的问题。然而，传统词向量模型由于缺少对上下文语序等必要因素的考虑，导致词向量的语义表征能力不强，需要进一步改进。</p>
-<p>2.在实体消歧的过程中，目前主流方法选用上下文语义特征、实体流行度特征、实体关联度特征等进行命名实体消歧。上述特征均是从实体背景文档的全局特征出发，计算待消歧实体和候选实体之间的相似度，没有考虑实体的局部特征。</p>
-<p>潜在狄利 克雷分布（ｌａｔｅｎｔ ｄｉｒｉｃｈｌｅｔ ａｌｌｏｃａｔｉｏｎ，ＬＤＡ）主题模 型可以获取实体背景文档的主题信息，将其结合词 向量技术生成主题词向量，可以对背景文档的局部 主题特征进行表征，较好地解决传统模型仅考虑实 体全局特征的缺陷。</p>
-<p>三部分：上下文词向量模型训练、候选实体生成、实体消歧</p>
-<p>1.为解决传统词向量模型仅考虑词共现特征导致的语义表达能力不强的问题，在原有的Skip-Gram模型的基础上增加表征上下文语序的方向向量，利用无标注语料训练词向量模型，将每个词表示为n维的向量；</p>
-<p>2.获得实体指称项的背景文档，获得候选实体在知识库中存储的背景知识，并使用上述词向量模型，将二者均表征为向量形式，针对实体的全局特征，分别计算上下文相似度和类别主题相似度</p>
-<p>3.基于词向量模型以及LDA主题模型，结合文档的主题特征，训练主题词向量，针对实体的局部特征，进行实体主题相似度计算</p>
-<p>4.按照一定比例融合三种相似度特征，得到待消歧实体与候选实体的最终相似度，选取相似度最高的候选实体作为待消歧的最终实体</p>
-<p><a target="_blank" rel="noopener" href="https://whh.plus/images/lct1.png" data-caption="实体消歧流程图" data-fancybox="images"><img src="https://whh.plus/images/lct1.png" alt="实体消歧流程图"></a></p>
-<p>针对实体的全局特征，本文采用实体上下文相似度和实体主题类别相似度描述；针对实体的局部特征，本文采用基于主题词向量的主题相似度描述</p>
-<p><strong>基于上下文的词向量模型训练</strong></p>
-<p>在Skip-Gram模型的基础上加入方向向量来表达语序，上下文词向量模型携带更多的语义信息。</p>
-<ul>
-<li>定义预测上下文词的概率函数，用于计算当前输入词$t$与上下文词$t+i$之间的共现概率，其定义如下：<br><a target="_blank" rel="noopener" href="https://whh.plus/images/pt.png" data-caption="定义" data-fancybox="images"><img src="https://whh.plus/images/pt.png" alt="定义"></a></li>
-</ul>
-<p>$V$ : 语料中词语的个数</p>
-<p>$w_t$ : 词语$t$的词嵌入</p>
-<p>$w’_t$ : 表示词语$t+i$的词嵌入</p>
-<p>$w,w’$ : 分别表示输入词嵌入与输出词嵌入</p>
-<ul>
-<li>定义softmax函数$g(t+i,t)$度量上下文词$t+i$与输入单词$t$之间的词序关联，softmax函数$g(t+i,t)$的定义如下：<br><a target="_blank" rel="noopener" href="https://whh.plus/images/gt.jpg" data-caption="softmax定义" data-fancybox="images"><img src="https://whh.plus/images/gt.jpg" alt="softmax定义"></a></li>
-</ul>
-<p>$\delta$ : 表示任意上下文词$t+i$相对于$t$的方向向量</p>
-<p>借助负采样的原理，每次让一个训练样本仅更新一部分权重，所以函数$g(t+i,t)$的更新如下：<br><a target="_blank" rel="noopener" href="https://whh.plus/images/w.png" data-caption="更新方程" data-fancybox="images"><img src="https://whh.plus/images/w.png" alt="更新方程"></a></p>
-<p>$\sigma$ : 表示sigmoid函数</p>
-<p>$\mu$ : 表示学习率</p>
-<p>$H$ : 表示当前词与上下文词的方向标签 </p>
-<ul>
-<li>定义基于上下文词向量模型的目标函数$L_{DSG}$<br><a target="_blank" rel="noopener" href="https://whh.plus/images/L.jpg" data-caption="目标函数" data-fancybox="images"><img src="https://whh.plus/images/L.jpg" alt="目标函数"></a></li>
-</ul>
-<p>$c$ : 表示词向量的窗口大小$f(w_{t+i},w_t) = p(w_{t+i}|w_t)+g(w_{t+i},w_t)$</p>
-<ul>
-<li>根据目标函数，使用费随机梯度下降和反向传播算法来优化模型。</li>
-</ul>
-<p><strong>候选实体生成</strong></p>
-<p>候选实体借助 <a href="http://openkg.cn/dataset/zhishi-me" target="_blank" rel="noopener">zhishi.me</a>百科数据获取。</p>
-<p>维基百科可以提供构建候选实体有用的特征信息，但是维基百科中部分中文实体存在更新不及时的问题。<a href="http://openkg.cn/dataset/zhishi-me" target="_blank" rel="noopener">zhishi.me</a>综合了维基百科、百度百科以及互动百科。</p>
-<p>候选实体生成步骤：</p>
-<ol>
-<li><p>获取待消歧实体的背景文本，分词、去停用词后</p>
-</li>
-<li><p>根据训练的词向量模型，将处理的结果进行词向量表征，得到待消歧实体的上下文语境。</p>
-</li>
-</ol>
-<p>3.根据<a href="http://openkg.cn/dataset/zhishi-me" target="_blank" rel="noopener">zhishi.me</a>的离线数据，获得候选实体在知识库存储的摘要及全文信息，进行数据预处理，并使用上下文语境</p>
-<p>4.通过对处理好的向量进行余弦相似度计算，确定实体指称项和候选实体的实体上下文相似度</p>
-<p>$E(entity)=\{word_1,word_2,…,word_k\}$ ：实体指称项上下文表示</p>
-<p>$w(word_i)=\{w_1,w_2,…,w_n\}$ : 训练好的词向量模型将文本进行词向量表示</p>
-<p>$n$ : 表示词向量的维度</p>
-<p>$word_i$ ：表示第$i$个上下文词语</p>
-<p>$E(entity’)=\{word’_1,word’_2,…,word’_m\}$ : 通过在知识库中获得实体的摘要和全文信息，同样使用词向量训练模型进行向量化操作的向量表示</p>
-<p>$w(word’_j)=\{w_1,w_2,…,w_n\}$ : 训练好的词向量模型将文本进行词向量表示</p>
-<p>余弦相似度计算候选实体与指称项的上下文相似度，余弦值越大，相似度越高，公式如下：</p>
-<p><a target="_blank" rel="noopener" href="https://whh.plus/images/sim.png" data-caption="相似度计算" data-fancybox="images"><img src="https://whh.plus/images/sim.png" alt="相似度计算"></a></p>
-<p><strong>基于实体上下文主题的类别主题相似度</strong></p>
-<p>实体主题 ：表示实体语义的相关性，主题就是词语的条件概率分布</p>
-<p>主题和类别在一定程度上所包含的语义信息是相似的，将实体主题信息与实体对应的类别信息进行语义相似度计算，类别主题的相似度就是计算通过主题模型获取的上下文主题以及知识库中实体对应类别之间的相似度。</p>
-<p><a target="_blank" rel="noopener" href="https://whh.plus/images/lct2.png" data-caption="类别主题相似度流程图" data-fancybox="images"><img src="https://whh.plus/images/lct2.png" alt="类别主题相似度流程图"></a></p>
-<p>基于实体上下文主题的类别主题相似度计算步骤：</p>
-<p>1.对待消歧实体的背景文档进行预处理。预处理后，获取所有预处理的名词类词语，使用LDA主题模型获取待消歧实体上下文的主题，通过实验选取适当的主题个数作为待消歧实体的主题特征</p>
-<p>2.每个实体在知识库中都有对应的类别信息，获取知识库中候选实体的类别信息</p>
-<p>3.使用余弦相似度计算公式计算每个主题词与类别词之间的距离，计算$x$个待消歧实体主题与候选实体$y$个类别的相似度$sim’_y(x)$,选取相似度最大的项作为基于实体上下文主题的类别主题相似度</p>
-<p><a target="_blank" rel="noopener" href="https://whh.plus/images/e1.png" data-caption="苹果例子" data-fancybox="images"><img src="https://whh.plus/images/e1.png" alt="苹果例子"></a></p>
-<p><strong>基于主题词向量的实体主题相似度</strong></p>
-<p>在实体消歧过程中，由于实体的名称可能存在一词多义的情况，所以实体的含义不能仅通过整个文档的主题来表达。针对此问题，本文融合词义信息及主题信息，提出在同一个语义向量空间中，使用嵌入表示的方法学习主题表示的主题词向量</p>
-<p>主题词向量模型：主题词是指以特定主题为背景的词，基本思想是允许每个词在不同的主题下有不同的嵌入向量</p>
-<p>主题词向量采用“主题-词”序列的训练方式，将主题和词共同表示为低维的向量，每个词语携带的主题信息更能表达该词语的语境。</p>
-<p>基于主题词向量的相似度计算：主题词向量训练以及相似度计算</p>
-<p>(1)对待消歧实体和候选实体的背景文档进行数据预处理，包括中文分词和去停用词</p>
-<p>(2)使用LDA主题模型对文档的上下文语境进行主题建模，获取每个词语对应的主题词</p>
-<p>(3)基于训练的词向量模型，将主题融入基于上下文词向量模型中。然后基于上下文主题词向量，通过给定当前词$t$和当前词的主题$z_t$,预测上下文主题词</p>
-<p>(4)主题词向量模型的训练，通过设置投影矩阵,将主题和词语嵌入同一个语义空间，并定义目标函数$L(D)$<br><a target="_blank" rel="noopener" href="https://whh.plus/images/LD.png" data-caption="目标函数" data-fancybox="images"><img src="https://whh.plus/images/LD.png" alt="目标函数"></a></p>
-<p>(5)使用余弦相似度计算基于主题词向量的主题相似度。</p>
-<p>$tw=\{tw_1,…,tw_k\}$ : 实体指称项的背景文档对应的主题词向量</p>
-<p>$tw’=\{tw’_1,…,tw’_m\}$ : 实体候选项的背景文档对应的主题词向量</p>
-<p><a target="_blank" rel="noopener" href="https://whh.plus/images/sim1.png" data-caption="相似度公式" data-fancybox="images"><img src="https://whh.plus/images/sim1.png" alt="相似度公式"></a></p>
-<p>三种相似度特征之间的比较</p>
-<p><a target="_blank" rel="noopener" href="https://whh.plus/images/tzbj.png" data-caption="相似度公式" data-fancybox="images"><img src="https://whh.plus/images/tzbj.png" alt="相似度公式"></a></p>
-<p><strong>相似度融合</strong></p>
-<p>$$sim(entity,entity’)=\alpha sim_1(entity,entity’)+\beta sim_2(entity,entity’)+\gamma sim_3(entity,entity’)$$</p>
-<p>$sim_1(entity,entity’)$ : 实体上下文相似度</p>
-<p>$sim_2(entity,entity’)$ : 类别主题相似度</p>
-<p>$sim_3(entity,entity’)$ : 实体主题相似度</p>
-<p>$\alpha+\beta+\gamma=1$</p>
-<p><a href="https://whh.plus/paper/%E5%9F%BA%E4%BA%8E%E4%B8%8A%E4%B8%8B%E6%96%87%E8%AF%8D%E5%90%91%E9%87%8F%E5%92%8C%E4%B8%BB%E9%A2%98%E6%A8%A1%E5%9E%8B%E7%9A%84%E5%AE%9E%E4%BD%93%E6%B6%88%E6%AD%A7%E6%96%B9%E6%B3%95.pdf" target="_blank" rel="noopener">基于上下文词向量和主题模型的实体消歧方法</a></p>
-</body></html>
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://wentianhao.github.io/2020/06/11/%E5%9F%BA%E4%BA%8E%E4%B8%8A%E4%B8%8B%E6%96%87%E8%AF%8D%E5%90%91%E9%87%8F%E5%92%8C%E4%B8%BB%E9%A2%98%E6%A8%A1%E5%9E%8B%E7%9A%84%E5%AE%9E%E4%BD%93%E6%B6%88%E6%AD%A7%E6%96%B9%E6%B3%95/" data-id="ckf29waep0000ng5heumffs6q" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/NPL/" rel="tag">NPL</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%AE%9E%E4%BD%93%E9%93%BE%E6%8E%A5/" rel="tag">实体链接</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-基于词向量的实体链接方法" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2020/06/05/%E5%9F%BA%E4%BA%8E%E8%AF%8D%E5%90%91%E9%87%8F%E7%9A%84%E5%AE%9E%E4%BD%93%E9%93%BE%E6%8E%A5%E6%96%B9%E6%B3%95/" class="article-date">
-  <time datetime="2020-06-05T08:17:51.000Z" itemprop="datePublished">2020-06-05</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/">读书笔记</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/06/05/%E5%9F%BA%E4%BA%8E%E8%AF%8D%E5%90%91%E9%87%8F%E7%9A%84%E5%AE%9E%E4%BD%93%E9%93%BE%E6%8E%A5%E6%96%B9%E6%B3%95/">基于词向量的实体链接方法</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <html><head></head><body><p>基于词向量的实体链接方法 </p>
-<p>Ｊｏｕｒｎａｌ　ｏｆ　Ｄａｔａ　Ａｃｑｕｉｓｉｔｉｏｎ　ａｎｄ　Ｐｒｏｃｅｓｓｉｎｇ　 Ｖｏｌ．３２ ， Ｎｏ．３ ，Ｍａｙ ２０１７ ， ｐｐ．６０４－６１１</p>
-<p><strong>【摘要】</strong>：实体链接任务主要包括命名实体识别、查询扩展、候选实体选择、特征抽取和排序，本文针对查询词的扩展，提出一种基于词向量的扩展方法，利用连续词袋(CBOW)模型训练语料中词语的词向量，然后将距离查询词近的词作为扩展词。词向量从语料中挖掘出词与词之间的语义相关性是对基于规则的查询扩展方法的补充，以此来召回候选实体。在特征抽取时，把文档之间的潜在狄利克雷分布(LDA)的主题相似性作为特征之一。在计算文档相似性时，不再以高频词作为向量的维度，而是以基于词向量的相关词作为向量维度，由此得到文档的语义相似特征。最后利用基于单文档方法的排序学习模型把查询词链接到相应的候选实体。实验结果 $F1$ 值达到0.71</p>
-<p>实体链接的方法主要有分类法、概率主题方法、Graph方法和排序法</p>
-<p>分类法：把每个候选实体看作一个类别，每个查询词就是一个待分类项，抽取特征后根据SVM进行分类，此方法是哈尔滨工业大学在2012年TAC的实体链接任务中采用的方法。该方法没有考虑文档中的语义信息，只是根据词的共现来进行分类，并且训练数据少，噪声大。</p>
-<p>概率主题方法：挖掘隐藏在文本之间的主题关系，来衡量文本之间的相似性。此方法只是单纯根据上下语义来进行实体链接，没有充分利用维基百科的结构化信息，准确率不是很高。</p>
-<p>Graph方法：基于文本中实体和维基百科的特点，构造语义网络，通过网络中节点的距离、出度和入度等作为特征来涉及相似度衡量指标，从而实现语义消歧。虽然这种方法有较好的链接效果，然而也存在一些问题，当数据规模比较大时，网络图的存储、训练和计算就会比较繁琐。</p>
-<p>传统的排序法：向量空间模型 VSM 抽取实体的上下文作为词袋，然后根据词频-逆向文档频（TF-IDF）中向量空间把上、下文表示成文本向量，计算余弦相似性。</p>
-<p><strong>【基于条件随机场命名实体识别】</strong></p>
-<p>系统流程图：<a target="_blank" rel="noopener" href="https://whh.plus/images/sfc1.png" data-caption="流程图" data-fancybox="images"><img src="https://whh.plus/images/sfc1.png" alt="流程图"></a></p>
-<p>方法：CRF</p>
-<p>训练数据：评测任务给定的训练集，利用Standford CoreNLP NER得到数据的句法树。</p>
-<p>标记：采用BEIO标记，B表示实体的开始,E表示实体的结束，O表示非实体，I表示实体内部。</p>
-<p>选择的特征：词语、词性、词在句法树中的父节点以及和父节点的关系。</p>
-<p><strong>【查询扩展】</strong></p>
-<p>在候选实体选择模块中，查询词往往是缩写，于是对缩写进行扩展至关重要，比如，在维基百科中有超过几十个条目的缩写都是“ABC”，但如果将“ABC”扩展为“American Broadcasting Company”，这样在KB知识库中就可以准确的召回候选实体，而过滤其他不相关实体。</p>
-<p><strong>基于规则查询扩展</strong></p>
-<p>在基于规则进行扩展时，主要使用支撑文档进行扩展，支撑文档即官方给定的出现这个查询词的文档，本文扩展规则：</p>
-<ul>
-<li>对于人名，若文档中有全称，就把查询词扩展成全称，如“Brown”扩展成“John Brown”</li>
-<li>对于大写缩写，借助CRF抽取的命名实体在文档中让缩写扩展成全称</li>
-<li>对于地名的缩写，根据地名、别名缩写词典进行扩展，如“US”扩展成“United States”</li>
-</ul>
-<p><strong>基于词向量的查询扩展</strong></p>
-<p>由于支撑文档只是出现查询词的背景，或者在文档中查询词只出现一次，于是借用支撑文档进行基于规则的查询扩展可能变得无效。为了能召回比较精确的候选实体，于是本文借用wiki的外部数据进行查询扩展。若不能进行基于规则的扩展，则基于词向量的扩展方法让返回相似度达到０．５以上的实体作为扩展词，此扩展词就作为候选实体来进行链接，以″Ｄｅｔｒｏｉｔ″为例，基于词向量的扩展结果有实体″Ｄｅｔｒｏｉｔ　Ｒｅｄ　Ｗｉｎｇｓ″，″ＵＳＳ　Ｄｅｔｒｏｉｔ″等，然后在ＫＢ中索引这些扩展实体的页面作为候选实体。</p>
-<p>基于词向量的查询扩展根据词的上、下文语义进行扩展，是一个基于统计的无监督训练方式，此方法认为相近的词在语义上距离更相近。</p>
-<p>Word2vec是一个深度学习模型，以大量文本训练语料作为输入，可以将每个词特征转化为一个K维的实值向量，该向量上进行相似度计算将能挖掘出相似词。</p>
-<p>word2vec包括CBOW和Skip gram model 两种模型。</p>
-<p>CBOW模型与传统的前向神经网络语言模型类似，不同点在于：</p>
-<p>(1) CBOW预测语句中间的词，而不是最后一个词</p>
-<p>(2) CBOW去掉了模型计算中最耗时的非线性隐层并且对所有词而言隐层相同，从而有效提高了词向量的训练速度。</p>
-<p><a target="_blank" rel="noopener" href="https://whh.plus/images/cbow.png" data-caption="cbow" data-fancybox="images"><img src="https://whh.plus/images/cbow.png" alt="cbow"></a></p>
-<p><strong>候选实体的选择</strong></p>
-<p>为了能最大程度的召回正确实体，本文进行索引的查询词是由规则方法进行扩展的查询词和由词向量进行扩展形成的查询词，使用模糊匹配的方式返回候选实体。</p>
-<p><strong>特征抽取</strong></p>
-<p>本文抽取了LDA的主题特征以及基于词向量的文本相似性特征。</p>
-<p>(1)实体之间的信息</p>
-<p>查询词和候选实体标题的相关性对实验结果有着重要的影响。查询词与标题的相似性是特征之一，本文使用编辑相似性来度量其相似性，则</p>
-<p><a target="_blank" rel="noopener" href="https://whh.plus/images/S.png" data-caption="编辑相似度" data-fancybox="images"><img src="https://whh.plus/images/S.png" alt="编辑相似度"></a></p>
-<p>L’ 为最小编辑次数，L1，L2分别为字符串的长度</p>
-<p>(2)Wiki中的实体E</p>
-<p>信息窗Infobox中的信息包括本地名、法定名、昵称以及上下文中的实体，上下文为KB中的文本内容。</p>
-<p><a target="_blank" rel="noopener" href="https://whh.plus/images/Ei.png" data-caption="Ei" data-fancybox="images"><img src="https://whh.plus/images/Ei.png" alt="Ei"></a></p>
-<p>(3)实体的类别特征C</p>
-<p>类别标签反应的是一个实体的类别。若两个实体表示同一实体，那么其类别一致。本文抽取支撑文档中词的所有能确定类别作为查询词的类别以及候选实体的类别。</p>
-<p><a target="_blank" rel="noopener" href="https://whh.plus/images/Ci.png" data-caption="Ci" data-fancybox="images"><img src="https://whh.plus/images/Ci.png" alt="Ci"></a></p>
-<p>(4)类型信息t</p>
-<p>类型信息指一个实体的类型，对于命名实体识别出的实体类型包括PER,GPE,ORG。而KB中实体也有相应的实体类型，如UKN,PER,GPE。UKN为不能确定的类型，若实体的类型不是UKN并且实体的类型和查询词的类型不一致则t为0,否则t为1。</p>
-<p><a target="_blank" rel="noopener" href="https://whh.plus/images/t.png" data-caption="t" data-fancybox="images"><img src="https://whh.plus/images/t.png" alt="t"></a></p>
-<p>(5)基于主题模型的文档相似度</p>
-<p>LDA模型是一种对文档集建模的概率主题模型。传统判断两个文档相似性的方法是通过统计两篇文档共同出现的单词，基于TF-IDF的相似性计算方法，这种方法没有考虑到文档的语义相关性，而LDA恰好能表示两篇文档的主题相似性。LDA模型认为一篇文章都是以一定概率选择了某个主题，并从这个主题中以一定概率选择某个词语，这样一个过程得到一篇文档。LAD的原理可以表示为：</p>
-<p><a target="_blank" rel="noopener" href="https://whh.plus/images/P.png" data-caption="P" data-fancybox="images"><img src="https://whh.plus/images/P.png" alt="P"></a></p>
-<p>给定一系列文档，计算各个文档中每个单词的词频就可以得到“文档-词语”矩阵。主题模型就是通过这个“文档-词语”矩阵进行训练，学习出“词-主题”矩阵和“主题-文档”矩阵。</p>
-<p>LDA的工作原理可以表示为 LDA模型认为文档的主题分布和主题的词分布属于LDA分布，文档以多项分布的概率选择一个主题，主题以多项分布的概率选择一个词。然后用主题和词的联合分布来近似估计主题的后验分布，最后训练文档的主题分布,用KL散度来计算文档之间的主题相似性。</p>
-<p>KL距离也即相对熵，表示两个概率分布的距离。相似度度量标准KL距离为</p>
-<p><a target="_blank" rel="noopener" href="https://whh.plus/images/KL.png" data-caption="KL" data-fancybox="images"><img src="https://whh.plus/images/KL.png" alt="KL"></a></p>
-<p>(6)基于词向量的文本相似性</p>
-<p>词向量进行查询扩展时，对文档的词利用CBOW模型进行词向量训练，然后根据余弦距离得到一个词的近义词或者相关词。传统度量文档之间相似性是基于高频词，但支撑文档只是查询词出现的语料，不能真正的解释查询词的含义，高频词也不能很好的表达查询词的语义信息。</p>
-<p>为了能用其他语义共现词来表示查询词的上、下文，本文使用基于词向量的近义词作为查询词的文本向量。</p>
-<p><strong>基于单文档排序的LTR模型</strong></p>
-<p>抽取的特征能否提高实体链接的准确率是排序学习(Learning to rank,LTR)模型要解决的核心问题。</p>
-<p>单文档方法处理对象单一文档，将文档转化为特征向量后，主要将排序问题转化为机器学习中常规的分类或回归问题。查询词与候选实体的排序函数为：</p>
-<p><a target="_blank" rel="noopener" href="https://whh.plus/images/score.png" data-caption="score" data-fancybox="images"><img src="https://whh.plus/images/score.png" alt="score"></a></p>
-<p>Si ： 查询词与实体的编辑相似性</p>
-<p>Ei : 实体页面内实体在查询词的支撑文档中出现的次数</p>
-<p>Ci : 实体内页面类别在查询词的支撑实体的类别中出现的次数</p>
-<p>simi : 支撑文档与候选实体文档的相似性</p>
-<p>t : 类型信息，取值0/1</p>
-<p>Dkl : 文档之间主题相似度</p>
-<p>若Score小于0.6，则设定空实体。再对空的实体进行聚类，使用杰卡德相似系数(JSC)进行度量，即根据各个空实体支撑文档中共现的词个数进行聚类，大于某一阈值，就聚为一类。</p>
-<p>杰卡德系数：</p>
-<p><a target="_blank" rel="noopener" href="https://whh.plus/images/jkd.png" data-caption="jkd" data-fancybox="images"><img src="https://whh.plus/images/jkd.png" alt="jkd"></a></p>
-<p><strong>实验设计与结果</strong></p>
-<p>测试数据：2014年TAC测评中实体链接任务提供的138篇文档，共抽取了5234个命名实体。</p>
-<p>评价标准： B’+F1</p>
-<p><a target="_blank" rel="noopener" href="https://whh.plus/images/er1.png" data-caption="er1" data-fancybox="images"><img src="https://whh.plus/images/er1.png" alt="er1"></a></p>
-<p>实验1 ： 基于SVM的分类模型，使用实体的上、下文信息作为特征，每一个候选实体为一类，然后使用RBF进行分类</p>
-<p>实验1结果分析 ：只是简单地使用上、下文信息进行SVM分类，效果不如其他方法</p>
-<p>实验2 ：使用首选实体的标题以及KB的别名信息来进行实体链接的向量空间模型</p>
-<p>实验2结果分析 ： 结果虽然不是很理想，但从实验中可以看出，KB节点的标题信息和别名信息对实体链接有着重要作用</p>
-<p>实验3 ：抽取了半结构化的知识库Wikipedia进行解析，抽取其中的类别、别名、类型和文档之间的LDA主题相似性进行实验</p>
-<p>实验3结果分析 ：与实验2对比显示加入外部数据库特征以及主题相似性特征的实验在PER、GPE类型的实体方面效果好于实验2</p>
-<p>实验4 ：本文的LTR模型，最主要的不同在于除了充分利用标题、类别、别名、上下文和LDA等，加入基于词向量的文本相似性特征</p>
-<p>实验4结果 ：在GPE,ORG类型的实体方法有着显著的提高，并对All-Query的链接也比其他方法好</p>
-<p><a href="https://whh.plus/paper/%E5%9F%BA%E4%BA%8E%E8%AF%8D%E5%90%91%E9%87%8F%E7%9A%84%E5%AE%9E%E4%BD%93%E9%93%BE%E6%8E%A5%E6%96%B9%E6%B3%95_%E9%BD%90%E7%88%B1%E8%8A%B9.pdf" target="_blank" rel="noopener">基于词向量的实体链接方法</a></p>
-</body></html>
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://wentianhao.github.io/2020/06/05/%E5%9F%BA%E4%BA%8E%E8%AF%8D%E5%90%91%E9%87%8F%E7%9A%84%E5%AE%9E%E4%BD%93%E9%93%BE%E6%8E%A5%E6%96%B9%E6%B3%95/" data-id="cke9bjl1k0005y45hadw26jpa" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/NPL/" rel="tag">NPL</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%AE%9E%E4%BD%93%E9%93%BE%E6%8E%A5/" rel="tag">实体链接</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-基于城市地名实体双向链接分析的路线推荐研究" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2020/06/04/%E5%9F%BA%E4%BA%8E%E5%9F%8E%E5%B8%82%E5%9C%B0%E5%90%8D%E5%AE%9E%E4%BD%93%E5%8F%8C%E5%90%91%E9%93%BE%E6%8E%A5%E5%88%86%E6%9E%90%E7%9A%84%E8%B7%AF%E7%BA%BF%E6%8E%A8%E8%8D%90%E7%A0%94%E7%A9%B6/" class="article-date">
-  <time datetime="2020-06-04T08:17:51.000Z" itemprop="datePublished">2020-06-04</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/">读书笔记</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/06/04/%E5%9F%BA%E4%BA%8E%E5%9F%8E%E5%B8%82%E5%9C%B0%E5%90%8D%E5%AE%9E%E4%BD%93%E5%8F%8C%E5%90%91%E9%93%BE%E6%8E%A5%E5%88%86%E6%9E%90%E7%9A%84%E8%B7%AF%E7%BA%BF%E6%8E%A8%E8%8D%90%E7%A0%94%E7%A9%B6/">基于城市地名实体双向链接分析的路线推荐研究</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <html><head></head><body><p><strong>【目的】</strong>：已有线路推荐研究较少考虑地名实体之间的次序，为此设计了基于城市地名实体双向链接分析的路线推荐方法</p>
-<p><strong>【方法】</strong>：以特定场景下不同地名实体形成的有向加权网络为基础数据源，循环计算不同轨迹链隶属于各个地名实体对应理想集的链入和链出值，进而在通过布尔逻辑和位置限定运算符表达用户查询需求的基础之上，融合模糊检索算法，实现用户查询与轨迹链的精准匹配。</p>
-<p><strong>【结果】</strong>：这篇提出的算法推荐准确率为0.75，高于TF-IDF推荐算法和不考虑地名实体次序的推荐算法，但召回率无优势，随着加权网络规模的增大，推荐准确率与召回率呈现明显的反向关系。</p>
-<p><strong>【局限】</strong>：未考虑对象属性数据对推荐结果的影响。</p>
-<p><strong>【结论】</strong>：本文方法融合了基于统计分析与语义分析的推荐算法，可快速生成备选路线及推荐指数。</p>
-<p><strong>【研究现状及思路】</strong>：目前国内路线推荐研究主要集中于计算机科学领域和信息资源管理领域，计算机领域侧重对推荐模型、推荐算法、推荐方法在特定场景(尤其是移动场景)下的应用效果等内容进行细化研究，而信息资源管理领域则多从地理信息分析、旅游信息资源规划、推荐系统原型设计等角度进行解析。</p>
-<p><strong>【基于城市地名实体双向链接分析的路线推荐过程】</strong>：轨迹链构建、地名实体链入和链出集合计算、基于链接分析结果的推荐策略研究</p>
-<p><strong>【轨迹链构建】</strong>：借鉴了事件链建模思想，从文本中提取地名实体及其出现位置，序贯相连就形成了轨迹链。轨迹链的最小组成单位为由相邻地名实体构建的有向三元组$(\mathtt{V}_m,\mathtt{V}_n,E)$。$\mathtt{V}_m$ 表示前链，$\mathtt{V}_n$表示后链。$E$取值0或1，0表示前后链之间存在连接关系，反之不存在连接关系。</p>
-<p><strong>【地名实体链入和链出集合计算】</strong>：计算模式参考模糊集合计算逻辑，模糊集合计算区别于简单的二值判定，认为每个轨迹链可隶属于一个及以上地名实体对应的理想集，也就是说每条轨迹链可与任意地名实体存在关联关系，只是关联程度存在一定差异，这种处理策略更符合用户进行路径选择时的心理认知，默认初始状态下地名实体之间形成完全连通图，随着历史轨迹链集合的不断丰富，完全连通图中的某些路径由于不断被选择而得到强化，有些路径则始终处于初始状态或缓慢强化的状态。</p>
-<p><strong>【基于链接分析结果的推荐策略研究】</strong>：基于链入和链出集合计算结果, 结合用户需求，可有效实现路线的推荐, 目前在推荐领域应用较多的方法包括: 协同过滤、基于内容的推荐、基于知识的推荐、混合推荐等, 其中协同过滤是应用最为广泛的推荐算法, 但本文采用的推荐算法是融合模糊集合计算的改进协同过滤算法。</p>
-</body></html>
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://wentianhao.github.io/2020/06/04/%E5%9F%BA%E4%BA%8E%E5%9F%8E%E5%B8%82%E5%9C%B0%E5%90%8D%E5%AE%9E%E4%BD%93%E5%8F%8C%E5%90%91%E9%93%BE%E6%8E%A5%E5%88%86%E6%9E%90%E7%9A%84%E8%B7%AF%E7%BA%BF%E6%8E%A8%E8%8D%90%E7%A0%94%E7%A9%B6/" data-id="cke9bjl1k0004y45h04jid526" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/NPL/" rel="tag">NPL</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%AE%9E%E4%BD%93%E9%93%BE%E6%8E%A5/" rel="tag">实体链接</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-word2vec_report" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2020/05/28/word2vec_report/" class="article-date">
-  <time datetime="2020-05-28T04:51:36.000Z" itemprop="datePublished">2020-05-28</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/word2vec/">word2vec</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/05/28/word2vec_report/">word2vec中文词向量训练</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <html><head></head><body><h1 id="word2vec中文词向量训练">word2vec中文词向量训练<br><a class="post-anchor" href="#word2vec中文词向量训练"></a></h1><h2 id="1、genism库">1、genism库<br><a class="post-anchor" href="#1、genism库"></a></h2><p>gensim库中提供了word2vec的cbow模型和skipgram模型的实现，可直接调用</p>
-<p><a target="_blank" rel="noopener" href="https://github.com/wentianhao/wentianhao.github.io/blob/master/images/word2vec1.png?raw=true" data-caption="image" data-fancybox="images"><img src="https://github.com/wentianhao/wentianhao.github.io/blob/master/images/word2vec1.png?raw=true" alt="image"></a></p>
-<p>完整版参考代码<br><br><br></p>
-<h2 id="2、tensorflow实现skipgram模型">2、tensorflow实现skipgram模型<br><a class="post-anchor" href="#2、tensorflow实现skipgram模型"></a></h2><p>skipgram模型使用中心词预测上下文，网上介绍很多了也可直接去看论文<br>本模型实验采用的数据时wiki百科中文数据，有原版和分词后版本，数据量大下载请移步<br>实现详细直接看代码，代码中关键处都有注释，这里提一下word2vec中常用的nce loss损失函数，nce loss函数个参数定义如下</p>
-<p><a target="_blank" rel="noopener" href="https://github.com/wentianhao/wentianhao.github.io/blob/master/images/word2vec2.png?raw=true" data-caption="image" data-fancybox="images"><img src="https://github.com/wentianhao/wentianhao.github.io/blob/master/images/word2vec2.png?raw=true" alt="image"></a></p>
-<p>解释一下参数sampled_values，从tensorflow的nce_loss源代码中可以看到当sampled_ values=None时采样方式，word2vec中负采样过程其实就是优选采样词频高的词作负样本</p>
-<p><a target="_blank" rel="noopener" href="https://github.com/wentianhao/wentianhao.github.io/blob/master/images/word2vec3.png?raw=true" data-caption="image" data-fancybox="images"><img src="https://github.com/wentianhao/wentianhao.github.io/blob/master/images/word2vec3.png?raw=true" alt="image"></a></p>
-<p>在上图中展现了nce_loss在实际使用过程中参数列表以及各个参数的含义，下面我们看一下tensorflow源码中对于nce_loss函数的实现逻辑：</p>
-<p><a target="_blank" rel="noopener" href="https://github.com/wentianhao/wentianhao.github.io/blob/master/images/word2vec4.png?raw=true" data-caption="image" data-fancybox="images"><img src="https://github.com/wentianhao/wentianhao.github.io/blob/master/images/word2vec4.png?raw=true" alt="image"></a></p>
-<p>Tensorflow实现skipgram模型完整细节参考代码，训练测试效果可参见下图：</p>
-<p><a target="_blank" rel="noopener" href="https://github.com/wentianhao/wentianhao.github.io/blob/master/images/word2vec5.png?raw=true" data-caption="image" data-fancybox="images"><img src="https://github.com/wentianhao/wentianhao.github.io/blob/master/images/word2vec5.png?raw=true" alt="image"></a></p>
-<p><a target="_blank" rel="noopener" href="https://github.com/wentianhao/wentianhao.github.io/blob/master/images/word2vec6.png?raw=true" data-caption="image" data-fancybox="images"><img src="https://github.com/wentianhao/wentianhao.github.io/blob/master/images/word2vec6.png?raw=true" alt="image"></a></p>
-<h1 id="word2vec细节简介">word2vec细节简介<a class="post-anchor" href="#word2vec细节简介"></a></h1><h2 id="1、word2vec种语言模型">1、word2vec种语言模型<a class="post-anchor" href="#1、word2vec种语言模型"></a></h2><p>word2vec属于预测式词向量模型，两种Skipgram和CBOW<br></p>
-<p>(1) skipgram通过中间词预测周围词构建网络模型<br></p>
-<p><a target="_blank" rel="noopener" href="https://github.com/wentianhao/wentianhao.github.io/blob/master/images/word2vec7.png?raw=true" data-caption="image" data-fancybox="images"><img src="https://github.com/wentianhao/wentianhao.github.io/blob/master/images/word2vec7.png?raw=true" alt="image"></a></p>
-<p>(2) cbow通过周围词预测中间词构建网络模型<br></p>
-<p><a target="_blank" rel="noopener" href="https://github.com/wentianhao/wentianhao.github.io/blob/master/images/word2vec8.png?raw=true" data-caption="image" data-fancybox="images"><img src="https://github.com/wentianhao/wentianhao.github.io/blob/master/images/word2vec8.png?raw=true" alt="image"></a></p>
-<h2 id="2、word2vec中Tricks">2、word2vec中Tricks:<a class="post-anchor" href="#2、word2vec中Tricks"></a></h2><p>(1) Hierarchical softmax<br></p>
-<p>分层softmax最主要的改进既是：不需要对网络W个单词的输出计算概率分布，只需要评估个节点即可<br></p>
-<p>(2) Negative sampling<br></p>
-<p>详细介绍一下负采样，word2vec中训练技巧：负采样<br><br>通过模型的一次训练来解释负采样的过程，以skip_gram模型训练为例进行讲解<br></p>
-<p>训练样本输入词是：love，输出词是me，如果词典中有10000个词，设定训练出的词向量大小为300，则开始love和me都是通过one-hot编码的，在输出位置上me对应的是1，其他位置都是0，我们认为这些0位置对应的词即是负样本，1位置对应的是正样本，在不采用负采样情况下隐层到输出层的参数为300<em>10000，负采样的意思即是我们只在9999个负样本中选择很少一部分对应的参数进行更新（包括正样本的也更新），其他没有挑中的负样本参数保持不变，例如我们选择5个negative words进行参数更新，加上一个正样本总共是6个，因此参数是300</em>6，大大提高每次训练的计算效率，论文中指出对于小规模数据集我们选择5-20个negative words较好，在数据集情况下选择2-5个负样本较好<br></p>
-<p>(3) Subsampling of Frequent words<br></p>
-<p>频繁词的二次采样，根据论文描述在大的语料库中，频繁词如容易出现很多次的the\in\a提供的信息量远没有罕见词提供的信息量多，因此在后续的训练中频繁词无法提供更多的信息甚至会将网络带偏，因此提出了频繁词二次采样方式：即在每次训练时按照如下公式对训练集的单词wi进行丢弃：<br></p>
-<p><a target="_blank" rel="noopener" href="https://github.com/wentianhao/wentianhao.github.io/blob/master/images/word2vec9.png?raw=true" data-caption="image" data-fancybox="images"><img src="https://github.com/wentianhao/wentianhao.github.io/blob/master/images/word2vec9.png?raw=true" alt="image"></a></p>
-<p>CBOW模型的优化函数(skipgram模型类似)：<br></p>
-<p><a target="_blank" rel="noopener" href="https://github.com/wentianhao/wentianhao.github.io/blob/master/images/word2vec10.png?raw=true" data-caption="image" data-fancybox="images"><img src="https://github.com/wentianhao/wentianhao.github.io/blob/master/images/word2vec10.png?raw=true" alt="image"></a></p>
-<p>(4) word2vec是静态词向量预训练模型，词向量是固定的，不能解决多义词问题，无法考虑预料全局信息<br></p>
-</body></html>
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://wentianhao.github.io/2020/05/28/word2vec_report/" data-id="ckaqyput60000gw5ha8493lqt" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/NLP/" rel="tag">NLP</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/python/" rel="tag">python</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/word2vec/" rel="tag">word2vec</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-
-
-  <nav id="page-nav">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/2/">__(&#39;next&#39;) &amp;raquo;</a>
-  </nav>
-</section>
-        
-          <aside id="sidebar">
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Categories</h3>
-    <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/bert/">bert</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/gem5/">gem5</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/git/">git</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/leetcode/">leetcode</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/python/">python</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/server/">server</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/spring-boot/">spring boot</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/spring-cloud/">spring cloud</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/word2vec/">word2vec</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">学习笔记</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0/">强化学习</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%96%87%E6%9C%AC%E7%9B%B8%E4%BC%BC%E5%BA%A6/">文本相似度</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/">读书笔记</a></li></ul>
-    </div>
-  </div>
-
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Tags</h3>
-    <div class="widget">
-      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/NLP/" rel="tag">NLP</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/NPL/" rel="tag">NPL</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Siamese/" rel="tag">Siamese</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/anaconda/" rel="tag">anaconda</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/bert/" rel="tag">bert</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/blog/" rel="tag">blog</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/docker/" rel="tag">docker</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/gem5/" rel="tag">gem5</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/" rel="tag">git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/" rel="tag">hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/https/" rel="tag">https</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jupyter-notebook/" rel="tag">jupyter notebook</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/leetcode/" rel="tag">leetcode</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/maven/" rel="tag">maven</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mybatis/" rel="tag">mybatis</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/nginx/" rel="tag">nginx</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/nvmain/" rel="tag">nvmain</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/parsec-2-1/" rel="tag">parsec-2.1</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/" rel="tag">python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python%E7%88%AC%E8%99%AB/" rel="tag">python爬虫</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/server/" rel="tag">server</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/spring-boot/" rel="tag">spring boot</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/spring-cloud/" rel="tag">spring cloud</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/sync/" rel="tag">sync</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/word2vec/" rel="tag">word2vec</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" rel="tag">学习笔记</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%AE%9E%E4%BD%93%E9%93%BE%E6%8E%A5/" rel="tag">实体链接</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0/" rel="tag">强化学习</a></li></ul>
-    </div>
-  </div>
-
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Tag Cloud</h3>
-    <div class="widget tagcloud">
-      <a href="/tags/NLP/" style="font-size: 12.5px;">NLP</a> <a href="/tags/NPL/" style="font-size: 15px;">NPL</a> <a href="/tags/Siamese/" style="font-size: 10px;">Siamese</a> <a href="/tags/anaconda/" style="font-size: 10px;">anaconda</a> <a href="/tags/bert/" style="font-size: 10px;">bert</a> <a href="/tags/blog/" style="font-size: 10px;">blog</a> <a href="/tags/docker/" style="font-size: 10px;">docker</a> <a href="/tags/gem5/" style="font-size: 12.5px;">gem5</a> <a href="/tags/git/" style="font-size: 12.5px;">git</a> <a href="/tags/hexo/" style="font-size: 12.5px;">hexo</a> <a href="/tags/https/" style="font-size: 10px;">https</a> <a href="/tags/jupyter-notebook/" style="font-size: 10px;">jupyter notebook</a> <a href="/tags/leetcode/" style="font-size: 10px;">leetcode</a> <a href="/tags/maven/" style="font-size: 10px;">maven</a> <a href="/tags/mybatis/" style="font-size: 12.5px;">mybatis</a> <a href="/tags/nginx/" style="font-size: 10px;">nginx</a> <a href="/tags/nvmain/" style="font-size: 10px;">nvmain</a> <a href="/tags/parsec-2-1/" style="font-size: 10px;">parsec-2.1</a> <a href="/tags/python/" style="font-size: 20px;">python</a> <a href="/tags/python%E7%88%AC%E8%99%AB/" style="font-size: 17.5px;">python爬虫</a> <a href="/tags/server/" style="font-size: 10px;">server</a> <a href="/tags/spring-boot/" style="font-size: 10px;">spring boot</a> <a href="/tags/spring-cloud/" style="font-size: 12.5px;">spring cloud</a> <a href="/tags/sync/" style="font-size: 10px;">sync</a> <a href="/tags/word2vec/" style="font-size: 10px;">word2vec</a> <a href="/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" style="font-size: 10px;">学习笔记</a> <a href="/tags/%E5%AE%9E%E4%BD%93%E9%93%BE%E6%8E%A5/" style="font-size: 15px;">实体链接</a> <a href="/tags/%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0/" style="font-size: 10px;">强化学习</a>
-    </div>
-  </div>
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Archives</h3>
-    <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/09/">September 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/08/">August 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/06/">June 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/05/">May 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/04/">April 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/03/">March 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/02/">February 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/01/">January 2020</a></li></ul>
-    </div>
-  </div>
-
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Recent Posts</h3>
-    <div class="widget">
-      <ul>
-        
-          <li>
-            <a href="/2020/09/13/python3/">Ubuntu18.04中Python2.7与Python3.6环境切换</a>
-          </li>
-        
-          <li>
-            <a href="/2020/08/25/bert/">bert</a>
-          </li>
-        
-          <li>
-            <a href="/2020/06/25/%E5%9F%BA%E4%BA%8E%E9%9A%8F%E6%9C%BA%E6%B8%B8%E8%B5%B0%E7%9A%84%E5%AE%9E%E4%BD%93%E9%93%BE%E6%8E%A5%E6%96%B9%E6%B3%95/">基于随机游走的实体链接方法</a>
-          </li>
-        
-          <li>
-            <a href="/2020/06/18/%E5%9F%BA%E4%BA%8E%E9%A2%86%E5%9F%9F%E5%9B%BE%E8%B0%B1%E7%9A%84%E5%AE%9E%E4%BD%93%E9%93%BE%E6%8E%A5%E6%8A%80%E6%9C%AF%E7%A0%94%E7%A9%B6/">基于领域图谱的实体链接技术研究</a>
-          </li>
-        
-          <li>
-            <a href="/2020/06/18/%E5%9F%BA%E4%BA%8E%E4%B8%8A%E4%B8%8B%E6%96%87%E4%BF%A1%E6%81%AF%E5%92%8C%E6%8E%92%E5%BA%8F%E5%AD%A6%E4%B9%A0%E7%9A%84%E5%AE%9E%E4%BD%93%E9%93%BE%E6%8E%A5%E6%96%B9%E6%B3%95/">基于上下文信息和排序学习的实体链接方法</a>
-          </li>
-        
-      </ul>
-    </div>
-  </div>
-
-  
-</aside>
+        <a href="/about" class="">
+          About
+        </a>
         
       </div>
-      <footer id="footer">
-  
-  <div class="outer">
-    <div id="footer-info" class="inner">
-      &copy; 2020 wenhao<br>
-      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
     </div>
-  </div>
-</footer>
+    <div id="header">
+      <div class="intro">
+        <a href="/" class="logo" style="background-image: url('/images/logo.jpeg')"></a>
+        <div class="author">undefined</div>
+      </div>
+      <div class="nav">
+        <span class="iconfont icon-menu menu-icon"></span>
+        <a href="#" class="search-box">
+          <span class="iconfont icon-sousuo"></span>
+        </a>
+      </div>
     </div>
-    <nav id="mobile-nav">
-  
-    <a href="/" class="mobile-nav-link">Home</a>
-  
-    <a href="/archives" class="mobile-nav-link">Archives</a>
-  
-</nav>
+    <div id="side" class="animated bounceInLeft">
+      <div class="shrink">
+        <a href="/" class="logo" style="background-image: url('/images/logo.jpeg')"></a>
+        <span class="iconfont icon-menu toggle-icon"></span>
+        <a href="#" class="search-box">
+          <span class="iconfont icon-sousuo"></span>
+        </a>
+      </div>
+      <div class="magnify">
+        <div class="about">
+          <div class="author">undefined</div>
+          <a href="/" class="logo" style="background-image: url('/images/logo.jpeg')"></a>
+        </div>
+
+        <div class="nav">
+          
+          <a href="/" class="current">
+            Home
+          </a>
+          
+          <a href="/archives" class="">
+            Archives
+          </a>
+          
+          <a href="/categories" class="">
+            Categories
+          </a>
+          
+          <a href="/tags" class="">
+            Tags
+          </a>
+          
+          <a href="/friends" class="">
+            Friends
+          </a>
+          
+          <a href="/about" class="">
+            About
+          </a>
+          
+          <a href="#" class="search-box">
+            <span class="iconfont icon-sousuo"></span>
+          </a>
+        </div>
+        <div class="bottom">
+          <div class="follow">
+            
+            <a href="https://github.com/shixiaohu2206" target="_block">
+              <span class="iconfont icon-github"></span>
+            </a>
+            
+            <a href="https://www.facebook.com/shi.xiaohu.5" target="_block">
+              <span class="iconfont icon-facebook"></span>
+            </a>
+            
+            <a href="https://www.instagram.com/shi_xiaohu/" target="_block">
+              <span class="iconfont icon-instagram"></span>
+            </a>
+             
+            <a href="/atom.xml" target="_block">
+              <span class="iconfont icon-rss"></span>
+            </a>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="container">
+      <div class="main animated bounceInRight delay-0.7s">
+        
+<div class="posts">
+  <ul>
+     
+
     
 
-<script src="/js/jquery.min.js"></script>
+  <li class="item">
 
+      
 
+      
+      <div class="describe">
+        <div class="title">
+          <a href="/2020/09/13/python3/">Ubuntu18.04中Python2.7与Python3.6环境切换</a>
+        </div>
+        <div class="date">
+          <span class="iconfont icon-time-circle"></span>
+          <span>20/09/13</span>
+        </div>
+        
+        <div class="meta">
+          <div class="l">
+            <div class="warp">
+              
+              <span class="iconfont icon-folder"></span>
+              <span class="desp">
+                 
+                <a href="/categories/python">python</a>
+                 
+              </span>
+              
+            </div>
+
+            
+            <div class="warp">
+              <span class="iconfont icon-tag1"></span>
+              <span class="desp">
+                 
+                <a href="/tags/python">python</a>
+                 
+              </span>
+            </div>
+            
+            <div class="warp">
+              <div class="share" data-url="/2020/09/13/python3/">
+                <span class="iconfont icon-share"></span>
+              </div>
+              <div class="desp share" data-url="/2020/09/13/python3/">
+                <a href="#">Share</a>
+              </div>
+            </div>
+          </div>
+          <div class="r">
+            <a href="/2020/09/13/python3/">Read More</a>
+          </div>
+        </div>
+      </div>
+    </li>
+     
+
+    
+
+  <li class="item">
+
+      
+
+      
+      <div class="describe">
+        <div class="title">
+          <a href="/2020/08/25/bert/">bert</a>
+        </div>
+        <div class="date">
+          <span class="iconfont icon-time-circle"></span>
+          <span>20/08/25</span>
+        </div>
+        
+        <div class="meta">
+          <div class="l">
+            <div class="warp">
+              
+              <span class="iconfont icon-folder"></span>
+              <span class="desp">
+                 
+                <a href="/categories/bert">bert</a>
+                 
+              </span>
+              
+            </div>
+
+            
+            <div class="warp">
+              <span class="iconfont icon-tag1"></span>
+              <span class="desp">
+                 
+                <a href="/tags/bert">bert</a>
+                 
+              </span>
+            </div>
+            
+            <div class="warp">
+              <div class="share" data-url="/2020/08/25/bert/">
+                <span class="iconfont icon-share"></span>
+              </div>
+              <div class="desp share" data-url="/2020/08/25/bert/">
+                <a href="#">Share</a>
+              </div>
+            </div>
+          </div>
+          <div class="r">
+            <a href="/2020/08/25/bert/">Read More</a>
+          </div>
+        </div>
+      </div>
+    </li>
+     
+
+    
+
+  <li class="item">
+
+      
+
+      
+      <div class="describe">
+        <div class="title">
+          <a href="/2020/06/25/%E5%9F%BA%E4%BA%8E%E9%9A%8F%E6%9C%BA%E6%B8%B8%E8%B5%B0%E7%9A%84%E5%AE%9E%E4%BD%93%E9%93%BE%E6%8E%A5%E6%96%B9%E6%B3%95/">基于随机游走的实体链接方法</a>
+        </div>
+        <div class="date">
+          <span class="iconfont icon-time-circle"></span>
+          <span>20/06/25</span>
+        </div>
+        
+        <div class="meta">
+          <div class="l">
+            <div class="warp">
+              
+              <span class="iconfont icon-folder"></span>
+              <span class="desp">
+                 
+                <a href="/categories/读书笔记">读书笔记</a>
+                 
+              </span>
+              
+            </div>
+
+            
+            <div class="warp">
+              <span class="iconfont icon-tag1"></span>
+              <span class="desp">
+                 
+                <a href="/tags/NPL">NPL</a>
+                  
+                <a href="/tags/实体链接">实体链接</a>
+                 
+              </span>
+            </div>
+            
+            <div class="warp">
+              <div class="share" data-url="/2020/06/25/%E5%9F%BA%E4%BA%8E%E9%9A%8F%E6%9C%BA%E6%B8%B8%E8%B5%B0%E7%9A%84%E5%AE%9E%E4%BD%93%E9%93%BE%E6%8E%A5%E6%96%B9%E6%B3%95/">
+                <span class="iconfont icon-share"></span>
+              </div>
+              <div class="desp share" data-url="/2020/06/25/%E5%9F%BA%E4%BA%8E%E9%9A%8F%E6%9C%BA%E6%B8%B8%E8%B5%B0%E7%9A%84%E5%AE%9E%E4%BD%93%E9%93%BE%E6%8E%A5%E6%96%B9%E6%B3%95/">
+                <a href="#">Share</a>
+              </div>
+            </div>
+          </div>
+          <div class="r">
+            <a href="/2020/06/25/%E5%9F%BA%E4%BA%8E%E9%9A%8F%E6%9C%BA%E6%B8%B8%E8%B5%B0%E7%9A%84%E5%AE%9E%E4%BD%93%E9%93%BE%E6%8E%A5%E6%96%B9%E6%B3%95/">Read More</a>
+          </div>
+        </div>
+      </div>
+    </li>
+     
+
+    
+
+  <li class="item">
+
+      
+
+      
+      <div class="describe">
+        <div class="title">
+          <a href="/2020/06/18/%E5%9F%BA%E4%BA%8E%E9%A2%86%E5%9F%9F%E5%9B%BE%E8%B0%B1%E7%9A%84%E5%AE%9E%E4%BD%93%E9%93%BE%E6%8E%A5%E6%8A%80%E6%9C%AF%E7%A0%94%E7%A9%B6/">基于领域图谱的实体链接技术研究</a>
+        </div>
+        <div class="date">
+          <span class="iconfont icon-time-circle"></span>
+          <span>20/06/18</span>
+        </div>
+        
+        <div class="meta">
+          <div class="l">
+            <div class="warp">
+              
+              <span class="iconfont icon-folder"></span>
+              <span class="desp">
+                 
+                <a href="/categories/读书笔记">读书笔记</a>
+                 
+              </span>
+              
+            </div>
+
+            
+            <div class="warp">
+              <span class="iconfont icon-tag1"></span>
+              <span class="desp">
+                 
+                <a href="/tags/NPL">NPL</a>
+                  
+                <a href="/tags/实体链接">实体链接</a>
+                 
+              </span>
+            </div>
+            
+            <div class="warp">
+              <div class="share" data-url="/2020/06/18/%E5%9F%BA%E4%BA%8E%E9%A2%86%E5%9F%9F%E5%9B%BE%E8%B0%B1%E7%9A%84%E5%AE%9E%E4%BD%93%E9%93%BE%E6%8E%A5%E6%8A%80%E6%9C%AF%E7%A0%94%E7%A9%B6/">
+                <span class="iconfont icon-share"></span>
+              </div>
+              <div class="desp share" data-url="/2020/06/18/%E5%9F%BA%E4%BA%8E%E9%A2%86%E5%9F%9F%E5%9B%BE%E8%B0%B1%E7%9A%84%E5%AE%9E%E4%BD%93%E9%93%BE%E6%8E%A5%E6%8A%80%E6%9C%AF%E7%A0%94%E7%A9%B6/">
+                <a href="#">Share</a>
+              </div>
+            </div>
+          </div>
+          <div class="r">
+            <a href="/2020/06/18/%E5%9F%BA%E4%BA%8E%E9%A2%86%E5%9F%9F%E5%9B%BE%E8%B0%B1%E7%9A%84%E5%AE%9E%E4%BD%93%E9%93%BE%E6%8E%A5%E6%8A%80%E6%9C%AF%E7%A0%94%E7%A9%B6/">Read More</a>
+          </div>
+        </div>
+      </div>
+    </li>
+     
+
+    
+
+  <li class="item">
+
+      
+
+      
+      <div class="describe">
+        <div class="title">
+          <a href="/2020/06/18/%E5%9F%BA%E4%BA%8E%E4%B8%8A%E4%B8%8B%E6%96%87%E4%BF%A1%E6%81%AF%E5%92%8C%E6%8E%92%E5%BA%8F%E5%AD%A6%E4%B9%A0%E7%9A%84%E5%AE%9E%E4%BD%93%E9%93%BE%E6%8E%A5%E6%96%B9%E6%B3%95/">基于上下文信息和排序学习的实体链接方法</a>
+        </div>
+        <div class="date">
+          <span class="iconfont icon-time-circle"></span>
+          <span>20/06/18</span>
+        </div>
+        
+        <div class="meta">
+          <div class="l">
+            <div class="warp">
+              
+              <span class="iconfont icon-folder"></span>
+              <span class="desp">
+                 
+                <a href="/categories/读书笔记">读书笔记</a>
+                 
+              </span>
+              
+            </div>
+
+            
+            <div class="warp">
+              <span class="iconfont icon-tag1"></span>
+              <span class="desp">
+                 
+                <a href="/tags/NPL">NPL</a>
+                  
+                <a href="/tags/实体链接">实体链接</a>
+                 
+              </span>
+            </div>
+            
+            <div class="warp">
+              <div class="share" data-url="/2020/06/18/%E5%9F%BA%E4%BA%8E%E4%B8%8A%E4%B8%8B%E6%96%87%E4%BF%A1%E6%81%AF%E5%92%8C%E6%8E%92%E5%BA%8F%E5%AD%A6%E4%B9%A0%E7%9A%84%E5%AE%9E%E4%BD%93%E9%93%BE%E6%8E%A5%E6%96%B9%E6%B3%95/">
+                <span class="iconfont icon-share"></span>
+              </div>
+              <div class="desp share" data-url="/2020/06/18/%E5%9F%BA%E4%BA%8E%E4%B8%8A%E4%B8%8B%E6%96%87%E4%BF%A1%E6%81%AF%E5%92%8C%E6%8E%92%E5%BA%8F%E5%AD%A6%E4%B9%A0%E7%9A%84%E5%AE%9E%E4%BD%93%E9%93%BE%E6%8E%A5%E6%96%B9%E6%B3%95/">
+                <a href="#">Share</a>
+              </div>
+            </div>
+          </div>
+          <div class="r">
+            <a href="/2020/06/18/%E5%9F%BA%E4%BA%8E%E4%B8%8A%E4%B8%8B%E6%96%87%E4%BF%A1%E6%81%AF%E5%92%8C%E6%8E%92%E5%BA%8F%E5%AD%A6%E4%B9%A0%E7%9A%84%E5%AE%9E%E4%BD%93%E9%93%BE%E6%8E%A5%E6%96%B9%E6%B3%95/">Read More</a>
+          </div>
+        </div>
+      </div>
+    </li>
+     
+
+    
+
+  <li class="item">
+
+      
+
+      
+      <div class="describe">
+        <div class="title">
+          <a href="/2020/06/11/Q-learning/">Q learning</a>
+        </div>
+        <div class="date">
+          <span class="iconfont icon-time-circle"></span>
+          <span>20/06/11</span>
+        </div>
+        
+        <div class="meta">
+          <div class="l">
+            <div class="warp">
+              
+              <span class="iconfont icon-folder"></span>
+              <span class="desp">
+                 
+                <a href="/categories/强化学习">强化学习</a>
+                 
+              </span>
+              
+            </div>
+
+            
+            <div class="warp">
+              <span class="iconfont icon-tag1"></span>
+              <span class="desp">
+                 
+                <a href="/tags/强化学习">强化学习</a>
+                 
+              </span>
+            </div>
+            
+            <div class="warp">
+              <div class="share" data-url="/2020/06/11/Q-learning/">
+                <span class="iconfont icon-share"></span>
+              </div>
+              <div class="desp share" data-url="/2020/06/11/Q-learning/">
+                <a href="#">Share</a>
+              </div>
+            </div>
+          </div>
+          <div class="r">
+            <a href="/2020/06/11/Q-learning/">Read More</a>
+          </div>
+        </div>
+      </div>
+    </li>
+     
+
+    
+
+  <li class="item">
+
+      
+
+      
+      <div class="describe">
+        <div class="title">
+          <a href="/2020/06/11/%E5%9F%BA%E4%BA%8E%E4%B8%8A%E4%B8%8B%E6%96%87%E8%AF%8D%E5%90%91%E9%87%8F%E5%92%8C%E4%B8%BB%E9%A2%98%E6%A8%A1%E5%9E%8B%E7%9A%84%E5%AE%9E%E4%BD%93%E6%B6%88%E6%AD%A7%E6%96%B9%E6%B3%95/">基于上下文词向量和主题模型的实体消歧方法</a>
+        </div>
+        <div class="date">
+          <span class="iconfont icon-time-circle"></span>
+          <span>20/06/11</span>
+        </div>
+        
+        <div class="meta">
+          <div class="l">
+            <div class="warp">
+              
+              <span class="iconfont icon-folder"></span>
+              <span class="desp">
+                 
+                <a href="/categories/读书笔记">读书笔记</a>
+                 
+              </span>
+              
+            </div>
+
+            
+            <div class="warp">
+              <span class="iconfont icon-tag1"></span>
+              <span class="desp">
+                 
+                <a href="/tags/NPL">NPL</a>
+                  
+                <a href="/tags/实体链接">实体链接</a>
+                 
+              </span>
+            </div>
+            
+            <div class="warp">
+              <div class="share" data-url="/2020/06/11/%E5%9F%BA%E4%BA%8E%E4%B8%8A%E4%B8%8B%E6%96%87%E8%AF%8D%E5%90%91%E9%87%8F%E5%92%8C%E4%B8%BB%E9%A2%98%E6%A8%A1%E5%9E%8B%E7%9A%84%E5%AE%9E%E4%BD%93%E6%B6%88%E6%AD%A7%E6%96%B9%E6%B3%95/">
+                <span class="iconfont icon-share"></span>
+              </div>
+              <div class="desp share" data-url="/2020/06/11/%E5%9F%BA%E4%BA%8E%E4%B8%8A%E4%B8%8B%E6%96%87%E8%AF%8D%E5%90%91%E9%87%8F%E5%92%8C%E4%B8%BB%E9%A2%98%E6%A8%A1%E5%9E%8B%E7%9A%84%E5%AE%9E%E4%BD%93%E6%B6%88%E6%AD%A7%E6%96%B9%E6%B3%95/">
+                <a href="#">Share</a>
+              </div>
+            </div>
+          </div>
+          <div class="r">
+            <a href="/2020/06/11/%E5%9F%BA%E4%BA%8E%E4%B8%8A%E4%B8%8B%E6%96%87%E8%AF%8D%E5%90%91%E9%87%8F%E5%92%8C%E4%B8%BB%E9%A2%98%E6%A8%A1%E5%9E%8B%E7%9A%84%E5%AE%9E%E4%BD%93%E6%B6%88%E6%AD%A7%E6%96%B9%E6%B3%95/">Read More</a>
+          </div>
+        </div>
+      </div>
+    </li>
+     
+
+    
+
+  <li class="item">
+
+      
+
+      
+      <div class="describe">
+        <div class="title">
+          <a href="/2020/06/05/%E5%9F%BA%E4%BA%8E%E8%AF%8D%E5%90%91%E9%87%8F%E7%9A%84%E5%AE%9E%E4%BD%93%E9%93%BE%E6%8E%A5%E6%96%B9%E6%B3%95/">基于词向量的实体链接方法</a>
+        </div>
+        <div class="date">
+          <span class="iconfont icon-time-circle"></span>
+          <span>20/06/05</span>
+        </div>
+        
+        <div class="meta">
+          <div class="l">
+            <div class="warp">
+              
+              <span class="iconfont icon-folder"></span>
+              <span class="desp">
+                 
+                <a href="/categories/读书笔记">读书笔记</a>
+                 
+              </span>
+              
+            </div>
+
+            
+            <div class="warp">
+              <span class="iconfont icon-tag1"></span>
+              <span class="desp">
+                 
+                <a href="/tags/NPL">NPL</a>
+                  
+                <a href="/tags/实体链接">实体链接</a>
+                 
+              </span>
+            </div>
+            
+            <div class="warp">
+              <div class="share" data-url="/2020/06/05/%E5%9F%BA%E4%BA%8E%E8%AF%8D%E5%90%91%E9%87%8F%E7%9A%84%E5%AE%9E%E4%BD%93%E9%93%BE%E6%8E%A5%E6%96%B9%E6%B3%95/">
+                <span class="iconfont icon-share"></span>
+              </div>
+              <div class="desp share" data-url="/2020/06/05/%E5%9F%BA%E4%BA%8E%E8%AF%8D%E5%90%91%E9%87%8F%E7%9A%84%E5%AE%9E%E4%BD%93%E9%93%BE%E6%8E%A5%E6%96%B9%E6%B3%95/">
+                <a href="#">Share</a>
+              </div>
+            </div>
+          </div>
+          <div class="r">
+            <a href="/2020/06/05/%E5%9F%BA%E4%BA%8E%E8%AF%8D%E5%90%91%E9%87%8F%E7%9A%84%E5%AE%9E%E4%BD%93%E9%93%BE%E6%8E%A5%E6%96%B9%E6%B3%95/">Read More</a>
+          </div>
+        </div>
+      </div>
+    </li>
+     
+
+    
+
+  <li class="item">
+
+      
+
+      
+      <div class="describe">
+        <div class="title">
+          <a href="/2020/06/04/%E5%9F%BA%E4%BA%8E%E5%9F%8E%E5%B8%82%E5%9C%B0%E5%90%8D%E5%AE%9E%E4%BD%93%E5%8F%8C%E5%90%91%E9%93%BE%E6%8E%A5%E5%88%86%E6%9E%90%E7%9A%84%E8%B7%AF%E7%BA%BF%E6%8E%A8%E8%8D%90%E7%A0%94%E7%A9%B6/">基于城市地名实体双向链接分析的路线推荐研究</a>
+        </div>
+        <div class="date">
+          <span class="iconfont icon-time-circle"></span>
+          <span>20/06/04</span>
+        </div>
+        
+        <div class="meta">
+          <div class="l">
+            <div class="warp">
+              
+              <span class="iconfont icon-folder"></span>
+              <span class="desp">
+                 
+                <a href="/categories/读书笔记">读书笔记</a>
+                 
+              </span>
+              
+            </div>
+
+            
+            <div class="warp">
+              <span class="iconfont icon-tag1"></span>
+              <span class="desp">
+                 
+                <a href="/tags/NPL">NPL</a>
+                  
+                <a href="/tags/实体链接">实体链接</a>
+                 
+              </span>
+            </div>
+            
+            <div class="warp">
+              <div class="share" data-url="/2020/06/04/%E5%9F%BA%E4%BA%8E%E5%9F%8E%E5%B8%82%E5%9C%B0%E5%90%8D%E5%AE%9E%E4%BD%93%E5%8F%8C%E5%90%91%E9%93%BE%E6%8E%A5%E5%88%86%E6%9E%90%E7%9A%84%E8%B7%AF%E7%BA%BF%E6%8E%A8%E8%8D%90%E7%A0%94%E7%A9%B6/">
+                <span class="iconfont icon-share"></span>
+              </div>
+              <div class="desp share" data-url="/2020/06/04/%E5%9F%BA%E4%BA%8E%E5%9F%8E%E5%B8%82%E5%9C%B0%E5%90%8D%E5%AE%9E%E4%BD%93%E5%8F%8C%E5%90%91%E9%93%BE%E6%8E%A5%E5%88%86%E6%9E%90%E7%9A%84%E8%B7%AF%E7%BA%BF%E6%8E%A8%E8%8D%90%E7%A0%94%E7%A9%B6/">
+                <a href="#">Share</a>
+              </div>
+            </div>
+          </div>
+          <div class="r">
+            <a href="/2020/06/04/%E5%9F%BA%E4%BA%8E%E5%9F%8E%E5%B8%82%E5%9C%B0%E5%90%8D%E5%AE%9E%E4%BD%93%E5%8F%8C%E5%90%91%E9%93%BE%E6%8E%A5%E5%88%86%E6%9E%90%E7%9A%84%E8%B7%AF%E7%BA%BF%E6%8E%A8%E8%8D%90%E7%A0%94%E7%A9%B6/">Read More</a>
+          </div>
+        </div>
+      </div>
+    </li>
+     
+
+    
+
+  <li class="item">
+
+      
+
+      
+      <div class="describe">
+        <div class="title">
+          <a href="/2020/05/28/word2vec_report/">word2vec中文词向量训练</a>
+        </div>
+        <div class="date">
+          <span class="iconfont icon-time-circle"></span>
+          <span>20/05/28</span>
+        </div>
+        
+        <div class="meta">
+          <div class="l">
+            <div class="warp">
+              
+              <span class="iconfont icon-folder"></span>
+              <span class="desp">
+                 
+                <a href="/categories/word2vec">word2vec</a>
+                 
+              </span>
+              
+            </div>
+
+            
+            <div class="warp">
+              <span class="iconfont icon-tag1"></span>
+              <span class="desp">
+                 
+                <a href="/tags/python">python</a>
+                  
+                <a href="/tags/NLP">NLP</a>
+                  
+                <a href="/tags/word2vec">word2vec</a>
+                 
+              </span>
+            </div>
+            
+            <div class="warp">
+              <div class="share" data-url="/2020/05/28/word2vec_report/">
+                <span class="iconfont icon-share"></span>
+              </div>
+              <div class="desp share" data-url="/2020/05/28/word2vec_report/">
+                <a href="#">Share</a>
+              </div>
+            </div>
+          </div>
+          <div class="r">
+            <a href="/2020/05/28/word2vec_report/">Read More</a>
+          </div>
+        </div>
+      </div>
+    </li>
+    
+  </ul>
+</div>
+
+<div class="paginator">
+  <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a>
+</div>
+
+        <footer>
+          <div class="copyright">
+            ©2020
+            <a href="https://wentianhao.github.io">wenhao</a> Powered by <a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a> |
+            <a target="_blank" rel="noopener" href="https://github.com/shixiaohu2206/hexo-theme-huhu">hexo-theme-huhu</a>
+          </div>
+          
+        </footer>
+      </div>
+    </div>
+  </body>
   
-<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
-
-  
-<script src="/fancybox/jquery.fancybox.pack.js"></script>
-
-
-
-
-<script src="/js/script.js"></script>
-
-
-  </div>
-</body>
 </html>
+<script type="text/javascript">
+                  window.HUHU_CONFIG = JSON.parse("{\"share\":[\"weibo\",\"weixin\",\"qqkongjian\",\"QQ\",\"douban\",\"facebook\",\"twitter\",\"google\"],\"service_worker\":{\"open\":false}}")
+                </script> <script type="text/javascript">window.addEventListener('load', function() {
+    
+    window.loadJs = function(d, m, a) {
+      var c = document.getElementsByTagName('head')[0] || document.head || document.documentElement
+      var b = document.createElement('script')
+      b.defer = true
+      b.setAttribute('type', 'text/javascript')
+      b.setAttribute('charset', 'UTF-8')
+      b.setAttribute('async', 'true')
+      b.setAttribute('src', d)
+      m && b.setAttribute('data-main', '/scripts/app-built')
+      if (typeof a === 'function') {
+        if (window.attachEvent) {
+          b.onreadystatechange = function() {
+            var e = b.readyState
+            if (e === 'loaded' || e === 'complete') {
+              b.onreadystatechange = null
+              a()
+            }
+          }
+        } else {
+          b.onload = a
+        }
+      }
+      c.appendChild(b)
+    }
+    window.loadJs && window.loadJs('https://cdn.bootcss.com/require.js/2.3.6/require.min.js', true, function() {require.config({"paths":{"util":"util","share":"share","search":"search","pagemap":"pagemap.min","registerSW":"registerSW","valine":"cdn/Valine.min","av":["https://cdn.jsdelivr.net/npm/leancloud-storage/dist/av-min"],"pjax":["https://cdn.bootcss.com/jquery.pjax/2.0.1/jquery.pjax.min"],"jquery":["https://cdn.bootcss.com/jquery/3.4.1/jquery.min"],"confirm":["https://cdn.bootcss.com/jquery-confirm/3.3.4/jquery-confirm.min"],"fancybox":["https://cdn.bootcss.com/fancybox/3.5.7/jquery.fancybox.min"],"chart":["https://cdn.bootcss.com/Chart.js/2.8.0-rc.1/Chart.bundle.min"]},"map":{"*":{"css":"https://cdn.bootcss.com/require-css/0.1.10/css.min.js"}},"shim":{"fancybox":{"deps":["css!https://cdn.bootcss.com/fancybox/3.5.7/jquery.fancybox.min.css"]},"confirm":{"deps":["css!https://cdn.bootcss.com/jquery-confirm/3.3.4/jquery-confirm.min.css"]},"chart":{"deps":["css!https://cdn.bootcss.com/Chart.js/2.8.0-rc.1/Chart.min.css"]}},"waitSeconds":3})})
+  })</script> <script type="text/javascript">
+                  ;(function() {
+                    var bp = document.createElement('script')
+                    var curProtocol = window.location.protocol.split(':')[0]
+                    if (curProtocol === 'https') {
+                      bp.src = 'https://zz.bdstatic.com/linksubmit/push.js'
+                    } else {
+                      bp.src = 'http://push.zhanzhang.baidu.com/push.js'
+                    }
+                    var s = document.getElementsByTagName('script')[0]
+                    s.parentNode.insertBefore(bp, s)
+                  })()
+                </script> 

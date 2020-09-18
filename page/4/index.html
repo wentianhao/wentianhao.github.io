@@ -1,1403 +1,808 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <meta charset="utf-8">
-  
-  <title>blog</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="wenhao&#39;blog">
-<meta property="og:type" content="website">
-<meta property="og:title" content="blog">
-<meta property="og:url" content="https://wentianhao.github.io/page/4/index.html">
-<meta property="og:site_name" content="blog">
-<meta property="og:description" content="wenhao&#39;blog">
-<meta property="og:locale">
-<meta property="article:author" content="wenhao">
-<meta name="twitter:card" content="summary">
-  
-    <link rel="alternate" href="/atom.xml" title="blog" type="application/atom+xml">
-  
-  
-    <link rel="icon" href="/favicon.png">
-  
-  
-    <!--<link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">-->
-  
-  
-<link rel="stylesheet" href="/css/style.css">
+  <head>
+      <script>
+  var _hmt = _hmt || []
+  ;(function() {
+    var hm = document.createElement('script')
+    hm.src = 'https://hm.baidu.com/hm.js?5a0acc897fd96474a2c8f4deac84611a'
+    var s = document.getElementsByTagName('script')[0]
+    s.parentNode.insertBefore(hm, s)
+  })()
+</script> 
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="keywords" content="undefined" />
+    <meta name="description" content="wenhao&#39;blog" />
+    
+    <title>
+       wenhao  - blog
+    </title>
+    <link rel="manifest" href="/manifest.json" />
+    <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon" />
+    
+<link rel="stylesheet" href="/style/style.css">
 
-  
-
+  <link rel="alternate" href="/atom.xml" title="blog" type="application/atom+xml">
 </head>
-
-<body>
-  <div id="container">
-    <div id="wrap">
-      <header id="header">
-  <div id="banner"></div>
-  <div id="header-outer" class="outer">
-    <div id="header-title" class="inner">
-      <h1 id="logo-wrap">
-        <a href="/" id="logo">blog</a>
-      </h1>
-      
+  <body>
+    <canvas id='pagemap'></canvas>
+    
+    <div id="fixed-menu-wrap">
+      <span class="iconfont icon-sousuo search-box menu-reset"></span>
+      <span class="icon-toc menu-reset">Toc</span>
+      <span class="iconfont icon-arrowup menu-reset"></span>
     </div>
-    <div id="header-inner" class="inner">
-      <nav id="main-nav">
-        <a id="main-nav-toggle" class="nav-icon"></a>
-        
-          <a class="main-nav-link" href="/">Home</a>
-        
-          <a class="main-nav-link" href="/archives">Archives</a>
-        
-      </nav>
-      <nav id="sub-nav">
-        
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
-        
-        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
-      </nav>
-      <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://wentianhao.github.io"></form>
+    <div id="fixed-menu">
+      <span class="iconfont icon-menu-"></span>
+    </div>
+    <div id="progress">
+      <div class="line"></div>
+    </div>
+    <div id="search-shade" class="animated hiddenSearch hide">
+      <div class="input-wrap">
+        <span class="iconfont icon-sousuo search-box"></span>
+        <input type="text" placeholder="Search" />
+        <span class="iconfont icon-close"></span>
+      </div>
+      <div class="search-result">
+        <div class="meta">
+          <span><b id="result-count">0</b> results found</span>
+          <img src="/images/logo.jpeg" />
+        </div>
+        <ul id="result-box"></ul>
       </div>
     </div>
-  </div>
-</header>
-      <div class="outer">
-        <section id="main">
-  
-    <article id="post-正则表达式基础" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2020/02/19/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E5%9F%BA%E7%A1%80/" class="article-date">
-  <time datetime="2020-02-19T11:44:21.000Z" itemprop="datePublished">2020-02-19</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/python/">python</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
+    <div id="menu-mask" class="animated hideMenuMask hide">
+      <span class="iconfont icon-close"></span>
+      <div class="nav">
         
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/02/19/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E5%9F%BA%E7%A1%80/">正则表达式基础</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <html><head></head><body><h2 id="基础1">基础1<a class="post-anchor" href="#基础1"></a></h2><ul>
-<li>全局匹配函数使用格式 </li>
-</ul>
-<p>re.compile(正则表达式).findall(源字符串)</p>
-<table>
-<thead>
-<tr>
-<th align="center">普通字符</th>
-<th align="center">正常匹配</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">\n</td>
-<td align="center">匹配换行符</td>
-</tr>
-<tr>
-<td align="center">\t</td>
-<td align="center">匹配制表符</td>
-</tr>
-<tr>
-<td align="center">\w</td>
-<td align="center">匹配字母、数字、下划线</td>
-</tr>
-<tr>
-<td align="center">\W</td>
-<td align="center">匹配除字母、数字、下划线</td>
-</tr>
-<tr>
-<td align="center">\d</td>
-<td align="center">匹配十进制数字</td>
-</tr>
-<tr>
-<td align="center">\D</td>
-<td align="center">匹配除十进制数字</td>
-</tr>
-<tr>
-<td align="center">\s</td>
-<td align="center">匹配空白字符</td>
-</tr>
-<tr>
-<td align="center">\S</td>
-<td align="center">匹配除空白字符</td>
-</tr>
-<tr>
-<td align="center">[ab89x]</td>
-<td align="center">原子表，匹配ab89x中的任意一个</td>
-</tr>
-<tr>
-<td align="center">[^ab89x^]</td>
-<td align="center">原子表，匹配除ab89x以外的任意一个字符</td>
-</tr>
-</tbody></table>
-<h2 id="实例1">实例1<a class="post-anchor" href="#实例1"></a></h2><table>
-<thead>
-<tr>
-<th align="center">源字符串</th>
-<th align="center">正则表达式</th>
-<th align="center">匹配结果</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">“aliyunedu”</td>
-<td align="center">“yu”</td>
-<td align="center">yu</td>
-</tr>
-<tr>
-<td align="center">“‘aliyun\nedu’”</td>
-<td align="center">“yun\n”</td>
-<td align="center">yun\n</td>
-</tr>
-<tr>
-<td align="center">“aliyu89787nedu”</td>
-<td align="center">“\w\d\w\d\d\w”</td>
-<td align="center">u89787</td>
-</tr>
-<tr>
-<td align="center">“aliyu89787nedu”</td>
-<td align="center">“\w\d[nedu]\w”</td>
-<td align="center">87ne</td>
-</tr>
-</tbody></table>
-<hr>
-<h2 id="基础2">基础2<a class="post-anchor" href="#基础2"></a></h2><table>
-<thead>
-<tr>
-<th align="center">正则表达式</th>
-<th align="center">含义</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">.</td>
-<td align="center">匹配除换行外任意一个字符</td>
-</tr>
-<tr>
-<td align="center">^</td>
-<td align="center">匹配开始位置</td>
-</tr>
-<tr>
-<td align="center">$</td>
-<td align="center">匹配结束位置</td>
-</tr>
-<tr>
-<td align="center">*</td>
-<td align="center">前一个字符出现0\1\多次</td>
-</tr>
-<tr>
-<td align="center">?</td>
-<td align="center">前一个字符出现0\1次</td>
-</tr>
-<tr>
-<td align="center">+</td>
-<td align="center">前一个字符出现1\多次</td>
-</tr>
-<tr>
-<td align="center">{n}</td>
-<td align="center">前一个字符恰好出现n次</td>
-</tr>
-<tr>
-<td align="center">{n,}</td>
-<td align="center">前一个字符至少n次</td>
-</tr>
-<tr>
-<td align="center">{n,m}</td>
-<td align="center">前一个字符至少n次，至多m次</td>
-</tr>
-<tr>
-<td align="center">|</td>
-<td align="center">模式选择符或</td>
-</tr>
-<tr>
-<td align="center">()</td>
-<td align="center">模式单元，通俗来说就是，想提取出什么内容，就在正则中用小括号将其括起来</td>
-</tr>
-</tbody></table>
-<p>tips:默认贪婪，即默认尽可能多的进行匹配</p>
-<h2 id="实例2">实例2<a class="post-anchor" href="#实例2"></a></h2><p>源字符串 : “aliyunnnnji87362387aoyubaidu”</p>
-<table>
-<thead>
-<tr>
-<th align="center">正则表达式</th>
-<th align="center">匹配结果</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">“ali…”</td>
-<td align="center">aliyun</td>
-</tr>
-<tr>
-<td align="center">“^li…”</td>
-<td align="center">None</td>
-</tr>
-<tr>
-<td align="center">“bai..$”</td>
-<td align="center">baidu</td>
-</tr>
-<tr>
-<td align="center">“ali.*”</td>
-<td align="center">aliyunnnnji87362387aoyubaidu</td>
-</tr>
-<tr>
-<td align="center">“aliyun+”</td>
-<td align="center">aliyunnnnn</td>
-</tr>
-<tr>
-<td align="center">“aliyun?”</td>
-<td align="center">aliyun</td>
-</tr>
-<tr>
-<td align="center">“yun{1,2}”</td>
-<td align="center">yunn</td>
-</tr>
-<tr>
-<td align="center">^al(i..)”</td>
-<td align="center">iyu</td>
-</tr>
-</tbody></table>
-<hr>
-<h2 id="基础3">基础3<a class="post-anchor" href="#基础3"></a></h2><p>贪婪模式： 尽可能多的匹配</p>
-<p>懒惰模式： 尽可能少的匹配，精准模式</p>
-<p>默认贪婪模式</p>
-<p>如果出现如下组合，则代表为懒惰模式：</p>
-<p>*?</p>
-<p>+?</p>
-<h2 id="实例3">实例3<a class="post-anchor" href="#实例3"></a></h2><p>源字符串：”poytphonyhjskjsa”</p>
-<table>
-<thead>
-<tr>
-<th align="center">正则表达式</th>
-<th align="center">匹配结果</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">“p.*y”</td>
-<td align="center">poytphony</td>
-</tr>
-<tr>
-<td align="center">“p.*?y”</td>
-<td align="center">[‘poy’,’phony’]</td>
-</tr>
-</tbody></table>
-<p>第一个贪婪模式</p>
-<p>第二个懒惰模式，精准匹配</p>
-<hr>
-<h2 id="基础4">基础4<a class="post-anchor" href="#基础4"></a></h2><p>模式修正符：在不改变正则表达式的情况下通过模式修正符使匹配结果发生更改</p>
-<p>re.S 让.也可以匹配多行</p>
-<p>re.I 让匹配时忽略大小写</p>
-<h2 id="实例4">实例4<a class="post-anchor" href="#实例4"></a></h2><p>string = “””我是阿里云大学\n欢迎来学习\nPython网络爬虫课程”””</p>
-<p>pat=”阿里.*?Python”</p>
-<table>
-<thead>
-<tr>
-<th align="center">源字符串</th>
-<th align="center">正则表达式</th>
-<th align="center">匹配方式</th>
-<th align="center">匹配结果</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">“Python”</td>
-<td align="center">“pyt”</td>
-<td align="center">re.compile(“pyt”).findal(“Python”)</td>
-<td align="center">[]</td>
-</tr>
-<tr>
-<td align="center">“Python”</td>
-<td align="center">“pyt”</td>
-<td align="center">re.compile(“pyt”,re.I).findall(“Python”)</td>
-<td align="center">Pyt</td>
-</tr>
-<tr>
-<td align="center">“Python”</td>
-<td align="center">“pyt”</td>
-<td align="center">re.compile(“pyt”.re.I).findall(“Python”)</td>
-<td align="center">Pyt</td>
-</tr>
-<tr>
-<td align="center">string</td>
-<td align="center">pat</td>
-<td align="center">re.compile(pat).findall(string)</td>
-<td align="center">[]</td>
-</tr>
-<tr>
-<td align="center">string</td>
-<td align="center">pat</td>
-<td align="center">re.compile(pat,re.S).findall(string)</td>
-<td align="center">[‘阿里云大学\n欢迎来学习\nPython’]</td>
-</tr>
-</tbody></table>
-</body></html>
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://wentianhao.github.io/2020/02/19/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E5%9F%BA%E7%A1%80/" data-id="ck6thspi600016g5h03r9h9zr" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/python/" rel="tag">python</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/python%E7%88%AC%E8%99%AB/" rel="tag">python爬虫</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-hexo-Spawn-failed-fatal" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2020/02/13/hexo-Spawn-failed-fatal/" class="article-date">
-  <time datetime="2020-02-12T16:00:31.000Z" itemprop="datePublished">2020-02-13</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/server/">server</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
+        <a href="/" class="">
+          Home
+        </a>
         
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/02/13/hexo-Spawn-failed-fatal/">hexo-Spawn-failed-fatal</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <html><head></head><body><p>今天偶尔发现博客部署到阿里云上没有成功</p>
-<p>错误代码：</p>
-<blockquote>
-<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">fatal: LF would be replaced by CRLF <span class="keyword">in</span> </span><br><span class="line">2019/06/21/hello-world/index.html</span><br><span class="line">FATAL Something<span class="string">'s wrong. Maybe you can find the solution here: </span></span><br><span class="line"><span class="string">https://hexo.io/docs/troubleshooting.html</span></span><br><span class="line"><span class="string">Error: Spawn failed</span></span><br><span class="line"><span class="string">at ChildProcess.<anonymous> </span></span><br><span class="line"><span class="string">(D:\\Hexo\node_modules\hexo-util\lib\spawn.js:52:19)</span></span><br><span class="line"><span class="string">at emitTwo (events.js:106:13)</span></span><br><span class="line"><span class="string">at ChildProcess.emit (events.js:191:7)</span></span><br><span class="line"><span class="string">at ChildProcess.cp.emit </span></span><br><span class="line"><span class="string">(D:\blog\Hexo\node_modules\cross-spawn\lib\enoent.js:40:29)</span></span><br><span class="line"><span class="string">at Process.ChildProcess._handle.onexit </span></span><br><span class="line"><span class="string">(internal/child_process.js:215:12)</span></span><br></pre></td></tr></tbody></table></figure>
-</blockquote>
-<p>解决办法：<br>在.git的配置文件里添加</p>
-<blockquote>
-<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">autocrlf = <span class="literal">false</span></span><br><span class="line">safecrlf = <span class="literal">false</span></span><br></pre></td></tr></tbody></table></figure>
-</blockquote>
-</body></html>
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://wentianhao.github.io/2020/02/13/hexo-Spawn-failed-fatal/" data-id="ck6ji9zay0000p05h2hwk4uvm" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/hexo/" rel="tag">hexo</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-maven" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2020/02/06/maven/" class="article-date">
-  <time datetime="2020-02-05T16:10:35.000Z" itemprop="datePublished">2020-02-06</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/spring-boot/">spring boot</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
+        <a href="/archives" class="">
+          Archives
+        </a>
         
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/02/06/maven/">maven</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <html><head></head><body><ol>
-<li><p>在C:\Users\WHH.m2下新建 settings.xml</p>
-</li>
-<li><p>将以下内容加入</p>
-<blockquote>
-<figure class="highlight xml"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta"><?xml version="1.0" encoding="UTF-8"?></span></span><br><span class="line">   <span class="tag"><<span class="name">settings</span> <span class="attr">xmlns</span>=<span class="string">"http://maven.apache.org/SETTINGS/1.0.0"</span></span></span><br><span class="line"><span class="tag">       <span class="attr">xmlns:xsi</span>=<span class="string">"http://www.w3.org/2001/XMLSchema-instance"</span></span></span><br><span class="line"><span class="tag">       <span class="attr">xsi:schemaLocation</span>=<span class="string">"http://maven.apache.org/SETTINGS/1.0.0</span></span></span><br><span class="line"><span class="tag"><span class="string">       https://maven.apache.org/xsd/settings-1.0.0.xsd"</span>></span></span><br><span class="line">       <span class="tag"><<span class="name">mirrors</span>></span></span><br><span class="line">           <span class="tag"><<span class="name">mirror</span>></span> </span><br><span class="line">               <span class="tag"><<span class="name">id</span>></span>alimaven<span class="tag"></<span class="name">id</span>></span> </span><br><span class="line">               <span class="tag"><<span class="name">name</span>></span>aliyun maven<span class="tag"></<span class="name">name</span>></span>                     </span><br><span class="line">               <span class="tag"><<span class="name">url</span>></span>http://maven.aliyun.com/nexus/content/groups/public/ <span class="tag"></<span class="name">url</span>></span></span><br><span class="line">               <span class="tag"><<span class="name">mirrorOf</span>></span>central<span class="tag"></<span class="name">mirrorOf</span>></span>         </span><br><span class="line">           <span class="tag"></<span class="name">mirror</span>></span> </span><br><span class="line">       <span class="tag"></<span class="name">mirrors</span>></span></span><br><span class="line">   <span class="tag"></<span class="name">settings</span>></span></span><br></pre></td></tr></tbody></table></figure>
-</blockquote>
-</li>
-<li><p>重启IDEA</p>
-</li>
-</ol>
-</body></html>
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://wentianhao.github.io/2020/02/06/maven/" data-id="ck6jhssxm000w7s5h6epmhtqe" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/maven/" rel="tag">maven</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/spring-boot/" rel="tag">spring boot</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-hexo-to-your-server" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2020/01/20/hexo-to-your-server/" class="article-date">
-  <time datetime="2020-01-20T07:20:32.000Z" itemprop="datePublished">2020-01-20</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/server/">server</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
+        <a href="/categories" class="">
+          Categories
+        </a>
         
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/01/20/hexo-to-your-server/">hexo-to-your-server</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <html><head></head><body><h2 id="服务器配置">服务器配置<a class="post-anchor" href="#服务器配置"></a></h2><hr>
-<p><strong>搭建远程git私库</strong></p>
-<ul>
-<li>登录远程服务器，安装git</li>
-</ul>
-<blockquote>
-<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git --version <span class="comment">#查看是否安装</span></span><br></pre></td></tr></tbody></table></figure>
-</blockquote>
-<ul>
-<li>创建用户并配置仓库</li>
-</ul>
-<blockquote>
-<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">useradd git <span class="comment">#创建用户</span></span><br><span class="line">passwd git <span class="comment">#设置密码</span></span><br><span class="line">mkdir /home/git <span class="comment">#创建git文件夹</span></span><br><span class="line">chown -R git:git /home/git</span><br><span class="line">su git <span class="comment">#授权</span></span><br><span class="line"><span class="built_in">cd</span> /home/git/</span><br><span class="line">mkdir -p projects/blog <span class="comment">#项目存在的真实目录</span></span><br><span class="line">mkdir repos && <span class="built_in">cd</span> repos</span><br><span class="line">git init --bare blog.git <span class="comment">#创建一个裸露的仓库</span></span><br><span class="line"><span class="built_in">cd</span> blog.git/hooks</span><br><span class="line">vim post-receive <span class="comment">#创建hook钩子函数,输入</span></span><br></pre></td></tr></tbody></table></figure>
-</blockquote>
-<blockquote>
-<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/bin/sh</span></span><br><span class="line">   git --work-tree=/home/git/projects/blog --git-dir=/home/git/repos/blog.git checkout -f</span><br></pre></td></tr></tbody></table></figure>
-</blockquote>
-<p>添加完成后修改权限</p>
-<blockquote>
-<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">chmod +x post-receive</span><br><span class="line"><span class="built_in">exit</span> //退出到root登录</span><br><span class="line">chown -R git:git /home/git/repos/blog.git <span class="comment">#添加权限</span></span><br></pre></td></tr></tbody></table></figure>
-</blockquote>
-<ul>
-<li>测试git仓库是否可用</li>
-</ul>
-<p>在本地电脑的git中输入</p>
-<blockquote>
-<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> git@server_ip:/home/git/repos/blog.git</span><br></pre></td></tr></tbody></table></figure>
-</blockquote>
-<p>如果能把空仓库拉下来，则说明git仓库搭建成功</p>
-<p><a target="_blank" rel="noopener" href="https://imgconvert.csdnimg.cn/aHR0cHM6Ly91c2VyLWdvbGQtY2RuLnhpdHUuaW8vMjAxOS85LzE0LzE2ZDJiNmVhNGRmNTQxNzg?x-oss-process=image/format,png" data-caption="pic" data-fancybox="images"><img src="https://imgconvert.csdnimg.cn/aHR0cHM6Ly91c2VyLWdvbGQtY2RuLnhpdHUuaW8vMjAxOS85LzE0LzE2ZDJiNmVhNGRmNTQxNzg?x-oss-process=image/format,png" alt="pic"></a></p>
-<ul>
-<li>建立ssh信任关系，在本地电脑</li>
-</ul>
-<p>如果没有rsa密钥则生成</p>
-<blockquote>
-<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.name <span class="string">"yourname"</span></span><br><span class="line">git config --global user.email youremail@example.com</span><br><span class="line">ssh-keygen -t rsa -C <span class="string">"youremail@example.com"</span></span><br><span class="line">git config --global core.autocrlf <span class="literal">false</span>  <span class="comment"># 禁用自动转换，这个不设置后面上传时会出现警告，如下</span></span><br></pre></td></tr></tbody></table></figure>
-</blockquote>
-<p><a target="_blank" rel="noopener" href="https://imgconvert.csdnimg.cn/aHR0cHM6Ly91c2VyLWdvbGQtY2RuLnhpdHUuaW8vMjAxOS85LzE0LzE2ZDJiNmU1MWU4MGFjMTU?x-oss-process=image/format,png" data-caption="pic" data-fancybox="images"><img src="https://imgconvert.csdnimg.cn/aHR0cHM6Ly91c2VyLWdvbGQtY2RuLnhpdHUuaW8vMjAxOS85LzE0LzE2ZDJiNmU1MWU4MGFjMTU?x-oss-process=image/format,png" alt="pic"></a></p>
-<p>建立ssh信任关系</p>
-<blockquote>
-<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ssh-copy-id -i C:/Users/yourname/.ssh/id_rsa.pub git@server_ip</span><br><span class="line">ssh git@server_ip <span class="comment">#测试能否登录</span></span><br></pre></td></tr></tbody></table></figure>
-</blockquote>
-<p>注意：此时ssh登录git用户不需要密码!如果需要则没配置好</p>
-<ul>
-<li>禁用git 用户的shell登录权限，从而只能用git clone,git push等功能</li>
-</ul>
-<blockquote>
-<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">cat /etc/shells <span class="comment">#查看git-shell 是否在登录方式里</span></span><br><span class="line"><span class="built_in">which</span> git-shell <span class="comment">#查看是否安装</span></span><br><span class="line">vi /etc/shells</span><br></pre></td></tr></tbody></table></figure>
-</blockquote>
-<p>添加第二步显示的路径，通常为 /usr/bin/git-shell</p>
-<ul>
-<li>修改/etc/passwd中的权限</li>
-</ul>
-<blockquote>
-<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#将原来的 </span></span><br><span class="line">git:x:1000:1000::/home/git:/bin/bash</span><br><span class="line"></span><br><span class="line"><span class="comment">#修改为</span></span><br><span class="line">git:x:100:1000:,,,:/home/git:/usr/bin/git-shell</span><br></pre></td></tr></tbody></table></figure>
-</blockquote>
-<hr>
-<p><strong>nginx安装</strong></p>
-<blockquote>
-<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">apt-get install nginx</span><br></pre></td></tr></tbody></table></figure>
-</blockquote>
-<p><strong>验证安装</strong></p>
-<blockquote>
-<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nginx <span class="comment"># 启动nginx </span></span><br></pre></td></tr></tbody></table></figure>
-</blockquote>
-<p>查看是否安装成功，在浏览器输入公网ip</p>
-<p><strong>修改配置文件</strong></p>
-<blockquote>
-<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 查找nginx安装路径</span></span><br><span class="line">   whereis nginx </span><br><span class="line">   <span class="built_in">cd</span> /etc/nginx</span><br><span class="line">   vim nginx.conf</span><br></pre></td></tr></tbody></table></figure>
-</blockquote>
-<p><a target="_blank" rel="noopener" href="https://github.com/wentianhao/wentianhao.github.io/blob/master/images/nginx_blog.png?raw=true" data-caption="code" data-fancybox="images"><img src="https://github.com/wentianhao/wentianhao.github.io/blob/master/images/nginx_blog.png?raw=true" alt="code"></a></p>
-<p><a target="_blank" rel="noopener" href="https://github.com/wentianhao/wentianhao.github.io/blob/master/images/nginx_blog2.png?raw=true" data-caption="code" data-fancybox="images"><img src="https://github.com/wentianhao/wentianhao.github.io/blob/master/images/nginx_blog2.png?raw=true" alt="code"></a></p>
-<hr>
-<h2 id="发布">发布<a class="post-anchor" href="#发布"></a></h2><p><strong>配置_config.yml文件</strong></p>
-<p>1.编辑_config.yml的deploy属性</p>
-<p><a target="_blank" rel="noopener" href="https://github.com/wentianhao/wentianhao.github.io/blob/master/images/deploy.png?raw=true" data-caption="code" data-fancybox="images"><img src="https://github.com/wentianhao/wentianhao.github.io/blob/master/images/deploy.png?raw=true" alt="code"></a></p>
-<p>2.在package.json中添加npm脚本</p>
-<blockquote>
-<figure class="highlight"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">"scripts":{</span><br><span class="line">   "deploy":"hexo clean && hexo g -d",</span><br><span class="line">   "start": "hexo clean && hexo g && hexo s"</span><br><span class="line">},</span><br></pre></td></tr></tbody></table></figure>
-</blockquote>
-<p>3.使用<a href="https://whh.plus/2020/01/12/hello-world/" target="_blank" rel="noopener">ProtableHexo</a>自带的脚本上传</p>
-</body></html>
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://wentianhao.github.io/2020/01/20/hexo-to-your-server/" data-id="ck6jhssxl000v7s5hekic5997" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/hexo/" rel="tag">hexo</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/nginx/" rel="tag">nginx</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/server/" rel="tag">server</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="jupyter-Notebook" class="article article-type-jupyter" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2020/01/19/Notebook/" class="article-date">
-  <time datetime="2020-01-19T07:46:26.000Z" itemprop="datePublished">2020-01-19</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/server/">server</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
+        <a href="/tags" class="">
+          Tags
+        </a>
         
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/01/19/Notebook/">jupyter Notebook</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="什么是Jupyter-Notebook"><a href="#什么是Jupyter-Notebook" class="headerlink" title="什么是Jupyter Notebook?"></a>什么是Jupyter Notebook?</h1><p>Jupyter Notebook是一款开放源代码的web应用程序，可以让我们创建并共享代码和文档。</p>
-<p>它提供了一个环境，你可以在其中记录代码，运行代码，查看结果，可视化数据并在查看输出结果。这些特性使其成为一款执行端到端数据科学工作流程的便捷工具 ，可以用于数据清理，统计建模，构建和训练机器学习模型，可视化数据以及许多其他用途。</p>
-<h2 id="ubuntu安装Jupyter-Notebook"><a href="#ubuntu安装Jupyter-Notebook" class="headerlink" title="ubuntu安装Jupyter Notebook"></a>ubuntu安装Jupyter Notebook</h2><ul>
-<li>安装Anaconda</li>
-</ul>
-<blockquote>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">  mkdir anaconda </span><br><span class="line"><span class="comment">#创建文件夹</span></span><br><span class="line">  <span class="built_in">cd</span> anaconda <span class="comment">#进入文件夹</span></span><br><span class="line">  wget https://repo.continuum.io/archive/Anaconda3-4.4.0-Linux-x86_64.sh <span class="comment">#从指定地址下载文件</span></span><br><span class="line"> bash Anaconda3-4.4.0-Linux-x86_64.sh <span class="comment">#安装文件</span></span><br></pre></td></tr></table></figure>
-</blockquote>
-<p>检查是否安装成功</p>
-<blockquote>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">conda --version</span><br></pre></td></tr></table></figure>
-</blockquote>
-<p>如果出现conda: command not found</p>
-<p>添加环境变量：</p>
-<blockquote>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim ~/.bashrc</span><br></pre></td></tr></table></figure>
-</blockquote>
-<p>在最后加上：anaconda3的路径</p>
-<blockquote>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">export</span> PATH=<span class="variable">$PATH</span>:/your/path/to/anaconda3/bin</span><br></pre></td></tr></table></figure>
-</blockquote>
-<p>保存更改，运行</p>
-<blockquote>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">source</span> ~/.bashrc</span><br></pre></td></tr></table></figure>
-</blockquote>
-<p>检查是否安装成功</p>
-<blockquote>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">conda --version</span><br></pre></td></tr></table></figure>
-</blockquote>
-<p>conda创建python虚拟环境</p>
-<blockquote>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">conda create -n your_env_name</span><br><span class="line"><span class="built_in">source</span> activate your_env_name <span class="comment">#进入虚拟环境</span></span><br><span class="line">python --version <span class="comment">#更换到python3</span></span><br><span class="line"><span class="built_in">echo</span> <span class="built_in">alias</span> python=python3 &gt;&gt; ~/.bashrc</span><br><span class="line"><span class="built_in">source</span> ~/.bashrc</span><br><span class="line">python --version</span><br></pre></td></tr></table></figure>
-</blockquote>
-<p>如果anaconda版本不够，可手动更新升级 (具体可百度)</p>
-<ul>
-<li>通过anaconda安装jupyter及各种包</li>
-</ul>
-<blockquote>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">conda install jupyter</span><br><span class="line">conda update --all <span class="comment">#升级所有包</span></span><br></pre></td></tr></table></figure>
-</blockquote>
-<ul>
-<li>配置远程访问登录密码</li>
-</ul>
-<p>1、在终端输入</p>
-<blockquote>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost]:~<span class="comment">#ipython</span></span><br><span class="line">In [1]: from notebook.auth import passwd </span><br><span class="line">In [2]: passwd()</span><br><span class="line">Enter password:</span><br><span class="line">Verify password:</span><br><span class="line">Out[2]: <span class="string">'sha1:xxxxx'</span></span><br><span class="line">In [3]: <span class="built_in">exit</span></span><br></pre></td></tr></table></figure>
-</blockquote>
-<p>解释：这是在python中调用passwd()方法，输入密码输出hashcode编码</p>
-<p>2、保存刚刚的hashcode</p>
-<blockquote>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">jupyter notebook --generate-config --allow-root <span class="comment">#生成配置文件</span></span><br><span class="line">vim ~/.jupyter/jupyter_notebook_config.py <span class="comment">#打开配置文件</span></span><br></pre></td></tr></table></figure>
-</blockquote>
-<p>如果没使用过vim的，可以学一下。</p>
-<p>在配置文件中,加入:</p>
-<blockquote>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">c.NotebookApp.ip=<span class="string">'*'</span></span><br><span class="line">c.NotebookApp.password = u<span class="string">'sha1:xxxxx'</span></span><br><span class="line">c.NotebookApp.open_browser = False</span><br><span class="line">c.NotebookApp.port =8888</span><br></pre></td></tr></table></figure>
-</blockquote>
-<p>:wq保存</p>
-<p>【注意】：到目前为止jupyter就已经在服务器中安装配置好了，但是8888端口默认是关闭的，如果是阿里云服务器，需要在阿里云控制台开放</p>
-<p>8888端口</p>
-<ul>
-<li>最后输入 </li>
-</ul>
-<blockquote>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ufw <span class="built_in">disable</span></span><br></pre></td></tr></table></figure>
-</blockquote>
-<p>关闭防火墙</p>
-<blockquote>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">jupyter notebook --ip=0.0.0.0 --allow-root <span class="comment">#在服务器运行jupyter notebook</span></span><br></pre></td></tr></table></figure>
-</blockquote>
-<ul>
-<li><p>浏览器输入<a href="http://xxx:8888" target="_blank" rel="noopener">http://xxx:8888</a> 即可登录</p>
-</li>
-<li><p>后台运行</p>
-</li>
-</ul>
-<blockquote>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nohup jupyter notebook --ip=0.0.0.0 --allow-root &gt; jupyter.log 2&gt;&amp;1 &amp;</span><br></pre></td></tr></table></figure>
-</blockquote>
-<p>&amp;让命令后台运行，并输出到log中</p>
-<p>nohup 表示 no hang up ，不挂起</p>
-<ul>
-<li>终止进程</li>
-</ul>
-<blockquote>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ps -aux | grep jupyter <span class="comment">#查看运行的jupyter进程</span></span><br><span class="line"><span class="built_in">kill</span> -9 pid</span><br></pre></td></tr></table></figure></blockquote>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://wentianhao.github.io/2020/01/19/Notebook/" data-id="ck6jhsswx00067s5hhsfobr69" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/jupyter-notebook/" rel="tag">jupyter notebook</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-git" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2020/01/19/git/" class="article-date">
-  <time datetime="2020-01-19T03:04:42.000Z" itemprop="datePublished">2020-01-19</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/git/">git</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
+        <a href="/friends" class="">
+          Friends
+        </a>
         
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/01/19/git/">git学习过程</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <html><head></head><body><p>合并到master分支</p>
-<blockquote>
-<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">m commits behind master , n commits ahead </span><br><span class="line">m | n</span><br></pre></td></tr></tbody></table></figure>
-</blockquote>
-<h4 id="先变成-m-1">先变成 m | 1<a class="post-anchor" href="#先变成-m-1"></a></h4><blockquote>
-<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">git pull</span><br><span class="line">git reset --soft HEAD~n</span><br><span class="line">git status</span><br><span class="line">git commit -m <span class="string">""</span></span><br><span class="line">git push -f</span><br></pre></td></tr></tbody></table></figure>
-</blockquote>
-<p>#####再将m | 1 变为 0 | 1</p>
-<blockquote>
-<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">git checkout master</span><br><span class="line">git pull origin master</span><br><span class="line">git checkout wh</span><br><span class="line">git rebase master</span><br><span class="line">git push -f</span><br></pre></td></tr></tbody></table></figure>
-</blockquote>
-<p>git 回退打破上一次分支合并的merge</p>
-<p>1.找到上一次提交到master分支的版本号</p>
-<blockquote>
-<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">log</span> --pretty=oneline</span><br></pre></td></tr></tbody></table></figure>
-</blockquote>
-<p>2.回退到指定版本</p>
-<blockquote>
-<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git reset --hard [merge前的版本号]</span><br></pre></td></tr></tbody></table></figure>
-</blockquote>
-<p>merge过程</p>
-<p>当git pull时出现冲突问题时，如下：</p>
-<blockquote>
-<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">warning: Cannot merge binary files: regionminute10_15.xlsx (HEAD vs. 03930ecfcd8a9c20eebe2d7dcd62e830455f1642)</span><br><span class="line">warning: Cannot merge binary files: data3.xlsx (HEAD vs. 03930ecfcd8a9c20eebe2d7dcd62e830455f1642)</span><br><span class="line">Auto-merging users3_15.py</span><br><span class="line">Auto-merging regionminute10_15.xlsx</span><br><span class="line">CONFLICT (content): Merge conflict <span class="keyword">in</span> regionminute10_15.xlsx</span><br><span class="line">Auto-merging data3.xlsx</span><br><span class="line">CONFLICT (content): Merge conflict <span class="keyword">in</span> data3.xlsx</span><br><span class="line">Automatic merge failed; fix conflicts and <span class="keyword">then</span> commit the result.</span><br></pre></td></tr></tbody></table></figure>
-</blockquote>
-<p>右下角则会出现 merging 状态，此时pull push等都不能用，只能见解决冲突或者取消merge</p>
-<blockquote>
-<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git merge --abort <span class="comment">#取消merge</span></span><br></pre></td></tr></tbody></table></figure>
-</blockquote>
-<p>解决冲突过程</p>
-<p><a target="_blank" rel="noopener" href="https://github.com/wentianhao/wentianhao.github.io/blob/master/images/merge.png?raw=true" data-caption="merge" data-fancybox="images"><img src="https://github.com/wentianhao/wentianhao.github.io/blob/master/images/merge.png?raw=true" alt="merge"></a></p>
-<p>选择Resolve Conflicts</p>
-<p><a target="_blank" rel="noopener" href="https://github.com/wentianhao/wentianhao.github.io/blob/master/images/resolve.png?raw=true" data-caption="resolve" data-fancybox="images"><img src="https://github.com/wentianhao/wentianhao.github.io/blob/master/images/resolve.png?raw=true" alt="resolve"></a></p>
-<p>如图可以发现冲突的文件，如果你的版本低于服务器的版本直接Accept Theirs,如果你的是最新的版本直接accept yours，如果不确定的话点击merge，逐行代码进行更新替换。</p>
-<p>最后结束merge</p>
-<blockquote>
-<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git merge --<span class="built_in">continue</span></span><br></pre></td></tr></tbody></table></figure></blockquote>
-</body></html>
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://wentianhao.github.io/2020/01/19/git/" data-id="ck6jhssxj000t7s5hb6qsg5oe" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/git/" rel="tag">git</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-springcloud2" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2020/01/14/springcloud2/" class="article-date">
-  <time datetime="2020-01-14T05:51:02.154Z" itemprop="datePublished">2020-01-14</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/spring-cloud/">spring cloud</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/01/14/springcloud2/">spring cloud mybaits 微服务增删改查(二)</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <html><head></head><body><p><a href="https://blog.csdn.net/www_indows/article/details/101204585" target="_blank" rel="noopener">在上一篇的基础上增加增删改查功能</a></p>
-<p><strong>创建数据库：</strong></p>
-<blockquote>
-<figure class="highlight sql"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">DATABASE</span> ssmdemo;</span><br></pre></td></tr></tbody></table></figure>
-</blockquote>
-<p><strong>创建表：</strong></p>
-<blockquote>
-<figure class="highlight sql"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">DROP</span> <span class="keyword">TABLE</span> <span class="keyword">IF</span> <span class="keyword">EXISTS</span> tb_user;</span><br><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> tb_user (</span><br><span class="line"><span class="keyword">id</span> <span class="built_in">char</span>(<span class="number">32</span>) <span class="keyword">NOT</span> <span class="literal">NULL</span>,</span><br><span class="line">user_name <span class="built_in">varchar</span>(<span class="number">32</span>) <span class="keyword">DEFAULT</span> <span class="literal">NULL</span>,</span><br><span class="line"><span class="keyword">password</span> <span class="built_in">varchar</span>(<span class="number">32</span>) <span class="keyword">DEFAULT</span> <span class="literal">NULL</span>,</span><br><span class="line">name1 <span class="built_in">varchar</span>(<span class="number">32</span>) <span class="keyword">DEFAULT</span> <span class="literal">NULL</span>,</span><br><span class="line">age <span class="built_in">int</span>(<span class="number">10</span>) <span class="keyword">DEFAULT</span> <span class="literal">NULL</span>,</span><br><span class="line">sex <span class="built_in">int</span>(<span class="number">2</span>) <span class="keyword">DEFAULT</span> <span class="literal">NULL</span>,</span><br><span class="line">birthday <span class="built_in">date</span> <span class="keyword">DEFAULT</span> <span class="literal">NULL</span>,</span><br><span class="line">created datetime <span class="keyword">DEFAULT</span> <span class="literal">NULL</span>,</span><br><span class="line"><span class="keyword">updated</span> datetime <span class="keyword">DEFAULT</span> <span class="literal">NULL</span>,</span><br><span class="line">PRIMARY <span class="keyword">KEY</span> (<span class="keyword">id</span>)</span><br><span class="line">) <span class="keyword">ENGINE</span>=<span class="keyword">InnoDB</span> <span class="keyword">DEFAULT</span> <span class="keyword">CHARSET</span>=utf8;</span><br></pre></td></tr></tbody></table></figure>
-</blockquote>
-<p><strong>插入数据</strong></p>
-<blockquote>
-<figure class="highlight sql"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> ssmdemo.tb_user ( user_name, <span class="keyword">password</span>, name1, age, sex, birthday, created, <span class="keyword">updated</span>) </span><br><span class="line"><span class="keyword">VALUES</span> ( ‘www’, ‘<span class="number">123456</span>’, ‘我’, ‘<span class="number">22</span>’, ‘<span class="number">1</span>’, ‘<span class="number">2019</span><span class="number">-09</span><span class="number">-25</span>’, <span class="keyword">sysdate</span>(), <span class="keyword">sysdate</span>());</span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> ssmdemo.tb_user ( user_name, <span class="keyword">password</span>, name1, age, sex, birthday, created, <span class="keyword">updated</span>) </span><br><span class="line"><span class="keyword">VALUES</span> ( ‘ss’, ‘<span class="number">123456</span>’, ‘哇’, ‘<span class="number">22</span>’, ‘<span class="number">1</span>’, ‘<span class="number">2019</span><span class="number">-09</span><span class="number">-25</span>’, <span class="keyword">sysdate</span>(), <span class="keyword">sysdate</span>());</span><br></pre></td></tr></tbody></table></figure>
-</blockquote>
-<p>模块结构：</p>
-<p><a target="_blank" rel="noopener" href="https://img-blog.csdnimg.cn/20190925155145677.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3d3d19pbmRvd3M=,size_16,color_FFFFFF,t_70" data-caption="在这里插入图片描述" data-fancybox="images"><img src="https://img-blog.csdnimg.cn/20190925155145677.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3d3d19pbmRvd3M=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></a></p>
-<p><strong>entity层：</strong></p>
-<blockquote>
-<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">   <span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">User</span> </span>{</span><br><span class="line">       <span class="keyword">private</span> String id;</span><br><span class="line">       <span class="keyword">private</span> String user_name;</span><br><span class="line">       <span class="keyword">private</span> String password;</span><br><span class="line">       <span class="keyword">private</span> String name1;</span><br><span class="line">       <span class="keyword">private</span> Integer age;</span><br><span class="line">       <span class="keyword">private</span> Integer sex;</span><br><span class="line">       <span class="keyword">private</span> Date birthday;</span><br><span class="line">       <span class="keyword">private</span> String created;</span><br><span class="line">       <span class="keyword">private</span> String updated;</span><br><span class="line">       </span><br><span class="line"><span class="comment">/*setter and getter */</span></span><br><span class="line">   ...</span><br><span class="line">   }</span><br></pre></td></tr></tbody></table></figure>
-</blockquote>
-<p><strong>mybatis</strong></p>
-<p>引入依赖</p>
-<blockquote>
-<figure class="highlight yml"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="string"><dependency></span></span><br><span class="line">    <span class="string"><groupId>org.mybatis</groupId></span></span><br><span class="line">    <span class="string"><artifactId>mybatis</artifactId></span></span><br><span class="line">    <span class="string"><version>3.2.8</version></span></span><br><span class="line"><span class="string"></dependency></span></span><br></pre></td></tr></tbody></table></figure>
-</blockquote>
-<p><strong>mybatis配置：</strong></p>
-<p>1.全局配置：mybatis-config.xml</p>
-<p>2.映射文件:  UserMapper.xml</p>
-<p><strong>mybatis-config.xml:</strong></p>
-<blockquote>
-<figure class="highlight xml"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta"><?xml version="1.0" encoding="UTF-8" ?></span></span><br><span class="line"><span class="meta"><!DOCTYPE <span class="meta-keyword">configuration</span></span></span><br><span class="line"><span class="meta">       <span class="meta-keyword">PUBLIC</span> <span class="meta-string">"-//mybatis.org//DTD Config 3.0//EN"</span></span></span><br><span class="line"><span class="meta">       <span class="meta-string">"http://mybatis.org/dtd/mybatis-3-config.dtd"</span>></span></span><br><span class="line">   <span class="comment"><!-- 根标签 --></span></span><br><span class="line">   <span class="comment"><!-- spring和MyBatis完美整合，不需要mybatis的配置映射文件 --></span></span><br><span class="line">   <span class="tag"><<span class="name">configuration</span>></span></span><br><span class="line">       <span class="comment"><!-- 环境，可以配置多个，default：指定采用哪个环境 --></span></span><br><span class="line">       <span class="tag"><<span class="name">environments</span> <span class="attr">default</span>=<span class="string">"test"</span>></span></span><br><span class="line">           <span class="comment"><!-- id：唯一标识 --></span></span><br><span class="line">           <span class="tag"><<span class="name">environment</span> <span class="attr">id</span>=<span class="string">"test"</span>></span></span><br><span class="line">               <span class="comment"><!-- 事务管理器，JDBC类型的事务管理器 --></span></span><br><span class="line">               <span class="tag"><<span class="name">transactionManager</span> <span class="attr">type</span>=<span class="string">"JDBC"</span> /></span></span><br><span class="line">               <span class="comment"><!-- 数据源，池类型的数据源 --></span></span><br><span class="line">               <span class="tag"><<span class="name">dataSource</span> <span class="attr">type</span>=<span class="string">"POOLED"</span>></span></span><br><span class="line">                   <span class="tag"><<span class="name">property</span> <span class="attr">name</span>=<span class="string">"driver"</span> <span class="attr">value</span>=<span class="string">"com.mysql.cj.jdbc.Driver"</span> /></span></span><br><span class="line">                   <span class="tag"><<span class="name">property</span> <span class="attr">name</span>=<span class="string">"url"</span> <span class="attr">value</span>=<span class="string">"jdbc:mysql://127.0.0.1:3306/ssmdemo?serverTimezone=UTC"</span> /></span></span><br><span class="line">                   <span class="tag"><<span class="name">property</span> <span class="attr">name</span>=<span class="string">"username"</span> <span class="attr">value</span>=<span class="string">"root"</span> /></span></span><br><span class="line">                   <span class="tag"><<span class="name">property</span> <span class="attr">name</span>=<span class="string">"password"</span> <span class="attr">value</span>=<span class="string">"123456"</span> /></span></span><br><span class="line">               <span class="tag"></<span class="name">dataSource</span>></span></span><br><span class="line">           <span class="tag"></<span class="name">environment</span>></span></span><br><span class="line">       <span class="tag"></<span class="name">environments</span>></span></span><br><span class="line">       <span class="tag"><<span class="name">mappers</span>></span></span><br><span class="line">           <span class="tag"><<span class="name">mapper</span> <span class="attr">resource</span>=<span class="string">"mappers/UserMapper.xml"</span>/></span></span><br><span class="line">       <span class="tag"></<span class="name">mappers</span>></span></span><br><span class="line">   <span class="tag"></<span class="name">configuration</span>></span></span><br></pre></td></tr></tbody></table></figure>
-</blockquote>
-<p><strong>UserMapper.xml</strong></p>
-<blockquote>
-<figure class="highlight xml"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta"><?xml version="1.0" encoding="UTF-8" ?></span></span><br><span class="line"><span class="meta"><!DOCTYPE <span class="meta-keyword">mapper</span> <span class="meta-keyword">PUBLIC</span> <span class="meta-string">"-//mybatis.org//DTD Mapper 3.0//EN"</span></span></span><br><span class="line"><span class="meta">       <span class="meta-string">"http://mybatis.org/dtd/mybatis-3-mapper.dtd"</span>></span></span><br><span class="line">   <span class="comment"><!--mappers：根标签，namespace：命名空间，随便写，在同一个命名空间下保持唯一--></span></span><br><span class="line">   <span class="tag"><<span class="name">mapper</span> <span class="attr">namespace</span>=<span class="string">"com.springcloud.produce.mapper.UserMapper"</span>></span></span><br><span class="line">   <span class="comment"><!--resultType:sql语句查询结果集的封装类型，tb_user即为数据库中的表--></span></span><br><span class="line">?    <span class="comment"><!--resultMap标签，是为了映射select查询出来结果的集合，主要作用是将实体类中的字段和数据库表中的字段进行关联映射--></span></span><br><span class="line">   <span class="comment"><!--当实体类中的字段与数据库表中的字段相同时，可以将resultMap标签中的关联关系忽略不写--></span></span><br><span class="line"></span><br><span class="line">       <span class="comment"><!--使用别名--></span></span><br><span class="line">       <span class="tag"><<span class="name">select</span> <span class="attr">id</span>=<span class="string">"queryUserById"</span> <span class="attr">resultType</span>=<span class="string">"com.springcloud.mybatis.pojo.User"</span>></span></span><br><span class="line">           SELECT</span><br><span class="line">           tuser.id as id,</span><br><span class="line">           tuser.user_name as user_name,</span><br><span class="line">           tuser.password as password,</span><br><span class="line">           tuser.name1 as name1,</span><br><span class="line">           tuser.birthday as birthday,</span><br><span class="line">           tuser.sex as sex,</span><br><span class="line">           tuser.created as created,</span><br><span class="line">           tuser.updated as updated</span><br><span class="line">           from</span><br><span class="line">           tb_user tuser</span><br><span class="line">           where tuser.id = #{id};</span><br><span class="line">       <span class="tag"></<span class="name">select</span>></span></span><br><span class="line"></span><br><span class="line">       <span class="tag"><<span class="name">select</span> <span class="attr">id</span>=<span class="string">"queryUserAll"</span> <span class="attr">resultType</span>=<span class="string">"com.springcloud.mybatis.pojo.User"</span>></span></span><br><span class="line">           select * from tb_user;</span><br><span class="line">       <span class="tag"></<span class="name">select</span>></span></span><br><span class="line"></span><br><span class="line">       <span class="comment"><!--插入数据--></span></span><br><span class="line">       <span class="tag"><<span class="name">insert</span> <span class="attr">id</span>=<span class="string">"insertUser"</span> <span class="attr">parameterType</span>=<span class="string">"com.springcloud.mybatis.pojo.User"</span>></span></span><br><span class="line">           INSERT INTO tb_user (</span><br><span class="line">           id,</span><br><span class="line">           user_name,</span><br><span class="line">           password,</span><br><span class="line">           name1,</span><br><span class="line">           age,</span><br><span class="line">           sex,</span><br><span class="line">           birthday,</span><br><span class="line">           created,</span><br><span class="line">           updated</span><br><span class="line">           )</span><br><span class="line">           VALUES</span><br><span class="line">           (</span><br><span class="line">           #{id},</span><br><span class="line">           #{user_name},</span><br><span class="line">           #{password},</span><br><span class="line">           #{name1},</span><br><span class="line">           #{age},</span><br><span class="line">           #{sex},</span><br><span class="line">           #{birthday},</span><br><span class="line">           now(),</span><br><span class="line">           now()</span><br><span class="line">           );</span><br><span class="line">       <span class="tag"></<span class="name">insert</span>></span></span><br><span class="line"></span><br><span class="line">       <span class="tag"><<span class="name">update</span> <span class="attr">id</span>=<span class="string">"updateUser"</span> <span class="attr">parameterType</span>=<span class="string">"com.springcloud.mybatis.pojo.User"</span>></span></span><br><span class="line">           UPDATE tb_user</span><br><span class="line">           <span class="tag"><<span class="name">trim</span> <span class="attr">prefix</span>=<span class="string">"set"</span> <span class="attr">suffixOverrides</span>=<span class="string">","</span>></span></span><br><span class="line">               <span class="tag"><<span class="name">if</span> <span class="attr">test</span>=<span class="string">"user_name!=null"</span>></span>user_name = #{user_name},<span class="tag"></<span class="name">if</span>></span></span><br><span class="line">               <span class="tag"><<span class="name">if</span> <span class="attr">test</span>=<span class="string">"password!=null"</span>></span>password = #{password},<span class="tag"></<span class="name">if</span>></span></span><br><span class="line">               <span class="tag"><<span class="name">if</span> <span class="attr">test</span>=<span class="string">"name1!=null"</span>></span>name = #{name1},<span class="tag"></<span class="name">if</span>></span></span><br><span class="line">               <span class="tag"><<span class="name">if</span> <span class="attr">test</span>=<span class="string">"age!=null"</span>></span>age = #{age},<span class="tag"></<span class="name">if</span>></span></span><br><span class="line">               <span class="tag"><<span class="name">if</span> <span class="attr">test</span>=<span class="string">"sex!=null"</span>></span>sex = #{sex},<span class="tag"></<span class="name">if</span>></span></span><br><span class="line">               <span class="tag"><<span class="name">if</span> <span class="attr">test</span>=<span class="string">"birthday!=null"</span>></span>birthday = #{birthday},<span class="tag"></<span class="name">if</span>></span></span><br><span class="line">               updated = now(),</span><br><span class="line">           <span class="tag"></<span class="name">trim</span>></span></span><br><span class="line">           WHERE</span><br><span class="line">           (id = #{id});</span><br><span class="line">       <span class="tag"></<span class="name">update</span>></span></span><br><span class="line"></span><br><span class="line">       <span class="tag"><<span class="name">delete</span> <span class="attr">id</span>=<span class="string">"deleteUser"</span>></span></span><br><span class="line">           delete from tb_user where id=#{id}</span><br><span class="line">       <span class="tag"></<span class="name">delete</span>></span></span><br><span class="line">   <span class="tag"></<span class="name">mapper</span>></span></span><br></pre></td></tr></tbody></table></figure>
-</blockquote>
-<p><strong>Mapper层UserMapper.java</strong></p>
-<p>需要与UserMapper.xml中的id对应!!</p>
-<blockquote>
-<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">   <span class="keyword">package</span> com.springcloud.produce.mapper;</span><br><span class="line"></span><br><span class="line">   <span class="keyword">import</span> com.springcloud.produce.entity.User;</span><br><span class="line">   <span class="keyword">import</span> org.apache.ibatis.annotations.*;</span><br><span class="line"></span><br><span class="line">   <span class="keyword">import</span> java.util.List;</span><br><span class="line"></span><br><span class="line">   <span class="meta">@Mapper</span></span><br><span class="line">   <span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">UserMapper</span> </span>{</span><br><span class="line"><span class="comment">//根据id查询用户信息</span></span><br><span class="line">       <span class="meta">@Select</span>(<span class="string">"select * from tb_user where id = #{id}"</span>)</span><br><span class="line">       <span class="function"><span class="keyword">public</span> User <span class="title">queryUserById</span><span class="params">(String id)</span></span>;</span><br><span class="line"></span><br><span class="line">       <span class="comment">//查询所有用户信息</span></span><br><span class="line">       <span class="meta">@Select</span>(<span class="string">"select * from tb_user"</span>)</span><br><span class="line">       <span class="function"><span class="keyword">public</span> List<User> <span class="title">queryUserAll</span><span class="params">()</span></span>;</span><br><span class="line"></span><br><span class="line">       <span class="comment">//新增用户</span></span><br><span class="line">       <span class="meta">@Insert</span>(<span class="string">"insert into tb_user(id,user_name, password,name1, age, sex, birthday, created, updated) values(#{id},#{user_name}, #{password},#{name1}, #{age}, #{sex}, #{birthday}, #{created}, #{updated})"</span>)</span><br><span class="line">       <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">insertUser</span><span class="params">(User user)</span></span>;</span><br><span class="line"></span><br><span class="line">       <span class="comment">//更新用户信息</span></span><br><span class="line">       <span class="meta">@Update</span>(<span class="string">"update tb_user set user_name = #{user_name},updated = #{updated} where id = #{id}"</span>)</span><br><span class="line">       <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">updateUser</span><span class="params">(User user)</span></span>;</span><br><span class="line"></span><br><span class="line">       <span class="meta">@Delete</span>(<span class="string">"delete from tb_user where id = #{id}"</span>)</span><br><span class="line">       <span class="comment">//根据id删除用户信息</span></span><br><span class="line">       <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">deleteUser</span><span class="params">(String id)</span></span>;</span><br><span class="line">   }</span><br></pre></td></tr></tbody></table></figure>
-</blockquote>
-<p><strong>service层：</strong></p>
-<p><strong>UserService:</strong></p>
-<blockquote>
-<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.springcloud.produce.service;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> com.springcloud.produce.entity.User;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.util.List;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">UserService</span> </span>{</span><br><span class="line">    <span class="function">List<User> <span class="title">getLists</span><span class="params">()</span></span>;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> User <span class="title">queryUserById</span><span class="params">(String id)</span></span>;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">addUser</span><span class="params">(User user)</span></span>;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">deleteUser</span><span class="params">(String id)</span></span>;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">updateUser</span><span class="params">(User user)</span></span>;</span><br><span class="line"></span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
-</blockquote>
-<p><strong>UserMapperImpl:</strong></p>
-<blockquote>
-<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.springcloud.produce.service.impl;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> com.springcloud.produce.entity.User;</span><br><span class="line"><span class="keyword">import</span> com.springcloud.produce.mapper.UserMapper;</span><br><span class="line"><span class="keyword">import</span> com.springcloud.produce.service.UserService;</span><br><span class="line"><span class="keyword">import</span> org.springframework.stereotype.Service;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> javax.annotation.Resource;</span><br><span class="line"><span class="keyword">import</span> java.util.List;</span><br><span class="line"></span><br><span class="line"><span class="meta">@Service</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">UserMapperImpl</span> <span class="keyword">implements</span> <span class="title">UserService</span></span>{</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Resource</span></span><br><span class="line">    <span class="keyword">private</span> UserMapper userMapper;</span><br><span class="line">    </span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> List<User> <span class="title">getLists</span><span class="params">()</span> </span>{</span><br><span class="line">        List<User> users = <span class="keyword">this</span>.userMapper.queryUserAll();</span><br><span class="line">        <span class="keyword">for</span>(User user : users){</span><br><span class="line">            System.out.println(user);</span><br><span class="line">        }</span><br><span class="line">        <span class="keyword">return</span> users;</span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> User <span class="title">queryUserById</span><span class="params">(String id)</span> </span>{</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">this</span>.userMapper.queryUserById(id);</span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">addUser</span><span class="params">(User user)</span> </span>{</span><br><span class="line">        <span class="keyword">this</span>.userMapper.insertUser(user);</span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">deleteUser</span><span class="params">(String id)</span> </span>{</span><br><span class="line">        <span class="keyword">this</span>.userMapper.deleteUser(id);</span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">updateUser</span><span class="params">(User user)</span> </span>{</span><br><span class="line">        <span class="keyword">this</span>.userMapper.updateUser(user);</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
-</blockquote>
-<p><strong>controller层：</strong></p>
-<blockquote>
-<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.springcloud.produce.controller;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> com.springcloud.produce.entity.User;</span><br><span class="line"><span class="keyword">import</span> com.springcloud.produce.service.UserService;</span><br><span class="line"><span class="keyword">import</span> org.apache.ibatis.session.SqlSessionFactory;</span><br><span class="line"><span class="keyword">import</span> org.mybatis.spring.SqlSessionFactoryBean;</span><br><span class="line"><span class="keyword">import</span> org.springframework.beans.factory.annotation.Autowired;</span><br><span class="line"><span class="keyword">import</span> org.springframework.context.annotation.Bean;</span><br><span class="line"><span class="keyword">import</span> org.springframework.web.bind.annotation.GetMapping;</span><br><span class="line"><span class="keyword">import</span> org.springframework.web.bind.annotation.PathVariable;</span><br><span class="line"><span class="keyword">import</span> org.springframework.web.bind.annotation.RequestMapping;</span><br><span class="line"><span class="keyword">import</span> org.springframework.web.bind.annotation.RestController;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> javax.annotation.Resource;</span><br><span class="line"><span class="keyword">import</span> javax.sql.DataSource;</span><br><span class="line"><span class="keyword">import</span> java.text.ParseException;</span><br><span class="line"><span class="keyword">import</span> java.text.SimpleDateFormat;</span><br><span class="line"><span class="keyword">import</span> java.util.Date;</span><br><span class="line"><span class="keyword">import</span> java.util.List;</span><br><span class="line"></span><br><span class="line"><span class="meta">@RestController</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">userController</span> </span>{</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Autowired</span></span><br><span class="line">    <span class="keyword">private</span> UserService userService;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Resource</span></span><br><span class="line">    <span class="keyword">private</span> DataSource dataSource;</span><br><span class="line"></span><br><span class="line">    SimpleDateFormat simpleDateFormat = <span class="keyword">new</span> SimpleDateFormat(<span class="string">"YYYY-MM-dd HH:mm:ss"</span>);</span><br><span class="line">    Date date = <span class="keyword">new</span> Date();</span><br><span class="line"></span><br><span class="line">    <span class="comment">//这个很重要！！！构建sqlSessionFactory</span></span><br><span class="line">    <span class="meta">@Bean</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> SqlSessionFactory <span class="title">sqlSessionFactory</span><span class="params">()</span> <span class="keyword">throws</span> Exception</span>{</span><br><span class="line">        SqlSessionFactoryBean sqlSessionFactoryBean = <span class="keyword">new</span> SqlSessionFactoryBean();</span><br><span class="line">        sqlSessionFactoryBean.setDataSource(dataSource);</span><br><span class="line">        <span class="keyword">return</span> sqlSessionFactoryBean.getObject();</span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">    <span class="meta">@RequestMapping</span>(<span class="string">"/selectUser"</span>)</span><br><span class="line">    <span class="function"><span class="keyword">public</span> User <span class="title">selectUser</span><span class="params">()</span></span>{</span><br><span class="line">        User user = <span class="keyword">this</span>.userService.selectUser(<span class="string">"1"</span>) ;</span><br><span class="line">        <span class="keyword">return</span> user;</span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">    <span class="meta">@GetMapping</span>(<span class="string">"/{id}"</span>)</span><br><span class="line">    <span class="function"><span class="keyword">public</span> User <span class="title">queryUserById</span><span class="params">(@PathVariable String id)</span></span>{</span><br><span class="line">        User user =<span class="keyword">this</span>.userService.queryUserById(id);</span><br><span class="line">        <span class="keyword">return</span> user;</span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">    <span class="meta">@RequestMapping</span>(<span class="string">"/"</span>)</span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">index</span><span class="params">()</span></span>{</span><br><span class="line">        <span class="keyword">return</span> <span class="string">"hello"</span>;</span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">    <span class="meta">@GetMapping</span>(<span class="string">"/list"</span>)</span><br><span class="line">    <span class="function"><span class="keyword">public</span> List<User> <span class="title">lists</span><span class="params">()</span></span>{</span><br><span class="line">        List<User> users = <span class="keyword">this</span>.userService.getLists();</span><br><span class="line">        <span class="keyword">return</span> users;</span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">    <span class="meta">@GetMapping</span>(<span class="string">"/addUser/{id}"</span>)</span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">addUser</span><span class="params">(@PathVariable String id)</span> <span class="keyword">throws</span> ParseException </span>{</span><br><span class="line">        User user = <span class="keyword">new</span> User();</span><br><span class="line">        user.setId(id);</span><br><span class="line">        user.setAge(<span class="number">18</span>);</span><br><span class="line">        user.setSex(<span class="number">1</span>);</span><br><span class="line">        user.setBirthday(date);</span><br><span class="line">        user.setCreated(simpleDateFormat.format(date));</span><br><span class="line">        user.setUpdated(simpleDateFormat.format(date));</span><br><span class="line">        user.setName1(id);</span><br><span class="line">        user.setUser_name(<span class="string">"wwww"</span>+id);</span><br><span class="line">        user.setPassword(<span class="string">"123456"</span>);</span><br><span class="line">       <span class="keyword">this</span>.userService.addUser(user);</span><br><span class="line">        <span class="keyword">return</span> <span class="string">"success"</span>;</span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">    <span class="meta">@GetMapping</span>(<span class="string">"/deteleUser/{id}"</span>)</span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">deleteUser</span><span class="params">(@PathVariable String id)</span></span>{</span><br><span class="line">        <span class="keyword">this</span>.userService.deleteUser(id);</span><br><span class="line">        <span class="keyword">return</span> <span class="string">"success"</span>;</span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">    <span class="meta">@GetMapping</span>(<span class="string">"/updateUser/{id}"</span>)</span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">updateUser</span><span class="params">(@PathVariable String id)</span></span>{</span><br><span class="line">        User user = <span class="keyword">this</span>.userService.queryUserById(id);</span><br><span class="line">        user.setUser_name(<span class="string">"update"</span>);</span><br><span class="line">        user.setUpdated(simpleDateFormat.format(date));</span><br><span class="line">        <span class="keyword">this</span>.userService.updateUser(user);</span><br><span class="line">        <span class="keyword">return</span> <span class="string">"success"</span>;</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
-</blockquote>
-<p>最后运行项目测试一下，我 就不贴图了，测试过很多次了，如果有什么问题，欢迎留言~~</p>
-<p>在消费模块中调用增删改查功能之后再写博客辣~~</p>
-<p><a href="https://download.csdn.net/download/www_indows/11818391" target="_blank" rel="noopener">源码</a></p>
-<p>下一篇打算总结一下mybatis的具体用法，总感觉自己还是没有弄的很清楚!!!</p>
-</body></html>
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://wentianhao.github.io/2020/01/14/springcloud2/" data-id="ck6jhssxo000y7s5hhi3t56wh" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/mybatis/" rel="tag">mybatis</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/spring-cloud/" rel="tag">spring cloud</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-springcloud1" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2020/01/14/springcloud1/" class="article-date">
-  <time datetime="2020-01-14T05:50:09.119Z" itemprop="datePublished">2020-01-14</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/spring-cloud/">spring cloud</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/01/14/springcloud1/">spring cloud mybaits 微服务增删改查(一)</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <html><head></head><body><p>IDE：IDEA 2017.03</p>
-<p><strong>1.构建spring cloud聚合项目</strong></p>
-<p>1)新建maven项目</p>
-<p>不需要使用模板，直接next，填写项目名称继续next,最后finish</p>
-<p><a target="_blank" rel="noopener" href="https://img-blog.csdnimg.cn/20190925111020451.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3d3d19pbmRvd3M=,size_16,color_FFFFFF,t_70" data-caption="在这里插入图片描述" data-fancybox="images"><img src="https://img-blog.csdnimg.cn/20190925111020451.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3d3d19pbmRvd3M=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></a></p>
-<p>2）构建子模块</p>
-<p>删除掉父模块中的src文件夹，新建子模块，最后层次结构如下：</p>
-<p><a target="_blank" rel="noopener" href="https://img-blog.csdnimg.cn/20190925111706101.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3d3d19pbmRvd3M=,size_16,color_FFFFFF,t_70" data-caption="在这里插入图片描述" data-fancybox="images"><img src="https://img-blog.csdnimg.cn/20190925111706101.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3d3d19pbmRvd3M=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></a></p>
-<p>在项目工程上右键new->Module，一直next就行，注意一下继承的父模块。</p>
-<p><a target="_blank" rel="noopener" href="https://img-blog.csdnimg.cn/20190925112426157.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3d3d19pbmRvd3M=,size_16,color_FFFFFF,t_70" data-caption="在这里插入图片描述" data-fancybox="images"><img src="https://img-blog.csdnimg.cn/20190925112426157.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3d3d19pbmRvd3M=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></a></p>
-<p>其他模块也是如此新建。</p>
-<p>父模块的pom.xml：</p>
-<p><a target="_blank" rel="noopener" href="https://img-blog.csdnimg.cn/20190925112659123.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3d3d19pbmRvd3M=,size_16,color_FFFFFF,t_70" data-caption="在这里插入图片描述" data-fancybox="images"><img src="https://img-blog.csdnimg.cn/20190925112659123.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3d3d19pbmRvd3M=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></a></p>
-<p>子模块的pom.xml:</p>
-<p><a target="_blank" rel="noopener" href="https://img-blog.csdnimg.cn/20190925112727798.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3d3d19pbmRvd3M=,size_16,color_FFFFFF,t_70" data-caption="在这里插入图片描述" data-fancybox="images"><img src="https://img-blog.csdnimg.cn/20190925112727798.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3d3d19pbmRvd3M=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></a></p>
-<p><strong>2.配置注册中心</strong></p>
-<ul>
-<li>配置spring boot spring cloud等依赖。公共依赖可放在父模块,子模块可以调用父模块的pom.xml</li>
-</ul>
-<blockquote>
-<figure class="highlight yml"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br></pre></td><td class="code"><pre><span class="line"><span class="string"><?xml</span> <span class="string">version="1.0"</span> <span class="string">encoding="UTF-8"?></span></span><br><span class="line">   <span class="string"><project</span> <span class="string">xmlns="http://maven.apache.org/POM/4.0.0"</span></span><br><span class="line">           <span class="string">xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"</span></span><br><span class="line">           <span class="string">xsi:schemaLocation="http://maven.apache.org/POM/4.0.0</span> <span class="string">http://maven.apache.org/xsd/maven-4.0.0.xsd"></span></span><br><span class="line">       <span class="string"><modelVersion>4.0.0</modelVersion></span></span><br><span class="line">       </span><br><span class="line">       <span class="string"><groupId>com.springcloud.demo</groupId></span></span><br><span class="line">       <span class="string"><artifactId>mybatis</artifactId></span></span><br><span class="line">       <span class="string"><packaging>pom</packaging></span></span><br><span class="line">       <span class="string"><version>1.0-SNAPSHOT</version></span></span><br><span class="line">       <span class="string"><!--子模块设置--></span></span><br><span class="line">       <span class="string"><modules></span></span><br><span class="line">           <span class="string"><module>mybatisregister</module></span></span><br><span class="line">           <span class="string"><module>mybatisproduce</module></span></span><br><span class="line">           <span class="string"><module>mybatisconsumer</module></span></span><br><span class="line">       <span class="string"></modules></span></span><br><span class="line"></span><br><span class="line">       <span class="string"><parent></span></span><br><span class="line">           <span class="string"><groupId>org.springframework.boot</groupId></span></span><br><span class="line">           <span class="string"><artifactId>spring-boot-starter-parent</artifactId></span></span><br><span class="line">           <span class="string"><version>2.1.2.RELEASE</version></span></span><br><span class="line">           <span class="string"><relativePath/></span> <span class="string"><!--</span> <span class="string">lookup</span> <span class="string">parent</span> <span class="string">from</span> <span class="string">repository</span> <span class="string">--></span></span><br><span class="line">       <span class="string"></parent></span></span><br><span class="line"></span><br><span class="line">       <span class="string"><properties></span></span><br><span class="line">           <span class="string"><project.build.sourceEncoding>UTF-8</project.build.sourceEncoding></span></span><br><span class="line">           <span class="string"><project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding></span></span><br><span class="line">           <span class="string"><java.version>1.8</java.version></span></span><br><span class="line">       <span class="string"></properties></span></span><br><span class="line"></span><br><span class="line">       <span class="string"><dependencies></span></span><br><span class="line">           <span class="string"><dependency></span></span><br><span class="line">               <span class="string"><!--eureka</span> <span class="string">server</span> <span class="string">--></span></span><br><span class="line">               <span class="string"><groupId>org.springframework.cloud</groupId></span></span><br><span class="line">               <span class="string"><artifactId>spring-cloud-starter-netflix-eureka-server</artifactId></span></span><br><span class="line">           <span class="string"></dependency></span></span><br><span class="line">           <span class="string"><dependency></span></span><br><span class="line">               <span class="string"><!--</span> <span class="string">spring</span> <span class="string">boot</span> <span class="string">test--></span></span><br><span class="line">               <span class="string"><groupId>org.springframework.boot</groupId></span></span><br><span class="line">               <span class="string"><artifactId>spring-boot-starter-test</artifactId></span></span><br><span class="line">           <span class="string"></dependency></span></span><br><span class="line">           <span class="string"><dependency></span></span><br><span class="line">               <span class="string"><groupId>org.springframework.cloud</groupId></span></span><br><span class="line">               <span class="string"><artifactId>spring-cloud-starter-openfeign</artifactId></span></span><br><span class="line">               <span class="string"><version>2.1.3.RELEASE</version></span></span><br><span class="line">           <span class="string"></dependency></span></span><br><span class="line">       <span class="string"></dependencies></span></span><br><span class="line"></span><br><span class="line">       <span class="string"><dependencyManagement></span></span><br><span class="line">           <span class="string"><dependencies></span></span><br><span class="line">               <span class="string"><dependency></span></span><br><span class="line">                   <span class="string"><groupId>org.springframework.cloud</groupId></span></span><br><span class="line">                   <span class="string"><artifactId>spring-cloud-dependencies</artifactId></span></span><br><span class="line">                   <span class="string"><version>Finchley.M7</version></span></span><br><span class="line">                   <span class="string"><type>pom</type></span></span><br><span class="line">                   <span class="string"><scope>import</scope></span></span><br><span class="line">               <span class="string"></dependency></span></span><br><span class="line">           <span class="string"></dependencies></span></span><br><span class="line">       <span class="string"></dependencyManagement></span></span><br><span class="line"></span><br><span class="line">       <span class="string"><build></span></span><br><span class="line">           <span class="string"><plugins></span></span><br><span class="line">               <span class="string"><plugin></span></span><br><span class="line">                   <span class="string"><groupId>org.springframework.boot</groupId></span></span><br><span class="line">                   <span class="string"><artifactId>spring-boot-maven-plugin</artifactId></span></span><br><span class="line">               <span class="string"></plugin></span></span><br><span class="line">           <span class="string"></plugins></span></span><br><span class="line">       <span class="string"></build></span></span><br><span class="line"></span><br><span class="line">       <span class="string"><repositories></span></span><br><span class="line">           <span class="string"><repository></span></span><br><span class="line">               <span class="string"><id>spring-milestones</id></span></span><br><span class="line">               <span class="string"><name>Spring</span> <span class="string">Milestones</name></span></span><br><span class="line">               <span class="string"><url>https://repo.spring.io/milestone</url></span></span><br><span class="line">               <span class="string"><snapshots></span></span><br><span class="line">                   <span class="string"><enabled>false</enabled></span></span><br><span class="line">               <span class="string"></snapshots></span></span><br><span class="line">           <span class="string"></repository></span></span><br><span class="line">       <span class="string"></repositories></span></span><br><span class="line"></span><br><span class="line">   <span class="string"></project></span></span><br></pre></td></tr></tbody></table></figure>
-</blockquote>
-<ul>
-<li>手动新建application.yml（文件名不可随意更改）</li>
-</ul>
-<p><a target="_blank" rel="noopener" href="https://img-blog.csdnimg.cn/20190925113449653.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3d3d19pbmRvd3M=,size_16,color_FFFFFF,t_70" data-caption="在这里插入图片描述" data-fancybox="images"><img src="https://img-blog.csdnimg.cn/20190925113449653.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3d3d19pbmRvd3M=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></a></p>
-<blockquote>
-<figure class="highlight yml"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 端口号</span></span><br><span class="line">  <span class="attr">server:</span></span><br><span class="line">  <span class="attr">port:</span> <span class="number">8088</span></span><br><span class="line">  <span class="comment">#eureka配置</span></span><br><span class="line">  <span class="attr">eureka:</span></span><br><span class="line">  <span class="attr">instance:</span></span><br><span class="line">  <span class="comment">#注册中心ip地址</span></span><br><span class="line">      <span class="attr">hostname:</span> <span class="string">localhost</span></span><br><span class="line">  <span class="attr">client:</span></span><br><span class="line">      <span class="comment">#是否注册到eureka</span></span><br><span class="line">      <span class="attr">register-with-eureka:</span> <span class="literal">false</span></span><br><span class="line">      <span class="comment">#是否检测服务信息</span></span><br><span class="line">      <span class="attr">fetch-registry:</span> <span class="literal">false</span></span><br><span class="line">      <span class="comment">#注册地址</span></span><br><span class="line">      <span class="attr">service-url:</span></span><br><span class="line">      <span class="attr">defaultZone:</span> <span class="string">http://${eureka.instance.hostname}:${server.port}/eureka/</span></span><br></pre></td></tr></tbody></table></figure>
-</blockquote>
-<ul>
-<li>新建运行类application</li>
-</ul>
-<p>@EnableEurekaServer 注解，声明这是一个Eureka Server</p>
-<blockquote>
-<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.springcloud.register;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> org.springframework.boot.SpringApplication;</span><br><span class="line"><span class="keyword">import</span> org.springframework.boot.autoconfigure.SpringBootApplication;</span><br><span class="line"><span class="keyword">import</span> org.springframework.cloud.netflix.eureka.server.EnableEurekaServer;</span><br><span class="line"></span><br><span class="line"><span class="meta">@SpringBootApplication</span></span><br><span class="line"><span class="meta">@EnableEurekaServer</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">mybatisRegister_Application</span> </span>{</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span>{</span><br><span class="line">        SpringApplication.run(mybatisRegister_Application<span class="class">.<span class="keyword">class</span>,<span class="title">args</span>)</span>;</span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
-</blockquote>
-<p><strong>3.配置服务提供者</strong></p>
-<p>在另一个子模块中进行配置</p>
-<ul>
-<li>添加application.yml和application</li>
-</ul>
-<p><a target="_blank" rel="noopener" href="https://img-blog.csdnimg.cn/20190925114804773.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3d3d19pbmRvd3M=,size_16,color_FFFFFF,t_70" data-caption="在这里插入图片描述" data-fancybox="images"><img src="https://img-blog.csdnimg.cn/20190925114804773.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3d3d19pbmRvd3M=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></a></p>
-<blockquote>
-<figure class="highlight yml"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">  <span class="attr">eureka:</span></span><br><span class="line">  <span class="attr">client:</span></span><br><span class="line"><span class="comment">#注意！这里注册中心地址，要把服务注册到注册中心</span></span><br><span class="line">      <span class="attr">service-url:</span></span><br><span class="line">      <span class="attr">defaultZone:</span> <span class="string">http://localhost:8088/eureka/</span></span><br><span class="line">  <span class="comment">#服务端口号</span></span><br><span class="line">  <span class="attr">server:</span></span><br><span class="line">  <span class="attr">port:</span> <span class="number">8089</span></span><br><span class="line">  <span class="attr">spring:</span></span><br><span class="line">  <span class="comment">#本服务的注册到注册中心的别名</span></span><br><span class="line">  <span class="attr">application:</span></span><br><span class="line">      <span class="attr">name:</span> <span class="string">service-member</span></span><br><span class="line">  <span class="attr">jpa:</span></span><br><span class="line">      <span class="attr">generate-ddl:</span> <span class="literal">false</span></span><br><span class="line">      <span class="attr">show-sql:</span> <span class="literal">true</span></span><br><span class="line">      <span class="attr">hibernate:</span></span><br><span class="line">      <span class="attr">ddl-auto:</span> <span class="string">none</span></span><br><span class="line">  <span class="attr">datasource:</span></span><br><span class="line">      <span class="attr">url:</span> <span class="string">jdbc:mysql://127.0.0.1:3306/ssmdemo?serverTimezone=UTC</span></span><br><span class="line">      <span class="attr">username:</span> <span class="string">root</span></span><br><span class="line">      <span class="attr">password:</span> <span class="number">123456</span></span><br><span class="line">      <span class="attr">driver-class-name:</span> <span class="string">com.mysql.cj.jdbc.Driver</span></span><br><span class="line">  <span class="attr">mybatis:</span></span><br><span class="line">  <span class="attr">mapper-locations:</span> <span class="string">classpath*:mappers/*.xml</span></span><br></pre></td></tr></tbody></table></figure>
-</blockquote>
-<p>这里使用的注解是@EnableEurekaClient</p>
-<blockquote>
-<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.springcloud.produce;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> org.mybatis.spring.annotation.MapperScan;</span><br><span class="line"><span class="keyword">import</span> org.springframework.boot.SpringApplication;</span><br><span class="line"><span class="keyword">import</span> org.springframework.boot.autoconfigure.EnableAutoConfiguration;</span><br><span class="line"><span class="keyword">import</span> org.springframework.boot.autoconfigure.SpringBootApplication;</span><br><span class="line"><span class="keyword">import</span> org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;</span><br><span class="line"><span class="keyword">import</span> org.springframework.cloud.netflix.eureka.EnableEurekaClient;</span><br><span class="line"></span><br><span class="line"><span class="meta">@SpringBootApplication</span></span><br><span class="line"><span class="meta">@EnableEurekaClient</span></span><br><span class="line"><span class="meta">@MapperScan</span>(<span class="string">"com.springcloud.produce.mapper"</span>)</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">mybatisProduce_Application</span> </span>{</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span>{</span><br><span class="line">        SpringApplication.run(mybatisProduce_Application<span class="class">.<span class="keyword">class</span>,<span class="title">args</span>)</span>;</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
-</blockquote>
-<p>构建测试controller</p>
-<p><a target="_blank" rel="noopener" href="https://img-blog.csdnimg.cn/20190925115250599.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3d3d19pbmRvd3M=,size_16,color_FFFFFF,t_70" data-caption="在这里插入图片描述" data-fancybox="images"><img src="https://img-blog.csdnimg.cn/20190925115250599.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3d3d19pbmRvd3M=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></a></p>
-<blockquote>
-<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.springcloud.produce.controller;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> org.springframework.web.bind.annotation.RequestMapping;</span><br><span class="line"><span class="keyword">import</span> org.springframework.web.bind.annotation.RestController;</span><br><span class="line"></span><br><span class="line"><span class="meta">@RestController</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">testController</span> </span>{</span><br><span class="line">    <span class="meta">@RequestMapping</span>(<span class="string">"/test"</span>)</span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getUserList</span><span class="params">()</span></span>{</span><br><span class="line">        <span class="keyword">return</span> <span class="string">"hello eureka"</span>;</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
-</blockquote>
-<p>运行注册模块和生产微服务模块 </p>
-<p><a target="_blank" rel="noopener" href="https://img-blog.csdnimg.cn/20190925115709117.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3d3d19pbmRvd3M=,size_16,color_FFFFFF,t_70" data-caption="在这里插入图片描述" data-fancybox="images"><img src="https://img-blog.csdnimg.cn/20190925115709117.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3d3d19pbmRvd3M=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></a></p>
-<p><a target="_blank" rel="noopener" href="https://img-blog.csdnimg.cn/20190925115814903.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3d3d19pbmRvd3M=,size_16,color_FFFFFF,t_70" data-caption="在这里插入图片描述" data-fancybox="images"><img src="https://img-blog.csdnimg.cn/20190925115814903.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3d3d19pbmRvd3M=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></a></p>
-<p><strong>4.配置服务消费者</strong></p>
-<p><a target="_blank" rel="noopener" href="https://img-blog.csdnimg.cn/20190925145616621.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3d3d19pbmRvd3M=,size_16,color_FFFFFF,t_70" data-caption="在这里插入图片描述" data-fancybox="images"><img src="https://img-blog.csdnimg.cn/20190925145616621.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3d3d19pbmRvd3M=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></a><br>application.yml:</p>
-<blockquote>
-<figure class="highlight yml"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">  <span class="attr">eureka:</span></span><br><span class="line">  <span class="attr">client:</span></span><br><span class="line"><span class="comment">#注意！ 这里注册中心地址，要把服务注册到注册中心</span></span><br><span class="line">      <span class="attr">service-url:</span></span><br><span class="line">      <span class="attr">defaultZone:</span> <span class="string">http://localhost:8088/eureka/</span></span><br><span class="line">  <span class="attr">server:</span></span><br><span class="line">  <span class="comment">#服务端口号</span></span><br><span class="line">  <span class="attr">port:</span> <span class="number">8087</span></span><br><span class="line">  <span class="attr">spring:</span></span><br><span class="line">  <span class="comment">#本服务注册到注册中心的别名</span></span><br><span class="line">  <span class="attr">application:</span></span><br><span class="line">      <span class="attr">name:</span> <span class="string">service-order</span></span><br></pre></td></tr></tbody></table></figure>
-</blockquote>
-<p>application.class</p>
-<p>这里需要将RestTemplate注入到springboot中，然后开启负载均衡</p>
-<blockquote>
-<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.springcloud.consumer;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> org.springframework.boot.SpringApplication;</span><br><span class="line"><span class="keyword">import</span> org.springframework.boot.autoconfigure.SpringBootApplication;</span><br><span class="line"><span class="keyword">import</span> org.springframework.cloud.client.loadbalancer.LoadBalanced;</span><br><span class="line"><span class="keyword">import</span> org.springframework.cloud.netflix.eureka.EnableEurekaClient;</span><br><span class="line"><span class="keyword">import</span> org.springframework.cloud.openfeign.EnableFeignClients;</span><br><span class="line"><span class="keyword">import</span> org.springframework.context.annotation.Bean;</span><br><span class="line"><span class="keyword">import</span> org.springframework.web.client.RestTemplate;</span><br><span class="line"></span><br><span class="line"><span class="meta">@SpringBootApplication</span></span><br><span class="line"><span class="meta">@EnableEurekaClient</span></span><br><span class="line"><span class="meta">@EnableFeignClients</span>(basePackages = <span class="string">"com.springcloud.consumer.util"</span>)</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">mybatisConsumer_Application</span> </span>{</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span>{</span><br><span class="line">        SpringApplication.run(mybatisConsumer_Application<span class="class">.<span class="keyword">class</span>,<span class="title">args</span>)</span>;</span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">    * <span class="doctag">@Bean</span>，是注入springboot</span></span><br><span class="line"><span class="comment">    * <span class="doctag">@LoadBalanced</span>，开启负载均衡，开启后，restTemplate.getForObject()里的是serviceId(service-member)</span></span><br><span class="line"><span class="comment">    * <span class="doctag">@LoadBalanced</span>,不开启时，restTemplate.getForObject()里面的时ip地址（127.0.0.1）</span></span><br><span class="line"><span class="comment">    */</span></span><br><span class="line">    <span class="meta">@Bean</span></span><br><span class="line">    <span class="meta">@LoadBalanced</span></span><br><span class="line">    <span class="function">RestTemplate <span class="title">restTemplate</span><span class="params">()</span></span>{</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> RestTemplate();</span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
-</blockquote>
-<ul>
-<li>方法一：通过spring 提供的用于访问Rest服务的客户端</li>
-</ul>
-<blockquote>
-<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">   <span class="keyword">package</span> com.springcloud.consumer.controller;</span><br><span class="line"></span><br><span class="line">   <span class="keyword">import</span> com.springcloud.consumer.util.MemberApiFeign;</span><br><span class="line">   <span class="keyword">import</span> org.springframework.beans.factory.annotation.Autowired;</span><br><span class="line">   <span class="keyword">import</span> org.springframework.web.bind.annotation.RequestMapping;</span><br><span class="line">   <span class="keyword">import</span> org.springframework.web.bind.annotation.RestController;</span><br><span class="line">   <span class="keyword">import</span> org.springframework.web.client.RestTemplate;</span><br><span class="line"></span><br><span class="line">   <span class="meta">@RestController</span></span><br><span class="line">   <span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">orderController</span> </span>{</span><br><span class="line"><span class="comment">// 自动注入RestTemplate类</span></span><br><span class="line">       <span class="meta">@Autowired</span></span><br><span class="line">       <span class="keyword">private</span> RestTemplate restTemplate;</span><br><span class="line"></span><br><span class="line">       <span class="meta">@Autowired</span></span><br><span class="line">       <span class="keyword">private</span> MemberApiFeign memberApiFeign;</span><br><span class="line"></span><br><span class="line">       <span class="comment">//第一种方法通过Spring提供的用于访问Rest服务的客户端</span></span><br><span class="line">       <span class="meta">@RequestMapping</span>(<span class="string">"/getOrder"</span>)</span><br><span class="line">       <span class="function"><span class="keyword">public</span> String <span class="title">getOrder</span><span class="params">()</span></span>{</span><br><span class="line">           <span class="comment">//这里放的url，使用的是服务提供者的别名+方法名</span></span><br><span class="line">           String result = restTemplate.getForObject(<span class="string">"http://service-member:8089/test"</span>,String<span class="class">.<span class="keyword">class</span>)</span>;</span><br><span class="line">           <span class="keyword">return</span> result;</span><br><span class="line">       }</span><br><span class="line"></span><br><span class="line">       <span class="comment">//第二种方法通过feign声明web服务客户端调用</span></span><br><span class="line">       <span class="meta">@RequestMapping</span>(<span class="string">"/getFeignOrder"</span>)</span><br><span class="line">       <span class="function"><span class="keyword">public</span> String <span class="title">getFeignOrder</span><span class="params">()</span></span>{</span><br><span class="line">           <span class="keyword">return</span> memberApiFeign.Test();</span><br><span class="line">       }</span><br><span class="line">   }</span><br></pre></td></tr></tbody></table></figure>
-</blockquote>
-<p><a target="_blank" rel="noopener" href="https://img-blog.csdnimg.cn/20190925144945696.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3d3d19pbmRvd3M=,size_16,color_FFFFFF,t_70" data-caption="在这里插入图片描述" data-fancybox="images"><img src="https://img-blog.csdnimg.cn/20190925144945696.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3d3d19pbmRvd3M=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></a></p>
-<ul>
-<li>方法二：通过feign声明web服务客户端调用原理</li>
-</ul>
-<p>创建调用接口 FeignUtil.java</p>
-<blockquote>
-<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"> <span class="keyword">package</span> com.springcloud.consumer.util;</span><br><span class="line"></span><br><span class="line"> <span class="keyword">import</span> com.springcloud.consumer.entity.User;</span><br><span class="line"> <span class="keyword">import</span> org.springframework.cloud.openfeign.FeignClient;</span><br><span class="line"> <span class="keyword">import</span> org.springframework.web.bind.annotation.*;</span><br><span class="line"></span><br><span class="line"> <span class="keyword">import</span> java.util.List;</span><br><span class="line"></span><br><span class="line"> <span class="meta">@FeignClient</span>(name = <span class="string">"service-member"</span>)</span><br><span class="line"> <span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">FeignUtil</span> </span>{</span><br><span class="line">     <span class="meta">@RequestMapping</span>(<span class="string">"/test"</span>)</span><br><span class="line">     <span class="function"><span class="keyword">public</span> String <span class="title">Test</span><span class="params">()</span></span>;</span><br><span class="line"></span><br><span class="line">     <span class="meta">@RequestMapping</span>(<span class="string">"/list"</span>)</span><br><span class="line">     <span class="function"><span class="keyword">public</span> List<User> <span class="title">queryUserAll</span><span class="params">()</span></span>;</span><br><span class="line"></span><br><span class="line">     <span class="meta">@RequestMapping</span>(<span class="string">"/list"</span>)</span><br><span class="line">     <span class="function">List<User> <span class="title">getLists</span><span class="params">()</span></span>;</span><br><span class="line"></span><br><span class="line">     <span class="meta">@GetMapping</span>(<span class="string">"/{id}"</span>)</span><br><span class="line">     <span class="function"><span class="keyword">public</span> User <span class="title">queryUserById</span><span class="params">(@PathVariable(<span class="string">"id"</span>)</span> String id)</span>;</span><br><span class="line"></span><br><span class="line">     <span class="meta">@GetMapping</span>(<span class="string">"/addUser/{id}"</span>)</span><br><span class="line">     <span class="function"><span class="keyword">public</span> String <span class="title">addUser</span><span class="params">(@PathVariable(<span class="string">"id"</span>)</span> String id)</span>;</span><br><span class="line"></span><br><span class="line">     <span class="meta">@GetMapping</span>(<span class="string">"/deteleUser/{id}"</span>)</span><br><span class="line">     <span class="function"><span class="keyword">public</span> String <span class="title">deleteUser</span><span class="params">(@PathVariable(<span class="string">"id"</span>)</span> String id)</span>;</span><br><span class="line"></span><br><span class="line">     <span class="meta">@GetMapping</span>(<span class="string">"/updateUser/{id}"</span>)</span><br><span class="line">     <span class="function"><span class="keyword">public</span> String <span class="title">updateUser</span><span class="params">(@PathVariable(<span class="string">"id"</span>)</span> String id)</span>;</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
-</blockquote>
-<p>controller层调用↑↑↑代码里已贴。运行结果一样。</p>
-<p><a href="https://blog.csdn.net/www_indows/article/details/101368222" target="_blank" rel="noopener">下一篇实现mybatis的增删改查并注册到注册中心中，供消费者调用</a>。</p>
-<p><a href="https://download.csdn.net/download/www_indows/11818391" target="_blank" rel="noopener">源码</a></p>
-</body></html>
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://wentianhao.github.io/2020/01/14/springcloud1/" data-id="ck6jhssxn000x7s5h6ezo5wqj" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/mybatis/" rel="tag">mybatis</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/spring-cloud/" rel="tag">spring cloud</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-parsec" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2020/01/13/parsec/" class="article-date">
-  <time datetime="2020-01-13T02:47:24.000Z" itemprop="datePublished">2020-01-13</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/gem5/">gem5</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/01/13/parsec/">gem5与nvmain混合编译（二）———配置和运行ｐａｒｓｅｃ-2.1</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <html><head></head><body><h2 id="参考资料："><strong>参考资料：</strong><a class="post-anchor" href="#参考资料："></a></h2><p><a href="http://www.gem5.org/PARSEC_benchmarks" target="_blank" rel="noopener"><strong>官方资料</strong></a>：<a href="http://www.gem5.org/PARSEC_benchmarks" target="_blank" rel="noopener">http://www.gem5.org/PARSEC_benchmarks</a><br><a href="http://pfzuo.github.io/2016/06/06/Configure-and-run-parsec-2.1-benchmark-in-GEM5/" target="_blank" rel="noopener">http://pfzuo.github.io/2016/06/06/Configure-and-run-parsec-2.1-benchmark-in-GEM5/</a></p>
-<p>配置ＰＡＲＳＥＣ Ｂenchmark (以ＡＲＰＨＡ架构为例)</p>
-<ol>
-<li>在gem5目录下新建一个文件夹用来存储ＰＡＲＳＥＣ Ｂenchmark 的disk image<blockquote>
-<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mdkir fs_images</span><br><span class="line">cd fs_images</span><br></pre></td></tr></tbody></table></figure></blockquote>
-</li>
-<li>下载初始的系统文件</li>
-</ol>
-<blockquote>
-<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">wget http://www.m5sim.org/dist/current/m5_system_2.0b3.tar.bz2</span><br><span class="line">tar jxvf m5_system_2.0b3.tar.bz2</span><br><span class="line">mv m5_system_2.0b3 system</span><br></pre></td></tr></tbody></table></figure>
-<p>解压后，文件目录结构：</p>
-</blockquote>
-<blockquote>
-<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">system/</span><br><span class="line">binaries/</span><br><span class="line">      console</span><br><span class="line">      ts_osfpal</span><br><span class="line">      vmlinux</span><br><span class="line">disks/</span><br><span class="line">      linux-bigswap2.img</span><br><span class="line">      linux-latest.img</span><br></pre></td></tr></tbody></table></figure>
-<ol start="3">
-<li>下载ＰＡＲＳＥＣ Benchmark相关文件，并替换掉system 文件夹中的对应文件</li>
-</ol>
-</blockquote>
-<ul>
-<li>下载ＰＡＲＥＳＣ对应的linux kernel文件，替换 <code>system/binaries/vmlinux</code></li>
-</ul>
-<blockquote>
-<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">cd ./system/binaries/</span><br><span class="line">wget http://www.cs.utexas.edu/~parsec_m5/vmlinux_2.6.27-gcc_4.3.4</span><br><span class="line">rm vmlinux</span><br><span class="line">mv vmlinux_2.6.27-gcc_4.3.4 vmlinux</span><br></pre></td></tr></tbody></table></figure>
-</blockquote>
-<ul>
-<li>下载对应的ＰＡＬ code文件，替换<code>system/binaries/ts_osfpal</code></li>
-</ul>
-<blockquote>
-<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">wget http://www.cs.utexas.edu/~parsec_m5/tsb_osfpal</span><br><span class="line">rm ts_osfpal</span><br><span class="line">mv tsb_osfpal ts_osfpal</span><br></pre></td></tr></tbody></table></figure>
-</blockquote>
-<ul>
-<li>下载ＰＡＲＳＥＣ-2.1 Ｄisk Image 并解压</li>
-</ul>
-<blockquote>
-<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">cd ../disks/</span><br><span class="line">wget http://www.cs.utexas.edu/~parsec_m5/linux-parsec-2-1-m5-with-test-inputs.img.bz2</span><br><span class="line">bzip2 -b linux-parsec-2-1-m5-with-test-inputs.img.bz2</span><br></pre></td></tr></tbody></table></figure>
-</blockquote>
-<ol start="4">
-<li>进入gem5文件夹，修改两个文件（SysPaths.py 和 Benckmarks.py）配置parsec的路径和文件名</li>
-</ol>
-<p>打开SysPaths.py配置parsec disk image的完整路径：</p>
-<blockquote>
-<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim ./configs/common/SysPaths.py </span><br></pre></td></tr></tbody></table></figure>
-<p>修改前：</p>
-</blockquote>
-<blockquote>
-<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">path = [ ’/dist/m5/system’, ’/n/poolfs/z/dist/m5/system’ ]</span><br></pre></td></tr></tbody></table></figure>
-<p>修改后：</p>
-</blockquote>
-<blockquote>
-<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">path = [ ’/dist/m5/system’, ’/path/to/gem5/fs_images/system’ ]</span><br></pre></td></tr></tbody></table></figure>
-<p>打开Benchmarks.py，修改image文件名：</p>
-</blockquote>
-<blockquote>
-<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim ./configs/common/Benchmarks.py</span><br></pre></td></tr></tbody></table></figure>
-<p>修改前：</p>
-</blockquote>
-<blockquote>
-<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">elif buildEnv['TARGET_ISA'] == 'alpha':</span><br><span class="line">return env.get('LINUX_IMAGE', disk('linux-latest.img'))</span><br></pre></td></tr></tbody></table></figure>
-<p>修改后：</p>
-</blockquote>
-<blockquote>
-<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">elif buildEnv['TARGET_ISA'] == 'alpha':</span><br><span class="line">return env.get('LINUX_IMAGE', disk('linux-parsec-2-1-m5-with-test-inputs.img'))</span><br></pre></td></tr></tbody></table></figure>
-</blockquote>
-<ol start="5">
-<li>生成benchmark的script文件，用于运行benchmark<br>   下载PARSEC script生成包，并解压到gem5目录下即可：<blockquote>
-<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">wget http://www.cs.utexas.edu/~parsec_m5/TR-09-32-parsec-2.1-alpha-files.tar.gz</span><br><span class="line">tar zxvf TR-09-32-parsec-2.1-alpha-files.tar.gz</span><br></pre></td></tr></tbody></table></figure>
-<p>生成script命令：</p>
-</blockquote>
-</li>
-</ol>
-<blockquote>
-<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./writescripts.pl <benchmark> <nthreads></span><br></pre></td></tr></tbody></table></figure>
-<p>ＰＡＲＳＥＣ 有13 种Ｂenchmark:</p>
-</blockquote>
-<blockquote>
-<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">blackscholes</span><br><span class="line">bodytrack</span><br><span class="line">canneal</span><br><span class="line">dedup</span><br><span class="line">facesim</span><br><span class="line">ferret</span><br><span class="line">fluidanimate</span><br><span class="line">freqmine</span><br><span class="line">streamcluster</span><br><span class="line">swaptions</span><br><span class="line">vips</span><br><span class="line">x264</span><br><span class="line">rtview</span><br></pre></td></tr></tbody></table></figure>
-<p>例如生成x264 script命令</p>
-</blockquote>
-<blockquote>
-<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd TR-09-32-parsec-2.1-alpha-files/</span><br><span class="line">./writescripts.pl x264 1</span><br></pre></td></tr></tbody></table></figure>
-<p><a target="_blank" rel="noopener" href="https://img-blog.csdnimg.cn/20190519103138529.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3d3d19pbmRvd3M=,size_16,color_FFFFFF,t_70" data-caption="在这里插入图片描述" data-fancybox="images"><img src="https://img-blog.csdnimg.cn/20190519103138529.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3d3d19pbmRvd3M=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></a><br> 6. 根据生成的script文件运行gem5 </p>
-</blockquote>
-<blockquote>
-<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./build/ALPHA/gem5.opt ./configs/example/fs.py -n <number> --script=./path/to/runScript.rcS --caches --l2cache</span><br></pre></td></tr></tbody></table></figure>
-<ol start="7">
-<li>新开一个终端，使用telnet 与gem5模拟系统进行交互</li>
-</ol>
-</blockquote>
-<blockquote>
-<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">telnet localhost 3456</span><br></pre></td></tr></tbody></table></figure>
-<p>如果使用这种方式连接发生意外中断，推荐使用以下交互方式<br>使用m5term</p>
-</blockquote>
-<blockquote>
-<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">cd gem5/util/term/</span><br><span class="line">make</span><br><span class="line">sudo make install</span><br><span class="line">sudo ./m5term 127.0.0.1 3456</span><br></pre></td></tr></tbody></table></figure>
-<p><a target="_blank" rel="noopener" href="https://img-blog.csdnimg.cn/20190519104051256.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3d3d19pbmRvd3M=,size_16,color_FFFFFF,t_70" data-caption="在这里插入图片描述" data-fancybox="images"><img src="https://img-blog.csdnimg.cn/20190519104051256.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3d3d19pbmRvd3M=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></a></p>
-</blockquote>
-</body></html>
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://wentianhao.github.io/2020/01/13/parsec/" data-id="ckf265dp50000dw5hbs509f9v" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/gem5/" rel="tag">gem5</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/nvmain/" rel="tag">nvmain</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/parsec-2-1/" rel="tag">parsec-2.1</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-gem5" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2020/01/13/gem5/" class="article-date">
-  <time datetime="2020-01-13T02:41:13.000Z" itemprop="datePublished">2020-01-13</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/gem5/">gem5</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/01/13/gem5/">gem5的安装与使用</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <html><head></head><body><h2 id="gem5的安装与使用">gem5的安装与使用<a class="post-anchor" href="#gem5的安装与使用"></a></h2><p><strong>1. 安装各类库文件（ubuntu）</strong></p>
-<blockquote>
-<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install mercurial scons swig gcc m4 python python-dev </span><br><span class="line">libgoogle-perftools-dev g++ libprotobuf-dev</span><br></pre></td></tr></tbody></table></figure>
-<p>由于ubuntu缺省情况下，并没有提供C/C++的编译环境，单独安装gcc以及g++比较麻烦，ubuntu提供一个build-essential软件包。安装这个软件包，编译C/C++需要的软件包都会被安装</p>
-</blockquote>
-<blockquote>
-<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install build-essential</span><br></pre></td></tr></tbody></table></figure>
-</blockquote>
-<p><strong>2.下载gem5源码</strong></p>
-<blockquote>
-<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hg <span class="built_in">clone</span> http://repo.gem5.org/gem5</span><br></pre></td></tr></tbody></table></figure>
-</blockquote>
-<p><a target="_blank" rel="noopener" href="https://img-blog.csdnimg.cn/20190420183524941.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3d3d19pbmRvd3M=,size_16,color_FFFFFF,t_70" data-caption="下载gem5" data-fancybox="images"><img src="https://img-blog.csdnimg.cn/20190420183524941.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3d3d19pbmRvd3M=,size_16,color_FFFFFF,t_70" alt="下载gem5"></a></p>
-<p><a target="_blank" rel="noopener" href="https://img-blog.csdnimg.cn/20190420183640443.png" data-caption="在这里插入图片描述" data-fancybox="images"><img src="https://img-blog.csdnimg.cn/20190420183640443.png" alt="在这里插入图片描述"></a></p>
-<ul>
-<li>配置hgrc<br>打开hgrc文件：<code>vim gem5/.hg/hgrc</code>,将以下文件内容拷贝到里面，修改username,style等信息，style是你gem5文件里的style.其实我觉得<code>[email]</code>中的内容其实作用不大，但是看了好多其他的都差不多是这样我自己就只修改了style和username。<br>信息的修改只是一种标识，不影响编译和使用，最重要的是<code>[extensions] hgext.mq =</code>   扩充hg命令.</li>
-</ul>
-<blockquote>
-<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"> [ui]</span><br><span class="line"><span class="comment"># Set the username you will commit code with</span></span><br><span class="line"> username=Your Name <your@email.address></span><br><span class="line"> ssh = ssh -C</span><br><span class="line"> <span class="comment"># Always use git diffs since they contain permission changes and rename info</span></span><br><span class="line"> [defaults]</span><br><span class="line"> qrefresh = --git</span><br><span class="line"> email = --git</span><br><span class="line"> diff = --git</span><br><span class="line"> [extensions]</span><br><span class="line"> <span class="comment"># These are various extensions we find useful</span></span><br><span class="line"> <span class="comment"># Mercurial Queues -- allows managing of changes as a series of patches</span></span><br><span class="line"> hgext.mq =</span><br><span class="line"> <span class="comment"># PatchBomb -- send a series of changesets as e-mailed patches</span></span><br><span class="line"> hgext.patchbomb =</span><br><span class="line"> <span class="comment"># External Diff tool (e.g. kdiff3, meld, vimdiff, etc)</span></span><br><span class="line"> hgext.extdiff =</span><br><span class="line"> <span class="comment"># Fetch allows for a pull/update operation to be done with one command and automatically commits a merge changeset</span></span><br><span class="line"> hgext.fetch =</span><br><span class="line"> <span class="comment"># Path to the style file for the M5 repository</span></span><br><span class="line"> <span class="comment"># This file enforces our coding style requirements</span></span><br><span class="line"> style = /path/to/your/gem5/util/style.py</span><br><span class="line"> [email]</span><br><span class="line"> method = smtp</span><br><span class="line"> from = Your Name <your@email.address></span><br><span class="line"> [smtp]</span><br><span class="line"> host = your.smtp.server.here</span><br></pre></td></tr></tbody></table></figure>
-</blockquote>
-<p><strong>3.获取NVMain</strong></p>
-<ul>
-<li>注册bitbucket帐号<br><a href="https://bitbucket.org/account/signup/" target="_blank" rel="noopener">https://bitbucket.org/account/signup/</a></li>
-<li>获取NVMain使用权<br>打开<a href="https://bitbucket.org/mrp5060/nvmain/并登陆bitbucket账号，登陆后重新打开前面这个网站获取下载命令" target="_blank" rel="noopener">https://bitbucket.org/mrp5060/nvmain/并登陆bitbucket账号，登陆后重新打开前面这个网站获取下载命令</a> </li>
-</ul>
-<blockquote>
-<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://your account@bitbucket.org/xxx</span><br></pre></td></tr></tbody></table></figure>
-</blockquote>
-<ul>
-<li><a href="https://bitbucket.org/mrp5060/nvmain/downloads/" target="_blank" rel="noopener">或者点击下载nvmain（无需注册）</a></li>
-<li>nvmain文件位置随意，我放在了gem5根目录下，如果放的位置不同，后面编译时注意相对位置</li>
-</ul>
-<p>4.<strong>安装NVMain补丁</strong></p>
-<ul>
-<li><p>进入gem5根目录</p>
-</li>
-<li><p>初始化补丁目录</p>
-</li>
-</ul>
-<blockquote>
-<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hg init</span><br><span class="line">hg qinit</span><br></pre></td></tr></tbody></table></figure>
-</blockquote>
-<ul>
-<li>输入补丁 (注意nvmain文件位置，以及补丁的版本号)</li>
-</ul>
-<blockquote>
-<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hg qimport -f ./nvmain/patches/gem5/nvmain2-gem5-11688+</span><br></pre></td></tr></tbody></table></figure>
-</blockquote>
-<ol>
-<li>安装补丁</li>
-</ol>
-<blockquote>
-<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hg qpush</span><br></pre></td></tr></tbody></table></figure>
-</blockquote>
-<ol start="2">
-<li>如果打补丁出错,检查gem5的版本，检查nvmain中补丁的版本</li>
-</ol>
-<blockquote>
-<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 版本不对，更新gem5</span></span><br><span class="line">  hg update 11688</span><br><span class="line"><span class="comment"># 检查补丁是否打上</span></span><br><span class="line">  hg qapplied</span><br></pre></td></tr></tbody></table></figure>
-</blockquote>
-<p>5.<strong>联合编译gem5和nvmain</strong></p>
-<blockquote>
-<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">scons EXTRAS=nvmain ./build/X86/gem5.opt </span><br></pre></td></tr></tbody></table></figure>
-</blockquote>
-<p><a target="_blank" rel="noopener" href="https://img-blog.csdnimg.cn/20190420184756987.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3d3d19pbmRvd3M=,size_16,color_FFFFFF,t_70" data-caption="scons done" data-fancybox="images"><img src="https://img-blog.csdnimg.cn/20190420184756987.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3d3d19pbmRvd3M=,size_16,color_FFFFFF,t_70" alt="scons done"></a></p>
-<p><strong>在这一步中容易出现各种错误</strong></p>
-<p><strong>1. ImportError: No module named gem5_scons:</strong></p>
-<p><a target="_blank" rel="noopener" href="https://img-blog.csdnimg.cn/20190420190508767.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3d3d19pbmRvd3M=,size_16,color_FFFFFF,t_70" data-caption="在这里插入图片描述" data-fancybox="images"><img src="https://img-blog.csdnimg.cn/20190420190508767.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3d3d19pbmRvd3M=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></a></p>
-<p>查看gem5目录中是否存在gem5_scons文件夹，如果没有则在site_scons中将gem5_scons移到gem5根目录下</p>
-<p><a target="_blank" rel="noopener" href="https://img-blog.csdnimg.cn/20190420190758359.png" data-caption="在这里插入图片描述" data-fancybox="images"><img src="https://img-blog.csdnimg.cn/20190420190758359.png" alt="在这里插入图片描述"></a></p>
-<p><strong>2. [-Werror=implicit-fallthrough=]</strong></p>
-<p>这个问题困扰了我好久，百度了好久终于发现问题</p>
-<p>如果gcc版本号为7，那么源代码的switch-case块中如果忘了加上break，有可能会报错Implicit fallthrough error。</p>
-<p><strong>解决办法：编译时忽略Implicit fallthrough error这个错误</strong></p>
-<p><strong>修改 gem5中的SConstruct</strong></p>
-<p>在<strong>CCFLAGS</strong>中添加 <strong>-Wno-implicit-fallthrough</strong> 即可忽略该错误</p>
-<blockquote>
-<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">main.Append(CCFLAGS=['-Wall', '-Wundef', '-Wextra',</span><br><span class="line">                       '-Wno-sign-compare', '-Wno-unused-parameter','-Wno-implicit-fallthrough'])</span><br></pre></td></tr></tbody></table></figure>
-</blockquote>
-<p><strong>3. [-Werror]相关类似错误</strong></p>
-<p>均可按照上面的方法，忽略gcc-7版本的问题导致的错误</p>
-<p>6.<strong>测试</strong></p>
-<blockquote>
-<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./build/X86/gem5.opt ./configs/example/se.py -c ./tests/<span class="built_in">test</span>-progs/hello/bin/x86/linux/hello</span><br></pre></td></tr></tbody></table></figure>
-</blockquote>
-<p><a target="_blank" rel="noopener" href="https://img-blog.csdnimg.cn/20190420194540619.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3d3d19pbmRvd3M=,size_16,color_FFFFFF,t_70" data-caption="hello world" data-fancybox="images"><img src="https://img-blog.csdnimg.cn/20190420194540619.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3d3d19pbmRvd3M=,size_16,color_FFFFFF,t_70" alt="hello world"></a></p>
-<p>如果遇到和我一样的错误的，希望对你有帮助，么么哒</p>
-</body></html>
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://wentianhao.github.io/2020/01/13/gem5/" data-id="ck6jhssxi000r7s5h7b0331da" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/gem5/" rel="tag">gem5</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-
-
-  <nav id="page-nav">
-    <a class="extend prev" rel="prev" href="/page/3/">&amp;laquo; __(&#39;prev&#39;)</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/5/">__(&#39;next&#39;) &amp;raquo;</a>
-  </nav>
-</section>
-        
-          <aside id="sidebar">
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Categories</h3>
-    <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/bert/">bert</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/gem5/">gem5</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/git/">git</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/leetcode/">leetcode</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/python/">python</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/server/">server</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/spring-boot/">spring boot</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/spring-cloud/">spring cloud</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/word2vec/">word2vec</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">学习笔记</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0/">强化学习</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%96%87%E6%9C%AC%E7%9B%B8%E4%BC%BC%E5%BA%A6/">文本相似度</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/">读书笔记</a></li></ul>
-    </div>
-  </div>
-
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Tags</h3>
-    <div class="widget">
-      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/NLP/" rel="tag">NLP</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/NPL/" rel="tag">NPL</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Siamese/" rel="tag">Siamese</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/anaconda/" rel="tag">anaconda</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/bert/" rel="tag">bert</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/blog/" rel="tag">blog</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/docker/" rel="tag">docker</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/gem5/" rel="tag">gem5</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/" rel="tag">git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/" rel="tag">hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/https/" rel="tag">https</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jupyter-notebook/" rel="tag">jupyter notebook</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/leetcode/" rel="tag">leetcode</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/maven/" rel="tag">maven</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mybatis/" rel="tag">mybatis</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/nginx/" rel="tag">nginx</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/nvmain/" rel="tag">nvmain</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/parsec-2-1/" rel="tag">parsec-2.1</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/" rel="tag">python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python%E7%88%AC%E8%99%AB/" rel="tag">python爬虫</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/server/" rel="tag">server</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/spring-boot/" rel="tag">spring boot</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/spring-cloud/" rel="tag">spring cloud</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/sync/" rel="tag">sync</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/word2vec/" rel="tag">word2vec</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" rel="tag">学习笔记</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%AE%9E%E4%BD%93%E9%93%BE%E6%8E%A5/" rel="tag">实体链接</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0/" rel="tag">强化学习</a></li></ul>
-    </div>
-  </div>
-
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Tag Cloud</h3>
-    <div class="widget tagcloud">
-      <a href="/tags/NLP/" style="font-size: 12.5px;">NLP</a> <a href="/tags/NPL/" style="font-size: 15px;">NPL</a> <a href="/tags/Siamese/" style="font-size: 10px;">Siamese</a> <a href="/tags/anaconda/" style="font-size: 10px;">anaconda</a> <a href="/tags/bert/" style="font-size: 10px;">bert</a> <a href="/tags/blog/" style="font-size: 10px;">blog</a> <a href="/tags/docker/" style="font-size: 10px;">docker</a> <a href="/tags/gem5/" style="font-size: 12.5px;">gem5</a> <a href="/tags/git/" style="font-size: 12.5px;">git</a> <a href="/tags/hexo/" style="font-size: 12.5px;">hexo</a> <a href="/tags/https/" style="font-size: 10px;">https</a> <a href="/tags/jupyter-notebook/" style="font-size: 10px;">jupyter notebook</a> <a href="/tags/leetcode/" style="font-size: 10px;">leetcode</a> <a href="/tags/maven/" style="font-size: 10px;">maven</a> <a href="/tags/mybatis/" style="font-size: 12.5px;">mybatis</a> <a href="/tags/nginx/" style="font-size: 10px;">nginx</a> <a href="/tags/nvmain/" style="font-size: 10px;">nvmain</a> <a href="/tags/parsec-2-1/" style="font-size: 10px;">parsec-2.1</a> <a href="/tags/python/" style="font-size: 20px;">python</a> <a href="/tags/python%E7%88%AC%E8%99%AB/" style="font-size: 17.5px;">python爬虫</a> <a href="/tags/server/" style="font-size: 10px;">server</a> <a href="/tags/spring-boot/" style="font-size: 10px;">spring boot</a> <a href="/tags/spring-cloud/" style="font-size: 12.5px;">spring cloud</a> <a href="/tags/sync/" style="font-size: 10px;">sync</a> <a href="/tags/word2vec/" style="font-size: 10px;">word2vec</a> <a href="/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" style="font-size: 10px;">学习笔记</a> <a href="/tags/%E5%AE%9E%E4%BD%93%E9%93%BE%E6%8E%A5/" style="font-size: 15px;">实体链接</a> <a href="/tags/%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0/" style="font-size: 10px;">强化学习</a>
-    </div>
-  </div>
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Archives</h3>
-    <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/09/">September 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/08/">August 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/06/">June 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/05/">May 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/04/">April 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/03/">March 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/02/">February 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/01/">January 2020</a></li></ul>
-    </div>
-  </div>
-
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Recent Posts</h3>
-    <div class="widget">
-      <ul>
-        
-          <li>
-            <a href="/2020/09/13/python3/">Ubuntu18.04中Python2.7与Python3.6环境切换</a>
-          </li>
-        
-          <li>
-            <a href="/2020/08/25/bert/">bert</a>
-          </li>
-        
-          <li>
-            <a href="/2020/06/25/%E5%9F%BA%E4%BA%8E%E9%9A%8F%E6%9C%BA%E6%B8%B8%E8%B5%B0%E7%9A%84%E5%AE%9E%E4%BD%93%E9%93%BE%E6%8E%A5%E6%96%B9%E6%B3%95/">基于随机游走的实体链接方法</a>
-          </li>
-        
-          <li>
-            <a href="/2020/06/18/%E5%9F%BA%E4%BA%8E%E9%A2%86%E5%9F%9F%E5%9B%BE%E8%B0%B1%E7%9A%84%E5%AE%9E%E4%BD%93%E9%93%BE%E6%8E%A5%E6%8A%80%E6%9C%AF%E7%A0%94%E7%A9%B6/">基于领域图谱的实体链接技术研究</a>
-          </li>
-        
-          <li>
-            <a href="/2020/06/18/%E5%9F%BA%E4%BA%8E%E4%B8%8A%E4%B8%8B%E6%96%87%E4%BF%A1%E6%81%AF%E5%92%8C%E6%8E%92%E5%BA%8F%E5%AD%A6%E4%B9%A0%E7%9A%84%E5%AE%9E%E4%BD%93%E9%93%BE%E6%8E%A5%E6%96%B9%E6%B3%95/">基于上下文信息和排序学习的实体链接方法</a>
-          </li>
-        
-      </ul>
-    </div>
-  </div>
-
-  
-</aside>
+        <a href="/about" class="">
+          About
+        </a>
         
       </div>
-      <footer id="footer">
-  
-  <div class="outer">
-    <div id="footer-info" class="inner">
-      &copy; 2020 wenhao<br>
-      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
     </div>
-  </div>
-</footer>
+    <div id="header">
+      <div class="intro">
+        <a href="/" class="logo" style="background-image: url('/images/logo.jpeg')"></a>
+        <div class="author">undefined</div>
+      </div>
+      <div class="nav">
+        <span class="iconfont icon-menu menu-icon"></span>
+        <a href="#" class="search-box">
+          <span class="iconfont icon-sousuo"></span>
+        </a>
+      </div>
     </div>
-    <nav id="mobile-nav">
-  
-    <a href="/" class="mobile-nav-link">Home</a>
-  
-    <a href="/archives" class="mobile-nav-link">Archives</a>
-  
-</nav>
+    <div id="side" class="animated bounceInLeft">
+      <div class="shrink">
+        <a href="/" class="logo" style="background-image: url('/images/logo.jpeg')"></a>
+        <span class="iconfont icon-menu toggle-icon"></span>
+        <a href="#" class="search-box">
+          <span class="iconfont icon-sousuo"></span>
+        </a>
+      </div>
+      <div class="magnify">
+        <div class="about">
+          <div class="author">undefined</div>
+          <a href="/" class="logo" style="background-image: url('/images/logo.jpeg')"></a>
+        </div>
+
+        <div class="nav">
+          
+          <a href="/" class="">
+            Home
+          </a>
+          
+          <a href="/archives" class="">
+            Archives
+          </a>
+          
+          <a href="/categories" class="">
+            Categories
+          </a>
+          
+          <a href="/tags" class="">
+            Tags
+          </a>
+          
+          <a href="/friends" class="">
+            Friends
+          </a>
+          
+          <a href="/about" class="">
+            About
+          </a>
+          
+          <a href="#" class="search-box">
+            <span class="iconfont icon-sousuo"></span>
+          </a>
+        </div>
+        <div class="bottom">
+          <div class="follow">
+            
+            <a href="https://github.com/shixiaohu2206" target="_block">
+              <span class="iconfont icon-github"></span>
+            </a>
+            
+            <a href="https://www.facebook.com/shi.xiaohu.5" target="_block">
+              <span class="iconfont icon-facebook"></span>
+            </a>
+            
+            <a href="https://www.instagram.com/shi_xiaohu/" target="_block">
+              <span class="iconfont icon-instagram"></span>
+            </a>
+             
+            <a href="/atom.xml" target="_block">
+              <span class="iconfont icon-rss"></span>
+            </a>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="container">
+      <div class="main animated bounceInRight delay-0.7s">
+        
+<div class="posts">
+  <ul>
+     
+
     
 
-<script src="/js/jquery.min.js"></script>
+  <li class="item">
 
+      
 
+      
+      <div class="describe">
+        <div class="title">
+          <a href="/2020/02/19/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E5%9F%BA%E7%A1%80/">正则表达式基础</a>
+        </div>
+        <div class="date">
+          <span class="iconfont icon-time-circle"></span>
+          <span>20/02/19</span>
+        </div>
+        
+        <div class="meta">
+          <div class="l">
+            <div class="warp">
+              
+              <span class="iconfont icon-folder"></span>
+              <span class="desp">
+                 
+                <a href="/categories/python">python</a>
+                 
+              </span>
+              
+            </div>
+
+            
+            <div class="warp">
+              <span class="iconfont icon-tag1"></span>
+              <span class="desp">
+                 
+                <a href="/tags/python">python</a>
+                  
+                <a href="/tags/python爬虫">python爬虫</a>
+                 
+              </span>
+            </div>
+            
+            <div class="warp">
+              <div class="share" data-url="/2020/02/19/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E5%9F%BA%E7%A1%80/">
+                <span class="iconfont icon-share"></span>
+              </div>
+              <div class="desp share" data-url="/2020/02/19/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E5%9F%BA%E7%A1%80/">
+                <a href="#">Share</a>
+              </div>
+            </div>
+          </div>
+          <div class="r">
+            <a href="/2020/02/19/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E5%9F%BA%E7%A1%80/">Read More</a>
+          </div>
+        </div>
+      </div>
+    </li>
+     
+
+    
+
+  <li class="item">
+
+      
+
+      
+      <div class="describe">
+        <div class="title">
+          <a href="/2020/02/13/hexo-Spawn-failed-fatal/">hexo-Spawn-failed-fatal</a>
+        </div>
+        <div class="date">
+          <span class="iconfont icon-time-circle"></span>
+          <span>20/02/13</span>
+        </div>
+        
+        <div class="meta">
+          <div class="l">
+            <div class="warp">
+              
+              <span class="iconfont icon-folder"></span>
+              <span class="desp">
+                 
+                <a href="/categories/server">server</a>
+                 
+              </span>
+              
+            </div>
+
+            
+            <div class="warp">
+              <span class="iconfont icon-tag1"></span>
+              <span class="desp">
+                 
+                <a href="/tags/hexo">hexo</a>
+                 
+              </span>
+            </div>
+            
+            <div class="warp">
+              <div class="share" data-url="/2020/02/13/hexo-Spawn-failed-fatal/">
+                <span class="iconfont icon-share"></span>
+              </div>
+              <div class="desp share" data-url="/2020/02/13/hexo-Spawn-failed-fatal/">
+                <a href="#">Share</a>
+              </div>
+            </div>
+          </div>
+          <div class="r">
+            <a href="/2020/02/13/hexo-Spawn-failed-fatal/">Read More</a>
+          </div>
+        </div>
+      </div>
+    </li>
+     
+
+    
+
+  <li class="item">
+
+      
+
+      
+      <div class="describe">
+        <div class="title">
+          <a href="/2020/02/06/maven/">maven</a>
+        </div>
+        <div class="date">
+          <span class="iconfont icon-time-circle"></span>
+          <span>20/02/06</span>
+        </div>
+        
+        <div class="meta">
+          <div class="l">
+            <div class="warp">
+              
+              <span class="iconfont icon-folder"></span>
+              <span class="desp">
+                 
+                <a href="/categories/spring boot">spring boot</a>
+                 
+              </span>
+              
+            </div>
+
+            
+            <div class="warp">
+              <span class="iconfont icon-tag1"></span>
+              <span class="desp">
+                 
+                <a href="/tags/maven">maven</a>
+                  
+                <a href="/tags/spring boot">spring boot</a>
+                 
+              </span>
+            </div>
+            
+            <div class="warp">
+              <div class="share" data-url="/2020/02/06/maven/">
+                <span class="iconfont icon-share"></span>
+              </div>
+              <div class="desp share" data-url="/2020/02/06/maven/">
+                <a href="#">Share</a>
+              </div>
+            </div>
+          </div>
+          <div class="r">
+            <a href="/2020/02/06/maven/">Read More</a>
+          </div>
+        </div>
+      </div>
+    </li>
+     
+
+    
+
+  <li class="item">
+
+      
+
+      
+      <div class="describe">
+        <div class="title">
+          <a href="/2020/01/20/hexo-to-your-server/">hexo-to-your-server</a>
+        </div>
+        <div class="date">
+          <span class="iconfont icon-time-circle"></span>
+          <span>20/01/20</span>
+        </div>
+        
+        <div class="meta">
+          <div class="l">
+            <div class="warp">
+              
+              <span class="iconfont icon-folder"></span>
+              <span class="desp">
+                 
+                <a href="/categories/server">server</a>
+                 
+              </span>
+              
+            </div>
+
+            
+            <div class="warp">
+              <span class="iconfont icon-tag1"></span>
+              <span class="desp">
+                 
+                <a href="/tags/hexo">hexo</a>
+                  
+                <a href="/tags/server">server</a>
+                  
+                <a href="/tags/nginx">nginx</a>
+                 
+              </span>
+            </div>
+            
+            <div class="warp">
+              <div class="share" data-url="/2020/01/20/hexo-to-your-server/">
+                <span class="iconfont icon-share"></span>
+              </div>
+              <div class="desp share" data-url="/2020/01/20/hexo-to-your-server/">
+                <a href="#">Share</a>
+              </div>
+            </div>
+          </div>
+          <div class="r">
+            <a href="/2020/01/20/hexo-to-your-server/">Read More</a>
+          </div>
+        </div>
+      </div>
+    </li>
+     
+
+    
+
+  <li class="item">
+
+      
+
+      
+      <div class="describe">
+        <div class="title">
+          <a href="/2020/01/19/Notebook/">jupyter Notebook</a>
+        </div>
+        <div class="date">
+          <span class="iconfont icon-time-circle"></span>
+          <span>20/01/19</span>
+        </div>
+        
+        <div class="meta">
+          <div class="l">
+            <div class="warp">
+              
+              <span class="iconfont icon-folder"></span>
+              <span class="desp">
+                 
+                <a href="/categories/server">server</a>
+                 
+              </span>
+              
+            </div>
+
+            
+            <div class="warp">
+              <span class="iconfont icon-tag1"></span>
+              <span class="desp">
+                 
+                <a href="/tags/jupyter notebook">jupyter notebook</a>
+                 
+              </span>
+            </div>
+            
+            <div class="warp">
+              <div class="share" data-url="/2020/01/19/Notebook/">
+                <span class="iconfont icon-share"></span>
+              </div>
+              <div class="desp share" data-url="/2020/01/19/Notebook/">
+                <a href="#">Share</a>
+              </div>
+            </div>
+          </div>
+          <div class="r">
+            <a href="/2020/01/19/Notebook/">Read More</a>
+          </div>
+        </div>
+      </div>
+    </li>
+     
+
+    
+
+  <li class="item">
+
+      
+
+      
+      <div class="describe">
+        <div class="title">
+          <a href="/2020/01/19/git/">git学习过程</a>
+        </div>
+        <div class="date">
+          <span class="iconfont icon-time-circle"></span>
+          <span>20/01/19</span>
+        </div>
+        
+        <div class="meta">
+          <div class="l">
+            <div class="warp">
+              
+              <span class="iconfont icon-folder"></span>
+              <span class="desp">
+                 
+                <a href="/categories/git">git</a>
+                 
+              </span>
+              
+            </div>
+
+            
+            <div class="warp">
+              <span class="iconfont icon-tag1"></span>
+              <span class="desp">
+                 
+                <a href="/tags/git">git</a>
+                 
+              </span>
+            </div>
+            
+            <div class="warp">
+              <div class="share" data-url="/2020/01/19/git/">
+                <span class="iconfont icon-share"></span>
+              </div>
+              <div class="desp share" data-url="/2020/01/19/git/">
+                <a href="#">Share</a>
+              </div>
+            </div>
+          </div>
+          <div class="r">
+            <a href="/2020/01/19/git/">Read More</a>
+          </div>
+        </div>
+      </div>
+    </li>
+     
+
+    
+
+  <li class="item">
+
+      
+
+      
+      <div class="describe">
+        <div class="title">
+          <a href="/2020/01/14/springcloud2/">spring cloud mybaits 微服务增删改查(二)</a>
+        </div>
+        <div class="date">
+          <span class="iconfont icon-time-circle"></span>
+          <span>20/01/14</span>
+        </div>
+        
+        <div class="meta">
+          <div class="l">
+            <div class="warp">
+              
+              <span class="iconfont icon-folder"></span>
+              <span class="desp">
+                 
+                <a href="/categories/spring cloud">spring cloud</a>
+                 
+              </span>
+              
+            </div>
+
+            
+            <div class="warp">
+              <span class="iconfont icon-tag1"></span>
+              <span class="desp">
+                 
+                <a href="/tags/spring cloud">spring cloud</a>
+                  
+                <a href="/tags/mybatis">mybatis</a>
+                 
+              </span>
+            </div>
+            
+            <div class="warp">
+              <div class="share" data-url="/2020/01/14/springcloud2/">
+                <span class="iconfont icon-share"></span>
+              </div>
+              <div class="desp share" data-url="/2020/01/14/springcloud2/">
+                <a href="#">Share</a>
+              </div>
+            </div>
+          </div>
+          <div class="r">
+            <a href="/2020/01/14/springcloud2/">Read More</a>
+          </div>
+        </div>
+      </div>
+    </li>
+     
+
+    
+
+  <li class="item">
+
+      
+
+      
+      <div class="describe">
+        <div class="title">
+          <a href="/2020/01/14/springcloud1/">spring cloud mybaits 微服务增删改查(一)</a>
+        </div>
+        <div class="date">
+          <span class="iconfont icon-time-circle"></span>
+          <span>20/01/14</span>
+        </div>
+        
+        <div class="meta">
+          <div class="l">
+            <div class="warp">
+              
+              <span class="iconfont icon-folder"></span>
+              <span class="desp">
+                 
+                <a href="/categories/spring cloud">spring cloud</a>
+                 
+              </span>
+              
+            </div>
+
+            
+            <div class="warp">
+              <span class="iconfont icon-tag1"></span>
+              <span class="desp">
+                 
+                <a href="/tags/spring cloud">spring cloud</a>
+                  
+                <a href="/tags/mybatis">mybatis</a>
+                 
+              </span>
+            </div>
+            
+            <div class="warp">
+              <div class="share" data-url="/2020/01/14/springcloud1/">
+                <span class="iconfont icon-share"></span>
+              </div>
+              <div class="desp share" data-url="/2020/01/14/springcloud1/">
+                <a href="#">Share</a>
+              </div>
+            </div>
+          </div>
+          <div class="r">
+            <a href="/2020/01/14/springcloud1/">Read More</a>
+          </div>
+        </div>
+      </div>
+    </li>
+     
+
+    
+
+  <li class="item">
+
+      
+
+      
+      <div class="describe">
+        <div class="title">
+          <a href="/2020/01/13/parsec/">gem5与nvmain混合编译（二）———配置和运行ｐａｒｓｅｃ-2.1</a>
+        </div>
+        <div class="date">
+          <span class="iconfont icon-time-circle"></span>
+          <span>20/01/13</span>
+        </div>
+        
+        <div class="meta">
+          <div class="l">
+            <div class="warp">
+              
+              <span class="iconfont icon-folder"></span>
+              <span class="desp">
+                 
+                <a href="/categories/gem5">gem5</a>
+                 
+              </span>
+              
+            </div>
+
+            
+            <div class="warp">
+              <span class="iconfont icon-tag1"></span>
+              <span class="desp">
+                 
+                <a href="/tags/gem5">gem5</a>
+                  
+                <a href="/tags/nvmain">nvmain</a>
+                  
+                <a href="/tags/parsec-2.1">parsec-2.1</a>
+                 
+              </span>
+            </div>
+            
+            <div class="warp">
+              <div class="share" data-url="/2020/01/13/parsec/">
+                <span class="iconfont icon-share"></span>
+              </div>
+              <div class="desp share" data-url="/2020/01/13/parsec/">
+                <a href="#">Share</a>
+              </div>
+            </div>
+          </div>
+          <div class="r">
+            <a href="/2020/01/13/parsec/">Read More</a>
+          </div>
+        </div>
+      </div>
+    </li>
+     
+
+    
+
+  <li class="item">
+
+      
+
+      
+      <div class="describe">
+        <div class="title">
+          <a href="/2020/01/13/gem5/">gem5的安装与使用</a>
+        </div>
+        <div class="date">
+          <span class="iconfont icon-time-circle"></span>
+          <span>20/01/13</span>
+        </div>
+        
+        <div class="meta">
+          <div class="l">
+            <div class="warp">
+              
+              <span class="iconfont icon-folder"></span>
+              <span class="desp">
+                 
+                <a href="/categories/gem5">gem5</a>
+                 
+              </span>
+              
+            </div>
+
+            
+            <div class="warp">
+              <span class="iconfont icon-tag1"></span>
+              <span class="desp">
+                 
+                <a href="/tags/gem5">gem5</a>
+                 
+              </span>
+            </div>
+            
+            <div class="warp">
+              <div class="share" data-url="/2020/01/13/gem5/">
+                <span class="iconfont icon-share"></span>
+              </div>
+              <div class="desp share" data-url="/2020/01/13/gem5/">
+                <a href="#">Share</a>
+              </div>
+            </div>
+          </div>
+          <div class="r">
+            <a href="/2020/01/13/gem5/">Read More</a>
+          </div>
+        </div>
+      </div>
+    </li>
+    
+  </ul>
+</div>
+
+<div class="paginator">
+  <a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span><a class="page-number" href="/page/5/">5</a>
+</div>
+
+        <footer>
+          <div class="copyright">
+            ©2020
+            <a href="https://wentianhao.github.io">wenhao</a> Powered by <a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a> |
+            <a target="_blank" rel="noopener" href="https://github.com/shixiaohu2206/hexo-theme-huhu">hexo-theme-huhu</a>
+          </div>
+          
+        </footer>
+      </div>
+    </div>
+  </body>
   
-<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
-
-  
-<script src="/fancybox/jquery.fancybox.pack.js"></script>
-
-
-
-
-<script src="/js/script.js"></script>
-
-
-  </div>
-</body>
 </html>
+<script type="text/javascript">
+                  window.HUHU_CONFIG = JSON.parse("{\"share\":[\"weibo\",\"weixin\",\"qqkongjian\",\"QQ\",\"douban\",\"facebook\",\"twitter\",\"google\"],\"service_worker\":{\"open\":false}}")
+                </script> <script type="text/javascript">window.addEventListener('load', function() {
+    
+    window.loadJs = function(d, m, a) {
+      var c = document.getElementsByTagName('head')[0] || document.head || document.documentElement
+      var b = document.createElement('script')
+      b.defer = true
+      b.setAttribute('type', 'text/javascript')
+      b.setAttribute('charset', 'UTF-8')
+      b.setAttribute('async', 'true')
+      b.setAttribute('src', d)
+      m && b.setAttribute('data-main', '/scripts/app-built')
+      if (typeof a === 'function') {
+        if (window.attachEvent) {
+          b.onreadystatechange = function() {
+            var e = b.readyState
+            if (e === 'loaded' || e === 'complete') {
+              b.onreadystatechange = null
+              a()
+            }
+          }
+        } else {
+          b.onload = a
+        }
+      }
+      c.appendChild(b)
+    }
+    window.loadJs && window.loadJs('https://cdn.bootcss.com/require.js/2.3.6/require.min.js', true, function() {require.config({"paths":{"util":"util","share":"share","search":"search","pagemap":"pagemap.min","registerSW":"registerSW","valine":"cdn/Valine.min","av":["https://cdn.jsdelivr.net/npm/leancloud-storage/dist/av-min"],"pjax":["https://cdn.bootcss.com/jquery.pjax/2.0.1/jquery.pjax.min"],"jquery":["https://cdn.bootcss.com/jquery/3.4.1/jquery.min"],"confirm":["https://cdn.bootcss.com/jquery-confirm/3.3.4/jquery-confirm.min"],"fancybox":["https://cdn.bootcss.com/fancybox/3.5.7/jquery.fancybox.min"],"chart":["https://cdn.bootcss.com/Chart.js/2.8.0-rc.1/Chart.bundle.min"]},"map":{"*":{"css":"https://cdn.bootcss.com/require-css/0.1.10/css.min.js"}},"shim":{"fancybox":{"deps":["css!https://cdn.bootcss.com/fancybox/3.5.7/jquery.fancybox.min.css"]},"confirm":{"deps":["css!https://cdn.bootcss.com/jquery-confirm/3.3.4/jquery-confirm.min.css"]},"chart":{"deps":["css!https://cdn.bootcss.com/Chart.js/2.8.0-rc.1/Chart.min.css"]}},"waitSeconds":3})})
+  })</script> <script type="text/javascript">
+                  ;(function() {
+                    var bp = document.createElement('script')
+                    var curProtocol = window.location.protocol.split(':')[0]
+                    if (curProtocol === 'https') {
+                      bp.src = 'https://zz.bdstatic.com/linksubmit/push.js'
+                    } else {
+                      bp.src = 'http://push.zhanzhang.baidu.com/push.js'
+                    }
+                    var s = document.getElementsByTagName('script')[0]
+                    s.parentNode.insertBefore(bp, s)
+                  })()
+                </script> 

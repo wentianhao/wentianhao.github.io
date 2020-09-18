@@ -365,16 +365,16 @@
     <link href="https://wentianhao.github.io/2020/04/02/%E6%96%87%E6%9C%AC%E7%9B%B8%E4%BC%BC%E5%BA%A6%E5%88%86%E6%9E%90/"/>
     <id>https://wentianhao.github.io/2020/04/02/%E6%96%87%E6%9C%AC%E7%9B%B8%E4%BC%BC%E5%BA%A6%E5%88%86%E6%9E%90/</id>
     <published>2020-04-02T11:20:48.000Z</published>
-    <updated>2020-09-13T02:13:10.375Z</updated>
+    <updated>2020-09-18T10:28:02.264Z</updated>
     
-    <content type="html"><![CDATA[<html><head></head><body><p>Siamese Network 是一种神经网络的框架，而不是具体的某种网络,Siamese Network用于评估两个输入样本的相似度。网络的框架如下图所示</p><p><a href="https://whh.plus/images//Siamese1.png" data-caption="siamese" data-fancybox="images"><img src="https://whh.plus/images//Siamese1.png" alt="siamese"></a></p><p>Siamese Network有两个结构相同，且共享权值的子网络。分别接收两个输入X1与X2，将其转换为向量Gw(X1)与Gw(X2)，再通过某种距离度量的方式计算两个输出向量的距离Ew。</p><p>训练Siamese Network采用的训练样本是一个tuple (X1,X2,y)，标签y=0表示X1与X2属于不同类型(不相似、不重复、根据应用场景而定)。y=1则表示X1与X2属于相同类型(相似)。</p><p>LOSS函数的设计应该是 </p><ol><li>当两个输入样本不相似(y=0)时，距离Ew越大，损失越小，即关于Ew的单调递减函数。 </li><li>当两个输入样本相似(y=1)时，距离Ew越大，损失越大，即关于Ew的单调递增函数。</li></ol><p>用L+(X1,X2)表示y=1时的LOSS， L−(X1,X2)表示y=0时的LOSS，则LOSS函数可以写成如下形式</p><p>Lw(X1,X2)=(1−y)L−(X1,X2)+yL+(X1,X2)</p><p>Siamese Network的基本架构、输入、输出以及LOSS函数的设计原则如上文.</p><p>LSTM Siamese Network总结起来就是 </p><ol><li>将Siamese Network中的Encoder换成BILSTM </li><li>将距离的计算改成余弦距离 </li><li>修改相应的LOSS函数</li></ol><p>这个设计上还是有一些可以改进的，比如在BILSTM输出后，加一个attention，而不是直接average每个时刻的输出，这样可以更好的表征输入的文本。</p><p><a href>BiLSTM介绍</a></p><p><a href="https://whh.plus/images//Siamese2.png" data-caption="BiLSTM" data-fancybox="images"><img src="https://whh.plus/images//Siamese2.png" alt="BiLSTM"></a></p><p>损失函数：<br><a href="https://whh.plus/images//Siamese3.png" data-caption="loss" data-fancybox="images"><img src="https://whh.plus/images//Siamese3.png" alt="loss"></a></p></body></html>]]></content>
+    <content type="html"><![CDATA[<p>Siamese Network 是一种神经网络的框架，而不是具体的某种网络,Siamese Network用于评估两个输入样本的相似度。网络的框架如下图所示</p><p><img src="https://whh.plus/images//Siamese1.png" alt="siamese" loading="lazy"></p><p>Siamese Network有两个结构相同，且共享权值的子网络。分别接收两个输入X1与X2，将其转换为向量Gw(X1)与Gw(X2)，再通过某种距离度量的方式计算两个输出向量的距离Ew。</p><p>训练Siamese Network采用的训练样本是一个tuple (X1,X2,y)，标签y=0表示X1与X2属于不同类型(不相似、不重复、根据应用场景而定)。y=1则表示X1与X2属于相同类型(相似)。</p><p>LOSS函数的设计应该是 </p><ol><li>当两个输入样本不相似(y=0)时，距离Ew越大，损失越小，即关于Ew的单调递减函数。 </li><li>当两个输入样本相似(y=1)时，距离Ew越大，损失越大，即关于Ew的单调递增函数。</li></ol><p>用L+(X1,X2)表示y=1时的LOSS， L−(X1,X2)表示y=0时的LOSS，则LOSS函数可以写成如下形式</p><p>Lw(X1,X2)=(1−y)L−(X1,X2)+yL+(X1,X2)</p><p>Siamese Network的基本架构、输入、输出以及LOSS函数的设计原则如上文.</p><p>LSTM Siamese Network总结起来就是 </p><ol><li>将Siamese Network中的Encoder换成BILSTM </li><li>将距离的计算改成余弦距离 </li><li>修改相应的LOSS函数</li></ol><p>这个设计上还是有一些可以改进的，比如在BILSTM输出后，加一个attention，而不是直接average每个时刻的输出，这样可以更好的表征输入的文本。</p><p><a href="">BiLSTM介绍</a></p><p><img src="https://whh.plus/images//Siamese2.png" alt="BiLSTM" loading="lazy"></p><p>损失函数：<br><img src="https://whh.plus/images//Siamese3.png" alt="loss" loading="lazy"></p>]]></content>
     
     <summary type="html">
     
       
       
-        &lt;html&gt;&lt;head&gt;&lt;/head&gt;&lt;body&gt;&lt;p&gt;Siamese Network 是一种神经网络的框架，而不是具体的某种网络,Siamese Network用于评估两个输入样本的相似度。网络的框架如下图所示&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;https://whh.plus/
+        &lt;p&gt;Siamese Network 是一种神经网络的框架，而不是具体的某种网络,Siamese Network用于评估两个输入样本的相似度。网络的框架如下图所示&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://whh.plus/images//Siamese1.png&quot; al
       
     
     </summary>
@@ -386,8 +386,6 @@
       <category term="python" scheme="https://wentianhao.github.io/tags/python/"/>
     
       <category term="NLP" scheme="https://wentianhao.github.io/tags/NLP/"/>
-    
-      <category term="Siamese" scheme="https://wentianhao.github.io/tags/Siamese/"/>
     
   </entry>
   

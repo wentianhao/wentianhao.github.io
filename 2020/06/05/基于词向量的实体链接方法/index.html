@@ -2,13 +2,13 @@
 <html>
   <head>
       <script>
-  var _hmt = _hmt || [];
-  (function() {
-    var hm = document.createElement('script');
-    hm.src = 'https://hm.baidu.com/hm.js?5c794146f145476b20f71d4cb38e8881';
-    var s = document.getElementsByTagName('script')[0];
-    s.parentNode.insertBefore(hm, s);
-  })();
+  var _hmt = _hmt || []
+  ;(function() {
+    var hm = document.createElement('script')
+    hm.src = 'https://hm.baidu.com/hm.js?5a0acc897fd96474a2c8f4deac84611a'
+    var s = document.getElementsByTagName('script')[0]
+    s.parentNode.insertBefore(hm, s)
+  })()
 </script> 
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
@@ -23,18 +23,7 @@
     
 <link rel="stylesheet" href="/style/style.css">
 
-    
-    <script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-        tex2jax: {
-            inlineMath: [ ['$','$'], ["\\(","\\)"] ],
-            displayMath: [ ['$$','$$'], ["\\[","\\]"] ]
-        }
-    });
-    </script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script>
-
-  <meta name="generator" content="Hexo 4.2.0"><link rel="alternate" href="/atom.xml" title="blog" type="application/atom+xml">
+  <link rel="alternate" href="/atom.xml" title="blog" type="application/atom+xml">
 </head>
   <body>
     <canvas id='pagemap'></canvas>
@@ -97,7 +86,7 @@
     <div id="header">
       <div class="intro">
         <a href="/" class="logo" style="background-image: url('/images/logo.jpeg')"></a>
-        <div class="author">wenhao</div>
+        <div class="author">undefined</div>
       </div>
       <div class="nav">
         <span class="iconfont icon-menu menu-icon"></span>
@@ -116,7 +105,7 @@
       </div>
       <div class="magnify">
         <div class="about">
-          <div class="author">wenhao</div>
+          <div class="author">undefined</div>
           <a href="/" class="logo" style="background-image: url('/images/logo.jpeg')"></a>
         </div>
 
@@ -153,8 +142,16 @@
         <div class="bottom">
           <div class="follow">
             
-            <a href="https://github.com/wentianhao" target="_block">
+            <a href="https://github.com/shixiaohu2206" target="_block">
               <span class="iconfont icon-github"></span>
+            </a>
+            
+            <a href="https://www.facebook.com/shi.xiaohu.5" target="_block">
+              <span class="iconfont icon-facebook"></span>
+            </a>
+            
+            <a href="https://www.instagram.com/shi_xiaohu/" target="_block">
+              <span class="iconfont icon-instagram"></span>
             </a>
              
             <a href="/atom.xml" target="_block">
@@ -177,11 +174,6 @@
           <span>2020/06/05</span>
         </span>
 
-        
-          <span class="item leancloud-visitors" id="/2020/06/05/%E5%9F%BA%E4%BA%8E%E8%AF%8D%E5%90%91%E9%87%8F%E7%9A%84%E5%AE%9E%E4%BD%93%E9%93%BE%E6%8E%A5%E6%96%B9%E6%B3%95/" data-flag-title="基于词向量的实体链接方法">
-            <span class="iconfont icon-eye1"></span>
-            <span class="leancloud-visitors-count"></span>
-          </span>
         
 
          
@@ -226,7 +218,7 @@
 <p>Graph方法：基于文本中实体和维基百科的特点，构造语义网络，通过网络中节点的距离、出度和入度等作为特征来涉及相似度衡量指标，从而实现语义消歧。虽然这种方法有较好的链接效果，然而也存在一些问题，当数据规模比较大时，网络图的存储、训练和计算就会比较繁琐。</p>
 <p>传统的排序法：向量空间模型 VSM 抽取实体的上下文作为词袋，然后根据词频-逆向文档频（TF-IDF）中向量空间把上、下文表示成文本向量，计算余弦相似性。</p>
 <p><strong>【基于条件随机场命名实体识别】</strong></p>
-<p>系统流程图：<a href="https://whh.plus/images/sfc1.png" target="_blank" rel="noopener" data-caption="流程图" data-fancybox="images"><img src="https://whh.plus/images/sfc1.png" alt="流程图"></a></p>
+<p>系统流程图：<a target="_blank" rel="noopener" href="https://whh.plus/images/sfc1.png" data-caption="流程图" data-fancybox="images"><img src="https://whh.plus/images/sfc1.png" alt="流程图"></a></p>
 <p>方法：CRF</p>
 <p>训练数据：评测任务给定的训练集，利用Standford CoreNLP NER得到数据的句法树。</p>
 <p>标记：采用BEIO标记，B表示实体的开始,E表示实体的结束，O表示非实体，I表示实体内部。</p>
@@ -248,38 +240,38 @@
 <p>CBOW模型与传统的前向神经网络语言模型类似，不同点在于：</p>
 <p>(1) CBOW预测语句中间的词，而不是最后一个词</p>
 <p>(2) CBOW去掉了模型计算中最耗时的非线性隐层并且对所有词而言隐层相同，从而有效提高了词向量的训练速度。</p>
-<p><a href="https://whh.plus/images/cbow.png" target="_blank" rel="noopener" data-caption="cbow" data-fancybox="images"><img src="https://whh.plus/images/cbow.png" alt="cbow"></a></p>
+<p><a target="_blank" rel="noopener" href="https://whh.plus/images/cbow.png" data-caption="cbow" data-fancybox="images"><img src="https://whh.plus/images/cbow.png" alt="cbow"></a></p>
 <p><strong>候选实体的选择</strong></p>
 <p>为了能最大程度的召回正确实体，本文进行索引的查询词是由规则方法进行扩展的查询词和由词向量进行扩展形成的查询词，使用模糊匹配的方式返回候选实体。</p>
 <p><strong>特征抽取</strong></p>
 <p>本文抽取了LDA的主题特征以及基于词向量的文本相似性特征。</p>
 <p>(1)实体之间的信息</p>
 <p>查询词和候选实体标题的相关性对实验结果有着重要的影响。查询词与标题的相似性是特征之一，本文使用编辑相似性来度量其相似性，则</p>
-<p><a href="https://whh.plus/images/S.png" target="_blank" rel="noopener" data-caption="编辑相似度" data-fancybox="images"><img src="https://whh.plus/images/S.png" alt="编辑相似度"></a></p>
+<p><a target="_blank" rel="noopener" href="https://whh.plus/images/S.png" data-caption="编辑相似度" data-fancybox="images"><img src="https://whh.plus/images/S.png" alt="编辑相似度"></a></p>
 <p>L’ 为最小编辑次数，L1，L2分别为字符串的长度</p>
 <p>(2)Wiki中的实体E</p>
 <p>信息窗Infobox中的信息包括本地名、法定名、昵称以及上下文中的实体，上下文为KB中的文本内容。</p>
-<p><a href="https://whh.plus/images/Ei.png" target="_blank" rel="noopener" data-caption="Ei" data-fancybox="images"><img src="https://whh.plus/images/Ei.png" alt="Ei"></a></p>
+<p><a target="_blank" rel="noopener" href="https://whh.plus/images/Ei.png" data-caption="Ei" data-fancybox="images"><img src="https://whh.plus/images/Ei.png" alt="Ei"></a></p>
 <p>(3)实体的类别特征C</p>
 <p>类别标签反应的是一个实体的类别。若两个实体表示同一实体，那么其类别一致。本文抽取支撑文档中词的所有能确定类别作为查询词的类别以及候选实体的类别。</p>
-<p><a href="https://whh.plus/images/Ci.png" target="_blank" rel="noopener" data-caption="Ci" data-fancybox="images"><img src="https://whh.plus/images/Ci.png" alt="Ci"></a></p>
+<p><a target="_blank" rel="noopener" href="https://whh.plus/images/Ci.png" data-caption="Ci" data-fancybox="images"><img src="https://whh.plus/images/Ci.png" alt="Ci"></a></p>
 <p>(4)类型信息t</p>
 <p>类型信息指一个实体的类型，对于命名实体识别出的实体类型包括PER,GPE,ORG。而KB中实体也有相应的实体类型，如UKN,PER,GPE。UKN为不能确定的类型，若实体的类型不是UKN并且实体的类型和查询词的类型不一致则t为0,否则t为1。</p>
-<p><a href="https://whh.plus/images/t.png" target="_blank" rel="noopener" data-caption="t" data-fancybox="images"><img src="https://whh.plus/images/t.png" alt="t"></a></p>
+<p><a target="_blank" rel="noopener" href="https://whh.plus/images/t.png" data-caption="t" data-fancybox="images"><img src="https://whh.plus/images/t.png" alt="t"></a></p>
 <p>(5)基于主题模型的文档相似度</p>
 <p>LDA模型是一种对文档集建模的概率主题模型。传统判断两个文档相似性的方法是通过统计两篇文档共同出现的单词，基于TF-IDF的相似性计算方法，这种方法没有考虑到文档的语义相关性，而LDA恰好能表示两篇文档的主题相似性。LDA模型认为一篇文章都是以一定概率选择了某个主题，并从这个主题中以一定概率选择某个词语，这样一个过程得到一篇文档。LAD的原理可以表示为：</p>
-<p><a href="https://whh.plus/images/P.png" target="_blank" rel="noopener" data-caption="P" data-fancybox="images"><img src="https://whh.plus/images/P.png" alt="P"></a></p>
+<p><a target="_blank" rel="noopener" href="https://whh.plus/images/P.png" data-caption="P" data-fancybox="images"><img src="https://whh.plus/images/P.png" alt="P"></a></p>
 <p>给定一系列文档，计算各个文档中每个单词的词频就可以得到“文档-词语”矩阵。主题模型就是通过这个“文档-词语”矩阵进行训练，学习出“词-主题”矩阵和“主题-文档”矩阵。</p>
 <p>LDA的工作原理可以表示为 LDA模型认为文档的主题分布和主题的词分布属于LDA分布，文档以多项分布的概率选择一个主题，主题以多项分布的概率选择一个词。然后用主题和词的联合分布来近似估计主题的后验分布，最后训练文档的主题分布,用KL散度来计算文档之间的主题相似性。</p>
 <p>KL距离也即相对熵，表示两个概率分布的距离。相似度度量标准KL距离为</p>
-<p><a href="https://whh.plus/images/KL.png" target="_blank" rel="noopener" data-caption="KL" data-fancybox="images"><img src="https://whh.plus/images/KL.png" alt="KL"></a></p>
+<p><a target="_blank" rel="noopener" href="https://whh.plus/images/KL.png" data-caption="KL" data-fancybox="images"><img src="https://whh.plus/images/KL.png" alt="KL"></a></p>
 <p>(6)基于词向量的文本相似性</p>
 <p>词向量进行查询扩展时，对文档的词利用CBOW模型进行词向量训练，然后根据余弦距离得到一个词的近义词或者相关词。传统度量文档之间相似性是基于高频词，但支撑文档只是查询词出现的语料，不能真正的解释查询词的含义，高频词也不能很好的表达查询词的语义信息。</p>
 <p>为了能用其他语义共现词来表示查询词的上、下文，本文使用基于词向量的近义词作为查询词的文本向量。</p>
 <p><strong>基于单文档排序的LTR模型</strong></p>
 <p>抽取的特征能否提高实体链接的准确率是排序学习(Learning to rank,LTR)模型要解决的核心问题。</p>
 <p>单文档方法处理对象单一文档，将文档转化为特征向量后，主要将排序问题转化为机器学习中常规的分类或回归问题。查询词与候选实体的排序函数为：</p>
-<p><a href="https://whh.plus/images/score.png" target="_blank" rel="noopener" data-caption="score" data-fancybox="images"><img src="https://whh.plus/images/score.png" alt="score"></a></p>
+<p><a target="_blank" rel="noopener" href="https://whh.plus/images/score.png" data-caption="score" data-fancybox="images"><img src="https://whh.plus/images/score.png" alt="score"></a></p>
 <p>Si ： 查询词与实体的编辑相似性</p>
 <p>Ei : 实体页面内实体在查询词的支撑文档中出现的次数</p>
 <p>Ci : 实体内页面类别在查询词的支撑实体的类别中出现的次数</p>
@@ -288,11 +280,11 @@
 <p>Dkl : 文档之间主题相似度</p>
 <p>若Score小于0.6，则设定空实体。再对空的实体进行聚类，使用杰卡德相似系数(JSC)进行度量，即根据各个空实体支撑文档中共现的词个数进行聚类，大于某一阈值，就聚为一类。</p>
 <p>杰卡德系数：</p>
-<p><a href="https://whh.plus/images/jkd.png" target="_blank" rel="noopener" data-caption="jkd" data-fancybox="images"><img src="https://whh.plus/images/jkd.png" alt="jkd"></a></p>
+<p><a target="_blank" rel="noopener" href="https://whh.plus/images/jkd.png" data-caption="jkd" data-fancybox="images"><img src="https://whh.plus/images/jkd.png" alt="jkd"></a></p>
 <p><strong>实验设计与结果</strong></p>
 <p>测试数据：2014年TAC测评中实体链接任务提供的138篇文档，共抽取了5234个命名实体。</p>
 <p>评价标准： B’+F1</p>
-<p><a href="https://whh.plus/images/er1.png" target="_blank" rel="noopener" data-caption="er1" data-fancybox="images"><img src="https://whh.plus/images/er1.png" alt="er1"></a></p>
+<p><a target="_blank" rel="noopener" href="https://whh.plus/images/er1.png" data-caption="er1" data-fancybox="images"><img src="https://whh.plus/images/er1.png" alt="er1"></a></p>
 <p>实验1 ： 基于SVM的分类模型，使用实体的上、下文信息作为特征，每一个候选实体为一类，然后使用RBF进行分类</p>
 <p>实验1结果分析 ：只是简单地使用上、下文信息进行SVM分类，效果不如其他方法</p>
 <p>实验2 ：使用首选实体的标题以及KB的别名信息来进行实体链接的向量空间模型</p>
@@ -360,34 +352,18 @@
         <footer>
           <div class="copyright">
             ©2020
-            <a href="https://wentianhao.github.io">wenhao</a> Powered by <a href="https://hexo.io" target="_blank" rel="noopener">Hexo</a> |
-            <a href="https://github.com/shixiaohu2206/hexo-theme-huhu" target="_blank" rel="noopener">hexo-theme-huhu</a>
+            <a href="https://wentianhao.github.io">wenhao</a> Powered by <a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a> |
+            <a target="_blank" rel="noopener" href="https://github.com/shixiaohu2206/hexo-theme-huhu">hexo-theme-huhu</a>
           </div>
-
-
           
         </footer>
-        <footer>
-          <div class="copyright">
-            <p>
-              本站于 <code class="site_from"></code> 接入百度站点，建站已 <code class="site_date"></code> 天
-              截止到目前，整站访问次数 <code class="site_pv"></code>、访问人数 <code class="site_uv"></code>
-            </p>
-            <br>
-            <p>
-              <!-- <canvas id="doughnut-chart" width="100" height="45"></canvas> -->
-            </p>
-          </div>
-            <!-- <canvas id="line-chart" width="100" height="45"></canvas> -->
-        </footer>
-
       </div>
     </div>
   </body>
   
 </html>
 <script type="text/javascript">
-                  window.HUHU_CONFIG = JSON.parse("{\"share\":[\"weibo\",\"weixin\",\"qqkongjian\",\"QQ\",\"douban\",\"facebook\",\"twitter\",\"google\"],\"valine\":{\"API_ID\":\"tI1OoTxIlFu57id4qeYFPaDd-gzGzoHsz\",\"API_KEY\":\"BvmcL9NxpddU4y5DDL9qK635\"},\"service_worker\":{\"open\":false},\"baidu_tongji\":{\"site_from\":\"2020/1/14\",\"site_id\":\"14335783\",\"access_token\":\"121.86adff4a6f4b3ee130984df42776cd4f.YGBCtpWR_fwkcChxUa6p5brbZ9d3KFCuDYefShx.3JVsNQ\"}}")
+                  window.HUHU_CONFIG = JSON.parse("{\"share\":[\"weibo\",\"weixin\",\"qqkongjian\",\"QQ\",\"douban\",\"facebook\",\"twitter\",\"google\"],\"service_worker\":{\"open\":false}}")
                 </script> <script type="text/javascript">window.addEventListener('load', function() {
     
     window.loadJs = function(d, m, a) {

@@ -2,13 +2,13 @@
 <html>
   <head>
       <script>
-  var _hmt = _hmt || [];
-  (function() {
-    var hm = document.createElement('script');
-    hm.src = 'https://hm.baidu.com/hm.js?5c794146f145476b20f71d4cb38e8881';
-    var s = document.getElementsByTagName('script')[0];
-    s.parentNode.insertBefore(hm, s);
-  })();
+  var _hmt = _hmt || []
+  ;(function() {
+    var hm = document.createElement('script')
+    hm.src = 'https://hm.baidu.com/hm.js?5a0acc897fd96474a2c8f4deac84611a'
+    var s = document.getElementsByTagName('script')[0]
+    s.parentNode.insertBefore(hm, s)
+  })()
 </script> 
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
@@ -23,18 +23,7 @@
     
 <link rel="stylesheet" href="/style/style.css">
 
-    
-    <script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-        tex2jax: {
-            inlineMath: [ ['$','$'], ["\\(","\\)"] ],
-            displayMath: [ ['$$','$$'], ["\\[","\\]"] ]
-        }
-    });
-    </script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script>
-
-  <meta name="generator" content="Hexo 4.2.0"><link rel="alternate" href="/atom.xml" title="blog" type="application/atom+xml">
+  <link rel="alternate" href="/atom.xml" title="blog" type="application/atom+xml">
 </head>
   <body>
     <canvas id='pagemap'></canvas>
@@ -97,7 +86,7 @@
     <div id="header">
       <div class="intro">
         <a href="/" class="logo" style="background-image: url('/images/logo.jpeg')"></a>
-        <div class="author">wenhao</div>
+        <div class="author">undefined</div>
       </div>
       <div class="nav">
         <span class="iconfont icon-menu menu-icon"></span>
@@ -116,7 +105,7 @@
       </div>
       <div class="magnify">
         <div class="about">
-          <div class="author">wenhao</div>
+          <div class="author">undefined</div>
           <a href="/" class="logo" style="background-image: url('/images/logo.jpeg')"></a>
         </div>
 
@@ -153,8 +142,16 @@
         <div class="bottom">
           <div class="follow">
             
-            <a href="https://github.com/wentianhao" target="_block">
+            <a href="https://github.com/shixiaohu2206" target="_block">
               <span class="iconfont icon-github"></span>
+            </a>
+            
+            <a href="https://www.facebook.com/shi.xiaohu.5" target="_block">
+              <span class="iconfont icon-facebook"></span>
+            </a>
+            
+            <a href="https://www.instagram.com/shi_xiaohu/" target="_block">
+              <span class="iconfont icon-instagram"></span>
             </a>
              
             <a href="/atom.xml" target="_block">
@@ -177,11 +174,6 @@
           <span>2020/01/14</span>
         </span>
 
-        
-          <span class="item leancloud-visitors" id="/2020/01/14/springcloud1/" data-flag-title="spring cloud mybaits 微服务增删改查(一)">
-            <span class="iconfont icon-eye1"></span>
-            <span class="leancloud-visitors-count"></span>
-          </span>
         
 
          
@@ -221,17 +213,17 @@
 <p><strong>1.构建spring cloud聚合项目</strong></p>
 <p>1)新建maven项目</p>
 <p>不需要使用模板，直接next，填写项目名称继续next,最后finish</p>
-<p><a href="https://img-blog.csdnimg.cn/20190925111020451.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3d3d19pbmRvd3M=,size_16,color_FFFFFF,t_70" target="_blank" rel="noopener" data-caption="在这里插入图片描述" data-fancybox="images"><img src="https://img-blog.csdnimg.cn/20190925111020451.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3d3d19pbmRvd3M=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></a></p>
+<p><a target="_blank" rel="noopener" href="https://img-blog.csdnimg.cn/20190925111020451.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3d3d19pbmRvd3M=,size_16,color_FFFFFF,t_70" data-caption="在这里插入图片描述" data-fancybox="images"><img src="https://img-blog.csdnimg.cn/20190925111020451.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3d3d19pbmRvd3M=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></a></p>
 <p>2）构建子模块</p>
 <p>删除掉父模块中的src文件夹，新建子模块，最后层次结构如下：</p>
-<p><a href="https://img-blog.csdnimg.cn/20190925111706101.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3d3d19pbmRvd3M=,size_16,color_FFFFFF,t_70" target="_blank" rel="noopener" data-caption="在这里插入图片描述" data-fancybox="images"><img src="https://img-blog.csdnimg.cn/20190925111706101.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3d3d19pbmRvd3M=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></a></p>
+<p><a target="_blank" rel="noopener" href="https://img-blog.csdnimg.cn/20190925111706101.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3d3d19pbmRvd3M=,size_16,color_FFFFFF,t_70" data-caption="在这里插入图片描述" data-fancybox="images"><img src="https://img-blog.csdnimg.cn/20190925111706101.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3d3d19pbmRvd3M=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></a></p>
 <p>在项目工程上右键new->Module，一直next就行，注意一下继承的父模块。</p>
-<p><a href="https://img-blog.csdnimg.cn/20190925112426157.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3d3d19pbmRvd3M=,size_16,color_FFFFFF,t_70" target="_blank" rel="noopener" data-caption="在这里插入图片描述" data-fancybox="images"><img src="https://img-blog.csdnimg.cn/20190925112426157.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3d3d19pbmRvd3M=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></a></p>
+<p><a target="_blank" rel="noopener" href="https://img-blog.csdnimg.cn/20190925112426157.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3d3d19pbmRvd3M=,size_16,color_FFFFFF,t_70" data-caption="在这里插入图片描述" data-fancybox="images"><img src="https://img-blog.csdnimg.cn/20190925112426157.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3d3d19pbmRvd3M=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></a></p>
 <p>其他模块也是如此新建。</p>
 <p>父模块的pom.xml：</p>
-<p><a href="https://img-blog.csdnimg.cn/20190925112659123.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3d3d19pbmRvd3M=,size_16,color_FFFFFF,t_70" target="_blank" rel="noopener" data-caption="在这里插入图片描述" data-fancybox="images"><img src="https://img-blog.csdnimg.cn/20190925112659123.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3d3d19pbmRvd3M=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></a></p>
+<p><a target="_blank" rel="noopener" href="https://img-blog.csdnimg.cn/20190925112659123.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3d3d19pbmRvd3M=,size_16,color_FFFFFF,t_70" data-caption="在这里插入图片描述" data-fancybox="images"><img src="https://img-blog.csdnimg.cn/20190925112659123.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3d3d19pbmRvd3M=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></a></p>
 <p>子模块的pom.xml:</p>
-<p><a href="https://img-blog.csdnimg.cn/20190925112727798.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3d3d19pbmRvd3M=,size_16,color_FFFFFF,t_70" target="_blank" rel="noopener" data-caption="在这里插入图片描述" data-fancybox="images"><img src="https://img-blog.csdnimg.cn/20190925112727798.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3d3d19pbmRvd3M=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></a></p>
+<p><a target="_blank" rel="noopener" href="https://img-blog.csdnimg.cn/20190925112727798.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3d3d19pbmRvd3M=,size_16,color_FFFFFF,t_70" data-caption="在这里插入图片描述" data-fancybox="images"><img src="https://img-blog.csdnimg.cn/20190925112727798.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3d3d19pbmRvd3M=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></a></p>
 <p><strong>2.配置注册中心</strong></p>
 <ul>
 <li>配置spring boot spring cloud等依赖。公共依赖可放在父模块,子模块可以调用父模块的pom.xml</li>
@@ -242,7 +234,7 @@
 <ul>
 <li>手动新建application.yml（文件名不可随意更改）</li>
 </ul>
-<p><a href="https://img-blog.csdnimg.cn/20190925113449653.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3d3d19pbmRvd3M=,size_16,color_FFFFFF,t_70" target="_blank" rel="noopener" data-caption="在这里插入图片描述" data-fancybox="images"><img src="https://img-blog.csdnimg.cn/20190925113449653.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3d3d19pbmRvd3M=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></a></p>
+<p><a target="_blank" rel="noopener" href="https://img-blog.csdnimg.cn/20190925113449653.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3d3d19pbmRvd3M=,size_16,color_FFFFFF,t_70" data-caption="在这里插入图片描述" data-fancybox="images"><img src="https://img-blog.csdnimg.cn/20190925113449653.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3d3d19pbmRvd3M=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></a></p>
 <blockquote>
 <figure class="highlight yml"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 端口号</span></span><br><span class="line">  <span class="attr">server:</span></span><br><span class="line">  <span class="attr">port:</span> <span class="number">8088</span></span><br><span class="line">  <span class="comment">#eureka配置</span></span><br><span class="line">  <span class="attr">eureka:</span></span><br><span class="line">  <span class="attr">instance:</span></span><br><span class="line">  <span class="comment">#注册中心ip地址</span></span><br><span class="line">      <span class="attr">hostname:</span> <span class="string">localhost</span></span><br><span class="line">  <span class="attr">client:</span></span><br><span class="line">      <span class="comment">#是否注册到eureka</span></span><br><span class="line">      <span class="attr">register-with-eureka:</span> <span class="literal">false</span></span><br><span class="line">      <span class="comment">#是否检测服务信息</span></span><br><span class="line">      <span class="attr">fetch-registry:</span> <span class="literal">false</span></span><br><span class="line">      <span class="comment">#注册地址</span></span><br><span class="line">      <span class="attr">service-url:</span></span><br><span class="line">      <span class="attr">defaultZone:</span> <span class="string">http://${eureka.instance.hostname}:${server.port}/eureka/</span></span><br></pre></td></tr></tbody></table></figure>
 </blockquote>
@@ -258,7 +250,7 @@
 <ul>
 <li>添加application.yml和application</li>
 </ul>
-<p><a href="https://img-blog.csdnimg.cn/20190925114804773.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3d3d19pbmRvd3M=,size_16,color_FFFFFF,t_70" target="_blank" rel="noopener" data-caption="在这里插入图片描述" data-fancybox="images"><img src="https://img-blog.csdnimg.cn/20190925114804773.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3d3d19pbmRvd3M=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></a></p>
+<p><a target="_blank" rel="noopener" href="https://img-blog.csdnimg.cn/20190925114804773.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3d3d19pbmRvd3M=,size_16,color_FFFFFF,t_70" data-caption="在这里插入图片描述" data-fancybox="images"><img src="https://img-blog.csdnimg.cn/20190925114804773.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3d3d19pbmRvd3M=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></a></p>
 <blockquote>
 <figure class="highlight yml"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">  <span class="attr">eureka:</span></span><br><span class="line">  <span class="attr">client:</span></span><br><span class="line"><span class="comment">#注意！这里注册中心地址，要把服务注册到注册中心</span></span><br><span class="line">      <span class="attr">service-url:</span></span><br><span class="line">      <span class="attr">defaultZone:</span> <span class="string">http://localhost:8088/eureka/</span></span><br><span class="line">  <span class="comment">#服务端口号</span></span><br><span class="line">  <span class="attr">server:</span></span><br><span class="line">  <span class="attr">port:</span> <span class="number">8089</span></span><br><span class="line">  <span class="attr">spring:</span></span><br><span class="line">  <span class="comment">#本服务的注册到注册中心的别名</span></span><br><span class="line">  <span class="attr">application:</span></span><br><span class="line">      <span class="attr">name:</span> <span class="string">service-member</span></span><br><span class="line">  <span class="attr">jpa:</span></span><br><span class="line">      <span class="attr">generate-ddl:</span> <span class="literal">false</span></span><br><span class="line">      <span class="attr">show-sql:</span> <span class="literal">true</span></span><br><span class="line">      <span class="attr">hibernate:</span></span><br><span class="line">      <span class="attr">ddl-auto:</span> <span class="string">none</span></span><br><span class="line">  <span class="attr">datasource:</span></span><br><span class="line">      <span class="attr">url:</span> <span class="string">jdbc:mysql://127.0.0.1:3306/ssmdemo?serverTimezone=UTC</span></span><br><span class="line">      <span class="attr">username:</span> <span class="string">root</span></span><br><span class="line">      <span class="attr">password:</span> <span class="number">123456</span></span><br><span class="line">      <span class="attr">driver-class-name:</span> <span class="string">com.mysql.cj.jdbc.Driver</span></span><br><span class="line">  <span class="attr">mybatis:</span></span><br><span class="line">  <span class="attr">mapper-locations:</span> <span class="string">classpath*:mappers/*.xml</span></span><br></pre></td></tr></tbody></table></figure>
 </blockquote>
@@ -267,15 +259,15 @@
 <figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.springcloud.produce;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> org.mybatis.spring.annotation.MapperScan;</span><br><span class="line"><span class="keyword">import</span> org.springframework.boot.SpringApplication;</span><br><span class="line"><span class="keyword">import</span> org.springframework.boot.autoconfigure.EnableAutoConfiguration;</span><br><span class="line"><span class="keyword">import</span> org.springframework.boot.autoconfigure.SpringBootApplication;</span><br><span class="line"><span class="keyword">import</span> org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;</span><br><span class="line"><span class="keyword">import</span> org.springframework.cloud.netflix.eureka.EnableEurekaClient;</span><br><span class="line"></span><br><span class="line"><span class="meta">@SpringBootApplication</span></span><br><span class="line"><span class="meta">@EnableEurekaClient</span></span><br><span class="line"><span class="meta">@MapperScan</span>(<span class="string">"com.springcloud.produce.mapper"</span>)</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">mybatisProduce_Application</span> </span>{</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span>{</span><br><span class="line">        SpringApplication.run(mybatisProduce_Application<span class="class">.<span class="keyword">class</span>,<span class="title">args</span>)</span>;</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
 </blockquote>
 <p>构建测试controller</p>
-<p><a href="https://img-blog.csdnimg.cn/20190925115250599.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3d3d19pbmRvd3M=,size_16,color_FFFFFF,t_70" target="_blank" rel="noopener" data-caption="在这里插入图片描述" data-fancybox="images"><img src="https://img-blog.csdnimg.cn/20190925115250599.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3d3d19pbmRvd3M=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></a></p>
+<p><a target="_blank" rel="noopener" href="https://img-blog.csdnimg.cn/20190925115250599.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3d3d19pbmRvd3M=,size_16,color_FFFFFF,t_70" data-caption="在这里插入图片描述" data-fancybox="images"><img src="https://img-blog.csdnimg.cn/20190925115250599.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3d3d19pbmRvd3M=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></a></p>
 <blockquote>
 <figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.springcloud.produce.controller;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> org.springframework.web.bind.annotation.RequestMapping;</span><br><span class="line"><span class="keyword">import</span> org.springframework.web.bind.annotation.RestController;</span><br><span class="line"></span><br><span class="line"><span class="meta">@RestController</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">testController</span> </span>{</span><br><span class="line">    <span class="meta">@RequestMapping</span>(<span class="string">"/test"</span>)</span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getUserList</span><span class="params">()</span></span>{</span><br><span class="line">        <span class="keyword">return</span> <span class="string">"hello eureka"</span>;</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
 </blockquote>
 <p>运行注册模块和生产微服务模块 </p>
-<p><a href="https://img-blog.csdnimg.cn/20190925115709117.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3d3d19pbmRvd3M=,size_16,color_FFFFFF,t_70" target="_blank" rel="noopener" data-caption="在这里插入图片描述" data-fancybox="images"><img src="https://img-blog.csdnimg.cn/20190925115709117.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3d3d19pbmRvd3M=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></a></p>
-<p><a href="https://img-blog.csdnimg.cn/20190925115814903.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3d3d19pbmRvd3M=,size_16,color_FFFFFF,t_70" target="_blank" rel="noopener" data-caption="在这里插入图片描述" data-fancybox="images"><img src="https://img-blog.csdnimg.cn/20190925115814903.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3d3d19pbmRvd3M=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></a></p>
+<p><a target="_blank" rel="noopener" href="https://img-blog.csdnimg.cn/20190925115709117.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3d3d19pbmRvd3M=,size_16,color_FFFFFF,t_70" data-caption="在这里插入图片描述" data-fancybox="images"><img src="https://img-blog.csdnimg.cn/20190925115709117.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3d3d19pbmRvd3M=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></a></p>
+<p><a target="_blank" rel="noopener" href="https://img-blog.csdnimg.cn/20190925115814903.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3d3d19pbmRvd3M=,size_16,color_FFFFFF,t_70" data-caption="在这里插入图片描述" data-fancybox="images"><img src="https://img-blog.csdnimg.cn/20190925115814903.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3d3d19pbmRvd3M=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></a></p>
 <p><strong>4.配置服务消费者</strong></p>
-<p><a href="https://img-blog.csdnimg.cn/20190925145616621.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3d3d19pbmRvd3M=,size_16,color_FFFFFF,t_70" target="_blank" rel="noopener" data-caption="在这里插入图片描述" data-fancybox="images"><img src="https://img-blog.csdnimg.cn/20190925145616621.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3d3d19pbmRvd3M=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></a><br>application.yml:</p>
+<p><a target="_blank" rel="noopener" href="https://img-blog.csdnimg.cn/20190925145616621.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3d3d19pbmRvd3M=,size_16,color_FFFFFF,t_70" data-caption="在这里插入图片描述" data-fancybox="images"><img src="https://img-blog.csdnimg.cn/20190925145616621.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3d3d19pbmRvd3M=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></a><br>application.yml:</p>
 <blockquote>
 <figure class="highlight yml"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">  <span class="attr">eureka:</span></span><br><span class="line">  <span class="attr">client:</span></span><br><span class="line"><span class="comment">#注意！ 这里注册中心地址，要把服务注册到注册中心</span></span><br><span class="line">      <span class="attr">service-url:</span></span><br><span class="line">      <span class="attr">defaultZone:</span> <span class="string">http://localhost:8088/eureka/</span></span><br><span class="line">  <span class="attr">server:</span></span><br><span class="line">  <span class="comment">#服务端口号</span></span><br><span class="line">  <span class="attr">port:</span> <span class="number">8087</span></span><br><span class="line">  <span class="attr">spring:</span></span><br><span class="line">  <span class="comment">#本服务注册到注册中心的别名</span></span><br><span class="line">  <span class="attr">application:</span></span><br><span class="line">      <span class="attr">name:</span> <span class="string">service-order</span></span><br></pre></td></tr></tbody></table></figure>
 </blockquote>
@@ -290,7 +282,7 @@
 <blockquote>
 <figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">   <span class="keyword">package</span> com.springcloud.consumer.controller;</span><br><span class="line"></span><br><span class="line">   <span class="keyword">import</span> com.springcloud.consumer.util.MemberApiFeign;</span><br><span class="line">   <span class="keyword">import</span> org.springframework.beans.factory.annotation.Autowired;</span><br><span class="line">   <span class="keyword">import</span> org.springframework.web.bind.annotation.RequestMapping;</span><br><span class="line">   <span class="keyword">import</span> org.springframework.web.bind.annotation.RestController;</span><br><span class="line">   <span class="keyword">import</span> org.springframework.web.client.RestTemplate;</span><br><span class="line"></span><br><span class="line">   <span class="meta">@RestController</span></span><br><span class="line">   <span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">orderController</span> </span>{</span><br><span class="line"><span class="comment">// 自动注入RestTemplate类</span></span><br><span class="line">       <span class="meta">@Autowired</span></span><br><span class="line">       <span class="keyword">private</span> RestTemplate restTemplate;</span><br><span class="line"></span><br><span class="line">       <span class="meta">@Autowired</span></span><br><span class="line">       <span class="keyword">private</span> MemberApiFeign memberApiFeign;</span><br><span class="line"></span><br><span class="line">       <span class="comment">//第一种方法通过Spring提供的用于访问Rest服务的客户端</span></span><br><span class="line">       <span class="meta">@RequestMapping</span>(<span class="string">"/getOrder"</span>)</span><br><span class="line">       <span class="function"><span class="keyword">public</span> String <span class="title">getOrder</span><span class="params">()</span></span>{</span><br><span class="line">           <span class="comment">//这里放的url，使用的是服务提供者的别名+方法名</span></span><br><span class="line">           String result = restTemplate.getForObject(<span class="string">"http://service-member:8089/test"</span>,String<span class="class">.<span class="keyword">class</span>)</span>;</span><br><span class="line">           <span class="keyword">return</span> result;</span><br><span class="line">       }</span><br><span class="line"></span><br><span class="line">       <span class="comment">//第二种方法通过feign声明web服务客户端调用</span></span><br><span class="line">       <span class="meta">@RequestMapping</span>(<span class="string">"/getFeignOrder"</span>)</span><br><span class="line">       <span class="function"><span class="keyword">public</span> String <span class="title">getFeignOrder</span><span class="params">()</span></span>{</span><br><span class="line">           <span class="keyword">return</span> memberApiFeign.Test();</span><br><span class="line">       }</span><br><span class="line">   }</span><br></pre></td></tr></tbody></table></figure>
 </blockquote>
-<p><a href="https://img-blog.csdnimg.cn/20190925144945696.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3d3d19pbmRvd3M=,size_16,color_FFFFFF,t_70" target="_blank" rel="noopener" data-caption="在这里插入图片描述" data-fancybox="images"><img src="https://img-blog.csdnimg.cn/20190925144945696.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3d3d19pbmRvd3M=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></a></p>
+<p><a target="_blank" rel="noopener" href="https://img-blog.csdnimg.cn/20190925144945696.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3d3d19pbmRvd3M=,size_16,color_FFFFFF,t_70" data-caption="在这里插入图片描述" data-fancybox="images"><img src="https://img-blog.csdnimg.cn/20190925144945696.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3d3d19pbmRvd3M=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></a></p>
 <ul>
 <li>方法二：通过feign声明web服务客户端调用原理</li>
 </ul>
@@ -359,34 +351,18 @@
         <footer>
           <div class="copyright">
             ©2020
-            <a href="https://wentianhao.github.io">wenhao</a> Powered by <a href="https://hexo.io" target="_blank" rel="noopener">Hexo</a> |
-            <a href="https://github.com/shixiaohu2206/hexo-theme-huhu" target="_blank" rel="noopener">hexo-theme-huhu</a>
+            <a href="https://wentianhao.github.io">wenhao</a> Powered by <a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a> |
+            <a target="_blank" rel="noopener" href="https://github.com/shixiaohu2206/hexo-theme-huhu">hexo-theme-huhu</a>
           </div>
-
-
           
         </footer>
-        <footer>
-          <div class="copyright">
-            <p>
-              本站于 <code class="site_from"></code> 接入百度站点，建站已 <code class="site_date"></code> 天
-              截止到目前，整站访问次数 <code class="site_pv"></code>、访问人数 <code class="site_uv"></code>
-            </p>
-            <br>
-            <p>
-              <!-- <canvas id="doughnut-chart" width="100" height="45"></canvas> -->
-            </p>
-          </div>
-            <!-- <canvas id="line-chart" width="100" height="45"></canvas> -->
-        </footer>
-
       </div>
     </div>
   </body>
   
 </html>
 <script type="text/javascript">
-                  window.HUHU_CONFIG = JSON.parse("{\"share\":[\"weibo\",\"weixin\",\"qqkongjian\",\"QQ\",\"douban\",\"facebook\",\"twitter\",\"google\"],\"valine\":{\"API_ID\":\"tI1OoTxIlFu57id4qeYFPaDd-gzGzoHsz\",\"API_KEY\":\"BvmcL9NxpddU4y5DDL9qK635\"},\"service_worker\":{\"open\":false},\"baidu_tongji\":{\"site_from\":\"2020/1/14\",\"site_id\":\"14335783\",\"access_token\":\"121.86adff4a6f4b3ee130984df42776cd4f.YGBCtpWR_fwkcChxUa6p5brbZ9d3KFCuDYefShx.3JVsNQ\"}}")
+                  window.HUHU_CONFIG = JSON.parse("{\"share\":[\"weibo\",\"weixin\",\"qqkongjian\",\"QQ\",\"douban\",\"facebook\",\"twitter\",\"google\"],\"service_worker\":{\"open\":false}}")
                 </script> <script type="text/javascript">window.addEventListener('load', function() {
     
     window.loadJs = function(d, m, a) {

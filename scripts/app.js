@@ -37,7 +37,7 @@ require([
       visitor: true,
       recordIP: true,
       avatar: 'mp',
-      placeholder: '这个人很懒，他/她什么都没有评论'
+      placeholder: '骑士很煎蛋、骑士很孜然'
     })
   }
 
@@ -236,7 +236,7 @@ require([
       var BAIDU_CHART = 'BAIDU_CHART'
       var date = new Date()
       var start = new Date(date.getTime() - 60 * 60 * 1000 * 24 * 6)
-      var start_date = `${start.getFullYear()}${prefix(start.getMonth() + 1)}${prefix(start.getDate())}`
+      var start_date = `${start.getFullYear()}${start.getMonth() + 1}${prefix(start.getDate())}`
       var end_date = `${date.getFullYear()}${prefix(date.getMonth() + 1)}${prefix(date.getDate())}`
       var url = `https://openapi.baidu.com/rest/2.0/tongji/report/getData?access_token=${HUHU_CONFIG.baidu_tongji.access_token}&site_id=${HUHU_CONFIG.baidu_tongji.site_id}&method=overview/getTimeTrendRpt&start_date=${start_date}&end_date=${end_date}&metrics=pv_count,visitor_count`
 

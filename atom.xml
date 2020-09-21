@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://wentianhao.github.io/"/>
-  <updated>2020-09-21T04:53:43.777Z</updated>
+  <updated>2020-09-21T06:13:53.874Z</updated>
   <id>https://wentianhao.github.io/</id>
   
   <author>
@@ -17,13 +17,38 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>数学之美</title>
+    <link href="https://wentianhao.github.io/2020/09/21/%E6%95%B0%E5%AD%A6%E4%B9%8B%E7%BE%8E/"/>
+    <id>https://wentianhao.github.io/2020/09/21/%E6%95%B0%E5%AD%A6%E4%B9%8B%E7%BE%8E/</id>
+    <published>2020-09-21T05:33:41.000Z</published>
+    <updated>2020-09-21T06:13:53.874Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote><p>简单即是美</p></blockquote><h2 id="文字和语言-vs-数字和信息"><a href="#文字和语言-vs-数字和信息" class="headerlink" title="文字和语言 vs 数字和信息"></a><strong>文字和语言 vs 数字和信息</strong></h2><p><em>文字和语言与数学，从产生起原本就有相通性，虽然它们的发展一度分道扬镳，但是最终还是能走到一起。</em></p><p>冷知识 ：阿拉伯数字不是阿拉伯人发明的，而是印度人发明的</p><ul><li>通信的原理和信息传播的模型</li><li>(信源)编码和最短编码</li><li>解码的规则，语法</li><li>聚类</li><li>校验位</li><li>双语对照文本，语料库和机器翻译</li><li>多义性和利用上下文消除歧义性</li></ul><h2 id="自然语言处理"><a href="#自然语言处理" class="headerlink" title="自然语言处理"></a><strong>自然语言处理</strong></h2><p><em>人类对机器理解自然语言的认识走了一条大弯路。早期的研究集中采用基于规则的方法，虽然解决了一些简单的问题，但是无法从根本上将自然语言理解实用化。直到20多年后，人们开始尝试用基于统计的方法进行自然语言处理，才有了突破性进展和实用的产品。</em></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;blockquote&gt;
+&lt;p&gt;简单即是美&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&quot;文字和语言-vs-数字和信息&quot;&gt;&lt;a href=&quot;#文字和语言-vs-数字和信息&quot; class=&quot;headerlink&quot; title=&quot;文字和语言 vs 数字和信息&quot;&gt;&lt;/a&gt;&lt;str
+      
+    
+    </summary>
+    
+    
+    
+  </entry>
+  
+  <entry>
     <title>基于双词主题模型的半监督实体消歧方法研究</title>
     <link href="https://wentianhao.github.io/2020/09/21/%E5%9F%BA%E4%BA%8E%E5%8F%8C%E8%AF%8D%E4%B8%BB%E9%A2%98%E6%A8%A1%E5%9E%8B%E7%9A%84%E5%8D%8A%E7%9B%91%E7%9D%A3%E5%AE%9E%E4%BD%93%E6%B6%88%E6%AD%A7%E6%96%B9%E6%B3%95%E7%A0%94%E7%A9%B6/"/>
     <id>https://wentianhao.github.io/2020/09/21/%E5%9F%BA%E4%BA%8E%E5%8F%8C%E8%AF%8D%E4%B8%BB%E9%A2%98%E6%A8%A1%E5%9E%8B%E7%9A%84%E5%8D%8A%E7%9B%91%E7%9D%A3%E5%AE%9E%E4%BD%93%E6%B6%88%E6%AD%A7%E6%96%B9%E6%B3%95%E7%A0%94%E7%A9%B6/</id>
     <published>2020-09-21T02:08:46.000Z</published>
-    <updated>2020-09-21T04:53:43.777Z</updated>
+    <updated>2020-09-21T04:57:20.073Z</updated>
     
-    <content type="html"><![CDATA[<p><strong>基于双词主题模型的半监督实体消歧方法研究</strong></p><h2 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a><strong>摘要</strong></h2><p>针对实体上下文信息主题漂移问题，提出一种基于双词主题模型的实体消歧方法。方法考虑到实体在一定语义环境下具有不同的主题，且在同一文档中同时出现的其他实体在一定程度上能够帮助待消歧实体确定所指代内容，利用命名实体构建双词的思想，将协同实体关系融合到主题模型中，并在此基础上利用Wikipedia知识库，进行半监督消歧。</p><p><strong>关键词</strong> ：实体消歧；Wikipedia；双词主题模型</p><a id="more"></a><p>现有研究在对实体协同作用的分析时，并未考虑到随着实体主题迭代出现的主题漂移现象，从而导致主题模型的精度降低</p><p>本文针对全局主题信息漂移问题，采用双词主题模型(Biterm Topic Modeling,BTM)，结合Wikipedia知识库中的实体页面，提出基于BTM的半监督命名实体消歧算法。该算法利用Wikipedia实体摘要信息(实体页面)，构建双词集合并赋予实体主题标签，且保证双词中至少有一个为实体词，有效降低主题漂移现象，提高主题模型的精度，从而改善实体消歧效果。</p><h2 id="BTM主题模型"><a href="#BTM主题模型" class="headerlink" title="BTM主题模型"></a><strong>BTM主题模型</strong></h2><p>BTM是一种短文本主题概率生成模型。该模型针对短文本主题模型中出现的数据稀疏的问题，通过建立共现词组合(双词)来改进传统的LDA主题模型，提高主题中词聚合程度，有效改善短文本中主题模型的性能</p><p>双词 ：同一文本中同时出现的无序词对。</p><p>核心思想 ：两个词共同出现的频率越高，则双词属于同一个主题的可能性越大。</p><p>模型假设 ：双词中的每个词都独立的从一个主题中生成，且该主题从一个全局语料库的主题分布中生成</p><h2 id="消歧算法模型"><a href="#消歧算法模型" class="headerlink" title="消歧算法模型"></a><strong>消歧算法模型</strong></h2><p>双词模型通过构建词对(例如：词“哥伦布”可以表示航海家、城市、演员等，若不利用上下文信息，很难确定指代的实体，如果文本中词“哥伦布”附近出现词“海洋”/“船只”，则基本可以确定指称项“哥伦布”表示航海家哥伦布)，首先将上下文信息以一种词联合的表示方法联系在一起，然后通过多个词对表达文本的主题信息，使之更加全面准确的表达上下文信息，从而减小主题偏移影响。</p><p>实体词作为BTM双词模型的一个词，文本中其他名词或名词短语作为另一个词</p><h3 id="模型框架"><a href="#模型框架" class="headerlink" title="模型框架"></a><strong>模型框架</strong></h3><p>半监督实体消歧算法 ：实体双词主题模型(Entity-Biterm Topic Modeling,EBTM)，通过构建&lt;实体，名词(或实体)&gt;词对，为每个词对分配一个主题，最终得到词对中实体的主题。</p><p><img src="https://whh.plus/images/EBTM.png" alt="模型框架" loading="lazy"></p><p>首先为每个Wiki实体页面中分配一个单独的主题(将该主题看作一个实体标签)，即对Wiki页面中的每个共现词对标记该实体标签，进而通过对测试文本中待消歧实体进行实体标注的方式，确定候选实体</p><h3 id="半监督算法"><a href="#半监督算法" class="headerlink" title="半监督算法"></a><strong>半监督算法</strong></h3><p>模型分为训练阶段和标注阶段</p><p>训练阶段 ：收集Wiki页面集用(T)表示，</p>]]></content>
+    <content type="html"><![CDATA[<p><strong>基于双词主题模型的半监督实体消歧方法研究</strong></p><h2 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a><strong>摘要</strong></h2><p>针对实体上下文信息主题漂移问题，提出一种基于双词主题模型的实体消歧方法。方法考虑到实体在一定语义环境下具有不同的主题，且在同一文档中同时出现的其他实体在一定程度上能够帮助待消歧实体确定所指代内容，利用命名实体构建双词的思想，将协同实体关系融合到主题模型中，并在此基础上利用Wikipedia知识库，进行半监督消歧。</p><p><strong>关键词</strong> ：实体消歧；Wikipedia；双词主题模型</p><a id="more"></a><p>现有研究在对实体协同作用的分析时，并未考虑到随着实体主题迭代出现的主题漂移现象，从而导致主题模型的精度降低</p><p>本文针对全局主题信息漂移问题，采用双词主题模型(Biterm Topic Modeling,BTM)，结合Wikipedia知识库中的实体页面，提出基于BTM的半监督命名实体消歧算法。该算法利用Wikipedia实体摘要信息(实体页面)，构建双词集合并赋予实体主题标签，且保证双词中至少有一个为实体词，有效降低主题漂移现象，提高主题模型的精度，从而改善实体消歧效果。</p><h2 id="BTM主题模型"><a href="#BTM主题模型" class="headerlink" title="BTM主题模型"></a><strong>BTM主题模型</strong></h2><p>BTM是一种短文本主题概率生成模型。该模型针对短文本主题模型中出现的数据稀疏的问题，通过建立共现词组合(双词)来改进传统的LDA主题模型，提高主题中词聚合程度，有效改善短文本中主题模型的性能</p><p>双词 ：同一文本中同时出现的无序词对。</p><p>核心思想 ：两个词共同出现的频率越高，则双词属于同一个主题的可能性越大。</p><p>模型假设 ：双词中的每个词都独立的从一个主题中生成，且该主题从一个全局语料库的主题分布中生成</p><h2 id="消歧算法模型"><a href="#消歧算法模型" class="headerlink" title="消歧算法模型"></a><strong>消歧算法模型</strong></h2><p>双词模型通过构建词对(例如：词“哥伦布”可以表示航海家、城市、演员等，若不利用上下文信息，很难确定指代的实体，如果文本中词“哥伦布”附近出现词“海洋”/“船只”，则基本可以确定指称项“哥伦布”表示航海家哥伦布)，首先将上下文信息以一种词联合的表示方法联系在一起，然后通过多个词对表达文本的主题信息，使之更加全面准确的表达上下文信息，从而减小主题偏移影响。</p><p>实体词作为BTM双词模型的一个词，文本中其他名词或名词短语作为另一个词</p><h3 id="模型框架"><a href="#模型框架" class="headerlink" title="模型框架"></a><strong>模型框架</strong></h3><p>半监督实体消歧算法 ：实体双词主题模型(Entity-Biterm Topic Modeling,EBTM)，通过构建&lt;实体，名词(或实体)&gt;词对，为每个词对分配一个主题，最终得到词对中实体的主题。</p><p><img src="https://whh.plus/images/EBTM.png" alt="模型框架" loading="lazy"></p><p>首先为每个Wiki实体页面中分配一个单独的主题(将该主题看作一个实体标签)，即对Wiki页面中的每个共现词对标记该实体标签，进而通过对测试文本中待消歧实体进行实体标注的方式，确定候选实体</p><h3 id="半监督算法"><a href="#半监督算法" class="headerlink" title="半监督算法"></a><strong>半监督算法</strong></h3><p>模型分为训练阶段和标注阶段</p><p>训练阶段 ：收集Wiki页面集用$T$表示，</p>]]></content>
     
     <summary type="html">
     
@@ -555,32 +580,6 @@
       <category term="python" scheme="https://wentianhao.github.io/tags/python/"/>
     
       <category term="python爬虫" scheme="https://wentianhao.github.io/tags/python%E7%88%AC%E8%99%AB/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>数据同步神器</title>
-    <link href="https://wentianhao.github.io/2020/03/02/syncthing/"/>
-    <id>https://wentianhao.github.io/2020/03/02/syncthing/</id>
-    <published>2020-03-02T08:58:59.000Z</published>
-    <updated>2020-09-14T06:48:39.751Z</updated>
-    
-    <content type="html"><![CDATA[<html><head></head><body><p><a href="https://www.moewah.com/usr/uploads/2019/03/3082024495.jpg" data-caption="syncthing" data-fancybox="images"><img src="https://www.moewah.com/usr/uploads/2019/03/3082024495.jpg" alt="syncthing"></a></p><p>最近打算同步一下数据，发现了一个口碑还不错的数据同步工具——Syncthing,是一款开源免费的数据同步工具，支持Android、Linux、Windows、Mac OS等系统，可以在任意2台设备之间，实现实时同步。通信使用TLS进行保护，所使用的加密包括完美的前向保密，很适合搭建私有同步网盘</p><h2 id="安装"><strong>安装</strong><a class="post-anchor" href="#安装"></a></h2><p>本文只做Linux服务器和Windows电脑之间的同步安装以及演示操作。</p><h3 id="1、linux安装Syncthing"><strong>1、linux安装Syncthing</strong><a class="post-anchor" href="#1、linux安装Syncthing"></a></h3><p>安装Syncthing:</p><blockquote><figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#目前最新版v1.2.0，日后自行修改版本号</span></span><br><span class="line">  wget https://github.com/syncthing/syncthing/releases/download/v1.3.4/syncthing-linux-amd64-v1.3.4.tar.gz</span><br><span class="line">  tar xzvf syncthing-linux-amd64-v1.3.4.tar.gz</span><br><span class="line">  cp syncthing-linux-amd64-v1.3.4/syncthing /usr/<span class="built_in">local</span>/bin</span><br></pre></td></tr></tbody></table></figure></blockquote><h4 id="开放端口"><strong>开放端口</strong><a class="post-anchor" href="#开放端口"></a></h4><p>Syncthing 默认监听以下几个端口</p><blockquote><figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">22000(TCP)</span><br><span class="line">8384(TCP)</span><br><span class="line">21027(UDP)</span><br><span class="line">44647(UDP)</span><br><span class="line">37269(UDP)</span><br></pre></td></tr></tbody></table></figure></blockquote><p>个人使用，仅开放22000(TCP)和8384(TCP)</p><p>8384:web访问控制端口<br>22000：节点访问端口</p><p>开启Syncthing</p><blockquote><figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">syncthing</span><br></pre></td></tr></tbody></table></figure></blockquote><p>第一次启动会生成配置，内网地址是进不去的，需修改成外网地址。</p><p>修改配置</p><blockquote><figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">vim /root/.config/syncthing/config.xml</span><br><span class="line"><span class="comment"># 将127.0.0.1:8384改为</span></span><br><span class="line"><span class="comment"># 0.0.0.0:8384</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#再次启动Syncthing</span></span><br><span class="line">syncthing</span><br></pre></td></tr></tbody></table></figure></blockquote><p>浏览器访问:</p><p><a href="http://server_ip:8384" target="_blank" rel="noopener">http://server_ip:8384</a></p><p>需自行开放8384端口哦</p><p>设置账号密码，其他参数暂时无需更改，重启</p><p><a href="https://github.com/wentianhao/wentianhao.github.io/blob/master/images/HU.png?raw=true" data-caption="syncthing" data-fancybox="images"><img src="https://github.com/wentianhao/wentianhao.github.io/blob/master/images/HU.png?raw=true" alt="syncthing"></a></p><p>linux ：后台运行Syncthing</p><blockquote><figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nohup synchthing &> /dev/null &</span><br></pre></td></tr></tbody></table></figure></blockquote><h3 id="2、Windows安装Syncthing"><strong>2、Windows安装Syncthing</strong><a class="post-anchor" href="#2、Windows安装Syncthing"></a></h3><p><a href="https://syncthing.net/downloads/" target="_blank" rel="noopener">官网下载</a>对应版本的Syncthing,运行syncthing.exe</p><p><a href="https://github.com/wentianhao/wentianhao.github.io/blob/master/images/syncmd.png?raw=true" data-caption="cmd" data-fancybox="images"><img src="https://github.com/wentianhao/wentianhao.github.io/blob/master/images/syncmd.png?raw=true" alt="cmd"></a></p><p><a href="https://github.com/wentianhao/wentianhao.github.io/blob/master/images/syncsetting.png?raw=true" data-caption="setting" data-fancybox="images"><img src="https://github.com/wentianhao/wentianhao.github.io/blob/master/images/syncsetting.png?raw=true" alt="setting"></a></p><h3 id="3、使用"><strong>3、使用</strong><a class="post-anchor" href="#3、使用"></a></h3><p>在linux的页面上添加Windows的远程设备ID，自行选择指定文件夹。可在添加设备->高级->地址列表，将dynamic 填写为 tcp://server_ip:22000</p><p>设备添加完成，即可同步文件夹。</p></body></html>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;html&gt;&lt;head&gt;&lt;/head&gt;&lt;body&gt;&lt;p&gt;&lt;a href=&quot;https://www.moewah.com/usr/uploads/2019/03/3082024495.jpg&quot; data-caption=&quot;syncthing&quot; data-fancybox=&quot;imag
-      
-    
-    </summary>
-    
-    
-      <category term="server" scheme="https://wentianhao.github.io/categories/server/"/>
-    
-    
-      <category term="sync" scheme="https://wentianhao.github.io/tags/sync/"/>
     
   </entry>
   

@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://wentianhao.github.io/"/>
-  <updated>2020-09-21T06:20:31.140Z</updated>
+  <updated>2020-09-22T03:13:59.742Z</updated>
   <id>https://wentianhao.github.io/</id>
   
   <author>
@@ -15,6 +15,35 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>基于注意力机制的问句实体链接</title>
+    <link href="https://wentianhao.github.io/2020/09/21/%E5%9F%BA%E4%BA%8E%E6%B3%A8%E6%84%8F%E5%8A%9B%E6%9C%BA%E5%88%B6%E7%9A%84%E9%97%AE%E5%8F%A5%E5%AE%9E%E4%BD%93%E9%93%BE%E6%8E%A5/"/>
+    <id>https://wentianhao.github.io/2020/09/21/%E5%9F%BA%E4%BA%8E%E6%B3%A8%E6%84%8F%E5%8A%9B%E6%9C%BA%E5%88%B6%E7%9A%84%E9%97%AE%E5%8F%A5%E5%AE%9E%E4%BD%93%E9%93%BE%E6%8E%A5/</id>
+    <published>2020-09-21T09:00:05.000Z</published>
+    <updated>2020-09-22T03:13:59.742Z</updated>
+    
+    <content type="html"><![CDATA[<p><strong>基于注意力机制的问句实体链接</strong></p><h2 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a><strong>摘要</strong></h2><p>问句实体链接不仅需要大量的数据处理和特征选择工作，而且容易形成错误积累，降低链接效果。针对这种情况，文中提出基于注意力机制的编码器-解码器问句实体链接模型。模型使用双向的长短期记忆网络编码问句，经过注意力机制解码，生成对应的实体指称和消歧信息输出，最后链接到知识库实体。在有关汽车领域车系产品问句好热实体数据集上的实验表明，文中模型仅利用较少的上下文信息便可取得良好效果。</p><p><strong>关键词</strong> ：问句实体链接；注意力机制；编码器-解码器；长短期记忆网络；生成模型</p><p>问句实体链接是问答系统的一个重要步骤，传统的问句实体链接方法主要通过两个步骤完成，命名实体识别(Named Entity Recognition,NER)和实体链接(Entity Linking)</p><p>命名实体识别最初主要是基于规则的方法：隐马尔可夫模型(Hidden Markov Models,HMM)、最大熵马尔可夫模型(Maximum Entropy Markov Models,MEMM)、条件随机场(Conditional Random Fields,CRF)、支持向量机(Support Vector Machines,SVM)、决策树(Decision Tree,DT)和长短期记忆网络-条件随机场(Long Short-Term Memory-Conditional Random Field,LSTM-CRF)等</p><p>基于注意力机制(Attention Mechanism,AM) ：通过对输入设置不同的权重，捕获其中的关键对齐信息。</p><p><strong>问句和其链接到的实体具有明显的对齐关系，本文将问句实体链接归纳为具有对齐关系的端到端过程，避免传统方法中先进行命名实体识别，再进行实体链接的处理步骤，从而避免其中可能的错误传递累计情况，大幅减少数据处理的工作</strong></p><h2 id="基于注意力机制的Encoder-Deconder"><a href="#基于注意力机制的Encoder-Deconder" class="headerlink" title="基于注意力机制的Encoder-Deconder"></a><strong>基于注意力机制的Encoder-Deconder</strong></h2><p>Encoder部分 ：对于输入序列$x=(x_1,x_2,…,x^{T_x}),x_i∈R^m$，$m$为输入字典的大小，采用One-Hot编码时也是每个字向量的维度，$T_x$为输入序列的长度。</p><p>通常使用循环神经网络(Recurrent Neural Network,RNN)进行编码处理 ：$h_t=f(x_t,h_{t-1})$，$h_t∈R^n$表示RNN Encoder中$t$时刻的隐藏状态，$f$表示非线性函数，$n$表示编码器隐藏层单元数量。</p><p>本文的Encoder使用双向LSTM(Bidirectional LSTM,Bi-LSTM)作为函数$f$</p><p>Decoder部分 ：AM首先计算第$j$时刻输入$h_j$与第$t$时刻隐藏层状态$s_{t-1}$的对齐关系得分$e_{tj}$:<br>$$e_{tj}=a(s_{t-1},h_j)=v_a^Ttanh(W_as_{t-1}+U_ah_j)$$</p><p>$h_j$的权重$\alpha_{tj}$为：<br>$$\alpha_{tj}=$$</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;&lt;strong&gt;基于注意力机制的问句实体链接&lt;/strong&gt;&lt;/p&gt;
+&lt;h2 id=&quot;摘要&quot;&gt;&lt;a href=&quot;#摘要&quot; class=&quot;headerlink&quot; title=&quot;摘要&quot;&gt;&lt;/a&gt;&lt;strong&gt;摘要&lt;/strong&gt;&lt;/h2&gt;&lt;p&gt;问句实体链接不仅需要大量的数
+      
+    
+    </summary>
+    
+    
+      <category term="读书笔记" scheme="https://wentianhao.github.io/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"/>
+    
+    
+      <category term="实体链接" scheme="https://wentianhao.github.io/tags/%E5%AE%9E%E4%BD%93%E9%93%BE%E6%8E%A5/"/>
+    
+      <category term="NLP" scheme="https://wentianhao.github.io/tags/NLP/"/>
+    
+  </entry>
   
   <entry>
     <title>数学之美</title>
@@ -538,40 +567,6 @@
 &lt;p&gt;  解决方案：构建IP代理池&lt;/p&gt;
 
       
-    
-    </summary>
-    
-    
-      <category term="python" scheme="https://wentianhao.github.io/categories/python/"/>
-    
-    
-      <category term="python" scheme="https://wentianhao.github.io/tags/python/"/>
-    
-      <category term="python爬虫" scheme="https://wentianhao.github.io/tags/python%E7%88%AC%E8%99%AB/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>电商信息爬虫项目</title>
-    <link href="https://wentianhao.github.io/2020/03/04/%E7%94%B5%E5%95%86%E4%BF%A1%E6%81%AF%E7%88%AC%E8%99%AB%E9%A1%B9%E7%9B%AE/"/>
-    <id>https://wentianhao.github.io/2020/03/04/%E7%94%B5%E5%95%86%E4%BF%A1%E6%81%AF%E7%88%AC%E8%99%AB%E9%A1%B9%E7%9B%AE/</id>
-    <published>2020-03-04T05:20:32.000Z</published>
-    <updated>2020-09-21T01:59:51.922Z</updated>
-    
-    <content type="html"><![CDATA[<ul><li><p>目标站点: <a href="https://www.taobao.com/">淘宝</a></p></li><li><p>需求数据：指定关键词的商品数据(包括商品名、商品价格、评论数等)</p></li><li><p>要求：自动翻页并输出</p></li><li><p>选择模块: urllib</p></li></ul><a id="more"></a><ul><li><p>分析:<br>  关键词:女装</p><p>  第一页: <a href="https://s.taobao.com/search?q=女装&amp;imgfile=&amp;commend=all&amp;ssid=s5-e&amp;search_type=item&amp;sourceId=tb.index&amp;spm=a21bo.2017.201856-taobao-item.2&amp;ie=utf8&amp;initiative_id=tbindexz_20170306">https://s.taobao.com/search?q=女装&amp;imgfile=&amp;commend=all&amp;ssid=s5-e&amp;search_type=item&amp;sourceId=tb.index&amp;spm=a21bo.2017.201856-taobao-item.2&amp;ie=utf8&amp;initiative_id=tbindexz_20170306</a></p><p>  第二页: <a href="https://s.taobao.com/search?q=女装&amp;imgfile=&amp;commend=all&amp;ssid=s5-e&amp;search_type=item&amp;sourceId=tb.index&amp;spm=a21bo.2017.201856-taobao-item.2&amp;ie=utf8&amp;initiative_id=tbindexz_20170306&amp;bcoffset=3&amp;ntoffset=3&amp;p4ppushleft=1%2C48&amp;s=44">https://s.taobao.com/search?q=女装&amp;imgfile=&amp;commend=all&amp;ssid=s5-e&amp;search_type=item&amp;sourceId=tb.index&amp;spm=a21bo.2017.201856-taobao-item.2&amp;ie=utf8&amp;initiative_id=tbindexz_20170306&amp;bcoffset=3&amp;ntoffset=3&amp;p4ppushleft=1%2C48&amp;s=44</a></p><p>  第三页: <a href="https://s.taobao.com/search?q=女装&amp;imgfile=&amp;commend=all&amp;ssid=s5-e&amp;search_type=item&amp;sourceId=tb.index&amp;spm=a21bo.2017.201856-taobao-item.2&amp;ie=utf8&amp;initiative_id=tbindexz_20170306&amp;bcoffset=0&amp;ntoffset=6&amp;p4ppushleft=1%2C48&amp;s=88">https://s.taobao.com/search?q=女装&amp;imgfile=&amp;commend=all&amp;ssid=s5-e&amp;search_type=item&amp;sourceId=tb.index&amp;spm=a21bo.2017.201856-taobao-item.2&amp;ie=utf8&amp;initiative_id=tbindexz_20170306&amp;bcoffset=0&amp;ntoffset=6&amp;p4ppushleft=1%2C48&amp;s=88</a></p><p>  url: <a href="https://s.taobao.com/search?q=女装&amp;imgfile=&amp;commend=all&amp;ssid=s5-e&amp;search_type=item&amp;sourceId=tb.index&amp;spm=a21bo.2017.201856-taobao-item.2&amp;ie=utf8&amp;initiative_id=tbindexz_20170306&amp;s=(page-1)*44">https://s.taobao.com/search?q=女装&amp;imgfile=&amp;commend=all&amp;ssid=s5-e&amp;search_type=item&amp;sourceId=tb.index&amp;spm=a21bo.2017.201856-taobao-item.2&amp;ie=utf8&amp;initiative_id=tbindexz_20170306&amp;s=(page-1)*44</a></p><p>  <a href="https://s.taobao.com/search?q=女装&amp;s=(page-1)*44">https://s.taobao.com/search?q=女装&amp;s=(page-1)*44</a></p><p>  商品名： “raw_title”:”无印良品 MUJI 女式 减轻颈部刺痛感 罗纹 高领毛衣”</p><p>  商品价格:  “view_price”:”124.00”</p><p>  评论数: </p><p>  产品链接：<a href="https://detail.tmall.com/item.htm?id=604628031536">https://detail.tmall.com/item.htm?id=604628031536</a></p><p>  “detail_url”:”//detail.tmall.com/item.htm?id\u003d604628031536\u0026ad_id\u003d\u0026am_id\u003d\u0026cm_id\u003d140105335569ed55e27b\u0026pm_id\u003d\u0026abbucket\u003d14”</p><p>  评论数： <a href="https://dsr-rate.tmall.com/list_dsr_info.htm?itemId=604628031536&amp;spuId=1372321809&amp;sellerId=2038648986&amp;groupId&amp;_ksTS=1583569497006_221&amp;callback=jsonp222">https://dsr-rate.tmall.com/list_dsr_info.htm?itemId=604628031536&amp;spuId=1372321809&amp;sellerId=2038648986&amp;groupId&amp;_ksTS=1583569497006_221&amp;callback=jsonp222</a></p><p>  “rateTotal”:1023</p><p>  “nid”:”604628031536”</p></li></ul><p>淘宝太难爬了，爬的时候需要验证登录，验证登录需要获取st!暂时先鸽了吧</p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;ul&gt;
-&lt;li&gt;&lt;p&gt;目标站点: &lt;a href=&quot;https://www.taobao.com/&quot;&gt;淘宝&lt;/a&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;需求数据：指定关键词的商品数据(包括商品名、商品价格、评论数等)&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;要求：自动翻页并输出&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;选择模块: urllib&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
     
     </summary>
     

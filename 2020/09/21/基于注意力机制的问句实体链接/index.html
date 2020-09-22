@@ -6,7 +6,18 @@
 </script><link rel="shortcut icon" type="image/svg+xml" href="/yun.svg"><link rel="mask-icon" href="/yun.svg" color="#0078E7"><link rel="alternate icon" href="/yun.ico"><link rel="preload" href="/css/hexo-theme-yun.css" as="style"><link rel="preload" href="/js/utils.js" as="script"><link rel="preload" href="/js/hexo-theme-yun.js" as="script"><link rel="prefetch" href="/js/sidebar.js" as="script"><link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin><link rel="stylesheet" href="/css/hexo-theme-yun.css"><link rel="alternate" href="/atom.xml" title="先逃跑再说" type="application/atom+xml"><script id="yun-config">
     const Yun = window.Yun || {};
     window.CONFIG = {"root":"/","title":"先逃跑再说","version":"1.0.0","anonymous_image":"https://cdn.jsdelivr.net/gh/YunYouJun/cdn/img/avatar/none.jpg","say":{"api":"https://v1.hitokoto.cn","hitokoto":true},"algolia":{"appID":"TLV7EC5KZC","apiKey":"09f24aa52eaa685cdf7377829ce12ac4","indexName":"wenhao","hits":{"per_page":10},"labels":{"input_placeholder":"想要搜些什么？","hits_empty":"We didn't find any results for the search: ${query}.","hits_stats":"${hits} results found in ${time} ms"}},"fireworks":{"colors":["102, 167, 221","62, 131, 225","33, 78, 194"]}};
-  </script><meta name="description" content="基于注意力机制的问句实体链接 摘要问句实体链接不仅需要大量的数据处理和特征选择工作，而且容易形成错误积累，降低链接效果。针对这种情况，文中提出基于注意力机制的编码器-解码器问句实体链接模型。模型使用双向的长短期记忆网络编码问句，经过注意力机制解码，生成对应的实体指称和消歧信息输出，最后链接到知识库实体。在有关汽车领域车系产品问句好热实体数据集上的实验表明，文中模型仅利用较少的上下文信息便可取得良好">
+  </script><script>(function(){
+  var bp = document.createElement('script');
+  var curProtocol = window.location.protocol.split(':')[0];
+  if (curProtocol === 'https') {
+    bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+  }
+  else {
+    bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+  }
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(bp, s);
+})();</script><meta name="description" content="基于注意力机制的问句实体链接 摘要问句实体链接不仅需要大量的数据处理和特征选择工作，而且容易形成错误积累，降低链接效果。针对这种情况，文中提出基于注意力机制的编码器-解码器问句实体链接模型。模型使用双向的长短期记忆网络编码问句，经过注意力机制解码，生成对应的实体指称和消歧信息输出，最后链接到知识库实体。在有关汽车领域车系产品问句好热实体数据集上的实验表明，文中模型仅利用较少的上下文信息便可取得良好">
 <meta property="og:type" content="article">
 <meta property="og:title" content="基于注意力机制的问句实体链接">
 <meta property="og:url" content="https://wentianhao.github.io/2020/09/21/%E5%9F%BA%E4%BA%8E%E6%B3%A8%E6%84%8F%E5%8A%9B%E6%9C%BA%E5%88%B6%E7%9A%84%E9%97%AE%E5%8F%A5%E5%AE%9E%E4%BD%93%E9%93%BE%E6%8E%A5/index.html">

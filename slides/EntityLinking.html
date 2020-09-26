@@ -11,11 +11,41 @@
 
 ## 任务定义
 
-<small>
-实体链接 ：就是把文本中的mention链接到KG里的entity的任务
+><small>
+>实体链接 ：把文本中的mention链接到KG里的entity的任务
+></small>
+
+~~
+![El](https://whh.plus/images/EL_meitu_1.jpg)
+
+Note:
+<small> “乔丹”、“美国”、“NBA”这些蓝色的片段都是mention，其箭头所指的“块块”就是它们在图谱里对应的entity。
+
+- Knowledge Graph (知识图谱)：一种语义网络，旨在描述客观世界的概念实体及其之间的关系，有时也称为Knowledge Base (知识库)。图谱由三元组构成：<实体1，关系，实体2> 或者 <实体，属性，属性值>；例如：<姚明，plays-in，NBA>、<姚明，身高，2.29m>；常见的KB有：Wikidata、DBpedia、YAGO。
+- Entity (实体)：实体是知识图谱的基本单元，也是文本中承载信息的重要语言单位
+- Mention (提及)：自然文本中表达实体的语言片段
 </small>
 
-![El](https://whh.plus/images/EL_meitu_1.jpg)</script></section></div></div><script src="https://cdn.jsdelivr.net/npm/reveal.js/dist/reveal.js"></script><script src="https://cdn.jsdelivr.net/npm/reveal.js/plugin/markdown/markdown.js"></script><script src="https://cdn.jsdelivr.net/npm/reveal.js/plugin/notes/notes.js"></script><script src="https://cdn.jsdelivr.net/npm/reveal.js/plugin/highlight/highlight.js"></script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.0.2/plugin/highlight/monokai.css"><script>document.addEventListener("DOMContentLoaded", function() {
+---
+
+## 应用
+<small>
+EL有什么用呢？一般有KB的地方就离不开EL。以下是EL的几个应用：
+
+- Question Answering：EL是KBQA的刚需，linking到实体之后才能查询图数据库；
+
+- Content Analysis：舆情分析、内容推荐、阅读增强；
+
+- Information Retrieval：基于语义实体的搜索引擎，google搜索一些实体，右侧会出现wikipedia页面；
+
+- Knowledge Base population：扩充知识库，更新实体和关系。
+
+</small>
+
+## 工作分类
+
+![Taxonomy](https://whh.plus/images/Taxonomy_meitu_1.jpg)
+</script></section></div></div><script src="https://cdn.jsdelivr.net/npm/reveal.js/dist/reveal.js"></script><script src="https://cdn.jsdelivr.net/npm/reveal.js/plugin/markdown/markdown.js"></script><script src="https://cdn.jsdelivr.net/npm/reveal.js/plugin/notes/notes.js"></script><script src="https://cdn.jsdelivr.net/npm/reveal.js/plugin/highlight/highlight.js"></script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.0.2/plugin/highlight/monokai.css"><script>document.addEventListener("DOMContentLoaded", function() {
   const revealConfig = {"history":true,"mouseWheel":true}
   revealConfig.plugins = [ RevealMarkdown, RevealNotes, RevealHighlight ]
   Reveal.initialize(revealConfig);

@@ -9,11 +9,11 @@
 
 ---
 
-## 任务定义
+### 任务定义
 
-><small>
->实体链接 ：把文本中的mention链接到KG里的entity的任务
-></small>
+
+> 实体链接 ：把文本中的mention链接到KG里的entity的任务
+
 
 ~~
 ![El](https://whh.plus/images/EL_meitu_1.jpg)
@@ -28,24 +28,91 @@ Note:
 
 ---
 
-## 应用
-<small>
+### 应用
+
+<!-- <small> -->
 EL有什么用呢？一般有KB的地方就离不开EL。以下是EL的几个应用：
 
 - Question Answering：EL是KBQA的刚需，linking到实体之后才能查询图数据库；
-
 - Content Analysis：舆情分析、内容推荐、阅读增强；
-
 - Information Retrieval：基于语义实体的搜索引擎，google搜索一些实体，右侧会出现wikipedia页面；
-
 - Knowledge Base population：扩充知识库，更新实体和关系。
+
+<!-- </small> -->
+
+---
+
+### 工作分类
+
+![Taxonomy](https://whh.plus/images/Taxonomy_meitu_1.jpg)
+
+Note:
+
+- End-to-End：先从文本中提取到实体mention (即NER)，对应到候选实体，然后将提取到的entities消除歧义，映射到给定的KB中。
+
+- Linking-Only：与第一种方法对比，跳过了第一步。该方法直接将text和mention作为输入，找到候选实体并消除歧义，映射到给定的KB中。
+
+---
+
+### EL的两大模块
+
+<!-- <small> -->
+
+**EL的工作非常有挑战性，主要有两个原因：**
+
+- Mention Variations：同一实体有不同的mention。(<科比>：小飞侠、黑曼巴、科铁、蜗壳、老科)
+
+- Entity Ambiguity：同一mention对应不同的实体。(“苹果”：中关村苹果不错；山西苹果不错)
+
+针对上述两个问题，一般会用Candidate Entity Generation (CEG) 和Entity Disambiguation (ED) 两个模块来分别解决
+<!-- </small> -->
+
+Note:
+<small>
 
 </small>
 
-## 工作分类
+~~
+### 候选实体生成 (CEG) 
 
-![Taxonomy](https://whh.plus/images/Taxonomy_meitu_1.jpg)
-</script></section></div></div><script src="https://cdn.jsdelivr.net/npm/reveal.js/dist/reveal.js"></script><script src="https://cdn.jsdelivr.net/npm/reveal.js/plugin/markdown/markdown.js"></script><script src="https://cdn.jsdelivr.net/npm/reveal.js/plugin/notes/notes.js"></script><script src="https://cdn.jsdelivr.net/npm/reveal.js/plugin/highlight/highlight.js"></script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.0.2/plugin/highlight/monokai.css"><script>document.addEventListener("DOMContentLoaded", function() {
+从mention出发，找到KB中所有可能的实体，组成候选实体集 (candidate entities)
+
+最主流最有效的方法：Name Dictionary
+
+<small>
+Note:对于每一个entity，紧凑而充分地配置别名，才能保证生成的候选实体没有遗漏掉ground truth entity
+
+具体的，要配置哪些别名，要用什么构建方法，往往取决于EL的使用场景。
+
+比如做百科问答或是通用文本的阅读增强，就很依赖于wikipedia和搜索引擎；
+
+但如果是某个具体的行业领域，就需要通过一些启发式的方法、用户日志、网页爬取，甚至人工标注的方法来构建Name Dictionary。
+</small>
+
+~~
+### 实体消歧 (ED)       
+
+- Features
+  + Context-Independent Features：
+    + LinkCount：#(m->e)，知识库中某个提及m指向实体e的次数；
+    + Entity Attributes：Popularity、Type；
+  + Context-Dependent Features：
+    + Textual Context：BOW, Concept Vector
+    + Coherence Between Entities：WLM、PMI、Jaccard Distance
+
+<small>
+note: 
+
+- 实体消歧时，不同场景的特征选取是非常重要的。总的来说，实体消歧的特征分为，context独立和context不独立的。
+
+- 特征里，独立的有：mention到实体的LinkCount、实体自身的一些属性（比如热度、类型等等）。其中，LinkCount作为一个先验知识，在消歧时，往往很有用，比如当我们在问“姚明有多高？”时，大概率都是在问<篮球运动员姚明>，而不是其他不为人知的“姚明”。虽然context中完全没有包含篮球运动员这一信息，但大多数情况下，根据“姚明”到<篮球运动员姚明>的LinkCount最高，选其作为实体进行查询，都会是一个不错的答案。
+
+- 不独立的有：文本的context、实体间的coherence (一致性)。这部分，可深入挖掘的东西比较多，文本context可以用一些深度学习的方法去深度理解文本的语义，从而实现消歧；实体间的一致性更加有趣，由于文本包含的所有的mention都没有确定，所以全局地进行entities的消歧实际上是一个NP-hard的问题。因此，如何更加快速有效地利用一致性特征，是一个非常有趣的方向。
+
+</small>
+
+---
+## 谢谢聆听！</script></section></div></div><script src="https://cdn.jsdelivr.net/npm/reveal.js/dist/reveal.js"></script><script src="https://cdn.jsdelivr.net/npm/reveal.js/plugin/markdown/markdown.js"></script><script src="https://cdn.jsdelivr.net/npm/reveal.js/plugin/notes/notes.js"></script><script src="https://cdn.jsdelivr.net/npm/reveal.js/plugin/highlight/highlight.js"></script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.0.2/plugin/highlight/monokai.css"><script>document.addEventListener("DOMContentLoaded", function() {
   const revealConfig = {"history":true,"mouseWheel":true}
   revealConfig.plugins = [ RevealMarkdown, RevealNotes, RevealHighlight ]
   Reveal.initialize(revealConfig);

@@ -1,0 +1,189 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="theme-color" content="#0078E7"><meta name="author" content="John Doe"><meta name="copyright" content="John Doe"><meta name="generator" content="Hexo 5.4.0"><meta name="theme" content="hexo-theme-yun"><title>bert | Hexo</title><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@900&amp;display=swap" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/star-markdown-css@0.1.24/dist/yun/yun-markdown.min.css"><script src="//at.alicdn.com/t/font_1140697_j5gk85dg4pf.js" async></script><script src="https://cdn.jsdelivr.net/npm/scrollreveal/dist/scrollreveal.min.js" defer></script><script>document.addEventListener("DOMContentLoaded", () => {
+  [".post-card",".post-content img"].forEach((target)=> {
+    ScrollReveal().reveal(target);
+  })
+});
+</script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.css"><script defer src="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.js"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/katex@latest/dist/contrib/copy-tex.min.css"><script defer src="https://cdn.jsdelivr.net/npm/katex@latest/dist/contrib/copy-tex.min.js"></script><script defer src="https://cdn.jsdelivr.net/npm/katex@latest/dist/contrib/auto-render.min.js"></script><script>document.addEventListener("DOMContentLoaded", () => {
+  Yun.utils.renderKatex();
+});</script><link rel="icon" href="/yun.svg"><link rel="mask-icon" href="/yun.svg" color="#0078E7"><link rel="alternate icon" href="/yun.ico"><link rel="preload" href="/css/hexo-theme-yun.css" as="style"><link rel="preload" href="/js/utils.js" as="script"><link rel="preload" href="/js/hexo-theme-yun.js" as="script"><link rel="prefetch" href="/js/sidebar.js" as="script"><link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin><script id="yun-config">
+    const Yun = window.Yun || {};
+    window.CONFIG = {"hostname":"example.com","root":"/","title":"云游君的小站","version":"1.6.1","mode":"auto","copycode":true,"page":{"isPost":true},"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}.","hits":"${hits} results found","hits_time":"${hits} results found in ${time} ms"},"anonymous_image":"https://cdn.jsdelivr.net/gh/YunYouJun/cdn/img/avatar/none.jpg","say":{"api":"https://v1.hitokoto.cn","hitokoto":true},"fireworks":{"colors":["102, 167, 221","62, 131, 225","33, 78, 194"]}};
+  </script><link rel="stylesheet" href="/css/hexo-theme-yun.css"><script src="/js/utils.js"></script><script src="/js/hexo-theme-yun.js"></script><meta name="description" content="CCKS&amp;百度 2019中文短文本的实体链指 第一名解决方案code 文件夹下为项目文件比赛网址： https:&#x2F;&#x2F;biendata.com&#x2F;competition&#x2F;ccks_2019_el&#x2F;数据集：https:&#x2F;&#x2F;pan.baidu.com&#x2F;s&#x2F;1SShtugdAMVf0fdaBowtMiA 提取码:8r80这是提交的时候代码，自己测试是请先划分出验证集，上述所有代码都是交叉验证有多个模">
+<meta property="og:type" content="article">
+<meta property="og:title" content="bert">
+<meta property="og:url" content="http://example.com/2020/08/25/bert/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="CCKS&amp;百度 2019中文短文本的实体链指 第一名解决方案code 文件夹下为项目文件比赛网址： https:&#x2F;&#x2F;biendata.com&#x2F;competition&#x2F;ccks_2019_el&#x2F;数据集：https:&#x2F;&#x2F;pan.baidu.com&#x2F;s&#x2F;1SShtugdAMVf0fdaBowtMiA 提取码:8r80这是提交的时候代码，自己测试是请先划分出验证集，上述所有代码都是交叉验证有多个模">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2020-08-25T08:17:51.000Z">
+<meta property="article:modified_time" content="2020-10-09T07:28:57.250Z">
+<meta property="article:author" content="John Doe">
+<meta property="article:tag" content="bert">
+<meta name="twitter:card" content="summary"><script src="/js/ui/mode.js"></script></head><body><script defer src="https://cdn.jsdelivr.net/npm/animejs@latest"></script><script defer src="/js/ui/fireworks.js"></script><canvas class="fireworks"></canvas><div class="container"><a class="sidebar-toggle hty-icon-button" id="menu-btn"><div class="hamburger hamburger--spin" type="button"><span class="hamburger-box"><span class="hamburger-inner"></span></span></div></a><div class="sidebar-toggle sidebar-overlay"></div><aside class="sidebar"><script src="/js/sidebar.js"></script><ul class="sidebar-nav"><li class="sidebar-nav-item sidebar-nav-toc hty-icon-button sidebar-nav-active" data-target="post-toc-wrap" title="Table of Contents"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-list-ordered"></use></svg></li><li class="sidebar-nav-item sidebar-nav-overview hty-icon-button" data-target="site-overview-wrap" title="Overview"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-passport-line"></use></svg></li></ul><div class="sidebar-panel" id="site-overview-wrap"><div class="site-info fix-top"><a class="site-author-avatar" href="/about/" title="John Doe"><img width="96" loading="lazy" src="/yun.png" alt="John Doe"></a><div class="site-author-name"><a href="/about/">John Doe</a></div><span class="site-name">Hexo</span><sub class="site-subtitle"></sub><div class="site-desciption"></div></div><nav class="site-state"><a class="site-state-item hty-icon-button icon-home" href="/" title="Home"><span class="site-state-item-icon"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-home-4-line"></use></svg></span></a><div class="site-state-item"><a href="/archives/" title="Archives"><span class="site-state-item-icon"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-archive-line"></use></svg></span><span class="site-state-item-count">58</span></a></div><div class="site-state-item"><a href="/categories/" title="Categories"><span class="site-state-item-icon"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-folder-2-line"></use></svg></span><span class="site-state-item-count">22</span></a></div><div class="site-state-item"><a href="/tags/" title="Tags"><span class="site-state-item-icon"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-price-tag-3-line"></use></svg></span><span class="site-state-item-count">31</span></a></div><a class="site-state-item hty-icon-button" target="_blank" rel="noopener" href="https://yun.yunyoujun.cn" title="文档"><span class="site-state-item-icon"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-settings-line"></use></svg></span></a></nav><hr style="margin-bottom:0.5rem"><div class="links-of-author"><a class="links-of-author-item hty-icon-button" rel="noopener" href="/atom.xml" title="RSS" target="_blank" style="color:orange"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-rss-line"></use></svg></a><a class="links-of-author-item hty-icon-button" rel="noopener" href="https://qm.qq.com/cgi-bin/qm/qr?k=kZJzggTTCf4SpvEQ8lXWoi5ZjhAx0ILZ&amp;jump_from=webapi" title="QQ 群 1050458482" target="_blank" style="color:#12B7F5"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-qq-line"></use></svg></a><a class="links-of-author-item hty-icon-button" rel="noopener" href="https://github.com/YunYouJun" title="GitHub" target="_blank" style="color:#6e5494"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-github-line"></use></svg></a><a class="links-of-author-item hty-icon-button" rel="noopener" href="https://weibo.com/jizhideyunyoujun" title="微博" target="_blank" style="color:#E6162D"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-weibo-line"></use></svg></a><a class="links-of-author-item hty-icon-button" rel="noopener" href="https://www.douban.com/people/yunyoujun/" title="豆瓣" target="_blank" style="color:#007722"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-douban-line"></use></svg></a><a class="links-of-author-item hty-icon-button" rel="noopener" href="https://music.163.com/#/user/home?id=247102977" title="网易云音乐" target="_blank" style="color:#C20C0C"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-netease-cloud-music-line"></use></svg></a><a class="links-of-author-item hty-icon-button" rel="noopener" href="https://www.zhihu.com/people/yunyoujun/" title="知乎" target="_blank" style="color:#0084FF"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-zhihu-line"></use></svg></a><a class="links-of-author-item hty-icon-button" rel="noopener" href="https://space.bilibili.com/1579790" title="哔哩哔哩" target="_blank" style="color:#FF8EB3"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-bilibili-line"></use></svg></a><a class="links-of-author-item hty-icon-button" rel="noopener" href="https://cdn.jsdelivr.net/gh/YunYouJun/cdn/img/about/white-qrcode-and-search.jpg" title="微信公众号" target="_blank" style="color:#1AAD19"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-wechat-2-line"></use></svg></a><a class="links-of-author-item hty-icon-button" rel="noopener" href="https://twitter.com/YunYouJun" title="Twitter" target="_blank" style="color:#1da1f2"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-twitter-line"></use></svg></a><a class="links-of-author-item hty-icon-button" rel="noopener" href="https://t.me/elpsycn" title="Telegram Channel" target="_blank" style="color:#0088CC"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-telegram-line"></use></svg></a><a class="links-of-author-item hty-icon-button" rel="noopener" href="mailto:me@yunyoujun.cn" title="E-Mail" target="_blank" style="color:#8E71C1"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-mail-line"></use></svg></a><a class="links-of-author-item hty-icon-button" rel="noopener" href="https://travellings.now.sh/" title="Travelling" target="_blank" style="color:var(--hty-text-color)"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-send-plane-2-line"></use></svg></a></div><hr style="margin:0.5rem 1rem"><div class="links"><a class="links-item hty-icon-button" href="/links/" title="我的小伙伴们" style="color:dodgerblue"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-genderless-line"></use></svg></a></div><br><a class="links-item hty-icon-button" id="toggle-mode-btn" href="javascript:;" title="Mode" style="color: #f1cb64"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-contrast-2-line"></use></svg></a></div><div class="sidebar-panel sidebar-panel-active" id="post-toc-wrap"><div class="post-toc"><div class="post-toc-content"><ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#CCKS-amp-%E7%99%BE%E5%BA%A6-2019%E4%B8%AD%E6%96%87%E7%9F%AD%E6%96%87%E6%9C%AC%E7%9A%84%E5%AE%9E%E4%BD%93%E9%93%BE%E6%8C%87-%E7%AC%AC%E4%B8%80%E5%90%8D%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88"><span class="toc-number">1.</span> <span class="toc-text">CCKS&amp;百度 2019中文短文本的实体链指 第一名解决方案</span></a></li></ol></div></div></div></aside><main class="sidebar-translate" id="content"><div id="post"><article class="hty-card post-block" itemscope itemtype="https://schema.org/Article"><link itemprop="mainEntityOfPage" href="http://example.com/2020/08/25/bert/"><span hidden itemprop="author" itemscope itemtype="https://schema.org/Person"><meta itemprop="name" content="John Doe"><meta itemprop="description"></span><span hidden itemprop="publisher" itemscope itemtype="https://schema.org/Organization"><meta itemprop="name" content="Hexo"></span><header class="post-header"><h1 class="post-title" itemprop="name headline">bert</h1><div class="post-meta"><div class="post-time" style="display:inline-block"><span class="post-meta-item-icon"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-calendar-line"></use></svg></span> <time title="Created: 2020-08-25 16:17:51" itemprop="dateCreated datePublished" datetime="2020-08-25T16:17:51+08:00">2020-08-25</time><span class="post-meta-divider">-</span><span class="post-meta-item-icon"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-calendar-2-line"></use></svg></span> <time title="Modified: 2020-10-09 15:28:57" itemprop="dateModified" datetime="2020-10-09T15:28:57+08:00">2020-10-09</time></div><div class="post-classify"><span class="post-category"> <span class="post-meta-item-icon" style="margin-right:3px;"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-folder-line"></use></svg></span><span itemprop="about" itemscope itemtype="https://schema.org/Thing"><a class="category-item" href="/categories/bert/" style="--text-color:var(--hty-text-color)" itemprop="url" rel="index"><span itemprop="text">bert</span></a></span></span><span class="post-tag"><span class="post-meta-divider">-</span><a class="tag-item" href="/tags/bert/" style="--text-color:var(--hty-text-color)"><span class="post-meta-item-icon"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-price-tag-3-line"></use></svg></span><span class="tag-name">bert</span></a></span></div></div></header><section class="post-body" itemprop="articleBody"><div class="post-content markdown-body" style="--smc-primary:#0078E7;"><h3 id="CCKS-amp-百度-2019中文短文本的实体链指-第一名解决方案"><a href="#CCKS-amp-百度-2019中文短文本的实体链指-第一名解决方案" class="headerlink" title="CCKS&amp;百度 2019中文短文本的实体链指 第一名解决方案"></a><center><strong>CCKS&amp;百度 2019中文短文本的实体链指 第一名解决方案</strong></h3><p>code 文件夹下为项目文件<br>比赛网址： <a target="_blank" rel="noopener" href="https://biendata.com/competition/ccks_2019_el/">https://biendata.com/competition/ccks_2019_el/</a><br>数据集：<a target="_blank" rel="noopener" href="https://pan.baidu.com/s/1SShtugdAMVf0fdaBowtMiA">https://pan.baidu.com/s/1SShtugdAMVf0fdaBowtMiA</a> 提取码:8r80<br>这是提交的时候代码，自己测试是请先划分出验证集，上述所有代码都是交叉验证有多个模型，很费时间，自己跑的时候跑一折就行</p>
+<p><strong>摘要</strong></p>
+<p>　　传统的实体链接任务主要是针对长文档。长文档拥有充分的上下文 信息，能够辅助实体的识别与消歧。相比之下，中文短文本的实体链接存 在很大的挑战。实体链接整个过程包括实体识别和实体消歧两个子任务。 针对实体识别子任务，我们创新性地利用了知识库描述文本的信息来增强 实体识别的性能，提出了 BERT-EntityNameEmbedding（BERT-ENE） 模型。具体地说，首先通过挖掘知识库中实体的描述文本得到实体名字的 向量嵌入，然后通过名称字典匹配技术，得到得到短文本中的候选实体，最 后利用 BERT-ENE 模型对结果进行筛选，完成实体识别的任务。此外，本 文进一步提出了一种将 BERT-ENE 模型与 BERT-CRF 模型相融合的新 方法，相比传统方法识别效果有了显著提升。针对实体消歧子任务，将其 视为二分类问题，通过基于 BERT 的二分类模型对候选实体进行预测，然 后对预测的概率进行排序，进而完成消歧任务。基于本文提出的方法，我们在 CCKS2019 面向中文短文本的实体链指任务中，取得了第一名的成绩。</p>
+<p><strong>关键词</strong></p>
+<p>　　实体链接，实体识别，实体消歧，BERT</p>
+<span id="more"></span>
+<p><strong>1</strong> <strong>数据分析与处理</strong></p>
+<p>　　训练数据包含 text 字段和 mention_data 字段，mention_data 里面包 含连接的 mention 以及 kb_id。知识库包含 subject_id，subject，alias，data 等字段，data 中包含多个 predicate、object。</p>
+<p><strong>1.1 引入新的别名</strong></p>
+<p>　　经过对数据集统计分析，训练集中有 2.592% 的实体名在实 体库中无法匹配，部分错误样例如下所示： </p>
+<ol>
+<li>安妮 ‘海瑟薇：文本中间有特殊符</li>
+<li>新浪微薄：输入文本中实体名错误</li>
+<li>国家质检总局: 别名不在知识库中</li>
+</ol>
+<p>　　为了解决这个问题通过为知识库中的对应实体引入新的别名来改善这 一问题，具体步骤如下</p>
+<ol>
+<li><p>对于错误１，对特殊符号进行归一化处理，并将处理后的名字，加入到对应实体的别名中。如所有中文标点符号全部准换成英文标点符号。</p>
+</li>
+<li><p>对于错误３，我们实体识别的模型能够解决这一问题</p>
+</li>
+<li><p>针对错误2与错误3，统计知识库中实体（$E$）无法匹配总次数（$E_{num}$）,训练集中实体E 无法匹配的所有字符串（$M_1,M_2,M_3…M_i$）以及该字符串对应的出现次数（$M_{inum}$）。我们设定，如果$E_{num}$ 大于4，并且$M_{inum}$ 大于3，则将字符串M加入到实体E的别名中。如，针对知识库中实体 bilibili 统计信息如下：</p>
+</li>
+</ol>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">&#x27;bilibili&#x27;</span>:&#123;<span class="string">&#x27;E_num&#x27;</span>: <span class="number">108</span>, <span class="string">&#x27;哔哩哔哩&#x27;</span>: <span class="number">94</span>, <span class="string">&#x27;哔哩哔哩弹幕视频网&#x27;</span>: <span class="number">5</span>, <span class="string">&#x27;异地恋&#x27;</span>: <span class="number">1</span>, <span class="string">&#x27;b站&#x27;</span>: <span class="number">8</span>&#125;</span><br></pre></td></tr></table></figure>
+
+<p>   根据以上统计将 ‘哔哩哔哩’ ，’哔哩哔哩弹幕视频网’，’b站’ 加入到实体 bilibili 的别名中。</p>
+<p><strong>1.2  实体描述文本的构建</strong></p>
+<p>　　知识库中每个实体都有‘data’ 字段，‘data’ 字段包含多个predicate项和object项，数据格式如下：</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">&quot;subject_id&quot;</span>: <span class="string">&quot;10001&quot;</span></span><br><span class="line"><span class="string">&quot;subject&quot;</span>: <span class="string">&quot;胜利&quot;</span>,</span><br><span class="line"><span class="string">&quot;data&quot;</span>: [</span><br><span class="line">&#123;<span class="attr">&quot;predicate&quot;</span>: <span class="string">&quot;摘要&quot;</span>, <span class="attr">&quot;object&quot;</span>: <span class="string">&quot;英雄联盟胜利系列皮肤是拳头公司制作的具有纪念意义限定系列皮肤之一。</span></span><br><span class="line"><span class="string">拳头公司制作的具有纪念意义限定系列皮肤还包括英雄联盟冠军系列皮肤。...&quot;</span>&#125;, </span><br><span class="line">&#123;<span class="attr">&quot;predicate&quot;</span>: <span class="string">&quot;制作方&quot;</span>, <span class="attr">&quot;object&quot;</span>: <span class="string">&quot;Riot Games&quot;</span>&#125;, </span><br><span class="line">&#123;<span class="attr">&quot;predicate&quot;</span>: <span class="string">&quot;外文名&quot;</span>, <span class="attr">&quot;object&quot;</span>: <span class="string">&quot;Victorious&quot;</span>&#125;,</span><br><span class="line">&#123;<span class="attr">&quot;predicate&quot;</span>: <span class="string">&quot;义项描述&quot;</span>, <span class="attr">&quot;object&quot;</span>: <span class="string">&quot;游戏《英雄联盟》胜利系列限定皮肤&quot;</span>&#125;]</span><br></pre></td></tr></table></figure>
+
+<p>　　将所有的 predicate和object 相连得到实体描述文本。</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&#123;<span class="attr">&quot;10001&quot;</span>: <span class="string">&quot;摘要：英雄联盟胜利系列皮肤是拳头公司制作的具有纪念意义限定系列皮肤之一。...,</span></span><br><span class="line"><span class="string">制作方:Riot Games,外文名:Victorious,来源:英雄联盟,中文名:胜利&quot;</span> &#125;</span><br></pre></td></tr></table></figure>
+
+<p>　　连接后的描述文本长度分布如下：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">center</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">&quot;picture/Number_of_Text_Length.png&quot;</span> <span class="attr">width</span>=<span class="string">&quot;66%&quot;</span> <span class="attr">height</span>=<span class="string">&quot;66%&quot;</span>/&gt;</span> </span><br><span class="line"><span class="tag">&lt;/<span class="name">center</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>　　通过分析可以发现文本会存在过长的情况，为了方便以后处理需要多过长的文本进行截断，截断规则如下：</p>
+<ol>
+<li>predicate项+object项 的长度小于30 不截断</li>
+<li>predicate项+object项 的长度大于30按比例截断</li>
+</ol>
+<p><strong>1.3 其他处理</strong></p>
+<p>为了方便后续模型的使用我们需要根据知识库数据，构建一些字典。有以下几个字典：</p>
+<ol>
+<li>entity_id 字典   key：实体名字 value：kb_id 列表</li>
+</ol>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;<span class="string">&#x27;胜利&#x27;</span>: [<span class="string">&#x27;10001&#x27;</span>, <span class="string">&#x27;19044&#x27;</span>, <span class="string">&#x27;37234&#x27;</span>, <span class="string">&#x27;38870&#x27;</span>, <span class="string">&#x27;40008&#x27;</span>, <span class="string">&#x27;85426&#x27;</span>, <span class="string">&#x27;86532&#x27;</span>, <span class="string">&#x27;140750&#x27;</span>]&#125;</span><br></pre></td></tr></table></figure>
+
+<p>   其中 胜利 为实体名字，列表里面为名字为 胜利 的所有实体的id。</p>
+<ol start="2">
+<li>id_entity字典  key: kb_id  value: subject字段(实体名字)</li>
+</ol>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;<span class="string">&#x27;10001&#x27;</span>: <span class="string">&#x27;胜利&#x27;</span>&#125;</span><br></pre></td></tr></table></figure>
+
+<ol start="3">
+<li>id_text字典 key：kb_id   value: 实体描述文本</li>
+</ol>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;<span class="string">&#x27;10001&#x27;</span>: <span class="string">&#x27;摘要:英雄联盟胜利系列皮肤是拳头公司制作的具有纪念意义限定系列皮肤之一。&#x27;</span>&#125;</span><br></pre></td></tr></table></figure>
+
+<ol start="4">
+<li>id_type字典  key：kb_id    value: entity type</li>
+</ol>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;<span class="string">&#x27;10001&#x27;</span>: [<span class="string">&#x27;Thing&#x27;</span>]&#125;</span><br></pre></td></tr></table></figure>
+
+<ol start="5">
+<li>type_index字典 key：type name value：index</li>
+</ol>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">   ‘NAN’: <span class="number">0</span></span><br><span class="line">   <span class="string">&#x27;Thing&#x27;</span>:<span class="number">1</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>2 实体识别</strong></p>
+<p>但是使用 BERT-CRF模型只利用到了短文本信息，并没有利用知识库的信息。仍然会遇到实体边界识别错误，句子中实体识别不全等问题。为了解决上述不足，并且能够完全利用知识库的信息，提出了 BERT-ENE 模型。</p>
+<p>针对实体识别任务，首先采用现在效果较好的 BERT-CRF 命名实体识别模型。针对基于实体库实体链接（尤其是短文本）仅仅采用BERT+CRF进行实体识别有两点不足：</p>
+<ol>
+<li>BERT+CRF仍然会造成实体边界错误</li>
+<li>BERT+CRF模型识别实体不全</li>
+<li>没有利用到知识库的信息</li>
+</ol>
+<p>为了解决上述两个不足，并且能够完全利用知识库里面的实体信息，构建了BERT-EntityNameEmbedding模型，与BERT-CRF融合，解决上述问题。</p>
+<p><strong>2.1 BERT+CRF</strong></p>
+<p>图 1 为 BERT-CRF 模型，采用 BIO 标记，其中 BERT 的[CLS],[SEP] 位置用标签 TAG 表示。模型主要包含输入层、 BERT 层和 CRF层。：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">center</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">&quot;picture/bert _CRF.jpg&quot;</span> <span class="attr">width</span>=<span class="string">&quot;66%&quot;</span> <span class="attr">height</span>=<span class="string">&quot;66%&quot;</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">center</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>涉及到的一些参数:</p>
+<p>– max_len 52</p>
+<p>–batch_size 64</p>
+<p>–dropout 0.2 （bert 输出后接的dropout）</p>
+<p>–num_epochs 7</p>
+<p>一些训练细节：</p>
+<ol>
+<li>将训练集分为9份，采用9折交叉验证，分别按照loss和f1保存模型，共18个模型</li>
+<li>因为BERT具有一定的随机性，在训练的过程中针对每个模型会多训练几次选择较好的一个（从第一轮结束验证后就能判断，不用全部跑完）</li>
+<li>前3轮学习率为1e-5，后面会调整为1e-6</li>
+<li>最大epoch为7，训练过程会根据loss提前停止</li>
+</ol>
+<p><strong>2.2 BERT-EntityNameEmbedding（BERT-ENE）模型</strong></p>
+<p>　　BERT-ENE 模型如图 2 所示，其具体思路为： 1. 利用知识库的实体名称和实体的别名信息构建实体名称字典。 2. 通过知识库的实体描述文本，利用 BERT 预训练模型，选取模型 CLS 位置的向量输出作为实体名称的<br>向量嵌入。 3. 通过字典匹配方式，得到短文本中候选实体。 4. 通过构建的BERT-ENE 模型对匹配的结果进行筛选。</p>
+<p><strong>2.2.1 字典树+实体正向最大匹配</strong></p>
+<p>　　为了加快速度采用字典树这一结构，同时采用正向最大匹配实体的思路，去匹配文本中实体。首先需要的数据为1.3中的 entity_id 字典，将里面的key 也就是实体名字插入到字典树中，实体库中存在很多单字实体，这类实体匹配会造成太多匹配结果，对于单字实体不在插入。</p>
+<p>全部匹配例：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">text：《大话英雄·联盟》-原创-高清视频</span><br><span class="line">result： [(<span class="string">&#x27;大话英雄·联盟&#x27;</span>, <span class="number">1</span>), (<span class="string">&#x27;联盟&#x27;</span>, <span class="number">6</span>), (<span class="string">&#x27;原创&#x27;</span>, <span class="number">10</span>), (<span class="string">&#x27;高清视频&#x27;</span>, <span class="number">13</span>), (<span class="string">&#x27;视频&#x27;</span>, <span class="number">15</span>)]</span><br></pre></td></tr></table></figure>
+
+<p>最大匹配例：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">text：《大话英雄·联盟》-原创-高清视频</span><br><span class="line">result： [(<span class="string">&#x27;大话英雄·联盟&#x27;</span>, <span class="number">1</span>), (<span class="string">&#x27;原创&#x27;</span>, <span class="number">10</span>), (<span class="string">&#x27;高清视频&#x27;</span>, <span class="number">13</span>)]</span><br></pre></td></tr></table></figure>
+
+<p>正确结果：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">text：《大话英雄·联盟》-原创-高清视频</span><br><span class="line">result： [(<span class="string">&#x27;大话英雄·联盟&#x27;</span>, <span class="number">1</span>), (<span class="string">&#x27;视频&#x27;</span>, <span class="number">15</span>)]</span><br></pre></td></tr></table></figure>
+
+<p>通过经过统计发现，采用最大匹配对整体数据效果较好，但是在实验过程中发现，最大匹配时会出现一些实体重复，如 迅雷、下载 和 迅雷下载三个实体，还有 视频 和 高清视频两个个实体，如果不处理最大匹配时将会漏掉 迅雷、下载 两个实体，仅仅会匹配 迅雷下载 这一个实体。为处理这种情况，统计他们出现的次数并根据出现次数来决定这类实体该怎么处理。处理分一下三种情况：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">1. 仅保留最大的实体，如迅雷下载开，</span><br><span class="line">2. 保留小的实体，具体保留那个看统计数据 如  迅雷、下载 仅仅保留‘迅雷’</span><br><span class="line">3. 都保留 如 迅雷 下载 迅雷下载</span><br></pre></td></tr></table></figure>
+
+<p>代码实现依然按照最大匹配去实现，只是针对要分开的实体，在匹配结束后再分开。</p>
+<p><strong>2.2.2 实体名字嵌入</strong></p>
+<p>　　为了能够对匹配到的实体进行二分类，需要将实体名字用一个向量表示，当然实体名字嵌入向量可以随机生成最后通过训练也能不断拟合，但是一个好的初始化向量对结果影响很大，也因为后续模型用到了BERT，这里使用BERT来得到实体名字的嵌入。具体思路和过程如下：</p>
+<ol>
+<li><p>将每个实体文本描述输入到BERT模型，则 [CLS] 位置的输出向量可以这个实体的意思。于是我们能够得到每个实体对应的向量，代码中我们用一个字典表示 id_embedding key：subject_id， value：CLS 输出向量</p>
+</li>
+<li><p>对于实体名字只对应一个实体的情况，则直接用实体对应向量当做这个实体名字的嵌入。如</p>
+</li>
+</ol>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;<span class="string">&#x27;无尽武道&#x27;</span>: [<span class="string">&#x27;10007&#x27;</span>]&#125;</span><br></pre></td></tr></table></figure>
+
+<ol start="3">
+<li>对于实体名字只对应多个实体的情况，求平均，如</li>
+</ol>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;<span class="string">&#x27;胜利&#x27;</span>: [<span class="string">&#x27;10001&#x27;</span>, <span class="string">&#x27;19044&#x27;</span>, <span class="string">&#x27;37234&#x27;</span>, <span class="string">&#x27;38870&#x27;</span>, <span class="string">&#x27;40008&#x27;</span>, <span class="string">&#x27;85426&#x27;</span>, <span class="string">&#x27;86532&#x27;</span>, <span class="string">&#x27;140750&#x27;</span>]&#125;</span><br></pre></td></tr></table></figure>
+
+<p>通过这种方式能够为每个实体名字得到一个768维的向量嵌入，模型图如下：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">center</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">&quot;picture/Entity_embedding.jpg&quot;</span> <span class="attr">width</span>=<span class="string">&quot;66%&quot;</span> <span class="attr">height</span>=<span class="string">&quot;66%&quot;</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">center</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+
+<p><strong>2.2.3 训练数据构建</strong></p>
+<p>通过上述匹配方式，匹配结果：（高清视频 属于上述第三种情况，最后模型会判断取那个好）</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">text：《大话英雄·联盟》-原创-高清视频</span><br><span class="line">result： [(<span class="string">&#x27;大话英雄·联盟&#x27;</span>, <span class="number">1</span>), (<span class="string">&#x27;原创&#x27;</span>, <span class="number">10</span>), (<span class="string">&#x27;高清视频&#x27;</span>, <span class="number">13</span>), (<span class="string">&#x27;视频&#x27;</span>, <span class="number">15</span>)]</span><br></pre></td></tr></table></figure>
+
+<p>根据正确结果得到 label 为：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">label = [<span class="number">1</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">1</span>]</span><br></pre></td></tr></table></figure>
+
+<p><strong>2.2.4 模型</strong></p>
+<p>BERT-ENE 模型如图 2 所示，其基本思路为：</p>
+<ol>
+<li>利用知识库的实体名称和实体的别名信息构建实体名称字典。</li>
+<li>通过知识库的实体描述文本，利用 BERT 预训练模型，选取模型 CLS 位置的向量输出作为实体名称的<br>向量嵌入。 </li>
+<li>通过字典匹配方式，得到短文本中候选实体。 </li>
+<li> 通过构建的BERT-ENE 模型对匹配的结果进行筛选。</li>
+</ol>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">center</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">&quot;picture/bert _entity_embedding.png&quot;</span> <span class="attr">width</span>=<span class="string">&quot;90%&quot;</span> <span class="attr">height</span>=<span class="string">&quot;90%&quot;</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">center</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>模型具体过程为：</p>
+<ol>
+<li>短文本经过 BERT层 ，得到BERT的输出</li>
+<li>将BERT的输出输入到正向GRU网络和反向GRU网络中。然后抽取匹配到的实体名称对应在正向GRU的结束位置的向量$V_{end}$以及对应在反向GRU的开始位置的向量$V_{begin}$，将这两个向量连在一起得到$V_{con}$，则可以代表这个实体名称在文本语义表示。  </li>
+<li>为了学到整个文本的信息，分别对正向GRU 和反向GRU的输出，做最大池化操作，得到向量$V_{max}$，$V_{max}$可以表示整个文本的语义。 </li>
+<li>最后将$V_{max}$与$V_{con}$以及对应的实体名称嵌入连在一起经过卷积层、全连接层，$sigmoid$激活最后得到预测概率。 </li>
+</ol>
+<p><strong>2.3 实体识别结果融合</strong></p>
+<p>如上所述，实体识别分为两个模型，一个 BERT-CRF 模型，一个 BERTENE。 BERT-CRF 模型识别的实体会因为边界错误导致不能够匹配得到候选实体。而 BERT-ENE 模型是通过词典匹配方式实现，所以 BERT-ENE的结果都能够在知识库找到候选实体，不会出现边界错误。 BERT-ENE 模型在词典匹配时，去掉了单字实体，而 BERT-CRF 模型可以预测单字实体。所以将两种方案融合，能够取得最好的效果。融合规则为：如果两个结果在位置存在重复，则选取 BERT-ENE 的结果，单字实体选取 BERT-CRF 模型的结果。</p>
+<p>具体为：BERT+CRF共18个模型，对预测结果进行投票，分别去BERT+CRF模型投票大于8的作为BERT-CRF 模型的结果。选取BERT-ENE模型概率大于0.45作为结果，合在一起即可。</p>
+<p><strong>３实体消歧</strong></p>
+<p>　　实体消歧是基于二分类的思想实现，训练时选取连接到的实体作为正例，在候选实体里选取两个负例。将短文本以及待消歧实体的描述文本连在一起，输入到BERT模型，取CLS 位置向量输出，以及候选实体对应开始和结束位置对应的特征向量，三个向量连接，经过全连接层，最后sigmoid激活得到候选实体的概率得分。对所有候选实体的概率得分进行排序，选择概率最高的为正确实体。模型图如下：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">center</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">&quot;picture/bert_binary.jpg&quot;</span> <span class="attr">width</span>=<span class="string">&quot;75%&quot;</span> <span class="attr">height</span>=<span class="string">&quot;75%&quot;</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">center</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>其他细节：</p>
+<ol>
+<li>两个句子长度最大选取为256，负样本选取了3个，并且选取了一些通过上述匹配方式得到的一些负样本</li>
+<li>训练集分为5份，5折交叉验证，并对测试集结果求平均</li>
+<li>后来发现时间充足又训练了，长度384，负样本选取了2个,7折交叉验证的模型，并与上面的求平均</li>
+</ol>
+</div><div id="reward-container"><span class="hty-icon-button button-glow" id="reward-button" title="Donate" onclick="var qr = document.getElementById(&quot;qr&quot;); qr.style.display = (qr.style.display === &quot;none&quot;) ? &quot;block&quot; : &quot;none&quot;;"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-hand-coin-line"></use></svg></span><div id="reward-comment">I'm so cute. Please give me money.</div><div id="qr" style="display:none;"><div style="display:inline-block"><a target="_blank" rel="noopener" href="https://cdn.jsdelivr.net/gh/YunYouJun/cdn/img/donate/alipay-qrcode.jpg"><img loading="lazy" src="https://cdn.jsdelivr.net/gh/YunYouJun/cdn/img/donate/alipay-qrcode.jpg" alt="支付宝" title="支付宝"></a><div><span style="color:#00A3EE"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-alipay-line"></use></svg></span></div></div><div style="display:inline-block"><a target="_blank" rel="noopener" href="https://cdn.jsdelivr.net/gh/YunYouJun/cdn/img/donate/qqpay-qrcode.png"><img loading="lazy" src="https://cdn.jsdelivr.net/gh/YunYouJun/cdn/img/donate/qqpay-qrcode.png" alt="QQ 支付" title="QQ 支付"></a><div><span style="color:#12B7F5"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-qq-line"></use></svg></span></div></div><div style="display:inline-block"><a target="_blank" rel="noopener" href="https://cdn.jsdelivr.net/gh/YunYouJun/cdn/img/donate/wechatpay-qrcode.jpg"><img loading="lazy" src="https://cdn.jsdelivr.net/gh/YunYouJun/cdn/img/donate/wechatpay-qrcode.jpg" alt="微信支付" title="微信支付"></a><div><span style="color:#2DC100"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-wechat-pay-line"></use></svg></span></div></div></div></div><ul class="post-copyright"><li class="post-copyright-author"><strong>Post author: </strong>John Doe</li><li class="post-copyright-link"><strong>Post link: </strong><a href="http://example.com/2020/08/25/bert/" title="bert">http://example.com/2020/08/25/bert/</a></li><li class="post-copyright-license"><strong>Copyright Notice: </strong>All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="noopener" title="CC BY-NC-SA 4.0 "><svg class="icon"><use xlink:href="#icon-creative-commons-line"></use></svg><svg class="icon"><use xlink:href="#icon-creative-commons-by-line"></use></svg><svg class="icon"><use xlink:href="#icon-creative-commons-nc-line"></use></svg><svg class="icon"><use xlink:href="#icon-creative-commons-sa-line"></use></svg></a> unless otherwise stated.</li></ul></section></article><div class="post-nav"><div class="post-nav-item"><a class="post-nav-prev" href="/2020/09/21/%E5%9F%BA%E4%BA%8E%E5%8F%8C%E8%AF%8D%E4%B8%BB%E9%A2%98%E6%A8%A1%E5%9E%8B%E7%9A%84%E5%8D%8A%E7%9B%91%E7%9D%A3%E5%AE%9E%E4%BD%93%E6%B6%88%E6%AD%A7%E6%96%B9%E6%B3%95%E7%A0%94%E7%A9%B6/" rel="prev" title="基于双词主题模型的半监督实体消歧方法研究"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-arrow-left-s-line"></use></svg><span class="post-nav-text">基于双词主题模型的半监督实体消歧方法研究</span></a></div><div class="post-nav-item"><a class="post-nav-next" href="/2020/06/25/%E5%9F%BA%E4%BA%8E%E9%9A%8F%E6%9C%BA%E6%B8%B8%E8%B5%B0%E7%9A%84%E5%AE%9E%E4%BD%93%E9%93%BE%E6%8E%A5%E6%96%B9%E6%B3%95/" rel="next" title="基于随机游走的实体链接方法"><span class="post-nav-text">基于随机游走的实体链接方法</span><svg class="icon" aria-hidden="true"><use xlink:href="#icon-arrow-right-s-line"></use></svg></a></div></div></div><div class="hty-card" id="comment"><div class="comment-tooltip text-center"><span>要不要和我说些什么？</span><br></div></div></main><footer class="sidebar-translate" id="footer"><div class="copyright"><span>&copy; 2019 – 2021 </span><span class="with-love" id="animate"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-cloud-line"></use></svg></span><span class="author"> John Doe</span></div><div class="powered"><span>Powered by <a href="https://hexo.io" target="_blank" rel="noopener">Hexo</a> v5.4.0</span><span class="footer-separator">|</span><span>Theme - <a rel="noopener" href="https://github.com/YunYouJun/hexo-theme-yun" target="_blank"><span>Yun</span></a> v1.6.1</span></div></footer><a class="hty-icon-button" id="back-to-top" aria-label="back-to-top" href="#"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-arrow-up-s-line"></use></svg><svg class="progress-circle-container" viewBox="0 0 100 100"><circle class="progress-circle" id="progressCircle" cx="50" cy="50" r="48" fill="none" stroke="#0078E7" stroke-width="2" stroke-linecap="round"></circle></svg></a></div></body></html>

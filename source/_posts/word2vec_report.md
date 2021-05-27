@@ -1,11 +1,12 @@
 ---
 title: word2vec中文词向量训练
-date: 2020-05-28 12:51:36
-tags: 
-    - python
-    - word2vec
-    - NLP
+tags:
+  - python
+  - word2vec
+  - NLP
 categories: word2vec
+abbrlink: 55589
+date: 2020-05-28 12:51:36
 ---
 word2vec中文词向量训练<br>
 ======

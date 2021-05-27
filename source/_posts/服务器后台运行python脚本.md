@@ -1,10 +1,11 @@
 ---
 title: 服务器后台运行python脚本
 katex: false
-date: 2020-10-09 16:46:25
-updated: 2020-10-09 16:46:25
 tags: python
 categories: python
+abbrlink: 7037
+date: 2020-10-09 16:46:25
+updated: 2020-10-09 16:46:25
 ---
 
 服务器运行python

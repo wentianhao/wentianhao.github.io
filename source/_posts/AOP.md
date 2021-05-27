@@ -1,9 +1,10 @@
 ---
 title: AOP
 katex: false
-date: 2020-10-24 19:43:28
 tags: java
 categories: java
+abbrlink: 6244
+date: 2020-10-24 19:43:28
 ---
 
 ## AOP基本概念

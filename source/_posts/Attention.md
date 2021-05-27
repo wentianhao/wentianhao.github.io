@@ -1,11 +1,12 @@
 ---
 title: Attention Is All You Need
 katex: true
+tags:
+  - NLP
+categories: 论文笔记
+abbrlink: 27823
 date: 2020-10-10 09:59:03
 updated: 2020-10-10 09:59:03
-tags:    
-    - NLP
-categories: 论文笔记
 ---
 
 ![attention](https://whh.plus/images/attention.png)

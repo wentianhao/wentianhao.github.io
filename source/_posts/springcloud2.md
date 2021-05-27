@@ -1,8 +1,12 @@
 ---
 title: spring cloud mybaits 微服务增删改查(二)
-date: now()
-tags: [spring cloud, mybatis]
-categories: [spring cloud]
+tags:
+  - spring cloud
+  - mybatis
+categories:
+  - spring cloud
+abbrlink: 41828
+date: 2020-01-13 17:23:39
 ---
 
 

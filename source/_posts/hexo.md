@@ -1,7 +1,8 @@
 ---
 title: Hexo搭建个人博客
-date: 2020-01-12 10:47:24
 tags: blog
+abbrlink: 21271
+date: 2020-01-12 10:47:24
 ---
 
 ![](https://portablehexo.bitmoe.cn/hexopp/hexop.png)

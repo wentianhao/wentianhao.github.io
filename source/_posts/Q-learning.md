@@ -1,8 +1,9 @@
 ---
 title: Q learning
-date: 2020-06-11 16:17:51
 tags: 强化学习
 categories: 强化学习
+abbrlink: 14953
+date: 2020-06-11 16:17:51
 ---
 
 **行为准则**

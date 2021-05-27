@@ -1,8 +1,9 @@
 ---
 title: Let's Encrypt 申请免费的Https证书
-date: 2020-02-22 17:38:45
 tags: https
 categories: server
+abbrlink: 60507
+date: 2020-02-22 17:38:45
 ---
 ## Let's Encrypt证书
 cerbot可以通过简单的命令来生成证书是免费的，而且还支持通配符证书，通配符证书指的是一个可以被多个子域名使用的公钥证书，多个子域名使用起来十分方便。申请和配置的流程简单，有效期90天，可以通过脚本更新证书。 

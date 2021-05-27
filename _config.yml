@@ -4,8 +4,8 @@
 
 # Site
 title: wanheo
-subtitle: 'sub'
-description: 'desc'
+subtitle: 
+description: 
 keywords: key
 author: 先逃跑再说
 language: zh-CN
@@ -16,6 +16,16 @@ timezone: ''
 url: https://wentianhao.github.io/
 permalink: :year/:month/:day/:title/
 permalink_defaults:
+# permalink: posts/:abbrlink/
+# abbrlink:
+#   alg: crc32 #support crc16(default) and crc32
+#   rep: hex #support dec(default) and hex
+#   drafts: false #(true)Process draft,(false)Do not process draft
+#   # Generate categories from directory-tree
+#   # depth: the max_depth of directory-tree you want to generate, should > 0
+#   auto_category:
+#     enable: false #默认为 true， 手改改为 false
+#     depth:
 pretty_urls:
   trailing_index: true # Set to false to remove trailing 'index.html' from permalinks
   trailing_html: true # Set to false to remove trailing '.html' from permalinks
@@ -43,17 +53,19 @@ render_drafts: false
 post_asset_folder: false
 relative_link: false
 future: true
+
 highlight:
-  enable: true
-  line_number: true
+  enable: false
+  line_number: false
   auto_detect: false
   tab_replace: ''
   wrap: true
   hljs: false
+
 prismjs:
-  enable: false
+  enable: true
   preprocess: true
-  line_number: true
+  line_number: false
   tab_replace: ''
 
 # Home page setting
@@ -98,6 +110,53 @@ ignore:
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
 theme: yun
+
+feed:
+  enable: true
+  type: atom
+  path: atom.xml
+  limit: 20
+  hub:
+  content:
+  content_limit: 140
+  content_limit_delim: ' '
+  order_by: -date
+  icon: icon.png
+  autodiscovery: true
+  template:
+
+live2d:
+  enable: false
+  # 推荐使用 jsdelivr 的 CDN 来加载
+  scriptFrom: jsdelivr
+  pluginRootPath: live2dw/
+  pluginJsPath: lib/
+  pluginModelPath: assets/
+  tagMode: false
+  debug: false
+  model:
+    # 推荐使用 CDN 来加载模型
+    use: https://cdn.jsdelivr.net/npm/live2d-widget-model-wanko@1.0.5/assets/wanko.model.json
+  display:
+    position: right
+    width: 150
+    height: 300
+  mobile:
+    show: true
+  react:
+    opacity: 0.7
+  # dialog:
+  #   # 是否开启对话框
+  #   enable: true
+  #   # 是否使用一言
+  #   hitokoto: true
+
+aplayer:
+  cdn: https://cdn.jsdelivr.net/npm/aplayer@latest/dist/APlayer.min.js
+  style_cdn: https://cdn.jsdelivr.net/npm/aplayer@latest/dist/APlayer.min.css
+  meting: true
+  meting_cdn: https://cdn.jsdelivr.net/npm/meting@1/dist/Meting.min.js
+  asset_inject: false
 
 # Deployment
 ## Docs: https://hexo.io/docs/one-command-deployment

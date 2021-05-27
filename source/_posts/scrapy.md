@@ -1,10 +1,11 @@
 ---
 title: scrapy爬虫项目
-date: 2020-02-29 13:25:55
 tags:
-    - python
-    - python爬虫
+  - python
+  - python爬虫
 categories: python
+abbrlink: 45183
+date: 2020-02-29 13:25:55
 ---
 Scrapy模块是一个非常常用的爬虫框架模块，使用Scrapy可以快速创建爬虫项目。
 <!-- more -->

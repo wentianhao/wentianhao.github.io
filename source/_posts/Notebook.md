@@ -1,8 +1,9 @@
 ---
 title: jupyter Notebook
-date: 2020-01-19 15:46:26
 tags: jupyter notebook
 categories: server
+abbrlink: 178
+date: 2020-01-19 15:46:26
 ---
 
 ## 什么是Jupyter Notebook?

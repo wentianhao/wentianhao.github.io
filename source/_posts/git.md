@@ -1,8 +1,9 @@
 ---
 title: git学习过程
-date: 2020-01-19 11:04:42
 tags: git
 categories: git
+abbrlink: 61851
+date: 2020-01-19 11:04:42
 ---
 
 学习git的记录

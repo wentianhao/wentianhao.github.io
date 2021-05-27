@@ -1,11 +1,12 @@
 ---
 title: hexo-to-your-server
-date: 2020-01-20 15:20:32
-tags: 
-    - hexo
-    - server
-    - nginx
+tags:
+  - hexo
+  - server
+  - nginx
 categories: server
+abbrlink: 46941
+date: 2020-01-20 15:20:32
 ---
 
 ## 服务器配置

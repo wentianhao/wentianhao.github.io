@@ -1,10 +1,11 @@
 ---
 title: Urllib爬虫项目
-date: 2020-02-25 12:51:36
-tags: 
-    - python
-    - python爬虫
+tags:
+  - python
+  - python爬虫
 categories: python
+abbrlink: 51632
+date: 2020-02-25 12:51:36
 ---
 Urllib模块是一个可以用于编写爬虫的非常常用的模块
 <!-- more -->

@@ -1,10 +1,12 @@
 ---
 title: maven
+tags:
+  - maven
+  - spring boot
+categories:
+  - spring boot
+abbrlink: 21497
 date: 2020-02-06 00:10:35
-tags: 
-    - maven
-    - spring boot
-categories: [spring boot]
 ---
 
 1. 在C:\Users\WHH\.m2下新建 settings.xml

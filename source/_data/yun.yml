@@ -1,1 +1,340 @@
-# todo
+mode: time
+
+banner:
+  enable: true
+  title: 先逃跑再说
+  src: /js/ui/banner.js
+  border: true
+  cloud:
+    enable: true
+    color: "white"
+  go_down:
+    enable: true
+    icon: icon-arrow-down-s-line
+
+notice:
+  enable: true
+  content: Thanks for watching my blog.
+
+avatar:
+  enable: true
+  url: /yun.png
+  # If true, the avatar would be dispalyed in circle.
+  rounded: true
+  # The value of opacity should be choose from 0 to 1 to set the opacity of the avatar.
+  opacity: 1
+  mickey_mouse: true
+  status:
+    enable: true
+    emoji: 😊
+    message: 永远相信美好的事情即将发生
+
+reward:
+  enable: true
+  icon: icon-hand-coin-line
+  comment: I'm so cute. Please give me money.
+  methods:
+    - name: 支付宝
+      # path: https://cdn.jsdelivr.net/gh/YunYouJun/cdn/img/donate/alipay-qrcode.jpg
+      color: "#00A3EE"
+      icon: icon-alipay-line
+    - name: QQ 支付
+      # path: https://cdn.jsdelivr.net/gh/YunYouJun/cdn/img/donate/qqpay-qrcode.png
+      color: "#12B7F5"
+      icon: icon-qq-line
+    - name: 微信支付
+      # path: https://cdn.jsdelivr.net/gh/YunYouJun/cdn/img/donate/wechatpay-qrcode.jpg
+      color: "#2DC100"
+      icon: icon-wechat-pay-line
+
+
+cdn:
+  pre: ""
+  css:
+  js:
+    base:
+    async:
+      # 默认引入的图标资源，使用 iconfont
+      iconfont: //at.alicdn.com/t/font_1140697_stqaphw3j4.js
+    defer:
+
+social:
+  - name: RSS
+    # set rss in your root config
+    # https://github.com/hexojs/hexo-generator-feed
+    link: /atom.xml # config.feed.path
+    icon: icon-rss-line
+    color: orange
+  - name: GitHub
+    link: https://github.com/YunYouJun
+    icon: icon-github-line
+    color: "#6e5494"
+  - name: 网易云音乐
+    link: https://music.163.com/#/user/home?id=247102977
+    icon: icon-netease-cloud-music-line
+    color: "#C20C0C"
+  - name: E-Mail
+    link: mailto:me@yunyoujun.cn
+    icon: icon-mail-line
+    color: "#8E71C1"
+
+trianglify:
+  enable: true
+  cell_size: 75
+  width: 800
+  height: 600
+  # https://github.com/qrohlf/trianglify/blob/master/src/utils/colorbrewer.js
+  palette: '["YlGnBu", "GnBu", "Purples", "Blues"]'
+  opacity: 0.5
+
+cursor:
+  enable: true
+  default: https://cdn.jsdelivr.net/gh/YunYouJun/cdn/css/md-cursors/pointer.cur
+  pointer: https://cdn.jsdelivr.net/gh/YunYouJun/cdn/css/md-cursors/link.cur
+  text: https://cdn.jsdelivr.net/gh/YunYouJun/cdn/css/md-cursors/text.cur
+
+post_edit:
+  enable: false
+  url: https://github.com/user-name/repo-name/tree/branch-name/subdirectory-name # Link for view source.
+
+comment:
+  enable: true
+  tips:
+    - 若您想及时得到回复提醒，建议跳转 GitHub Issues 评论。
+    - 若没有本文 Issue，您可以使用 Comment 模版新建。
+  candidates:
+    - valine
+    - utterances
+
+# waline:
+#   enable: true
+#   serverURL: https://waline.yunyoujun.cn
+#   visitor: true
+#   comment: true
+#   avatarCDN: https://cdn.v2ex.com/gravatar/
+#   placeholder: 填写邮箱，可以收到回复通知哦～
+#   requiredFields: ["nick"]
+
+github_issues:
+  enable: false
+  username: wentianhao
+  repository: wentianhao.github.io
+  filters: is:issue
+
+github_discussions:
+  enable: false
+  username: wentianhao
+  repository: wentianhao.github.io
+
+utterances:
+  enable: false
+  repo: owner/repo
+  issue-term: pathname
+  # label: comment
+  theme: github-light
+
+valine:
+  enable: true
+  appId: lKhR0buRT7OeiwUq9ECRwPba-MdYXbMMI
+  appKey: 5cz28s0hMEfyou89engEFMmS
+  placeholder: Just go go # comment box placeholder
+  avatar: # gravatar style
+  meta:
+    - nick
+    - mail
+    - link
+  pageSize: 10 # pagination size
+  # lang: zh-CN
+  # visitor: false
+  # highlight: true
+  # recordIP: false
+  # serverURLs:
+  # Emoji See: https://valine.js.org/emoji.html
+  # emojiCDN: //i0.hdslb.com/bfs/emote/
+  # emojiMaps:
+  #   tv_doge: 6ea59c827c414b4a2955fe79e0f6fd3dcd515e24.png
+  #   more...
+  # enableQQ: false
+  # requiredFields:
+  #   - nick
+  #   - mail
+
+waline:
+  enable: false
+  serverURL: # https://your-waline.vercel.app
+  # visitor: true
+  comment: false
+
+footer:
+  since: 2020
+  icon:
+    name: icon-cloud-line
+    animated: true
+    color: "#0078E7"
+  powered:
+    enable: true
+  live_time:
+    enable: true
+    prefix: 本博客已萌萌哒地运行
+    suffix: (●'◡'●)
+    start_time: "2020-01-05T00:00:00"
+#   beian:
+#     enable: true
+#     icp: 苏ICP备17038157号
+#   support:
+#     enable: true
+#     title: 又拍云
+#     link: https://www.upyun.com
+#     logo: https://cdn.jsdelivr.net/gh/YunYouJun/cdn/img/logo/upyun-logo.png
+#     prefix: 本网站由
+#     suffix: 提供 CDN 加速
+#   custom_text:
+
+engine_search:
+  enable: false
+  href: "https://www.google.com/search?q=site:"
+  # href: "https://www.baidu.com/s?wd=site:"
+  # href: "https://www.bing.com/search?q=site:"
+  domain: whh.plus
+
+local_search:
+  enable: false
+  src: /js/search/local-search.js
+
+# # If you want to use it, you need config algolia appID in _config.yml!!!
+# # https://github.com/oncletom/hexo-algolia
+algolia_search:
+  enable: false
+  applicationID: 'applicationID'
+  apiKey: 'apiKey'
+  indexName: '...'
+  src: /js/search/algolia-search.js
+  hits:
+    per_page: 10 # the number of search results per page
+
+busuanzi:
+  enable: true
+  site_uv: true
+  site_uv_icon: icon-user-line
+  site_pv: true
+  site_pv_icon: icon-eye-line
+  page_pv: true
+  page_pv_icon: icon-eye-line
+
+leancloud_visitors:
+  enable: false
+  app_id: # <your app id>
+  app_key: # <your app key>
+  # Required for apps from CN region
+  server_url: # <your server url>
+# google_analytics:
+#   enable: true
+#   id: UA-121354150-1
+
+google_adsense:
+  enable: false
+  client: #ca-pub-2245427233262012
+
+# post_edit:
+#   enable: true
+#   url: https://github.com/YunYouJun/yunyoujun.github.io/tree/hexo/source/
+
+
+
+# tags:
+#   动画: crimson
+#   漫画: orange
+#   Parcel: "#21374b"
+#   学习: saddlebrown
+#   MAD: crimson
+#   教程: royalblue
+#   笔记: dimgray
+#   分享: "#0078e7"
+#   随笔: mediumpurple
+#   Blender: "#d04d2d"
+#   Linux: "#2577b1"
+#   中传: "#ccb44b"
+#   部落: "#DD306A"
+#   科幻: midnightblue
+
+# categories:
+#   云游的小视频: "#FB7299"
+
+# pages:
+#   - name: 我的小伙伴们
+#     url: /links/
+#     icon: icon-genderless-line
+#     color: dodgerblue
+#   - name: 喜欢的女孩子
+#     url: /girls/
+#     icon: icon-women-line
+#     color: hotpink
+
+# menu:
+#   custom:
+#     title: 留言板
+#     path: /about/#comment
+#     icon: icon-clipboard-line
+
+# cursor:
+#   enable: true
+
+baidu_push: true
+
+google_tagmanager:
+  enable: false
+  id: #GTM-xxxx
+
+wordcount:
+  enable: true
+  count: true
+  time: true
+
+say:
+  enable: true
+  api: https://cdn.jsdelivr.net/gh/ElpsyCN/say@gh-pages/sentences.json
+  src: /js/say.js
+  # https://developer.hitokoto.cn/sentence/
+  hitokoto:
+    enable: true
+    api: https://v1.hitokoto.cn
+
+wordcloud:
+  enable: true
+  height: 350
+
+girls:
+  enable: true
+
+albums:
+  enable: true
+
+aplayer:
+  global: false
+  meting: true
+  # https://github.com/metowolf/MetingJS/tree/v1.2#option
+  widget:
+    enable: false
+    autoplay: false
+    # theme: "#2980b9"
+    loop: all
+    order: list
+    preload: auto
+    volume: 0.7
+    mutex: true
+    lrcType: 0
+    listFolded: false
+    listMaxHeight: 340px
+    audio:
+      - name: 星宿计时
+        artist: 杉田朗/洛天依
+        url: https://cdn.jsdelivr.net/gh/YunYouJun/cdn/audio/star-timer.mp3
+        cover: https://cdn.jsdelivr.net/gh/YunYouJun/cdn/img/bg/stars-timing-0.jpg
+    meting:
+      enable: true
+      id: 308168565
+      server: netease
+      type: playlist
+
+pjax:
+  enable: true

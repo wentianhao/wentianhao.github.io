@@ -1,9 +1,10 @@
 ---
 title: 算法学习
 katex: false
-date: 2021-01-16 16:08:05
-tags: 算法  
+tags: 算法
 categories: 算法
+abbrlink: 52784
+date: 2021-01-16 16:08:05
 ---
 
 ## 一、数据结构的存储方式

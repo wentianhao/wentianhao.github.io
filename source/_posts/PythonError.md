@@ -1,8 +1,9 @@
 ---
 title: python Error
-date: 2020-02-25 14:02:30
 tags: python
 categories: python
+abbrlink: 43356
+date: 2020-02-25 14:02:30
 ---
 
 ## 引言

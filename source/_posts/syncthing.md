@@ -1,8 +1,9 @@
 ---
 title: 数据同步神器
-date: 2020-03-02 16:58:59
 tags: sync
 categories: server
+abbrlink: 51398
+date: 2020-03-02 16:58:59
 ---
 
 ![syncthing](https://www.moewah.com/usr/uploads/2019/03/3082024495.jpg)

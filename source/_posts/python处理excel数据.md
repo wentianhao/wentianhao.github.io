@@ -1,8 +1,9 @@
 ---
 title: python处理excel数据
-date: 2020-02-22 13:17:07
 tags: python
 categories: python
+abbrlink: 17829
+date: 2020-02-22 13:17:07
 ---
 
 1. 安装xlrd 和xlwt 库(python3)

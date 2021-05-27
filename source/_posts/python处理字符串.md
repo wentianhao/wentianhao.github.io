@@ -1,8 +1,9 @@
 ---
 title: python处理字符串
-date: 2020-02-22 14:44:36
 tags: python
-categories: python 
+categories: python
+abbrlink: 41402
+date: 2020-02-22 14:44:36
 ---
 
 1. 使用正则表达式来获取字符串中需要的字符

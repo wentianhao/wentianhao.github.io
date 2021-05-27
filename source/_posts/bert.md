@@ -1,9 +1,10 @@
 ---
 title: bert
-date: 2020-08-25 16:17:51
 tags: bert
 categories: bert
 katex: true
+abbrlink: 8235
+date: 2020-08-25 16:17:51
 ---
 
 ### <center>**CCKS&百度 2019中文短文本的实体链指 第一名解决方案**

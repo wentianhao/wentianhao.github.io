@@ -1,11 +1,12 @@
 ---
 title: markdown公式语法
 katex: false
-date: 2020-12-09 16:08:47
 tags: blog
-categories: 
-            - blog 
-            - markdown
+categories:
+  - blog
+  - markdown
+abbrlink: 39362
+date: 2020-12-09 16:08:47
 ---
 
 记录markdown常用的公式语法

@@ -1,11 +1,12 @@
 ---
 title: Boosting Entity Linking Performance by Leveraging Unlabeled Documents
 katex: true
-date: 2020-10-23 14:17:32
 tags:
-    - NLP
-    - 实体链接
+  - NLP
+  - 实体链接
 categories: 论文笔记
+abbrlink: 16408
+date: 2020-10-23 14:17:32
 ---
 
 ## 基础知识

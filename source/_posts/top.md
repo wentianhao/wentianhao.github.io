@@ -1,10 +1,11 @@
 ---
 title: linux命令：top
 katex: false
-date: 2020-10-20 23:36:42
-updated: 2020-10-20 23:36:42
 tags: linux
 categories: linux
+abbrlink: 63625
+date: 2020-10-20 23:36:42
+updated: 2020-10-20 23:36:42
 ---
 
 ## 每天一个Linux命令：top

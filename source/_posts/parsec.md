@@ -1,8 +1,12 @@
 ---
 title: gem5与nvmain混合编译（二）———配置和运行ｐａｒｓｅｃ-2.1
-date: 2020-01-13 10:47:24
-tags: [gem5,nvmain,parsec-2.1] 
+tags:
+  - gem5
+  - nvmain
+  - parsec-2.1
 categories: gem5
+abbrlink: 20203
+date: 2020-01-13 10:47:24
 ---
 ## **参考资料：**
 [**官方资料**](http://www.gem5.org/PARSEC_benchmarks)：http://www.gem5.org/PARSEC_benchmarks

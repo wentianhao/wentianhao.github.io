@@ -1,12 +1,13 @@
 ---
 title: pytorch学习笔记
 katex: false
+tags:
+  - python
+  - NLP
+categories: python
+abbrlink: 10241
 date: 2020-09-25 17:05:53
 updated: 2020-09-25 17:05:53
-tags:
-    - python
-    - NLP
-categories: python
 ---
 
 pytorch 是一个基于python的科学计算包

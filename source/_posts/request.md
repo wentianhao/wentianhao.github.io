@@ -1,10 +1,11 @@
 ---
 title: Request模块爬虫
-date: 2020-02-28 18:57:05
 tags:
-    - python
-    - python爬虫
+  - python
+  - python爬虫
 categories: python
+abbrlink: 36610
+date: 2020-02-28 18:57:05
 ---
 
 **Request模块的基础使用**

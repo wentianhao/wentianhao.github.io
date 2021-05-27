@@ -1,9 +1,10 @@
 ---
 title: Python下载文件的N种方法
 katex: false
-date: 2020-11-20 15:34:18
 tags: python
 categories: python
+abbrlink: 14433
+date: 2020-11-20 15:34:18
 ---
 
 记录python下载文件的各种方法，从下载简单的小文件到用断点续传的方式下载大文件

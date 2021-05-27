@@ -1,9 +1,10 @@
 ---
 title: linux命令：useradd
 katex: false
-date: 2021-03-29 21:21:51
 tags: linux
 categories: linux
+abbrlink: 32725
+date: 2021-03-29 21:21:51
 ---
 
 ## 每天一个Linux命令：useradd

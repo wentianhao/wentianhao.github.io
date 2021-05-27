@@ -1,10 +1,11 @@
 ---
 title: XPath表达式基础
-date: 2020-02-19 23:07:22
 tags:
-    - python
-    - python爬虫
+  - python
+  - python爬虫
 categories: python
+abbrlink: 27559
+date: 2020-02-19 23:07:22
 ---
 ## 基础
 除了正则表达式之外，还有一些非常好用的信息筛选工具，比如XPath表达式、BeautifulSoup等

@@ -1,8 +1,9 @@
 ---
 title: Anaconda
-date: 2020-03-31 15:51:19
 tags: anaconda
 categories: python
+abbrlink: 41489
+date: 2020-03-31 15:51:19
 ---
 
 1.查看创建好的环境：

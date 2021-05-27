@@ -1,11 +1,12 @@
 ---
 title: Deep Joint Entity Disambiguation with local Neural Attention
-katex: True
-date: 2020-12-09 10:52:56
+katex: true
 tags:
-    - NLP
-    - 实体链接
+  - NLP
+  - 实体链接
 categories: 论文笔记
+abbrlink: 8814
+date: 2020-12-09 10:52:56
 ---
 
 提出一种新的深度学习文档级实体消歧模型

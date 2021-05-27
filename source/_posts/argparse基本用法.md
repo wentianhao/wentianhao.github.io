@@ -1,10 +1,11 @@
 ---
 title: argparse基本用法
 katex: false
-date: 2020-10-21 11:20:51
-updated: 2020-10-21 11:20:51
 tags: python
 categories: python
+abbrlink: 30536
+date: 2020-10-21 11:20:51
+updated: 2020-10-21 11:20:51
 ---
 
 argparse 是 python自带的命令行参数解析包，用来方便读取命令行参数

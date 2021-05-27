@@ -1,8 +1,9 @@
 ---
 title: gem5的安装与使用
-date: 2020-01-13 10:41:13
 tags: gem5
 categories: gem5
+abbrlink: 9963
+date: 2020-01-13 10:41:13
 ---
 
 

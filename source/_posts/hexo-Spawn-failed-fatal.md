@@ -1,8 +1,9 @@
 ---
 title: hexo-Spawn-failed-fatal
-date: 2020-02-13 00:00:31
 tags: hexo
 categories: server
+abbrlink: 21614
+date: 2020-02-13 00:00:31
 ---
 
 今天偶尔发现博客部署到阿里云上没有成功

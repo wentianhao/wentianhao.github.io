@@ -1,12 +1,13 @@
 ---
 title: Notebook嵌入Hexo博客
 katex: false
+tags:
+  - jupyter notebook
+  - hexo
+categories: server
+abbrlink: 17820
 date: 2020-09-25 23:43:18
 updated: 2020-09-25 23:43:18
-tags:
-    - jupyter notebook
-    - hexo
-categories: server
 ---
 
 ## 因

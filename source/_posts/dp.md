@@ -1,11 +1,12 @@
 ---
 title: 动态规划算法详解
 katex: false
-date: 2021-04-03 19:12:19
 tags: DP
-categories: 
-            - LeetCode
-            - DP
+categories:
+  - LeetCode
+  - DP
+abbrlink: 3707
+date: 2021-04-03 19:12:19
 ---
 动态规划DP(Dynamic programming):通过把原问题分解为相对简单的子问题的方式求解复杂问题的方法
 

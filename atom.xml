@@ -1,0 +1,460 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>wanheo</title>
+  <icon>https://wentianhao.github.io/icon.png</icon>
+  
+  <link href="https://wentianhao.github.io/atom.xml" rel="self"/>
+  
+  <link href="https://wentianhao.github.io/"/>
+  <updated>2021-04-03T16:31:53.106Z</updated>
+  <id>https://wentianhao.github.io/</id>
+  
+  <author>
+    <name>先逃跑再说</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>动态规划算法详解</title>
+    <link href="https://wentianhao.github.io/2021/04/03/dp/"/>
+    <id>https://wentianhao.github.io/2021/04/03/dp/</id>
+    <published>2021-04-03T11:12:19.000Z</published>
+    <updated>2021-04-03T16:31:53.106Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;动态规划DP(Dynamic programming):通过把原问题分解为相对简单的子问题的方式求解复杂问题的方法&lt;/p&gt;
+&lt;p&gt;DP 常适用于 有 &lt;strong&gt;重叠子问题&lt;/strong&gt; 和 &lt;strong&gt;最优子结构性质&lt;/strong&gt; 的问题，动态规划方法所耗时间往往低于朴素解法&lt;/p&gt;
+&lt;h2 id=&quot;基本思想&quot;&gt;&lt;a href=&quot;#基本思想&quot; class=&quot;headerlink&quot; title=&quot;基本思想&quot;&gt;&lt;/a&gt;基本思想&lt;/h2&gt;&lt;p&gt;若要解一个给定的问题，需解其不同部分(即子问题)，再根据子问题的解以得到原问题的解。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="LeetCode" scheme="https://wentianhao.github.io/categories/LeetCode/"/>
+    
+    <category term="DP" scheme="https://wentianhao.github.io/categories/LeetCode/DP/"/>
+    
+    
+    <category term="DP" scheme="https://wentianhao.github.io/tags/DP/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>linux命令：useradd</title>
+    <link href="https://wentianhao.github.io/2021/03/29/useradd/"/>
+    <id>https://wentianhao.github.io/2021/03/29/useradd/</id>
+    <published>2021-03-29T13:21:51.000Z</published>
+    <updated>2021-03-29T13:31:26.999Z</updated>
+    
+    
+    <summary type="html">&lt;h2 id=&quot;每天一个Linux命令：useradd&quot;&gt;&lt;a href=&quot;#每天一个Linux命令：useradd&quot; class=&quot;headerlink&quot; title=&quot;每天一个Linux命令：useradd&quot;&gt;&lt;/a&gt;每天一个Linux命令：useradd&lt;/h2&gt;&lt;p&gt;ubuntu创建新用户并赋予指定目录的相关权限&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="linux" scheme="https://wentianhao.github.io/categories/linux/"/>
+    
+    
+    <category term="linux" scheme="https://wentianhao.github.io/tags/linux/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>算法学习</title>
+    <link href="https://wentianhao.github.io/2021/01/16/algo/"/>
+    <id>https://wentianhao.github.io/2021/01/16/algo/</id>
+    <published>2021-01-16T08:08:05.000Z</published>
+    <updated>2021-01-16T10:22:39.117Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;一、数据结构的存储方式&quot;&gt;&lt;a href=&quot;#一、数据结构的存储方式&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="算法" scheme="https://wentianhao.github.io/categories/%E7%AE%97%E6%B3%95/"/>
+    
+    
+    <category term="算法" scheme="https://wentianhao.github.io/tags/%E7%AE%97%E6%B3%95/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>markdown公式语法</title>
+    <link href="https://wentianhao.github.io/2020/12/09/markdown%E5%85%AC%E5%BC%8F%E8%AF%AD%E6%B3%95/"/>
+    <id>https://wentianhao.github.io/2020/12/09/markdown%E5%85%AC%E5%BC%8F%E8%AF%AD%E6%B3%95/</id>
+    <published>2020-12-09T08:08:47.000Z</published>
+    <updated>2020-12-10T07:53:43.571Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;记录markdown常用的公式语法&lt;/p&gt;
+&lt;h2 id=&quot;markdown数学符号-amp-公式&quot;&gt;&lt;a href=&quot;#markdown数学符号-amp-公式&quot; class=&quot;headerlink&quot; title=&quot;markdown数学符号 &amp;amp; 公式&quot;&gt;&lt;/a&gt;markdown数学符号 &amp;amp; 公式&lt;/h2&gt;</summary>
+    
+    
+    
+    <category term="blog" scheme="https://wentianhao.github.io/categories/blog/"/>
+    
+    <category term="markdown" scheme="https://wentianhao.github.io/categories/blog/markdown/"/>
+    
+    
+    <category term="blog" scheme="https://wentianhao.github.io/tags/blog/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Deep Joint Entity Disambiguation with local Neural Attention</title>
+    <link href="https://wentianhao.github.io/2020/12/09/deepED/"/>
+    <id>https://wentianhao.github.io/2020/12/09/deepED/</id>
+    <published>2020-12-09T02:52:56.000Z</published>
+    <updated>2020-12-10T07:52:10.911Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;提出一种新的深度学习文档级实体消歧模型&lt;/p&gt;
+&lt;h2 id=&quot;Key-components&quot;&gt;&lt;a href=&quot;#Key-components&quot; class=&quot;headerlink&quot; title=&quot;Key components&quot;&gt;&lt;/a&gt;Key components&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;Entity Embeddings：上下文单词和候选实体嵌入到同一公共向量空间&lt;/li&gt;
+&lt;li&gt;局部上下文的注意力机制&lt;/li&gt;
+&lt;li&gt;联合概率推理模型</summary>
+    
+    
+    
+    <category term="论文笔记" scheme="https://wentianhao.github.io/categories/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/"/>
+    
+    
+    <category term="NLP" scheme="https://wentianhao.github.io/tags/NLP/"/>
+    
+    <category term="实体链接" scheme="https://wentianhao.github.io/tags/%E5%AE%9E%E4%BD%93%E9%93%BE%E6%8E%A5/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Python下载文件的N种方法</title>
+    <link href="https://wentianhao.github.io/2020/11/20/Python%E4%B8%8B%E8%BD%BD%E6%96%87%E4%BB%B6%E7%9A%84N%E7%A7%8D%E6%96%B9%E6%B3%95/"/>
+    <id>https://wentianhao.github.io/2020/11/20/Python%E4%B8%8B%E8%BD%BD%E6%96%87%E4%BB%B6%E7%9A%84N%E7%A7%8D%E6%96%B9%E6%B3%95/</id>
+    <published>2020-11-20T07:34:18.000Z</published>
+    <updated>2020-11-20T15:51:31.889Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;记录python下载文件的各种方法，从下载简单的小文件到用断点续传的方式下载大文件&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="python" scheme="https://wentianhao.github.io/categories/python/"/>
+    
+    
+    <category term="python" scheme="https://wentianhao.github.io/tags/python/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Lua学习</title>
+    <link href="https://wentianhao.github.io/2020/11/05/Lua/"/>
+    <id>https://wentianhao.github.io/2020/11/05/Lua/</id>
+    <published>2020-11-05T15:19:22.000Z</published>
+    <updated>2020-11-05T16:09:48.164Z</updated>
+    
+    
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;Lua 是一种轻量小巧的脚本语言，用标准C语言编写并以源代码形式开放， 其设计目的是为了嵌入应用程序中，从而为应用程序提供灵活的扩展和定制功能&lt;/p&gt;
+&lt;/blockquote&gt;</summary>
+    
+    
+    
+    <category term="Lua" scheme="https://wentianhao.github.io/categories/Lua/"/>
+    
+    
+    <category term="Lua" scheme="https://wentianhao.github.io/tags/Lua/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>AOP</title>
+    <link href="https://wentianhao.github.io/2020/10/24/AOP/"/>
+    <id>https://wentianhao.github.io/2020/10/24/AOP/</id>
+    <published>2020-10-24T11:43:28.000Z</published>
+    <updated>2020-10-24T12:02:27.658Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;AOP基本概念&quot;&gt;&lt;a href=&quot;#AOP基本概念&quot; class=&quot;headerlink&quot; title=&quot;AOP基本概念&quot;&gt;&lt;/a&gt;AOP基本概念&lt;/h2&gt;&lt;blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;AOP:Aspect Oriented</summary>
+        
+      
+    
+    
+    
+    <category term="java" scheme="https://wentianhao.github.io/categories/java/"/>
+    
+    
+    <category term="java" scheme="https://wentianhao.github.io/tags/java/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Boosting Entity Linking Performance by Leveraging Unlabeled Documents</title>
+    <link href="https://wentianhao.github.io/2020/10/23/EntityUnlabe/"/>
+    <id>https://wentianhao.github.io/2020/10/23/EntityUnlabe/</id>
+    <published>2020-10-23T06:17:32.000Z</published>
+    <updated>2020-10-23T06:48:49.177Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;基础知识&quot;&gt;&lt;a href=&quot;#基础知识&quot; class=&quot;headerlink&quot; title=&quot;基础知识&quot;&gt;&lt;/a&gt;基础知识&lt;/h2&gt;&lt;p&gt;$MAP$: Maximum a posteriori </summary>
+        
+      
+    
+    
+    
+    <category term="论文笔记" scheme="https://wentianhao.github.io/categories/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/"/>
+    
+    
+    <category term="NLP" scheme="https://wentianhao.github.io/tags/NLP/"/>
+    
+    <category term="实体链接" scheme="https://wentianhao.github.io/tags/%E5%AE%9E%E4%BD%93%E9%93%BE%E6%8E%A5/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>argparse基本用法</title>
+    <link href="https://wentianhao.github.io/2020/10/21/argparse%E5%9F%BA%E6%9C%AC%E7%94%A8%E6%B3%95/"/>
+    <id>https://wentianhao.github.io/2020/10/21/argparse%E5%9F%BA%E6%9C%AC%E7%94%A8%E6%B3%95/</id>
+    <published>2020-10-21T03:20:51.000Z</published>
+    <updated>2020-10-21T03:20:51.000Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;argparse 是 python自带的命令行参数解析包，用来方便读取命令行参数&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="python" scheme="https://wentianhao.github.io/categories/python/"/>
+    
+    
+    <category term="python" scheme="https://wentianhao.github.io/tags/python/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>linux命令：top</title>
+    <link href="https://wentianhao.github.io/2020/10/20/top/"/>
+    <id>https://wentianhao.github.io/2020/10/20/top/</id>
+    <published>2020-10-20T15:36:42.000Z</published>
+    <updated>2020-10-20T15:36:42.000Z</updated>
+    
+    
+    <summary type="html">&lt;h2 id=&quot;每天一个Linux命令：top&quot;&gt;&lt;a href=&quot;#每天一个Linux命令：top&quot; class=&quot;headerlink&quot; title=&quot;每天一个Linux命令：top&quot;&gt;&lt;/a&gt;每天一个Linux命令：top&lt;/h2&gt;&lt;p&gt;top命令是Linux下常用的性能分析工具，能够实时显示系统中各个进程的资源占用状况，类似于Windows的任务管理器。下面详细介绍它的使用方法。top是一个动态显示过程,即可以通过用户按键来不断刷新当前状态.如果在前台执行该命令,它将独占前台,直到用户终止该程序为止.比较准确的说,top命令提供了实时的对系统处理器的状态监视.它将显示系统中CPU最“敏感”的任务列表.该命令可以按CPU使用.内存使用和执行时间对任务进行排序；而且该命令的很多特性都可以通过交互式命令或者在个人定制文件中进行设定.&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="linux" scheme="https://wentianhao.github.io/categories/linux/"/>
+    
+    
+    <category term="linux" scheme="https://wentianhao.github.io/tags/linux/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Attention Is All You Need</title>
+    <link href="https://wentianhao.github.io/2020/10/10/Attention/"/>
+    <id>https://wentianhao.github.io/2020/10/10/Attention/</id>
+    <published>2020-10-10T01:59:03.000Z</published>
+    <updated>2020-10-10T01:59:03.000Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;&lt;img src=&quot;https://whh.plus/images/attention.png&quot; alt=&quot;attention&quot;&gt;&lt;/p&gt;
+&lt;h2 id=&quot;Introduction&quot;&gt;&lt;a href=&quot;#Introduction&quot; class=&quot;headerlink&quot; title=&quot;Introduction&quot;&gt;&lt;/a&gt;Introduction&lt;/h2&gt;&lt;p&gt;传统的基于RNN的Seq2Seq模型难以处理长序列的句子，无法实现并行，还面临对齐的问题，本文提出Attention机制，加入Attention的Seq2Seq模型在各个任务上都有显著提升，创新点在于抛弃传统的Encoder-Decoder模型必须结合CNN或RNN的固有模式，只用Attention机制。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="论文笔记" scheme="https://wentianhao.github.io/categories/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/"/>
+    
+    
+    <category term="NLP" scheme="https://wentianhao.github.io/tags/NLP/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>服务器后台运行python脚本</title>
+    <link href="https://wentianhao.github.io/2020/10/09/%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%90%8E%E5%8F%B0%E8%BF%90%E8%A1%8Cpython%E8%84%9A%E6%9C%AC/"/>
+    <id>https://wentianhao.github.io/2020/10/09/%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%90%8E%E5%8F%B0%E8%BF%90%E8%A1%8Cpython%E8%84%9A%E6%9C%AC/</id>
+    <published>2020-10-09T08:46:25.000Z</published>
+    <updated>2020-10-09T08:46:25.000Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;服务器运行python&lt;/p&gt;
+&lt;pre class=&quot;language-bash&quot; data-language=&quot;bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;python xx.py&lt;/code&gt;&lt;/pre&gt;</summary>
+    
+    
+    
+    <category term="python" scheme="https://wentianhao.github.io/categories/python/"/>
+    
+    
+    <category term="python" scheme="https://wentianhao.github.io/tags/python/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>自然语言处理入门</title>
+    <link href="https://wentianhao.github.io/2020/09/27/%E8%87%AA%E7%84%B6%E8%AF%AD%E8%A8%80%E5%A4%84%E7%90%86%E5%85%A5%E9%97%A8/"/>
+    <id>https://wentianhao.github.io/2020/09/27/%E8%87%AA%E7%84%B6%E8%AF%AD%E8%A8%80%E5%A4%84%E7%90%86%E5%85%A5%E9%97%A8/</id>
+    <published>2020-09-27T04:07:09.000Z</published>
+    <updated>2020-10-23T06:12:09.464Z</updated>
+    
+    
+    <summary type="html">&lt;h2 id=&quot;新手上路&quot;&gt;&lt;a href=&quot;#新手上路&quot; class=&quot;headerlink&quot; title=&quot;新手上路&quot;&gt;&lt;/a&gt;新手上路&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;词法分析&lt;/strong&gt; ：主要任务是将文本分割为有意义的词语(&lt;strong&gt;中文分词&lt;/strong&gt;)，确定每个词语的类别和浅层的歧义消除(&lt;strong&gt;词性标注&lt;/strong&gt;)，并且识别出一些较长的专有名词(&lt;strong&gt;命名实体识别&lt;/strong&gt;)&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;句法分析&lt;/strong&gt; ：&lt;strong&gt;词法分析&lt;/strong&gt;只能得到零散的词汇信息，&lt;strong&gt;句法分析&lt;/strong&gt;需要得到句子的主谓宾结构得到语法信息&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;语义分析&lt;/strong&gt; ：侧重语义而非语法，包括&lt;strong&gt;词义消歧&lt;/strong&gt;(确定一个词在语境中的含义，而不是简单的词性)、&lt;strong&gt;语义角色标注&lt;/strong&gt;(标注句子中的谓语与其他成分的关系)、&lt;strong&gt;语义依存分析&lt;/strong&gt;(分析句子中词语之间的语义关系)&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="读书笔记" scheme="https://wentianhao.github.io/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"/>
+    
+    
+    <category term="NLP" scheme="https://wentianhao.github.io/tags/NLP/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Notebook嵌入Hexo博客</title>
+    <link href="https://wentianhao.github.io/2020/09/25/Notebook%E5%B5%8C%E5%85%A5Hexo%E5%8D%9A%E5%AE%A2/"/>
+    <id>https://wentianhao.github.io/2020/09/25/Notebook%E5%B5%8C%E5%85%A5Hexo%E5%8D%9A%E5%AE%A2/</id>
+    <published>2020-09-25T15:43:18.000Z</published>
+    <updated>2020-09-25T15:43:18.000Z</updated>
+    
+    
+    <summary type="html">&lt;h2 id=&quot;因&quot;&gt;&lt;a href=&quot;#因&quot; class=&quot;headerlink&quot; title=&quot;因&quot;&gt;&lt;/a&gt;因&lt;/h2&gt;&lt;p&gt;由于最近在notebook上学pytorch，之前就觉得notebook来写博客贼棒，然后就想着把pytorch的学习过程给完整的在hexo博客上展示出来，记录一下&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="server" scheme="https://wentianhao.github.io/categories/server/"/>
+    
+    
+    <category term="jupyter notebook" scheme="https://wentianhao.github.io/tags/jupyter-notebook/"/>
+    
+    <category term="hexo" scheme="https://wentianhao.github.io/tags/hexo/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>pytorch学习笔记</title>
+    <link href="https://wentianhao.github.io/2020/09/25/pytorch%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    <id>https://wentianhao.github.io/2020/09/25/pytorch%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</id>
+    <published>2020-09-25T09:05:53.000Z</published>
+    <updated>2020-09-25T09:05:53.000Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;pytorch 是一个基于python的科学计算包&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="python" scheme="https://wentianhao.github.io/categories/python/"/>
+    
+    
+    <category term="NLP" scheme="https://wentianhao.github.io/tags/NLP/"/>
+    
+    <category term="python" scheme="https://wentianhao.github.io/tags/python/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>基于注意力机制的问句实体链接</title>
+    <link href="https://wentianhao.github.io/2020/09/21/%E5%9F%BA%E4%BA%8E%E6%B3%A8%E6%84%8F%E5%8A%9B%E6%9C%BA%E5%88%B6%E7%9A%84%E9%97%AE%E5%8F%A5%E5%AE%9E%E4%BD%93%E9%93%BE%E6%8E%A5/"/>
+    <id>https://wentianhao.github.io/2020/09/21/%E5%9F%BA%E4%BA%8E%E6%B3%A8%E6%84%8F%E5%8A%9B%E6%9C%BA%E5%88%B6%E7%9A%84%E9%97%AE%E5%8F%A5%E5%AE%9E%E4%BD%93%E9%93%BE%E6%8E%A5/</id>
+    <published>2020-09-21T09:00:05.000Z</published>
+    <updated>2020-10-10T02:04:08.686Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;&lt;strong&gt;基于注意力机制的问句实体链接&lt;/strong&gt;&lt;/p&gt;
+&lt;h2 id=&quot;摘要&quot;&gt;&lt;a href=&quot;#摘要&quot; class=&quot;headerlink&quot; title=&quot;摘要&quot;&gt;&lt;/a&gt;&lt;strong&gt;摘要&lt;/strong&gt;&lt;/h2&gt;&lt;p&gt;问句实体链接不仅需要大量的数据处理和特征选择工作，而且容易形成错误积累，降低链接效果。针对这种情况，文中提出基于注意力机制的编码器-解码器问句实体链接模型。模型使用双向的长短期记忆网络编码问句，经过注意力机制解码，生成对应的实体指称和消歧信息输出，最后链接到知识库实体。在有关汽车领域车系产品问句好热实体数据集上的实验表明，文中模型仅利用较少的上下文信息便可取得良好效果。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;关键词&lt;/strong&gt; ：问句实体链接；注意力机制；编码器-解码器；长短期记忆网络；生成模型&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="论文笔记" scheme="https://wentianhao.github.io/categories/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/"/>
+    
+    
+    <category term="NLP" scheme="https://wentianhao.github.io/tags/NLP/"/>
+    
+    <category term="实体链接" scheme="https://wentianhao.github.io/tags/%E5%AE%9E%E4%BD%93%E9%93%BE%E6%8E%A5/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>数学之美</title>
+    <link href="https://wentianhao.github.io/2020/09/21/%E6%95%B0%E5%AD%A6%E4%B9%8B%E7%BE%8E/"/>
+    <id>https://wentianhao.github.io/2020/09/21/%E6%95%B0%E5%AD%A6%E4%B9%8B%E7%BE%8E/</id>
+    <published>2020-09-21T05:33:41.000Z</published>
+    <updated>2020-12-08T06:29:23.649Z</updated>
+    
+    
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;简单即是美&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&quot;1-文字和语言-vs-数字和信息&quot;&gt;&lt;a href=&quot;#1-文字和语言-vs-数字和信息&quot; class=&quot;headerlink&quot; title=&quot;1.文字和语言 vs 数字和信息&quot;&gt;&lt;/a&gt;&lt;strong&gt;1.文字和语言 vs 数字和信息&lt;/strong&gt;&lt;/h2&gt;&lt;p&gt;&lt;em&gt;文字和语言与数学，从产生起原本就有相通性，虽然它们的发展一度分道扬镳，但是最终还是能走到一起。&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;冷知识 ：阿拉伯数字不是阿拉伯人发明的，而是印度人发明的&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="读书笔记" scheme="https://wentianhao.github.io/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"/>
+    
+    
+    <category term="NLP" scheme="https://wentianhao.github.io/tags/NLP/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>基于双词主题模型的半监督实体消歧方法研究</title>
+    <link href="https://wentianhao.github.io/2020/09/21/%E5%9F%BA%E4%BA%8E%E5%8F%8C%E8%AF%8D%E4%B8%BB%E9%A2%98%E6%A8%A1%E5%9E%8B%E7%9A%84%E5%8D%8A%E7%9B%91%E7%9D%A3%E5%AE%9E%E4%BD%93%E6%B6%88%E6%AD%A7%E6%96%B9%E6%B3%95%E7%A0%94%E7%A9%B6/"/>
+    <id>https://wentianhao.github.io/2020/09/21/%E5%9F%BA%E4%BA%8E%E5%8F%8C%E8%AF%8D%E4%B8%BB%E9%A2%98%E6%A8%A1%E5%9E%8B%E7%9A%84%E5%8D%8A%E7%9B%91%E7%9D%A3%E5%AE%9E%E4%BD%93%E6%B6%88%E6%AD%A7%E6%96%B9%E6%B3%95%E7%A0%94%E7%A9%B6/</id>
+    <published>2020-09-21T02:08:46.000Z</published>
+    <updated>2020-10-10T02:03:58.379Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;&lt;strong&gt;基于双词主题模型的半监督实体消歧方法研究&lt;/strong&gt;&lt;/p&gt;
+&lt;h2 id=&quot;摘要&quot;&gt;&lt;a href=&quot;#摘要&quot; class=&quot;headerlink&quot; title=&quot;摘要&quot;&gt;&lt;/a&gt;&lt;strong&gt;摘要&lt;/strong&gt;&lt;/h2&gt;&lt;p&gt;针对实体上下文信息主题漂移问题，提出一种基于双词主题模型的实体消歧方法。方法考虑到实体在一定语义环境下具有不同的主题，且在同一文档中同时出现的其他实体在一定程度上能够帮助待消歧实体确定所指代内容，利用命名实体构建双词的思想，将协同实体关系融合到主题模型中，并在此基础上利用Wikipedia知识库，进行半监督消歧。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;关键词&lt;/strong&gt; ：实体消歧；Wikipedia；双词主题模型&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="论文笔记" scheme="https://wentianhao.github.io/categories/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/"/>
+    
+    
+    <category term="NLP" scheme="https://wentianhao.github.io/tags/NLP/"/>
+    
+    <category term="实体链接" scheme="https://wentianhao.github.io/tags/%E5%AE%9E%E4%BD%93%E9%93%BE%E6%8E%A5/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>bert</title>
+    <link href="https://wentianhao.github.io/2020/08/25/bert/"/>
+    <id>https://wentianhao.github.io/2020/08/25/bert/</id>
+    <published>2020-08-25T08:17:51.000Z</published>
+    <updated>2020-10-09T07:28:57.250Z</updated>
+    
+    
+    <summary type="html">&lt;h3 id=&quot;CCKS-amp-百度-2019中文短文本的实体链指-第一名解决方案&quot;&gt;&lt;a href=&quot;#CCKS-amp-百度-2019中文短文本的实体链指-第一名解决方案&quot; class=&quot;headerlink&quot; title=&quot;CCKS&amp;amp;百度 2019中文短文本的实体链指 第一名解决方案&quot;&gt;&lt;/a&gt;&lt;center&gt;&lt;strong&gt;CCKS&amp;amp;百度 2019中文短文本的实体链指 第一名解决方案&lt;/strong&gt;&lt;/h3&gt;&lt;p&gt;code 文件夹下为项目文件&lt;br&gt;比赛网址： &lt;a href=&quot;https://biendata.com/competition/ccks_2019_el/&quot;&gt;https://biendata.com/competition/ccks_2019_el/&lt;/a&gt;&lt;br&gt;数据集：&lt;a href=&quot;https://pan.baidu.com/s/1SShtugdAMVf0fdaBowtMiA&quot;&gt;https://pan.baidu.com/s/1SShtugdAMVf0fdaBowtMiA&lt;/a&gt; 提取码:8r80&lt;br&gt;这是提交的时候代码，自己测试是请先划分出验证集，上述所有代码都是交叉验证有多个模型，很费时间，自己跑的时候跑一折就行&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;摘要&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;　　传统的实体链接任务主要是针对长文档。长文档拥有充分的上下文 信息，能够辅助实体的识别与消歧。相比之下，中文短文本的实体链接存 在很大的挑战。实体链接整个过程包括实体识别和实体消歧两个子任务。 针对实体识别子任务，我们创新性地利用了知识库描述文本的信息来增强 实体识别的性能，提出了 BERT-EntityNameEmbedding（BERT-ENE） 模型。具体地说，首先通过挖掘知识库中实体的描述文本得到实体名字的 向量嵌入，然后通过名称字典匹配技术，得到得到短文本中的候选实体，最 后利用 BERT-ENE 模型对结果进行筛选，完成实体识别的任务。此外，本 文进一步提出了一种将 BERT-ENE 模型与 BERT-CRF 模型相融合的新 方法，相比传统方法识别效果有了显著提升。针对实体消歧子任务，将其 视为二分类问题，通过基于 BERT 的二分类模型对候选实体进行预测，然 后对预测的概率进行排序，进而完成消歧任务。基于本文提出的方法，我们在 CCKS2019 面向中文短文本的实体链指任务中，取得了第一名的成绩。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;关键词&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;　　实体链接，实体识别，实体消歧，BERT&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="bert" scheme="https://wentianhao.github.io/categories/bert/"/>
+    
+    
+    <category term="bert" scheme="https://wentianhao.github.io/tags/bert/"/>
+    
+  </entry>
+  
+</feed>

@@ -6,7 +6,7 @@
   <link href="https://wentianhao.github.io/atom.xml" rel="self"/>
   
   <link href="https://wentianhao.github.io/"/>
-  <updated>2021-06-10T02:05:54.985Z</updated>
+  <updated>2021-06-10T02:06:08.036Z</updated>
   <id>https://wentianhao.github.io/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="https://wentianhao.github.io/2021/06/10/%E8%83%8C%E5%8C%85%E9%97%AE%E9%A2%98/"/>
     <id>https://wentianhao.github.io/2021/06/10/%E8%83%8C%E5%8C%85%E9%97%AE%E9%A2%98/</id>
     <published>2021-06-10T01:48:41.000Z</published>
-    <updated>2021-06-10T02:05:54.985Z</updated>
+    <updated>2021-06-10T02:06:08.036Z</updated>
     
     
     <summary type="html">&lt;p&gt;背包问题是一类经典的动态规划问题，6月是leetcode的背包月，因此就最近做的几道背包题目，简单总结一下。&lt;/p&gt;
@@ -49,7 +49,7 @@
     <link href="https://wentianhao.github.io/2021/04/03/dp/"/>
     <id>https://wentianhao.github.io/2021/04/03/dp/</id>
     <published>2021-04-03T11:12:19.000Z</published>
-    <updated>2021-05-27T09:02:39.414Z</updated>
+    <updated>2021-06-10T02:20:00.402Z</updated>
     
     
     <summary type="html">&lt;p&gt;动态规划DP(Dynamic programming):通过把原问题分解为相对简单的子问题的方式求解复杂问题的方法&lt;/p&gt;

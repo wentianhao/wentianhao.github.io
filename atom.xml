@@ -6,7 +6,7 @@
   <link href="https://wentianhao.github.io/atom.xml" rel="self"/>
   
   <link href="https://wentianhao.github.io/"/>
-  <updated>2021-05-27T09:02:39.414Z</updated>
+  <updated>2021-06-10T02:05:54.985Z</updated>
   <id>https://wentianhao.github.io/</id>
   
   <author>
@@ -15,6 +15,34 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>背包问题</title>
+    <link href="https://wentianhao.github.io/2021/06/10/%E8%83%8C%E5%8C%85%E9%97%AE%E9%A2%98/"/>
+    <id>https://wentianhao.github.io/2021/06/10/%E8%83%8C%E5%8C%85%E9%97%AE%E9%A2%98/</id>
+    <published>2021-06-10T01:48:41.000Z</published>
+    <updated>2021-06-10T02:05:54.985Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;背包问题是一类经典的动态规划问题，6月是leetcode的背包月，因此就最近做的几道背包题目，简单总结一下。&lt;/p&gt;
+&lt;p&gt;背包问题是一种组合优化的NP完全(NP-Complete,NPC)问题。问题描述：给定一组物品，每种物品都有自己的重量和价格，在限定的总重量内，如何选择，才能使得物品的总价格最高。&lt;/p&gt;
+&lt;p&gt;背包问题一般有以下几种分类：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;01背包问题&lt;/li&gt;
+&lt;li&gt;完全背包问题&lt;/li&gt;
+&lt;li&gt;多重背包问题&lt;/li&gt;
+&lt;/ul&gt;</summary>
+    
+    
+    
+    <category term="LeetCode" scheme="https://wentianhao.github.io/categories/LeetCode/"/>
+    
+    <category term="DP" scheme="https://wentianhao.github.io/categories/LeetCode/DP/"/>
+    
+    
+    <category term="DP" scheme="https://wentianhao.github.io/tags/DP/"/>
+    
+  </entry>
   
   <entry>
     <title>动态规划算法详解</title>
@@ -431,29 +459,6 @@
     <category term="NLP" scheme="https://wentianhao.github.io/tags/NLP/"/>
     
     <category term="实体链接" scheme="https://wentianhao.github.io/tags/%E5%AE%9E%E4%BD%93%E9%93%BE%E6%8E%A5/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>bert</title>
-    <link href="https://wentianhao.github.io/2020/08/25/bert/"/>
-    <id>https://wentianhao.github.io/2020/08/25/bert/</id>
-    <published>2020-08-25T08:17:51.000Z</published>
-    <updated>2021-05-27T09:02:39.407Z</updated>
-    
-    
-    <summary type="html">&lt;h3 id=&quot;CCKS-amp-百度-2019中文短文本的实体链指-第一名解决方案&quot;&gt;&lt;a href=&quot;#CCKS-amp-百度-2019中文短文本的实体链指-第一名解决方案&quot; class=&quot;headerlink&quot; title=&quot;CCKS&amp;amp;百度 2019中文短文本的实体链指 第一名解决方案&quot;&gt;&lt;/a&gt;&lt;center&gt;&lt;strong&gt;CCKS&amp;amp;百度 2019中文短文本的实体链指 第一名解决方案&lt;/strong&gt;&lt;/h3&gt;&lt;p&gt;code 文件夹下为项目文件&lt;br&gt;比赛网址： &lt;a href=&quot;https://biendata.com/competition/ccks_2019_el/&quot;&gt;https://biendata.com/competition/ccks_2019_el/&lt;/a&gt;&lt;br&gt;数据集：&lt;a href=&quot;https://pan.baidu.com/s/1SShtugdAMVf0fdaBowtMiA&quot;&gt;https://pan.baidu.com/s/1SShtugdAMVf0fdaBowtMiA&lt;/a&gt; 提取码:8r80&lt;br&gt;这是提交的时候代码，自己测试是请先划分出验证集，上述所有代码都是交叉验证有多个模型，很费时间，自己跑的时候跑一折就行&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;摘要&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;　　传统的实体链接任务主要是针对长文档。长文档拥有充分的上下文 信息，能够辅助实体的识别与消歧。相比之下，中文短文本的实体链接存 在很大的挑战。实体链接整个过程包括实体识别和实体消歧两个子任务。 针对实体识别子任务，我们创新性地利用了知识库描述文本的信息来增强 实体识别的性能，提出了 BERT-EntityNameEmbedding（BERT-ENE） 模型。具体地说，首先通过挖掘知识库中实体的描述文本得到实体名字的 向量嵌入，然后通过名称字典匹配技术，得到得到短文本中的候选实体，最 后利用 BERT-ENE 模型对结果进行筛选，完成实体识别的任务。此外，本 文进一步提出了一种将 BERT-ENE 模型与 BERT-CRF 模型相融合的新 方法，相比传统方法识别效果有了显著提升。针对实体消歧子任务，将其 视为二分类问题，通过基于 BERT 的二分类模型对候选实体进行预测，然 后对预测的概率进行排序，进而完成消歧任务。基于本文提出的方法，我们在 CCKS2019 面向中文短文本的实体链指任务中，取得了第一名的成绩。&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;关键词&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;　　实体链接，实体识别，实体消歧，BERT&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="bert" scheme="https://wentianhao.github.io/categories/bert/"/>
-    
-    
-    <category term="bert" scheme="https://wentianhao.github.io/tags/bert/"/>
     
   </entry>
   

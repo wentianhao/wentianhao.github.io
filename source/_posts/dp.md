@@ -26,19 +26,19 @@ DP 常适用于 有 **重叠子问题** 和 **最优子结构性质** 的问题�
 5. 由loop的边界打出表格，可得出最后一个dp的状态值，即结果。
 
 ## LeetCode 1143.最长公共子序列
->>给定两个字符串 text1 和 text2，返回这两个字符串的最长 公共子序列 的长度。如果不存在 公共子序列 ，返回 0
+>给定两个字符串 text1 和 text2，返回这两个字符串的最长 公共子序列 的长度。如果不存在 公共子序列 ，返回 0
 
 1. 对于s[1,...,i] t[1,...,j] LCS 长度为dp[i][j]
 2. base case 一个字符串和自身没有子序列 dp[0][j] = dp[i][0] = 0  
-3.  ```java
-        s.charAt(i) = t.charAt(j) :   dp[i][j] = dp[i-1][j-1] + 1 
-        s.charAt(i) != t.charAt(j):   dp[i][j] = max(dp[i-1][j],dp[i][j-1])
-    ```
-4.  ```python
-        for i in range(n+1):
-            for j in range(m+1):
-    ```
-5. dp[n][m]
+```java
+s.charAt(i) = t.charAt(j) :   dp[i][j] = dp[i-1][j-1] + 1 
+s.charAt(i) != t.charAt(j):   dp[i][j] = max(dp[i-1][j],dp[i][j-1])
+```
+```python
+    for i in range(n+1):
+        for j in range(m+1):
+```
+1. dp[n][m]
 
 状态矩阵
 ```java
@@ -82,15 +82,15 @@ class Solution {
 
 1. 对于s[1,...,j] t[1,...,i] 在s的子序列中t出现的个数为dp[i][j]
 2. base case t为空串时，dp[0][j] = 1; 
-3.  ```java
-        s.charAt(i) = t.charAt(j) :   dp[i][j] = dp[i-1][j-1] + dp[i][j-1];
-        s.charAt(i) != t.charAt(j):   dp[i][j] = dp[i][j-1]
-    ```
-4.  ```python
-        for i in range(m+1):
-            for j in range(n+1):
-    ```
-5. dp[m][n]
+```java
+    s.charAt(i) = t.charAt(j) :   dp[i][j] = dp[i-1][j-1] + dp[i][j-1];
+    s.charAt(i) != t.charAt(j):   dp[i][j] = dp[i][j-1]
+```
+```python
+    for i in range(m+1):
+        for j in range(n+1):
+```
+1. dp[m][n]
 
 ```java
 /**

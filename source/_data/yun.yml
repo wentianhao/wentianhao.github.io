@@ -94,8 +94,8 @@ cursor:
   text: https://cdn.jsdelivr.net/gh/YunYouJun/cdn/css/md-cursors/text.cur
 
 post_edit:
-  enable: false
-  url: https://github.com/user-name/repo-name/tree/branch-name/subdirectory-name # Link for view source.
+  enable: true
+  url: https://github.com/wentianhao/wentianhao.github.io/tree/hexo/source/   # Link for view source.
 
 comment:
   enable: true
@@ -276,9 +276,6 @@ google_adsense:
 #     path: /about/#comment
 #     icon: icon-clipboard-line
 
-# cursor:
-#   enable: true
-
 baidu_push: true
 
 google_tagmanager:
@@ -338,3 +335,9 @@ aplayer:
 
 pjax:
   enable: true
+
+codeblock:
+  copy_btn: true
+  prismjs:
+    light: default
+    dark: tomorrow

@@ -18,7 +18,7 @@ notice:
 
 avatar:
   enable: true
-  url: /yun.png
+  url: /images/wen.jpg
   # If true, the avatar would be dispalyed in circle.
   rounded: true
   # The value of opacity should be choose from 0 to 1 to set the opacity of the avatar.

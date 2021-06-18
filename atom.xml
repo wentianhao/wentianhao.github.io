@@ -6,7 +6,7 @@
   <link href="https://wentianhao.github.io/atom.xml" rel="self"/>
   
   <link href="https://wentianhao.github.io/"/>
-  <updated>2021-06-10T02:06:08.036Z</updated>
+  <updated>2021-06-18T13:44:36.327Z</updated>
   <id>https://wentianhao.github.io/</id>
   
   <author>
@@ -17,11 +17,59 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>java虚拟机</title>
+    <link href="https://wentianhao.github.io/2021/06/18/java%E8%99%9A%E6%8B%9F%E6%9C%BA/"/>
+    <id>https://wentianhao.github.io/2021/06/18/java%E8%99%9A%E6%8B%9F%E6%9C%BA/</id>
+    <published>2021-06-18T05:48:46.000Z</published>
+    <updated>2021-06-18T13:44:36.327Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;记录 学习《深入理解Java虚拟机》以及 &lt;a href=&quot;https://snailclimb.gitee.io/javaguide/#/docs/java/jvm/Java%E5%86%85%E5%AD%98%E5%8C%BA%E5%9F%9F&quot;&gt;JavaGuide&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;在虚拟机自动内存管理机制下，不再需要像 C/C++程序开发程序员这样为每一个 new 操作去写对应的 delete/free 操作，不容易出现内存泄漏和内存溢出问题。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="java" scheme="https://wentianhao.github.io/categories/java/"/>
+    
+    
+    <category term="java" scheme="https://wentianhao.github.io/tags/java/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>动态规划之01背包</title>
+    <link href="https://wentianhao.github.io/2021/06/11/01%E8%83%8C%E5%8C%85/"/>
+    <id>https://wentianhao.github.io/2021/06/11/01%E8%83%8C%E5%8C%85/</id>
+    <published>2021-06-11T03:25:24.000Z</published>
+    <updated>2021-06-11T03:29:59.261Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;问题描述&quot;&gt;&lt;a href=&quot;#问题描述&quot; class=&quot;headerlink&quot; title=&quot;问题描述&quot;&gt;&lt;/a&gt;问题描述&lt;/h2&gt;&lt;blockquote&gt;
+&lt;p&gt;给定 n 件物品，物品的重量为 w[i]，物品的价值为</summary>
+        
+      
+    
+    
+    
+    <category term="LeetCode" scheme="https://wentianhao.github.io/categories/LeetCode/"/>
+    
+    <category term="DP" scheme="https://wentianhao.github.io/categories/LeetCode/DP/"/>
+    
+    
+    <category term="DP" scheme="https://wentianhao.github.io/tags/DP/"/>
+    
+  </entry>
+  
+  <entry>
     <title>背包问题</title>
     <link href="https://wentianhao.github.io/2021/06/10/%E8%83%8C%E5%8C%85%E9%97%AE%E9%A2%98/"/>
     <id>https://wentianhao.github.io/2021/06/10/%E8%83%8C%E5%8C%85%E9%97%AE%E9%A2%98/</id>
     <published>2021-06-10T01:48:41.000Z</published>
-    <updated>2021-06-10T02:06:08.036Z</updated>
+    <updated>2021-06-11T03:24:16.226Z</updated>
     
     
     <summary type="html">&lt;p&gt;背包问题是一类经典的动态规划问题，6月是leetcode的背包月，因此就最近做的几道背包题目，简单总结一下。&lt;/p&gt;
@@ -404,52 +452,6 @@
     <summary type="html">&lt;p&gt;&lt;strong&gt;基于注意力机制的问句实体链接&lt;/strong&gt;&lt;/p&gt;
 &lt;h2 id=&quot;摘要&quot;&gt;&lt;a href=&quot;#摘要&quot; class=&quot;headerlink&quot; title=&quot;摘要&quot;&gt;&lt;/a&gt;&lt;strong&gt;摘要&lt;/strong&gt;&lt;/h2&gt;&lt;p&gt;问句实体链接不仅需要大量的数据处理和特征选择工作，而且容易形成错误积累，降低链接效果。针对这种情况，文中提出基于注意力机制的编码器-解码器问句实体链接模型。模型使用双向的长短期记忆网络编码问句，经过注意力机制解码，生成对应的实体指称和消歧信息输出，最后链接到知识库实体。在有关汽车领域车系产品问句好热实体数据集上的实验表明，文中模型仅利用较少的上下文信息便可取得良好效果。&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;关键词&lt;/strong&gt; ：问句实体链接；注意力机制；编码器-解码器；长短期记忆网络；生成模型&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="论文笔记" scheme="https://wentianhao.github.io/categories/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/"/>
-    
-    
-    <category term="NLP" scheme="https://wentianhao.github.io/tags/NLP/"/>
-    
-    <category term="实体链接" scheme="https://wentianhao.github.io/tags/%E5%AE%9E%E4%BD%93%E9%93%BE%E6%8E%A5/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>数学之美</title>
-    <link href="https://wentianhao.github.io/2020/09/21/%E6%95%B0%E5%AD%A6%E4%B9%8B%E7%BE%8E/"/>
-    <id>https://wentianhao.github.io/2020/09/21/%E6%95%B0%E5%AD%A6%E4%B9%8B%E7%BE%8E/</id>
-    <published>2020-09-21T05:33:41.000Z</published>
-    <updated>2021-05-27T09:02:39.533Z</updated>
-    
-    
-    <summary type="html">&lt;blockquote&gt;
-&lt;p&gt;简单即是美&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h2 id=&quot;1-文字和语言-vs-数字和信息&quot;&gt;&lt;a href=&quot;#1-文字和语言-vs-数字和信息&quot; class=&quot;headerlink&quot; title=&quot;1.文字和语言 vs 数字和信息&quot;&gt;&lt;/a&gt;&lt;strong&gt;1.文字和语言 vs 数字和信息&lt;/strong&gt;&lt;/h2&gt;&lt;p&gt;&lt;em&gt;文字和语言与数学，从产生起原本就有相通性，虽然它们的发展一度分道扬镳，但是最终还是能走到一起。&lt;/em&gt;&lt;/p&gt;
-&lt;p&gt;冷知识 ：阿拉伯数字不是阿拉伯人发明的，而是印度人发明的&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="读书笔记" scheme="https://wentianhao.github.io/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"/>
-    
-    
-    <category term="NLP" scheme="https://wentianhao.github.io/tags/NLP/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>基于双词主题模型的半监督实体消歧方法研究</title>
-    <link href="https://wentianhao.github.io/2020/09/21/%E5%9F%BA%E4%BA%8E%E5%8F%8C%E8%AF%8D%E4%B8%BB%E9%A2%98%E6%A8%A1%E5%9E%8B%E7%9A%84%E5%8D%8A%E7%9B%91%E7%9D%A3%E5%AE%9E%E4%BD%93%E6%B6%88%E6%AD%A7%E6%96%B9%E6%B3%95%E7%A0%94%E7%A9%B6/"/>
-    <id>https://wentianhao.github.io/2020/09/21/%E5%9F%BA%E4%BA%8E%E5%8F%8C%E8%AF%8D%E4%B8%BB%E9%A2%98%E6%A8%A1%E5%9E%8B%E7%9A%84%E5%8D%8A%E7%9B%91%E7%9D%A3%E5%AE%9E%E4%BD%93%E6%B6%88%E6%AD%A7%E6%96%B9%E6%B3%95%E7%A0%94%E7%A9%B6/</id>
-    <published>2020-09-21T02:08:46.000Z</published>
-    <updated>2021-05-27T09:02:39.503Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;&lt;strong&gt;基于双词主题模型的半监督实体消歧方法研究&lt;/strong&gt;&lt;/p&gt;
-&lt;h2 id=&quot;摘要&quot;&gt;&lt;a href=&quot;#摘要&quot; class=&quot;headerlink&quot; title=&quot;摘要&quot;&gt;&lt;/a&gt;&lt;strong&gt;摘要&lt;/strong&gt;&lt;/h2&gt;&lt;p&gt;针对实体上下文信息主题漂移问题，提出一种基于双词主题模型的实体消歧方法。方法考虑到实体在一定语义环境下具有不同的主题，且在同一文档中同时出现的其他实体在一定程度上能够帮助待消歧实体确定所指代内容，利用命名实体构建双词的思想，将协同实体关系融合到主题模型中，并在此基础上利用Wikipedia知识库，进行半监督消歧。&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;关键词&lt;/strong&gt; ：实体消歧；Wikipedia；双词主题模型&lt;/p&gt;</summary>
     
     
     

@@ -27,7 +27,7 @@
 <meta property="og:description" content="Introduction传统的基于RNN的Seq2Seq模型难以处理长序列的句子，无法实现并行，还面临对齐的问题，本文提出Attention机制，加入Attention的Seq2Seq模型在各个任务上都有显著提升，创新点在于抛弃传统的Encoder-Decoder模型必须结合CNN或RNN的固有模式，只用Attention机制。">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://whh.plus/images/attention.png">
-<meta property="og:image" content="https://whh.plus/images/attention.jpg">
+<meta property="og:image" content="https://whh.plus/images/attention2.png">
 <meta property="og:image" content="https://whh.plus/images/theTransformer.png">
 <meta property="og:image" content="https://whh.plus/images/Thetransformer1.png">
 <meta property="og:image" content="https://whh.plus/images/Thetransformer2.png">
@@ -78,7 +78,7 @@
 </ul>
 <p>由于无论输入如何变化，encoder给出的都是一个固定维数的向量，存在信息损失；在生成文本时，生成每个词所用到的语义向量都是一样的，这显然过于简单。</p>
 <p>为解决上述问题，引入Transformer的概念，整个网络结构完全是由Attention机制组成，Attention机制是将单个序列的不同位置联系起来计算序列表示的一种注意机制。</p>
-<p><img src="https://whh.plus/images/attention.jpg" alt="Attention" loading="lazy"></p>
+<p><img src="https://whh.plus/images/attention2.png" alt="Attention" loading="lazy"></p>
 <h2 id="Transformer"><a href="#Transformer" class="headerlink" title="Transformer"></a>Transformer</h2><blockquote>
 <p>Transformer is the first transduction model relying entirely on self-attention to compute representations of its input and output without using sequence aligned RNNs or convolution。</p>
 </blockquote>

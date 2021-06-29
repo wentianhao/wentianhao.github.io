@@ -6,7 +6,7 @@
   <link href="https://wentianhao.github.io/atom.xml" rel="self"/>
   
   <link href="https://wentianhao.github.io/"/>
-  <updated>2021-06-20T01:27:27.292Z</updated>
+  <updated>2021-06-22T05:50:51.573Z</updated>
   <id>https://wentianhao.github.io/</id>
   
   <author>
@@ -17,11 +17,53 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>mysql架构体系设计</title>
+    <link href="https://wentianhao.github.io/2021/06/22/mysql%E6%9E%B6%E6%9E%84%E4%BD%93%E7%B3%BB%E8%AE%BE%E8%AE%A1/"/>
+    <id>https://wentianhao.github.io/2021/06/22/mysql%E6%9E%B6%E6%9E%84%E4%BD%93%E7%B3%BB%E8%AE%BE%E8%AE%A1/</id>
+    <published>2021-06-22T04:22:55.000Z</published>
+    <updated>2021-06-22T05:50:51.573Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;Mysql-记录存储&quot;&gt;&lt;a href=&quot;#Mysql-记录存储&quot; class=&quot;headerlink&quot; title=&quot;Mysql 记录存储&quot;&gt;&lt;/a&gt;Mysql 记录存储&lt;/h2&gt;&lt;p&gt;&lt;img</summary>
+        
+      
+    
+    
+    
+    <category term="mysql" scheme="https://wentianhao.github.io/categories/mysql/"/>
+    
+    
+    <category term="mysql" scheme="https://wentianhao.github.io/tags/mysql/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>transformer</title>
+    <link href="https://wentianhao.github.io/2021/06/20/transformer/"/>
+    <id>https://wentianhao.github.io/2021/06/20/transformer/</id>
+    <published>2021-06-20T05:51:55.000Z</published>
+    <updated>2021-06-20T12:57:29.675Z</updated>
+    
+    
+    
+    
+    <category term="NLP" scheme="https://wentianhao.github.io/categories/NLP/"/>
+    
+    
+    <category term="NLP" scheme="https://wentianhao.github.io/tags/NLP/"/>
+    
+  </entry>
+  
+  <entry>
     <title>java虚拟机</title>
     <link href="https://wentianhao.github.io/2021/06/18/java%E8%99%9A%E6%8B%9F%E6%9C%BA/"/>
     <id>https://wentianhao.github.io/2021/06/18/java%E8%99%9A%E6%8B%9F%E6%9C%BA/</id>
     <published>2021-06-18T05:48:46.000Z</published>
-    <updated>2021-06-20T01:27:27.292Z</updated>
+    <updated>2021-06-29T03:33:44.745Z</updated>
     
     
     <summary type="html">&lt;p&gt;记录 学习《深入理解Java虚拟机》以及 &lt;a href=&quot;https://snailclimb.gitee.io/javaguide/#/docs/java/jvm/Java%E5%86%85%E5%AD%98%E5%8C%BA%E5%9F%9F&quot;&gt;JavaGuide&lt;/a&gt;&lt;/p&gt;
@@ -417,50 +459,6 @@
     <category term="jupyter notebook" scheme="https://wentianhao.github.io/tags/jupyter-notebook/"/>
     
     <category term="hexo" scheme="https://wentianhao.github.io/tags/hexo/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>pytorch学习笔记</title>
-    <link href="https://wentianhao.github.io/2020/09/25/pytorch%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
-    <id>https://wentianhao.github.io/2020/09/25/pytorch%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</id>
-    <published>2020-09-25T09:05:53.000Z</published>
-    <updated>2020-09-25T09:05:53.000Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;pytorch 是一个基于python的科学计算包&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="python" scheme="https://wentianhao.github.io/categories/python/"/>
-    
-    
-    <category term="NLP" scheme="https://wentianhao.github.io/tags/NLP/"/>
-    
-    <category term="python" scheme="https://wentianhao.github.io/tags/python/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>基于注意力机制的问句实体链接</title>
-    <link href="https://wentianhao.github.io/2020/09/21/%E5%9F%BA%E4%BA%8E%E6%B3%A8%E6%84%8F%E5%8A%9B%E6%9C%BA%E5%88%B6%E7%9A%84%E9%97%AE%E5%8F%A5%E5%AE%9E%E4%BD%93%E9%93%BE%E6%8E%A5/"/>
-    <id>https://wentianhao.github.io/2020/09/21/%E5%9F%BA%E4%BA%8E%E6%B3%A8%E6%84%8F%E5%8A%9B%E6%9C%BA%E5%88%B6%E7%9A%84%E9%97%AE%E5%8F%A5%E5%AE%9E%E4%BD%93%E9%93%BE%E6%8E%A5/</id>
-    <published>2020-09-21T09:00:05.000Z</published>
-    <updated>2021-05-27T09:02:39.511Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;&lt;strong&gt;基于注意力机制的问句实体链接&lt;/strong&gt;&lt;/p&gt;
-&lt;h2 id=&quot;摘要&quot;&gt;&lt;a href=&quot;#摘要&quot; class=&quot;headerlink&quot; title=&quot;摘要&quot;&gt;&lt;/a&gt;&lt;strong&gt;摘要&lt;/strong&gt;&lt;/h2&gt;&lt;p&gt;问句实体链接不仅需要大量的数据处理和特征选择工作，而且容易形成错误积累，降低链接效果。针对这种情况，文中提出基于注意力机制的编码器-解码器问句实体链接模型。模型使用双向的长短期记忆网络编码问句，经过注意力机制解码，生成对应的实体指称和消歧信息输出，最后链接到知识库实体。在有关汽车领域车系产品问句好热实体数据集上的实验表明，文中模型仅利用较少的上下文信息便可取得良好效果。&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;关键词&lt;/strong&gt; ：问句实体链接；注意力机制；编码器-解码器；长短期记忆网络；生成模型&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="论文笔记" scheme="https://wentianhao.github.io/categories/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/"/>
-    
-    
-    <category term="NLP" scheme="https://wentianhao.github.io/tags/NLP/"/>
-    
-    <category term="实体链接" scheme="https://wentianhao.github.io/tags/%E5%AE%9E%E4%BD%93%E9%93%BE%E6%8E%A5/"/>
     
   </entry>
   

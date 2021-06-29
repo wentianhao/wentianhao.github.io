@@ -4,11 +4,61 @@
   
     
     <entry>
+      <title>mysql架构体系设计</title>
+      <link href="2021/06/22/mysql%E6%9E%B6%E6%9E%84%E4%BD%93%E7%B3%BB%E8%AE%BE%E8%AE%A1/"/>
+      <url>2021/06/22/mysql%E6%9E%B6%E6%9E%84%E4%BD%93%E7%B3%BB%E8%AE%BE%E8%AE%A1/</url>
+      
+        <content type="html"><![CDATA[<h2 id="Mysql-记录存储"><a href="#Mysql-记录存储" class="headerlink" title="Mysql 记录存储"></a>Mysql 记录存储</h2><p><img src="https://whh.plus/images/mysql.png" alt="mysql" loading="lazy"></p><ul><li>页头</li><li>虚记录</li><li>记录堆</li><li>自由空间链表</li><li>未分配空间</li><li>Slot区</li><li>页尾</li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> mysql </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> mysql </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>transformer</title>
+      <link href="2021/06/20/transformer/"/>
+      <url>2021/06/20/transformer/</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+      
+      <categories>
+          
+          <category> NLP </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> NLP </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>java虚拟机</title>
       <link href="2021/06/18/java%E8%99%9A%E6%8B%9F%E6%9C%BA/"/>
       <url>2021/06/18/java%E8%99%9A%E6%8B%9F%E6%9C%BA/</url>
       
-        <content type="html"><![CDATA[<p>记录 学习《深入理解Java虚拟机》以及 <a href="https://snailclimb.gitee.io/javaguide/#/docs/java/jvm/Java%E5%86%85%E5%AD%98%E5%8C%BA%E5%9F%9F">JavaGuide</a></p><p>在虚拟机自动内存管理机制下，不再需要像 C/C++程序开发程序员这样为每一个 new 操作去写对应的 delete/free 操作，不容易出现内存泄漏和内存溢出问题。</p><span id="more"></span><h2 id="自动内存管理机制"><a href="#自动内存管理机制" class="headerlink" title="自动内存管理机制"></a>自动内存管理机制</h2><h3 id="运行时数据区域"><a href="#运行时数据区域" class="headerlink" title="运行时数据区域"></a>运行时数据区域</h3><p>Java虚拟机在执行Java程序的过程中会把它所管理的内存划分为若干不同的数据区域。</p><p>线程私有的：</p><ul><li>程序计数器</li><li>本地方法栈</li><li>虚拟机栈</li></ul><p>线程共享的：</p><ul><li>堆</li><li>方法区</li><li>直接内存(非运行时数据区的一部分)</li></ul><h4 id="程序计数器"><a href="#程序计数器" class="headerlink" title="程序计数器"></a>程序计数器</h4><p>程序计数器是一块较小的内存空间，可以看作是当前线程所执行的字节码的行号指示器。<strong>字节码解释器工作时，通过改变计数器的值来选取下一条需要执行的字节码指令，分支、循环、跳转、异常处理、线程恢复等功能都依赖计数器完成</strong></p><p><strong>为了线程切换后能恢复到正确的执行位置，每条线程都需要一个独立的程序计数器，各条线程之间计数器互不影响，独立存储，称这类内存区域为“线程私有”的内存</strong></p><p><strong>程序计数器主要有两个作用</strong>：</p><ul><li>字节码解释器通过改变计数器的值来依次读取指令，从而实现代码的流程控制</li><li>在多线程的情况下，程序计数器用于记录当前线程执行的位置，从而当线程被切换回来时能知道该线程上次运行的位置</li></ul><p>如果线程正在执行一个Java方法，计数器记录的是正在执行的虚拟机字节码指令的地址</p><p>如果正在执行的是一个native方法，计数器的值为空(Undefined)。</p><p><strong>程序计数器是唯一一个在Java虚拟机规范中不会出现$\color{Red}{OutOfMemoryError}$的内存区域，它的生命周期随着线程的创建而创建，随着线程的结束而死亡</strong></p><h4 id="Java虚拟机栈"><a href="#Java虚拟机栈" class="headerlink" title="Java虚拟机栈"></a>Java虚拟机栈</h4><p><strong>与程序计数器一样，Java虚拟机栈(Java virtual machine stacks)也是线程私有的，生命周期与线程相同，描述的是Java方法执行的内存模型，每次方法调用的数据都是通过栈传递的</strong></p><p>Java内存区粗糙的分为**堆内存(Heap)<strong>和</strong>栈内存(Stack)**，栈就是虚拟机栈，或者说是虚拟机栈中局部变量表部分。</p><p>局部变量表存放编译器可知的各种基本数据类型(boolean、byte、char、short、int、float、long、double)、对象引用(reference类型)</p>]]></content>
+        <content type="html"><![CDATA[<p>记录 学习《深入理解Java虚拟机》以及 <a href="https://snailclimb.gitee.io/javaguide/#/docs/java/jvm/Java%E5%86%85%E5%AD%98%E5%8C%BA%E5%9F%9F">JavaGuide</a></p><p>在虚拟机自动内存管理机制下，不再需要像 C/C++程序开发程序员这样为每一个 new 操作去写对应的 delete/free 操作，不容易出现内存泄漏和内存溢出问题。</p><span id="more"></span><h2 id="自动内存管理机制"><a href="#自动内存管理机制" class="headerlink" title="自动内存管理机制"></a>自动内存管理机制</h2><h3 id="运行时数据区域"><a href="#运行时数据区域" class="headerlink" title="运行时数据区域"></a>运行时数据区域</h3><p>Java虚拟机在执行Java程序的过程中会把它所管理的内存划分为若干不同的数据区域。</p><p>线程私有的：</p><ul><li>程序计数器</li><li>本地方法栈</li><li>虚拟机栈</li></ul><p>线程共享的：</p><ul><li>堆</li><li>方法区</li><li>直接内存(非运行时数据区的一部分)</li></ul><h4 id="程序计数器"><a href="#程序计数器" class="headerlink" title="程序计数器"></a>程序计数器</h4><p>程序计数器是一块较小的内存空间，可以看作是当前线程所执行的字节码的行号指示器。<strong>字节码解释器工作时，通过改变计数器的值来选取下一条需要执行的字节码指令，分支、循环、跳转、异常处理、线程恢复等功能都依赖计数器完成</strong></p><p><strong>为了线程切换后能恢复到正确的执行位置，每条线程都需要一个独立的程序计数器，各条线程之间计数器互不影响，独立存储，称这类内存区域为“线程私有”的内存</strong></p><p><strong>程序计数器主要有两个作用</strong>：</p><ul><li>字节码解释器通过改变计数器的值来依次读取指令，从而实现代码的流程控制</li><li>在多线程的情况下，程序计数器用于记录当前线程执行的位置，从而当线程被切换回来时能知道该线程上次运行的位置</li></ul><p>如果线程正在执行一个Java方法，计数器记录的是正在执行的虚拟机字节码指令的地址</p><p>如果正在执行的是一个native方法，计数器的值为空(Undefined)。</p><p><strong>程序计数器是唯一一个在Java虚拟机规范中不会出现$\color{Red}{OutOfMemoryError}$的内存区域，它的生命周期随着线程的创建而创建，随着线程的结束而死亡</strong></p><h4 id="Java虚拟机栈"><a href="#Java虚拟机栈" class="headerlink" title="Java虚拟机栈"></a>Java虚拟机栈</h4><p><strong>与程序计数器一样，Java虚拟机栈(Java virtual machine stacks)也是线程私有的，每个线程都有各自的 Java 虚拟机栈，而且随着线程的创建而创建，随着线程的死亡而死亡。生命周期与线程相同，描述的是Java方法执行的内存模型，每次方法调用的数据都是通过栈传递的</strong></p><p>Java内存区粗糙的分为**堆内存(Heap)<strong>和</strong>栈内存(Stack)**，栈就是虚拟机栈，或者说是虚拟机栈中局部变量表部分。</p><p>局部变量表存放编译器可知的<strong>各种基本数据类型</strong>(boolean、byte、char、short、int、float、long、double)、<strong>对象引用</strong>(reference类型,它不等同于对象本身，可能是一个指向对象起始地址的引用指针，也可能是指向一个代表对象的句柄或其他与此对象相关的位置)、<strong>returnAddress类型</strong>(指向一条字节码指令的地址)</p><p>64位长度的 long 和 double类型的数据占用2个局部变量空间(Slot),其余数据类型只占1个。</p><p>Java虚拟机栈会出现两种错误：$\color{Red}{StackOverFlowError}$ 和$\color{Red}{OutOfMemoryError}$</p><ul><li>$\color{Red}{StackOverFlowError}$:若Java虚拟机栈的内存大小不允许动态扩展，那么当线程请求栈的深度超过当前Java虚拟机栈的最大深度的时候，就抛出$\color{Red}{StackOverFlowError}$错误</li><li>$\color{Red}{OutOfMemoryError}$: Java虚拟机栈的内存大小可以动态扩展，如果虚拟机在动态扩展时无法申请到足够的内存空间，则抛出$\color{Red}{OutOfMemoryError}$异常</li></ul><p>栈帧是方法运行期很重要的基础数据结构</p><p>HotSpot虚拟机的栈容量是不可动态扩展的，Classic虚拟机可以动态扩展，所以在HotSpot虚拟机上不会由于虚拟机栈无法扩展而导致OutOfMemoryError异常</p><p><strong>扩展：方法/函数如何调用？</strong><br>Java栈可用类比数据结构中栈，Java栈中保存的主要内容是栈帧，每一次函数调用都会有一个对应的栈帧被压入Java虚拟机栈，每一个函数调用结束后，都会有一个栈帧被弹出</p><p>Java方法有两种返回方式：</p><ul><li>return语句</li><li>抛出异常</li></ul><p>不管哪种方式都会导致栈帧被弹出</p><h4 id="本地方法栈"><a href="#本地方法栈" class="headerlink" title="本地方法栈"></a>本地方法栈</h4><p>和虚拟机栈发挥的作用相似，区别：<strong>虚拟机栈为虚拟机执行Java方法(也就是为字节码)服务，而本地方法栈则为虚拟机执行Native方法服务</strong>。在hotspot虚拟机中，直接将本地方法栈和虚拟机栈合二为一。</p><p>本地方法被执行的时候，在本地方法栈中也会创建一个栈帧，用于存放该本地方法的局部变量表、操作数栈、动态链接、出口信息。</p><p>方法执行完毕后相应的栈帧会出栈并释放内存空间，也会出现$\color{Red}{StackOverFlowError}$ 和$\color{Red}{OutOfMemoryError}$两种错误</p><h4 id="Java堆"><a href="#Java堆" class="headerlink" title="Java堆"></a>Java堆</h4><p>Java虚拟机所管理的内存中最大的一块，Java堆是所有线程共享的一块内存区域，在虚拟机启动时创建。此内存区域唯一的目的就是存放对象实例，几乎所有对象实例以及数组都在这里分配内存，随着JIT编译器的发展与逃逸分析技术逐渐成熟，栈上分配、标量替换优化技术，将会导致一些微妙的变化，所有的对象都分配到堆上也渐渐变得不那么“绝对”了。从JDK1.7开始默认开启逃逸分析，如果某些方法中的对象引用没有被返回或者未被外面使用(也就是未逃逸出去)，那么对象可以直接在栈上分配内存。</p><p>Java堆是垃圾收集器管理的主要区域，因此也被称作GC堆(Garbage Collected Heap).从内存回收的角度来看，由于现在收集器基本都采用分代收集算法，所以Java堆还细分为 新生代 和 老年代。再细致一点有：Eden空间、From Survivor空间、To Survivor空间等。进一步划分的目的是<strong>为了更好的回收内存，或者更快的分配内存</strong></p><p>在 JDK 7 版本及 JDK 7 版本之前，堆内存被通常被分为下面三部分：</p><ol><li>新生代内存(Young Generation)</li><li>老生代(Old Generation)</li><li>永生代(Permanent Generation)</li></ol><p><img src="https://snailclimb.gitee.io/javaguide/docs/java/jvm/pictures/java%E5%86%85%E5%AD%98%E5%8C%BA%E5%9F%9F/JVM%E5%A0%86%E5%86%85%E5%AD%98%E7%BB%93%E6%9E%84-JDK7.png" alt="JDK堆内存结构-JDK7" loading="lazy"></p><p>JDK 8版本之后方法去(hotspot的永久代)被彻底移除了，取而代之的是元空间，元空间使用的是直接内存<br><img src="https://snailclimb.gitee.io/javaguide/docs/java/jvm/pictures/java%E5%86%85%E5%AD%98%E5%8C%BA%E5%9F%9F/JVM%E5%A0%86%E5%86%85%E5%AD%98%E7%BB%93%E6%9E%84-jdk8.png" alt="JDK堆内存结构-JDK8" loading="lazy"></p><p><strong>上图所示的 Eden 区、两个 Survivor 区都属于新生代（为了区分，这两个 Survivor 区域按照顺序被命名为 from 和 to），中间一层属于老年代。</strong></p><p>大部分情况，对象都会首先在 Eden 区域分配，在一次新生代垃圾回收后，如果对象还存活，则会进入 s0 或者 s1，并且对象的年龄还会加 1(Eden 区-&gt;Survivor 区后对象的初始年龄变为 1)，当它的年龄增加到一定程度（默认为 15 岁），就会被晋升到老年代中。对象晋升到老年代的年龄阈值，可以通过参数 -XX:MaxTenuringThreshold 来设置。</p><p>“Hotspot 遍历所有对象时，按照年龄从小到大对其所占用的大小进行累积，当累积的某个年龄大小超过了 survivor 区的一半时，取这个年龄和 MaxTenuringThreshold 中更小的一个值，作为新的晋升年龄阈值”。</p><p>堆这里最容易出现的就是 OutOfMemoryError 错误，并且出现这种错误之后的表现形式还会有几种，比如：</p><ul><li>$\color{Red}{OutOfMemoryError: GC Overhead Limit Exceeded}$：当 JVM 花太多时间执行垃圾回收并且只能回收很少的堆空间时，就会发生此错误。</li><li>$\color{Red}{java.lang.OutOfMemoryError: Java heap space}$ :假如在创建新的对象时, 堆内存中的空间不足以存放新创建的对象, 就会引发j$\color{Red}{java.lang.OutOfMemoryError: Java heap space}$ 错误。(和本机物理内存无关，和你配置的内存大小有关！)</li></ul><h4 id="方法区"><a href="#方法区" class="headerlink" title="方法区"></a>方法区</h4><h4 id=""><a href="#" class="headerlink" title=""></a></h4>]]></content>
       
       
       <categories>

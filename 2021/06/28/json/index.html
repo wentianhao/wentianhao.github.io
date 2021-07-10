@@ -1,0 +1,272 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="theme-color" content="#0078E7"><meta name="author" content="先逃跑再说"><meta name="copyright" content="先逃跑再说"><meta name="generator" content="Hexo 5.4.0"><meta name="theme" content="hexo-theme-yun"><title>json | wanheo</title><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@900&amp;display=swap" media="print" onload="this.media='all'"><script src="//at.alicdn.com/t/font_1140697_stqaphw3j4.js" async></script><script src="https://cdn.jsdelivr.net/npm/scrollreveal/dist/scrollreveal.min.js" defer></script><script>document.addEventListener("DOMContentLoaded", () => {
+  [".post-card",".post-content img"].forEach((target)=> {
+    ScrollReveal().reveal(target);
+  })
+});
+</script><script src="https://cdn.jsdelivr.net/npm/pjax@latest/pjax.min.js" defer></script><script src="/js/pjax.js" defer></script><script src="https://cdn.jsdelivr.net/npm/vue@2.6.11"></script><link id="light-prism-css" rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs@latest/themes/prism.css" media="(prefers-color-scheme: light)"><link id="dark-prism-css" rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs@latest/themes/prism-tomorrow.css" media="(prefers-color-scheme: dark)"><link rel="icon" href="/yun.svg"><link rel="mask-icon" href="/yun.svg" color="#0078E7"><link rel="alternate icon" href="/yun.ico"><link rel="preload" href="/css/hexo-theme-yun.css" as="style"><link rel="preload" href="/js/utils.js" as="script"><link rel="preload" href="/js/hexo-theme-yun.js" as="script"><link rel="prefetch" href="/js/sidebar.js" as="script"><link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin><script id="yun-config">
+    const Yun = window.Yun || {};
+    window.CONFIG = {"hostname":"wentianhao.github.io","root":"/","title":"先逃跑再说","version":"1.6.1","mode":"time","copycode":true,"page":{"isPost":true},"i18n":{"placeholder":"想要搜些什么？","empty":"找不到您查询的内容: ${query}","hits":"找到 ${hits} 条结果","hits_time":"找到 ${hits} 条结果（用时 ${time} 毫秒）"},"anonymous_image":"https://cdn.jsdelivr.net/gh/YunYouJun/cdn/img/avatar/none.jpg","say":{"api":"https://v1.hitokoto.cn","hitokoto":true},"fireworks":{"colors":["102, 167, 221","62, 131, 225","33, 78, 194"]}};
+  </script><link rel="stylesheet" href="/css/hexo-theme-yun.css"><script src="/js/utils.js"></script><script src="/js/hexo-theme-yun.js"></script><link rel="alternate" href="/atom.xml" title="wanheo" type="application/atom+xml"><script>(function(){
+  var bp = document.createElement('script');
+  var curProtocol = window.location.protocol.split(':')[0];
+  if (curProtocol === 'https') {
+    bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+  }
+  else {
+    bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+  }
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(bp, s);
+})();</script><meta name="description" content="JSON必知必会">
+<meta property="og:type" content="article">
+<meta property="og:title" content="json">
+<meta property="og:url" content="https://wentianhao.github.io/2021/06/28/json/index.html">
+<meta property="og:site_name" content="wanheo">
+<meta property="og:description" content="JSON必知必会">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2021-06-28T05:55:21.000Z">
+<meta property="article:modified_time" content="2021-06-30T08:33:13.260Z">
+<meta property="article:author" content="先逃跑再说">
+<meta property="article:tag" content="json">
+<meta name="twitter:card" content="summary"><script src="/js/ui/mode.js"></script></head><body><script defer src="https://cdn.jsdelivr.net/npm/animejs@latest"></script><script defer src="/js/ui/fireworks.js"></script><canvas class="fireworks"></canvas><canvas id="trianglifyContainer"></canvas><script defer src="https://cdn.jsdelivr.net/npm/trianglify@4/dist/trianglify.bundle.js"></script><script>document.addEventListener("DOMContentLoaded", () => {
+  const pattern = trianglify({
+    width: 800,
+    height: 600,
+    cellSize: 75,
+    palette: ["YlGnBu", "GnBu", "Purples", "Blues"],
+  });
+  const canvasOpts = {
+    applyCssScaling: false
+  }
+  document.body.appendChild(pattern.toCanvas(trianglifyContainer, canvasOpts));
+});</script><div class="container"><a class="sidebar-toggle hty-icon-button" id="menu-btn"><div class="hamburger hamburger--spin" type="button"><span class="hamburger-box"><span class="hamburger-inner"></span></span></div></a><div class="sidebar-toggle sidebar-overlay"></div><aside class="sidebar"><script src="/js/sidebar.js"></script><ul class="sidebar-nav"><li class="sidebar-nav-item sidebar-nav-toc hty-icon-button sidebar-nav-active" data-target="post-toc-wrap" title="文章目录"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-list-ordered"></use></svg></li><li class="sidebar-nav-item sidebar-nav-overview hty-icon-button" data-target="site-overview-wrap" title="站点概览"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-passport-line"></use></svg></li></ul><div class="sidebar-panel" id="site-overview-wrap"><div class="site-info mickey-mouse"><a class="site-author-avatar" href="/about/" title="先逃跑再说"><img width="96" loading="lazy" src="/images/wen.jpg" alt="先逃跑再说"><span class="site-author-status" title="永远相信美好的事情即将发生">😊</span></a><div class="site-author-name"><a href="/about/">先逃跑再说</a></div><a class="site-name" href="/about/site.html">wanheo</a><sub class="site-subtitle"></sub><div class="site-desciption"></div></div><nav class="site-state"><a class="site-state-item hty-icon-button icon-home" href="/" title="我的主页"><span class="site-state-item-icon"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-home-4-line"></use></svg></span></a><div class="site-state-item"><a href="/archives/" title="归档"><span class="site-state-item-icon"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-archive-line"></use></svg></span><span class="site-state-item-count">64</span></a></div><div class="site-state-item"><a href="/categories/" title="分类"><span class="site-state-item-icon"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-folder-2-line"></use></svg></span><span class="site-state-item-count">25</span></a></div><div class="site-state-item"><a href="/tags/" title="标签"><span class="site-state-item-icon"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-price-tag-3-line"></use></svg></span><span class="site-state-item-count">33</span></a></div><a class="site-state-item hty-icon-button" target="_blank" rel="noopener" href="https://yun.yunyoujun.cn" title="文档"><span class="site-state-item-icon"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-settings-line"></use></svg></span></a></nav><hr style="margin-bottom:0.5rem"><div class="links-of-author"><a class="links-of-author-item hty-icon-button" rel="noopener" href="/atom.xml" title="RSS" target="_blank" style="color:orange"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-rss-line"></use></svg></a><a class="links-of-author-item hty-icon-button" rel="noopener" href="https://github.com/YunYouJun" title="GitHub" target="_blank" style="color:#6e5494"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-github-line"></use></svg></a><a class="links-of-author-item hty-icon-button" rel="noopener" href="https://music.163.com/#/user/home?id=247102977" title="网易云音乐" target="_blank" style="color:#C20C0C"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-netease-cloud-music-line"></use></svg></a><a class="links-of-author-item hty-icon-button" rel="noopener" href="mailto:me@yunyoujun.cn" title="E-Mail" target="_blank" style="color:#8E71C1"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-mail-line"></use></svg></a></div><hr style="margin:0.5rem 1rem"><div class="links"><a class="links-item hty-icon-button" href="/links/" title="我的小伙伴们" style="color:dodgerblue"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-genderless-line"></use></svg></a></div><br><a class="links-item hty-icon-button" id="toggle-mode-btn" href="javascript:;" title="Mode" style="color: #f1cb64"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-contrast-2-line"></use></svg></a></div><div class="sidebar-panel sidebar-panel-active" id="post-toc-wrap"><div class="post-toc"><div class="post-toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BB%80%E4%B9%88%E6%98%AFjson"><span class="toc-number">1.</span> <span class="toc-text">什么是json</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#json%E6%98%AF%E4%B8%80%E7%A7%8D%E6%95%B0%E6%8D%AE%E4%BA%A4%E6%8D%A2%E6%A0%BC%E5%BC%8F"><span class="toc-number">1.1.</span> <span class="toc-text">json是一种数据交换格式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#JSON%E7%8B%AC%E7%AB%8B%E4%BA%8E%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80"><span class="toc-number">1.2.</span> <span class="toc-text">JSON独立于编程语言</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%93%E4%B8%9A%E6%9C%AF%E8%AF%AD%E5%92%8C%E6%A6%82%E5%BF%B5"><span class="toc-number">1.3.</span> <span class="toc-text">专业术语和概念</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#JSON%E8%AF%AD%E6%B3%95"><span class="toc-number">2.</span> <span class="toc-text">JSON语法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#JSON%E5%9F%BA%E4%BA%8EJavaScript%E5%AF%B9%E8%B1%A1%E5%AD%97%E9%9D%A2%E9%87%8F"><span class="toc-number">2.1.</span> <span class="toc-text">JSON基于JavaScript对象字面量</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%90%8D%E7%A7%B0-%E5%80%BC%E5%AF%B9"><span class="toc-number">2.2.</span> <span class="toc-text">名称-值对</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%AD%A3%E7%A1%AE%E7%9A%84JSON%E8%AF%AD%E6%B3%95"><span class="toc-number">2.3.</span> <span class="toc-text">正确的JSON语法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AF%AD%E6%B3%95%E9%AA%8C%E8%AF%81"><span class="toc-number">2.4.</span> <span class="toc-text">语法验证</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AA%92%E4%BD%93%E7%B1%BB%E5%9E%8B"><span class="toc-number">2.5.</span> <span class="toc-text">媒体类型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%93%E4%B8%9A%E6%9C%AF%E8%AF%AD%E5%92%8C%E6%A6%82%E5%BF%B5-1"><span class="toc-number">2.6.</span> <span class="toc-text">专业术语和概念</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#JSON%E7%9A%84%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="toc-number">3.</span> <span class="toc-text">JSON的数据类型</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E7%AE%80%E4%BB%8B"><span class="toc-number">3.1.</span> <span class="toc-text">数据类型简介</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#JSON%E4%B8%AD%E7%9A%84%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="toc-number">3.2.</span> <span class="toc-text">JSON中的数据类型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#JSON%E4%B8%AD%E7%9A%84%E5%AF%B9%E8%B1%A1%E7%B1%BB%E5%9E%8B"><span class="toc-number">3.3.</span> <span class="toc-text">JSON中的对象类型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#JSON%E4%B8%AD%E7%9A%84%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%B1%BB%E5%9E%8B"><span class="toc-number">3.4.</span> <span class="toc-text">JSON中的字符串类型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#JSON%E4%B8%AD%E7%9A%84%E6%95%B0%E5%AD%97%E7%B1%BB%E5%9E%8B"><span class="toc-number">3.5.</span> <span class="toc-text">JSON中的数字类型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#JSON%E4%B8%AD%E7%9A%84%E5%B8%83%E5%B0%94%E7%B1%BB%E5%9E%8B"><span class="toc-number">3.6.</span> <span class="toc-text">JSON中的布尔类型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#JSON%E4%B8%AD%E7%9A%84null%E7%B1%BB%E5%9E%8B"><span class="toc-number">3.7.</span> <span class="toc-text">JSON中的null类型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#JSON%E4%B8%AD%E7%9A%84%E6%95%B0%E7%BB%84%E7%B1%BB%E5%9E%8B"><span class="toc-number">3.8.</span> <span class="toc-text">JSON中的数组类型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%93%E4%B8%9A%E6%9C%AF%E8%AF%AD%E5%92%8C%E6%A6%82%E5%BF%B5-2"><span class="toc-number">3.9.</span> <span class="toc-text">专业术语和概念</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#JSON-Schema"><span class="toc-number">4.</span> <span class="toc-text">JSON Schema</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%93%E4%B8%9A%E6%9C%AF%E8%AF%AD%E5%92%8C%E6%A6%82%E5%BF%B5-3"><span class="toc-number">4.1.</span> <span class="toc-text">专业术语和概念</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#JSON%E4%B8%AD%E7%9A%84%E5%AE%89%E5%85%A8%E9%97%AE%E9%A2%98"><span class="toc-number">5.</span> <span class="toc-text">JSON中的安全问题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B0%8F%E7%BB%93"><span class="toc-number">6.</span> <span class="toc-text">小结</span></a></li></ol></div></div></div></aside><main class="sidebar-translate" id="content"><div id="post"><article class="hty-card post-block" itemscope itemtype="https://schema.org/Article"><link itemprop="mainEntityOfPage" href="https://wentianhao.github.io/2021/06/28/json/"><span hidden itemprop="author" itemscope itemtype="https://schema.org/Person"><meta itemprop="name" content="先逃跑再说"><meta itemprop="description"></span><span hidden itemprop="publisher" itemscope itemtype="https://schema.org/Organization"><meta itemprop="name" content="wanheo"></span><header class="post-header"><h1 class="post-title" itemprop="name headline">json<a class="post-edit-link" href="https://github.com/wentianhao/wentianhao.github.io/tree/hexo/source/_posts/json.md" target="_blank" title="编辑" rel="noopener"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-edit-line"></use></svg></a></h1><div class="post-meta"><div class="post-time" style="display:block"><span class="post-meta-item-icon"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-calendar-line"></use></svg></span> <time title="创建时间：2021-06-28 13:55:21" itemprop="dateCreated datePublished" datetime="2021-06-28T13:55:21+08:00">2021-06-28</time><span class="post-meta-divider">-</span><span class="post-meta-item-icon"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-calendar-2-line"></use></svg></span> <time title="修改时间：2021-06-30 16:33:13" itemprop="dateModified" datetime="2021-06-30T16:33:13+08:00">2021-06-30</time></div><span class="post-count"><span class="post-symbolcount"><span class="post-meta-item-icon" title="本文字数"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-file-word-line"></use></svg></span> <span title="本文字数">1.8k</span><span class="post-meta-divider">-</span><span class="post-meta-item-icon" title="阅读时长"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-timer-line"></use></svg></span> <span title="阅读时长">6m</span></span></span><span class="post-busuanzi"><span class="post-meta-divider">-</span><span class="post-meta-item-icon" title="阅读次数"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-eye-line"></use></svg> <span id="busuanzi_value_page_pv"></span></span></span><div class="post-classify"><span class="post-category"> <span class="post-meta-item-icon" style="margin-right:3px;"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-folder-line"></use></svg></span><span itemprop="about" itemscope itemtype="https://schema.org/Thing"><a class="category-item" href="/categories/json/" style="--text-color:var(--hty-text-color)" itemprop="url" rel="index"><span itemprop="text">json</span></a></span></span><span class="post-tag"><span class="post-meta-divider">-</span><a class="tag-item" href="/tags/json/" style="--text-color:var(--hty-text-color)"><span class="post-meta-item-icon"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-price-tag-3-line"></use></svg></span><span class="tag-name">json</span></a></span></div></div></header><section class="post-body" itemprop="articleBody"><div class="post-content markdown-body" style="--smc-primary:#0078E7;"><p>JSON必知必会</p>
+<span id="more"></span>
+
+<h2 id="什么是json"><a href="#什么是json" class="headerlink" title="什么是json"></a>什么是json</h2><p>json是一种轻量的数据交换格式</p>
+<h3 id="json是一种数据交换格式"><a href="#json是一种数据交换格式" class="headerlink" title="json是一种数据交换格式"></a>json是一种数据交换格式</h3><p>数据交换格式是一种在不同平台间传递数据的文本格式。JSON、XML</p>
+<p>并不是所有的系统都支持使用JSON来交换数据。许多系统还在使用XML这样的格式，或是用表格和分隔符来表示数据的格式，如逗号分隔值(CSV)</p>
+<h3 id="JSON独立于编程语言"><a href="#JSON独立于编程语言" class="headerlink" title="JSON独立于编程语言"></a>JSON独立于编程语言</h3><p>JSON(JavaScript Object Notation, JavaScript对象表示法)</p>
+<p>JSON基于JavaScript对象字面量，一种基于对象表示法的数据交换格式</p>
+<h3 id="专业术语和概念"><a href="#专业术语和概念" class="headerlink" title="专业术语和概念"></a>专业术语和概念</h3><ul>
+<li>JSON ： JavaScript对象表示法</li>
+<li>表示法： 一个用于表示诸如数字或单词等数据的字符系统</li>
+<li>数据交换格式： 用于在不同的平台或系统间交换数据的文本</li>
+<li>可移植性： 以一种对双方系统都兼容的方式在平台间传递信息</li>
+</ul>
+<h2 id="JSON语法"><a href="#JSON语法" class="headerlink" title="JSON语法"></a>JSON语法</h2><h3 id="JSON基于JavaScript对象字面量"><a href="#JSON基于JavaScript对象字面量" class="headerlink" title="JSON基于JavaScript对象字面量"></a>JSON基于JavaScript对象字面量</h3><p>字面量：数据值的具体表示</p>
+<p>例如用一些特征或者属性，比如颜色、风格、品牌等来描述你的鞋子，名称-值对</p>
+<pre class="language-json" data-language="json"><code class="language-json"><span class="token punctuation">&#123;</span>
+    <span class="token property">"brand"</span><span class="token operator">:</span> <span class="token string">"Crocs"</span><span class="token punctuation">,</span>
+    <span class="token property">"color"</span><span class="token operator">:</span> <span class="token string">"pink"</span><span class="token punctuation">,</span>
+    <span class="token property">"size"</span><span class="token operator">:</span> <span class="token number">9</span><span class="token punctuation">,</span>
+    <span class="token property">"hasLaces"</span><span class="token operator">:</span> <span class="token boolean">false</span>
+<span class="token punctuation">&#125;</span></code></pre>
+
+<h3 id="名称-值对"><a href="#名称-值对" class="headerlink" title="名称-值对"></a>名称-值对</h3><p>名称始终在左侧，值始终在右侧</p>
+<h3 id="正确的JSON语法"><a href="#正确的JSON语法" class="headerlink" title="正确的JSON语法"></a>正确的JSON语法</h3><p>JSON中的名称-值对的名称如果被系统作为对象装入内存的话，将会成为“属性”。在部分系统中，属性名可以包含下划线(_)或数字，但是大多数情况下最好使用英文字母A-Z或a-z。</p>
+<p>当值为字符串时，必须使用双引号，为其他数据类型时，不需要双引号，在JSON中，我们仅使用双引号，而且对于名称-值中的名称来说，是必需的</p>
+<h3 id="语法验证"><a href="#语法验证" class="headerlink" title="语法验证"></a>语法验证</h3><p>语法验证关注的是JSON格式，而一致性验证关注的是其独特的数据结构，语法验证会检测JSON语法是否正确(是否被花括号包裹，名称-值对是否以逗号分隔)，而一致性验证会检测数据中是否包含name、breed和age等信息，还会检测age的值是否为数字，name的值是否为字符串等</p>
+<h3 id="媒体类型"><a href="#媒体类型" class="headerlink" title="媒体类型"></a>媒体类型</h3><p>JSON的MIME类型是 application/json</p>
+<h3 id="专业术语和概念-1"><a href="#专业术语和概念-1" class="headerlink" title="专业术语和概念"></a>专业术语和概念</h3><ul>
+<li>字面量：字面意思与其想要表达的意思是完全一致的值</li>
+<li>变量：通过形如x的标识符来表示的，可以修改的一类值</li>
+<li>最大可移植性(数据交换中)：通过保证数据本身对于平台和系统的兼容性来提供超越数据格式本身的可移植性</li>
+<li>名称-值对：拥有名称和对应的值的属性或特征(也叫键-值对)</li>
+<li>语法验证：关注JSON格式的验证</li>
+<li>一致性验证：关注独特数据结构的验证</li>
+</ul>
+<h2 id="JSON的数据类型"><a href="#JSON的数据类型" class="headerlink" title="JSON的数据类型"></a>JSON的数据类型</h2><h3 id="数据类型简介"><a href="#数据类型简介" class="headerlink" title="数据类型简介"></a>数据类型简介</h3><p>原始数据类型：</p>
+<ul>
+<li>数字(5或5.09)整型、浮点数、定点数</li>
+<li>字符和字符串(如”a”、”A”或”apple”)</li>
+<li>布尔类型(即真或假)</li>
+</ul>
+<h3 id="JSON中的数据类型"><a href="#JSON中的数据类型" class="headerlink" title="JSON中的数据类型"></a>JSON中的数据类型</h3><p>JSON中的数据类型包括：</p>
+<ul>
+<li>对象</li>
+<li>字符串</li>
+<li>数字</li>
+<li>布尔值</li>
+<li>null</li>
+<li>数组</li>
+</ul>
+<h3 id="JSON中的对象类型"><a href="#JSON中的对象类型" class="headerlink" title="JSON中的对象类型"></a>JSON中的对象类型</h3><p>JSON本身就是一个对象.</p>
+<pre class="language-json" data-language="json"><code class="language-json"><span class="token punctuation">&#123;</span>
+    <span class="token property">"person"</span><span class="token operator">:</span><span class="token punctuation">&#123;</span>
+    <span class="token property">"name"</span><span class="token operator">:</span> <span class="token string">"wanheo"</span><span class="token punctuation">,</span>
+    <span class="token property">"height"</span><span class="token operator">:</span> <span class="token number">66</span><span class="token punctuation">,</span>
+    <span class="token property">"head"</span><span class="token operator">:</span> <span class="token punctuation">&#123;</span>
+        <span class="token property">"hair"</span><span class="token operator">:</span><span class="token punctuation">&#123;</span>
+            <span class="token property">"color"</span><span class="token operator">:</span> <span class="token string">"light blond"</span><span class="token punctuation">,</span>
+            <span class="token property">"length"</span><span class="token operator">:</span> <span class="token string">"short"</span>
+            <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+        <span class="token property">"eyes"</span><span class="token operator">:</span> <span class="token string">"green"</span>
+        <span class="token punctuation">&#125;</span>
+    <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span></code></pre>
+
+<h3 id="JSON中的字符串类型"><a href="#JSON中的字符串类型" class="headerlink" title="JSON中的字符串类型"></a>JSON中的字符串类型</h3><p>JSON中的字符串可以有任何UniCode字符构成，字符串两边必须用双引号包裹</p>
+<p>错误代码,不能正常使用</p>
+<pre class="language-json" data-language="json"><code class="language-json"><span class="token punctuation">&#123;</span>
+    <span class="token property">"promo"</span><span class="token operator">:</span> <span class="token string">"Say "</span>Bob's the best!<span class="token string">" at checkout for free 80z bag of kibble."</span>
+<span class="token punctuation">&#125;</span></code></pre>
+
+<p>使用反斜杠对字符串中的双引号进行转义来解决这一问题</p>
+<pre class="language-json" data-language="json"><code class="language-json"><span class="token punctuation">&#123;</span>
+    <span class="token property">"promo"</span><span class="token operator">:</span> <span class="token string">"Say \"Bob's the best!\" at checkout for free 80z bag of kibble."</span>
+<span class="token punctuation">&#125;</span></code></pre>
+<p>反斜线会告诉解析器这个双引号并不意味着字符串的结束。双引号并不是唯一需要转义的字符，因为反斜线用于转义字符，所以还需要转义反斜线</p>
+<p>错误代码</p>
+<pre class="language-json" data-language="json"><code class="language-json"><span class="token punctuation">&#123;</span>
+    <span class="token property">"location"</span><span class="token operator">:</span> <span class="token string">"C:\Program Files"</span>
+<span class="token punctuation">&#125;</span></code></pre>
+<p>反斜线需要另一个反斜线进行转义</p>
+<pre class="language-json" data-language="json"><code class="language-json"><span class="token punctuation">&#123;</span>
+    <span class="token property">"location"</span><span class="token operator">:</span> <span class="token string">"C:\\Program Files"</span>
+<span class="token punctuation">&#125;</span></code></pre>
+
+<p>除了双引号和反斜线，还需要转义以下字符：</p>
+<ul>
+<li>/(正斜线)</li>
+<li>\b(退格符)</li>
+<li>\f(换页符)</li>
+<li>\t(制表符)</li>
+<li>\n(换行符)</li>
+<li>\r(回车符)</li>
+<li>\u后面跟十六进制字符(如笑脸\u263A)</li>
+</ul>
+<h3 id="JSON中的数字类型"><a href="#JSON中的数字类型" class="headerlink" title="JSON中的数字类型"></a>JSON中的数字类型</h3><p>JSON中的数字可以是整数、小数、负数或指数</p>
+<pre class="language-json" data-language="json"><code class="language-json"><span class="token punctuation">&#123;</span>
+    <span class="token property">"widgeInventory"</span><span class="token operator">:</span> <span class="token number">289</span><span class="token punctuation">,</span>
+    <span class="token property">"sadSavingsAccount"</span><span class="token operator">:</span> <span class="token number">22.59</span><span class="token punctuation">,</span>
+    <span class="token property">"seattleLatitude"</span><span class="token operator">:</span> <span class="token number">47.606209</span><span class="token punctuation">,</span>
+    <span class="token property">"earthsMass"</span><span class="token operator">:</span> <span class="token number">5.97219e+24</span>
+<span class="token punctuation">&#125;</span></code></pre>
+
+<h3 id="JSON中的布尔类型"><a href="#JSON中的布尔类型" class="headerlink" title="JSON中的布尔类型"></a>JSON中的布尔类型</h3><p>在JSON中，该字面仅使用小写形式：true或false</p>
+<pre class="language-json" data-language="json"><code class="language-json"><span class="token punctuation">&#123;</span>
+    <span class="token property">"toastWithBreakfast"</span><span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+    <span class="token property">"breadwithLunch"</span><span class="token operator">:</span> <span class="token boolean">true</span>
+<span class="token punctuation">&#125;</span></code></pre>
+
+<h3 id="JSON中的null类型"><a href="#JSON中的null类型" class="headerlink" title="JSON中的null类型"></a>JSON中的null类型</h3><p>null用来表示0、一无所有、不存在等意思，而不用数字表示。</p>
+<p>undefined不是JSON中的数据类型，在JavaScript中，undefined是在尝试获取一些不存在的对象或变量时返回的结果，undefined与那些声明的名称和值都不存在的对象或变量有关，而null则仅与对象或变量的值有关</p>
+<p>在JSON中，null必须使用小写形式</p>
+<h3 id="JSON中的数组类型"><a href="#JSON中的数组类型" class="headerlink" title="JSON中的数组类型"></a>JSON中的数组类型</h3><pre class="language-json" data-language="json"><code class="language-json"><span class="token punctuation">&#123;</span>
+    <span class="token property">"eggCartom"</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+        <span class="token string">"egg"</span><span class="token punctuation">,</span>
+        <span class="token null keyword">null</span><span class="token punctuation">,</span>
+        <span class="token number">1</span>
+    <span class="token punctuation">]</span>
+<span class="token punctuation">&#125;</span></code></pre>
+
+<pre class="language-json" data-language="json"><code class="language-json"><span class="token punctuation">&#123;</span>
+    <span class="token property">"test"</span><span class="token operator">:</span><span class="token punctuation">[</span>
+        <span class="token punctuation">&#123;</span>
+            <span class="token property">"question"</span><span class="token operator">:</span> <span class="token string">"The sky is blue"</span><span class="token punctuation">,</span>
+            <span class="token property">"answer"</span><span class="token operator">:</span> <span class="token boolean">true</span>
+        <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+        <span class="token punctuation">&#123;</span>
+            <span class="token property">"question"</span><span class="token operator">:</span> <span class="token string">"The earth is flat"</span><span class="token punctuation">,</span>
+            <span class="token property">"answer"</span><span class="token operator">:</span> <span class="token boolean">false</span>
+        <span class="token punctuation">&#125;</span>
+    <span class="token punctuation">]</span>
+<span class="token punctuation">&#125;</span></code></pre>
+
+<h3 id="专业术语和概念-2"><a href="#专业术语和概念-2" class="headerlink" title="专业术语和概念"></a>专业术语和概念</h3><ul>
+<li>JSON中的字符串类型：一个字符串值，如”string”,使用双引号包裹</li>
+<li>JSON中的布尔类型：true 或 false</li>
+<li>JSON中的数字类型：一个数字值，如42，-20，1.5，3e+10</li>
+<li>JSON中的null类型：一个表示空值的null</li>
+<li>JSON中的数组类型：数组是值的集合或列表，每个值可以是字符串、数字、布尔值、对象或数组中的任何一种，数组必须用方括号([])包裹，值于值之间用逗号隔开</li>
+<li>JSON中的对象类型：对象类型是使用逗号分隔的名称-值对构成的集合，并使用花括号({})包裹</li>
+</ul>
+<p>对象和数组很关键的一个区别是： 对象是名称-值对构成的列表或集合，数组是值构成的列表或集合</p>
+<p>对象和数组另一个关键的区别是：数组中所有的值应具有相同的数据类型</p>
+<h2 id="JSON-Schema"><a href="#JSON-Schema" class="headerlink" title="JSON Schema"></a>JSON Schema</h2><pre class="language-json" data-language="json"><code class="language-json"><span class="token punctuation">&#123;</span>
+    <span class="token property">"$schema"</span><span class="token operator">:</span> <span class="token string">"http://json-schema.org/draft-04/schema#"</span><span class="token punctuation">,</span>
+    <span class="token property">"title"</span><span class="token operator">:</span> <span class="token string">"Cat"</span><span class="token punctuation">,</span>
+    <span class="token property">"properties"</span><span class="token operator">:</span> <span class="token punctuation">&#123;</span>
+        <span class="token property">"name"</span><span class="token operator">:</span> <span class="token punctuation">&#123;</span>
+            <span class="token property">"type"</span><span class="token operator">:</span> <span class="token string">"string"</span>
+        <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+        <span class="token property">"name"</span><span class="token operator">:</span> <span class="token punctuation">&#123;</span>
+            <span class="token property">"type"</span><span class="token operator">:</span> <span class="token string">"number"</span><span class="token punctuation">,</span>
+            <span class="token property">"description"</span><span class="token operator">:</span> <span class="token string">"Your cat's age in years"</span>
+        <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+        <span class="token property">"declawed"</span><span class="token operator">:</span> <span class="token punctuation">&#123;</span>
+            <span class="token property">"type"</span><span class="token operator">:</span> <span class="token string">"boolean"</span>
+        <span class="token punctuation">&#125;</span>
+    <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+    <span class="token property">"required"</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+        <span class="token string">"name"</span><span class="token punctuation">,</span>
+        <span class="token string">"age"</span><span class="token punctuation">,</span>
+        <span class="token string">"declawed"</span>
+    <span class="token punctuation">]</span>
+<span class="token punctuation">&#125;</span></code></pre>
+
+<h3 id="专业术语和概念-3"><a href="#专业术语和概念-3" class="headerlink" title="专业术语和概念"></a>专业术语和概念</h3><ul>
+<li>JSON Schema：数据交换中的一种虚拟的“合同”</li>
+<li>JSON验证器负责验证语法错误，JSON Schema负责提供一致性检验</li>
+<li>JSON Schema 是数据接收方的第一道防线，也是数据发送方节约时间、保证数据正确的好工具</li>
+</ul>
+<h2 id="JSON中的安全问题"><a href="#JSON中的安全问题" class="headerlink" title="JSON中的安全问题"></a>JSON中的安全问题</h2><p>GET 请求数据，得到相应</p>
+<p>POST 提交数据，得到相应 </p>
+<hr>
+<h2 id="小结"><a href="#小结" class="headerlink" title="小结"></a><strong>小结</strong></h2><p>JSON优点：</p>
+<ul>
+<li>JSON语法小轻量级，以更快的方式进行相应</li>
+<li>兼容性广泛</li>
+<li>共享数据的最佳工具</li>
+<li>在服务器上解析</li>
+</ul>
+<p>缺点：</p>
+<ul>
+<li>没有错误处理</li>
+<li>完全性，JSON服务返回包含在函数调用中的JSON响应，如果它将与不受信任的浏览器一起使用，将由浏览器执行它可以被黑客入侵，这使托管Web应用程序易受各种攻击</li>
+<li>支持工具有限</li>
+</ul>
+</div><div id="reward-container"><span class="hty-icon-button button-glow" id="reward-button" title="打赏" onclick="var qr = document.getElementById(&quot;qr&quot;); qr.style.display = (qr.style.display === &quot;none&quot;) ? &quot;block&quot; : &quot;none&quot;;"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-hand-coin-line"></use></svg></span><div id="reward-comment">I'm so cute. Please give me money.</div><div id="qr" style="display:none;"><div style="display:inline-block"></div><div style="display:inline-block"></div><div style="display:inline-block"></div></div></div><ul class="post-copyright"><li class="post-copyright-author"><strong>本文作者：</strong>先逃跑再说</li><li class="post-copyright-link"><strong>本文链接：</strong><a href="https://wentianhao.github.io/2021/06/28/json/" title="json">https://wentianhao.github.io/2021/06/28/json/</a></li><li class="post-copyright-license"><strong>版权声明：</strong>本博客所有文章除特别声明外，均默认采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="noopener" title="CC BY-NC-SA 4.0 "><svg class="icon"><use xlink:href="#icon-creative-commons-line"></use></svg><svg class="icon"><use xlink:href="#icon-creative-commons-by-line"></use></svg><svg class="icon"><use xlink:href="#icon-creative-commons-nc-line"></use></svg><svg class="icon"><use xlink:href="#icon-creative-commons-sa-line"></use></svg></a> 许可协议。</li></ul></section></article><div class="post-nav"><div class="post-nav-item"></div><div class="post-nav-item"><a class="post-nav-next" href="/2021/06/22/mysql%E6%9E%B6%E6%9E%84%E4%BD%93%E7%B3%BB%E8%AE%BE%E8%AE%A1/" rel="next" title="mysql架构体系设计"><span class="post-nav-text">mysql架构体系设计</span><svg class="icon" aria-hidden="true"><use xlink:href="#icon-arrow-right-s-line"></use></svg></a></div></div></div><div class="hty-card" id="comment"><div class="comment-tooltip text-center"><span>若您想及时得到回复提醒，建议跳转 GitHub Issues 评论。</span><br><span>若没有本文 Issue，您可以使用 Comment 模版新建。</span><br></div><div class="toggle-comment-system" style="margin: 1rem auto"><a class="toggle-comment-btn hty-button hty-button--raised text-uppercase" data-target="#valine-container" onclick="showComment(this.dataset.target)">valine</a><style>.utterances {
+  display: none;
+}</style><a class="toggle-comment-btn hty-button hty-button--raised text-uppercase" data-target=".utterances" onclick="showComment(this.dataset.target)">utterances</a><script>function hideAllComment() {
+  //- hide all
+  document.querySelectorAll('.toggle-comment-btn').forEach((btn) => {
+    const container = document.querySelector(btn.dataset.target);
+    if (container) {
+      container.style.display = "none";
+    }
+  });
+}
+function showComment(target) {
+  hideAllComment();
+  //- show target
+  const targetContainer = document.querySelector(target);
+  if (targetContainer) {
+    targetContainer.style.display = "block";
+  }
+}
+</script></div><div id="valine-container"></div><script>Yun.utils.getScript("https://cdn.jsdelivr.net/npm/valine@latest/dist/Valine.min.js", () => {
+  const valineConfig = {"enable":true,"appId":"lKhR0buRT7OeiwUq9ECRwPba-MdYXbMMI","appKey":"5cz28s0hMEfyou89engEFMmS","placeholder":"Just go go","avatar":null,"pageSize":10,"visitor":false,"highlight":true,"recordIP":false,"enableQQ":true,"meta":["nick","mail","link"],"el":"#valine-container","lang":"zh-cn"}
+  valineConfig.path = "/2021/06/28/json/"
+  new Valine(valineConfig)
+}, window.Valine);</script></div></main><footer class="sidebar-translate" id="footer"><div class="copyright"><span>&copy; 2020 – 2021 </span><span class="with-love" id="animate"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-cloud-line"></use></svg></span><span class="author"> 先逃跑再说</span></div><div class="powered"><span>由 <a href="https://hexo.io" target="_blank" rel="noopener">Hexo</a> 驱动 v5.4.0</span><span class="footer-separator">|</span><span>主题 - <a rel="noopener" href="https://github.com/YunYouJun/hexo-theme-yun" target="_blank"><span>Yun</span></a> v1.6.1</span></div><div class="live_time"><span>本博客已萌萌哒地运行</span><span id="display_live_time"></span><span class="moe-text">(●'◡'●)</span><script>function blog_live_time() {
+  setTimeout(blog_live_time, 1000);
+  const start = new Date('2020-01-05T00:00:00');
+  const now = new Date();
+  const timeDiff = (now.getTime() - start.getTime());
+  const msPerMinute = 60 * 1000;
+  const msPerHour = 60 * msPerMinute;
+  const msPerDay = 24 * msPerHour;
+  const passDay = Math.floor(timeDiff / msPerDay);
+  const passHour = Math.floor((timeDiff % msPerDay) / 60 / 60 / 1000);
+  const passMinute = Math.floor((timeDiff % msPerHour) / 60 / 1000);
+  const passSecond = Math.floor((timeDiff % msPerMinute) / 1000);
+  display_live_time.innerHTML = " " + passDay + " 天 " + passHour + " 小时 " + passMinute + " 分 " + passSecond + " 秒";
+}
+blog_live_time();
+</script></div><div id="busuanzi"><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><span id="busuanzi_container_site_uv" title="总访客量"><span><svg class="icon" aria-hidden="true"><use xlink:href="#icon-user-line"></use></svg></span><span id="busuanzi_value_site_uv"></span></span><span class="footer-separator">|</span><span id="busuanzi_container_site_pv" title="总访问量"><span><svg class="icon" aria-hidden="true"><use xlink:href="#icon-eye-line"></use></svg></span><span id="busuanzi_value_site_pv"></span></span></div></footer><a class="hty-icon-button" id="back-to-top" aria-label="back-to-top" href="#"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-arrow-up-s-line"></use></svg><svg class="progress-circle-container" viewBox="0 0 100 100"><circle class="progress-circle" id="progressCircle" cx="50" cy="50" r="48" fill="none" stroke="#0078E7" stroke-width="2" stroke-linecap="round"></circle></svg></a><script>const date = new Date();
+const today = (date.getMonth() + 1) + "-" + date.getDate()
+const mourn_days = ["4-4","9-18"]
+if (mourn_days.includes(today)) {
+  document.documentElement.style.filter = "grayscale(1)";
+}</script></div></body></html>

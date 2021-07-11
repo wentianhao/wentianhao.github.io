@@ -28,7 +28,7 @@ updated: 2020-10-10 09:59:03
 
 为解决上述问题，引入Transformer的概念，整个网络结构完全是由Attention机制组成，Attention机制是将单个序列的不同位置联系起来计算序列表示的一种注意机制。
 
-![Attention](https://whh.plus/images/attention.jpg)
+![Attention](https://whh.plus/images/attention2.png)
 
 ## Transformer
 > Transformer is the first transduction model relying entirely on self-attention to compute representations of its input and output without using sequence aligned RNNs or convolution。

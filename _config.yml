@@ -162,6 +162,8 @@ aplayer:
 ## Docs: https://hexo.io/docs/one-command-deployment
 deploy:
   type: git
-  repo: git@github.com:wentianhao/wentianhao.github.io.git
+  repo: 
+    github: git@github.com:wentianhao/wentianhao.github.io.git
+    aliyun: git@whh.plus:/home/git/repos/blog.git
   branch: master
   message:  Update Hexo Static Content

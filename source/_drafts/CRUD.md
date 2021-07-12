@@ -1,8 +1,10 @@
 ---
 title: CRUD
 date: 2021-07-10 10:06:06
-tags: springboot
-categories: 学习项目
+tags: SpringBoot
+categories: 
+    - 学习项目
+    - SpringBoot
 ---
 最近准备秋招面试，所以复习一下spring boot的CRUD，并记录一下
 

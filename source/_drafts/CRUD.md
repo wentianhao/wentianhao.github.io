@@ -22,3 +22,9 @@ categories:
 JPA的作用类似MyBatis，但更加的自动化，在对数据库性能要求不是特别高的时候很方便。可以避免繁复的JDBC数据库操作代码的编写，提高Java持久层开发的效率
 
 JPA(Java Persistence API)是sun官方提出的Java持久化规范，用来方便操作数据库，真正干活的可能是Hibernate(默认是)
+
+
+
+
+参考文档
+[1.JPA 持久层框架的初学笔记](https://blog.csdn.net/u013969018/article/details/94433461)

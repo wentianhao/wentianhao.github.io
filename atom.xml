@@ -6,7 +6,7 @@
   <link href="https://wentianhao.github.io/atom.xml" rel="self"/>
   
   <link href="https://wentianhao.github.io/"/>
-  <updated>2021-07-13T06:43:02.219Z</updated>
+  <updated>2021-07-15T09:05:04.527Z</updated>
   <id>https://wentianhao.github.io/</id>
   
   <author>
@@ -15,6 +15,30 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>SpringBoot注解</title>
+    <link href="https://wentianhao.github.io/2021/07/11/SpringBoot%E6%B3%A8%E8%A7%A3/"/>
+    <id>https://wentianhao.github.io/2021/07/11/SpringBoot%E6%B3%A8%E8%A7%A3/</id>
+    <published>2021-07-11T02:53:48.000Z</published>
+    <updated>2021-07-15T09:05:04.527Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;使用注解的优势：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;采用Java代码，不需要配置繁杂的xml文件&lt;/li&gt;
+&lt;li&gt;在配置中也可享受面向对象带来的好处&lt;/li&gt;
+&lt;li&gt;类型安全对重构可以提供良好的支持&lt;/li&gt;
+&lt;li&gt;减少复杂配置文件的同时亦能享受到springIoC容器提供的功能</summary>
+    
+    
+    
+    <category term="SpringBoot" scheme="https://wentianhao.github.io/categories/SpringBoot/"/>
+    
+    
+    <category term="SpringBoot" scheme="https://wentianhao.github.io/tags/SpringBoot/"/>
+    
+  </entry>
   
   <entry>
     <title>服务器自建图床</title>
@@ -436,26 +460,6 @@
     
     
     <category term="NLP" scheme="https://wentianhao.github.io/tags/NLP/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>服务器后台运行python脚本</title>
-    <link href="https://wentianhao.github.io/2020/10/09/%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%90%8E%E5%8F%B0%E8%BF%90%E8%A1%8Cpython%E8%84%9A%E6%9C%AC/"/>
-    <id>https://wentianhao.github.io/2020/10/09/%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%90%8E%E5%8F%B0%E8%BF%90%E8%A1%8Cpython%E8%84%9A%E6%9C%AC/</id>
-    <published>2020-10-09T08:46:25.000Z</published>
-    <updated>2020-10-09T08:46:25.000Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;服务器运行python&lt;/p&gt;
-&lt;pre class=&quot;language-bash&quot; data-language=&quot;bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;python xx.py&lt;/code&gt;&lt;/pre&gt;</summary>
-    
-    
-    
-    <category term="python" scheme="https://wentianhao.github.io/categories/python/"/>
-    
-    
-    <category term="python" scheme="https://wentianhao.github.io/tags/python/"/>
     
   </entry>
   

@@ -1,9 +1,12 @@
 ---
 title: SpringBoot注解
-date: 2021-07-11 10:53:48
+katex: false
 tags: SpringBoot
 categories: SpringBoot
+abbrlink: 37598
+date: 2021-07-11 10:53:48
 ---
+
 使用注解的优势：
 1. 采用Java代码，不需要配置繁杂的xml文件
 2. 在配置中也可享受面向对象带来的好处

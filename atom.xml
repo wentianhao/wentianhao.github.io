@@ -6,7 +6,7 @@
   <link href="https://wentianhao.github.io/atom.xml" rel="self"/>
   
   <link href="https://wentianhao.github.io/"/>
-  <updated>2021-07-15T09:05:15.476Z</updated>
+  <updated>2021-07-22T06:55:54.916Z</updated>
   <id>https://wentianhao.github.io/</id>
   
   <author>
@@ -15,6 +15,25 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>java常量池</title>
+    <link href="https://wentianhao.github.io/2021/07/22/java%E5%B8%B8%E9%87%8F%E6%B1%A0/"/>
+    <id>https://wentianhao.github.io/2021/07/22/java%E5%B8%B8%E9%87%8F%E6%B1%A0/</id>
+    <published>2021-07-22T02:39:46.000Z</published>
+    <updated>2021-07-22T06:55:54.916Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;对常量池理解的补充说明&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="java" scheme="https://wentianhao.github.io/categories/java/"/>
+    
+    
+    <category term="java" scheme="https://wentianhao.github.io/tags/java/"/>
+    
+  </entry>
   
   <entry>
     <title>SpringBoot注解</title>
@@ -440,26 +459,6 @@
     
     
     <category term="linux" scheme="https://wentianhao.github.io/tags/linux/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Attention Is All You Need</title>
-    <link href="https://wentianhao.github.io/2020/10/10/Attention/"/>
-    <id>https://wentianhao.github.io/2020/10/10/Attention/</id>
-    <published>2020-10-10T01:59:03.000Z</published>
-    <updated>2020-10-10T01:59:03.000Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;&lt;img src=&quot;https://whh.plus/images/attention.png&quot; alt=&quot;attention&quot;&gt;&lt;/p&gt;
-&lt;h2 id=&quot;Introduction&quot;&gt;&lt;a href=&quot;#Introduction&quot; class=&quot;headerlink&quot; title=&quot;Introduction&quot;&gt;&lt;/a&gt;Introduction&lt;/h2&gt;&lt;p&gt;传统的基于RNN的Seq2Seq模型难以处理长序列的句子，无法实现并行，还面临对齐的问题，本文提出Attention机制，加入Attention的Seq2Seq模型在各个任务上都有显著提升，创新点在于抛弃传统的Encoder-Decoder模型必须结合CNN或RNN的固有模式，只用Attention机制。&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="论文笔记" scheme="https://wentianhao.github.io/categories/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/"/>
-    
-    
-    <category term="NLP" scheme="https://wentianhao.github.io/tags/NLP/"/>
     
   </entry>
   

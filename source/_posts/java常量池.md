@@ -89,6 +89,15 @@ public static void main(String[]args){
 ## 包装类的常量池技术(缓存)
 自动装箱：valueOf() 
 
+```java
+public static Integer valueOf(int i) {
+        if (i >= IntegerCache.low && i <= IntegerCache.high)
+            return IntegerCache.cache[i + (-IntegerCache.low)];
+        return new Integer(i);
+    }
+```
+
+
 自动拆箱：intValue()
 
 

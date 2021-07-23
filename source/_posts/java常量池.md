@@ -87,6 +87,8 @@ public static void main(String[]args){
 上个例子在编译期间，就已经确定a和b，但是在这段代码中，编译器static不执行，a和b的值未知，static代码块，在初始化时被执行，初始化属于类加载的一部分，属于运行期，动态返回String类型对象，存在堆中，c在方法区常量池中
 
 ## 包装类的常量池技术(缓存)
+Java基本类型的包装类的大部分都实现了常量池技术，即Byte、Short、Integer、Long、Character、Boolean;前面4钟包装类默认创建了数值[-128,127]的相应类型的缓存数据，Character创建了数值在[0,127]范围的缓存数据，Boolean直接返回True or False.如果超出对应范围仍然会去创建新的对象;两种浮点数类型的包装类Float、Double没有实现常量池技术.
+
 自动装箱：valueOf() 
 
 ```java
@@ -96,10 +98,39 @@ public static Integer valueOf(int i) {
         return new Integer(i);
     }
 ```
+例子:
+```java
+Integer a = 127;
+Integer b = 127;
 
-aa
+Integer c = 128;
+Integer d = 128;
+
+Integer e = new Integer(127);
+Integer f = new Integer(127);
+
+System.out.println(a == b); // true
+System.out.println(c == d); // false
+System.out.println(e == f); // false
+System.out.println(a == e); // false
+
+Double m = 1.0;
+Double n = 1.0;
+System.out.println(m == n); // false
+```
+Integer a = 127；Java 在编译的时候会直接将代码封装成 Integer a = Integer.valueOf(127)，从而使用常量池中的对象。Integer e = new Integer(127)；这种情况下会创建新的对象
+
 自动拆箱：intValue()
+```java
+Integer a = new Integer(50);
+Integer b = new Integer(40);
+Integer c = new Integer(10);
 
+System.out.println(a == b + c); // true
+```
+因为 + 这个操作符不适用于 Integer 对象，首先 b 和 c 进行自动拆箱操作，进行数值相加，即 a == 50,然后 Integer 对象无法与数值进行直接比较，所以 a 自动拆箱转为 int 值 50，最终这条语句转为 50 == 50 进行数值比较。
 
-
-
+参考:
+- [JAVA常量池，一篇文章就足够入门了。（含图解）](https://blog.csdn.net/qq_41376740/article/details/80338158)
+- [8 种基本类型的包装类和常量池](https://blog.csdn.net/weixin_44584387/article/details/104656135)
+- [深入浅出java常量池](https://www.cnblogs.com/syp172654682/p/8082625.html)

@@ -36,6 +36,25 @@
   </entry>
   
   <entry>
+    <title>【转载】java基础</title>
+    <link href="https://wentianhao.github.io/2021/07/20/java%E5%9F%BA%E7%A1%80/"/>
+    <id>https://wentianhao.github.io/2021/07/20/java%E5%9F%BA%E7%A1%80/</id>
+    <published>2021-07-20T13:19:46.000Z</published>
+    <updated>2021-07-24T06:40:02.714Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;Java基础概念与常识&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="java" scheme="https://wentianhao.github.io/categories/java/"/>
+    
+    
+    <category term="java" scheme="https://wentianhao.github.io/tags/java/"/>
+    
+  </entry>
+  
+  <entry>
     <title>SpringBoot注解</title>
     <link href="https://wentianhao.github.io/2021/07/11/SpringBoot%E6%B3%A8%E8%A7%A3/"/>
     <id>https://wentianhao.github.io/2021/07/11/SpringBoot%E6%B3%A8%E8%A7%A3/</id>
@@ -440,25 +459,6 @@
     
     
     <category term="python" scheme="https://wentianhao.github.io/tags/python/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>linux命令：top</title>
-    <link href="https://wentianhao.github.io/2020/10/20/top/"/>
-    <id>https://wentianhao.github.io/2020/10/20/top/</id>
-    <published>2020-10-20T15:36:42.000Z</published>
-    <updated>2020-10-20T15:36:42.000Z</updated>
-    
-    
-    <summary type="html">&lt;h2 id=&quot;每天一个Linux命令：top&quot;&gt;&lt;a href=&quot;#每天一个Linux命令：top&quot; class=&quot;headerlink&quot; title=&quot;每天一个Linux命令：top&quot;&gt;&lt;/a&gt;每天一个Linux命令：top&lt;/h2&gt;&lt;p&gt;top命令是Linux下常用的性能分析工具，能够实时显示系统中各个进程的资源占用状况，类似于Windows的任务管理器。下面详细介绍它的使用方法。top是一个动态显示过程,即可以通过用户按键来不断刷新当前状态.如果在前台执行该命令,它将独占前台,直到用户终止该程序为止.比较准确的说,top命令提供了实时的对系统处理器的状态监视.它将显示系统中CPU最“敏感”的任务列表.该命令可以按CPU使用.内存使用和执行时间对任务进行排序；而且该命令的很多特性都可以通过交互式命令或者在个人定制文件中进行设定.&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="linux" scheme="https://wentianhao.github.io/categories/linux/"/>
-    
-    
-    <category term="linux" scheme="https://wentianhao.github.io/tags/linux/"/>
     
   </entry>
   

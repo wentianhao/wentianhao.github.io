@@ -1,0 +1,402 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="theme-color" content="#0078E7"><meta name="author" content="先逃跑再说"><meta name="copyright" content="先逃跑再说"><meta name="generator" content="Hexo 5.4.0"><meta name="theme" content="hexo-theme-yun"><title>【转载】java基础 | wanheo</title><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@900&amp;display=swap" media="print" onload="this.media='all'"><script src="//at.alicdn.com/t/font_1140697_stqaphw3j4.js" async></script><script src="https://cdn.jsdelivr.net/npm/scrollreveal/dist/scrollreveal.min.js" defer></script><script>document.addEventListener("DOMContentLoaded", () => {
+  [".post-card",".post-content img"].forEach((target)=> {
+    ScrollReveal().reveal(target);
+  })
+});
+</script><script src="https://cdn.jsdelivr.net/npm/pjax@latest/pjax.min.js" defer></script><script src="/js/pjax.js" defer></script><script src="https://cdn.jsdelivr.net/npm/vue@2.6.11"></script><link id="light-prism-css" rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs@latest/themes/prism.css" media="(prefers-color-scheme: light)"><link id="dark-prism-css" rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs@latest/themes/prism-tomorrow.css" media="(prefers-color-scheme: dark)"><link rel="icon" href="/yun.svg"><link rel="mask-icon" href="/yun.svg" color="#0078E7"><link rel="alternate icon" href="/yun.ico"><link rel="preload" href="/css/hexo-theme-yun.css" as="style"><link rel="preload" href="/js/utils.js" as="script"><link rel="preload" href="/js/hexo-theme-yun.js" as="script"><link rel="prefetch" href="/js/sidebar.js" as="script"><link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin><script id="yun-config">
+    const Yun = window.Yun || {};
+    window.CONFIG = {"hostname":"wentianhao.github.io","root":"/","title":"先逃跑再说","version":"1.6.1","mode":"time","copycode":true,"page":{"isPost":true},"i18n":{"placeholder":"想要搜些什么？","empty":"找不到您查询的内容: ${query}","hits":"找到 ${hits} 条结果","hits_time":"找到 ${hits} 条结果（用时 ${time} 毫秒）"},"anonymous_image":"https://cdn.jsdelivr.net/gh/YunYouJun/cdn/img/avatar/none.jpg","say":{"api":"https://v1.hitokoto.cn","hitokoto":true},"fireworks":{"colors":["102, 167, 221","62, 131, 225","33, 78, 194"]}};
+  </script><link rel="stylesheet" href="/css/hexo-theme-yun.css"><script src="/js/utils.js"></script><script src="/js/hexo-theme-yun.js"></script><link rel="alternate" href="/atom.xml" title="wanheo" type="application/atom+xml"><script>(function(){
+  var bp = document.createElement('script');
+  var curProtocol = window.location.protocol.split(':')[0];
+  if (curProtocol === 'https') {
+    bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+  }
+  else {
+    bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+  }
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(bp, s);
+})();</script><meta name="description" content="Java基础概念与常识">
+<meta property="og:type" content="article">
+<meta property="og:title" content="【转载】java基础">
+<meta property="og:url" content="https://wentianhao.github.io/2021/07/20/java%E5%9F%BA%E7%A1%80/index.html">
+<meta property="og:site_name" content="wanheo">
+<meta property="og:description" content="Java基础概念与常识">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2021-07-20T13:19:46.000Z">
+<meta property="article:modified_time" content="2021-07-24T06:40:02.714Z">
+<meta property="article:author" content="先逃跑再说">
+<meta property="article:tag" content="java">
+<meta name="twitter:card" content="summary"><script src="/js/ui/mode.js"></script></head><body><script defer src="https://cdn.jsdelivr.net/npm/animejs@latest"></script><script defer src="/js/ui/fireworks.js"></script><canvas class="fireworks"></canvas><canvas id="trianglifyContainer"></canvas><script defer src="https://cdn.jsdelivr.net/npm/trianglify@4/dist/trianglify.bundle.js"></script><script>document.addEventListener("DOMContentLoaded", () => {
+  const pattern = trianglify({
+    width: 800,
+    height: 600,
+    cellSize: 75,
+    palette: ["YlGnBu", "GnBu", "Purples", "Blues"],
+  });
+  const canvasOpts = {
+    applyCssScaling: false
+  }
+  document.body.appendChild(pattern.toCanvas(trianglifyContainer, canvasOpts));
+});</script><div class="container"><a class="sidebar-toggle hty-icon-button" id="menu-btn"><div class="hamburger hamburger--spin" type="button"><span class="hamburger-box"><span class="hamburger-inner"></span></span></div></a><div class="sidebar-toggle sidebar-overlay"></div><aside class="sidebar"><script src="/js/sidebar.js"></script><ul class="sidebar-nav"><li class="sidebar-nav-item sidebar-nav-toc hty-icon-button sidebar-nav-active" data-target="post-toc-wrap" title="文章目录"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-list-ordered"></use></svg></li><li class="sidebar-nav-item sidebar-nav-overview hty-icon-button" data-target="site-overview-wrap" title="站点概览"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-passport-line"></use></svg></li></ul><div class="sidebar-panel" id="site-overview-wrap"><div class="site-info mickey-mouse"><a class="site-author-avatar" href="/about/" title="先逃跑再说"><img width="96" loading="lazy" src="/images/wen.jpg" alt="先逃跑再说"><span class="site-author-status" title="永远相信美好的事情即将发生">😊</span></a><div class="site-author-name"><a href="/about/">先逃跑再说</a></div><a class="site-name" href="/about/site.html">wanheo</a><sub class="site-subtitle"></sub><div class="site-desciption"></div></div><nav class="site-state"><a class="site-state-item hty-icon-button icon-home" href="/" title="我的主页"><span class="site-state-item-icon"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-home-4-line"></use></svg></span></a><div class="site-state-item"><a href="/archives/" title="归档"><span class="site-state-item-icon"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-archive-line"></use></svg></span><span class="site-state-item-count">68</span></a></div><div class="site-state-item"><a href="/categories/" title="分类"><span class="site-state-item-icon"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-folder-2-line"></use></svg></span><span class="site-state-item-count">27</span></a></div><div class="site-state-item"><a href="/tags/" title="标签"><span class="site-state-item-icon"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-price-tag-3-line"></use></svg></span><span class="site-state-item-count">35</span></a></div><a class="site-state-item hty-icon-button" target="_blank" rel="noopener" href="https://yun.yunyoujun.cn" title="文档"><span class="site-state-item-icon"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-settings-line"></use></svg></span></a></nav><hr style="margin-bottom:0.5rem"><div class="links-of-author"><a class="links-of-author-item hty-icon-button" rel="noopener" href="/atom.xml" title="RSS" target="_blank" style="color:orange"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-rss-line"></use></svg></a><a class="links-of-author-item hty-icon-button" rel="noopener" href="https://github.com/YunYouJun" title="GitHub" target="_blank" style="color:#6e5494"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-github-line"></use></svg></a><a class="links-of-author-item hty-icon-button" rel="noopener" href="https://music.163.com/#/user/home?id=247102977" title="网易云音乐" target="_blank" style="color:#C20C0C"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-netease-cloud-music-line"></use></svg></a><a class="links-of-author-item hty-icon-button" rel="noopener" href="mailto:me@yunyoujun.cn" title="E-Mail" target="_blank" style="color:#8E71C1"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-mail-line"></use></svg></a></div><hr style="margin:0.5rem 1rem"><div class="links"><a class="links-item hty-icon-button" href="/links/" title="我的小伙伴们" style="color:dodgerblue"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-genderless-line"></use></svg></a></div><br><a class="links-item hty-icon-button" id="toggle-mode-btn" href="javascript:;" title="Mode" style="color: #f1cb64"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-contrast-2-line"></use></svg></a></div><div class="sidebar-panel sidebar-panel-active" id="post-toc-wrap"><div class="post-toc"><div class="post-toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Java%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95"><span class="toc-number">1.</span> <span class="toc-text">Java基础语法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95"><span class="toc-number">2.</span> <span class="toc-text">基本语法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="toc-number">3.</span> <span class="toc-text">基本数据类型</span></a></li></ol></div></div></div></aside><main class="sidebar-translate" id="content"><div id="post"><article class="hty-card post-block" itemscope itemtype="https://schema.org/Article"><link itemprop="mainEntityOfPage" href="https://wentianhao.github.io/2021/07/20/java%E5%9F%BA%E7%A1%80/"><span hidden itemprop="author" itemscope itemtype="https://schema.org/Person"><meta itemprop="name" content="先逃跑再说"><meta itemprop="description"></span><span hidden itemprop="publisher" itemscope itemtype="https://schema.org/Organization"><meta itemprop="name" content="wanheo"></span><header class="post-header"><h1 class="post-title" itemprop="name headline">【转载】java基础<a class="post-edit-link" href="https://github.com/wentianhao/wentianhao.github.io/tree/hexo/source/_posts/java基础.md" target="_blank" title="编辑" rel="noopener"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-edit-line"></use></svg></a></h1><div class="post-meta"><div class="post-time" style="display:block"><span class="post-meta-item-icon"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-calendar-line"></use></svg></span> <time title="创建时间：2021-07-20 21:19:46" itemprop="dateCreated datePublished" datetime="2021-07-20T21:19:46+08:00">2021-07-20</time><span class="post-meta-divider">-</span><span class="post-meta-item-icon"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-calendar-2-line"></use></svg></span> <time title="修改时间：2021-07-24 14:40:02" itemprop="dateModified" datetime="2021-07-24T14:40:02+08:00">2021-07-24</time></div><span class="post-count"><span class="post-symbolcount"><span class="post-meta-item-icon" title="本文字数"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-file-word-line"></use></svg></span> <span title="本文字数">2.9k</span><span class="post-meta-divider">-</span><span class="post-meta-item-icon" title="阅读时长"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-timer-line"></use></svg></span> <span title="阅读时长">11m</span></span></span><span class="post-busuanzi"><span class="post-meta-divider">-</span><span class="post-meta-item-icon" title="阅读次数"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-eye-line"></use></svg> <span id="busuanzi_value_page_pv"></span></span></span><div class="post-classify"><span class="post-category"> <span class="post-meta-item-icon" style="margin-right:3px;"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-folder-line"></use></svg></span><span itemprop="about" itemscope itemtype="https://schema.org/Thing"><a class="category-item" href="/categories/java/" style="--text-color:var(--hty-text-color)" itemprop="url" rel="index"><span itemprop="text">java</span></a></span></span><span class="post-tag"><span class="post-meta-divider">-</span><a class="tag-item" href="/tags/java/" style="--text-color:var(--hty-text-color)"><span class="post-meta-item-icon"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-price-tag-3-line"></use></svg></span><span class="tag-name">java</span></a></span></div></div></header><section class="post-body" itemprop="articleBody"><div class="post-content markdown-body" style="--smc-primary:#0078E7;"><p>Java基础概念与常识</p>
+<span id="more"></span>
+<h2 id="Java基础语法"><a href="#Java基础语法" class="headerlink" title="Java基础语法"></a>Java基础语法</h2><p><strong>Java语言有哪些特点?</strong></p>
+<ol>
+<li>简单易学</li>
+<li>面向对象(封装、继承、多态)</li>
+<li>支持网络编程并且很方便</li>
+<li>支持多线程</li>
+<li>平台无关性</li>
+<li>可靠性</li>
+<li>安全性</li>
+<li>编译与解释并存</li>
+</ol>
+<p><strong>JVM vs JDK vs JRE</strong></p>
+<p><strong>JVM</strong></p>
+<p>java虚拟机(JVM)是运行Java字节码的虚拟机。JVM有针对不同系统的特定实现，目的是使用相同的字节码，输出相同的结果。</p>
+<p><strong>什么是字节码? 采用字节码的好处？</strong></p>
+<p>在Java中,JVM可以理解的代码就叫做字节码(扩展名为.class的文件)，它不面向任何特定的处理器，只面向虚拟机。Java语言通过字节码的方式，在一定程度上解决了传统解释型语言执行效率低的问题，同时又保留了解释性语言可移植的特点。所以Java程序运行时比较高效，而且由于字节码并不针对一种特定的机器，因此Java程序无须重新编译便可在多种不同操作系统的计算机上运行</p>
+<p>Java程序从源代码到运行一般有下面3步：</p>
+<p>.java文件(源代码)—JDK中的javac编译—&gt;.class文件(JVM可理解的字节码)—JVM—&gt;机器可执行的二进制机器码</p>
+<p>JVM类加载器首先加载字节码文件，然后通过解释器逐行解释执行，这种方式的执行速度会相对较慢，而且有些方法和代码块是经常需要被调用的(热点代码)，所以后面引进了JIT编译器，JIT编译器属于运行时编译，当JIT编译器完成第一次编译后，其会将字节码对应的机器码保存下来，下次直接使用。机器码的运行效率是高于Java解释器的，这也解释了Java是编译与解释并存的语言</p>
+<blockquote>
+<p>HotSpot采用了惰性评估的做法，根据二八定律，消耗大部分系统资源的只有那一小部分的代码(热点代码)，这也就是JIT所需编译的部分。JVM会根据代码每次被执行的情况收集信息并相应的做出一些优化，因此执行的次数越多，速度越快。</p>
+</blockquote>
+<blockquote>
+<p>JDK 9 引入了一种新的编译模式AOT(Ahead of time Compilation),直接将字节码编译成机器码，避免了JIT预热等各方面的开销。JDK支持分层编译和AOT协作使用，但是AOT编译器的编译质量不如JIT编译器</p>
+</blockquote>
+<p><strong>总结</strong></p>
+<p>Java虚拟机(JVM)是运行Java字节码的虚拟机，JVM有针对不同系统的特定实现，目的是使用相同的字节码，都会给出相同的结果。字节码和不同系统的JVM实现是Java语言“一次编译，随时可运行”的关键所在。</p>
+<p><strong>JDK和JRE</strong></p>
+<p>JDK是Java development kit缩写，是功能齐全的Java SDK。拥有JRE的一切，还有编译器javac和工具jdb和javadoc。能够创建和编译程序</p>
+<p>JRE是Java运行的环境，它是运行已编译Java程序所需的所有内容的集合，包括jvm、java类库、Java命令和其他一些基础构建，但是不能用来创建新程序</p>
+<p><strong>为什么Java语言“编译与解释并存？”</strong></p>
+<p>高级编程预压按照程序的执行方式分为编译型和解释性两种。</p>
+<p>编译型语言：编译器针对特定的操作系统将源代码一次性翻译成可被该平台执行的机器码；</p>
+<p>解释性语言：解释器对源程序逐行解释成特定平台执行的机器码并立即执行</p>
+<p>Java语言既具有编译型语言的特征，也具有解释性语言的特征。因为Java语言要经过先编译，后解释两个步骤，由Java编写的程序首先经过编译步骤，生成字节码(.class文件)；这种字节码必须由Java解释器来解释执行。因此可认为Java语言编译与解释并存。</p>
+<p><strong>Java和C++的区别？</strong></p>
+<ul>
+<li>都是面向对象的语言，都支持封装、继承 、多态</li>
+<li>Java不提供指针来直接访问内存，程序内存更安全</li>
+<li>Java的类是单继承，c++支持多继承；Java的类不可以多继承，接口可以多继承</li>
+<li>Java有自动内存垃圾回收机制(GC)，不需要手动释放无用内存</li>
+<li>c++同时支持方法重载和操作符重载，Java只支持方法重载</li>
+</ul>
+<h2 id="基本语法"><a href="#基本语法" class="headerlink" title="基本语法"></a>基本语法</h2><p><strong>字符型常量和字符串常量的区别？</strong></p>
+<ol>
+<li>形式：字符常量是单引号引起的一个字符，字符串常量是双引号引起的0个或多个字符</li>
+<li>含义：字符常量相当于ASCII值，可以参加表达式运算；字符串常量代表一个地址值（该字符串在内存中存放位置）</li>
+<li>占内存大小：字符常量只占2个字节；字符串常量占若干个字节</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th align="center">基本类型</th>
+<th align="center">大小</th>
+<th align="center">最小值</th>
+<th align="center">最大值</th>
+<th align="center">包装器类型</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">boolean</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">Boolean</td>
+</tr>
+<tr>
+<td align="center">byte</td>
+<td align="center">8bits</td>
+<td align="center">-128</td>
+<td align="center">127</td>
+<td align="center">Byte</td>
+</tr>
+<tr>
+<td align="center">short</td>
+<td align="center">16bots</td>
+<td align="center">-2^15</td>
+<td align="center">2^15-1</td>
+<td align="center">Short</td>
+</tr>
+<tr>
+<td align="center">char</td>
+<td align="center">16bits</td>
+<td align="center">-2^15</td>
+<td align="center">2^15-1</td>
+<td align="center">Character</td>
+</tr>
+<tr>
+<td align="center">int</td>
+<td align="center">32bits</td>
+<td align="center">-2^31</td>
+<td align="center">2^31-1</td>
+<td align="center">Integer</td>
+</tr>
+<tr>
+<td align="center">float</td>
+<td align="center">32bits</td>
+<td align="center">-2^31</td>
+<td align="center">2^31-1</td>
+<td align="center">Float</td>
+</tr>
+<tr>
+<td align="center">long</td>
+<td align="center">64bits</td>
+<td align="center">-2^63</td>
+<td align="center">2^63-1</td>
+<td align="center">Long</td>
+</tr>
+<tr>
+<td align="center">double</td>
+<td align="center">64bits</td>
+<td align="center">-2^63</td>
+<td align="center">2^63-1</td>
+<td align="center">Double</td>
+</tr>
+<tr>
+<td align="center">void</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">Void</td>
+</tr>
+</tbody></table>
+<p><strong>Java泛型</strong><br>Java泛型(generics)是JDK 5中引入的一个新特性，泛型提供编译时类型安全检测机制，该机制允许程序员在编译时检测到非法的类型。泛型的本质是参数化类型，所操作的数据类型被指定为一个参数</p>
+<p>Java的泛型是伪泛型，因为Java在编译期间，所有的泛型信息都会被擦掉，也就是通常所说的类型擦除</p>
+<pre class="language-java" data-language="java"><code class="language-java"><span class="token class-name">List</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">Integer</span><span class="token punctuation">></span></span> list <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ArrayList</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token punctuation">></span></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+list<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token number">12</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// 这里直接添加会报错</span>
+list<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token string">"a"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token class-name">Class</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token operator">?</span> <span class="token keyword">extends</span> <span class="token class-name">List</span><span class="token punctuation">></span></span> clazz <span class="token operator">=</span> list<span class="token punctuation">.</span><span class="token function">getClass</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token class-name">Method</span> add <span class="token operator">=</span> clazz<span class="token punctuation">.</span><span class="token function">getDeclaredMethod</span><span class="token punctuation">(</span><span class="token string">"add"</span><span class="token punctuation">,</span><span class="token class-name">Object</span><span class="token punctuation">.</span><span class="token keyword">class</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// 但是通过反射添加，是可以的</span>
+add<span class="token punctuation">.</span><span class="token function">invoke</span><span class="token punctuation">(</span>list<span class="token punctuation">,</span><span class="token string">"k1"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>list<span class="token punctuation">)</span></code></pre>
+
+<ol>
+<li>泛型类<pre class="language-java" data-language="java"><code class="language-java"><span class="token comment">/**
+此处T 可以随便写为任意标识，常见的如T、E、K、V等形式的参数常用于表示泛型
+在实例化泛型类时，必须指定T的具体类型
+*/</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Generic</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">T</span><span class="token punctuation">></span></span><span class="token punctuation">&#123;</span>
+    <span class="token keyword">private</span> <span class="token class-name">T</span> key<span class="token punctuation">;</span>
+
+    <span class="token keyword">public</span> <span class="token class-name">Generic</span><span class="token punctuation">(</span><span class="token class-name">T</span> key<span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>key <span class="token operator">=</span> key<span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+
+    <span class="token keyword">public</span> <span class="token class-name">T</span> <span class="token function">getKey</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+        <span class="token keyword">return</span> key<span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span>
+</code></pre></li>
+</ol>
+<p>实例化泛型类</p>
+<pre class="language-java" data-language="java"><code class="language-java"><span class="token class-name">Generic</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">Integer</span><span class="token punctuation">></span></span> genericInteger <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Generic</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">Integer</span><span class="token punctuation">></span></span><span class="token punctuation">(</span><span class="token number">123456</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+
+<ol start="2">
+<li>泛型接口<pre class="language-java" data-language="java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">interface</span> <span class="token class-name">Generator</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">T</span><span class="token punctuation">></span></span><span class="token punctuation">&#123;</span>
+    <span class="token keyword">public</span> <span class="token class-name">T</span> <span class="token function">method</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span></code></pre>
+实现泛型接口，不指定类型<pre class="language-java" data-language="java"><code class="language-java"><span class="token keyword">class</span> <span class="token class-name">GeneratorImpl</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">T</span><span class="token punctuation">></span></span> <span class="token keyword">implements</span> <span class="token class-name">Generator</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">T</span><span class="token punctuation">></span></span><span class="token punctuation">&#123;</span>
+    <span class="token annotation punctuation">@Override</span>
+    <span class="token keyword">public</span> <span class="token class-name">T</span> <span class="token function">method</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+        <span class="token keyword">return</span> <span class="token keyword">null</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span></code></pre>
+实现泛型接口，指定类型<pre class="language-java" data-language="java"><code class="language-java"><span class="token keyword">class</span> <span class="token class-name">GeneratorImpl</span> <span class="token keyword">implements</span> <span class="token class-name">Generator</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">String</span><span class="token punctuation">></span></span><span class="token punctuation">&#123;</span>
+    <span class="token annotation punctuation">@Override</span>
+    <span class="token keyword">public</span> <span class="token class-name">String</span> <span class="token function">method</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+        <span class="token keyword">return</span> <span class="token string">"hello"</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span></code></pre></li>
+<li>泛型方法<pre class="language-java" data-language="java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">E</span><span class="token punctuation">></span></span> <span class="token keyword">void</span> <span class="token function">printArray</span><span class="token punctuation">(</span><span class="token class-name">E</span><span class="token punctuation">[</span><span class="token punctuation">]</span> inputArray<span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+    <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token class-name">E</span> element<span class="token operator">:</span>inputArray<span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>"<span class="token operator">%</span>s<span class="token punctuation">,</span>element<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+    <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span></code></pre>
+使用<pre class="language-java" data-language="java"><code class="language-java"><span class="token comment">// 创建不同类型数组:Integer 、Double 、Character</span>
+<span class="token class-name">Integer</span><span class="token punctuation">[</span><span class="token punctuation">]</span> intArray <span class="token operator">=</span> <span class="token punctuation">&#123;</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">&#125;</span><span class="token punctuation">;</span>
+<span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> stringArray <span class="token operator">=</span> <span class="token punctuation">&#123;</span><span class="token string">"hello"</span><span class="token punctuation">,</span><span class="token string">"world"</span><span class="token punctuation">&#125;</span><span class="token punctuation">;</span>
+<span class="token function">printArray</span><span class="token punctuation">(</span>intArray<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token function">printArray</span><span class="token punctuation">(</span>stringArray<span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+常用的通配符：T、E、K、V、?</li>
+</ol>
+<ul>
+<li>？：表示不确定的Java类型</li>
+<li>T(type)：表示具体的一个Java类型</li>
+<li>K V(key,value)分别代表Java键值中的Key Value</li>
+<li>E(element)代表Element</li>
+</ul>
+<p><strong>==和equals的区别</strong><br>对于基本数据类型来说，==比较的是值，对于引用数据类型来说，==比较的是对象内存地址</p>
+<blockquote>
+<p>java只有值传递，对于==来说，不管是比较基础数据类型，还是引用数据类型的变量，其本质比较的都是值，只是引用类型变量存的是值还是对象的地址</p>
+</blockquote>
+<p>equals（）作用不能用于判断基本数据类型的变量，只能用来判断两个对象是否相等。equals（）方法存在于Object类中，而Object类是所有类的直接或间接父类</p>
+<p>Object类equals()方法：</p>
+<pre class="language-java" data-language="java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">boolean</span> <span class="token function">equals</span><span class="token punctuation">(</span><span class="token class-name">Object</span> obj<span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+    <span class="token keyword">return</span> <span class="token punctuation">(</span><span class="token keyword">this</span> <span class="token operator">==</span> obj<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span></code></pre>
+
+<p>equals()方法存在两种使用情况：</p>
+<ul>
+<li>类没有覆盖equals()方法：通过equals()比较该类的两个对象时，等价于通过“==”比较两个对象，使用的默认是Object类equals()方法</li>
+<li>类覆盖了equals()方法：一般我们都覆盖equals()方法来比较两个对象中的属性是否相等；若属性相等，则返回true<pre class="language-java" data-language="java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> test<span class="token punctuation">&#123;</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span>args<span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+        <span class="token class-name">String</span> a <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">String</span><span class="token punctuation">(</span><span class="token string">"ab"</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// a 为一个引用</span>
+        <span class="token class-name">String</span> b <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">String</span><span class="token punctuation">(</span><span class="token string">"ab"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment">// b为另一个引用，对象的内容一样</span>
+        <span class="token class-name">String</span> aa <span class="token operator">=</span> <span class="token string">"ab"</span><span class="token punctuation">;</span> <span class="token comment">//放在常量池中</span>
+        <span class="token class-name">String</span> bb <span class="token operator">=</span> <span class="token string">"ab"</span><span class="token punctuation">;</span> <span class="token comment">//从常量池查找</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>aa <span class="token operator">==</span> bb<span class="token punctuation">)</span> <span class="token comment">// true</span>
+            <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"aa==bb"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>a<span class="token operator">==</span>b<span class="token punctuation">)</span>   <span class="token comment">//false,非同一对象</span>
+            <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"a==b"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>a<span class="token punctuation">.</span><span class="token function">equals</span><span class="token punctuation">(</span>b<span class="token punctuation">)</span><span class="token punctuation">)</span>    <span class="token comment">// true</span>
+            <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"aEQb"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token number">42</span> <span class="token operator">==</span> <span class="token number">42.0</span><span class="token punctuation">)</span> <span class="token comment">//true</span>
+            <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"true"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span></code></pre></li>
+</ul>
+<p><strong>说明</strong>：</p>
+<ul>
+<li>String中的equals方法是被重写过的，因为Object的equals方法比较对象的内存地址，而String的equals方法比较的是对象的值</li>
+<li>当创建String类型对象时，虚拟机会在常量池中查找也没有已经存在的值和要创建的值相同的对象，如果有就把它赋给当前引用，如果没有就在常量池中重新创建一个String对象。</li>
+</ul>
+<pre class="language-java" data-language="java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">boolean</span> <span class="token function">equals</span><span class="token punctuation">(</span><span class="token class-name">Object</span> anObject<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token keyword">this</span> <span class="token operator">==</span> anObject<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token keyword">return</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>anObject <span class="token keyword">instanceof</span> <span class="token class-name">String</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token class-name">String</span> anotherString <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">)</span>anObject<span class="token punctuation">;</span>
+        <span class="token keyword">int</span> n <span class="token operator">=</span> value<span class="token punctuation">.</span>length<span class="token punctuation">;</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>n <span class="token operator">==</span> anotherString<span class="token punctuation">.</span>value<span class="token punctuation">.</span>length<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+            <span class="token keyword">char</span> v1<span class="token punctuation">[</span><span class="token punctuation">]</span> <span class="token operator">=</span> value<span class="token punctuation">;</span>
+            <span class="token keyword">char</span> v2<span class="token punctuation">[</span><span class="token punctuation">]</span> <span class="token operator">=</span> anotherString<span class="token punctuation">.</span>value<span class="token punctuation">;</span>
+            <span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+            <span class="token keyword">while</span> <span class="token punctuation">(</span>n<span class="token operator">--</span> <span class="token operator">!=</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+                <span class="token keyword">if</span> <span class="token punctuation">(</span>v1<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">!=</span> v2<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span>
+                    <span class="token keyword">return</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
+                i<span class="token operator">++</span><span class="token punctuation">;</span>
+            <span class="token punctuation">&#125;</span>
+            <span class="token keyword">return</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
+        <span class="token punctuation">&#125;</span>
+    <span class="token punctuation">&#125;</span>
+    <span class="token keyword">return</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span></code></pre>
+
+<p><strong>hashCode()与equals()</strong><br>重写equals()时必须重写hashCode()方法</p>
+<ol>
+<li>hashCode()介绍<br>hashCode()作用是获得哈希码，也称散列码。作用是确定该对象在哈希表中的索引位置。hashCode()定义在 JDK 的 Object 类中，这就意味着 Java 中的任何类都包含有 hashCode() 函数。另外需要注意的是： Object 的 hashcode 方法是本地方法，也就是用 c 语言或 c++ 实现的，该方法通常用来将对象的 内存地址 转换为整数之后返回。<pre class="language-java" data-language="java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">native</span> <span class="token keyword">int</span> <span class="token function">hashCode</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre></li>
+<li>为什么要有hashCode？<br>以HashSet检查重复为例；当把对象加入到HashSet时，首先对对象计算hashCode来判断对象加入的位置，然后与其他已经加入的对象的hashCode进行比较，如果相同的hashCode,则对象无重复；如果发现相同hashCode值，则会调用equals()方法来检查相同hashCode的对象是否真的相同。如果相同，则重复不加入对象操作，如果不同的话，就重新散列到其他位置。这样大大减少了equals()次数，提高执行效率。</li>
+<li>为什么重写equals()时必须重写hashCode()方法？<br>如果两个对象相等，那么hashCode一定相等，但是两个对象有相同的hashCode，却不一定是相等的。因此equals()方法被覆盖过，则hashCode()方法也必须被覆盖</li>
+<li>为什么两个对象有相同的hashCode，也不一定相等？<br>因为hashCode()所使用的哈希算法也许刚好会让多个对象传回相同的哈希值。</li>
+</ol>
+<h2 id="基本数据类型"><a href="#基本数据类型" class="headerlink" title="基本数据类型"></a>基本数据类型</h2><p><strong>Java中几种基本数据类型、对应的包装类型、各占多少字节</strong><br>8种基本数据类型：6种数字类型:byte、short、int、long、float、double；1种字符类型:char;1种布尔类型:boolean</p>
+<table>
+<thead>
+<tr>
+<th align="center">基本类型</th>
+<th align="center">位数</th>
+<th align="center">字节</th>
+<th align="center">默认值</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">byte</td>
+<td align="center">8</td>
+<td align="center">1</td>
+<td align="center">0</td>
+</tr>
+<tr>
+<td align="center">short</td>
+<td align="center">16</td>
+<td align="center">2</td>
+<td align="center">0</td>
+</tr>
+<tr>
+<td align="center">int</td>
+<td align="center">32</td>
+<td align="center">4</td>
+<td align="center">0</td>
+</tr>
+<tr>
+<td align="center">long</td>
+<td align="center">64</td>
+<td align="center">8</td>
+<td align="center">0L</td>
+</tr>
+<tr>
+<td align="center">float</td>
+<td align="center">32</td>
+<td align="center">4</td>
+<td align="center">0f</td>
+</tr>
+<tr>
+<td align="center">double</td>
+<td align="center">64</td>
+<td align="center">8</td>
+<td align="center">0d</td>
+</tr>
+<tr>
+<td align="center">char</td>
+<td align="center">16</td>
+<td align="center">2</td>
+<td align="center">‘u0000’</td>
+</tr>
+<tr>
+<td align="center">boolean</td>
+<td align="center">1</td>
+<td align="center"></td>
+<td align="center">false</td>
+</tr>
+</tbody></table>
+</div><div id="reward-container"><span class="hty-icon-button button-glow" id="reward-button" title="打赏" onclick="var qr = document.getElementById(&quot;qr&quot;); qr.style.display = (qr.style.display === &quot;none&quot;) ? &quot;block&quot; : &quot;none&quot;;"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-hand-coin-line"></use></svg></span><div id="reward-comment">I'm so cute. Please give me money.</div><div id="qr" style="display:none;"><div style="display:inline-block"></div><div style="display:inline-block"></div><div style="display:inline-block"></div></div></div><ul class="post-copyright"><li class="post-copyright-author"><strong>本文作者：</strong>先逃跑再说</li><li class="post-copyright-link"><strong>本文链接：</strong><a href="https://wentianhao.github.io/2021/07/20/java%E5%9F%BA%E7%A1%80/" title="【转载】java基础">https://wentianhao.github.io/2021/07/20/java%E5%9F%BA%E7%A1%80/</a></li><li class="post-copyright-license"><strong>版权声明：</strong>本博客所有文章除特别声明外，均默认采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="noopener" title="CC BY-NC-SA 4.0 "><svg class="icon"><use xlink:href="#icon-creative-commons-line"></use></svg><svg class="icon"><use xlink:href="#icon-creative-commons-by-line"></use></svg><svg class="icon"><use xlink:href="#icon-creative-commons-nc-line"></use></svg><svg class="icon"><use xlink:href="#icon-creative-commons-sa-line"></use></svg></a> 许可协议。</li></ul></section></article><div class="post-nav"><div class="post-nav-item"><a class="post-nav-prev" href="/2021/07/22/java%E5%B8%B8%E9%87%8F%E6%B1%A0/" rel="prev" title="java常量池"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-arrow-left-s-line"></use></svg><span class="post-nav-text">java常量池</span></a></div><div class="post-nav-item"><a class="post-nav-next" href="/2021/07/11/SpringBoot%E6%B3%A8%E8%A7%A3/" rel="next" title="SpringBoot注解"><span class="post-nav-text">SpringBoot注解</span><svg class="icon" aria-hidden="true"><use xlink:href="#icon-arrow-right-s-line"></use></svg></a></div></div></div><div class="hty-card" id="comment"><div class="comment-tooltip text-center"><span>若您想及时得到回复提醒，建议跳转 GitHub Issues 评论。</span><br><span>若没有本文 Issue，您可以使用 Comment 模版新建。</span><br></div><div class="toggle-comment-system" style="margin: 1rem auto"><a class="toggle-comment-btn hty-button hty-button--raised text-uppercase" data-target="#valine-container" onclick="showComment(this.dataset.target)">valine</a><style>.utterances {
+  display: none;
+}</style><a class="toggle-comment-btn hty-button hty-button--raised text-uppercase" data-target=".utterances" onclick="showComment(this.dataset.target)">utterances</a><script>function hideAllComment() {
+  //- hide all
+  document.querySelectorAll('.toggle-comment-btn').forEach((btn) => {
+    const container = document.querySelector(btn.dataset.target);
+    if (container) {
+      container.style.display = "none";
+    }
+  });
+}
+function showComment(target) {
+  hideAllComment();
+  //- show target
+  const targetContainer = document.querySelector(target);
+  if (targetContainer) {
+    targetContainer.style.display = "block";
+  }
+}
+</script></div><div id="valine-container"></div><script>Yun.utils.getScript("https://cdn.jsdelivr.net/npm/valine@latest/dist/Valine.min.js", () => {
+  const valineConfig = {"enable":true,"appId":"lKhR0buRT7OeiwUq9ECRwPba-MdYXbMMI","appKey":"5cz28s0hMEfyou89engEFMmS","placeholder":"Just go go","avatar":null,"pageSize":10,"visitor":false,"highlight":true,"recordIP":false,"enableQQ":true,"meta":["nick","mail","link"],"el":"#valine-container","lang":"zh-cn"}
+  valineConfig.path = "/2021/07/20/java%E5%9F%BA%E7%A1%80/"
+  new Valine(valineConfig)
+}, window.Valine);</script></div></main><footer class="sidebar-translate" id="footer"><div class="copyright"><span>&copy; 2020 – 2021 </span><span class="with-love" id="animate"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-cloud-line"></use></svg></span><span class="author"> 先逃跑再说</span></div><div class="powered"><span>由 <a href="https://hexo.io" target="_blank" rel="noopener">Hexo</a> 驱动 v5.4.0</span><span class="footer-separator">|</span><span>主题 - <a rel="noopener" href="https://github.com/YunYouJun/hexo-theme-yun" target="_blank"><span>Yun</span></a> v1.6.1</span></div><div class="live_time"><span>本博客已萌萌哒地运行</span><span id="display_live_time"></span><span class="moe-text">(●'◡'●)</span><script>function blog_live_time() {
+  setTimeout(blog_live_time, 1000);
+  const start = new Date('2020-01-05T00:00:00');
+  const now = new Date();
+  const timeDiff = (now.getTime() - start.getTime());
+  const msPerMinute = 60 * 1000;
+  const msPerHour = 60 * msPerMinute;
+  const msPerDay = 24 * msPerHour;
+  const passDay = Math.floor(timeDiff / msPerDay);
+  const passHour = Math.floor((timeDiff % msPerDay) / 60 / 60 / 1000);
+  const passMinute = Math.floor((timeDiff % msPerHour) / 60 / 1000);
+  const passSecond = Math.floor((timeDiff % msPerMinute) / 1000);
+  display_live_time.innerHTML = " " + passDay + " 天 " + passHour + " 小时 " + passMinute + " 分 " + passSecond + " 秒";
+}
+blog_live_time();
+</script></div><div id="busuanzi"><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><span id="busuanzi_container_site_uv" title="总访客量"><span><svg class="icon" aria-hidden="true"><use xlink:href="#icon-user-line"></use></svg></span><span id="busuanzi_value_site_uv"></span></span><span class="footer-separator">|</span><span id="busuanzi_container_site_pv" title="总访问量"><span><svg class="icon" aria-hidden="true"><use xlink:href="#icon-eye-line"></use></svg></span><span id="busuanzi_value_site_pv"></span></span></div></footer><a class="hty-icon-button" id="back-to-top" aria-label="back-to-top" href="#"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-arrow-up-s-line"></use></svg><svg class="progress-circle-container" viewBox="0 0 100 100"><circle class="progress-circle" id="progressCircle" cx="50" cy="50" r="48" fill="none" stroke="#0078E7" stroke-width="2" stroke-linecap="round"></circle></svg></a><script>const date = new Date();
+const today = (date.getMonth() + 1) + "-" + date.getDate()
+const mourn_days = ["4-4","9-18"]
+if (mourn_days.includes(today)) {
+  document.documentElement.style.filter = "grayscale(1)";
+}</script></div></body></html>

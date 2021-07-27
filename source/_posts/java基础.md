@@ -1,5 +1,5 @@
 ---
-title: 【转载】java基础
+title: Java基础
 katex: false
 tags: java
 categories: java
@@ -579,3 +579,241 @@ public class Student {
 4. 如果子类重写了父类的方法，真正执行的是子类覆盖方法，如果子类没有覆盖，执行的是父类方法
 
 
+## String、StringBuffer、StringBuilder区别
+**String**:使用final关键字修饰字符数组来保存字符串，`private final char value[]`，String对象不可变，Java9之后使用byte数组存储字符串
+
+StringBuffer和StringBuilder都继承AbstractStringBuilder类，在AbstractStringBuilder中也是使是使用字符数组存储字符串，但没有使用final修饰，所以这两个对象是可变的。
+
+StringBuilder 和 StringBuffer的构造方法都是调用父类的AbstractStringBuilder实现的。
+
+**线程安全性**
+String：对象是不可变的，线程安全
+
+StringBuffer：对方法或者对调用的方法加了同步锁，所以线程安全
+
+StringBuilder：没有对方法进行加同步锁，所以是非线程安全
+
+**性能**
+String：每次对String类型进行改变时，都会生成一个新的String对象，然后将指针指向新的String对象。
+
+StringBuffer:每次都会对 StringBuffer 对象本身进行操作，而不是生成新的对象并改变对象引用
+
+StringBuilder 相比使用 StringBuffer 仅能获得 10%~15% 左右的性能提升，但却要冒多线程不安全的风险。
+
+**对于三者使用的总结**：
+1. 操作少量的数据：适用String
+2. 单线程操作字符串缓冲区下操作大量数据：适用StringBuilder
+3. 多线程操作字符串缓冲区下操作大量数据：适用StringBuffer
+
+## Object类的常见方法总结
+Object类是一个特殊的类，是所有类的父类，主要提供以下11个方法：
+- `public final nativa Class<?> getClass() //native方法，用于返回当前运行时对象的Class对象，使用了final关键字修饰，故不允许子类重写`
+- `public native int hashCode() //native方法，用于返回对象的哈希码，主要使用在哈希表中，比如JDK中的HashMap`
+- `public boolean equals(Object obj) //用于比较2个对象的内存地址是否相等，String类对该方法进行了重写用户比较字符串的值是否相等`
+- `protected native Object clone() throws CloneNotSupportedException  //native方法，用于创建并返回当前对象的一份拷贝。一般情况下，对于任何对象x，表达式x.clone()!=x 为true。x.clone().getClass()==x.getClass()为true。Object本身没有实现Cloneable接口，所以不重写clone()方法并且进行调用的话会法神CloneNotSupportedException异常`
+- `public String toString() //返回类的名字@实例的哈希码的16进制的字符串。建议所有子类都重写这个方法`
+- `public final native void notify()  //native方法，并且不能重写，唤醒一个在此对象监视器上等待的线程(监视器相当于锁的概念)如果有多个线程在等待只会任意唤醒一个`
+- `public final native void notifyAll() //native方法，不能重写，跟notify一样，唯一的区别就是唤醒在此对象监视器上等待的所有线程，而不是一个线程`
+- `public final native void wait(long timeout) throws InterruptedException //native方法，不能重写，暂停线程的运行。注意sleep方法并没有释放锁，但wait方法释放了锁。timeout是等待时间`
+- `public final native void wait(long timeout,int nanos) throws InterruptedException  //多nanos参数，这个参数表示额外时间(以毫微秒为单位，范围是0-999999).所以超时的时间还需要加上nanos毫秒`
+- `public final native void wait() throws InterruptedException //跟之前2个wait方法一样，只不过该方法一直等待，没有超时概念`
+- `protected void finalize() throws Throwable{} //实例被垃圾回收器回收的时候触发的操作` 
+
+## 反射
+反射是框架的灵魂，主要是因为它赋予了我们在运行时分析类以及执行类中方法的能力，通过反射可以获取任何一个类的所有属性和方法，并且还可以调用这些方法和属性
+
+**反射机制优缺点**
+- 优点：让代码更灵活，为各种框架提供开箱即用的功能提供便利
+- 缺点：让我们在运行时有了分析操作类的能力，增加安全问题。比如可以无视泛型参数的安全检查(泛型参数检查发生在编译时)。另外反射的性能也要稍差一点。
+
+**反射应用场景**
+像Spring/Spring boot、Mybatis等框架中都大量使用了反射机制，这些框架也大量使用了动态代理，而动态代理的实现也依赖反射
+
+通过JDK实现动态代理的示例代码，使用反射类Method来调用指定的方法。
+```java
+public class DebugInvocationHandler implements InvocationHandler{
+    /**
+    代理类中的真实对象
+    */
+    private final Object target;
+
+    public DebugInvocationHandler(Object target){
+        this.target = target;
+    }
+
+    public Object invoke(Object proxy ,Method method, Object[]args) throws InvocationTargetException,IllegalAccessException{
+        System.out.println("before method" + method.getName());
+        Object result = method.invoke(target,args);
+        System.out.println("after method" + method.getName());
+        return result;
+    }
+}
+```
+注解的实现也用到了反射。基于反射分析类，获取到类/属性/方法/方法的参数上的注解。
+
+## 异常
+**Java异常类层次结构图**
+![异常类层次结构图](http://whh.plus:7007/images/2021/07/26/JavaE5BC82E5B8B8E7B1BBE5B182E6ACA1E7BB93E69E84E59BBE.png)
+![](http://whh.plus:7007/images/2021/07/26/JavaE5BC82E5B8B8E7B1BBE5B182E6ACA1E7BB93E69E84E59BBE2.png)
+在Java中，所有的异常都有一个共同的祖先`java.lang`包中的`Throwable`类。`Throwable`类有两个重要的子类`Exception(异常)`和`Error(错误)`。`Exception`能被程序本身处理`try-catch`，`Error`是无法处理的(只能尽量避免)
+
+`Exception`和`Error`二者都是Java异常处理的重要子类，各自都包含大量子类。
+- Exception：程序本身可以处理的异常，可以通过`catch`来进行捕获。Exception又可以分为 受检查异常(必须处理) 和 不受检查异常(可以不处理)
+- Error：属于程序无法处理的错误，没法通过catch来进行捕获。例如 Java虚拟机运行错误、虚拟机内存不够错误、类定义错误等。这些异常发生时，Java虚拟机(JVM)一般会选择线程终止。
+
+**受检查异常**
+Java代码在编译过程中，如果受检查异常没有被`catch/throw`处理的话，就没办法通过编译。
+
+```java
+public static void main(String[]args) throws IOException{
+    FileInputStream fis = null;
+    fis = new FileInputStream("xx/xx.txt");
+    int k;
+    while(k =fis.read() != -1){
+        System.out.println((char) k);
+    }
+    fis.close();
+}
+```
+除了`RuntimeException`及其子类以外，其他的Exception类及其子类都属于受检查异常。常见的受检查异常有：IO相关异常、ClassNotFoundException、SQLException,...
+
+**不受检查异常**
+Java代码在编译过程中，即使不处理不受检查异常也可以正常通过编译
+
+`RuntimeException`及其子类都统称为非受检查异常。例如`NullPointerException、NumberFormatException(字符串转换为数字)、ArrayIndexOutOfBoundsException(数组越界)、ClassCastException(类型转换错误)、ArithmeticException(算术错误)`等
+
+**Throwable类常用方法**
+- public String getMessage():返回异常发生时的简要描述
+- public String toString()：返回异常发生时的详细信息
+- public String getLocalizedMessage()：返回异常对象的本地化信息。使用Throwable的子类覆盖这个方法，可以生成本地化信息。如果子类没有覆盖该方法，则方法返回的信息与getMessage()返回的结果相同
+- public void printStackTrace():在控制台上打印Throwable对象封装的异常信息
+
+**`try-catch-finally`**
+- try块:用于捕获异常。其后可接0个或多个`catch`块，如果没有`catch`,则必须跟一个`finally`块
+- catch块：用于处理try捕获到的异常
+- finally块：无论是否捕获或处理异常，finally块里语句都会被执行。当try块或catch块中遇到return语句时，finally语句块将在方法返回之前被执行
+
+**以下3中特殊情况下，finally块不会被执行**
+1. 在try块或finally块中用了System.exit(int)退出程序。但是如果System.exit(int)在异常语句之后，finally还是会被执行
+2. 程序所有的线程死亡
+3. 关闭CPU
+
+注意：当try语句和finally语句中都有return语句时，在方法返回之前，finally语句的内容将被执行，并且finally语句的返回值将会覆盖原始的返回值。如下：
+```java
+public class Test{
+    public static int test(int value){
+        try{
+            return value * value;
+        }finally{
+            if(value == 1)
+                return 0;
+        }
+    }
+}
+```
+如果调用 test(2)，返回值将是 0，因为 finally 语句的返回值覆盖了 try 语句块的返回值。
+
+**使用try-with-resources 来代替 try-catch-finally**
+1. 适用范围(资源的定义) ：任何实现java.lang.AutoCloseable或者java.io.Closeable的对象
+2. 关闭资源和finally块的执行顺序：在try-with-resource语句中，任何catch和finally块在声明的资源关闭后运行
+
+《Effective Java》中明确指出：
+> 面对必须要关闭的资源，我们总是应该优先使用try-with-resources 而不是try-finally。随之产生的代码更简短，更清晰，产生的异常对我们也更有用。try-with-resources语句让我们更容易编写必须要关闭的资源代码，若采用try-finally则几乎做不到这点
+
+Java中类似于InputStream、OutputStream、Scanner、PrintWriter等的资源都需要调用close()来手动关闭，一般情况下我们是通过try-catch-finally语句实现这个需求，如下：
+```java
+//读取文本文件的内容
+Scanner scanner = null;
+try{
+    scanner = new Scanner(new File("d://XXX.txt"));
+    while(scanner.hasNext()){
+        System.out.println(scanner.nextLine());
+    }
+}catch(FileNotFoundException e){
+    e.printStackTrace();
+}finally{
+    if(scanner!=null)
+        scanner.close();
+}
+```
+使用Java7之后的try-with-resources语句改造上面的代码
+```java
+
+try (Scanner scanner = new Scanner(new File("d://XXX.txt"))){
+    while(scanner.hasNext()){
+        System.out.println(scanner.nextLine());
+    }
+}catch(FileNotFoundException e){
+    e.printStackTrace();
+}
+```
+当然多个资源需要关闭的时候，使用try-with-resources实现起来也非常简单，如果你还是用try-catch-finally可能会带来很多问题
+
+通过使用分号分隔，可以在try-with-resources块声明多个资源
+```java
+try (BufferedInputStream bin = new BufferedInputStream(new FileInputStream(new File("test.txt")));
+             BufferedOutputStream bout = new BufferedOutputStream(new FileOutputStream(new File("out.txt")))){
+                int b;
+                while ((b = bin.read()) != -1) {
+                    bout.write(b);
+                }
+             } catch (IOException e){
+                 e.printStackTrace();
+             }
+```
+
+## I/O流
+**什么是序列化？什么是反序列化？**
+如果我们需要持久化Java对象比如将Java对象保存在文件中，或者在网络传输Java对像，这些场景都需要用到序列化。
+
+- 序列化：将数据结构或对象转换成二进制字节流的过程
+- 反序列化：将在序列化过程中所生成的二进制字节流的过程转换成数据结构或对象的过程
+
+对于Java这种面向对象编程语言来说，序列化的都是对象(Object)也就是实例化后的类(Class),但是在C++这种半面向对象的语言中，struct(结构体)定义的是数据结构类型，而class对应的是对象类型。
+
+> 序列化在计算机科学的数据处理中，是指将数据结构或对象状态转换成为可取用格式(例如存成文件，存于缓冲，或经由网络中发送)，以留待后续在相同或另一台计算机环境中，能恢复原先状态的过程。依照序列化格式重新获取字节的结果时，可以利用它来产生与原始对象相同语义的副本。对于许多对象，像是使用大量引用的复杂对象，这种序列化重建的过程并不容易。面向对象中的对象序列化，并不概括之前原始对象所关系的函数。这种过程也称为对象编组。从一系列字节提取数据结构的反向操作，是反序列化
+
+**序列化的主要目的是通过网络传输对象或者说是将对象存储到文件系统、数据库、内存中。**
+
+![序列化与反序列化](http://whh.plus:7007/images/2021/07/27/a478c74d-2c48-40ae-9374-87aacf05188c.png)
+
+**Java序列化中如果有些字段不想进行序列化，怎么办？**
+对于不想进行序列化的变量，使用`transient`关键字修饰
+
+`transient`关键字的作用是：阻止实例中那些用此关键字修饰的变量序列化；当对象被反序列化时，被`transient`修饰的变量值不会被持久化和恢复。`transient`只能修饰变量，不能修饰类和方法
+
+**获取用键盘输入常用的两种方法**
+1. 通过Scanner
+```java
+Scanner input = new Scanner(System.in);
+String s = input.nextLine();
+input.close(); 
+```
+2. 通过BufferedReader
+```java
+BufferedReadr input = new BufferedReader(new InputStreamReader(System.in));
+String s = input.readLine();
+```
+
+Java中IO流分为几种
+- 按照流的流向分：输入流和输出流
+- 按照操作单元划分：字节流和字符流
+- 按照流的角色划分：节点流和处理流
+
+Java流共涉及40多个类。
+- InputStream/Reader：所有的输入流的基类，前者是字节输入流，后者是字符输入流
+- OutputStream/Writer：所有的输出流的基类，前者是字节输出流，后者是字符输出流
+
+按操作方式分类结构图：
+![按操作方式分类结构图](http://whh.plus:7007/images/2021/07/27/IO-E6938DE4BD9CE696B9E5BC8FE58886E7B1BB.jpg)
+
+按操作对象分类结构图：
+![按操作对象分类结构图](http://whh.plus:7007/images/2021/07/27/IO-E6938DE4BD9CE5AFB9E8B1A1E58886E7B1BB.jpg)
+
+**既然有了字节流，为什么还要有字符流？**
+不管是文件读写还是网络发送接收，信息的最小存储单元都是字节，那为什么I/O操作要分为字节流操作和字符流操作呢？
+
+字符流是由Java虚拟机将字节转换得到的，问题就出在这个过程还算是非常耗时的，并且，如果我们不知道编码类型就很容易出现乱码问题，所以I/O流就干脆提供了一个直接操作字符的接口，方便我们平时对字符进行流操作，如果音频文件、图片等媒体文件用字节流比较好，如果涉及到字符的化使用字符流比较好。
+
+**参考**
+[JavaGuide-Java基础](https://snailclimb.gitee.io/javaguide/#/docs/java/basis/Java%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86?id=%e4%bd%bf%e7%94%a8-try-with-resources-%e6%9d%a5%e4%bb%a3%e6%9b%bftry-catch-finally)

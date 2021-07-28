@@ -243,6 +243,40 @@ public boolean equals(Object anObject) {
 }
 ```
 
+**正确使用equals方法**
+Object的equals方法容易抛空指针异常，应使用常量或确定有值的对象来调用equals
+
+举个例子
+```java
+//不能使用一个值为null的引用类型变量来调用非静态方法，否则会抛出异常
+String str = null;
+if(str.equals("wanheo)){
+    ...
+}
+```
+运行上面的程序会抛出空指针异常，但如果把条件判断语句改成下面，就不会抛出异常。
+```java
+"wanheo".equals(str);
+```
+更加推荐使用`java.util.Objects#equals`
+```java
+Objects.equals(null,"wanheo")
+```
+
+`java.util.Objects#equals`源码
+
+```java
+public static boolean equals(Object a, Object b){
+    //可以避免空指针异常，如果a=null的话此时a.equals(b)不会执行，避免出现空指针异常
+    return (a == b) ||(a != null && a.equals(b));
+}
+```
+
+- 每种原始类型都有默认值，如int默认值为0，boolean的默认值为false，null是任何引用类型的默认值，不严格的说是所有Object类型的默认值
+- 可以使用==或者！=操作来比较null，但不能使用其他算法或者逻辑操作，在Java中`null == null`返回true
+- 不能使用一个值为null的引用类型变量来调用非静态方法，否则会抛出异常
+
+
 **hashCode()与equals()**
 重写equals()时必须重写hashCode()方法
 
@@ -286,6 +320,21 @@ int n = i; //拆箱      < -- >     int n = i.intValue()
 
 ## 8种基本类型的包装类喝常量池
 Java基本类型的包装类的大部分都实现了常量池技术。Byte、Short、Integer、Long这四种包装类默认创建了数值[-128,127]的相应类型的缓存数据，Character创建了数值在[0,127]范围的缓存数据，Boolean直接返回True/False
+
+**基本数据类型和包装数据类型的使用标准**
+参考《阿里巴巴Java开发手册》
+
+- 【强制】所有的POJO类属性必须使用包装数据类型
+- 【强制】RPC方法的返回值和参数必须使用包装数据类型
+- 【推荐】所有的局部变量使用基本数据类型
+
+比如我们如果自定义了一个Student类,其中有一个属性是成绩score,如果用Integer而不用int定义,一次考试,学生可能没考,值是null,也可能考了,但考了0分,值是0,这两个表达的状态明显不一样.
+
+**说明** :POJO 类属性没有初值是提醒使用者在需要使用时，必须自己显式地进行赋值，任何 NPE 问题，或者入库检查，都由使用者来保证。
+
+**正例** : 数据库的查询结果可能是 null，因为自动拆箱，用基本数据类型接收有 NPE 风险。
+
+**反例** : 比如显示成交总额涨跌情况，即正负 x%，x 为基本数据类型，调用的 RPC 服务，调用不成功时，返回的是默认值，页面显示为 0%，这是不合理的，应该显示成中划线。所以包装数据类型的 null 值，能够表示额外的信息，如:远程调用失败，异常退出。
 
 Integer缓存源码：
 ```java
@@ -355,6 +404,67 @@ System.out.println(i1==i3)  //false
 所有整型包装类对象之间值的比较，全部使用equals()方法比较
 
 补充说明[java常量池](https://whh.plus/2021/07/22/java%E5%B8%B8%E9%87%8F%E6%B1%A0)
+
+## BigDecimal
+**BigDecimal的用处**
+浮点数之间的等值判断，基本数据类型不能用==来比较，包装数据类型不能用equals来判断
+```java
+float a = 1.0f - 0.9f;
+float b = 0.9f - 0.8f;
+System.out.println(a);  // 0.100000024
+System.out.println(b);  // 0.999999964
+System.out.println(a == b)  //false
+```
+具有基本数学知识的很清楚的知道输出并不是我们想要的结果(精度丢失)，使用BigDecimal来定义浮点数的值，再进行浮点数的运算操作
+```java
+BigDecimal a = new BigDecimal("1.0");
+BigDecimal b = new BigDecimal("0.9");
+BigDecimal a = new BigDecimal("0.8");
+
+BigDecimal x = a.subtract(b);
+BigDecimal y = b.subtract(c);
+
+System.out.println(x);
+System.out.println(y);
+System.out.println(Objects.equals(x,y));    //true
+```
+
+**BigDecimal的大小比较**
+a.compareTo(b):返回-1：a<b , 0：a=b, 1：a>b
+```java
+BigDecimal a = new BigDecimal("1.0");
+BigDecimal b = new BigDecimal("0.9");
+System.out.println(a.compareTo(b)); //1
+```
+
+**BigDecimal保留几位小数**
+通过setScale方法设置保留几位小数以及保留规则。保留规则有很多，不需要记
+```java
+BigDecimal m = new BigDecimal("1.234567");
+BigDecimal n = m.setScale(3,BigDecimal.ROUND_HALF_DOWM);
+System.out.println(n);  // 1.234
+```
+
+**BigDecimal使用注意事项**
+在使用BigDecimal时，为了防止精确丢失，推荐使用BigDecimal(String)构造方法来创建对象。
+
+【强制】 为了防止精度损失，禁止使用构造方法BigDecimal(double)的方式将double的值转为BigDecimal对象
+
+如
+```java
+BigDecimal a = new BigDecimal(0.1f);  //实际存储值  0.10000000149
+```
+
+正确使用方法
+```Java
+BigDecimal a = new BigDecimal("0.1"); // 入参为String的构造方法
+BigDecimal b = BigDecimal.valueOf(0.1); // 或BigDecimal的valueOf方法。(内部执行的是Double的toString方法，Double的toString方法按double的实际能表达的精确对尾数进行了截断)
+```
+
+**总结**
+BigDecimal主要用来操作(大)浮点数,BigInteger主要用来操作大整数(超过long类型)
+
+BigDecimal的实现利用到了BigInteger，所不同的是BigDecimal加入了小数位的概念
 
 ## 方法(函数)
 在一个静态方法内调用一个非静态成员为什么是违法的？
@@ -814,6 +924,467 @@ Java流共涉及40多个类。
 不管是文件读写还是网络发送接收，信息的最小存储单元都是字节，那为什么I/O操作要分为字节流操作和字符流操作呢？
 
 字符流是由Java虚拟机将字节转换得到的，问题就出在这个过程还算是非常耗时的，并且，如果我们不知道编码类型就很容易出现乱码问题，所以I/O流就干脆提供了一个直接操作字符的接口，方便我们平时对字符进行流操作，如果音频文件、图片等媒体文件用字节流比较好，如果涉及到字符的化使用字符流比较好。
+
+## 集合(List)
+
+Arrays.asList()使用
+
+**简介**
+Arrays.asList() 将一个数组转换为List集合
+```java
+String [] arr = {"hello","world"};
+List<String> list = Arrays.asList(arr);
+//上面两条语句等价下面
+List<String> list = Arrays.asList("hello","world");
+```
+
+JDK源码
+```java
+/**
+返回由指定数组支持的固定大小的列表，此方法作为基于数组和基于集合的API之间的桥梁
+与Collection.toArray()结合使用，返回的List是可序列化并实现RandomAccess接口
+*/
+public static <T> List<T> asList(T...a){
+    return new ArrayList<>(a);
+}
+```
+
+**《阿里巴巴Java开发手册》对其的描述**
+Arrays.asList() 将数组转换为集合后，底层其实还是数组
+
+【强制】使用工具类Arrays.asList()把数组转换成集合时，不能使用其修改集合相关的方法，它的add/remove/clear方法会抛出unsupportedOperationException异常。
+
+说明：asList的返回对象是一个Arrays内部类，并没有实现集合的修改方法。Arrays.asList体现的是适配器模式，只是转换接口，后台的数据仍是数组，
+```java
+String[]str = new String[]{"hello","world"};
+List list = Arrays.asList(str);
+list.add("a"); //运行时异常
+str[0] = "a"; // list.get(0) 也会随之改变
+```
+
+**使用时的注意事项总结**
+Arrays.asList()是泛型方法，传入的对象必须是对象数组，而不是基本类型
+```java
+int[] arr = {1,2,3};
+List list = Arrays.asList(arr);
+System.out.println(list.size());    //1
+System.out.println(list.get(0));    //数组地址值
+System.out.println(list.size());    //报错；ArrayIndexOutOfBoundsException
+int[]array = (int[])arr.get(0);
+System.out.println(array[0]);    //1
+```
+当传入一个原生数据类型数组时，Arrays.asList()的真正得到的参数就不是数组中的元素，而是数组对象本身。此时List的唯一元素就是这个数组。
+
+使用包装类型数组解决这个问题
+```java
+Integer[]arr = {1,2,3};
+```
+使用集合的修改方法：add()、remove()、clear()会抛出异常
+```java
+List list = Arrays.asList(1,2,3);
+list.add(4);    //运行时报错：UnsupportedOperationException
+list.remove(1);  //运行时报错：UnsupportedOperationException
+list.clear();   //运行时报错：UnsupportedOperationException
+```
+Arrays.asList()方法返回的是java.util.Arrays的一个内部类.而不是java.util.ArraysList。所以并没有实现集合的修改方法或者并没有重写这个方法
+```java
+List myList = Arrays.asList(1, 2, 3);
+System.out.println(myList.getClass());//class java.util.Arrays$ArrayList
+```
+**如何正确的将数组转换为ArraysList？**
+1. 自己动手实现
+```java
+//JDK1.5+
+static <T> List<T> arrayToList(final T[] array){
+    final List<T> l = new ArrayList<T>(array.length);
+
+    for(final T t : array){
+        l.add(t);
+    }
+    return l;
+}
+
+Integer [] arr = {1,2,3};
+System.out.println(arrayToList(arr).getClass()); //class java.util.ArrayList
+```
+2. 最简单的方法(推荐)
+```java
+List list = new ArrayList<>(Arrays.asList("a","b","c"));
+```
+3. 使用Java8的stream(推荐)
+```java
+Integer[]arr = {1,2,3};
+List list = Arrays.stream(arr).collect(Collectors.toList());
+//基本类型也可以实现转换(依赖boxed的装箱操作)
+int[]arr1 = {1,2,3};
+List list1 = Arrays.stream(arr1).boxed().collect(Collectors.toList());
+```
+4. 使用Guava推荐
+对于不可变集合，可以使用ImmutableList类及其of()与copeOf()工厂方法：(参数不能为空)
+```java
+List<String> l1 = ImmutableList.of("a","b");     //from varargs
+List<String> l2 = ImmutableList.copeOf(arr);    //from array
+```
+对于可变集合，使用Lists类及其newArrayList()工厂方法
+```java
+List<String> l1 = Lists.newArrayList(anotherListCollection);    //from collection
+List<String> l2 = Lists.newArrayList(aStringArr);   //form array
+List<String> l3 = Lists.newArrayList("a","b","b");  //from varargs
+```
+5. Apache Common Collections
+```java
+List<String> list = new ArrayList<String>();
+CollectionUtils.addAll(list,str);
+```
+6. 使用Java9的List.of()方法
+```java
+Integer[]arr = {1,2,3}; //不支持基本数据类型
+List<Integer> list = List.of(array);
+System.out.println(list); 
+```
+
+**Collection.toArray()方法使用的坑&如何反转数组**
+该方法是一个泛型方法:<T> T[]toArray(T[]a);如果toArray方法中没有传递任何参数的话返回的是Object类型数组
+```java
+String[] s = new String[]{"1","2","3"};
+List<String> list = Arrays.asList(s);
+Collections.reverse(list);
+s = list.toArray(new String[0]);    //没有指定类型的话会报错
+```
+由于JVM优化，new String[0]作为Collection.toArray()方法的参数现在使用更好，new String[0]就是起一个模板的作用，指定了返回数组的类型，0是为了节省空间，因为它只是为了说明返回的类型。
+
+**不要在foreach循环里进行元素的remove/add操作**
+如果要进行remove操作，可以调用迭代器的remove方法而不是集合的remove方法，因为如果列表在任何时间从结构上修改创建迭代器之后，以任何方法除非通过迭代器自身remove/add方法，迭代器都会抛出一个ConcurrentModificationException,这就是单线程状态下产生的 fail-fast 机制。
+>fail-fast 机制 ：多个线程对 fail-fast 集合进行修改的时候，可能会抛出ConcurrentModificationException，单线程下也会出现这种情况，上面已经提到过。
+
+java8开始，可以使用Collection#removeIf()方法删除满足特定条件元素
+```java
+List<Integer> list = new ArrayList<>();
+for(int i=0;i<=10;++i){
+    list.add(i);
+}
+list.removeIf(filter -> filter % 2 == 0);  //删除list中的所有偶数
+System.out.println(list); //[1,3,5,7,9]
+```
+java.util包下的所有集合类都是fail-fast的，而java.util.concurrent包下面的所有类都是fail-safe的
+
+【强制】不要在foreach循环里进行元素的remove/add操作。remove元素请使用Iterator方法，如果并发操作，需要对Iterator对象加锁
+```java
+List<String> list = new ArrayList<>();
+list.add("1");
+list.add("2");
+Iterator<String>iterator = list.iterator();
+while(iterator.hasNext()){
+    String item = iterator.next();
+    if(condition){
+        iterator.remove();
+    }
+}
+
+//反例
+for(String s : list){
+    if("1".equals(s)){
+        list.remove(s);
+    }
+}
+//将 1 换成2  试试  将会报错。
+```
+
+## 枚举
+enum关键字在Java5中引入，表示一种特殊类型的类，其总是继承java.lang.Enum类。枚举在很多时候会和常量进行对比，可能大量实际使用枚举的地方就是为了替代常量，优势在哪
+
+以枚举方法定义的常量使代码更具可读性，运行进行编译时检查，预先记录可接受值的列表，并避免由于传入无效值而引入意外行为。
+
+下面示例定义一个简单的枚举类型pizza订单的状态，共有三种ORDERED,READY,DELIVERED状态
+```java
+public enmu PizzaStatus{
+    ORDERED,
+    READY,
+    DELIVERED;
+}
+System.out.println(PizzaStatus.ORDERED.name())  //ORDERED
+System.out.println(PizzaStatus.ORDERED);//ORDERED
+System.out.println(PizzaStatus.ORDERED.name().getClass());//class java.lang.String
+System.out.println(PizzaStatus.ORDERED.getClass());//class xxx.PizzaStatus
+```
+
+**自定义枚举方法**
+在枚举上定义一些额外的API方法
+```java
+public class Pizza{
+    private PizzaStatus status;
+    public enmu PizzaStatus{
+        ORDERED,
+        READY,
+        DELIVERED;
+    }
+
+    public boolean isDeliverable(){
+        return getStatus() == PizzaStatus.READY;
+    }
+
+    //set and get status
+}
+```
+
+**使用==比较枚举类型**
+由于枚举类型确保JVM中仅存在一个常量实例，因此可以安全的使用==运算符比较两个变量。==运算符可提供编译时和运行时的安全性
+
+运行时安全性，其中 == 运算符用于比较状态，并且如果两个值均为null 都不会引发 NullPointerException。相反，如果使用equals方法，将抛出 NullPointerException
+```java
+Pizza.PizzaStatus pizza = null;
+System.out.println(pizza.equals(Pizza.PizzaStatus.DELIVERED)); //空指针异常
+System.out.println(pizza == Pizza.PizzaStatus.DELIVERED); //正常运行
+```
+
+对于编译时安全性，我们看另一个示例，两个不同枚举类型进行比较：
+```java
+if (Pizza.PizzaStatus.DELIVERED.equals(TestColor.GREEN)); // 编译正常
+if (Pizza.PizzaStatus.DELIVERED == TestColor.GREEN);      // 编译失败，类型不匹配
+```
+
+**在switch语句中使用枚举类型**
+```java
+public int getDeliveryTimeInDays{
+    switch(status){
+        case ORDERED:
+            return 5;
+        case READY:
+            return 2;
+        case DELIVERED:
+            return 0;
+    }
+    return 0;
+}
+```
+
+**枚举类型的属性，方法和构造函数**
+可在枚举类型中定义属性，方法和构造函数
+
+```java
+public enum PinType{
+    
+    REGISTER(100000, "注册使用"),
+    FORGET_PASSWORD(100001, "忘记密码使用"),
+    UPDATE_PHONE_NUMBER(100002, "更新手机号码使用");
+
+    private final int code;
+    private final String message;
+
+    PinType(int code,String message){
+        this.code = code;
+        this.message = message;
+    }
+
+    public int getCode() {
+        return code;
+    }
+
+    public String getMessage() {
+        return message;
+    }
+
+    @Override
+    public String toString() {
+        return "PinType{" +
+                "code=" + code +
+                ", message='" + message + '\'' +
+                '}';
+    }
+}
+```
+实际使用
+```java
+System.out.println(PinType.FORGET_PASSWORD.getCode());  //100001
+System.out.println(PinType.FORGET_PASSWORD.getMessage());//忘记密码使用
+System.out.println(PinType.FORGET_PASSWORD.toString()); //PinType{code=100001, message='忘记密码使用'}
+```
+
+
+```java
+public class Pizza{
+    private PizzaStatus status;
+    public enum PizzaStatus {
+        ORDERED (5){
+            @Override
+            public boolean isOrdered() {
+                return true;
+            }
+        },
+        READY (2){
+            @Override
+            public boolean isReady() {
+                return true;
+            }
+        },
+        DELIVERED (0){
+            @Override
+            public boolean isDelivered() {
+                return true;
+            }
+        };
+        private int timeToDelivery;
+
+        public boolean isOrdered() {return false;}
+
+        public boolean isReady() {return false;}
+
+        public boolean isDelivered(){return false;}
+
+        public int getTimeToDelivery() {
+            return timeToDelivery;
+        }
+
+        PizzaStatus (int timeToDelivery) {
+            this.timeToDelivery = timeToDelivery;
+        }
+    }
+    public boolean isDeliverable() {
+        return this.status.isReady();
+    }
+ 
+    public void printTimeToDeliver() {
+        System.out.println("Time to delivery is " + 
+          this.getStatus().getTimeToDelivery());
+    }
+    // Methods that set and get the status variable.
+}
+
+@Test
+public void givenPizaOrder_whenReady_thenDeliverable() {
+    Pizza testPz = new Pizza();
+    testPz.setStatus(Pizza.PizzaStatus.READY);
+    assertTrue(testPz.isDeliverable());
+}
+```
+
+**EnumSet and EnumMap**
+**EnumSet**
+EnumSet是一种专门为枚举类型所设计的Set类型，与HashSet相比，由于使用了内部位向量表示，因此它是特定Enum常量集的非常有效且紧凑的表示形式
+
+提供类型安全的替代方法，以替代传统的基于int的"位标志"，使编写更易读和易与维护的简洁代码
+
+EnumSet是抽象类，两个实现:RegularEnumSet、JumboEnumSet。选择哪一个取决于实例化时枚举中常量的数量.
+
+在很多场景中的枚举常量集合操作（如：取子集、增加、删除、containsAll和removeAll批操作）使用EnumSet非常合适；如果需要迭代所有可能的常量则使用Enum.values()
+```java
+public class Pizza{
+    private static EnumSet<PizzaStatus> undeliveredPizzaStatues = EnumSet.of(PizzaStatus.ORDERED,PizzaStatus.READY);
+    private PizzaStatus status;
+
+    public enum PizzaStatus{
+        ...
+    }
+
+    public boolean isDeliverable(){
+        return this.status.isReady();
+    }
+
+    public void printTimeToDeliver() {
+        System.out.println("Time to delivery is " + 
+          this.getStatus().getTimeToDelivery() + " days");
+    }
+
+    public static List<Pizza> getAllUndeliveredPizzas(List<Pizza> input){
+        return input.stream().filter(
+            (s) -> undeliveredPizzaStatues.contains(s.getStatus()))
+            .collect(Collectors.toList());
+    }
+
+    public void deliver(){
+        if(isDeliverable()){
+            PizzaDeliverySystemConfiguration.getInstance().getDeliveryStrategy().deliver(this);
+            this.setStatus(PizzaStatus.DELIVERED);
+        }
+    }
+
+    // Methods that set and get the status variable.
+}
+```
+测试
+```java
+@Test
+public void givenPizzaOrders_whenRetrievingUnDeliveredPzs_thenCorrectlyRetrieved(){
+    List<Pizza> plist = new ArrayList<>();
+    Pizza pz1 = new Pizza();
+    pz1.setStatus(Pizza.PizzaStatus.DELIVERED);
+
+    Pizza pz2 = new Pizza();
+    pz1.setStatus(Pizza.PizzaStatus.ORDERED);
+
+    Pizza pz3 = new Pizza();
+    pz3.setStatus(Pizza.PizzaStatus.ORDERED);
+    
+    Pizza pz4 = new Pizza();
+    pz4.setStatus(Pizza.PizzaStatus.READY);
+
+    plist.add(pz1); //DELIVERED
+    plist.add(pz2);  //ORDERED
+    plist.add(pz3);  //ORDERED
+    plist.add(pz4);  //READY
+
+    List<Pizza> undeliveredPzs = Pizza.getAllUndeliveredPizzas(plist); //
+    assertTrue(undeliveredPzs.size() == 3);  //true
+}
+```
+
+**EnumMap**
+EnumMap是一个专门化的映射实现，用于将枚举常量用作键，与对应的HashMap相比，它是一个高效紧凑的实，并且在内部表示为一个数组
+```java
+EnumMap<Pizza.PizzaStatus,List<Pizza>> map;
+```
+示例
+```java
+Iterator<Pizza> iterator = pizzaList.iterator();
+while(iterator.hasNext()){
+    Pizza p = iterator.next();
+    PizzaStatus status = p.getStatus();
+    if(map.containsKey(status)){
+        map.get(status).add(p);
+    }else{
+        List<Pizza> npl = new ArrayList<>();
+        npl.add(p);
+        map.put(status,npl);
+    }
+}
+```
+测试
+```java
+@Test
+public void givenPizaOrders_whenGroupByStatusCalled_thenCorrectlyGrouped() {
+    List<Pizza> pzList = new ArrayList<>();
+    Pizza pz1 = new Pizza();
+    pz1.setStatus(Pizza.PizzaStatus.DELIVERED);
+ 
+    Pizza pz2 = new Pizza();
+    pz2.setStatus(Pizza.PizzaStatus.ORDERED);
+ 
+    Pizza pz3 = new Pizza();
+    pz3.setStatus(Pizza.PizzaStatus.ORDERED);
+ 
+    Pizza pz4 = new Pizza();
+    pz4.setStatus(Pizza.PizzaStatus.READY);
+ 
+    pzList.add(pz1);
+    pzList.add(pz2);
+    pzList.add(pz3);
+    pzList.add(pz4);
+ 
+    EnumMap<Pizza.PizzaStatus,List<Pizza>> map = Pizza.groupPizzaByStatus(pzList);
+    assertTrue(map.get(Pizza.PizzaStatus.DELIVERED).size() == 1);
+    assertTrue(map.get(Pizza.PizzaStatus.ORDERED).size() == 2);
+    assertTrue(map.get(Pizza.PizzaStatus.READY).size() == 1);
+}
+
+```
+
+**通过枚举实现一些设计模式**
+1. 单例模式
+通常，使用类实现 Singleton 模式并非易事，枚举提供了一种实现单例的简便方法。
+
+
+2. 
+
 
 **参考**
 [JavaGuide-Java基础](https://snailclimb.gitee.io/javaguide/#/docs/java/basis/Java%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86?id=%e4%bd%bf%e7%94%a8-try-with-resources-%e6%9d%a5%e4%bb%a3%e6%9b%bftry-catch-finally)

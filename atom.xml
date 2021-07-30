@@ -6,7 +6,7 @@
   <link href="https://wentianhao.github.io/atom.xml" rel="self"/>
   
   <link href="https://wentianhao.github.io/"/>
-  <updated>2021-07-30T01:06:59.591Z</updated>
+  <updated>2021-07-30T10:00:15.413Z</updated>
   <id>https://wentianhao.github.io/</id>
   
   <author>
@@ -17,11 +17,30 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>代理模式</title>
+    <link href="https://wentianhao.github.io/2021/07/30/proxy/"/>
+    <id>https://wentianhao.github.io/2021/07/30/proxy/</id>
+    <published>2021-07-30T01:44:12.000Z</published>
+    <updated>2021-07-30T10:00:15.413Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;设计模型之代理模式&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="java" scheme="https://wentianhao.github.io/categories/java/"/>
+    
+    
+    <category term="java" scheme="https://wentianhao.github.io/tags/java/"/>
+    
+  </entry>
+  
+  <entry>
     <title>反射机制</title>
     <link href="https://wentianhao.github.io/2021/07/30/invoke/"/>
     <id>https://wentianhao.github.io/2021/07/30/invoke/</id>
     <published>2021-07-30T01:03:10.000Z</published>
-    <updated>2021-07-30T01:06:59.591Z</updated>
+    <updated>2021-07-30T01:07:14.452Z</updated>
     
     
     <summary type="html">&lt;p&gt;详细学习一下Java的反射机制&lt;/p&gt;</summary>
@@ -40,7 +59,7 @@
     <link href="https://wentianhao.github.io/2021/07/28/keyword/"/>
     <id>https://wentianhao.github.io/2021/07/28/keyword/</id>
     <published>2021-07-28T10:38:08.000Z</published>
-    <updated>2021-07-30T01:05:58.079Z</updated>
+    <updated>2021-07-30T01:07:14.457Z</updated>
     
     
     <summary type="html">&lt;p&gt;final、static、this、super关键字总结&lt;/p&gt;</summary>
@@ -78,10 +97,10 @@
     <link href="https://wentianhao.github.io/2021/07/20/java%E5%9F%BA%E7%A1%80/"/>
     <id>https://wentianhao.github.io/2021/07/20/java%E5%9F%BA%E7%A1%80/</id>
     <published>2021-07-20T13:19:46.000Z</published>
-    <updated>2021-07-28T09:54:43.606Z</updated>
+    <updated>2021-07-30T01:56:00.463Z</updated>
     
     
-    <summary type="html">&lt;p&gt;Java基础概念与常识&lt;/p&gt;</summary>
+    <summary type="html">&lt;p&gt;Java基础概念与常识，学习自用，参考&lt;a href=&quot;https://snailclimb.gitee.io/javaguide&quot;&gt;JavaGuide&lt;/a&gt; JavaGuide yyds！&lt;/p&gt;</summary>
     
     
     
@@ -424,33 +443,6 @@
     
     
     <category term="Lua" scheme="https://wentianhao.github.io/tags/Lua/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>AOP</title>
-    <link href="https://wentianhao.github.io/2020/10/24/AOP/"/>
-    <id>https://wentianhao.github.io/2020/10/24/AOP/</id>
-    <published>2020-10-24T11:43:28.000Z</published>
-    <updated>2021-05-27T09:02:39.333Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h2 id=&quot;AOP基本概念&quot;&gt;&lt;a href=&quot;#AOP基本概念&quot; class=&quot;headerlink&quot; title=&quot;AOP基本概念&quot;&gt;&lt;/a&gt;AOP基本概念&lt;/h2&gt;&lt;blockquote&gt;
-&lt;blockquote&gt;
-&lt;p&gt;AOP:Aspect Oriented</summary>
-        
-      
-    
-    
-    
-    <category term="java" scheme="https://wentianhao.github.io/categories/java/"/>
-    
-    
-    <category term="java" scheme="https://wentianhao.github.io/tags/java/"/>
     
   </entry>
   

@@ -6,7 +6,7 @@
   <link href="https://wentianhao.github.io/atom.xml" rel="self"/>
   
   <link href="https://wentianhao.github.io/"/>
-  <updated>2021-07-23T08:20:58.086Z</updated>
+  <updated>2021-07-30T01:06:59.591Z</updated>
   <id>https://wentianhao.github.io/</id>
   
   <author>
@@ -15,6 +15,44 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>反射机制</title>
+    <link href="https://wentianhao.github.io/2021/07/30/invoke/"/>
+    <id>https://wentianhao.github.io/2021/07/30/invoke/</id>
+    <published>2021-07-30T01:03:10.000Z</published>
+    <updated>2021-07-30T01:06:59.591Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;详细学习一下Java的反射机制&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="java" scheme="https://wentianhao.github.io/categories/java/"/>
+    
+    
+    <category term="java" scheme="https://wentianhao.github.io/tags/java/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Java常见关键字总结</title>
+    <link href="https://wentianhao.github.io/2021/07/28/keyword/"/>
+    <id>https://wentianhao.github.io/2021/07/28/keyword/</id>
+    <published>2021-07-28T10:38:08.000Z</published>
+    <updated>2021-07-30T01:05:58.079Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;final、static、this、super关键字总结&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="java" scheme="https://wentianhao.github.io/categories/java/"/>
+    
+    
+    <category term="java" scheme="https://wentianhao.github.io/tags/java/"/>
+    
+  </entry>
   
   <entry>
     <title>java常量池</title>
@@ -413,52 +451,6 @@
     
     
     <category term="java" scheme="https://wentianhao.github.io/tags/java/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Boosting Entity Linking Performance by Leveraging Unlabeled Documents</title>
-    <link href="https://wentianhao.github.io/2020/10/23/EntityUnlabe/"/>
-    <id>https://wentianhao.github.io/2020/10/23/EntityUnlabe/</id>
-    <published>2020-10-23T06:17:32.000Z</published>
-    <updated>2021-05-27T09:02:39.364Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h2 id=&quot;基础知识&quot;&gt;&lt;a href=&quot;#基础知识&quot; class=&quot;headerlink&quot; title=&quot;基础知识&quot;&gt;&lt;/a&gt;基础知识&lt;/h2&gt;&lt;p&gt;$MAP$: Maximum a posteriori </summary>
-        
-      
-    
-    
-    
-    <category term="论文笔记" scheme="https://wentianhao.github.io/categories/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/"/>
-    
-    
-    <category term="NLP" scheme="https://wentianhao.github.io/tags/NLP/"/>
-    
-    <category term="实体链接" scheme="https://wentianhao.github.io/tags/%E5%AE%9E%E4%BD%93%E9%93%BE%E6%8E%A5/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>argparse基本用法</title>
-    <link href="https://wentianhao.github.io/2020/10/21/argparse%E5%9F%BA%E6%9C%AC%E7%94%A8%E6%B3%95/"/>
-    <id>https://wentianhao.github.io/2020/10/21/argparse%E5%9F%BA%E6%9C%AC%E7%94%A8%E6%B3%95/</id>
-    <published>2020-10-21T03:20:51.000Z</published>
-    <updated>2020-10-21T03:20:51.000Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;argparse 是 python自带的命令行参数解析包，用来方便读取命令行参数&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="python" scheme="https://wentianhao.github.io/categories/python/"/>
-    
-    
-    <category term="python" scheme="https://wentianhao.github.io/tags/python/"/>
     
   </entry>
   

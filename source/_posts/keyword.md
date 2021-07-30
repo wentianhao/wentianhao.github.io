@@ -1,9 +1,12 @@
 ---
 title: Java常见关键字总结
-date: 2021-07-28 18:38:08
+katex: false
 tags: java
 categories: java
+abbrlink: 28669
+date: 2021-07-28 18:38:08
 ---
+
 
 final、static、this、super关键字总结
 <!-- more -->
@@ -174,8 +177,39 @@ public class Demo{
 
 > 修正:静态代码块可能在第一次new对象的时候执行，但不一定只在第一次new的时候执行，比如通过Class.forName("ClassDemo")创建class对象的时候也会执行，即new和Class.forName()都回执行静态代码块
 
+一般情况下，如果有些代码比如一些项目最常用的变量或对象必须在项目骑动的时候就执行，这个时候就需要静态代码块，这种代码是主动执行的。如果想要设计不需要创建对象就可以调用类中的方法，例如，Arrays类，Character类，String类等，就需要使用静态方法，两者的区别是静态代码块是自动执行的，而静态方法是被调用才执行的。
+```java
+public class Test{
+    public Test(){
+        System.out.println("默认构造方法!");    //3
+    }
 
+    //非静态代码块
+    {
+        System.out.println("非静态代码块!");    //2
+    }
 
+    static {
+        System.out.println("静态代码块！"); //1
+    }
+
+    private static void test(){
+        System.out.println("静态方法中的内容!");    //4
+        {
+            System.out.println("静态方法中的代码块");//5
+        }
+    }
+
+    public static void main(String[]args){
+        Test test = new Test();
+        Test.test();    //静态代码块 静态方法中的内容
+    }
+}
+```
+输出结果：1-2-3-4-5
+当只执行`Test test = new Test()`时，输出 1-2-3
+
+非静态代码块与构造函数的区别是：非静态代码块是给所有对象进行统一初始化，而构造函数是给对应的对象初始化，因为构造函数是可以有多个的，运行哪个构造函数就会建立什么样的对象，但无论建立哪个对象，都会先执行相同的构造代码块，也就是说，构造代码块中定义的是不同对象共性的初始化内容。
 
 ## 静态内部类
 静态内部类与非静态内部类之间存在一个最大的区别，我们知道非静态内部类在编译完成之后会隐含的保存一个引用，该引用是指向创建它的外围类，但是静态内部类没有，没有这个引用意味着：

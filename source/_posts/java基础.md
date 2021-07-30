@@ -8,7 +8,7 @@ date: 2021-07-20 21:19:46
 ---
 
 
-Java基础概念与常识
+Java基础概念与常识，学习自用，参考[JavaGuide](https://snailclimb.gitee.io/javaguide) JavaGuide yyds！
 <!-- more -->
 ## Java基础语法
 

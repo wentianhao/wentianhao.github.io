@@ -187,5 +187,94 @@ jdk动态代理有一个最致命的问题是其只能代理实现了接口的�
 
 CGLIB(code generation library)是一个基于ASM的字节码生成库，允许在运行时对字节码进行修改和动态生成.CGLIB通过继承的方式实现代理。Spring中的AOP模块中，如果目标对象实现了接口，则默认采用JDK动态代理，否则就是采用CGLIB动态代理
 
+**在CGLIB动态代理机制中 MethodInterceptor接口和Enhancer类是核心**
 
+需要自定义MethodInterceptor并重写intercept方法，intercept用于拦截增强被代理类的方法
+```java
+public interface MethodInterceptor extends Calllback{
+    //拦截被代理类中的方法
+    public Object intercept(Object obj,Method method,Object[]args,
+                            MethodProxy proxy) throws Throwable;
+}
+```
+1. obj:被代理的对象(目标对象，需要增强的对象)
+2. method：被拦截的方法(需要增强的方法)
+3. args：方法入参
+4. methodProxy：用于调用原始方法
 
+通过Enhancer类来动态获取被代理类，当代理类调用方法时，实际调用的是MethodInterceptor中的intercept方法。
+
+### **CGLIB动态代理使用步骤**
+1. 定义一个类
+2. 自定义MethodInterceptor并重写intercept方法，用于拦截增强被代理类的方法，和jdk动态代理中的invoke方法类似
+3. 通过Enhancer类的create()创建代理类
+
+### demo
+不同于JDK动态代理,CGLIB使用需添加相关依赖。
+```java
+<dependency>
+  <groupId>cglib</groupId>
+  <artifactId>cglib</artifactId>
+  <version>3.3.0</version>
+</dependency>
+```
+
+1. 实现发送短信的类
+```java
+public class SmsService{
+    public String send(String message){
+        System.out.println("send message:"+message);
+        return message;
+    }
+}
+```
+2. 自定义MethodInterceptor(方法拦截器)
+```java
+publlic class DebugMethodInterceptor implements MethodInterceptor{
+    @Override
+    public Object intercept(Object o, Method method, Object[] args, MethodProxy methodProxy) throws Throwable {
+        //调用方法之前，我们可以添加自己的操作
+        System.out.println("before method:"+method.getName());
+        Object result = methodProxy.invokeSuper(o,args);
+        //调用方法之后
+        System.out.println("after method:"+method.getName());
+        return result;
+    }
+}
+```
+3. 获取代理类
+```java
+public Class CglibProxyFactory{
+    public static Object getProxy(Class<?> clazz){
+        //创建动态增强类
+        Enhancer enhancer = new Enhancer();
+        //设置类加载器
+        enhancer.setClassLoader(clazz.getClassLoader());
+        //设置被代理类
+        enhancer.setSuperClass(clazz);
+        //设置方法拦截器
+        enhancer.setCallback(new DebugMethodInterceptor());
+        //创建代理类
+        return enhancer.create();
+    }
+}
+```
+4. 实际使用
+```java
+SmsService smsService = (SmsService) CglibProxyFactory.getProxy(SmsService.getClass()));
+smsService.send("java");
+```
+控制台打印出：
+```bash
+befor methodsend
+send message:cglib
+after methodsend
+```
+
+## JDK动态代理和CGLIB动态代理对比
+- JDK动态代理只能代理实现了接口的类或者直接代理接口，而CGLIB可以代理未实现任何接口的类。另外CGLIB动态代理是通过生成一个被代理类的子类来拦截被代理类的方法调用，因此不能代理声明为final类型的类和方法
+- JDK动态代理更优秀。
+
+## 静态代理和动态代理对比
+- 灵活性： 动态代理更加灵活，不需要必须实现接口，可以直接代理实现类，并且可以不需要针对每个目标类都创建一个代理实现类。另外静态代理中，接口一旦新增方法，目标对象和代理对象都要修改，比较麻烦
+- JVM层面：静态代理是在编译时就将接口、实现类、代理类都变成了class文件。而动态代理在运行时动态生成字节码，并加载到JVM中

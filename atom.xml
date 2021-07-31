@@ -6,7 +6,7 @@
   <link href="https://wentianhao.github.io/atom.xml" rel="self"/>
   
   <link href="https://wentianhao.github.io/"/>
-  <updated>2021-07-30T10:00:15.413Z</updated>
+  <updated>2021-07-31T10:37:53.457Z</updated>
   <id>https://wentianhao.github.io/</id>
   
   <author>
@@ -17,11 +17,38 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>IO</title>
+    <link href="https://wentianhao.github.io/2021/07/31/IO/"/>
+    <id>https://wentianhao.github.io/2021/07/31/IO/</id>
+    <published>2021-07-31T02:45:35.000Z</published>
+    <updated>2021-07-31T10:37:53.457Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;I/O(Input/Output):输入/输出&lt;/p&gt;
+&lt;p&gt;根据冯.诺伊曼结构，计算机结构分为5大部分：运算器、控制器、存储器、输入设备、输出设备&lt;/p&gt;
+&lt;p&gt;输入设备(input device) –&amp;gt; (cpu(控制器、运算器) &amp;lt; – &amp;gt;</summary>
+        
+      
+    
+    
+    
+    <category term="java" scheme="https://wentianhao.github.io/categories/java/"/>
+    
+    
+    <category term="java" scheme="https://wentianhao.github.io/tags/java/"/>
+    
+  </entry>
+  
+  <entry>
     <title>代理模式</title>
     <link href="https://wentianhao.github.io/2021/07/30/proxy/"/>
     <id>https://wentianhao.github.io/2021/07/30/proxy/</id>
     <published>2021-07-30T01:44:12.000Z</published>
-    <updated>2021-07-30T10:00:15.413Z</updated>
+    <updated>2021-07-31T02:29:51.735Z</updated>
     
     
     <summary type="html">&lt;p&gt;设计模型之代理模式&lt;/p&gt;</summary>
@@ -140,10 +167,11 @@
     <link href="https://wentianhao.github.io/2021/07/05/%E5%9B%BE%E5%BA%8A/"/>
     <id>https://wentianhao.github.io/2021/07/05/%E5%9B%BE%E5%BA%8A/</id>
     <published>2021-07-05T10:53:03.000Z</published>
-    <updated>2021-07-13T06:43:02.219Z</updated>
+    <updated>2021-07-31T08:06:35.105Z</updated>
     
     
     <summary type="html">&lt;p&gt;最近着手搭建一个自用的图床，之前以有博客，图片一般存在博客的某个文件夹下，但是每次写博客的时候都要先将图片上传到服务器然后配图不能本地显示略嫌麻烦，因此准备在自己网站上搭建图床，使用docker，结合开源项目Lychee&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;补充发现&lt;/strong&gt;：Chevereto 图床更好用，并且可以结合picGo自动上传，因此建议转为Chevereto    演示地址：&lt;a href=&quot;https://demo.chevereto.com/&quot;&gt;https://demo.chevereto.com/&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;以下操作基于：Ubuntu 18.04&lt;/p&gt;</summary>
     
     
@@ -422,27 +450,6 @@
     
     
     <category term="python" scheme="https://wentianhao.github.io/tags/python/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Lua学习</title>
-    <link href="https://wentianhao.github.io/2020/11/05/Lua/"/>
-    <id>https://wentianhao.github.io/2020/11/05/Lua/</id>
-    <published>2020-11-05T15:19:22.000Z</published>
-    <updated>2021-05-27T09:02:39.366Z</updated>
-    
-    
-    <summary type="html">&lt;blockquote&gt;
-&lt;p&gt;Lua 是一种轻量小巧的脚本语言，用标准C语言编写并以源代码形式开放， 其设计目的是为了嵌入应用程序中，从而为应用程序提供灵活的扩展和定制功能&lt;/p&gt;
-&lt;/blockquote&gt;</summary>
-    
-    
-    
-    <category term="Lua" scheme="https://wentianhao.github.io/categories/Lua/"/>
-    
-    
-    <category term="Lua" scheme="https://wentianhao.github.io/tags/Lua/"/>
     
   </entry>
   

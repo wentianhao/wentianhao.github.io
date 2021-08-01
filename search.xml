@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>Java集合框架</title>
+      <link href="2021/08/01/%E5%AE%B9%E5%99%A8/"/>
+      <url>2021/08/01/%E5%AE%B9%E5%99%A8/</url>
+      
+        <content type="html"><![CDATA[<p>Java集合框架：List、Set、Map 以及源码解析</p><span id="more"></span><h2 id="Java集合"><a href="#Java集合" class="headerlink" title="Java集合"></a>Java集合</h2><p>List、Set、Map都是接口，<code>List</code>和<code>Set</code>类继承<code>Collection</code>接口，<code>Map</code>为独立接口<br><img src="http://whh.plus:7007/images/2021/08/01/java-collection-hierarchy.png" alt="Iterable" loading="lazy"></p><h2 id="List、Set、Map三者区别"><a href="#List、Set、Map三者区别" class="headerlink" title="List、Set、Map三者区别"></a>List、Set、Map三者区别</h2><ul><li>List：存储元素有序、可重复<ul><li>ArrayList<ul><li>优点：底层数据结构是数组，查询快，增删慢</li><li>缺点：线程不安全，效率低</li></ul></li><li>Vector<ul><li>优点：底层数据结构是数组，查询快，增删慢</li><li>缺点：线程安全，效率低</li></ul></li><li>LinkedList<ul><li>优点：底层数据结构是链表，查询慢，增删快</li><li>缺点：线程不安全，效率高 </li></ul></li></ul></li><li>Set：无序、不可重复<ul><li>HashSet<ul><li>底层数据结构是哈希表。(无序唯一)</li><li>保证元素唯一性(hashCode()、equals())</li></ul></li><li>LinkedHashSet<ul><li>底层数据结构是链表和哈希表。(FIFO插入有序，唯一)</li><li>链表保证元素有序</li><li>哈希表保证元素唯一 </li></ul></li><li>TreeSet<ul><li>底层数据解雇是红黑树 (唯一，有序)</li><li>元素排序：自然排序，比较器排序</li><li>元素唯一性：根据比较的返回值是否为0来决定 </li></ul></li></ul></li><li>Map：使用key-value存储。key无序、不可重复；value无序、可重复。一一对应</li></ul><h2 id="List"><a href="#List" class="headerlink" title="List"></a>List</h2><h3 id="ArrayList"><a href="#ArrayList" class="headerlink" title="ArrayList"></a>ArrayList</h3><p>ArrayList的底层是数组队列，相当于动态数组。与Java中的数组相比，它的容量可以动态增长。在添加大量的</p><h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ul><li><a href="https://blog.csdn.net/zhangqunshuai/article/details/80660974">Java集合中List,Set以及Map等集合体系详解(史上最全)</a></li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> java </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> java </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>IO</title>
       <link href="2021/07/31/IO/"/>
       <url>2021/07/31/IO/</url>

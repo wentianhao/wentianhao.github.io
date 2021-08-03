@@ -180,6 +180,11 @@ printArray(stringArray);
 - K V(key,value)分别代表Java键值中的Key Value
 - E(element)代表Element
 
+**length、length()、size()**
+- length属性是针对数组的，比如声明一个数组，想知道数组长度，用到length属性
+- length()方法是针对字符串的，如果想知道字符串长度，则用length()方法
+- size()方法针对泛型集合的，如果想看泛型有多少元素，则调用此方法
+
 **==和equals的区别**
 对于基本数据类型来说，==比较的是值，对于引用数据类型来说，==比较的是对象内存地址
 

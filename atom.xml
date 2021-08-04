@@ -6,7 +6,7 @@
   <link href="https://wentianhao.github.io/atom.xml" rel="self"/>
   
   <link href="https://wentianhao.github.io/"/>
-  <updated>2021-08-04T10:20:46.611Z</updated>
+  <updated>2021-08-04T15:42:37.195Z</updated>
   <id>https://wentianhao.github.io/</id>
   
   <author>
@@ -21,10 +21,11 @@
     <link href="https://wentianhao.github.io/2021/08/04/LinkedList/"/>
     <id>https://wentianhao.github.io/2021/08/04/LinkedList/</id>
     <published>2021-08-04T09:59:43.000Z</published>
-    <updated>2021-08-04T10:20:46.611Z</updated>
+    <updated>2021-08-04T15:42:37.195Z</updated>
     
     
-    <summary type="html">&lt;ul&gt;
+    <summary type="html">&lt;pre class=&quot;language-java&quot; data-language=&quot;java&quot;&gt;&lt;code class=&quot;language-java&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;token class-name&quot;&gt;LinkedList&lt;/span&gt;&lt;span class=&quot;token generics&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;token class-name&quot;&gt;E&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;extends&lt;/span&gt; &lt;span class=&quot;token class-name&quot;&gt;AbstractSequentialList&lt;/span&gt;&lt;span class=&quot;token generics&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;token class-name&quot;&gt;E&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;implements&lt;/span&gt; &lt;span class=&quot;token class-name&quot;&gt;List&lt;/span&gt;&lt;span class=&quot;token generics&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;token class-name&quot;&gt;E&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;token class-name&quot;&gt;Deque&lt;/span&gt;&lt;span class=&quot;token generics&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;token class-name&quot;&gt;E&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;token class-name&quot;&gt;Cloneable&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;token class-name&quot;&gt;&lt;span class=&quot;token namespace&quot;&gt;java&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;io&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;/span&gt;Serializable&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;ul&gt;
 &lt;li&gt;LinkedList是一个继承于AbstractSequentialList的双向链表&lt;/li&gt;
 &lt;li&gt;LinkedList可以被当作堆栈、队列或双端队列进行操作&lt;/li&gt;
 &lt;li&gt;LinkedList实现List接口，能对它进行队列操作&lt;/li&gt;
@@ -33,8 +34,7 @@
 &lt;li&gt;LinkedList实现java.io.Serializable接口，支持序列化&lt;/li&gt;
 &lt;li&gt;LinkedList非同步的，不是线程安全的，如果想使LinkedList变成线程安全的，可以调用静态类Collections类中的synchronizedList方法；&lt;code&gt;List list= Collections.synchronizedList(new LinkedList());&lt;/code&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;a href=&quot;http://whh.plus:7007/image/r4k&quot;&gt;&lt;img src=&quot;http://whh.plus:7007/images/2021/08/04/47ba0f0d8b574a4460b5574e78352032.md.jpg&quot; alt=&quot;47ba0f0d8b574a4460b5574e78352032.md.jpg&quot;&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;http://whh.plus:7007/image/r4k&quot;&gt;&lt;img src=&quot;http://whh.plus:7007/images/2021/08/04/47ba0f0d8b574a4460b5574e78352032.jpg&quot; alt=&quot;47ba0f0d8b574a4460b5574e78352032.jpg&quot;&gt;&lt;/a&gt;&lt;/p&gt;</summary>
+&lt;p&gt;&lt;a href=&quot;http://whh.plus:7007/image/r4k&quot;&gt;&lt;img src=&quot;http://whh.plus:7007/images/2021/08/04/47ba0f0d8b574a4460b5574e78352032.md.jpg&quot; alt=&quot;47ba0f0d8b574a4460b5574e78352032.md.jpg&quot;&gt;&lt;/a&gt;&lt;/p&gt;</summary>
     
     
     

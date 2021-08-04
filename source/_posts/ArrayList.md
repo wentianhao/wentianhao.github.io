@@ -323,8 +323,100 @@ public E get(int index){
 ```
 由于 ArrayList 底层是基于数组实现的，所以获取元素就相当简单了，直接调用数组随机访问即可。
 
+### 迭代器 iterator
+在集合中，用for循环遍历集合时不能使用remove操作进行删除，因为remove操作会改变集合的大小，从而造成数组下标越界，更严重则抛出异常。
+```java
+public static void main(String[]args){
+    List<String> list = new ArrayList<>();
+    list.add("a");
+    list.add("b");
+    list.add("c");
+    list.add("d");
+    list.add("e");
+    // 错误的删除方法
+    for(String s : list){   //报错 java.util.ConcurrentModificationException
+        if(s.equals("c"))
+            list.remove(s);
+    }
 
-**ArrayList源码注释**
+    // 正确的删除方法
+    Iterator<String> iterator = list.iterator();
+    while(iterator.hasNext()){
+        String s = iterator.next();
+        if (s.equals("c")){
+            iterator.remove();
+        }
+    }
+}
+```
+iterator方法返回一个Itr对象
+```java
+public Iterator<E> iterator(){
+    return new Itr();
+}
+```
+
+```java
+private class Itr implements Iterator<E>{
+    int cursor; //代表下一个要访问的元素下标
+    int lastRet = -1;  //代表上一个要访问的元素下表
+    int expectedModCount = modCount;  //代表对ArrayList修改次数的期望值，初始为modCount
+    
+    // 如果下一个等于集合大小，则到最后了
+    public boolean hasNext() {
+		return cursor != size;
+	}
+
+    @SuppressWarnings("unchecked")
+	public E next() {
+        // 判断 expectedModCount 和 modCount 是否相等
+		checkForComodification();
+		int i = cursor;
+        //对cursor进行判断，是否超过集合大小和数组长度
+		if (i >= size)
+			throw new NoSuchElementException();
+		Object[] elementData = ArrayList.this.elementData;
+		if (i >= elementData.length)
+			throw new ConcurrentModificationException();
+		cursor = i + 1;
+        // 将cursor赋值给lastRet,并返回下标为lastRet的元素，cursor自增。
+		return (E) elementData[lastRet = i];
+	}
+
+    //remove 先判断lastRet值
+	public void remove() {
+		if (lastRet < 0)
+			throw new IllegalStateException();
+		//检查expectedModCount 和 modCount 是否相等
+        checkForComodification();
+        //直接调用 ArrayList 的 remove 方法删除下标为 lastRet 的元素。然后将 lastRet 赋值给 cursor ，将 lastRet 重新赋值为 -1，并将 modCount 重新赋值给 expectedModCount。
+		try {
+			ArrayList.this.remove(lastRet);
+			cursor = lastRet;
+			lastRet = -1;
+			expectedModCount = modCount;
+		} catch (IndexOutOfBoundsException ex) {
+			throw new ConcurrentModificationException();
+		}
+        //直接调用 ArrayList 的 remove 方法删除下标为 lastRet 的元素。然后将 lastRet 赋值给 cursor ，将 lastRet 重新赋值为 -1，并将 modCount 重新赋值给 expectedModCount。
+	}
+
+	final void checkForComodification() {
+		if (modCount != expectedModCount)
+			throw new ConcurrentModificationException();
+	}
+}
+```
+几点注意：
+- 只能进行remove操作，Itr中没有add，clear
+- 调用remove之前必须调用next。因为remove开始就对lastRet做校验。lastRet初始化为-1
+- next之后只能调用一次remove。因为remove会将lastRet初始化为-1
+
+
+**总结**
+ArrayList的底层是基于数组实现容量大小动态可变。扩容机制首先扩容到原始容量1.5倍，如果1.5倍大小的话，将需要的容量赋值给newCapacity。如果1.5倍太大的话或者需要的容量太大，就直接newCapacity = (minCapacity > MAX_ARRAY_SIZE)?Integer.MAX_VALUE : MAX_ARRAY_SIZE;来扩容。扩容之后通过数组的拷贝来确保元素的准确性，所以尽量减少扩容操作。ArrayList的最大存储能力：Integer.MAX_VALUE。 **size**:集合存储的元素的个数。如果遍历remove，必须使用iterator。并且remove前需要next，next之后只能一次remove。
+
+## **ArrayList源码注释**
 ```java
 package java.util;
 
@@ -374,8 +466,7 @@ public class ArrayList<E> extends AbstractList<E>
             this.elementData = EMPTY_ELEMENTDATA;
         } else {
             //其他情况，抛出异常
-            throw new IllegalArgumentException("Illegal Capacity: "+
-                                               initialCapacity);
+            throw new IllegalArgumentException("Illegal Capacity: "+initialCapacity);
         }
     }
 
@@ -827,5 +918,8 @@ public class ArrayList<E> extends AbstractList<E>
     public Iterator<E> iterator() {
         return new Itr();
     }
-
 ```
+
+## 参考
+[ArrayList详解，看这篇就够了](https://blog.csdn.net/sihai12345/article/details/79382649)
+[javaGuide-ArrayList](https://snailclimb.gitee.io/javaguide/#/docs/java/collection/ArrayList%E6%BA%90%E7%A0%81+%E6%89%A9%E5%AE%B9%E6%9C%BA%E5%88%B6%E5%88%86%E6%9E%90)

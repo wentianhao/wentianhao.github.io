@@ -6,7 +6,7 @@
   <link href="https://wentianhao.github.io/atom.xml" rel="self"/>
   
   <link href="https://wentianhao.github.io/"/>
-  <updated>2021-08-03T15:56:11.975Z</updated>
+  <updated>2021-08-04T10:20:46.611Z</updated>
   <id>https://wentianhao.github.io/</id>
   
   <author>
@@ -17,11 +17,40 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>LinkedList源码分析</title>
+    <link href="https://wentianhao.github.io/2021/08/04/LinkedList/"/>
+    <id>https://wentianhao.github.io/2021/08/04/LinkedList/</id>
+    <published>2021-08-04T09:59:43.000Z</published>
+    <updated>2021-08-04T10:20:46.611Z</updated>
+    
+    
+    <summary type="html">&lt;ul&gt;
+&lt;li&gt;LinkedList是一个继承于AbstractSequentialList的双向链表&lt;/li&gt;
+&lt;li&gt;LinkedList可以被当作堆栈、队列或双端队列进行操作&lt;/li&gt;
+&lt;li&gt;LinkedList实现List接口，能对它进行队列操作&lt;/li&gt;
+&lt;li&gt;LinkedList实现Deque接口，能将其当作双端队列使用&lt;/li&gt;
+&lt;li&gt;LinkedList实现CLoneable接口，即覆盖clone函数，能克隆&lt;/li&gt;
+&lt;li&gt;LinkedList实现java.io.Serializable接口，支持序列化&lt;/li&gt;
+&lt;li&gt;LinkedList非同步的，不是线程安全的，如果想使LinkedList变成线程安全的，可以调用静态类Collections类中的synchronizedList方法；&lt;code&gt;List list= Collections.synchronizedList(new LinkedList());&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;a href=&quot;http://whh.plus:7007/image/r4k&quot;&gt;&lt;img src=&quot;http://whh.plus:7007/images/2021/08/04/47ba0f0d8b574a4460b5574e78352032.md.jpg&quot; alt=&quot;47ba0f0d8b574a4460b5574e78352032.md.jpg&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;http://whh.plus:7007/image/r4k&quot;&gt;&lt;img src=&quot;http://whh.plus:7007/images/2021/08/04/47ba0f0d8b574a4460b5574e78352032.jpg&quot; alt=&quot;47ba0f0d8b574a4460b5574e78352032.jpg&quot;&gt;&lt;/a&gt;&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="java" scheme="https://wentianhao.github.io/categories/java/"/>
+    
+    
+    <category term="java" scheme="https://wentianhao.github.io/tags/java/"/>
+    
+  </entry>
+  
+  <entry>
     <title>ArrayList源码分析</title>
     <link href="https://wentianhao.github.io/2021/08/03/ArrayList/"/>
     <id>https://wentianhao.github.io/2021/08/03/ArrayList/</id>
     <published>2021-08-03T08:52:58.000Z</published>
-    <updated>2021-08-03T15:56:11.975Z</updated>
+    <updated>2021-08-04T05:30:25.741Z</updated>
     
     
     <summary type="html">&lt;p&gt;感觉ArrayList源码分析还是要单独开一章博客，在容器里写的话有点冗余&lt;/p&gt;</summary>
@@ -40,7 +69,7 @@
     <link href="https://wentianhao.github.io/2021/08/01/%E5%AE%B9%E5%99%A8/"/>
     <id>https://wentianhao.github.io/2021/08/01/%E5%AE%B9%E5%99%A8/</id>
     <published>2021-08-01T06:39:27.000Z</published>
-    <updated>2021-08-03T08:58:10.448Z</updated>
+    <updated>2021-08-04T09:56:34.022Z</updated>
     
     
     <summary type="html">&lt;p&gt;Java集合框架：List、Set、Map 以及源码解析&lt;/p&gt;</summary>
@@ -422,28 +451,6 @@
     
     
     <category term="算法" scheme="https://wentianhao.github.io/tags/%E7%AE%97%E6%B3%95/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>markdown公式语法</title>
-    <link href="https://wentianhao.github.io/2020/12/09/markdown%E5%85%AC%E5%BC%8F%E8%AF%AD%E6%B3%95/"/>
-    <id>https://wentianhao.github.io/2020/12/09/markdown%E5%85%AC%E5%BC%8F%E8%AF%AD%E6%B3%95/</id>
-    <published>2020-12-09T08:08:47.000Z</published>
-    <updated>2021-05-27T09:02:39.432Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;记录markdown常用的公式语法&lt;/p&gt;
-&lt;h2 id=&quot;markdown数学符号-amp-公式&quot;&gt;&lt;a href=&quot;#markdown数学符号-amp-公式&quot; class=&quot;headerlink&quot; title=&quot;markdown数学符号 &amp;amp; 公式&quot;&gt;&lt;/a&gt;markdown数学符号 &amp;amp; 公式&lt;/h2&gt;</summary>
-    
-    
-    
-    <category term="blog" scheme="https://wentianhao.github.io/categories/blog/"/>
-    
-    <category term="markdown" scheme="https://wentianhao.github.io/categories/blog/markdown/"/>
-    
-    
-    <category term="blog" scheme="https://wentianhao.github.io/tags/blog/"/>
     
   </entry>
   

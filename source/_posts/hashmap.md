@@ -325,7 +325,7 @@ final V putVal(int hash,K key,V value,boolean onlyIfAbsent,boolean evict) {
 ②. 根据键值对key计算hash值得到插入的数组索引i，如果table[i]桶为null，直接新建节点添加，转向⑥，如果table[i]桶不为空，转向③
 ③. 判断table[i]的首个元素是否和key一样，如果相同直接覆盖value，否则转向④，相同指的是hashCode和equals均相同
 ④. 判断table[i]桶的数据类型是否为TreeNode,即该桶是否为红黑树，如果是红黑树，直接在树中插入键值对，否则转向⑤
-⑤. 遍历table[i]，判断链表长度是否大于8，大于8的话判断数组是否大于等于64，少于则扩容，否则就将链表转化为红黑树，在红黑树中执行插入操作，否则进行链表的插入操作，遍历过程中，判断key若已经存在则直接覆盖
+⑤. 遍历table[i]，判断链表长度是否大于8，大于8的话判断数组是否大于等于64，否则就将链表转化为红黑树，在红黑树中执行插入操作，否则进行链表的插入操作，遍历过程中，判断key若已经存在则直接覆盖
 ⑥. 插入成功后，判断实际存在的键值对数量size是否超过了最大容量threshold,如果超过了，进行扩容
 
 put方法流程：
@@ -576,7 +576,7 @@ final Node<K,V>[] resize() {
 
 这里定义了四个变量：loHead，loTail,hiHead,hiTail两个头节点，两个尾节点
 
-![链表](http://whh.plus:7007/images/2021/08/06/20191214222552803.png)
+![链表](http://whh.plus:7007/images/2021/08/07/20190621145827456.png)
 
 这张图中index=2的桶中有四个节点，在未扩容之前，它们的 hash& cap 都等于2。在扩容之后，它们之中2、18还在一起，10、26却换了一个桶。这就是这句代码的含义：选择出扩容后在同一个桶中的节点。
 `if (e.hash & oldCap) == 0`
@@ -627,6 +627,41 @@ if (hiTail != null){
 扩容后的数组应为原来数组的两倍，并且数组的大小必须是2的幂
 3. 节点在转移的过程中是一个个节点复制还是一串一串的转移？
 从源码中可以看出，扩容时是先找到拆分后处于同一个桶的节点，将这些节点连接好，然后把头节点存入桶中。
+4. 为什么负载因子是0.75？
+根据统计学的结果，hash冲突是符合泊松分布的，而冲突概率最小的是在7-8之间,当桶中元素到达8个的时候，概率已经变得非常小，也就是说用0.75作为负载因子，每个碰撞位置的链表长度超过8个是几乎不可能的。
+5. **HashMap如何扩容**
+- 如果table==null,则HashMap初始化，生成空table返回
+- 如果table不为空，需计算table的长度，newLength = oldLength << 1(如果oldLength已到上限，则newLength = oldLength)
+- 遍历oldTable
+- 首节点为空，循环结束
+- 首节点不为空，无后续节点，重新计算hash位，本次循环结束
+- 若有后续节点，当前是红黑树，走红黑树的重定位,红黑树是把构建新链表的过程变为构建两颗新的红黑树。定位都是使用`(e.hash & oldCap) == 0`判断
+- 若当前是链表，通过 `(e.hash & oldCap) == 0`来判断是否需要移位，分为两类，一类在原位`hash`不动，一类移动到`hash + oldCap`位置
+
+## **resize死循环**
+**jdk7**对于HashMap节点重定位中，在resize()时会形成环形链表，然后导致get时死循环
+![死锁](http://whh.plus:7007/images/2021/08/07/9b7636283ba0b8e17251e7a6d5d87635.png)
+
+resize前的HashMap如下：
+![resize前](http://whh.plus:7007/images/2021/08/07/20190128152737406.png)
+这时，有两个线程需要插入到第四个节点，这个时候需要resize。线程二必须等线程一完成再resize。
+![resize1](http://whh.plus:7007/images/2021/08/07/20190128152749145.png)
+经过线程一resize后，发现a，b节点的顺序被反转了。这时候来看线程二
+![resize2](http://whh.plus:7007/images/2021/08/07/20190128152809635.png)
+1. 线程二开始只是获取a节点，还没获取他的next
+2. 这时候线程一resize完成，`a.next = null,b.next = a;newTable[i] = b;`
+3. 线程二开始执行，获取a节点，`a.next = null;`
+4. 接着执行 `a.next = newTable[i];`这时候线程二就会形成`a->b->a`环形链表
+5. 因为第三步a.next = null,因此c节点丢失了
+6. 如果这时候来查找位于1节点的数据d，就会陷入死循环
+
+**jdk8**resize是让节点的顺序发生改变，没有出现倒排问题。假设有两个线程，线程一执行完成，这时候线程二来执行
+![jdk1.8](http://whh.plus:7007/images/2021/08/07/20190128152831296.png)
+1. 因为顺序没变，所以node1.next还是node2,node2.next从node3变成了null
+2. JDK8在遍历完所有节点之后，才对形成的两个链表进行关联table，不会像jdk7那样形成a-b-a环形链表问题
+3. 但是如果并发了，Java的HashMap还是没有解决丢数据问题。但不会和jdk7有数据倒排以至于死循环问题。
+
+HashMap设计时没有保证线程安全，在多线程时使用`ConcurrentHashMap`
 
 ## HashMap常用方法测试
 ```java
@@ -703,3 +738,6 @@ public class HashMapDemo {
 [深入理解HashMap（二）put方法解析](https://blog.csdn.net/weixin_41565013/article/details/93173607)
 [深入理解HashMap（三）resize方法解析](https://blog.csdn.net/weixin_41565013/article/details/93190786)
 [JavaGuide HashMap(JDK1.8)源码+底层数据结构分析](https://snailclimb.gitee.io/javaguide/#/docs/java/collection/HashMap(JDK1.8)%E6%BA%90%E7%A0%81+%E5%BA%95%E5%B1%82%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%88%86%E6%9E%90)
+[HASHMAP负载因子为什么是0.75](https://www.cnblogs.com/theRhyme/p/10609207.html)
+[HashMap之resize详解](https://blog.csdn.net/weixin_39667787/article/details/86678215)
+[HashMap产生死循环死锁的原因图文极简说明](https://www.pianshen.com/article/62741427515/)

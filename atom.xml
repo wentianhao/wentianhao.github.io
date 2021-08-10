@@ -6,7 +6,7 @@
   <link href="https://wentianhao.github.io/atom.xml" rel="self"/>
   
   <link href="https://wentianhao.github.io/"/>
-  <updated>2021-08-10T16:43:51.147Z</updated>
+  <updated>2021-08-10T15:28:29.548Z</updated>
   <id>https://wentianhao.github.io/</id>
   
   <author>
@@ -15,6 +15,25 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>并发基础</title>
+    <link href="https://wentianhao.github.io/2021/08/10/%E5%B9%B6%E5%8F%91/"/>
+    <id>https://wentianhao.github.io/2021/08/10/%E5%B9%B6%E5%8F%91/</id>
+    <published>2021-08-10T02:35:51.000Z</published>
+    <updated>2021-08-10T15:28:29.548Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;java 并发基础&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="java" scheme="https://wentianhao.github.io/categories/java/"/>
+    
+    
+    <category term="java" scheme="https://wentianhao.github.io/tags/java/"/>
+    
+  </entry>
   
   <entry>
     <title>ConcurrentHashMap</title>
@@ -414,29 +433,6 @@
 &lt;li&gt;完全背包问题&lt;/li&gt;
 &lt;li&gt;多重背包问题&lt;/li&gt;
 &lt;/ul&gt;</summary>
-    
-    
-    
-    <category term="LeetCode" scheme="https://wentianhao.github.io/categories/LeetCode/"/>
-    
-    <category term="DP" scheme="https://wentianhao.github.io/categories/LeetCode/DP/"/>
-    
-    
-    <category term="DP" scheme="https://wentianhao.github.io/tags/DP/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>动态规划算法详解</title>
-    <link href="https://wentianhao.github.io/2021/04/03/dp/"/>
-    <id>https://wentianhao.github.io/2021/04/03/dp/</id>
-    <published>2021-04-03T11:12:19.000Z</published>
-    <updated>2021-06-10T02:28:56.501Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;动态规划DP(Dynamic programming):通过把原问题分解为相对简单的子问题的方式求解复杂问题的方法&lt;/p&gt;
-&lt;p&gt;DP 常适用于 有 &lt;strong&gt;重叠子问题&lt;/strong&gt; 和 &lt;strong&gt;最优子结构性质&lt;/strong&gt; 的问题，动态规划方法所耗时间往往低于朴素解法&lt;/p&gt;
-&lt;h2 id=&quot;基本思想&quot;&gt;&lt;a href=&quot;#基本思想&quot; class=&quot;headerlink&quot; title=&quot;基本思想&quot;&gt;&lt;/a&gt;基本思想&lt;/h2&gt;&lt;p&gt;若要解一个给定的问题，需解其不同部分(即子问题)，再根据子问题的解以得到原问题的解。&lt;/p&gt;</summary>
     
     
     

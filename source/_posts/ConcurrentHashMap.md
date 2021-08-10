@@ -290,3 +290,197 @@ private void rehash(HashEntry<K,V> node) {
 }
 ```
 第一个for是为了寻找这样一个节点，这个节点后面的所有next节点的新位置都是相同的。然后把这个作为一个链表赋值到新位置。第二个for循环是为了把剩余的元素通过头插法插入到指定位置链表。
+
+### get
+1. 计算得到key的存放位置
+2. 遍历指定位置查找相同key的value值
+```java
+public V get(Object key) {
+    Segment<K,V> s;
+    HashEntry<K,V> [] tab;
+    int h = hash(key);
+    long u = (((h >>> segmentShift) & segmentMask) << SSHIFT) + SBASE;
+    // 计算得到key的存放位置
+    if ((s = (Segment<K,V>)UNSAFE.getObjectVolatile(segments,u)) !=null &&  (tab = s.table) != null){
+        for(HashEntry<K,V> e = (HashEntry<K,V>) UNSAFE.getObjectVolatile((long) *((tab.length-1) & h) << TSHIFT) + TBASE); e != null; e = e.next) {
+            //如果是链表，遍历查找相同key的value值
+            K k;
+            if((k = e.key) == key || (e.hash == h && key.equals(k)))
+                return e.value;
+        }
+    }
+    return null;
+}
+```
+
+## ConcurrentHashMap 1.8
+### 存储结构
+![jdk8](https://whh.plus/images/java8_concurrenthashmap.png)
+java8的ConcurrentHashMap相对于Java7来说，不再是之前的**Segment数组+HashEntry数组+链表**，而是**Node数组+链表/红黑树**。当冲突链表达到一定长度时，链表会转换成红黑树
+
+### 初始化initTable
+```java
+private final Node<K,V>[] initTable() {
+    Node<K,V>[]tab; int sc;
+    while((tab = table) == null || tab.length == 0) {
+        // 如果 sizeCtl < 0 ,说明另外的线程执行CAS成功，正在进行初始化
+        if ((sc = sizeCtl) < 0)
+            // 让出 CPU 使用权
+            Thread.yield(); // lost initialization race; just spin
+        else if(U.compareAndSwapInt(this, SIZECTL, sc, -1)) {
+            try {
+                if ((tab = table) == null || tab.length == 0) {
+                    int n = (sc > 0) ? sc : DEFAULT_CAPACITY;
+                    @SuppressWarnings("unchecked")
+                    Node<K,V>[] nt = (Node<K,V>[])new Node<?,?>[n];
+                    table = tab = nt;
+                    sc = n - (n >>> 2);
+                }
+            } finally {
+                sizeCtl = sc;
+            }
+            break;
+        }
+    }
+    return tab;
+}
+```
+ConcurrentHashMap的初始化是通过自旋和CAS操作完成的。需要注意变量`sizeCtl`，决定着当前的初始化状态。
+- -1 ：说明正在初始化
+- -N ：说明有N-1个线程正在进行扩容
+- 表示table初始化大小，如果table没有初始化
+- 表示table容量，如果table已被初始化
+
+### put
+```java
+public V put(K key,V value) {
+    return putVal(key,value,false);
+}
+
+final V putVal(K key, V value,boolean onlyIfAbsent) {
+    //key 和 value 不能为空
+    int (key == null || value == null) throw new NullPointerException();
+    int hash = spread(key.hashCode());
+    int binCount = 0;
+    for (Node<K,V>[] tab = table; ;) {
+        // f = 目标位置元素
+        Node<K,V> f;int n,i,fh; //fh后面存放目标位置的元素hash值
+        if (tab == null || (n = tab.length) == 0)
+            //数组桶为空，初始化数组同(自旋+CAS)
+            tab = initTable();
+        else if ((f = tabAt(tab,i=(n -1) & hash)) == null) {
+            // 桶内为空，CAS放入，不加锁，成功了就直接break跳出
+            if(casTabAt(tab,i,null,new Node<K,V>(hash,key,value,null)))
+                break;
+        } else if ((fh = f.hash) == MOVED)
+            tab = helpTransfer(tab,f);
+        else {
+            V oldVal = null;
+            // 使用 synchronized 加锁加入节点
+            synchronized (f) {
+                if (tabAt(tab,i) == f){
+                    //说明是链表
+                    if (fh >= 0){
+                        binCount = 1;
+                        // 循环加入新的或覆盖节点
+                        for (Node<K,V> e = f;; ++binCount) {
+                            K ek;
+                            if (e.hash == hash && ((ek = e.key) == key || (ek != null && key.equals(ek)))) {
+                                oldVal = e.val;
+                                if (!onlyIfAbsent)
+                                    e.val = value;
+                                break;
+                            }
+                            Node<K,V> pred = e;
+                            if ((e = e.next) == null) {
+                                pred.next = new Node<K,V>(hash, key,value, null);
+                                break;
+                            }
+                    }
+                    else if (f instanceof TreeBin) {
+                        // 红黑树
+                        Node<K,V> p;
+                        binCount = 2;
+                        if ((p = ((TreeBin<K,V>)f).putTreeVal(hash, key,value)) != null) {
+                            oldVal = p.val;
+                            if (!onlyIfAbsent)
+                                p.val = value;
+                        }
+                    }
+                }
+            }
+            if (binCount != 0) {
+                if (binCount >= TREEIFY_THRESHOLD)
+                    treeifyBin(tab, i);
+                if (oldVal != null)
+                    return oldVal;
+                break;
+            }
+        }
+    }
+    addCount(1L, binCount);
+    return null;
+}
+```
+1. 根据key值计算出hashCode
+2. 判断是否需要进行初始化
+3. f为当前的key定位出Node.如果为空表示当前位置可以写入数据，利用CAS尝试写入，失败则自旋保证成功
+4. 如果当前位置的`hashcode == MOVED == -1`，则需要进行扩容
+5. 如果都不满足，利用`synchronized`锁写入数据
+6. 如果数量大于`TREEIFY_THRESHOLD`，则转换为红黑树
+
+### get
+```java
+public V get(Object key) {
+    Node<K,V> tab;Node<K,V>e,p;int n,eh;K ek;
+    // key所在的hash位置
+    int h = spread(key.hashCode());
+    if((tab = table) != null && (n = tab.length) > 0 &&
+        (e = tabAt(tab, (n - 1) & h)) != null) {
+            //如果指定位置元素存在，头节点hash相同
+        if ((eh = e.hash) == h) {
+            if ((ek = e.key) == key || (ek != null && key.equals(ek)))
+                // key hash 值相等，key值相同，直接返回元素 value
+                return e.val;
+        }
+        else if (eh < 0)
+            // 头结点hash值小于0，说明正在扩容或者是红黑树，find查找
+            return (p = e.find(h, key)) != null ? p.val : null;
+        while ((e = e.next) != null) {
+            // 是链表，遍历查找
+            if (e.hash == h &&
+                ((ek = e.key) == key || (ek != null && key.equals(ek))))
+                return e.val;
+        }
+    }
+    return null;
+}
+```
+1. 根据hash计算位置
+2. 查找到指定位置，如果头节点就是要找的，直接返回它的value
+3. 如果头节点hash值小于0，说明正在扩容或者是红黑树，find查找
+4. 如果是链表，遍历查找之
+
+## ConcurrentHashMap线程安全的具体实现方法/底层具体实现
+### JDK1.7
+首先将数据分为一段一段的存储，然后给每一段数据配一把锁，当一个线程占用锁访问其中一个段数据时，其他段的数据也能被其他线程访问
+
+ConcurrentHashMap 包含一个Segment数组，Segment数组是一种数组和链表结构，一个Segment包含一个HashEntry数组，每个HashEntry是一个链表结构的元素，每个Segment守护一个HashEntry数组中的元素，当对HashEntry数组的数据进行修改时，必须首先获得对应的锁。
+
+Segment实现了`ReentrantLock`,Segment是一种可重入锁，扮演锁的角色，HashEntry用于存储键值对数据
+```java
+static class Segment<K,V> extends ReentrantLock implements Serializable {
+}
+```
+
+### JDK1.8
+ConcurrentHashMap取消了Segment分段锁，采用 CAS 和 `synchronized`来保证并发安全。`synchronized`只锁定当前链表或红黑树的首节点，这样只要hash不冲突，就不会产生并发，效率提升N倍。
+
+## 总结
+Java7中的ConcurrentHashMap使用的分段锁，也就是每一个Segment上同时只有一个线程操作，每一个Segment都是一个类似HashMap数组的结构，它可以扩容，冲突会转化为链表，但是Segment个数一旦初始化不能改变
+
+Java8中的ConcurrentHashMap使用的是`Synchronized`锁加CAS的机制，结构也由Java7的`Segment数组+HashEntry数组+链表`进化成了`Node数组+链表/红黑树`，Node类似一个HashEntry的结构。它的冲突再达到一定大小时会转化成红黑树，冲突小于一定数量时会退回链表。
+
+## 参考
+[HashMap？ConcurrentHashMap？相信看完这篇没人能难住你!](https://blog.csdn.net/weixin_44460333/article/details/86770169)
+[JavaGuide-ConcurrentHashMap](https://snailclimb.gitee.io/javaguide/#/docs/java/collection/ConcurrentHashMap%E6%BA%90%E7%A0%81+%E5%BA%95%E5%B1%82%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%88%86%E6%9E%90)

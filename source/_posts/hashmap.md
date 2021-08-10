@@ -59,13 +59,13 @@ static int hash(int h){
 相比于 JDK1.8 的 hash 方法 ，JDK 1.7 的 hash 方法的性能会稍差一点点，因为毕竟扰动了 4 次
 
 **拉链法**：将链表和数组结合，创建一个链表数组，数组中每一格就是一个链表。若遇到哈希冲突，则将冲突的值加到链表中即可。
-![拉链法](http://whh.plus:7007/images/2021/08/05/jdk1.8E4B98BE5898DE79A84E58685E983A8E7BB93E69E84.png)
+![拉链法](https://whh.plus/images/jdk1.8之前的内部结构-HashMap.png)
 
 ### JDK1.8之后
 JDK1.8之后在解决哈希冲突时有了较大的变化
 
 当链表的长度大于 阈值(默认为8)时，首先调用`treeifyBin()`方法，这个方法会根据HashMap数组来决定是否转换为红黑树。只有当数组长度大于或等于64的情况下，才会执行转换红黑树操作，以减少搜索时间。否则，就只是执行`resize()`方法对数组进行扩容。
-![tree](http://whh.plus:7007/images/2021/08/05/up-bba283228693dae74e78da1ef7a9a04c684.png)
+![tree](https://whh.plus/images/jdk1.8之后的内部结构-HashMap.png)
 
 ```java
 public class HashMap<K,V> extends AbstractMap<K,V> implements Map<K,V>,Cloneable,Serializable {
@@ -202,6 +202,27 @@ public HashMap(int initialCapacity,float loadFactor) {
     this.threshold = tableSizeFor(initialCapacity);
 }
 ```
+
+**tableSizeFo(int cap)**：保证HashMap使用2的幂作为哈希表的大小
+```java
+static final int tableSizeFor(int cap) {
+    int n = cap - 1;
+    n |= n >>> 1;
+    n |= n >>> 2;
+    n |= n >>> 4;
+    n |= n >>> 8;
+    n |= n >>> 16;
+    return (n < 0) ? 1:(n >= MAXIMUM_CAPACITY) ? MAXIMUM_CAPACITY : n+1;
+} 
+```
+
+**HashMap的长度为什么是2的幂次方**
+为了能让HashMap存取高效，尽量减少碰撞，也就是要尽量把数据分配均匀。Hash值的范围值[-2147483648,2147483648]。加起来大概40亿的映射空间，只要哈希函数映射的比较均匀分散，一般很难出现碰撞。但数组的长度，以及内存无法存放如此长的数组，因此散列值无法直接拿来用。用之前需要对**数组的长度取模运算，得到的余数才能用来作为存放的位置也就是对应的数组下标。**计算方式`(n-1) & hash`
+
+**取余(%)操作如果除数是2的幂次则等价于 与其除数减一的与(&)操作**
+
+`hash % length == hash & (length-1)`的前提是 length 是 2 的 n 次方；采用二进制位操作 &，相对于%能够提高运算效率，这就解释了 HashMap 的长度为什么是 2 的幂次方。
+
 **putMapEntries方法**
 ```java
 final void putMapEntries(Map<? extends K,? extends V> m,boolean evict) {
@@ -662,6 +683,9 @@ resize前的HashMap如下：
 3. 但是如果并发了，Java的HashMap还是没有解决丢数据问题。但不会和jdk7有数据倒排以至于死循环问题。
 
 HashMap设计时没有保证线程安全，在多线程时使用`ConcurrentHashMap`
+
+## HashMap的7种遍历方法与性能分析
+![](https://whh.plus/images/640.webp)
 
 ## HashMap常用方法测试
 ```java

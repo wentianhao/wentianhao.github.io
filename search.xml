@@ -4,31 +4,6 @@
   
     
     <entry>
-      <title>并发基础</title>
-      <link href="2021/08/10/%E5%B9%B6%E5%8F%91/"/>
-      <url>2021/08/10/%E5%B9%B6%E5%8F%91/</url>
-      
-        <content type="html"><![CDATA[<p>java 并发基础</p><span id="more"></span><h2 id="基础概念"><a href="#基础概念" class="headerlink" title="基础概念"></a>基础概念</h2><h3 id="进程"><a href="#进程" class="headerlink" title="进程"></a>进程</h3><p>进程是程序的一次执行过程，是系统运行程序的基本单位，进程是动态的，系统运行一个程序即 一个进程从创建，运行到消亡的过程</p><p>在Java种启动main函数时就是启动了一个JVM进程，而main函数所在的线程就是这个进程的主线程。</p>]]></content>
-      
-      
-      <categories>
-          
-          <category> java </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> java </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>ConcurrentHashMap</title>
       <link href="2021/08/07/ConcurrentHashMap/"/>
       <url>2021/08/07/ConcurrentHashMap/</url>

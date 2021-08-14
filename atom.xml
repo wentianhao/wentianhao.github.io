@@ -6,7 +6,7 @@
   <link href="https://wentianhao.github.io/atom.xml" rel="self"/>
   
   <link href="https://wentianhao.github.io/"/>
-  <updated>2021-08-10T15:28:29.548Z</updated>
+  <updated>2021-08-14T15:21:59.955Z</updated>
   <id>https://wentianhao.github.io/</id>
   
   <author>
@@ -15,6 +15,53 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Java必知必会</title>
+    <link href="https://wentianhao.github.io/2021/08/14/Java%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A/"/>
+    <id>https://wentianhao.github.io/2021/08/14/Java%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A/</id>
+    <published>2021-08-14T04:18:13.000Z</published>
+    <updated>2021-08-14T15:21:59.955Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;概括Java基础、Java异常、Java集合、Java并发、Java JVM、SSM框架、MySQL、Redis、计算机网络、操作系统、消息队列与分布式&lt;/p&gt;
+&lt;!-- more  --&gt;
+
+&lt;h2 id=&quot;Java基础-44道&quot;&gt;&lt;a</summary>
+        
+      
+    
+    
+    
+    <category term="java" scheme="https://wentianhao.github.io/categories/java/"/>
+    
+    
+    <category term="java" scheme="https://wentianhao.github.io/tags/java/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>并发进阶</title>
+    <link href="https://wentianhao.github.io/2021/08/11/%E5%B9%B6%E5%8F%91%E8%BF%9B%E9%98%B6/"/>
+    <id>https://wentianhao.github.io/2021/08/11/%E5%B9%B6%E5%8F%91%E8%BF%9B%E9%98%B6/</id>
+    <published>2021-08-11T01:56:24.000Z</published>
+    <updated>2021-08-11T11:33:26.101Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;进一步补充并发知识&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="java" scheme="https://wentianhao.github.io/categories/java/"/>
+    
+    
+    <category term="java" scheme="https://wentianhao.github.io/tags/java/"/>
+    
+  </entry>
   
   <entry>
     <title>并发基础</title>
@@ -386,62 +433,6 @@
     
     
     <category term="java" scheme="https://wentianhao.github.io/tags/java/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>动态规划之01背包</title>
-    <link href="https://wentianhao.github.io/2021/06/11/01%E8%83%8C%E5%8C%85/"/>
-    <id>https://wentianhao.github.io/2021/06/11/01%E8%83%8C%E5%8C%85/</id>
-    <published>2021-06-11T03:25:24.000Z</published>
-    <updated>2021-06-18T13:44:53.810Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h2 id=&quot;问题描述&quot;&gt;&lt;a href=&quot;#问题描述&quot; class=&quot;headerlink&quot; title=&quot;问题描述&quot;&gt;&lt;/a&gt;问题描述&lt;/h2&gt;&lt;blockquote&gt;
-&lt;p&gt;给定 n 件物品，物品的重量为 w[i]，物品的价值为</summary>
-        
-      
-    
-    
-    
-    <category term="LeetCode" scheme="https://wentianhao.github.io/categories/LeetCode/"/>
-    
-    <category term="DP" scheme="https://wentianhao.github.io/categories/LeetCode/DP/"/>
-    
-    
-    <category term="DP" scheme="https://wentianhao.github.io/tags/DP/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>背包问题</title>
-    <link href="https://wentianhao.github.io/2021/06/10/%E8%83%8C%E5%8C%85%E9%97%AE%E9%A2%98/"/>
-    <id>https://wentianhao.github.io/2021/06/10/%E8%83%8C%E5%8C%85%E9%97%AE%E9%A2%98/</id>
-    <published>2021-06-10T01:48:41.000Z</published>
-    <updated>2021-06-11T03:24:16.226Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;背包问题是一类经典的动态规划问题，6月是leetcode的背包月，因此就最近做的几道背包题目，简单总结一下。&lt;/p&gt;
-&lt;p&gt;背包问题是一种组合优化的NP完全(NP-Complete,NPC)问题。问题描述：给定一组物品，每种物品都有自己的重量和价格，在限定的总重量内，如何选择，才能使得物品的总价格最高。&lt;/p&gt;
-&lt;p&gt;背包问题一般有以下几种分类：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;01背包问题&lt;/li&gt;
-&lt;li&gt;完全背包问题&lt;/li&gt;
-&lt;li&gt;多重背包问题&lt;/li&gt;
-&lt;/ul&gt;</summary>
-    
-    
-    
-    <category term="LeetCode" scheme="https://wentianhao.github.io/categories/LeetCode/"/>
-    
-    <category term="DP" scheme="https://wentianhao.github.io/categories/LeetCode/DP/"/>
-    
-    
-    <category term="DP" scheme="https://wentianhao.github.io/tags/DP/"/>
     
   </entry>
   

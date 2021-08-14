@@ -1,0 +1,242 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="theme-color" content="#0078E7"><meta name="author" content="先逃跑再说"><meta name="copyright" content="先逃跑再说"><meta name="generator" content="Hexo 5.4.0"><meta name="theme" content="hexo-theme-yun"><title>并发进阶 | wanheo</title><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@900&amp;display=swap" media="print" onload="this.media='all'"><script src="//at.alicdn.com/t/font_1140697_stqaphw3j4.js" async></script><script src="https://cdn.jsdelivr.net/npm/scrollreveal/dist/scrollreveal.min.js" defer></script><script>document.addEventListener("DOMContentLoaded", () => {
+  [".post-card",".post-content img"].forEach((target)=> {
+    ScrollReveal().reveal(target);
+  })
+});
+</script><script src="https://cdn.jsdelivr.net/npm/pjax@latest/pjax.min.js" defer></script><script src="/js/pjax.js" defer></script><script src="https://cdn.jsdelivr.net/npm/vue@2.6.11"></script><link id="light-prism-css" rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs@latest/themes/prism.css" media="(prefers-color-scheme: light)"><link id="dark-prism-css" rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs@latest/themes/prism-tomorrow.css" media="(prefers-color-scheme: dark)"><link rel="icon" href="/yun.svg"><link rel="mask-icon" href="/yun.svg" color="#0078E7"><link rel="alternate icon" href="/yun.ico"><link rel="preload" href="/css/hexo-theme-yun.css" as="style"><link rel="preload" href="/js/utils.js" as="script"><link rel="preload" href="/js/hexo-theme-yun.js" as="script"><link rel="prefetch" href="/js/sidebar.js" as="script"><link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin><script id="yun-config">
+    const Yun = window.Yun || {};
+    window.CONFIG = {"hostname":"wentianhao.github.io","root":"/","title":"先逃跑再说","version":"1.6.1","mode":"time","copycode":true,"page":{"isPost":true},"i18n":{"placeholder":"想要搜些什么？","empty":"找不到您查询的内容: ${query}","hits":"找到 ${hits} 条结果","hits_time":"找到 ${hits} 条结果（用时 ${time} 毫秒）"},"anonymous_image":"https://cdn.jsdelivr.net/gh/YunYouJun/cdn/img/avatar/none.jpg","say":{"api":"https://v1.hitokoto.cn","hitokoto":true},"fireworks":{"colors":["102, 167, 221","62, 131, 225","33, 78, 194"]}};
+  </script><link rel="stylesheet" href="/css/hexo-theme-yun.css"><script src="/js/utils.js"></script><script src="/js/hexo-theme-yun.js"></script><link rel="alternate" href="/atom.xml" title="wanheo" type="application/atom+xml"><script>(function(){
+  var bp = document.createElement('script');
+  var curProtocol = window.location.protocol.split(':')[0];
+  if (curProtocol === 'https') {
+    bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+  }
+  else {
+    bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+  }
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(bp, s);
+})();</script><meta name="description" content="进一步补充并发知识">
+<meta property="og:type" content="article">
+<meta property="og:title" content="并发进阶">
+<meta property="og:url" content="https://wentianhao.github.io/2021/08/11/%E5%B9%B6%E5%8F%91%E8%BF%9B%E9%98%B6/index.html">
+<meta property="og:site_name" content="wanheo">
+<meta property="og:description" content="进一步补充并发知识">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://whh.plus/images/synchronized%E5%85%B3%E9%94%AE%E5%AD%97.png">
+<meta property="article:published_time" content="2021-08-11T01:56:24.000Z">
+<meta property="article:modified_time" content="2021-08-11T11:33:26.101Z">
+<meta property="article:author" content="先逃跑再说">
+<meta property="article:tag" content="java">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://whh.plus/images/synchronized%E5%85%B3%E9%94%AE%E5%AD%97.png"><script src="/js/ui/mode.js"></script></head><body><script defer src="https://cdn.jsdelivr.net/npm/animejs@latest"></script><script defer src="/js/ui/fireworks.js"></script><canvas class="fireworks"></canvas><canvas id="trianglifyContainer"></canvas><script defer src="https://cdn.jsdelivr.net/npm/trianglify@4/dist/trianglify.bundle.js"></script><script>document.addEventListener("DOMContentLoaded", () => {
+  const pattern = trianglify({
+    width: 800,
+    height: 600,
+    cellSize: 75,
+    palette: ["YlGnBu", "GnBu", "Purples", "Blues"],
+  });
+  const canvasOpts = {
+    applyCssScaling: false
+  }
+  document.body.appendChild(pattern.toCanvas(trianglifyContainer, canvasOpts));
+});</script><div class="container"><a class="sidebar-toggle hty-icon-button" id="menu-btn"><div class="hamburger hamburger--spin" type="button"><span class="hamburger-box"><span class="hamburger-inner"></span></span></div></a><div class="sidebar-toggle sidebar-overlay"></div><aside class="sidebar"><script src="/js/sidebar.js"></script><ul class="sidebar-nav"><li class="sidebar-nav-item sidebar-nav-toc hty-icon-button sidebar-nav-active" data-target="post-toc-wrap" title="文章目录"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-list-ordered"></use></svg></li><li class="sidebar-nav-item sidebar-nav-overview hty-icon-button" data-target="site-overview-wrap" title="站点概览"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-passport-line"></use></svg></li></ul><div class="sidebar-panel" id="site-overview-wrap"><div class="site-info mickey-mouse"><a class="site-author-avatar" href="/about/" title="先逃跑再说"><img width="96" loading="lazy" src="/images/wen.jpg" alt="先逃跑再说"><span class="site-author-status" title="永远相信美好的事情即将发生">😊</span></a><div class="site-author-name"><a href="/about/">先逃跑再说</a></div><a class="site-name" href="/about/site.html">wanheo</a><sub class="site-subtitle"></sub><div class="site-desciption"></div></div><nav class="site-state"><a class="site-state-item hty-icon-button icon-home" href="/" title="我的主页"><span class="site-state-item-icon"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-home-4-line"></use></svg></span></a><div class="site-state-item"><a href="/archives/" title="归档"><span class="site-state-item-icon"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-archive-line"></use></svg></span><span class="site-state-item-count">80</span></a></div><div class="site-state-item"><a href="/categories/" title="分类"><span class="site-state-item-icon"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-folder-2-line"></use></svg></span><span class="site-state-item-count">27</span></a></div><div class="site-state-item"><a href="/tags/" title="标签"><span class="site-state-item-icon"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-price-tag-3-line"></use></svg></span><span class="site-state-item-count">35</span></a></div><a class="site-state-item hty-icon-button" target="_blank" rel="noopener" href="https://yun.yunyoujun.cn" title="文档"><span class="site-state-item-icon"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-settings-line"></use></svg></span></a></nav><hr style="margin-bottom:0.5rem"><div class="links-of-author"><a class="links-of-author-item hty-icon-button" rel="noopener" href="/atom.xml" title="RSS" target="_blank" style="color:orange"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-rss-line"></use></svg></a><a class="links-of-author-item hty-icon-button" rel="noopener" href="https://github.com/YunYouJun" title="GitHub" target="_blank" style="color:#6e5494"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-github-line"></use></svg></a><a class="links-of-author-item hty-icon-button" rel="noopener" href="https://music.163.com/#/user/home?id=247102977" title="网易云音乐" target="_blank" style="color:#C20C0C"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-netease-cloud-music-line"></use></svg></a><a class="links-of-author-item hty-icon-button" rel="noopener" href="mailto:me@yunyoujun.cn" title="E-Mail" target="_blank" style="color:#8E71C1"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-mail-line"></use></svg></a></div><hr style="margin:0.5rem 1rem"><div class="links"><a class="links-item hty-icon-button" href="/links/" title="我的小伙伴们" style="color:dodgerblue"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-genderless-line"></use></svg></a></div><br><a class="links-item hty-icon-button" id="toggle-mode-btn" href="javascript:;" title="Mode" style="color: #f1cb64"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-contrast-2-line"></use></svg></a></div><div class="sidebar-panel sidebar-panel-active" id="post-toc-wrap"><div class="post-toc"><div class="post-toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#synchronized-%E5%85%B3%E9%94%AE%E5%AD%97"><span class="toc-number">1.</span> <span class="toc-text">synchronized 关键字</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#synchronized-%E4%BD%BF%E7%94%A8"><span class="toc-number">1.1.</span> <span class="toc-text">synchronized 使用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BA%95%E5%B1%82%E5%8E%9F%E7%90%86"><span class="toc-number">1.2.</span> <span class="toc-text">底层原理</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#synchronized-%E5%90%8C%E6%AD%A5%E8%AF%AD%E5%8F%A5%E5%9D%97"><span class="toc-number">1.2.1.</span> <span class="toc-text">synchronized 同步语句块</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#synchronized-%E4%BF%AE%E9%A5%B0%E6%96%B9%E6%B3%95"><span class="toc-number">1.2.2.</span> <span class="toc-text">synchronized 修饰方法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%B0%8F%E7%BB%93"><span class="toc-number">1.2.3.</span> <span class="toc-text">小结</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#jdk1-6%E4%B9%8B%E5%90%8E%E4%BC%98%E5%8C%96"><span class="toc-number">1.3.</span> <span class="toc-text">jdk1.6之后优化</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#synchronized-%E5%92%8C-ReentrantLock-%E5%8C%BA%E5%88%AB"><span class="toc-number">1.4.</span> <span class="toc-text">synchronized 和 ReentrantLock 区别</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#volatile-%E5%85%B3%E9%94%AE%E5%AD%97"><span class="toc-number">2.</span> <span class="toc-text">volatile 关键字</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#CPU%E7%BC%93%E5%AD%98%E6%A8%A1%E5%9E%8B"><span class="toc-number">2.1.</span> <span class="toc-text">CPU缓存模型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#JMM-Java%E5%86%85%E5%AD%98%E6%A8%A1%E5%9E%8B"><span class="toc-number">2.2.</span> <span class="toc-text">JMM(Java内存模型)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B%E7%9A%84%E4%B8%89%E4%B8%AA%E9%87%8D%E8%A6%81%E7%89%B9%E6%80%A7"><span class="toc-number">2.3.</span> <span class="toc-text">并发编程的三个重要特性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#synchronized-%E5%92%8C-volatile-%E5%8C%BA%E5%88%AB"><span class="toc-number">2.4.</span> <span class="toc-text">synchronized 和 volatile 区别</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ThreadLocal"><span class="toc-number">3.</span> <span class="toc-text">ThreadLocal</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AE%80%E4%BB%8B"><span class="toc-number">3.1.</span> <span class="toc-text">简介</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#demoTest"><span class="toc-number">3.2.</span> <span class="toc-text">demoTest</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ThreadLocal-%E5%8E%9F%E7%90%86"><span class="toc-number">3.3.</span> <span class="toc-text">ThreadLocal 原理</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8F%82%E8%80%83"><span class="toc-number">4.</span> <span class="toc-text">参考</span></a></li></ol></div></div></div></aside><main class="sidebar-translate" id="content"><div id="post"><article class="hty-card post-block" itemscope itemtype="https://schema.org/Article"><link itemprop="mainEntityOfPage" href="https://wentianhao.github.io/2021/08/11/%E5%B9%B6%E5%8F%91%E8%BF%9B%E9%98%B6/"><span hidden itemprop="author" itemscope itemtype="https://schema.org/Person"><meta itemprop="name" content="先逃跑再说"><meta itemprop="description"></span><span hidden itemprop="publisher" itemscope itemtype="https://schema.org/Organization"><meta itemprop="name" content="wanheo"></span><header class="post-header"><h1 class="post-title" itemprop="name headline">并发进阶<a class="post-edit-link" href="https://github.com/wentianhao/wentianhao.github.io/tree/hexo/source/_posts/并发进阶.md" target="_blank" title="编辑" rel="noopener"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-edit-line"></use></svg></a></h1><div class="post-meta"><div class="post-time" style="display:block"><span class="post-meta-item-icon"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-calendar-line"></use></svg></span> <time title="创建时间：2021-08-11 09:56:24" itemprop="dateCreated datePublished" datetime="2021-08-11T09:56:24+08:00">2021-08-11</time></div><span class="post-count"><span class="post-symbolcount"><span class="post-meta-item-icon" title="本文字数"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-file-word-line"></use></svg></span> <span title="本文字数">3.3k</span><span class="post-meta-divider">-</span><span class="post-meta-item-icon" title="阅读时长"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-timer-line"></use></svg></span> <span title="阅读时长">12m</span></span></span><span class="post-busuanzi"><span class="post-meta-divider">-</span><span class="post-meta-item-icon" title="阅读次数"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-eye-line"></use></svg> <span id="busuanzi_value_page_pv"></span></span></span><div class="post-classify"><span class="post-category"> <span class="post-meta-item-icon" style="margin-right:3px;"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-folder-line"></use></svg></span><span itemprop="about" itemscope itemtype="https://schema.org/Thing"><a class="category-item" href="/categories/java/" style="--text-color:var(--hty-text-color)" itemprop="url" rel="index"><span itemprop="text">java</span></a></span></span><span class="post-tag"><span class="post-meta-divider">-</span><a class="tag-item" href="/tags/java/" style="--text-color:var(--hty-text-color)"><span class="post-meta-item-icon"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-price-tag-3-line"></use></svg></span><span class="tag-name">java</span></a></span></div></div></header><section class="post-body" itemprop="articleBody"><div class="post-content markdown-body" style="--smc-primary:#0078E7;"><p>进一步补充并发知识</p>
+<span id="more"></span>
+<h2 id="synchronized-关键字"><a href="#synchronized-关键字" class="headerlink" title="synchronized 关键字"></a>synchronized 关键字</h2><p><img src="https://whh.plus/images/synchronized%E5%85%B3%E9%94%AE%E5%AD%97.png" alt="synchronized关键字" loading="lazy"></p>
+<ul>
+<li><code>synchronized</code> 关键字解决多个线程之间访问资源的同步性</li>
+<li><code>synchronized</code> 关键字可以保证被它修饰的方法或代码块在任意时刻只能有一个线程执行</li>
+</ul>
+<h3 id="synchronized-使用"><a href="#synchronized-使用" class="headerlink" title="synchronized 使用"></a>synchronized 使用</h3><p><code>synchronized</code>关键字最主要的三种使用方法：</p>
+<ol>
+<li>修饰实例方法：作用于当前对象实例加锁，进入同步代码前要获得当前对象实例的锁<pre class="language-java" data-language="java"><code class="language-java"><span class="token keyword">synchronized</span> <span class="token keyword">void</span> <span class="token function">method</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+<span class="token punctuation">&#125;</span></code></pre></li>
+<li>修饰静态方法：给当前类加锁，会作用于类的所有对象实例，进入同步代码前要获得 <strong>当前class的锁</strong>。因为静态成员不属于任何一个实例对象，是类成员(<em>static表明这是该类的一个静态资源，不管new了多少个对象，只有一份</em>)。所以如果线程A调用一个实例对象的非静态<code>synchronized</code>方法，而线程B需要调用这个实例对象所属类的静态<code>synchronized</code>方法，是允许的，不会发生互斥现象，因为 访问静态<code>synchronized</code>方法占用的锁是当前类的锁，而访问非静态<code>synchronized</code>方法占用的是当前实例对象锁。</li>
+</ol>
+<pre class="language-java" data-language="java"><code class="language-java"><span class="token keyword">synchronized</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">method</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+    <span class="token comment">// 业务代码</span>
+<span class="token punctuation">&#125;</span></code></pre>
+<ol start="3">
+<li>修饰代码块：指定加锁对象，对给定对象/类加锁<br><code>synchronized(this|object)</code>：表示进入同步代码前要获得给定对象的锁</li>
+</ol>
+<p><code>synchronized(类.class)</code>：表示进入同步代码前要获得当前类的锁</p>
+<pre class="language-java" data-language="java"><code class="language-java"><span class="token keyword">synchronized</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+<span class="token punctuation">&#125;</span></code></pre>
+
+<p><strong>小结</strong></p>
+<ul>
+<li>synchronized 关键字加到static静态方法和synchronized(class)代码块上都是给 Class对象上锁</li>
+<li>synchronized 关键字加到实例方法上是给对象实例上锁。</li>
+<li>synchronized 关键字加到同步方法块，锁的是synchronized括号配置的对象</li>
+<li>尽量不要使用<code>synchronized(String a)</code>因为JVM中，字符串常量池具有缓存功能</li>
+</ul>
+<p><strong>双重校验锁实现对象单例(线程安全)</strong></p>
+<pre class="language-java" data-language="java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Singleton</span><span class="token punctuation">&#123;</span>
+    <span class="token keyword">private</span> <span class="token keyword">volatile</span> <span class="token keyword">static</span> <span class="token class-name">Singleton</span> uniqueInstance<span class="token punctuation">;</span>
+
+    <span class="token keyword">private</span> <span class="token class-name">Singleton</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    <span class="token punctuation">&#125;</span>
+
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token class-name">Singleton</span> <span class="token function">getUniqueInstance</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token comment">//先判断对象是否已经实例化，没有实例化过才进入加锁代码</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>uniqueInstance <span class="token operator">==</span> <span class="token keyword">null</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+            <span class="token comment">// 类对象加锁</span>
+            <span class="token keyword">synchronized</span> <span class="token punctuation">(</span><span class="token class-name">Singleton</span><span class="token punctuation">.</span><span class="token keyword">class</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+                <span class="token keyword">if</span> <span class="token punctuation">(</span>uniqueInstance <span class="token operator">==</span> <span class="token keyword">null</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+                    uniqueInstance <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Singleton</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                <span class="token punctuation">&#125;</span>
+            <span class="token punctuation">&#125;</span>
+        <span class="token punctuation">&#125;</span>
+        <span class="token keyword">return</span> uniqueInstance<span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span></code></pre>
+<p><code>uniqueInstance</code> 采用 <code>volatile</code> 关键字修饰很有必要，<code>uniqueInstance = new Singleton()</code>分为三步执行</p>
+<ol>
+<li>为uniqueInstance分配内存空间</li>
+<li>初始化uniqueInstance</li>
+<li>将uniqueInstance指向分配的内存地址</li>
+</ol>
+<p>JVM具有指令重排特性，执行顺序可能会变为1-&gt;3-&gt;2，指令重排在单线程环境下不会出现问题，但是在多线程环境下会导致一个线程获得还没初始化的实例。例如，线程T1执行了1 和 3 ，此时 T2 调用getUniqueInstance()发现 uniqueInstance不为空，因此返回uniqueInstance，但是此时uniqueInstance还未被初始化。</p>
+<p><strong>使用 volatile 可以禁止 JVM 的指令重排，保证在多线程环境下也能正常运行</strong></p>
+<p><strong>构造方法不能使用synchronized关键字修饰，构造方法本身就是线程安全的，不存在同步构造方法一说</strong></p>
+<h3 id="底层原理"><a href="#底层原理" class="headerlink" title="底层原理"></a>底层原理</h3><p>synchronized关键字底层原理属于JVM层面</p>
+<h4 id="synchronized-同步语句块"><a href="#synchronized-同步语句块" class="headerlink" title="synchronized 同步语句块"></a>synchronized 同步语句块</h4><p>synchronized同步语句块的实现使用的是monitorenter 和 monitorexit指令，其中monitorenter指令指向同步代码块的开始位置，monitorexit指令则指明同步代码块的结束位置</p>
+<p>当执行 monitorenter 指令时，线程试图获取锁也就是获取 对象监视器 monitor 的持有权，wait/notify等方法也依赖于monitor对象，这就是为什么只有在同步的块或者方法中才能调用wait/notify等方法，否则会抛出java.lang.IllegalMonitorStateException的异常的原因。</p>
+<p>在执行monitorenter时，会尝试获取对象的锁，如果锁的计数器为 0 则表示锁可以被获取，获取后将锁计数器设为 1 也就是加 1。</p>
+<p>在执行 monitorexit 指令后，将锁计数器设为 0，表明锁被释放。如果获取对象锁失败，那当前线程就要阻塞等待，直到锁被另外一个线程释放为止。</p>
+<h4 id="synchronized-修饰方法"><a href="#synchronized-修饰方法" class="headerlink" title="synchronized 修饰方法"></a>synchronized 修饰方法</h4><p>synchronized 修饰的方法并没有 monitorenter 指令和monitorexit 指令，取得代之的确实是 ACC_SYNCHRONIZED 标识，该标识指明了该方法是一个同步方法。JVM 通过该 ACC_SYNCHRONIZED 访问标志来辨别一个方法是否声明为同步方法，从而执行相应的同步调用。</p>
+<h4 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h4><p>synchronized 同步语句块的实现使用的是 monitorenter和monitorexit指令，其中monitor enter指令指向同步代码块的开始位置，monitor exit指令则指明同步代码块的结束位置。</p>
+<p>synchronized 修饰方法时并没有 使用 monitorenter和 monitorexit，而是使用的是 ACC_SYNCHRONIZED 标识，指明了这个方法是一个同步方法</p>
+<p><strong>两者的本质都是 对对象监视器monitor的获取</strong></p>
+<h3 id="jdk1-6之后优化"><a href="#jdk1-6之后优化" class="headerlink" title="jdk1.6之后优化"></a>jdk1.6之后优化</h3><p>JDK1.6之后对锁的实现引入大量优化，如 偏向锁、轻量级锁、自旋锁、适应性锁、锁消除、锁粗化等技术来较少锁操作的开销</p>
+<p>锁主要存在四种状态，无锁状态、偏向锁状态、轻量级锁状态、重量级锁状态。随着竞争的激烈而不断升级，锁可以升级不可降级，这种策略是为了提高获得锁和释放锁的效率</p>
+<h3 id="synchronized-和-ReentrantLock-区别"><a href="#synchronized-和-ReentrantLock-区别" class="headerlink" title="synchronized 和 ReentrantLock 区别"></a>synchronized 和 ReentrantLock 区别</h3><ol>
+<li>两者都是可重入锁</li>
+</ol>
+<p><strong>可重入锁</strong>：自己可以再次获取自己的内部锁。比如一个线程获得了某个对象的锁，这个对象锁还没释放，当其再次想获取这个对象的锁时还是可以获取的，如果不可锁重入的话，会造成死锁。同一个线程每次获取锁，锁的计数器自增1，所以要等到锁的计数器下降为0时才能释放锁</p>
+<ol start="2">
+<li>synchronized依赖于JVM 而 ReentrantLock 依赖于 API<br>synchronized是依赖于JVM实现的，优化都是在虚拟机层面，没有暴露给我们</li>
+</ol>
+<p>ReentrantLock 是JDK 层面实现的，需要lock()、unlock()方法配合try/finally语句块来完成，可以通过查看源代码，查看实现</p>
+<ol start="3">
+<li>ReentrantLock比synchronized增加了一些高级功能</li>
+</ol>
+<ul>
+<li>等待可中断：ReentrantLock提供了一种能够终端等待锁的线程机制，通过lock.lockInterruptibly()来实现这个机制。正在等待的线程可以选择放弃等待，改为处理其他事情</li>
+<li>可实现公平锁：ReentrantLock可以指定是公平锁还是非公平锁，而synchronized只能是非公平锁。所谓公平锁是先等的线程先获得锁。ReentrantLock默认是非公平的，可以通过ReentrantLock类的<code>ReentrantLock(boolean fair)</code>构造方法来指定是否公平</li>
+<li>可实现选择性通知(锁可以绑定多个条件)：synchronized关键字与wait()和notify()/notifyAll()方法相结合可以实现等待/通知机制。ReentrantLock类当然也可以实现，但是需借助Condition接口与newCondition()方法</li>
+</ul>
+<p>Condition是JDK1.5之后的，具有很好的灵活性。可以实现多路通知功能，在一个Lock对象中可以创建多个Condition实例(对象监视器)，线程对象可以注册在指定的Condition中，从而有选择性的进行线程通知，在调度线程上更加灵活。</p>
+<p>在使用notify()/notifyAll()方法进行通知时，被通知的线程是JVM选择的。</p>
+<p>而ReentrantLock类结合Condition实例可以实现“选择性通知”。synchronized关键字就相当于整个Lock对象中只有一个Condition实例，所有的线程都注册在它身上，如果执行notifyAll()方法会通知所有处于等待状态的线程，这样会造成效率问题。而Condition()实例的signalAll()方法只会唤醒注册在该Condition实例中的所有等待线程</p>
+<h2 id="volatile-关键字"><a href="#volatile-关键字" class="headerlink" title="volatile 关键字"></a>volatile 关键字</h2><h3 id="CPU缓存模型"><a href="#CPU缓存模型" class="headerlink" title="CPU缓存模型"></a>CPU缓存模型</h3><p>开发网站后台使用的缓存(比如Redis)是为了解决程序处理速度和访问常规关系型数据库速度不对等的问题。<strong>CPU缓存则是为了解决CPU处理速度和内存处理速度不对等的问题</strong></p>
+<p>内存可以看作是外存的高速缓存，程序运行的时候，将外存的数据复制到内存，由于内存的处理速度远高于外存，这样就提高了处理速度</p>
+<p>小结：CPU Cache 缓存的是内存数据用于解决CPU处理速度和内存不匹配的问题。内存缓存的是硬盘数据用于解决硬盘访问速度过慢的问题。</p>
+<p><strong>CPU cache的工作方式</strong><br>先复制一份数据到CPU Cache中，当CPU需要用到的时候就直接从CPU Cache中读取数据，当运算完成后，再将运算得到的数据写回Main Memory中。但是这样就存在内存缓存不一致的问题！ 比如：执行一个i++操作，两个线程同时执行，假设两个线程从CPU Cache中读取的i=1,两个线程做了1++运算之后再写回Main Memory之后 i = 2.而正确结果应该是i=3</p>
+<p>CPU 为了解决内存缓存不一致性问题可以通过制定缓存一致协议或者其他手段来解决。</p>
+<h3 id="JMM-Java内存模型"><a href="#JMM-Java内存模型" class="headerlink" title="JMM(Java内存模型)"></a>JMM(Java内存模型)</h3><p>在JDK1.2之前，Java内存模型实现总是从 <strong>主存</strong>(即共享内存)读取变量，是不需要进行特别注意的，而在当前的Java内存模型下，线程可以把变量保存本地内存(比如机器的寄存器)中，而不是直接在主存中进行读写，这就可能造成一个线程在主存中修改了一个变量的值，但另外一个线程还在继续使用它在寄存器中的变量值的拷贝，造成数据的不一致。</p>
+<p>要解决这个问题，就需要把变量声明为volatile，这就指示JVM，这个变量是共享且不稳定的，每次使用它都到主存中进行读取。</p>
+<p>volatile 除了防止JVM指令重排，还有一个作用就是保证变量的可见性</p>
+<h3 id="并发编程的三个重要特性"><a href="#并发编程的三个重要特性" class="headerlink" title="并发编程的三个重要特性"></a>并发编程的三个重要特性</h3><ol>
+<li>原子性：一个操作或者多个操作，要么全部执行并且执行过程不会被任何因素打断，要么就都不执行，原子性就像数据库中的事务一样，它们是一个团队，同生共死。<code>synchronized</code>可以保证代码片段的原子性</li>
+<li>可见性：当多个线程访问同一个变量时，一个线程修改了这个变量的值，其他线程能够立即看到修改的值。<code>volatile</code>保证可见性</li>
+<li>有序性：程序执行的顺序按照代码的先后顺序执行。<code>volatile</code>保证一定的有序性，另外可以通过synchronized和Lock来保证有序性</li>
+</ol>
+<h3 id="synchronized-和-volatile-区别"><a href="#synchronized-和-volatile-区别" class="headerlink" title="synchronized 和 volatile 区别"></a>synchronized 和 volatile 区别</h3><ul>
+<li>volatile关键字是线程同步的轻量级实现，所以volatile性能肯定比synchronized关键字好。但volatile只能修饰变量，而synchronized可以修饰方法和代码块</li>
+<li>volatile保证数据的可见性，但不能保证数据的原子性，而synchronized两者都可保证</li>
+<li>volatile关键字主要用于解决多个线程之间的可见性，而synchronized解决的是多个线程之间访问资源的同步性</li>
+</ul>
+<h2 id="ThreadLocal"><a href="#ThreadLocal" class="headerlink" title="ThreadLocal"></a>ThreadLocal</h2><h3 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h3><p>通常情况下，创建的变量可以被任何一个线程访问并修改。JDK中提供的<code>ThreadLocal</code>类是为了解决 <strong>实现每个线程都有自己专属本地变量</strong></p>
+<p><code>ThreadLocal</code>类让每个线程绑定自己的值，可以将<code>ThreadLocal</code>类形象的比喻成存放数据的盒子，盒子中可以存储每个线程的私有数据。</p>
+<p>如果创建了<code>ThreadLocal</code>变量，那么访问这个变量的每个线程都会有这个变量的副本，这也是<code>ThreadLocal</code>变量名的由来。使用<code>get()</code>和<code>set()</code>获取默认值或将其更改为当前线程所存的副本值，避免了线程安全的问题</p>
+<h3 id="demoTest"><a href="#demoTest" class="headerlink" title="demoTest"></a>demoTest</h3><pre class="language-java" data-language="java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">ThreadLocalTest</span> <span class="token keyword">implements</span> <span class="token class-name">Runnable</span> <span class="token punctuation">&#123;</span>
+
+    <span class="token comment">// SimpleDataFormat 不是线程安全的，所以每个线程都要有自己独立的副本</span>
+    <span class="token keyword">private</span> <span class="token keyword">static</span> <span class="token keyword">final</span> <span class="token class-name">ThreadLocal</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">SimpleDateFormat</span><span class="token punctuation">></span></span> formatter <span class="token operator">=</span> <span class="token class-name">ThreadLocal</span><span class="token punctuation">.</span><span class="token function">withInitial</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">-></span> <span class="token keyword">new</span> <span class="token class-name">SimpleDateFormat</span><span class="token punctuation">(</span><span class="token string">"yyyyMMdd HHmm"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span>args<span class="token punctuation">)</span> <span class="token keyword">throws</span> <span class="token class-name">InterruptedException</span> <span class="token punctuation">&#123;</span>
+        <span class="token class-name">ThreadLocalTest</span> obj <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ThreadLocalTest</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span> i<span class="token operator">&lt;</span> <span class="token number">3</span><span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+            <span class="token class-name">Thread</span> t <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Thread</span><span class="token punctuation">(</span>obj<span class="token punctuation">,</span> <span class="token string">" "</span> <span class="token operator">+</span> i<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token class-name">Thread</span><span class="token punctuation">.</span><span class="token function">sleep</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">Random</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">nextInt</span><span class="token punctuation">(</span><span class="token number">1000</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            t<span class="token punctuation">.</span><span class="token function">start</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">&#125;</span>
+    <span class="token punctuation">&#125;</span>
+
+    <span class="token annotation punctuation">@Override</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">run</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"    Thread Name = "</span> <span class="token operator">+</span> <span class="token class-name">Thread</span><span class="token punctuation">.</span><span class="token function">currentThread</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">getName</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">"  default Formatter = "</span> <span class="token operator">+</span> formatter<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">toPattern</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">try</span> <span class="token punctuation">&#123;</span>
+            <span class="token class-name">Thread</span><span class="token punctuation">.</span><span class="token function">sleep</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">Random</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">nextInt</span><span class="token punctuation">(</span><span class="token number">1000</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">&#125;</span> <span class="token keyword">catch</span> <span class="token punctuation">(</span><span class="token class-name">InterruptedException</span> e<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+            e<span class="token punctuation">.</span><span class="token function">printStackTrace</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">&#125;</span>
+        formatter<span class="token punctuation">.</span><span class="token function">set</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">SimpleDateFormat</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"    Thread Name= "</span> <span class="token operator">+</span> <span class="token class-name">Thread</span><span class="token punctuation">.</span><span class="token function">currentThread</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">getName</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">+</span>  <span class="token string">"  formatter = "</span> <span class="token operator">+</span>formatter<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">toPattern</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span></code></pre>
+<p>输出</p>
+<pre class="language-bash" data-language="bash"><code class="language-bash">Thread Name <span class="token operator">=</span>  <span class="token number">0</span>  default Formatter <span class="token operator">=</span> yyyyMMdd HHmm
+Thread <span class="token assign-left variable">Name</span><span class="token operator">=</span>  <span class="token number">0</span>  formatter <span class="token operator">=</span> yy-M-d ah:mm
+Thread Name <span class="token operator">=</span>  <span class="token number">1</span>  default Formatter <span class="token operator">=</span> yyyyMMdd HHmm
+Thread <span class="token assign-left variable">Name</span><span class="token operator">=</span>  <span class="token number">1</span>  formatter <span class="token operator">=</span> yy-M-d ah:mm
+Thread Name <span class="token operator">=</span>  <span class="token number">2</span>  default Formatter <span class="token operator">=</span> yyyyMMdd HHmm
+Thread <span class="token assign-left variable">Name</span><span class="token operator">=</span>  <span class="token number">2</span>  formatter <span class="token operator">=</span> yy-M-d ah:mm</code></pre>
+<p>Thread-0已经改变了formatter的值，但其他线程默认值与初始化值相等。</p>
+<h3 id="ThreadLocal-原理"><a href="#ThreadLocal-原理" class="headerlink" title="ThreadLocal 原理"></a>ThreadLocal 原理</h3><pre class="language-java" data-language="java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Thread</span> <span class="token keyword">implements</span> <span class="token class-name">Runnable</span> <span class="token punctuation">&#123;</span>
+    <span class="token comment">//与此线程有关的ThreadLocal值。由ThreadLocal类维护</span>
+    <span class="token class-name">ThreadLocal<span class="token punctuation">.</span>ThreadLocalMap</span> threadLocals <span class="token operator">=</span> <span class="token keyword">null</span><span class="token punctuation">;</span>
+
+    <span class="token comment">//与此线程有关的InheritableThreadLocal值。由InheritableThreadLocal类维护</span>
+    <span class="token class-name">ThreadLocal<span class="token punctuation">.</span>ThreadLocalMap</span> inheritableThreadLocals <span class="token operator">=</span> <span class="token keyword">null</span><span class="token punctuation">;</span>
+    <span class="token comment">//......</span>
+<span class="token punctuation">&#125;</span></code></pre>
+<p>Thread类有一个threadLocals</p>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p><a target="_blank" rel="noopener" href="https://snailclimb.gitee.io/javaguide/#/docs/java/multi-thread/2020%E6%9C%80%E6%96%B0Java%E5%B9%B6%E5%8F%91%E8%BF%9B%E9%98%B6%E5%B8%B8%E8%A7%81%E9%9D%A2%E8%AF%95%E9%A2%98%E6%80%BB%E7%BB%93">JAVA_GUIDE</a><br><a target="_blank" rel="noopener" href="https://www.cnblogs.com/wuqinglong/p/9945618.html">Java6及以上版本对synchronized的优化</a></p>
+</div><div id="reward-container"><span class="hty-icon-button button-glow" id="reward-button" title="打赏" onclick="var qr = document.getElementById(&quot;qr&quot;); qr.style.display = (qr.style.display === &quot;none&quot;) ? &quot;block&quot; : &quot;none&quot;;"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-hand-coin-line"></use></svg></span><div id="reward-comment">I'm so cute. Please give me money.</div><div id="qr" style="display:none;"><div style="display:inline-block"></div><div style="display:inline-block"></div><div style="display:inline-block"></div></div></div><ul class="post-copyright"><li class="post-copyright-author"><strong>本文作者：</strong>先逃跑再说</li><li class="post-copyright-link"><strong>本文链接：</strong><a href="https://wentianhao.github.io/2021/08/11/%E5%B9%B6%E5%8F%91%E8%BF%9B%E9%98%B6/" title="并发进阶">https://wentianhao.github.io/2021/08/11/%E5%B9%B6%E5%8F%91%E8%BF%9B%E9%98%B6/</a></li><li class="post-copyright-license"><strong>版权声明：</strong>本博客所有文章除特别声明外，均默认采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="noopener" title="CC BY-NC-SA 4.0 "><svg class="icon"><use xlink:href="#icon-creative-commons-line"></use></svg><svg class="icon"><use xlink:href="#icon-creative-commons-by-line"></use></svg><svg class="icon"><use xlink:href="#icon-creative-commons-nc-line"></use></svg><svg class="icon"><use xlink:href="#icon-creative-commons-sa-line"></use></svg></a> 许可协议。</li></ul></section></article><div class="post-nav"><div class="post-nav-item"><a class="post-nav-prev" href="/2021/08/14/Java%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A/" rel="prev" title="Java必知必会"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-arrow-left-s-line"></use></svg><span class="post-nav-text">Java必知必会</span></a></div><div class="post-nav-item"><a class="post-nav-next" href="/2021/08/10/%E5%B9%B6%E5%8F%91/" rel="next" title="并发基础"><span class="post-nav-text">并发基础</span><svg class="icon" aria-hidden="true"><use xlink:href="#icon-arrow-right-s-line"></use></svg></a></div></div></div><div class="hty-card" id="comment"><div class="comment-tooltip text-center"><span>若您想及时得到回复提醒，建议跳转 GitHub Issues 评论。</span><br><span>若没有本文 Issue，您可以使用 Comment 模版新建。</span><br></div><div class="toggle-comment-system" style="margin: 1rem auto"><a class="toggle-comment-btn hty-button hty-button--raised text-uppercase" data-target="#valine-container" onclick="showComment(this.dataset.target)">valine</a><style>.utterances {
+  display: none;
+}</style><a class="toggle-comment-btn hty-button hty-button--raised text-uppercase" data-target=".utterances" onclick="showComment(this.dataset.target)">utterances</a><script>function hideAllComment() {
+  //- hide all
+  document.querySelectorAll('.toggle-comment-btn').forEach((btn) => {
+    const container = document.querySelector(btn.dataset.target);
+    if (container) {
+      container.style.display = "none";
+    }
+  });
+}
+function showComment(target) {
+  hideAllComment();
+  //- show target
+  const targetContainer = document.querySelector(target);
+  if (targetContainer) {
+    targetContainer.style.display = "block";
+  }
+}
+</script></div><div id="valine-container"></div><script>Yun.utils.getScript("https://cdn.jsdelivr.net/npm/valine@latest/dist/Valine.min.js", () => {
+  const valineConfig = {"enable":true,"appId":"lKhR0buRT7OeiwUq9ECRwPba-MdYXbMMI","appKey":"5cz28s0hMEfyou89engEFMmS","placeholder":"Just go go","avatar":null,"pageSize":10,"visitor":false,"highlight":true,"recordIP":false,"enableQQ":true,"meta":["nick","mail","link"],"el":"#valine-container","lang":"zh-cn"}
+  valineConfig.path = "/2021/08/11/%E5%B9%B6%E5%8F%91%E8%BF%9B%E9%98%B6/"
+  new Valine(valineConfig)
+}, window.Valine);</script></div></main><footer class="sidebar-translate" id="footer"><div class="copyright"><span>&copy; 2020 – 2021 </span><span class="with-love" id="animate"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-cloud-line"></use></svg></span><span class="author"> 先逃跑再说</span></div><div class="powered"><span>由 <a href="https://hexo.io" target="_blank" rel="noopener">Hexo</a> 驱动 v5.4.0</span><span class="footer-separator">|</span><span>主题 - <a rel="noopener" href="https://github.com/YunYouJun/hexo-theme-yun" target="_blank"><span>Yun</span></a> v1.6.1</span></div><div class="live_time"><span>本博客已萌萌哒地运行</span><span id="display_live_time"></span><span class="moe-text">(●'◡'●)</span><script>function blog_live_time() {
+  setTimeout(blog_live_time, 1000);
+  const start = new Date('2020-01-05T00:00:00');
+  const now = new Date();
+  const timeDiff = (now.getTime() - start.getTime());
+  const msPerMinute = 60 * 1000;
+  const msPerHour = 60 * msPerMinute;
+  const msPerDay = 24 * msPerHour;
+  const passDay = Math.floor(timeDiff / msPerDay);
+  const passHour = Math.floor((timeDiff % msPerDay) / 60 / 60 / 1000);
+  const passMinute = Math.floor((timeDiff % msPerHour) / 60 / 1000);
+  const passSecond = Math.floor((timeDiff % msPerMinute) / 1000);
+  display_live_time.innerHTML = " " + passDay + " 天 " + passHour + " 小时 " + passMinute + " 分 " + passSecond + " 秒";
+}
+blog_live_time();
+</script></div><div id="busuanzi"><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><span id="busuanzi_container_site_uv" title="总访客量"><span><svg class="icon" aria-hidden="true"><use xlink:href="#icon-user-line"></use></svg></span><span id="busuanzi_value_site_uv"></span></span><span class="footer-separator">|</span><span id="busuanzi_container_site_pv" title="总访问量"><span><svg class="icon" aria-hidden="true"><use xlink:href="#icon-eye-line"></use></svg></span><span id="busuanzi_value_site_pv"></span></span></div></footer><a class="hty-icon-button" id="back-to-top" aria-label="back-to-top" href="#"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-arrow-up-s-line"></use></svg><svg class="progress-circle-container" viewBox="0 0 100 100"><circle class="progress-circle" id="progressCircle" cx="50" cy="50" r="48" fill="none" stroke="#0078E7" stroke-width="2" stroke-linecap="round"></circle></svg></a><script>const date = new Date();
+const today = (date.getMonth() + 1) + "-" + date.getDate()
+const mourn_days = ["4-4","9-18"]
+if (mourn_days.includes(today)) {
+  document.documentElement.style.filter = "grayscale(1)";
+}</script></div></body></html>

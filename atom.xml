@@ -6,7 +6,7 @@
   <link href="https://wentianhao.github.io/atom.xml" rel="self"/>
   
   <link href="https://wentianhao.github.io/"/>
-  <updated>2021-08-14T15:58:30.823Z</updated>
+  <updated>2021-08-22T07:08:28.213Z</updated>
   <id>https://wentianhao.github.io/</id>
   
   <author>
@@ -15,6 +15,56 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>SpringBoot-表单验证-统一异常处理-自定义验证信息源</title>
+    <link href="https://wentianhao.github.io/2021/08/20/validation/"/>
+    <id>https://wentianhao.github.io/2021/08/20/validation/</id>
+    <published>2021-08-20T13:29:16.000Z</published>
+    <updated>2021-08-22T07:08:28.213Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;前端验证一般是为了满足界面的友好性、客户体验性等，但仅靠前端进行数据合法性校验，是不够的。因为非法用户可能会直接从客户端获取请求地址进行非法请求，所以后端的校验是必不可少的。&lt;/p&gt;
+&lt;p&gt;在书写业务逻辑时，经常有大量的判空校验。比如Service层或Dao层的方法入参、入</summary>
+        
+      
+    
+    
+    
+    <category term="spring boot" scheme="https://wentianhao.github.io/categories/spring-boot/"/>
+    
+    
+    <category term="spring boot" scheme="https://wentianhao.github.io/tags/spring-boot/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>线程池</title>
+    <link href="https://wentianhao.github.io/2021/08/18/%E7%BA%BF%E7%A8%8B%E6%B1%A0/"/>
+    <id>https://wentianhao.github.io/2021/08/18/%E7%BA%BF%E7%A8%8B%E6%B1%A0/</id>
+    <published>2021-08-18T08:07:41.000Z</published>
+    <updated>2021-08-18T10:27:37.462Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;详细分析线程池&lt;/p&gt;
+&lt;p&gt;使用线程池的好处：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;降低资源消耗：通过重复使用已创建的线程降低线程创建和销毁的消耗&lt;/li&gt;
+&lt;li&gt;提高资源利用率：当任务到达时，可以不需要创建线程就立即执行&lt;/li&gt;
+&lt;li&gt;提高线程的可管理性：线程池可以统一分配，调优和监控</summary>
+    
+    
+    
+    <category term="java" scheme="https://wentianhao.github.io/categories/java/"/>
+    
+    
+    <category term="java" scheme="https://wentianhao.github.io/tags/java/"/>
+    
+  </entry>
   
   <entry>
     <title>Java必知必会</title>
@@ -396,43 +446,6 @@
     
     
     <category term="mysql" scheme="https://wentianhao.github.io/tags/mysql/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>transformer</title>
-    <link href="https://wentianhao.github.io/2021/06/20/transformer/"/>
-    <id>https://wentianhao.github.io/2021/06/20/transformer/</id>
-    <published>2021-06-20T05:51:55.000Z</published>
-    <updated>2021-06-29T03:37:41.587Z</updated>
-    
-    
-    
-    
-    <category term="NLP" scheme="https://wentianhao.github.io/categories/NLP/"/>
-    
-    
-    <category term="NLP" scheme="https://wentianhao.github.io/tags/NLP/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>java虚拟机</title>
-    <link href="https://wentianhao.github.io/2021/06/18/java%E8%99%9A%E6%8B%9F%E6%9C%BA/"/>
-    <id>https://wentianhao.github.io/2021/06/18/java%E8%99%9A%E6%8B%9F%E6%9C%BA/</id>
-    <published>2021-06-18T05:48:46.000Z</published>
-    <updated>2021-07-07T11:27:07.801Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;记录 学习《深入理解Java虚拟机》以及 &lt;a href=&quot;https://snailclimb.gitee.io/javaguide/#/docs/java/jvm/Java%E5%86%85%E5%AD%98%E5%8C%BA%E5%9F%9F&quot;&gt;JavaGuide&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;在虚拟机自动内存管理机制下，不再需要像 C/C++程序开发程序员这样为每一个 new 操作去写对应的 delete/free 操作，不容易出现内存泄漏和内存溢出问题。&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="java" scheme="https://wentianhao.github.io/categories/java/"/>
-    
-    
-    <category term="java" scheme="https://wentianhao.github.io/tags/java/"/>
     
   </entry>
   

@@ -1,0 +1,955 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="theme-color" content="#0078E7"><meta name="author" content="先逃跑再说"><meta name="copyright" content="先逃跑再说"><meta name="generator" content="Hexo 5.4.0"><meta name="theme" content="hexo-theme-yun"><title>SpringBoot-表单验证-统一异常处理-自定义验证信息源 | wanheo</title><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@900&amp;display=swap" media="print" onload="this.media='all'"><script src="//at.alicdn.com/t/font_1140697_stqaphw3j4.js" async></script><script src="https://cdn.jsdelivr.net/npm/scrollreveal/dist/scrollreveal.min.js" defer></script><script>document.addEventListener("DOMContentLoaded", () => {
+  [".post-card",".post-content img"].forEach((target)=> {
+    ScrollReveal().reveal(target);
+  })
+});
+</script><script src="https://cdn.jsdelivr.net/npm/pjax@latest/pjax.min.js" defer></script><script src="/js/pjax.js" defer></script><script src="https://cdn.jsdelivr.net/npm/vue@2.6.11"></script><link id="light-prism-css" rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs@latest/themes/prism.css" media="(prefers-color-scheme: light)"><link id="dark-prism-css" rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs@latest/themes/prism-tomorrow.css" media="(prefers-color-scheme: dark)"><link rel="icon" href="/yun.svg"><link rel="mask-icon" href="/yun.svg" color="#0078E7"><link rel="alternate icon" href="/yun.ico"><link rel="preload" href="/css/hexo-theme-yun.css" as="style"><link rel="preload" href="/js/utils.js" as="script"><link rel="preload" href="/js/hexo-theme-yun.js" as="script"><link rel="prefetch" href="/js/sidebar.js" as="script"><link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin><script id="yun-config">
+    const Yun = window.Yun || {};
+    window.CONFIG = {"hostname":"wentianhao.github.io","root":"/","title":"先逃跑再说","version":"1.6.1","mode":"time","copycode":true,"page":{"isPost":true},"i18n":{"placeholder":"想要搜些什么？","empty":"找不到您查询的内容: ${query}","hits":"找到 ${hits} 条结果","hits_time":"找到 ${hits} 条结果（用时 ${time} 毫秒）"},"anonymous_image":"https://cdn.jsdelivr.net/gh/YunYouJun/cdn/img/avatar/none.jpg","say":{"api":"https://v1.hitokoto.cn","hitokoto":true},"fireworks":{"colors":["102, 167, 221","62, 131, 225","33, 78, 194"]}};
+  </script><link rel="stylesheet" href="/css/hexo-theme-yun.css"><script src="/js/utils.js"></script><script src="/js/hexo-theme-yun.js"></script><link rel="alternate" href="/atom.xml" title="wanheo" type="application/atom+xml"><script>(function(){
+  var bp = document.createElement('script');
+  var curProtocol = window.location.protocol.split(':')[0];
+  if (curProtocol === 'https') {
+    bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+  }
+  else {
+    bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+  }
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(bp, s);
+})();</script><meta name="description" content="前端验证一般是为了满足界面的友好性、客户体验性等，但仅靠前端进行数据合法性校验，是不够的。因为非法用户可能会直接从客户端获取请求地址进行非法请求，所以后端的校验是必不可少的。 在书写业务逻辑时，经常有大量的判空校验。比如Service层或Dao层的方法入参、入参对象、出参等都有一套校验规则。比如有的字段必传，有的非必传，返回值有些字段必须有值，有的非必须等等 众多if else的重复无意义代码，也">
+<meta property="og:type" content="article">
+<meta property="og:title" content="SpringBoot-表单验证-统一异常处理-自定义验证信息源">
+<meta property="og:url" content="https://wentianhao.github.io/2021/08/20/validation/index.html">
+<meta property="og:site_name" content="wanheo">
+<meta property="og:description" content="前端验证一般是为了满足界面的友好性、客户体验性等，但仅靠前端进行数据合法性校验，是不够的。因为非法用户可能会直接从客户端获取请求地址进行非法请求，所以后端的校验是必不可少的。 在书写业务逻辑时，经常有大量的判空校验。比如Service层或Dao层的方法入参、入参对象、出参等都有一套校验规则。比如有的字段必传，有的非必传，返回值有些字段必须有值，有的非必须等等 众多if else的重复无意义代码，也">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://whh.plus/images/valid1.png">
+<meta property="og:image" content="https://whh.plus/images/test1.png">
+<meta property="og:image" content="https://whh.plus/images/get.png">
+<meta property="og:image" content="https://whh.plus/images/add.png">
+<meta property="og:image" content="https://whh.plus/images/add1.png">
+<meta property="og:image" content="https://whh.plus/images/put.png">
+<meta property="og:image" content="https://whh.plus/images/delete.png">
+<meta property="og:image" content="https://whh.plus/images/phone.png">
+<meta property="og:image" content="https://whh.plus/images/get1.png">
+<meta property="og:image" content="https://whh.plus/images/testException.png">
+<meta property="article:published_time" content="2021-08-20T13:29:16.000Z">
+<meta property="article:modified_time" content="2021-08-22T07:08:28.213Z">
+<meta property="article:author" content="先逃跑再说">
+<meta property="article:tag" content="spring boot">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://whh.plus/images/valid1.png"><script src="/js/ui/mode.js"></script></head><body><script defer src="https://cdn.jsdelivr.net/npm/animejs@latest"></script><script defer src="/js/ui/fireworks.js"></script><canvas class="fireworks"></canvas><canvas id="trianglifyContainer"></canvas><script defer src="https://cdn.jsdelivr.net/npm/trianglify@4/dist/trianglify.bundle.js"></script><script>document.addEventListener("DOMContentLoaded", () => {
+  const pattern = trianglify({
+    width: 800,
+    height: 600,
+    cellSize: 75,
+    palette: ["YlGnBu", "GnBu", "Purples", "Blues"],
+  });
+  const canvasOpts = {
+    applyCssScaling: false
+  }
+  document.body.appendChild(pattern.toCanvas(trianglifyContainer, canvasOpts));
+});</script><div class="container"><a class="sidebar-toggle hty-icon-button" id="menu-btn"><div class="hamburger hamburger--spin" type="button"><span class="hamburger-box"><span class="hamburger-inner"></span></span></div></a><div class="sidebar-toggle sidebar-overlay"></div><aside class="sidebar"><script src="/js/sidebar.js"></script><ul class="sidebar-nav"><li class="sidebar-nav-item sidebar-nav-toc hty-icon-button sidebar-nav-active" data-target="post-toc-wrap" title="文章目录"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-list-ordered"></use></svg></li><li class="sidebar-nav-item sidebar-nav-overview hty-icon-button" data-target="site-overview-wrap" title="站点概览"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-passport-line"></use></svg></li></ul><div class="sidebar-panel" id="site-overview-wrap"><div class="site-info mickey-mouse"><a class="site-author-avatar" href="/about/" title="先逃跑再说"><img width="96" loading="lazy" src="/images/wen.jpg" alt="先逃跑再说"><span class="site-author-status" title="永远相信美好的事情即将发生">😊</span></a><div class="site-author-name"><a href="/about/">先逃跑再说</a></div><a class="site-name" href="/about/site.html">wanheo</a><sub class="site-subtitle"></sub><div class="site-desciption"></div></div><nav class="site-state"><a class="site-state-item hty-icon-button icon-home" href="/" title="我的主页"><span class="site-state-item-icon"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-home-4-line"></use></svg></span></a><div class="site-state-item"><a href="/archives/" title="归档"><span class="site-state-item-icon"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-archive-line"></use></svg></span><span class="site-state-item-count">82</span></a></div><div class="site-state-item"><a href="/categories/" title="分类"><span class="site-state-item-icon"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-folder-2-line"></use></svg></span><span class="site-state-item-count">27</span></a></div><div class="site-state-item"><a href="/tags/" title="标签"><span class="site-state-item-icon"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-price-tag-3-line"></use></svg></span><span class="site-state-item-count">35</span></a></div><a class="site-state-item hty-icon-button" target="_blank" rel="noopener" href="https://yun.yunyoujun.cn" title="文档"><span class="site-state-item-icon"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-settings-line"></use></svg></span></a></nav><hr style="margin-bottom:0.5rem"><div class="links-of-author"><a class="links-of-author-item hty-icon-button" rel="noopener" href="/atom.xml" title="RSS" target="_blank" style="color:orange"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-rss-line"></use></svg></a><a class="links-of-author-item hty-icon-button" rel="noopener" href="https://github.com/YunYouJun" title="GitHub" target="_blank" style="color:#6e5494"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-github-line"></use></svg></a><a class="links-of-author-item hty-icon-button" rel="noopener" href="https://music.163.com/#/user/home?id=247102977" title="网易云音乐" target="_blank" style="color:#C20C0C"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-netease-cloud-music-line"></use></svg></a><a class="links-of-author-item hty-icon-button" rel="noopener" href="mailto:me@yunyoujun.cn" title="E-Mail" target="_blank" style="color:#8E71C1"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-mail-line"></use></svg></a></div><hr style="margin:0.5rem 1rem"><div class="links"><a class="links-item hty-icon-button" href="/links/" title="我的小伙伴们" style="color:dodgerblue"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-genderless-line"></use></svg></a></div><br><a class="links-item hty-icon-button" id="toggle-mode-btn" href="javascript:;" title="Mode" style="color: #f1cb64"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-contrast-2-line"></use></svg></a></div><div class="sidebar-panel sidebar-panel-active" id="post-toc-wrap"><div class="post-toc"><div class="post-toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%A1%B9%E7%9B%AE%E7%BB%93%E6%9E%84"><span class="toc-number">1.</span> <span class="toc-text">项目结构</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AF%BC%E5%85%A5%E4%BE%9D%E8%B5%96"><span class="toc-number">1.1.</span> <span class="toc-text">导入依赖</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B7%BB%E5%8A%A0%E5%AE%9E%E4%BD%93%E7%B1%BB"><span class="toc-number">1.2.</span> <span class="toc-text">添加实体类</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8E%A5%E5%8F%A3%E8%BF%94%E5%9B%9E%E5%B0%81%E8%A3%85%E7%B1%BB"><span class="toc-number">1.3.</span> <span class="toc-text">接口返回封装类</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8E%A7%E5%88%B6%E5%99%A8"><span class="toc-number">1.4.</span> <span class="toc-text">控制器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B5%8B%E8%AF%95"><span class="toc-number">1.5.</span> <span class="toc-text">测试</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%86%E7%BB%84%E6%A0%A1%E9%AA%8C"><span class="toc-number">2.</span> <span class="toc-text">分组校验</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B7%BB%E5%8A%A0%E5%88%86%E7%BB%84%E6%8E%A5%E5%8F%A3"><span class="toc-number">2.1.</span> <span class="toc-text">添加分组接口</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BF%AE%E6%94%B9%E5%AE%9E%E4%BD%93%E7%B1%BB"><span class="toc-number">2.2.</span> <span class="toc-text">修改实体类</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BF%AE%E6%94%B9%E6%8E%A7%E5%88%B6%E5%99%A8"><span class="toc-number">2.3.</span> <span class="toc-text">修改控制器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B5%8B%E8%AF%95-1"><span class="toc-number">2.4.</span> <span class="toc-text">测试</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%87%AA%E5%AE%9A%E4%B9%89%E9%AA%8C%E8%AF%81"><span class="toc-number">3.</span> <span class="toc-text">自定义验证</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B7%BB%E5%8A%A0%E6%B3%A8%E8%A7%A3"><span class="toc-number">3.1.</span> <span class="toc-text">添加注解</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BC%96%E5%86%99%E9%AA%8C%E8%AF%81%E9%80%BB%E8%BE%91"><span class="toc-number">3.2.</span> <span class="toc-text">编写验证逻辑</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BF%AE%E6%94%B9%E5%AE%9E%E4%BD%93"><span class="toc-number">3.3.</span> <span class="toc-text">修改实体</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B5%8B%E8%AF%95-2"><span class="toc-number">3.4.</span> <span class="toc-text">测试</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Pattern"><span class="toc-number">3.5.</span> <span class="toc-text">@Pattern</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%B0%83%E7%94%A8%E8%BF%87%E7%A8%8B%E9%AA%8C%E8%AF%81"><span class="toc-number">4.</span> <span class="toc-text">调用过程验证</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8-spring-bean"><span class="toc-number">4.1.</span> <span class="toc-text">使用 spring bean</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%96%B9%E6%B3%95%E5%8F%82%E6%95%B0%E9%AA%8C%E8%AF%81"><span class="toc-number">5.</span> <span class="toc-text">方法参数验证</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BB%9F%E4%B8%80%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86"><span class="toc-number">6.</span> <span class="toc-text">统一异常处理</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%9B%E5%BB%BA%E4%B8%9A%E5%8A%A1%E5%BC%82%E5%B8%B8%E7%B1%BB"><span class="toc-number">6.1.</span> <span class="toc-text">创建业务异常类</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%9B%E5%BB%BA%E5%85%A8%E5%B1%80%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86%E5%99%A8"><span class="toc-number">6.2.</span> <span class="toc-text">创建全局异常处理器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BF%AE%E6%94%B9%E6%8E%A7%E5%88%B6%E5%99%A8-1"><span class="toc-number">6.3.</span> <span class="toc-text">修改控制器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B5%8B%E8%AF%95-3"><span class="toc-number">6.4.</span> <span class="toc-text">测试</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%87%AA%E5%AE%9A%E4%B9%89%E9%AA%8C%E8%AF%81%E4%BF%A1%E6%81%AF%E6%BA%90"><span class="toc-number">7.</span> <span class="toc-text">自定义验证信息源</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BF%AE%E6%94%B9%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6-ValidatorConfig"><span class="toc-number">7.1.</span> <span class="toc-text">修改配置文件(ValidatorConfig)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B7%BB%E5%8A%A0%E4%BF%A1%E6%81%AF%E6%BA%90%E6%96%87%E4%BB%B6"><span class="toc-number">7.2.</span> <span class="toc-text">添加信息源文件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BF%AE%E6%94%B9%E5%AE%9E%E4%BD%93%E7%B1%BB-1"><span class="toc-number">7.3.</span> <span class="toc-text">修改实体类</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B3%A8%E8%A7%A3"><span class="toc-number">8.</span> <span class="toc-text">注解</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8F%82%E8%80%83"><span class="toc-number">9.</span> <span class="toc-text">参考</span></a></li></ol></div></div></div></aside><main class="sidebar-translate" id="content"><div id="post"><article class="hty-card post-block" itemscope itemtype="https://schema.org/Article"><link itemprop="mainEntityOfPage" href="https://wentianhao.github.io/2021/08/20/validation/"><span hidden itemprop="author" itemscope itemtype="https://schema.org/Person"><meta itemprop="name" content="先逃跑再说"><meta itemprop="description"></span><span hidden itemprop="publisher" itemscope itemtype="https://schema.org/Organization"><meta itemprop="name" content="wanheo"></span><header class="post-header"><h1 class="post-title" itemprop="name headline">SpringBoot-表单验证-统一异常处理-自定义验证信息源<a class="post-edit-link" href="https://github.com/wentianhao/wentianhao.github.io/tree/hexo/source/_posts/validation.md" target="_blank" title="编辑" rel="noopener"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-edit-line"></use></svg></a></h1><div class="post-meta"><div class="post-time" style="display:block"><span class="post-meta-item-icon"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-calendar-line"></use></svg></span> <time title="创建时间：2021-08-20 21:29:16" itemprop="dateCreated datePublished" datetime="2021-08-20T21:29:16+08:00">2021-08-20</time><span class="post-meta-divider">-</span><span class="post-meta-item-icon"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-calendar-2-line"></use></svg></span> <time title="修改时间：2021-08-22 15:08:28" itemprop="dateModified" datetime="2021-08-22T15:08:28+08:00">2021-08-22</time></div><span class="post-count"><span class="post-symbolcount"><span class="post-meta-item-icon" title="本文字数"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-file-word-line"></use></svg></span> <span title="本文字数">4.4k</span><span class="post-meta-divider">-</span><span class="post-meta-item-icon" title="阅读时长"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-timer-line"></use></svg></span> <span title="阅读时长">21m</span></span></span><span class="post-busuanzi"><span class="post-meta-divider">-</span><span class="post-meta-item-icon" title="阅读次数"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-eye-line"></use></svg> <span id="busuanzi_value_page_pv"></span></span></span><div class="post-classify"><span class="post-category"> <span class="post-meta-item-icon" style="margin-right:3px;"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-folder-line"></use></svg></span><span itemprop="about" itemscope itemtype="https://schema.org/Thing"><a class="category-item" href="/categories/spring-boot/" style="--text-color:var(--hty-text-color)" itemprop="url" rel="index"><span itemprop="text">spring boot</span></a></span></span><span class="post-tag"><span class="post-meta-divider">-</span><a class="tag-item" href="/tags/spring-boot/" style="--text-color:var(--hty-text-color)"><span class="post-meta-item-icon"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-price-tag-3-line"></use></svg></span><span class="tag-name">spring boot</span></a></span></div></div></header><section class="post-body" itemprop="articleBody"><div class="post-content markdown-body" style="--smc-primary:#0078E7;"><p>前端验证一般是为了满足界面的友好性、客户体验性等，但仅靠前端进行数据合法性校验，是不够的。因为非法用户可能会直接从客户端获取请求地址进行非法请求，所以后端的校验是必不可少的。</p>
+<p>在书写业务逻辑时，经常有大量的判空校验。比如Service层或Dao层的方法入参、入参对象、出参等都有一套校验规则。比如有的字段必传，有的非必传，返回值有些字段必须有值，有的非必须等等</p>
+<p>众多if else的重复无意义代码，也可称为垃圾代码。Bean Validation校验是基于DDD思想设计的。</p>
+<h2 id="项目结构"><a href="#项目结构" class="headerlink" title="项目结构"></a>项目结构</h2><p><img src="https://whh.plus/images/valid1.png" alt="项目结构图" loading="lazy"></p>
+<pre class="language-bash" data-language="bash"><code class="language-bash">├── java
+│   └── com
+│       └── whh
+│           └── valid
+│               ├── ValidApplication.java <span class="token comment"># 启动类</span>
+│               ├── annotation
+│               │   └── Phone.java <span class="token comment"># 自定义验证注解</span>
+│               ├── config
+│               │   └── ValidatorConfig.java <span class="token comment"># 表单验证配置类</span>
+│               ├── controller
+│               │   └── SysUserController.java <span class="token comment"># 用户管理控制器</span>
+│               ├── exception
+│               │   ├── BusinessException.java <span class="token comment"># 业务异常类</span>
+│               │   └── GlobalExceptionHandler.java <span class="token comment"># 统一异常处理类</span>
+│               ├── entity
+│               │   ├── SysUser.java <span class="token comment"># 用户信息实体</span>
+│               │   └── ValidationInterface.java <span class="token comment"># 表单验证的通用分组接口</span>
+│               ├── util
+│               │   └── CommonResult.java <span class="token comment"># 接口返回封装类</span>
+│               └── validation
+│                   └── PhoneValidator.java <span class="token comment">#自定义验证实现类</span>
+└── resources
+    ├── application.yaml <span class="token comment"># 配置文件</span>
+    └── messages
+        └── validation
+            └── messages.properties <span class="token comment"># 自定义验证信息源</span></code></pre>
+<h3 id="导入依赖"><a href="#导入依赖" class="headerlink" title="导入依赖"></a>导入依赖</h3><pre class="language-xml" data-language="xml"><code class="language-xml"><span class="token prolog">&lt;?xml version="1.0" encoding="UTF-8"?></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>project</span> <span class="token attr-name">xmlns</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>http://maven.apache.org/POM/4.0.0<span class="token punctuation">"</span></span> <span class="token attr-name"><span class="token namespace">xmlns:</span>xsi</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>http://www.w3.org/2001/XMLSchema-instance<span class="token punctuation">"</span></span>
+         <span class="token attr-name"><span class="token namespace">xsi:</span>schemaLocation</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>modelVersion</span><span class="token punctuation">></span></span>4.0.0<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>modelVersion</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>parent</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>groupId</span><span class="token punctuation">></span></span>org.springframework.boot<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>groupId</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>artifactId</span><span class="token punctuation">></span></span>spring-boot-starter-parent<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>artifactId</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>version</span><span class="token punctuation">></span></span>2.5.4<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>version</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>relativePath</span><span class="token punctuation">/></span></span> <span class="token comment">&lt;!-- lookup parent from repository --></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>parent</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>groupId</span><span class="token punctuation">></span></span>com.whh<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>groupId</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>artifactId</span><span class="token punctuation">></span></span>valid<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>artifactId</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>version</span><span class="token punctuation">></span></span>0.0.1-SNAPSHOT<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>version</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>name</span><span class="token punctuation">></span></span>valid<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>name</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>description</span><span class="token punctuation">></span></span>表单验证demo<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>description</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>properties</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>java.version</span><span class="token punctuation">></span></span>1.8<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>java.version</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>properties</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dependencies</span><span class="token punctuation">></span></span>
+        <span class="token comment">&lt;!-- web支持 --></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dependency</span><span class="token punctuation">></span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>groupId</span><span class="token punctuation">></span></span>org.springframework.boot<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>groupId</span><span class="token punctuation">></span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>artifactId</span><span class="token punctuation">></span></span>spring-boot-starter-web<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>artifactId</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dependency</span><span class="token punctuation">></span></span>
+        <span class="token comment">&lt;!-- 表单验证 --></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dependency</span><span class="token punctuation">></span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>groupId</span><span class="token punctuation">></span></span>org.springframework.boot<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>groupId</span><span class="token punctuation">></span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>artifactId</span><span class="token punctuation">></span></span>spring-boot-starter-validation<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>artifactId</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dependency</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dependency</span><span class="token punctuation">></span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>groupId</span><span class="token punctuation">></span></span>org.projectlombok<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>groupId</span><span class="token punctuation">></span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>artifactId</span><span class="token punctuation">></span></span>lombok<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>artifactId</span><span class="token punctuation">></span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>optional</span><span class="token punctuation">></span></span>true<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>optional</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dependency</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dependency</span><span class="token punctuation">></span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>groupId</span><span class="token punctuation">></span></span>javax.validation<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>groupId</span><span class="token punctuation">></span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>artifactId</span><span class="token punctuation">></span></span>validation-api<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>artifactId</span><span class="token punctuation">></span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>version</span><span class="token punctuation">></span></span>1.1.0.Final<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>version</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dependency</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dependency</span><span class="token punctuation">></span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>groupId</span><span class="token punctuation">></span></span>org.hibernate<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>groupId</span><span class="token punctuation">></span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>artifactId</span><span class="token punctuation">></span></span>hibernate-validator<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>artifactId</span><span class="token punctuation">></span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>version</span><span class="token punctuation">></span></span>5.3.5.Final<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>version</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dependency</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dependencies</span><span class="token punctuation">></span></span>
+
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>build</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>plugins</span><span class="token punctuation">></span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>plugin</span><span class="token punctuation">></span></span>
+                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>groupId</span><span class="token punctuation">></span></span>org.springframework.boot<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>groupId</span><span class="token punctuation">></span></span>
+                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>artifactId</span><span class="token punctuation">></span></span>spring-boot-maven-plugin<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>artifactId</span><span class="token punctuation">></span></span>
+                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>configuration</span><span class="token punctuation">></span></span>
+                    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>excludes</span><span class="token punctuation">></span></span>
+                        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>exclude</span><span class="token punctuation">></span></span>
+                            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>groupId</span><span class="token punctuation">></span></span>org.projectlombok<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>groupId</span><span class="token punctuation">></span></span>
+                            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>artifactId</span><span class="token punctuation">></span></span>lombok<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>artifactId</span><span class="token punctuation">></span></span>
+                        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>exclude</span><span class="token punctuation">></span></span>
+                    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>excludes</span><span class="token punctuation">></span></span>
+                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>configuration</span><span class="token punctuation">></span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>plugin</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>plugins</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>build</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>project</span><span class="token punctuation">></span></span></code></pre>
+
+<h3 id="添加实体类"><a href="#添加实体类" class="headerlink" title="添加实体类"></a>添加实体类</h3><pre class="language-java" data-language="java"><code class="language-java"><span class="token keyword">package</span> <span class="token namespace">com<span class="token punctuation">.</span>whh<span class="token punctuation">.</span>valid<span class="token punctuation">.</span>enitty</span><span class="token punctuation">;</span>
+
+<span class="token keyword">import</span> <span class="token namespace">lombok<span class="token punctuation">.</span></span><span class="token class-name">Data</span><span class="token punctuation">;</span>
+
+<span class="token keyword">import</span> <span class="token namespace">javax<span class="token punctuation">.</span>validation<span class="token punctuation">.</span>constraints<span class="token punctuation">.</span></span><span class="token class-name">Email</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token namespace">javax<span class="token punctuation">.</span>validation<span class="token punctuation">.</span>constraints<span class="token punctuation">.</span></span><span class="token class-name">NotEmpty</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token namespace">javax<span class="token punctuation">.</span>validation<span class="token punctuation">.</span>constraints<span class="token punctuation">.</span></span><span class="token class-name">Size</span><span class="token punctuation">;</span>
+
+<span class="token annotation punctuation">@Data</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">SysUser</span> <span class="token punctuation">&#123;</span>
+    <span class="token keyword">private</span> <span class="token keyword">static</span> <span class="token keyword">final</span> <span class="token keyword">long</span> serialVersionUID <span class="token operator">=</span> <span class="token number">1L</span><span class="token punctuation">;</span>
+
+    <span class="token comment">// 主键</span>
+    <span class="token keyword">private</span> <span class="token class-name">Long</span> id<span class="token punctuation">;</span>
+
+    <span class="token comment">//用户名</span>
+    <span class="token annotation punctuation">@NotEmpty</span><span class="token punctuation">(</span>message <span class="token operator">=</span> <span class="token string">"用户名不能为空"</span><span class="token punctuation">)</span>
+    <span class="token keyword">private</span> <span class="token class-name">String</span> username<span class="token punctuation">;</span>
+
+    <span class="token comment">// 密码</span>
+    <span class="token annotation punctuation">@Size</span><span class="token punctuation">(</span>min <span class="token operator">=</span> <span class="token number">6</span><span class="token punctuation">,</span>max <span class="token operator">=</span> <span class="token number">16</span><span class="token punctuation">,</span>message <span class="token operator">=</span> <span class="token string">"密码长度必须在&#123;min&#125; - &#123;max&#125;之间"</span><span class="token punctuation">)</span>
+    <span class="token keyword">private</span> <span class="token class-name">String</span> password <span class="token operator">=</span> <span class="token string">"123456"</span><span class="token punctuation">;</span>
+
+    <span class="token comment">// 邮箱地址</span>
+    <span class="token annotation punctuation">@Email</span><span class="token punctuation">(</span>message <span class="token operator">=</span> <span class="token string">"邮箱地址不合法"</span><span class="token punctuation">)</span>
+    <span class="token annotation punctuation">@NotEmpty</span><span class="token punctuation">(</span>message <span class="token operator">=</span> <span class="token string">"邮箱不能为空"</span><span class="token punctuation">)</span>
+    <span class="token keyword">private</span> <span class="token class-name">String</span> email<span class="token punctuation">;</span>
+
+    <span class="token comment">// 电话</span>
+    <span class="token annotation punctuation">@Size</span><span class="token punctuation">(</span>min <span class="token operator">=</span> <span class="token number">11</span><span class="token punctuation">,</span>max <span class="token operator">=</span> <span class="token number">11</span><span class="token punctuation">,</span>message <span class="token operator">=</span> <span class="token string">"手机号不合法"</span><span class="token punctuation">)</span>
+    <span class="token annotation punctuation">@NotEmpty</span><span class="token punctuation">(</span>message <span class="token operator">=</span> <span class="token string">"手机号不能为空"</span><span class="token punctuation">)</span>
+    <span class="token keyword">private</span> <span class="token class-name">String</span> phone<span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span></code></pre>
+<p>@Data注解：提高代码的简洁，使用这个注解可以省去代码中大量的get()、 set()、 toString()等方法；</p>
+<h3 id="接口返回封装类"><a href="#接口返回封装类" class="headerlink" title="接口返回封装类"></a>接口返回封装类</h3><pre class="language-java" data-language="java"><code class="language-java"><span class="token keyword">package</span> <span class="token namespace">com<span class="token punctuation">.</span>whh<span class="token punctuation">.</span>valid<span class="token punctuation">.</span>util</span><span class="token punctuation">;</span>
+
+<span class="token keyword">import</span> <span class="token namespace">lombok<span class="token punctuation">.</span></span><span class="token class-name">Data</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token namespace">lombok<span class="token punctuation">.</span></span><span class="token class-name">NoArgsConstructor</span><span class="token punctuation">;</span>
+
+
+<span class="token comment">// 操作消息提醒</span>
+<span class="token annotation punctuation">@Data</span>
+<span class="token annotation punctuation">@NoArgsConstructor</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">CommonResult</span> <span class="token punctuation">&#123;</span>
+    <span class="token comment">// 状态码</span>
+    <span class="token keyword">private</span> <span class="token keyword">int</span> code<span class="token punctuation">;</span>
+
+    <span class="token comment">// 返回内容</span>
+    <span class="token keyword">private</span> <span class="token class-name">String</span> msg<span class="token punctuation">;</span>
+
+    <span class="token comment">// 数据对象</span>
+    <span class="token keyword">private</span> <span class="token class-name">Object</span> data<span class="token punctuation">;</span>
+
+    <span class="token comment">// 初始化一个CommonResult对象</span>
+    <span class="token keyword">public</span> <span class="token class-name">CommonResult</span><span class="token punctuation">(</span><span class="token class-name">Type</span> type<span class="token punctuation">,</span><span class="token class-name">String</span> msg<span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>code <span class="token operator">=</span> type<span class="token punctuation">.</span>value<span class="token punctuation">;</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>msg <span class="token operator">=</span> msg<span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+
+    <span class="token keyword">public</span> <span class="token class-name">CommonResult</span><span class="token punctuation">(</span><span class="token class-name">Type</span> type<span class="token punctuation">,</span><span class="token class-name">String</span> msg<span class="token punctuation">,</span><span class="token class-name">Object</span> data<span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>code <span class="token operator">=</span> type<span class="token punctuation">.</span>value<span class="token punctuation">;</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>msg <span class="token operator">=</span> msg<span class="token punctuation">;</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>data <span class="token operator">!=</span> <span class="token keyword">null</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+            <span class="token keyword">this</span><span class="token punctuation">.</span>data <span class="token operator">=</span> data<span class="token punctuation">;</span>
+        <span class="token punctuation">&#125;</span>
+    <span class="token punctuation">&#125;</span>
+
+    <span class="token comment">// 返回成功消息</span>
+    <span class="token keyword">public</span>  <span class="token keyword">static</span> <span class="token class-name">CommonResult</span> <span class="token function">success</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token keyword">return</span> <span class="token class-name">CommonResult</span><span class="token punctuation">.</span><span class="token function">success</span><span class="token punctuation">(</span><span class="token string">"操作成功"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+
+    <span class="token keyword">public</span>  <span class="token keyword">static</span> <span class="token class-name">CommonResult</span> <span class="token function">success</span><span class="token punctuation">(</span><span class="token class-name">Object</span> data<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token keyword">return</span> <span class="token class-name">CommonResult</span><span class="token punctuation">.</span><span class="token function">success</span><span class="token punctuation">(</span><span class="token string">"操作成功"</span><span class="token punctuation">,</span>data<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token class-name">CommonResult</span> <span class="token function">success</span><span class="token punctuation">(</span><span class="token class-name">String</span> msg<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token keyword">return</span> <span class="token class-name">CommonResult</span><span class="token punctuation">.</span><span class="token function">success</span><span class="token punctuation">(</span>msg<span class="token punctuation">,</span><span class="token keyword">null</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token class-name">CommonResult</span> <span class="token function">success</span><span class="token punctuation">(</span><span class="token class-name">String</span> msg<span class="token punctuation">,</span><span class="token class-name">Object</span> data<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token keyword">return</span> <span class="token keyword">new</span> <span class="token class-name">CommonResult</span><span class="token punctuation">(</span><span class="token class-name">Type</span><span class="token punctuation">.</span>SUCCESS<span class="token punctuation">,</span>msg<span class="token punctuation">,</span>data<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+
+    <span class="token comment">// 返回警告消息</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token class-name">CommonResult</span> <span class="token function">warn</span><span class="token punctuation">(</span><span class="token class-name">String</span> msg<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token keyword">return</span> <span class="token class-name">CommonResult</span><span class="token punctuation">.</span><span class="token function">warn</span><span class="token punctuation">(</span>msg<span class="token punctuation">,</span><span class="token keyword">null</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token class-name">CommonResult</span> <span class="token function">warn</span><span class="token punctuation">(</span><span class="token class-name">String</span> msg<span class="token punctuation">,</span><span class="token class-name">Object</span> data<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token keyword">return</span> <span class="token keyword">new</span> <span class="token class-name">CommonResult</span><span class="token punctuation">(</span><span class="token class-name">Type</span><span class="token punctuation">.</span>WARN<span class="token punctuation">,</span>msg<span class="token punctuation">,</span>data<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+
+    <span class="token comment">// 返回错误消息</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token class-name">CommonResult</span> <span class="token function">error</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+        <span class="token keyword">return</span> <span class="token class-name">CommonResult</span><span class="token punctuation">.</span><span class="token function">error</span><span class="token punctuation">(</span><span class="token string">"操作失败"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token class-name">CommonResult</span> <span class="token function">error</span><span class="token punctuation">(</span><span class="token class-name">String</span> msg<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token keyword">return</span> <span class="token class-name">CommonResult</span><span class="token punctuation">.</span><span class="token function">error</span><span class="token punctuation">(</span>msg<span class="token punctuation">,</span><span class="token keyword">null</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token class-name">CommonResult</span> <span class="token function">error</span><span class="token punctuation">(</span><span class="token class-name">String</span> msg<span class="token punctuation">,</span><span class="token class-name">Object</span> data<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token keyword">return</span> <span class="token keyword">new</span> <span class="token class-name">CommonResult</span><span class="token punctuation">(</span><span class="token class-name">Type</span><span class="token punctuation">.</span>ERROR<span class="token punctuation">,</span>msg<span class="token punctuation">,</span>data<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+
+        <span class="token keyword">public</span> <span class="token keyword">enum</span> <span class="token class-name">Type</span><span class="token punctuation">&#123;</span>
+        <span class="token comment">// 成功</span>
+        <span class="token function">SUCCESS</span><span class="token punctuation">(</span><span class="token number">200</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+        <span class="token comment">// 警告</span>
+        <span class="token function">WARN</span><span class="token punctuation">(</span><span class="token number">301</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+        <span class="token comment">// 错误</span>
+        <span class="token function">ERROR</span><span class="token punctuation">(</span><span class="token number">500</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">private</span> <span class="token keyword">final</span> <span class="token keyword">int</span> value<span class="token punctuation">;</span>
+
+        <span class="token class-name">Type</span><span class="token punctuation">(</span><span class="token keyword">int</span> value<span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+            <span class="token keyword">this</span><span class="token punctuation">.</span>value <span class="token operator">=</span> value<span class="token punctuation">;</span>
+        <span class="token punctuation">&#125;</span>
+
+        <span class="token keyword">public</span> <span class="token keyword">int</span> <span class="token function">getValue</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+            <span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">.</span>value<span class="token punctuation">;</span>
+        <span class="token punctuation">&#125;</span>
+    <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span></code></pre>
+<p>@NoArgsConstructor注解：注解在类上，为类提供一个无参的构造方法。</p>
+<h3 id="控制器"><a href="#控制器" class="headerlink" title="控制器"></a>控制器</h3><pre class="language-java" data-language="java"><code class="language-java"><span class="token keyword">package</span> <span class="token namespace">com<span class="token punctuation">.</span>whh<span class="token punctuation">.</span>valid<span class="token punctuation">.</span>controller</span><span class="token punctuation">;</span>
+
+<span class="token keyword">import</span> <span class="token namespace">com<span class="token punctuation">.</span>whh<span class="token punctuation">.</span>valid<span class="token punctuation">.</span>enitty<span class="token punctuation">.</span></span><span class="token class-name">SysUser</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token namespace">com<span class="token punctuation">.</span>whh<span class="token punctuation">.</span>valid<span class="token punctuation">.</span>util<span class="token punctuation">.</span></span><span class="token class-name">CommonResult</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token namespace">lombok<span class="token punctuation">.</span>extern<span class="token punctuation">.</span>slf4j<span class="token punctuation">.</span></span><span class="token class-name">Slf4j</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token namespace">org<span class="token punctuation">.</span>springframework<span class="token punctuation">.</span>validation<span class="token punctuation">.</span></span><span class="token class-name">BindingResult</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token namespace">org<span class="token punctuation">.</span>springframework<span class="token punctuation">.</span>validation<span class="token punctuation">.</span></span><span class="token class-name">FieldError</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token namespace">org<span class="token punctuation">.</span>springframework<span class="token punctuation">.</span>validation<span class="token punctuation">.</span>annotation<span class="token punctuation">.</span></span><span class="token class-name">Validated</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token namespace">org<span class="token punctuation">.</span>springframework<span class="token punctuation">.</span>web<span class="token punctuation">.</span>bind<span class="token punctuation">.</span>annotation<span class="token punctuation">.</span></span><span class="token operator">*</span><span class="token punctuation">;</span>
+
+<span class="token keyword">import</span> <span class="token namespace">java<span class="token punctuation">.</span>util<span class="token punctuation">.</span></span><span class="token class-name">ArrayList</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token namespace">java<span class="token punctuation">.</span>util<span class="token punctuation">.</span></span><span class="token class-name">List</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token namespace">java<span class="token punctuation">.</span>util<span class="token punctuation">.</span></span><span class="token class-name">Objects</span><span class="token punctuation">;</span>
+
+<span class="token annotation punctuation">@Slf4j</span>
+<span class="token annotation punctuation">@RestController</span>
+<span class="token annotation punctuation">@RequestMapping</span><span class="token punctuation">(</span><span class="token string">"sys/user"</span><span class="token punctuation">)</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">SysUserController</span> <span class="token punctuation">&#123;</span>
+    <span class="token keyword">private</span> <span class="token keyword">static</span> <span class="token keyword">final</span> <span class="token class-name">List</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">SysUser</span><span class="token punctuation">></span></span> USERS <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ArrayList</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token punctuation">></span></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token comment">// 数据初始化</span>
+    <span class="token keyword">static</span> <span class="token punctuation">&#123;</span>
+        <span class="token class-name">SysUser</span> user <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">SysUser</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        user<span class="token punctuation">.</span><span class="token function">setId</span><span class="token punctuation">(</span><span class="token number">1L</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        user<span class="token punctuation">.</span><span class="token function">setUsername</span><span class="token punctuation">(</span><span class="token string">"wen"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        user<span class="token punctuation">.</span><span class="token function">setPhone</span><span class="token punctuation">(</span><span class="token string">"13666666666"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        user<span class="token punctuation">.</span><span class="token function">setEmail</span><span class="token punctuation">(</span><span class="token string">"example@qq.com"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        USERS<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span>user<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token class-name">SysUser</span> user1 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">SysUser</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        user1<span class="token punctuation">.</span><span class="token function">setId</span><span class="token punctuation">(</span><span class="token number">2L</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        user1<span class="token punctuation">.</span><span class="token function">setUsername</span><span class="token punctuation">(</span><span class="token string">"li"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        user1<span class="token punctuation">.</span><span class="token function">setPhone</span><span class="token punctuation">(</span><span class="token string">"13688888888"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        user1<span class="token punctuation">.</span><span class="token function">setEmail</span><span class="token punctuation">(</span><span class="token string">"example1@qq.com"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        USERS<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span>user1<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+
+    <span class="token comment">// 新增用户</span>
+    <span class="token annotation punctuation">@PostMapping</span>
+    <span class="token keyword">public</span> <span class="token class-name">CommonResult</span> <span class="token function">add</span><span class="token punctuation">(</span><span class="token annotation punctuation">@Validated</span> <span class="token annotation punctuation">@RequestBody</span> <span class="token class-name">SysUser</span> sysUser<span class="token punctuation">,</span> <span class="token class-name">BindingResult</span> result<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token class-name">FieldError</span> fieldError <span class="token operator">=</span> result<span class="token punctuation">.</span><span class="token function">getFieldError</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token class-name">Objects</span><span class="token punctuation">.</span><span class="token function">nonNull</span><span class="token punctuation">(</span>fieldError<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+            <span class="token class-name">String</span> field <span class="token operator">=</span> fieldError<span class="token punctuation">.</span><span class="token function">getField</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token class-name">Object</span> rejectedValue <span class="token operator">=</span> fieldError<span class="token punctuation">.</span><span class="token function">getRejectedValue</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token class-name">String</span> msg <span class="token operator">=</span> <span class="token string">"["</span> <span class="token operator">+</span> fieldError<span class="token punctuation">.</span><span class="token function">getDefaultMessage</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">"]"</span><span class="token punctuation">;</span>
+            log<span class="token punctuation">.</span><span class="token function">error</span><span class="token punctuation">(</span><span class="token string">"&#123;&#125;: 字段==&#123;&#125;\t值=&#123;&#125;"</span><span class="token punctuation">,</span>msg<span class="token punctuation">,</span>field<span class="token punctuation">,</span>rejectedValue<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token keyword">return</span> <span class="token class-name">CommonResult</span><span class="token punctuation">.</span><span class="token function">error</span><span class="token punctuation">(</span>msg<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">&#125;</span>
+
+        USERS<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span>sysUser<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">return</span> <span class="token class-name">CommonResult</span><span class="token punctuation">.</span><span class="token function">success</span><span class="token punctuation">(</span><span class="token string">"新增成功"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span></code></pre>
+<ul>
+<li>@Validated注解：标识需要验证的类，使用BindingResult类接受错误信息</li>
+<li>@Slf4j注解：用作日志输出的，一般会在项目每个类的开头加入该注解，如果不写下面这段代码，并且想用log<br><code>private final Logger logger = LoggerFactory.getLogger(当前类名.class);</code></li>
+</ul>
+<h3 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h3><p><img src="https://whh.plus/images/test1.png" alt="测试" loading="lazy"><br>log<br><code>[邮箱地址不合法]: 字段==email    值=123</code></p>
+<h2 id="分组校验"><a href="#分组校验" class="headerlink" title="分组校验"></a>分组校验</h2><p>groups表示注解属于哪个组，便按照哪个组的校验规则进行校验</p>
+<p>当在controller中校验表单数据时，如果使用了groups，那么没有在这个分组下的属性是不会校验的</p>
+<h3 id="添加分组接口"><a href="#添加分组接口" class="headerlink" title="添加分组接口"></a>添加分组接口</h3><pre class="language-java" data-language="java"><code class="language-java"><span class="token keyword">package</span> <span class="token namespace">com<span class="token punctuation">.</span>whh<span class="token punctuation">.</span>valid<span class="token punctuation">.</span>enitty</span><span class="token punctuation">;</span>
+
+<span class="token comment">// 用于表单验证的通用分组接口</span>
+<span class="token keyword">public</span> <span class="token keyword">interface</span> <span class="token class-name">ValidationInterface</span> <span class="token punctuation">&#123;</span>
+    <span class="token comment">/**
+     *新增分组
+     */</span>
+    <span class="token keyword">interface</span> add<span class="token punctuation">&#123;</span><span class="token punctuation">&#125;</span>
+
+     <span class="token comment">/**
+      * 删除分组
+      */</span>
+    <span class="token keyword">interface</span> delete<span class="token punctuation">&#123;</span><span class="token punctuation">&#125;</span>
+
+    <span class="token comment">/**
+     *查询分组
+     */</span>
+    <span class="token keyword">interface</span> select<span class="token punctuation">&#123;</span><span class="token punctuation">&#125;</span>
+
+    <span class="token comment">/**
+     * 更新分组
+     */</span>
+    <span class="token keyword">interface</span> update<span class="token punctuation">&#123;</span><span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span></code></pre>
+<p>如果还有其它特殊的分组要求 直接在DO中创建interface即可</p>
+<h3 id="修改实体类"><a href="#修改实体类" class="headerlink" title="修改实体类"></a>修改实体类</h3><p>将属性进行分组</p>
+<pre class="language-java" data-language="java"><code class="language-java"><span class="token keyword">package</span> <span class="token namespace">com<span class="token punctuation">.</span>whh<span class="token punctuation">.</span>valid<span class="token punctuation">.</span>enitty</span><span class="token punctuation">;</span>
+
+<span class="token keyword">import</span> <span class="token namespace">lombok<span class="token punctuation">.</span></span><span class="token class-name">Data</span><span class="token punctuation">;</span>
+
+<span class="token keyword">import</span> <span class="token namespace">javax<span class="token punctuation">.</span>validation<span class="token punctuation">.</span>constraints<span class="token punctuation">.</span></span><span class="token class-name">Email</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token namespace">javax<span class="token punctuation">.</span>validation<span class="token punctuation">.</span>constraints<span class="token punctuation">.</span></span><span class="token class-name">NotEmpty</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token namespace">javax<span class="token punctuation">.</span>validation<span class="token punctuation">.</span>constraints<span class="token punctuation">.</span></span><span class="token class-name">NotNull</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token namespace">javax<span class="token punctuation">.</span>validation<span class="token punctuation">.</span>constraints<span class="token punctuation">.</span></span><span class="token class-name">Size</span><span class="token punctuation">;</span>
+
+<span class="token annotation punctuation">@Data</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">SysUser</span> <span class="token punctuation">&#123;</span>
+    <span class="token keyword">private</span> <span class="token keyword">static</span> <span class="token keyword">final</span> <span class="token keyword">long</span> serialVersionUID <span class="token operator">=</span> <span class="token number">1L</span><span class="token punctuation">;</span>
+
+    <span class="token comment">// 主键</span>
+    <span class="token annotation punctuation">@NotNull</span><span class="token punctuation">(</span>message <span class="token operator">=</span> <span class="token string">"id不能为空"</span><span class="token punctuation">,</span>groups <span class="token operator">=</span> <span class="token punctuation">&#123;</span><span class="token class-name">ValidationInterface</span><span class="token punctuation">.</span>update<span class="token punctuation">.</span><span class="token keyword">class</span><span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
+    <span class="token keyword">private</span> <span class="token class-name">Long</span> id<span class="token punctuation">;</span>
+
+    <span class="token comment">//用户名</span>
+    <span class="token annotation punctuation">@NotEmpty</span><span class="token punctuation">(</span>message <span class="token operator">=</span> <span class="token string">"用户名不能为空"</span><span class="token punctuation">,</span>groups <span class="token operator">=</span> <span class="token punctuation">&#123;</span>
+            <span class="token class-name">ValidationInterface</span><span class="token punctuation">.</span>update<span class="token punctuation">.</span><span class="token keyword">class</span><span class="token punctuation">,</span>
+            <span class="token class-name">ValidationInterface</span><span class="token punctuation">.</span>add<span class="token punctuation">.</span><span class="token keyword">class</span>
+    <span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
+    <span class="token keyword">private</span> <span class="token class-name">String</span> username<span class="token punctuation">;</span>
+
+    <span class="token comment">// 密码</span>
+    <span class="token annotation punctuation">@Size</span><span class="token punctuation">(</span>min <span class="token operator">=</span> <span class="token number">6</span><span class="token punctuation">,</span>max <span class="token operator">=</span> <span class="token number">16</span><span class="token punctuation">,</span>message <span class="token operator">=</span> <span class="token string">"密码长度必须在&#123;min&#125; - &#123;max&#125;之间"</span><span class="token punctuation">,</span>groups <span class="token operator">=</span> <span class="token punctuation">&#123;</span>
+            <span class="token class-name">ValidationInterface</span><span class="token punctuation">.</span>update<span class="token punctuation">.</span><span class="token keyword">class</span><span class="token punctuation">,</span>
+            <span class="token class-name">ValidationInterface</span><span class="token punctuation">.</span>add<span class="token punctuation">.</span><span class="token keyword">class</span>
+    <span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
+    <span class="token keyword">private</span> <span class="token class-name">String</span> password <span class="token operator">=</span> <span class="token string">"123456"</span><span class="token punctuation">;</span>
+
+    <span class="token comment">// 邮箱地址</span>
+    <span class="token annotation punctuation">@Email</span><span class="token punctuation">(</span>message <span class="token operator">=</span> <span class="token string">"邮箱地址不合法"</span><span class="token punctuation">,</span>groups <span class="token operator">=</span> <span class="token punctuation">&#123;</span>
+            <span class="token class-name">ValidationInterface</span><span class="token punctuation">.</span>update<span class="token punctuation">.</span><span class="token keyword">class</span><span class="token punctuation">,</span>
+            <span class="token class-name">ValidationInterface</span><span class="token punctuation">.</span>add<span class="token punctuation">.</span><span class="token keyword">class</span><span class="token punctuation">,</span>
+            <span class="token class-name">ValidationInterface</span><span class="token punctuation">.</span>select<span class="token punctuation">.</span><span class="token keyword">class</span>
+    <span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
+    <span class="token annotation punctuation">@NotEmpty</span><span class="token punctuation">(</span>message <span class="token operator">=</span> <span class="token string">"邮箱不能为空"</span><span class="token punctuation">,</span>groups <span class="token operator">=</span> <span class="token class-name">ValidationInterface</span><span class="token punctuation">.</span>add<span class="token punctuation">.</span><span class="token keyword">class</span><span class="token punctuation">)</span>
+    <span class="token keyword">private</span> <span class="token class-name">String</span> email<span class="token punctuation">;</span>
+
+    <span class="token comment">// 电话</span>
+    <span class="token annotation punctuation">@Size</span><span class="token punctuation">(</span>min <span class="token operator">=</span> <span class="token number">11</span><span class="token punctuation">,</span>max <span class="token operator">=</span> <span class="token number">11</span><span class="token punctuation">,</span>message <span class="token operator">=</span> <span class="token string">"手机号不合法"</span><span class="token punctuation">,</span>groups <span class="token operator">=</span> <span class="token punctuation">&#123;</span>
+            <span class="token class-name">ValidationInterface</span><span class="token punctuation">.</span>update<span class="token punctuation">.</span><span class="token keyword">class</span><span class="token punctuation">,</span>
+            <span class="token class-name">ValidationInterface</span><span class="token punctuation">.</span>add<span class="token punctuation">.</span><span class="token keyword">class</span><span class="token punctuation">,</span>
+            <span class="token class-name">ValidationInterface</span><span class="token punctuation">.</span>select<span class="token punctuation">.</span><span class="token keyword">class</span>
+    <span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
+    <span class="token annotation punctuation">@NotEmpty</span><span class="token punctuation">(</span>message <span class="token operator">=</span> <span class="token string">"手机号不能为空"</span><span class="token punctuation">,</span>groups <span class="token operator">=</span> <span class="token punctuation">&#123;</span><span class="token class-name">ValidationInterface</span><span class="token punctuation">.</span>add<span class="token punctuation">.</span><span class="token keyword">class</span><span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
+    <span class="token keyword">private</span> <span class="token class-name">String</span> phone<span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span></code></pre>
+
+<h3 id="修改控制器"><a href="#修改控制器" class="headerlink" title="修改控制器"></a>修改控制器</h3><p>添加操作方法，并且方法形参上指定验证的分组</p>
+<pre class="language-java" data-language="java"><code class="language-java"><span class="token keyword">package</span> <span class="token namespace">com<span class="token punctuation">.</span>whh<span class="token punctuation">.</span>valid<span class="token punctuation">.</span>controller</span><span class="token punctuation">;</span>
+
+<span class="token keyword">import</span> <span class="token namespace">com<span class="token punctuation">.</span>whh<span class="token punctuation">.</span>valid<span class="token punctuation">.</span>enitty<span class="token punctuation">.</span></span><span class="token class-name">SysUser</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token namespace">com<span class="token punctuation">.</span>whh<span class="token punctuation">.</span>valid<span class="token punctuation">.</span>enitty<span class="token punctuation">.</span></span><span class="token class-name">ValidationInterface</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token namespace">com<span class="token punctuation">.</span>whh<span class="token punctuation">.</span>valid<span class="token punctuation">.</span>util<span class="token punctuation">.</span></span><span class="token class-name">CommonResult</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token namespace">lombok<span class="token punctuation">.</span>extern<span class="token punctuation">.</span>slf4j<span class="token punctuation">.</span></span><span class="token class-name">Slf4j</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token namespace">org<span class="token punctuation">.</span>springframework<span class="token punctuation">.</span>validation<span class="token punctuation">.</span></span><span class="token class-name">BindingResult</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token namespace">org<span class="token punctuation">.</span>springframework<span class="token punctuation">.</span>validation<span class="token punctuation">.</span></span><span class="token class-name">FieldError</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token namespace">org<span class="token punctuation">.</span>springframework<span class="token punctuation">.</span>validation<span class="token punctuation">.</span>annotation<span class="token punctuation">.</span></span><span class="token class-name">Validated</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token namespace">org<span class="token punctuation">.</span>springframework<span class="token punctuation">.</span>web<span class="token punctuation">.</span>bind<span class="token punctuation">.</span>annotation<span class="token punctuation">.</span></span><span class="token operator">*</span><span class="token punctuation">;</span>
+
+<span class="token keyword">import</span> <span class="token namespace">java<span class="token punctuation">.</span>util<span class="token punctuation">.</span></span><span class="token class-name">ArrayList</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token namespace">java<span class="token punctuation">.</span>util<span class="token punctuation">.</span></span><span class="token class-name">List</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token namespace">java<span class="token punctuation">.</span>util<span class="token punctuation">.</span></span><span class="token class-name">Objects</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token namespace">java<span class="token punctuation">.</span>util<span class="token punctuation">.</span>stream<span class="token punctuation">.</span></span><span class="token class-name">Collectors</span><span class="token punctuation">;</span>
+
+<span class="token annotation punctuation">@Slf4j</span>
+<span class="token annotation punctuation">@RestController</span>
+<span class="token annotation punctuation">@RequestMapping</span><span class="token punctuation">(</span><span class="token string">"sys/user"</span><span class="token punctuation">)</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">SysUserController</span> <span class="token punctuation">&#123;</span>
+    <span class="token keyword">private</span> <span class="token keyword">static</span> <span class="token keyword">final</span> <span class="token class-name">List</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">SysUser</span><span class="token punctuation">></span></span> USERS <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ArrayList</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token punctuation">></span></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token comment">// 数据初始化</span>
+    <span class="token keyword">static</span> <span class="token punctuation">&#123;</span>
+        <span class="token class-name">SysUser</span> user <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">SysUser</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        user<span class="token punctuation">.</span><span class="token function">setId</span><span class="token punctuation">(</span><span class="token number">1L</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        user<span class="token punctuation">.</span><span class="token function">setUsername</span><span class="token punctuation">(</span><span class="token string">"wen"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        user<span class="token punctuation">.</span><span class="token function">setPhone</span><span class="token punctuation">(</span><span class="token string">"13666666666"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        user<span class="token punctuation">.</span><span class="token function">setEmail</span><span class="token punctuation">(</span><span class="token string">"example@qq.com"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        USERS<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span>user<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token class-name">SysUser</span> user1 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">SysUser</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        user1<span class="token punctuation">.</span><span class="token function">setId</span><span class="token punctuation">(</span><span class="token number">2L</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        user1<span class="token punctuation">.</span><span class="token function">setUsername</span><span class="token punctuation">(</span><span class="token string">"li"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        user1<span class="token punctuation">.</span><span class="token function">setPhone</span><span class="token punctuation">(</span><span class="token string">"13688888888"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        user1<span class="token punctuation">.</span><span class="token function">setEmail</span><span class="token punctuation">(</span><span class="token string">"example1@qq.com"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        USERS<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span>user1<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+
+    <span class="token comment">/**
+     * 根据手机号或邮箱查询用户信息
+     * @param sysUser 用户信息
+     * @param result 错误反馈
+     * @return 用户信息
+     */</span>
+    <span class="token annotation punctuation">@GetMapping</span>
+    <span class="token keyword">public</span> <span class="token class-name">CommonResult</span> <span class="token function">queryList</span><span class="token punctuation">(</span><span class="token annotation punctuation">@Validated</span><span class="token punctuation">(</span>value <span class="token operator">=</span> <span class="token class-name">ValidationInterface</span><span class="token punctuation">.</span>select<span class="token punctuation">.</span><span class="token keyword">class</span><span class="token punctuation">)</span> <span class="token class-name">SysUser</span> sysUser<span class="token punctuation">,</span><span class="token class-name">BindingResult</span> result<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token class-name">FieldError</span> fieldError <span class="token operator">=</span> result<span class="token punctuation">.</span><span class="token function">getFieldError</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token class-name">Objects</span><span class="token punctuation">.</span><span class="token function">nonNull</span><span class="token punctuation">(</span>fieldError<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+            <span class="token keyword">return</span> <span class="token class-name">CommonResult</span><span class="token punctuation">.</span><span class="token function">error</span><span class="token punctuation">(</span><span class="token function">getErrorMsg</span><span class="token punctuation">(</span>fieldError<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">&#125;</span>
+
+        <span class="token class-name">String</span> phone <span class="token operator">=</span> sysUser<span class="token punctuation">.</span><span class="token function">getPhone</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token class-name">String</span> email <span class="token operator">=</span> sysUser<span class="token punctuation">.</span><span class="token function">getEmail</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>phone <span class="token operator">==</span> <span class="token keyword">null</span> <span class="token operator">&amp;&amp;</span> email <span class="token operator">==</span> <span class="token keyword">null</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+            <span class="token keyword">return</span> <span class="token class-name">CommonResult</span><span class="token punctuation">.</span><span class="token function">success</span><span class="token punctuation">(</span>USERS<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">&#125;</span>
+
+        <span class="token class-name">List</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">SysUser</span><span class="token punctuation">></span></span> queryResult <span class="token operator">=</span> USERS<span class="token punctuation">.</span><span class="token function">stream</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+                <span class="token punctuation">.</span><span class="token function">filter</span><span class="token punctuation">(</span>obj <span class="token operator">-></span> obj<span class="token punctuation">.</span><span class="token function">getPhone</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">equals</span><span class="token punctuation">(</span>phone<span class="token punctuation">)</span> <span class="token operator">||</span> obj<span class="token punctuation">.</span><span class="token function">getEmail</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">equals</span><span class="token punctuation">(</span>email<span class="token punctuation">)</span><span class="token punctuation">)</span>
+                <span class="token punctuation">.</span><span class="token function">collect</span><span class="token punctuation">(</span><span class="token class-name">Collectors</span><span class="token punctuation">.</span><span class="token function">toList</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">return</span> <span class="token class-name">CommonResult</span><span class="token punctuation">.</span><span class="token function">success</span><span class="token punctuation">(</span>queryResult<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+
+    <span class="token comment">/**
+     * 获取表单验证错误msg
+     * @param fieldError 报错字段
+     * @return msg
+     */</span>
+    <span class="token keyword">public</span> <span class="token class-name">String</span> <span class="token function">getErrorMsg</span><span class="token punctuation">(</span><span class="token class-name">FieldError</span> fieldError<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token class-name">String</span> field <span class="token operator">=</span> fieldError<span class="token punctuation">.</span><span class="token function">getField</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token class-name">Object</span> rejectedValue <span class="token operator">=</span> fieldError<span class="token punctuation">.</span><span class="token function">getRejectedValue</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token class-name">String</span> msg <span class="token operator">=</span> <span class="token string">"["</span> <span class="token operator">+</span> fieldError<span class="token punctuation">.</span><span class="token function">getDefaultMessage</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">"]"</span><span class="token punctuation">;</span>
+        log<span class="token punctuation">.</span><span class="token function">error</span><span class="token punctuation">(</span><span class="token string">"&#123;&#125;: 字段==&#123;&#125;\t值==&#123;&#125;"</span><span class="token punctuation">,</span>msg<span class="token punctuation">,</span>field<span class="token punctuation">,</span>rejectedValue<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">return</span> msg<span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+
+    <span class="token comment">/**
+     * 新增用户信息
+     * @param sysUser 用户信息
+     * @param result 错误反馈
+     * @return 成功标识
+     */</span>
+    <span class="token annotation punctuation">@PostMapping</span>
+    <span class="token keyword">public</span> <span class="token class-name">CommonResult</span> <span class="token function">add</span><span class="token punctuation">(</span><span class="token annotation punctuation">@Validated</span><span class="token punctuation">(</span>value <span class="token operator">=</span> <span class="token class-name">ValidationInterface</span><span class="token punctuation">.</span>add<span class="token punctuation">.</span><span class="token keyword">class</span><span class="token punctuation">)</span>
+                                <span class="token annotation punctuation">@RequestBody</span> <span class="token class-name">SysUser</span> sysUser<span class="token punctuation">,</span>
+                                <span class="token class-name">BindingResult</span> result<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token class-name">FieldError</span> fieldError <span class="token operator">=</span> result<span class="token punctuation">.</span><span class="token function">getFieldError</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token class-name">Objects</span><span class="token punctuation">.</span><span class="token function">nonNull</span><span class="token punctuation">(</span>fieldError<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+            <span class="token keyword">return</span> <span class="token class-name">CommonResult</span><span class="token punctuation">.</span><span class="token function">error</span><span class="token punctuation">(</span><span class="token function">getErrorMsg</span><span class="token punctuation">(</span>fieldError<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">&#125;</span>
+        <span class="token class-name">Long</span> id <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token keyword">long</span><span class="token punctuation">)</span><span class="token punctuation">(</span>USERS<span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        sysUser<span class="token punctuation">.</span><span class="token function">setId</span><span class="token punctuation">(</span>id<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        USERS<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span>sysUser<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">return</span> <span class="token class-name">CommonResult</span><span class="token punctuation">.</span><span class="token function">success</span><span class="token punctuation">(</span><span class="token string">"新增成功"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+
+    <span class="token comment">/**
+     * 根据id更新用户信息
+     * @param id id
+     * @param sysUser 用户信息
+     * @param result 错误反馈
+     * @return 成功标识
+     */</span>
+    <span class="token annotation punctuation">@PutMapping</span><span class="token punctuation">(</span><span class="token string">"&#123;id&#125;"</span><span class="token punctuation">)</span>
+    <span class="token keyword">public</span> <span class="token class-name">CommonResult</span> <span class="token function">updateByid</span><span class="token punctuation">(</span><span class="token annotation punctuation">@PathVariable</span><span class="token punctuation">(</span><span class="token string">"id"</span><span class="token punctuation">)</span> <span class="token class-name">Long</span> id<span class="token punctuation">,</span>
+                                    <span class="token annotation punctuation">@Validated</span><span class="token punctuation">(</span>value <span class="token operator">=</span> <span class="token class-name">ValidationInterface</span><span class="token punctuation">.</span>update<span class="token punctuation">.</span><span class="token keyword">class</span><span class="token punctuation">)</span>
+                                    <span class="token annotation punctuation">@RequestBody</span> <span class="token class-name">SysUser</span> sysUser<span class="token punctuation">,</span>
+                                    <span class="token class-name">BindingResult</span> result<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token class-name">FieldError</span> fieldError <span class="token operator">=</span> result<span class="token punctuation">.</span><span class="token function">getFieldError</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token class-name">Objects</span><span class="token punctuation">.</span><span class="token function">nonNull</span><span class="token punctuation">(</span>fieldError<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+            <span class="token keyword">return</span> <span class="token class-name">CommonResult</span><span class="token punctuation">.</span><span class="token function">error</span><span class="token punctuation">(</span><span class="token function">getErrorMsg</span><span class="token punctuation">(</span>fieldError<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">&#125;</span>
+
+        <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>i<span class="token operator">&lt;</span>USERS<span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>i<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+            <span class="token keyword">if</span> <span class="token punctuation">(</span>USERS<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">getId</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">equals</span><span class="token punctuation">(</span>id<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+                USERS<span class="token punctuation">.</span><span class="token function">set</span><span class="token punctuation">(</span>i<span class="token punctuation">,</span>sysUser<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token punctuation">&#125;</span>
+        <span class="token punctuation">&#125;</span>
+        <span class="token keyword">return</span> <span class="token class-name">CommonResult</span><span class="token punctuation">.</span><span class="token function">success</span><span class="token punctuation">(</span><span class="token string">"更新成功"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+
+    <span class="token comment">/**
+     * 根据Id删除用户信息
+     * @param id id
+     * @return 成功标识
+     */</span>
+    <span class="token annotation punctuation">@DeleteMapping</span><span class="token punctuation">(</span><span class="token string">"&#123;id&#125;"</span><span class="token punctuation">)</span>
+    <span class="token keyword">public</span> <span class="token class-name">CommonResult</span> <span class="token function">deleteByid</span><span class="token punctuation">(</span><span class="token annotation punctuation">@PathVariable</span> <span class="token class-name">Long</span> id<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        USERS<span class="token punctuation">.</span><span class="token function">removeIf</span><span class="token punctuation">(</span>obj <span class="token operator">-></span> obj<span class="token punctuation">.</span><span class="token function">getId</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">equals</span><span class="token punctuation">(</span>id<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">return</span> <span class="token class-name">CommonResult</span><span class="token punctuation">.</span><span class="token function">success</span><span class="token punctuation">(</span><span class="token string">"删除成功"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span></code></pre>
+
+<h3 id="测试-1"><a href="#测试-1" class="headerlink" title="测试"></a>测试</h3><p><strong>查询</strong>：输入不合法手机号<br><img src="https://whh.plus/images/get.png" alt="get" loading="lazy"></p>
+<p><strong>新增</strong><br><img src="https://whh.plus/images/add.png" alt="add" loading="lazy"><br>去掉邮箱<br><img src="https://whh.plus/images/add1.png" alt="add1" loading="lazy"></p>
+<p><strong>更新</strong>：去掉id<br><img src="https://whh.plus/images/put.png" alt="put" loading="lazy"></p>
+<p><strong>删除</strong><br><img src="https://whh.plus/images/delete.png" alt="delete" loading="lazy"></p>
+<h2 id="自定义验证"><a href="#自定义验证" class="headerlink" title="自定义验证"></a>自定义验证</h2><p>很多时候框架提供的功能并不能满足业务场景，需要自定义一些验证规则来完成验证。</p>
+<h3 id="添加注解"><a href="#添加注解" class="headerlink" title="添加注解"></a>添加注解</h3><pre class="language-java" data-language="java"><code class="language-java"><span class="token keyword">package</span> <span class="token namespace">com<span class="token punctuation">.</span>whh<span class="token punctuation">.</span>valid<span class="token punctuation">.</span>annotation</span><span class="token punctuation">;</span>
+
+
+<span class="token keyword">import</span> <span class="token namespace">com<span class="token punctuation">.</span>whh<span class="token punctuation">.</span>valid<span class="token punctuation">.</span>validation<span class="token punctuation">.</span></span><span class="token class-name">PhoneValidator</span><span class="token punctuation">;</span>
+
+<span class="token keyword">import</span> <span class="token namespace">javax<span class="token punctuation">.</span>validation<span class="token punctuation">.</span></span><span class="token class-name">Constraint</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token namespace">javax<span class="token punctuation">.</span>validation<span class="token punctuation">.</span></span><span class="token class-name">Payload</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token namespace">java<span class="token punctuation">.</span>lang<span class="token punctuation">.</span>annotation<span class="token punctuation">.</span></span><span class="token class-name">Documented</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token namespace">java<span class="token punctuation">.</span>lang<span class="token punctuation">.</span>annotation<span class="token punctuation">.</span></span><span class="token class-name">Retention</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token namespace">java<span class="token punctuation">.</span>lang<span class="token punctuation">.</span>annotation<span class="token punctuation">.</span></span><span class="token class-name">Target</span><span class="token punctuation">;</span>
+
+<span class="token keyword">import</span> <span class="token keyword">static</span> <span class="token namespace">java<span class="token punctuation">.</span>lang<span class="token punctuation">.</span>annotation<span class="token punctuation">.</span></span><span class="token class-name">ElementType</span><span class="token punctuation">.</span>*<span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token keyword">static</span> <span class="token namespace">java<span class="token punctuation">.</span>lang<span class="token punctuation">.</span>annotation<span class="token punctuation">.</span></span><span class="token class-name">RetentionPolicy</span><span class="token punctuation">.</span>RUNTIME<span class="token punctuation">;</span>
+
+<span class="token annotation punctuation">@Documented</span>
+<span class="token annotation punctuation">@Constraint</span><span class="token punctuation">(</span>validatedBy <span class="token operator">=</span> <span class="token punctuation">&#123;</span><span class="token class-name">PhoneValidator</span><span class="token punctuation">.</span><span class="token keyword">class</span><span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
+<span class="token annotation punctuation">@Target</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span>METHOD<span class="token punctuation">,</span>FIELD<span class="token punctuation">,</span>ANNOTATION_TYPE<span class="token punctuation">,</span>CONSTRUCTOR<span class="token punctuation">,</span>PARAMETER<span class="token punctuation">,</span>TYPE_USE<span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
+<span class="token annotation punctuation">@Retention</span><span class="token punctuation">(</span>RUNTIME<span class="token punctuation">)</span>
+<span class="token keyword">public</span> <span class="token annotation punctuation">@interface</span> <span class="token class-name">Phone</span> <span class="token punctuation">&#123;</span>
+    <span class="token comment">// 默认错误消息</span>
+    <span class="token class-name">String</span> <span class="token function">message</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">default</span> <span class="token string">"不是一个合法的手机号"</span><span class="token punctuation">;</span>
+
+    <span class="token comment">// 分组</span>
+    <span class="token class-name">Class</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token operator">?</span><span class="token punctuation">></span></span><span class="token punctuation">[</span><span class="token punctuation">]</span> <span class="token function">groups</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">default</span> <span class="token punctuation">&#123;</span><span class="token punctuation">&#125;</span><span class="token punctuation">;</span>
+
+    <span class="token comment">// 载荷 将某些 元数据信息与给定的注解声明相关联的方法</span>
+    <span class="token class-name">Class</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token operator">?</span> <span class="token keyword">extends</span> <span class="token class-name">Payload</span><span class="token punctuation">></span></span><span class="token punctuation">[</span><span class="token punctuation">]</span> <span class="token function">payload</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">default</span> <span class="token punctuation">&#123;</span><span class="token punctuation">&#125;</span><span class="token punctuation">;</span>
+
+    <span class="token comment">//指定多个时使用</span>
+    <span class="token annotation punctuation">@Target</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span>FIELD<span class="token punctuation">,</span>METHOD<span class="token punctuation">,</span>PARAMETER<span class="token punctuation">,</span>ANNOTATION_TYPE<span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
+    <span class="token annotation punctuation">@Retention</span><span class="token punctuation">(</span>RUNTIME<span class="token punctuation">)</span>
+    <span class="token annotation punctuation">@Documented</span>
+    <span class="token annotation punctuation">@interface</span> <span class="token class-name">List</span><span class="token punctuation">&#123;</span>
+        <span class="token class-name">Phone</span><span class="token punctuation">[</span><span class="token punctuation">]</span> <span class="token function">value</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span></code></pre>
+<ul>
+<li>@Documented：是否将注解信息添加在Java文档中</li>
+<li>@Retention：定义该注解的生命周期.(SOURCE:在编译阶段丢弃。这些注解在编译结束之后就不再有意义。例如@Override，@SuppressWarnings;CLASS：在类加载阶段丢弃，在字节码文件的处理中有用。注解默认使用这种方式；RUNTIME：始终不会丢弃，运行期也保留该注解，因此可以使用反射机制读取该注解信息，自定义注解通常使用这种方式)</li>
+<li>@Target：注解用于什么地方，如果不明确指出，该注解可以放在任何地方。属性的注解是兼容的。(TYPE：用于描述类、接口或enum声明；FIELD：用于描述实例变量；METHOD：用于描述方法；PARAMETER：参数；CONSTRUCTOR：构造方法；LOCAL_VARIABLE：局部变量；ANNOTATION_TYPE：另一个注释；PACKAGE：用于记录java文件的package信息)</li>
+<li>@Constraint：处理注解的逻辑</li>
+</ul>
+<h3 id="编写验证逻辑"><a href="#编写验证逻辑" class="headerlink" title="编写验证逻辑"></a>编写验证逻辑</h3><pre class="language-java" data-language="java"><code class="language-java"><span class="token keyword">package</span> <span class="token namespace">com<span class="token punctuation">.</span>whh<span class="token punctuation">.</span>valid<span class="token punctuation">.</span>validation</span><span class="token punctuation">;</span>
+
+<span class="token keyword">import</span> <span class="token namespace">com<span class="token punctuation">.</span>whh<span class="token punctuation">.</span>valid<span class="token punctuation">.</span>annotation<span class="token punctuation">.</span></span><span class="token class-name">Phone</span><span class="token punctuation">;</span>
+
+<span class="token keyword">import</span> <span class="token namespace">javax<span class="token punctuation">.</span>validation<span class="token punctuation">.</span></span><span class="token class-name">ConstraintValidator</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token namespace">javax<span class="token punctuation">.</span>validation<span class="token punctuation">.</span></span><span class="token class-name">ConstraintValidatorContext</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token namespace">java<span class="token punctuation">.</span>util<span class="token punctuation">.</span></span><span class="token class-name">Objects</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token namespace">java<span class="token punctuation">.</span>util<span class="token punctuation">.</span>regex<span class="token punctuation">.</span></span><span class="token class-name">Pattern</span><span class="token punctuation">;</span>
+
+<span class="token comment">/**
+ * 手机号校验器
+ */</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">PhoneValidator</span> <span class="token keyword">implements</span> <span class="token class-name">ConstraintValidator</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">Phone</span><span class="token punctuation">,</span><span class="token class-name">String</span><span class="token punctuation">></span></span> <span class="token punctuation">&#123;</span>
+    <span class="token comment">/**
+     * 手机号正则表达式
+     */</span>
+    <span class="token keyword">private</span> <span class="token keyword">static</span> <span class="token keyword">final</span> <span class="token class-name">String</span> REGEXP_PHONE <span class="token operator">=</span> <span class="token string">"^1[3456789]\\d&#123;9&#125;$"</span><span class="token punctuation">;</span>
+
+    <span class="token annotation punctuation">@Override</span>
+    <span class="token keyword">public</span> <span class="token keyword">boolean</span> <span class="token function">isValid</span><span class="token punctuation">(</span><span class="token class-name">String</span> s<span class="token punctuation">,</span> <span class="token class-name">ConstraintValidatorContext</span> constraintValidatorContext<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token class-name">Objects</span><span class="token punctuation">.</span><span class="token function">isNull</span><span class="token punctuation">(</span>s<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+            <span class="token keyword">return</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
+        <span class="token punctuation">&#125;</span>
+        <span class="token keyword">return</span> <span class="token class-name">Pattern</span><span class="token punctuation">.</span><span class="token function">matches</span><span class="token punctuation">(</span>REGEXP_PHONE<span class="token punctuation">,</span>s<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span></code></pre>
+<h3 id="修改实体"><a href="#修改实体" class="headerlink" title="修改实体"></a>修改实体</h3><p>给phone添加注解@Phone</p>
+<pre class="language-java" data-language="java"><code class="language-java"><span class="token annotation punctuation">@Phone</span><span class="token punctuation">(</span>groups <span class="token operator">=</span> <span class="token punctuation">&#123;</span>
+                <span class="token class-name">ValidationInterface</span><span class="token punctuation">.</span>update<span class="token punctuation">.</span><span class="token keyword">class</span><span class="token punctuation">,</span>
+                <span class="token class-name">ValidationInterface</span><span class="token punctuation">.</span>add<span class="token punctuation">.</span><span class="token keyword">class</span><span class="token punctuation">,</span>
+                <span class="token class-name">ValidationInterface</span><span class="token punctuation">.</span>select<span class="token punctuation">.</span><span class="token keyword">class</span><span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
+<span class="token annotation punctuation">@NotEmpty</span><span class="token punctuation">(</span>message <span class="token operator">=</span> <span class="token string">"手机号不能为空"</span><span class="token punctuation">,</span> groups <span class="token operator">=</span> <span class="token punctuation">&#123;</span><span class="token class-name">ValidationInterface</span><span class="token punctuation">.</span>add<span class="token punctuation">.</span><span class="token keyword">class</span><span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
+<span class="token keyword">private</span> <span class="token class-name">String</span> phone<span class="token punctuation">;</span></code></pre>
+
+<h3 id="测试-2"><a href="#测试-2" class="headerlink" title="测试"></a>测试</h3><p>输入错误的手机号测试<br><img src="https://whh.plus/images/phone.png" alt="phone" loading="lazy"></p>
+<h3 id="Pattern"><a href="#Pattern" class="headerlink" title="@Pattern"></a>@Pattern</h3><p>validation也提供了基于正则匹配的注解@Pattern</p>
+<pre class="language-java" data-language="java"><code class="language-java"><span class="token annotation punctuation">@Pattern</span><span class="token punctuation">(</span>message <span class="token operator">=</span> <span class="token string">"手机号不合法"</span><span class="token punctuation">,</span>regexp <span class="token operator">=</span> <span class="token string">"^1[3456789]\\d&#123;9&#125;"</span>$<span class="token punctuation">,</span>groups <span class="token operator">=</span> <span class="token punctuation">&#123;</span><span class="token class-name">ValidationInterface</span><span class="token punctuation">.</span>add<span class="token punctuation">.</span><span class="token keyword">class</span><span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
+<span class="token annotation punctuation">@NotEmpty</span><span class="token punctuation">(</span>message <span class="token operator">=</span> <span class="token string">"手机号不能为空"</span><span class="token punctuation">,</span> groups <span class="token operator">=</span> <span class="token punctuation">&#123;</span><span class="token class-name">ValidationInterface</span><span class="token punctuation">.</span>add<span class="token punctuation">.</span><span class="token keyword">class</span><span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
+<span class="token keyword">private</span> <span class="token class-name">String</span> phone<span class="token punctuation">;</span></code></pre>
+
+<h2 id="调用过程验证"><a href="#调用过程验证" class="headerlink" title="调用过程验证"></a>调用过程验证</h2><p>有时候在参数传输过程中需要对传入的对象做参数验证，但是上面介绍的是对参数绑定时的验证。</p>
+<h3 id="使用-spring-bean"><a href="#使用-spring-bean" class="headerlink" title="使用 spring bean"></a>使用 spring bean</h3><ul>
+<li>注入validator<br>bean validator是在config中定义的bean，如果使用spring boot默认配置ValidationAutoConfiguration::defaultValidator(),直接注入bean<pre class="language-java" data-language="java"><code class="language-java"><span class="token annotation punctuation">@Resource</span><span class="token punctuation">(</span>name <span class="token operator">=</span> <span class="token string">"validator"</span><span class="token punctuation">)</span>
+<span class="token class-name"><span class="token namespace">javax<span class="token punctuation">.</span>validation<span class="token punctuation">.</span></span>Validator</span> validator<span class="token punctuation">;</span></code></pre></li>
+<li></li>
+</ul>
+<h2 id="方法参数验证"><a href="#方法参数验证" class="headerlink" title="方法参数验证"></a>方法参数验证</h2><ul>
+<li>修改控制器<br>直接在类上添加注解@Validated，并在方法上直接进行验证<pre class="language-java" data-language="java"><code class="language-java"><span class="token annotation punctuation">@Slf4j</span>
+<span class="token annotation punctuation">@Validated</span>
+<span class="token annotation punctuation">@RestController</span>
+<span class="token annotation punctuation">@RequestMapping</span><span class="token punctuation">(</span><span class="token string">"sys/user"</span><span class="token punctuation">)</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">SysUserController</span> <span class="token punctuation">&#123;</span>
+  <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span> 省略代码
+    <span class="token comment">/**
+     * 根据手机号和邮箱查询用户信息
+     * @param phone 手机号
+     * @return 用户list
+     */</span>
+    <span class="token annotation punctuation">@GetMapping</span><span class="token punctuation">(</span><span class="token string">"selectByPhone"</span><span class="token punctuation">)</span>
+    <span class="token keyword">public</span> <span class="token class-name">CommonResult</span> <span class="token function">queryByPhone</span><span class="token punctuation">(</span><span class="token annotation punctuation">@NotEmpty</span><span class="token punctuation">(</span>message <span class="token operator">=</span> <span class="token string">"手机号不能为空"</span><span class="token punctuation">)</span> <span class="token class-name">String</span> phone<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+       <span class="token class-name">List</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">SysUser</span><span class="token punctuation">></span></span> queryResult <span class="token operator">=</span> USERS<span class="token punctuation">.</span><span class="token function">stream</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+             <span class="token punctuation">.</span><span class="token function">filter</span><span class="token punctuation">(</span>obj <span class="token operator">-></span> obj<span class="token punctuation">.</span><span class="token function">getPhone</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">equals</span><span class="token punctuation">(</span>phone<span class="token punctuation">)</span><span class="token punctuation">)</span>
+             <span class="token punctuation">.</span><span class="token function">collect</span><span class="token punctuation">(</span><span class="token class-name">Collectors</span><span class="token punctuation">.</span><span class="token function">toList</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+       <span class="token keyword">return</span> <span class="token class-name">CommonResult</span><span class="token punctuation">.</span><span class="token function">success</span><span class="token punctuation">(</span>queryResult<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span></code></pre></li>
+<li>测试<br><img src="https://whh.plus/images/get1.png" alt="get" loading="lazy"></li>
+</ul>
+<h2 id="统一异常处理"><a href="#统一异常处理" class="headerlink" title="统一异常处理"></a>统一异常处理</h2><p>上面参数验证时，验证的错误信息是通过<code>BindingResult result</code>参数进行接收的，比较麻烦。甚至是直接将异常堆栈信息返回给前端，不太友好，有的时候需要主动抛出业务异常，比如用户不能直接删除已绑定用户的角色。</p>
+<h3 id="创建业务异常类"><a href="#创建业务异常类" class="headerlink" title="创建业务异常类"></a>创建业务异常类</h3><pre class="language-java" data-language="java"><code class="language-java"><span class="token keyword">package</span> <span class="token namespace">com<span class="token punctuation">.</span>whh<span class="token punctuation">.</span>valid<span class="token punctuation">.</span>exception</span><span class="token punctuation">;</span>
+
+<span class="token comment">// 业务异常</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">BusinessException</span> <span class="token keyword">extends</span> <span class="token class-name">RuntimeException</span> <span class="token punctuation">&#123;</span>
+    <span class="token keyword">private</span> <span class="token keyword">static</span> <span class="token keyword">final</span> <span class="token keyword">long</span> serialVersionUID <span class="token operator">=</span> <span class="token number">1L</span><span class="token punctuation">;</span>
+
+    <span class="token keyword">protected</span> <span class="token keyword">final</span> <span class="token class-name">String</span> message<span class="token punctuation">;</span>
+
+
+    <span class="token keyword">public</span> <span class="token class-name">BusinessException</span><span class="token punctuation">(</span><span class="token class-name">String</span> message<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>message <span class="token operator">=</span> message<span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+
+    <span class="token keyword">public</span> <span class="token class-name">BusinessException</span><span class="token punctuation">(</span><span class="token class-name">String</span> message<span class="token punctuation">,</span><span class="token class-name">Throwable</span> e<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token keyword">super</span><span class="token punctuation">(</span>message<span class="token punctuation">,</span>e<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>message <span class="token operator">=</span> message<span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+
+    <span class="token annotation punctuation">@Override</span>
+    <span class="token keyword">public</span> <span class="token class-name">String</span> <span class="token function">getMessage</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token keyword">return</span> message<span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span></code></pre>
+<h3 id="创建全局异常处理器"><a href="#创建全局异常处理器" class="headerlink" title="创建全局异常处理器"></a>创建全局异常处理器</h3><pre class="language-java" data-language="java"><code class="language-java"><span class="token keyword">package</span> <span class="token namespace">com<span class="token punctuation">.</span>whh<span class="token punctuation">.</span>valid<span class="token punctuation">.</span>exception</span><span class="token punctuation">;</span>
+
+<span class="token keyword">import</span> <span class="token namespace">com<span class="token punctuation">.</span>whh<span class="token punctuation">.</span>valid<span class="token punctuation">.</span>util<span class="token punctuation">.</span></span><span class="token class-name">CommonResult</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token namespace">lombok<span class="token punctuation">.</span>extern<span class="token punctuation">.</span>slf4j<span class="token punctuation">.</span></span><span class="token class-name">Slf4j</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token namespace">org<span class="token punctuation">.</span>springframework<span class="token punctuation">.</span>validation<span class="token punctuation">.</span></span><span class="token class-name">BindException</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token namespace">org<span class="token punctuation">.</span>springframework<span class="token punctuation">.</span>validation<span class="token punctuation">.</span></span><span class="token class-name">BindingResult</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token namespace">org<span class="token punctuation">.</span>springframework<span class="token punctuation">.</span>validation<span class="token punctuation">.</span></span><span class="token class-name">FieldError</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token namespace">org<span class="token punctuation">.</span>springframework<span class="token punctuation">.</span>web<span class="token punctuation">.</span></span><span class="token class-name">HttpRequestMethodNotSupportedException</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token namespace">org<span class="token punctuation">.</span>springframework<span class="token punctuation">.</span>web<span class="token punctuation">.</span>bind<span class="token punctuation">.</span>annotation<span class="token punctuation">.</span></span><span class="token class-name">ExceptionHandler</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token namespace">org<span class="token punctuation">.</span>springframework<span class="token punctuation">.</span>web<span class="token punctuation">.</span>bind<span class="token punctuation">.</span>annotation<span class="token punctuation">.</span></span><span class="token class-name">RestControllerAdvice</span><span class="token punctuation">;</span>
+
+<span class="token keyword">import</span> <span class="token namespace">javax<span class="token punctuation">.</span>servlet<span class="token punctuation">.</span>http<span class="token punctuation">.</span></span><span class="token class-name">HttpServletRequest</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token namespace">javax<span class="token punctuation">.</span>validation<span class="token punctuation">.</span></span><span class="token class-name">ConstraintViolation</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token namespace">javax<span class="token punctuation">.</span>validation<span class="token punctuation">.</span></span><span class="token class-name">ConstraintViolationException</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token namespace">javax<span class="token punctuation">.</span>validation<span class="token punctuation">.</span></span><span class="token class-name">ValidationException</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token namespace">java<span class="token punctuation">.</span>util<span class="token punctuation">.</span></span><span class="token class-name">Set</span><span class="token punctuation">;</span>
+
+<span class="token comment">/**
+ * 全局异常处理器
+ */</span>
+<span class="token annotation punctuation">@Slf4j</span>
+<span class="token annotation punctuation">@RestControllerAdvice</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">GlobalExceptionHandler</span> <span class="token punctuation">&#123;</span>
+    <span class="token comment">/**
+     * 参数绑定异常类，用于表单验证时抛出异常处理
+     */</span>
+    <span class="token annotation punctuation">@ExceptionHandler</span><span class="token punctuation">(</span><span class="token class-name">BindException</span><span class="token punctuation">.</span><span class="token keyword">class</span><span class="token punctuation">)</span>
+    <span class="token keyword">public</span> <span class="token class-name">CommonResult</span> <span class="token function">validatedBindException</span><span class="token punctuation">(</span><span class="token class-name">BindException</span> e<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        log<span class="token punctuation">.</span><span class="token function">error</span><span class="token punctuation">(</span>e<span class="token punctuation">.</span><span class="token function">getMessage</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span>e<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token class-name">BindingResult</span> bindingResult <span class="token operator">=</span> e<span class="token punctuation">.</span><span class="token function">getBindingResult</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token class-name">FieldError</span> fieldError <span class="token operator">=</span> e<span class="token punctuation">.</span><span class="token function">getFieldError</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token class-name">String</span> message <span class="token operator">=</span> <span class="token string">"["</span> <span class="token operator">+</span> e<span class="token punctuation">.</span><span class="token function">getAllErrors</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">getDefaultMessage</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">+</span><span class="token string">"]"</span><span class="token punctuation">;</span>
+        <span class="token keyword">return</span> <span class="token class-name">CommonResult</span><span class="token punctuation">.</span><span class="token function">error</span><span class="token punctuation">(</span>message<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+
+    <span class="token comment">/**
+     * 用于方法形参中参数校验时抛出的异常处理
+     * @param e
+     * @return
+     */</span>
+    <span class="token annotation punctuation">@ExceptionHandler</span><span class="token punctuation">(</span><span class="token class-name">ConstraintViolationException</span><span class="token punctuation">.</span><span class="token keyword">class</span><span class="token punctuation">)</span>
+    <span class="token keyword">public</span> <span class="token class-name">CommonResult</span> <span class="token function">handle</span><span class="token punctuation">(</span><span class="token class-name">ValidationException</span> e<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        log<span class="token punctuation">.</span><span class="token function">error</span><span class="token punctuation">(</span>e<span class="token punctuation">.</span><span class="token function">getMessage</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span>e<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token class-name">String</span> errorInfo <span class="token operator">=</span> <span class="token string">""</span><span class="token punctuation">;</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>e <span class="token keyword">instanceof</span> <span class="token class-name">ConstraintViolationException</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+            <span class="token class-name">ConstraintViolationException</span> exs <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token class-name">ConstraintViolationException</span><span class="token punctuation">)</span> e<span class="token punctuation">;</span>
+            <span class="token class-name">Set</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">ConstraintViolation</span><span class="token punctuation">&lt;</span><span class="token operator">?</span><span class="token punctuation">></span><span class="token punctuation">></span></span> violations <span class="token operator">=</span> exs<span class="token punctuation">.</span><span class="token function">getConstraintViolations</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token class-name">ConstraintViolation</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token operator">?</span><span class="token punctuation">></span></span> item <span class="token operator">:</span> violations<span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+                errorInfo <span class="token operator">=</span> errorInfo <span class="token operator">+</span> <span class="token string">"["</span> <span class="token operator">+</span> item<span class="token punctuation">.</span><span class="token function">getMessage</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">"]"</span><span class="token punctuation">;</span>
+            <span class="token punctuation">&#125;</span>
+        <span class="token punctuation">&#125;</span>
+        <span class="token keyword">return</span> <span class="token class-name">CommonResult</span><span class="token punctuation">.</span><span class="token function">error</span><span class="token punctuation">(</span>errorInfo<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+
+    <span class="token comment">/**
+     * 请求方式不支持
+     * @param e
+     * @return
+     */</span>
+    <span class="token annotation punctuation">@ExceptionHandler</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span><span class="token class-name">HttpRequestMethodNotSupportedException</span><span class="token punctuation">.</span><span class="token keyword">class</span><span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
+    <span class="token keyword">public</span> <span class="token class-name">CommonResult</span> <span class="token function">handleException</span><span class="token punctuation">(</span><span class="token class-name">HttpRequestMethodNotSupportedException</span> e<span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+        log<span class="token punctuation">.</span><span class="token function">error</span><span class="token punctuation">(</span>e<span class="token punctuation">.</span><span class="token function">getMessage</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span>e<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">return</span> <span class="token class-name">CommonResult</span><span class="token punctuation">.</span><span class="token function">error</span><span class="token punctuation">(</span><span class="token string">"不支持"</span> <span class="token operator">+</span> e<span class="token punctuation">.</span><span class="token function">getMethod</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">+</span><span class="token string">"请求"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+
+    <span class="token comment">/**
+     * 拦截未知的运行时异常
+     * @param e
+     * @return
+     */</span>
+    <span class="token annotation punctuation">@ExceptionHandler</span><span class="token punctuation">(</span><span class="token class-name">RuntimeException</span><span class="token punctuation">.</span><span class="token keyword">class</span><span class="token punctuation">)</span>
+    <span class="token keyword">public</span> <span class="token class-name">CommonResult</span> <span class="token function">notFount</span><span class="token punctuation">(</span><span class="token class-name">RuntimeException</span> e<span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+        log<span class="token punctuation">.</span><span class="token function">error</span><span class="token punctuation">(</span><span class="token string">"运行时异常"</span><span class="token punctuation">,</span>e<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">return</span> <span class="token class-name">CommonResult</span><span class="token punctuation">.</span><span class="token function">error</span><span class="token punctuation">(</span><span class="token string">"运行时异常"</span><span class="token punctuation">,</span>e<span class="token punctuation">.</span><span class="token function">getMessage</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+
+    <span class="token comment">/**
+     * 系统异常
+     * @param e
+     * @return
+     */</span>
+    <span class="token annotation punctuation">@ExceptionHandler</span><span class="token punctuation">(</span><span class="token class-name">Exception</span><span class="token punctuation">.</span><span class="token keyword">class</span><span class="token punctuation">)</span>
+    <span class="token keyword">public</span> <span class="token class-name">CommonResult</span> <span class="token function">handleException</span><span class="token punctuation">(</span><span class="token class-name">Exception</span> e<span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+        log<span class="token punctuation">.</span><span class="token function">error</span><span class="token punctuation">(</span>e<span class="token punctuation">.</span><span class="token function">getMessage</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span>e<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">return</span> <span class="token class-name">CommonResult</span><span class="token punctuation">.</span><span class="token function">error</span><span class="token punctuation">(</span><span class="token string">"服务器错误，请联系管理员"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+
+    <span class="token comment">/**
+     * 业务异常
+     * @param request
+     * @param e
+     * @return
+     */</span>
+    <span class="token annotation punctuation">@ExceptionHandler</span><span class="token punctuation">(</span><span class="token class-name">BusinessException</span><span class="token punctuation">.</span><span class="token keyword">class</span><span class="token punctuation">)</span>
+    <span class="token keyword">public</span> <span class="token class-name">CommonResult</span> <span class="token function">bussinessException</span><span class="token punctuation">(</span><span class="token class-name">HttpServletRequest</span> request<span class="token punctuation">,</span><span class="token class-name">BusinessException</span> e<span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+        log<span class="token punctuation">.</span><span class="token function">error</span><span class="token punctuation">(</span>e<span class="token punctuation">.</span><span class="token function">getMessage</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">return</span> <span class="token class-name">CommonResult</span><span class="token punctuation">.</span><span class="token function">error</span><span class="token punctuation">(</span>e<span class="token punctuation">.</span><span class="token function">getMessage</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span></code></pre>
+<ul>
+<li>@Slf4j注解：用作日志输出的，一般会在项目每个类的开头加入该注解，如果不写下面这段代码，并且想用log</li>
+<li>@RestControllerAdvice：对Controller增强，捕获全局Spring MVC抛出的异常。</li>
+<li>@ExceptionHandler(BindException.class)：用来捕获指定的异常</li>
+</ul>
+<h3 id="修改控制器-1"><a href="#修改控制器-1" class="headerlink" title="修改控制器"></a>修改控制器</h3><p>删除方法中的BindingResult result参数，将错误直接抛给统一异常处理类去解决即可</p>
+<h3 id="测试-3"><a href="#测试-3" class="headerlink" title="测试"></a>测试</h3><p><img src="https://whh.plus/images/testException.png" alt="test" loading="lazy"></p>
+<h2 id="自定义验证信息源"><a href="#自定义验证信息源" class="headerlink" title="自定义验证信息源"></a>自定义验证信息源</h2><h3 id="修改配置文件-ValidatorConfig"><a href="#修改配置文件-ValidatorConfig" class="headerlink" title="修改配置文件(ValidatorConfig)"></a>修改配置文件(ValidatorConfig)</h3><pre class="language-java" data-language="java"><code class="language-java"><span class="token comment">/**
+     * 实体类字段校验国际化引入
+     * */</span>
+
+    <span class="token annotation punctuation">@Bean</span>
+    <span class="token keyword">public</span> <span class="token class-name">Validator</span> <span class="token function">validator</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+<span class="token comment">//        ValidatorFactory validatorFactory = Validation.byProvider(HibernateValidator.class)</span>
+<span class="token comment">//                .configure()</span>
+<span class="token comment">//                .addProperty("hibernate.validator.fail_fast","true")</span>
+<span class="token comment">//                .buildValidatorFactory();</span>
+        <span class="token class-name">LocalValidatorFactoryBean</span> validator <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">LocalValidatorFactoryBean</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment">// 设置messages资源信息</span>
+        <span class="token class-name">ReloadableResourceBundleMessageSource</span> messageSource <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ReloadableResourceBundleMessageSource</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment">// 多个用逗号分割</span>
+        messageSource<span class="token punctuation">.</span><span class="token function">setBasenames</span><span class="token punctuation">(</span><span class="token string">"classpath:/messages/validation/messages"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment">// 设置字符集编码</span>
+        messageSource<span class="token punctuation">.</span><span class="token function">setDefaultEncoding</span><span class="token punctuation">(</span><span class="token string">"UTF-8"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        validator<span class="token punctuation">.</span><span class="token function">setValidationMessageSource</span><span class="token punctuation">(</span>messageSource<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment">// 设置验证相关参数</span>
+        <span class="token class-name">Properties</span> properties <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Properties</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment">// 快速失败，有错即返回</span>
+        properties<span class="token punctuation">.</span><span class="token function">setProperty</span><span class="token punctuation">(</span><span class="token string">"hibernate.validator.fail_fast"</span><span class="token punctuation">,</span> <span class="token string">"true"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        validator<span class="token punctuation">.</span><span class="token function">setValidationProperties</span><span class="token punctuation">(</span>properties<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">//        return validatorFactory.getValidator();</span>
+        <span class="token keyword">return</span> validator<span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span></code></pre>
+<h3 id="添加信息源文件"><a href="#添加信息源文件" class="headerlink" title="添加信息源文件"></a>添加信息源文件</h3><pre class="language-bash" data-language="bash"><code class="language-bash">├───resources
+    └── messages
+        └── validation
+            └── messages.properties</code></pre>
+
+<pre class="language-properties" data-language="properties"><code class="language-properties"><span class="token comment"># messages.properties</span>
+<span class="token attr-name">name.not.empty</span><span class="token punctuation">=</span><span class="token attr-value">用户名不能为空</span>
+<span class="token attr-name">email.not.valid</span><span class="token punctuation">=</span><span class="token attr-value">$&#123;validatedValue&#125;是邮箱地址？</span>
+<span class="token attr-name">email.not.empty</span><span class="token punctuation">=</span><span class="token attr-value">邮箱不能为空</span>
+<span class="token attr-name">phone.not.valid</span><span class="token punctuation">=</span><span class="token attr-value">$&#123;validatedValue&#125;是手机号？</span>
+<span class="token attr-name">phone.not.empty</span><span class="token punctuation">=</span><span class="token attr-value">手机号不能为空</span>
+<span class="token attr-name">password.size.valid</span><span class="token punctuation">=</span><span class="token attr-value">密码长度必须在&#123;min&#125;-&#123;max&#125;之间</span>
+<span class="token attr-name">id.not.empty</span><span class="token punctuation">=</span><span class="token attr-value">主键不能为空</span></code></pre>
+
+<h3 id="修改实体类-1"><a href="#修改实体类-1" class="headerlink" title="修改实体类"></a>修改实体类</h3><pre class="language-java" data-language="java"><code class="language-java">message <span class="token operator">=</span> <span class="token string">"&#123;name.not.empty&#125;"</span>
+message <span class="token operator">=</span> <span class="token string">"&#123;password.size.valid&#125;"</span>
+message <span class="token operator">=</span> <span class="token string">"&#123;email.not.valid&#125;"</span>
+message <span class="token operator">=</span> <span class="token string">"&#123;phone.not.valid&#125;"</span></code></pre>
+
+<h2 id="注解"><a href="#注解" class="headerlink" title="注解"></a>注解</h2><table>
+<thead>
+<tr>
+<th align="center">注解</th>
+<th align="center">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">@Null</td>
+<td align="center">限制只能为null</td>
+</tr>
+<tr>
+<td align="center">@NotNull</td>
+<td align="center">限制必须不为null</td>
+</tr>
+<tr>
+<td align="center">@AssertFalse</td>
+<td align="center">限制必须为false</td>
+</tr>
+<tr>
+<td align="center">@AssertTrue</td>
+<td align="center">限制必须为true</td>
+</tr>
+<tr>
+<td align="center">@DecimalMax(value)</td>
+<td align="center">限制必须为一个不大于指定值的数字</td>
+</tr>
+<tr>
+<td align="center">@DecimalMin(value)</td>
+<td align="center">限制必须为一个不小于指定值的数字</td>
+</tr>
+<tr>
+<td align="center">@Digits(integer,fraction)</td>
+<td align="center">限制必须为一个小数，且整数部分的位数不能超过integer，小数部分的位数不能超过fraction</td>
+</tr>
+<tr>
+<td align="center">@Future</td>
+<td align="center">限制必须是一个将来的日期</td>
+</tr>
+<tr>
+<td align="center">@Max(value)</td>
+<td align="center">限制必须为一个不大于指定值的数字</td>
+</tr>
+<tr>
+<td align="center">@Min(value)</td>
+<td align="center">限制必须为一个不小于指定值的数字</td>
+</tr>
+<tr>
+<td align="center">@Past</td>
+<td align="center">限制必须是一个过去的日期</td>
+</tr>
+<tr>
+<td align="center">@Pattern(value)</td>
+<td align="center">限制必须符合指定的正则表达式</td>
+</tr>
+<tr>
+<td align="center">@Size(max,min)</td>
+<td align="center">限制字符长度必须在min到max之间</td>
+</tr>
+<tr>
+<td align="center">@Past</td>
+<td align="center">验证注解的元素值（日期类型）比当前时间早</td>
+</tr>
+<tr>
+<td align="center">@NotEmpty</td>
+<td align="center">验证注解的元素值不为null且不为空（字符串长度不为0、集合大小不为0）</td>
+</tr>
+<tr>
+<td align="center">@NotBlank</td>
+<td align="center">验证注解的元素值不为空（不为null、去除首位空格后长度为0），不同于@NotEmpty，@NotBlank</td>
+</tr>
+<tr>
+<td align="center">@Email</td>
+<td align="center">验证注解的元素值是Email，也可以通过正则表达式和flag指定自定义的email格式</td>
+</tr>
+</tbody></table>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p><a target="_blank" rel="noopener" href="https://www.toutiao.com/i6994693398586393096/">开撸！SpringBoot-表单验证-统一异常处理-自定义验证信息源</a><br><a target="_blank" rel="noopener" href="https://blog.csdn.net/f641385712/article/details/97402946">Spring方法级别数据校验</a><br><a target="_blank" rel="noopener" href="https://www.jianshu.com/p/c1ee7e4247bf">@Data注解 与 lombok</a><br><a target="_blank" rel="noopener" href="https://www.hangge.com/blog/cache/detail_2493.html">SpringBoot - Lombok使用详解3（@NoArgsConstructor、@AllArgsConstructor、@RequiredArgsConstructor）</a><br><a target="_blank" rel="noopener" href="https://blog.csdn.net/lwg_1540652358/article/details/84193759">@Constraint注解配合自定义验证类型注解的开发</a><br><a target="_blank" rel="noopener" href="https://www.jianshu.com/p/47aeeba6414c">Spring Boot @RestControllerAdvice 统一异常处理</a></p>
+</div><div id="reward-container"><span class="hty-icon-button button-glow" id="reward-button" title="打赏" onclick="var qr = document.getElementById(&quot;qr&quot;); qr.style.display = (qr.style.display === &quot;none&quot;) ? &quot;block&quot; : &quot;none&quot;;"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-hand-coin-line"></use></svg></span><div id="reward-comment">I'm so cute. Please give me money.</div><div id="qr" style="display:none;"><div style="display:inline-block"></div><div style="display:inline-block"></div><div style="display:inline-block"></div></div></div><ul class="post-copyright"><li class="post-copyright-author"><strong>本文作者：</strong>先逃跑再说</li><li class="post-copyright-link"><strong>本文链接：</strong><a href="https://wentianhao.github.io/2021/08/20/validation/" title="SpringBoot-表单验证-统一异常处理-自定义验证信息源">https://wentianhao.github.io/2021/08/20/validation/</a></li><li class="post-copyright-license"><strong>版权声明：</strong>本博客所有文章除特别声明外，均默认采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="noopener" title="CC BY-NC-SA 4.0 "><svg class="icon"><use xlink:href="#icon-creative-commons-line"></use></svg><svg class="icon"><use xlink:href="#icon-creative-commons-by-line"></use></svg><svg class="icon"><use xlink:href="#icon-creative-commons-nc-line"></use></svg><svg class="icon"><use xlink:href="#icon-creative-commons-sa-line"></use></svg></a> 许可协议。</li></ul></section></article><div class="post-nav"><div class="post-nav-item"></div><div class="post-nav-item"><a class="post-nav-next" href="/2021/08/18/%E7%BA%BF%E7%A8%8B%E6%B1%A0/" rel="next" title="线程池"><span class="post-nav-text">线程池</span><svg class="icon" aria-hidden="true"><use xlink:href="#icon-arrow-right-s-line"></use></svg></a></div></div></div><div class="hty-card" id="comment"><div class="comment-tooltip text-center"><span>若您想及时得到回复提醒，建议跳转 GitHub Issues 评论。</span><br><span>若没有本文 Issue，您可以使用 Comment 模版新建。</span><br></div><div class="toggle-comment-system" style="margin: 1rem auto"><a class="toggle-comment-btn hty-button hty-button--raised text-uppercase" data-target="#valine-container" onclick="showComment(this.dataset.target)">valine</a><style>.utterances {
+  display: none;
+}</style><a class="toggle-comment-btn hty-button hty-button--raised text-uppercase" data-target=".utterances" onclick="showComment(this.dataset.target)">utterances</a><script>function hideAllComment() {
+  //- hide all
+  document.querySelectorAll('.toggle-comment-btn').forEach((btn) => {
+    const container = document.querySelector(btn.dataset.target);
+    if (container) {
+      container.style.display = "none";
+    }
+  });
+}
+function showComment(target) {
+  hideAllComment();
+  //- show target
+  const targetContainer = document.querySelector(target);
+  if (targetContainer) {
+    targetContainer.style.display = "block";
+  }
+}
+</script></div><div id="valine-container"></div><script>Yun.utils.getScript("https://cdn.jsdelivr.net/npm/valine@latest/dist/Valine.min.js", () => {
+  const valineConfig = {"enable":true,"appId":"lKhR0buRT7OeiwUq9ECRwPba-MdYXbMMI","appKey":"5cz28s0hMEfyou89engEFMmS","placeholder":"Just go go","avatar":null,"pageSize":10,"visitor":false,"highlight":true,"recordIP":false,"enableQQ":true,"meta":["nick","mail","link"],"el":"#valine-container","lang":"zh-cn"}
+  valineConfig.path = "/2021/08/20/validation/"
+  new Valine(valineConfig)
+}, window.Valine);</script></div></main><footer class="sidebar-translate" id="footer"><div class="copyright"><span>&copy; 2020 – 2021 </span><span class="with-love" id="animate"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-cloud-line"></use></svg></span><span class="author"> 先逃跑再说</span></div><div class="powered"><span>由 <a href="https://hexo.io" target="_blank" rel="noopener">Hexo</a> 驱动 v5.4.0</span><span class="footer-separator">|</span><span>主题 - <a rel="noopener" href="https://github.com/YunYouJun/hexo-theme-yun" target="_blank"><span>Yun</span></a> v1.6.1</span></div><div class="live_time"><span>本博客已萌萌哒地运行</span><span id="display_live_time"></span><span class="moe-text">(●'◡'●)</span><script>function blog_live_time() {
+  setTimeout(blog_live_time, 1000);
+  const start = new Date('2020-01-05T00:00:00');
+  const now = new Date();
+  const timeDiff = (now.getTime() - start.getTime());
+  const msPerMinute = 60 * 1000;
+  const msPerHour = 60 * msPerMinute;
+  const msPerDay = 24 * msPerHour;
+  const passDay = Math.floor(timeDiff / msPerDay);
+  const passHour = Math.floor((timeDiff % msPerDay) / 60 / 60 / 1000);
+  const passMinute = Math.floor((timeDiff % msPerHour) / 60 / 1000);
+  const passSecond = Math.floor((timeDiff % msPerMinute) / 1000);
+  display_live_time.innerHTML = " " + passDay + " 天 " + passHour + " 小时 " + passMinute + " 分 " + passSecond + " 秒";
+}
+blog_live_time();
+</script></div><div id="busuanzi"><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><span id="busuanzi_container_site_uv" title="总访客量"><span><svg class="icon" aria-hidden="true"><use xlink:href="#icon-user-line"></use></svg></span><span id="busuanzi_value_site_uv"></span></span><span class="footer-separator">|</span><span id="busuanzi_container_site_pv" title="总访问量"><span><svg class="icon" aria-hidden="true"><use xlink:href="#icon-eye-line"></use></svg></span><span id="busuanzi_value_site_pv"></span></span></div></footer><a class="hty-icon-button" id="back-to-top" aria-label="back-to-top" href="#"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-arrow-up-s-line"></use></svg><svg class="progress-circle-container" viewBox="0 0 100 100"><circle class="progress-circle" id="progressCircle" cx="50" cy="50" r="48" fill="none" stroke="#0078E7" stroke-width="2" stroke-linecap="round"></circle></svg></a><script>const date = new Date();
+const today = (date.getMonth() + 1) + "-" + date.getDate()
+const mourn_days = ["4-4","9-18"]
+if (mourn_days.includes(today)) {
+  document.documentElement.style.filter = "grayscale(1)";
+}</script></div></body></html>

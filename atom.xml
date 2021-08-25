@@ -6,7 +6,7 @@
   <link href="https://wentianhao.github.io/atom.xml" rel="self"/>
   
   <link href="https://wentianhao.github.io/"/>
-  <updated>2021-08-22T07:09:09.399Z</updated>
+  <updated>2021-08-25T04:54:38.401Z</updated>
   <id>https://wentianhao.github.io/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>线程池实践</title>
+    <link href="https://wentianhao.github.io/2021/08/25/%E7%BA%BF%E7%A8%8B%E6%B1%A0%E5%AE%9E%E8%B7%B5/"/>
+    <id>https://wentianhao.github.io/2021/08/25/%E7%BA%BF%E7%A8%8B%E6%B1%A0%E5%AE%9E%E8%B7%B5/</id>
+    <published>2021-08-25T01:58:47.000Z</published>
+    <updated>2021-08-25T04:54:38.401Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;线程池提供一种限制和管理资源(包括执行一个任务)。每个线程池还维护一些基本统计信息，例如已完成任务的数量&lt;/p&gt;
+&lt;p&gt;线程池的好处：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;降低资源的消耗&lt;/li&gt;
+&lt;li&gt;提高相应速度&lt;/li&gt;
+&lt;li&gt;提高线程的可管理性&lt;/li&gt;
+&lt;/ol&gt;</summary>
+    
+    
+    
+    <category term="java" scheme="https://wentianhao.github.io/categories/java/"/>
+    
+    
+    <category term="java" scheme="https://wentianhao.github.io/tags/java/"/>
+    
+  </entry>
   
   <entry>
     <title>SpringBoot-表单验证-统一异常处理-自定义验证信息源</title>
@@ -47,7 +72,7 @@
     <link href="https://wentianhao.github.io/2021/08/18/%E7%BA%BF%E7%A8%8B%E6%B1%A0/"/>
     <id>https://wentianhao.github.io/2021/08/18/%E7%BA%BF%E7%A8%8B%E6%B1%A0/</id>
     <published>2021-08-18T08:07:41.000Z</published>
-    <updated>2021-08-22T07:09:09.397Z</updated>
+    <updated>2021-08-24T13:43:25.382Z</updated>
     
     
     <summary type="html">&lt;p&gt;详细分析线程池&lt;/p&gt;
@@ -99,7 +124,7 @@
     <link href="https://wentianhao.github.io/2021/08/11/%E5%B9%B6%E5%8F%91%E8%BF%9B%E9%98%B6/"/>
     <id>https://wentianhao.github.io/2021/08/11/%E5%B9%B6%E5%8F%91%E8%BF%9B%E9%98%B6/</id>
     <published>2021-08-11T01:56:24.000Z</published>
-    <updated>2021-08-17T10:55:08.108Z</updated>
+    <updated>2021-08-22T14:00:51.348Z</updated>
     
     
     <summary type="html">&lt;p&gt;进一步补充并发知识&lt;/p&gt;</summary>
@@ -421,31 +446,6 @@
     
     
     <category term="json" scheme="https://wentianhao.github.io/tags/json/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>mysql架构体系设计</title>
-    <link href="https://wentianhao.github.io/2021/06/22/mysql%E6%9E%B6%E6%9E%84%E4%BD%93%E7%B3%BB%E8%AE%BE%E8%AE%A1/"/>
-    <id>https://wentianhao.github.io/2021/06/22/mysql%E6%9E%B6%E6%9E%84%E4%BD%93%E7%B3%BB%E8%AE%BE%E8%AE%A1/</id>
-    <published>2021-06-22T04:22:55.000Z</published>
-    <updated>2021-06-29T03:37:41.589Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h2 id=&quot;Mysql-记录存储&quot;&gt;&lt;a href=&quot;#Mysql-记录存储&quot; class=&quot;headerlink&quot; title=&quot;Mysql 记录存储&quot;&gt;&lt;/a&gt;Mysql 记录存储&lt;/h2&gt;&lt;p&gt;&lt;img</summary>
-        
-      
-    
-    
-    
-    <category term="mysql" scheme="https://wentianhao.github.io/categories/mysql/"/>
-    
-    
-    <category term="mysql" scheme="https://wentianhao.github.io/tags/mysql/"/>
     
   </entry>
   

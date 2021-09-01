@@ -6,7 +6,7 @@
   <link href="https://wentianhao.github.io/atom.xml" rel="self"/>
   
   <link href="https://wentianhao.github.io/"/>
-  <updated>2021-08-25T04:54:38.401Z</updated>
+  <updated>2021-09-01T15:12:35.065Z</updated>
   <id>https://wentianhao.github.io/</id>
   
   <author>
@@ -17,11 +17,68 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>MySQL</title>
+    <link href="https://wentianhao.github.io/2021/09/01/MySQL/"/>
+    <id>https://wentianhao.github.io/2021/09/01/MySQL/</id>
+    <published>2021-09-01T09:41:17.000Z</published>
+    <updated>2021-09-01T15:12:35.065Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;数据库基础知识&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="mysql" scheme="https://wentianhao.github.io/categories/mysql/"/>
+    
+    
+    <category term="mysql" scheme="https://wentianhao.github.io/tags/mysql/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>网易面经</title>
+    <link href="https://wentianhao.github.io/2021/08/30/%E7%BD%91%E6%98%93%E9%9D%A2%E7%BB%8F/"/>
+    <id>https://wentianhao.github.io/2021/08/30/%E7%BD%91%E6%98%93%E9%9D%A2%E7%BB%8F/</id>
+    <published>2021-08-30T08:41:25.000Z</published>
+    <updated>2021-08-30T13:41:02.283Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;人生第一面，网易互联网凉经。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="面经" scheme="https://wentianhao.github.io/categories/%E9%9D%A2%E7%BB%8F/"/>
+    
+    
+    <category term="面经" scheme="https://wentianhao.github.io/tags/%E9%9D%A2%E7%BB%8F/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>ThreadLocal</title>
+    <link href="https://wentianhao.github.io/2021/08/25/ThreadLocal/"/>
+    <id>https://wentianhao.github.io/2021/08/25/ThreadLocal/</id>
+    <published>2021-08-25T05:18:24.000Z</published>
+    <updated>2021-08-26T09:32:29.027Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;ThreadLocal 线程的变量副本,实现每个线程都有自己专属本地变量&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="java" scheme="https://wentianhao.github.io/categories/java/"/>
+    
+    
+    <category term="java" scheme="https://wentianhao.github.io/tags/java/"/>
+    
+  </entry>
+  
+  <entry>
     <title>线程池实践</title>
     <link href="https://wentianhao.github.io/2021/08/25/%E7%BA%BF%E7%A8%8B%E6%B1%A0%E5%AE%9E%E8%B7%B5/"/>
     <id>https://wentianhao.github.io/2021/08/25/%E7%BA%BF%E7%A8%8B%E6%B1%A0%E5%AE%9E%E8%B7%B5/</id>
     <published>2021-08-25T01:58:47.000Z</published>
-    <updated>2021-08-25T04:54:38.401Z</updated>
+    <updated>2021-08-25T05:19:43.622Z</updated>
     
     
     <summary type="html">&lt;p&gt;线程池提供一种限制和管理资源(包括执行一个任务)。每个线程池还维护一些基本统计信息，例如已完成任务的数量&lt;/p&gt;
@@ -294,7 +351,7 @@
     <link href="https://wentianhao.github.io/2021/07/30/invoke/"/>
     <id>https://wentianhao.github.io/2021/07/30/invoke/</id>
     <published>2021-07-30T01:03:10.000Z</published>
-    <updated>2021-07-30T01:07:14.452Z</updated>
+    <updated>2021-08-28T06:48:40.937Z</updated>
     
     
     <summary type="html">&lt;p&gt;详细学习一下Java的反射机制&lt;/p&gt;</summary>
@@ -382,70 +439,6 @@
     
     
     <category term="java" scheme="https://wentianhao.github.io/tags/java/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>SpringBoot注解</title>
-    <link href="https://wentianhao.github.io/2021/07/11/SpringBoot%E6%B3%A8%E8%A7%A3/"/>
-    <id>https://wentianhao.github.io/2021/07/11/SpringBoot%E6%B3%A8%E8%A7%A3/</id>
-    <published>2021-07-11T02:53:48.000Z</published>
-    <updated>2021-07-15T09:05:15.476Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;使用注解的优势：&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;采用Java代码，不需要配置繁杂的xml文件&lt;/li&gt;
-&lt;li&gt;在配置中也可享受面向对象带来的好处&lt;/li&gt;
-&lt;li&gt;类型安全对重构可以提供良好的支持&lt;/li&gt;
-&lt;li&gt;减少复杂配置文件的同时亦能享受到springIoC容器提供的功能</summary>
-    
-    
-    
-    <category term="SpringBoot" scheme="https://wentianhao.github.io/categories/SpringBoot/"/>
-    
-    
-    <category term="SpringBoot" scheme="https://wentianhao.github.io/tags/SpringBoot/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>服务器自建图床</title>
-    <link href="https://wentianhao.github.io/2021/07/05/%E5%9B%BE%E5%BA%8A/"/>
-    <id>https://wentianhao.github.io/2021/07/05/%E5%9B%BE%E5%BA%8A/</id>
-    <published>2021-07-05T10:53:03.000Z</published>
-    <updated>2021-07-31T08:06:35.105Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;最近着手搭建一个自用的图床，之前以有博客，图片一般存在博客的某个文件夹下，但是每次写博客的时候都要先将图片上传到服务器然后配图不能本地显示略嫌麻烦，因此准备在自己网站上搭建图床，使用docker，结合开源项目Lychee&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;补充发现&lt;/strong&gt;：Chevereto 图床更好用，并且可以结合picGo自动上传，因此建议转为Chevereto    演示地址：&lt;a href=&quot;https://demo.chevereto.com/&quot;&gt;https://demo.chevereto.com/&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;以下操作基于：Ubuntu 18.04&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="docker" scheme="https://wentianhao.github.io/categories/docker/"/>
-    
-    
-    <category term="图床" scheme="https://wentianhao.github.io/tags/%E5%9B%BE%E5%BA%8A/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>json</title>
-    <link href="https://wentianhao.github.io/2021/06/28/json/"/>
-    <id>https://wentianhao.github.io/2021/06/28/json/</id>
-    <published>2021-06-28T05:55:21.000Z</published>
-    <updated>2021-06-30T08:33:13.260Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;JSON必知必会&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="json" scheme="https://wentianhao.github.io/categories/json/"/>
-    
-    
-    <category term="json" scheme="https://wentianhao.github.io/tags/json/"/>
     
   </entry>
   

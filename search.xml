@@ -4,31 +4,6 @@
   
     
     <entry>
-      <title>面经</title>
-      <link href="2021/09/08/%E9%9D%A2%E7%BB%8F/"/>
-      <url>2021/09/08/%E9%9D%A2%E7%BB%8F/</url>
-      
-        <content type="html"><![CDATA[<h2 id="网易"><a href="#网易" class="headerlink" title="网易"></a>网易</h2><ul><li>ORM框架</li></ul><ol><li>Hibernate框架是一个全表映射的框架。开发者只要定义好持久化对象到数据库表的映射关系，就可以通过Hibernate框架提供的方法完成持久层操作。提供POJO和映射关系。开发者并不需要熟练掌握SQL语句编写，Hibernate会根据存储逻辑，自动生成对应的SQL，并调用JDBC接口来执行。<br> <strong>缺点</strong><ul><li>多表关联时，对SQL查询的支持较差</li><li>更新数据时，需要发送所有字段</li><li>不支持存储过程</li><li>不能通过优化SQL来优化性能</li></ul></li><li>MyBatis框架是一个半自动映射的框架。这里所谓的 “半自动” 是相对于 Hibernate 框架全表映射而言的，MyBatis 框架需要手动匹配提供 POJO、SQL 和映射关系，而 Hibernate 框架只需提供 POJO 和映射关系即可。<strong>优点</strong>：配置动态 SQL 并优化 SQL、通过配置决定 SQL 的映射规则，以及支持存储过程等</li></ol><ul><li><p>mybatis 为什么是半自动框架？<br>Hibernate 属于全自动 ORM 映射工具，使用 Hibernate 查询关联对象或者关联集合对象时，可以根据对象关系模型直接获取，所以它是全自动的。而 Mybatis 在查询关联对象或关联集合对象时，需要手动编写 sql 来完成，所以，称之为半自动 ORM 映射工具。</p></li><li><p>MyBatis有用到数据库的连接池吗</p></li><li><p>项目介绍</p></li><li><p>Java代码如何运行起来的<br>Java代码 – 编译 –&gt; 字节码 –解释–&gt; 机器码</p></li><li><p>Java平台特点</p></li><li><p>Java只有引用类型吗</p></li><li><p><strong>匿名函数的实现原理</strong></p></li></ul><ol><li>在类编译时，会生成一个私有静态方法+一个内部类。</li><li>在内部类中实现了函数式接口，在实现接口的方法中，会调用编译器生成的静态方法。</li><li>在使用lambda表达式的地方，通过传递内部类实例，来调用函数式接口方法。</li></ol><ul><li><p>stream </p></li><li><p>线程和进程的区别</p></li><li><p>创建线程的方法</p></li><li><p>线程可用的状态</p></li><li><p>有哪些情况会让线程进入到阻塞状态</p></li><li><p>线程自己阻塞的情况 sleep() 、 wait()</p></li><li><p>防止多线程死锁</p></li><li><p>synchronize有可能是轻量级锁吗、 原理</p></li><li><p>synchronize可以修饰哪些</p></li><li><p>mysql 索引</p></li></ul><h2 id="小红书"><a href="#小红书" class="headerlink" title="小红书"></a>小红书</h2><h3 id="Spring"><a href="#Spring" class="headerlink" title="Spring"></a>Spring</h3><ul><li>@Autowire 和 @Resource  的区别</li></ul><h3 id="MySQL"><a href="#MySQL" class="headerlink" title="MySQL"></a>MySQL</h3><ul><li>join 和 left join 的区别 </li></ul><h3 id="redis"><a href="#redis" class="headerlink" title="redis"></a>redis</h3><ul><li>存储的数据结构</li></ul><h3 id="ReentrantLock"><a href="#ReentrantLock" class="headerlink" title="ReentrantLock"></a>ReentrantLock</h3><h2 id="端点科技"><a href="#端点科技" class="headerlink" title="端点科技"></a>端点科技</h2>]]></content>
-      
-      
-      <categories>
-          
-          <category> java面经 </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> java </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>MySQL学习笔记</title>
       <link href="2021/09/03/MySQL%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
       <url>2021/09/03/MySQL%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</url>
